@@ -6,6 +6,8 @@ import LandingPage from './Components/LandingComponents/LandingPage';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Userhome from './Components/User/Userhome';
+import Features from './Components/User/Features';
+import Navbar from './Components/User/Navbar';
 
 function App() {
 
@@ -16,7 +18,10 @@ function App() {
       <Routes>
           <Route exact path="/" element={<LandingPage/>} />
           <Route exact path="user/" element={<Userhome/>} />
+          <Route exact path="Features/" element={<Features/>} />
+          <Route exact path="Navbar/" element={<Navbar/>} />
           </Routes>
+          
 
       </div>
     </BrowserRouter>
