@@ -1,8 +1,13 @@
 import React from 'react'
+import img from "../../Assets/imagelog.png"
+import "./LandingPage.css"
 
 function LandingPage() {
   return (
-    <div>LandingPage</div>
+    <div>
+      <img class='backgroundimg' src={img}/>
+      
+     </div>
   )
 }
 
