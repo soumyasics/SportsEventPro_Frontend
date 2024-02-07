@@ -6,8 +6,8 @@ import LandingPage from './Components/LandingComponents/LandingPage';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Userhome from './Components/User/Userhome';
-import 'bootstrap /dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import UserLogin from './Components/User/UserLogin';
+import UserSignup from './Components/User/UserSignup';
 
 function App() {
 
@@ -16,9 +16,11 @@ function App() {
       <div className="App">
 
       <Routes>
-          <Route exact path="/" element={<LandingPage/>} />
-          <Route exact path="user/" element={<Userhome/>} />
+          {/* <Route exact path="/" element={<LandingPage/>} />
+          <Route exact path="user/" element={<Userhome/>} /> */}
           </Routes>
+{/* <UserLogin/> */}
+<UserSignup/>
 
       </div>
     </BrowserRouter>
