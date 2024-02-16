@@ -2,7 +2,6 @@ import React from 'react'
 import './Userhome.css'
 import logo from './Assets/Frame 17.png'
 import second from './Assets/Ellipse 1.png'
-
 function Userhome() {
   return (
       <div>
