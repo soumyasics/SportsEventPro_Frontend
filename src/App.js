@@ -10,6 +10,7 @@ import Features from './Components/User/Features';
 import Navbar from './Components/User/Navbar';
 import UserLogin from './Components/User/UserLogin';
 import UserSignup from './Components/User/UserSignup';
+import UserFooter from './Components/User/UserFooter';
 
 function App() {
 
@@ -22,10 +23,13 @@ function App() {
           <Route exact path="user/" element={<Userhome/>} /> */}
           <Route exact path="Features/" element={<Features/>} />
           <Route exact path="Navbar/" element={<Navbar/>} />
+          <Route exact path="UserLogin/" element={<UserLogin/>} />
+          <Route exact path="UserSignup/" element={<UserSignup/>} />
+          <Route exact path="UserFooter/" element={<UserFooter/>} />
           </Routes>
           
-{/* <UserLogin/> */}
-<UserSignup/>
+
+
 
       </div>
     </BrowserRouter>

@@ -2,6 +2,7 @@ import React from 'react'
 import'./UserSignup.css'
 import img1 from '../../Assets/Frame 18.png'
 import img2 from '../../Assets/Ellipse 1.png'
+import img3 from '../../Assets/image 6.png'
 
 function UserSignup() {
   return (
@@ -32,6 +33,8 @@ function UserSignup() {
               <div>
 
       </div>
+                                        <div class='UserSignupBg'>
+
                                  <div class='UserSignuph1' >
                 <h1  class='UserSignuph1'> Sign In</h1>
                                 </div>
@@ -47,12 +50,23 @@ function UserSignup() {
                                 <div>
                                     <input className='UserSignupInput4' type='text' placeholder='About'/>
                                 </div>
+               <div className='UserSignupImgL' >
+                <img className='UserSignupImgL' src={img3} alt='image not found'/>
+               </div>
+
+               <div className='UserSignUpBottom'>
+
+               </div>
                         <div>
                             <p className='UserSignupP1'>Already have an account , Login</p>
                         </div>
                         <div>
                             <button className='UserSignupButton1' type='submit'>Sign up</button>
                         </div>
+                        </div>
+               {/* <div className='UserSignUpBottom'>
+
+               </div> */}
     </div>
   )
 }
