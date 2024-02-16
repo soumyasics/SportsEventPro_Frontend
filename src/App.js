@@ -19,9 +19,8 @@ function App() {
       <div className="App">
 
       <Routes>
-          <Route exact path="/" element={[<LandingPage/>,<Features/>]} />
-          <Route exact path="/user" element={[<Userhome/>,<Features/>]} />
-          <Route exact path="/Navbar" element={<Navbar/>} />
+          
+         
           {/* <Route exact path="/" element={<LandingPage/>} />
           <Route exact path="user/" element={<Userhome/>} /> */}
           <Route exact path="Features/" element={<Features/>} />
