@@ -50,7 +50,7 @@ function UserSignup() {
                                 <div>
                                     <input className='UserSignupInput4' type='text' placeholder='About'/>
                                 </div>
-               <div className='UserSignupImgL' >
+               <div >
                 <img className='UserSignupImgL' src={img3} alt='image not found'/>
                </div>
 
