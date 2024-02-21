@@ -23,11 +23,11 @@ function App() {
          
           {/* <Route exact path="/" element={<LandingPage/>} />
           <Route exact path="user/" element={<Userhome/>} /> */}
-          <Route exact path="Features/" element={<Features/>} />
-          <Route exact path="Navbar/" element={<Navbar/>} />
-          <Route exact path="UserLogin/" element={<UserLogin/>} />
-          <Route exact path="UserSignup/" element={<UserSignup/>} />
-          <Route exact path="UserFooter/" element={<UserFooter/>} />
+          <Route exact path="/Features" element={[<LandingPage/>,<Features/>]} />
+          <Route exact path="/Navbar" element={<Navbar/>} />
+          <Route exact path="/UserLogin" element={<UserLogin/>} />
+          <Route exact path="/UserSignup" element={<UserSignup/>} />
+          <Route exact path="/UserFooter" element={<UserFooter/>} />
           </Routes>
           
 
