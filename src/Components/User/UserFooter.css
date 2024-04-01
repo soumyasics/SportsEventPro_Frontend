@@ -1,12 +1,13 @@
 .UserFooterLink{
     margin-left: 54px;
     color: rgb(89, 173, 211);
-    margin-top: 653px;
+    /* margin-top: 19px; */
     position: relative;
     right: 38px;
+    top: 25px;
 }
 .UserFooterImg1{
     position: relative;
-    top: 623px;
+    top: 48px;
     right: 44px;
 }
