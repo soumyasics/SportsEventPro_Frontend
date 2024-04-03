@@ -1,0 +1,103 @@
+/* .AdminLoginBG{
+    border: 2px solid white;
+    height: 471px;
+    background-image: url(../Assets/bg-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    bottom: 13px;
+} */
+.AdminLoginh1{
+    margin-left: 503px;
+    margin-top: 123px;
+    color: white;
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.AdminLoginp1{
+    margin-left: 122px;
+    position: relative;
+    top: 38px;
+}
+.AdminLoginp2{
+    margin-left: 92px;
+    position: relative;
+    top: 21px;
+}
+
+.AdminLogininput1{
+    padding-left: 24px;
+    padding-right: 148px;
+    height: 51px;
+    margin-left: 374px;
+    margin-top: 31px;
+}
+.AdminLogininput2{
+    padding-left: 24px;
+    padding-right: 148px;
+    height: 51px;
+    margin-left: 374px;
+    margin-top: 9px;
+}
+.AdminLoginReset{
+    font-size: 14px;
+    margin-left: 133px;
+}
+.AdminLoginImg4{
+    margin-right: 294px;
+    height: 345px;
+    position: absolute;
+    bottom: -9px;
+    left: 65px;
+}
+.AdminLoginSignin{
+    font-size: 14px;
+    margin-left: 660px;
+    position: relative;
+    bottom: 26px;
+    color: white;
+}
+.AdminLoginButton{
+    padding-left: 110px;
+    padding-right: 109px;
+    height: 58px;
+    margin-left: 364px;
+    margin-top: -19px;
+    border-radius: 8px;
+    background-color: rgb(24, 89, 193);
+    color: white;
+    position: relative;
+    z-index: 1;
+    bottom: -60px;
+}
+.AdminLoginBdiv{
+    background-color: #1b97ff;
+    height: 185px;
+    position: relative;
+    bottom: -14px;
+}
+.AdminValidationEmail{
+    margin-left: 169px;
+}
+.AdminValidationPass{
+    margin-left: 169px;
+}
+
+form{
+    border: 2px solid white;
+    height: 495px;
+    background-image: url(../Assets/bg-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    bottom: 13px;
+ 
+}
+
+
+
+
+
+
+
+
