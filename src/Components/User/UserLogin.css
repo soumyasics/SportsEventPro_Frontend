@@ -60,12 +60,6 @@
     background-color: rgb(24, 89, 193);
     color: white;
 }
-/* .UserLoginLinks{
-    margin-left: 54px;
-    color: rgb(89, 173, 211);
-    margin-top: 89px;
-    
-} */
 .UserLoginImg1{
     margin-right: 1073px;
     position: relative;
@@ -77,19 +71,11 @@
     position: relative;
     bottom: 19px;
 }
-/* .UserLogoImg3{
-    position: relative;
-    top: 614px; */
-/* } */
 .UserLoginBdiv{
-    /* border: 2px solid white; */
-    background-color: #1995fc;
-    height: 148px;
+    background-color: #1b97ff;;
+    height: 93px;
     position: relative;
     bottom: -3px;
-
-   
-
 }
 .UserLoginBG{
     border: 2px solid white;
@@ -106,4 +92,11 @@
     position: absolute;
     bottom: -3px;
     left: 65px;
+}
+
+.validationEmail{
+    margin-left: 169px;
+}
+.validationPass{
+    margin-left: 169px;
 }

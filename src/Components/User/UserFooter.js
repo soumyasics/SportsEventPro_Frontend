@@ -1,16 +1,14 @@
-import React from 'react'
-import log from '../../Assets/Frame 18.png'
-import './UserFooter.css'
-
+import React from "react";
+import log from "../../Assets/Frame 18.png";
+import "./UserFooter.css";
 
 function UserFooter() {
   return (
     <div>
-                     <div>
-                     <div>
-        <img className="UserFooterImg1" src={log} />
-      </div>
-      <div>
+      <div className="BG">
+        <div>
+          <img className="UserFooterImg1" src={log} />
+        </div>
         <div class="UserFooterLink">
           <a class="UserFooterLink" href="">
             Home
@@ -21,7 +19,7 @@ function UserFooter() {
           <a class="UserFooterLink" href="">
             Login
           </a>
-          <a class="UserFooterLink"href="">
+          <a class="UserFooterLink" href="">
             Blog
           </a>
           <a class="UserFooterLink" href="">
@@ -31,10 +29,9 @@ function UserFooter() {
             FAQs
           </a>
         </div>
-                     </div>
-                     </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default UserFooter
+export default UserFooter;

@@ -1,10 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import "./UserLogin.css";
 import logo from "../../Assets/Frame 18.png";
 import drop from "../../Assets/Ellipse 1.png";
 import lock from '../../Assets/image 5.png'
 
 function UserLogin() {
+
+
+    const [data, setData] = useState({
+  
+      email: '',
+      password: ''
+  })
+  const [errors, setErrors] = useState({
+  
+      email: '',
+      password: ''
+  })
+  let formIsValid;
+  const handleChange = (event) => {
+      const { name, value } = event.target;
+      setData(prevData => ({
+          ...prevData,
+          [name]: value
+      }));
+      setErrors(prevErrors => ({
+          ...prevErrors,
+          [name]: ''
+      }));
+    };
+    const validateField = (fieldName, value) => {
+      if (!value.trim()) {
+        formIsValid=true;
+          return `${fieldName} is required`;
+      }
+      return '';
+  };
+  
+  
+  
+  const handleSubmit = (event) => {
+      event.preventDefault();
+  
+      let errors = {};
+       formIsValid = true;
+  
+      errors.email = validateField('email', data.email);
+      errors.password = validateField('Password', data.password);
+  
+  
+  
+  
+      setErrors(errors);
+  
+      if (formIsValid) {
+          console.log("data", data);
+          alert('Password is required')
+      }
+  
+  }
+  
+  
   return (
     <div>
       <div className="UserLoginBackground1">
@@ -49,20 +105,38 @@ function UserLogin() {
             <h1 class="UserLoginh1"> Sign In</h1>
           </div>
           <div>
-            <p className="UserLoginp1">Username</p>
+            <p className="UserLoginp1">Email</p>
             <input
               className="UserLogininput1"
-              type="text"
-              placeholder="Username"
-            ></input>
-          </div>
-          <div>
-            <p className="UserLoginp2">Email</p>
-            <input
-              className="UserLogininput2"
               type="email"
               placeholder="Email"
+              name="email"
+              value={data.email}
+              onChange={handleChange}
+              
+  
             ></input>
+                     <div class='validationEmail'>
+                      {errors.email && <div className="text-danger ">{errors.email}</div>}
+                      </div>
+          </div>
+          <div>
+            <p className="UserLoginp2">Password</p>
+            <input
+              className="UserLogininput2"
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={data.password}
+              onChange={handleChange}
+  
+            ></input>
+            <div class="validationPass">
+                      {errors.password && (
+            <div className="text-danger">{errors.password}</div>
+          )}
+          </div>
+
           </div>
           <div>
             <a className="UserLoginReset" href="">
@@ -80,7 +154,7 @@ function UserLogin() {
           </div>
 
           <div>
-            <button className="UserLoginButton" type="submit">
+            <button className="UserLoginButton" type="submit" onClick={handleSubmit}>
               Sign In
             </button>
           </div>
@@ -88,31 +162,6 @@ function UserLogin() {
                                                                                 <div className="UserLoginBdiv">
 
                                                                               </div>
-      {/* </div> */}
-      {/* <div>
-        <img className="UserLogoImg3" src={logo} />
-      </div>
-      <div>
-        <div class="UserLoginLinks">
-          <a class="UserLoginLinks" href="">
-            Home
-          </a>
-          <a class="UserLoginLinks" href="">
-            About
-          </a>
-          <a class="UserLoginLinks" href="">
-            Login
-          </a>
-          <a class="UserLoginLinks" href="">
-            Blog
-          </a>
-          <a class="UserLoginLinks" href="">
-            Success Stories
-          </a>
-          <a class="UserLoginLinks" href="">
-            FAQs
-          </a>
-        </div> */}
       </div>
     </div>
   );
