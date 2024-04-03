@@ -11,6 +11,7 @@ import Navbar from './Components/User/Navbar';
 import UserLogin from './Components/User/UserLogin';
 import UserSignup from './Components/User/UserSignup';
 import UserFooter from './Components/User/UserFooter';
+import Teamcoach from './Components/User/Assets/Teamcoach';
 
 function App() {
 
@@ -23,11 +24,13 @@ function App() {
          
           {/* <Route exact path="/" element={<LandingPage/>} />
           <Route exact path="user/" element={<Userhome/>} /> */}
-          <Route exact path="/" element={[<Navbar/>,<LandingPage/>,<Features/>]} />
+          {/* <Route exact path="/" element={[<Navbar/>,<LandingPage/>,<Features/>,<UserFooter/>]} />
           <Route exact path="/Navbar" element={<Navbar/>} />
-          <Route exact path="/UserLogin" element={<UserLogin/>} />
-          <Route exact path="/UserSignup" element={<UserSignup/>} />
-          <Route exact path="/UserFooter" element={<UserFooter/>} />
+          <Route exact path="/UserLogin" element={[<Navbar/>,<UserLogin/>,<UserFooter/>]} />
+          <Route exact path="/UserSignup" element={[<Navbar/>,<UserSignup/>,<UserFooter/>]} /> */}
+          <Route exact path="/" element={<Teamcoach/>} />
+          {/* <Route exact path="/UserFooter" element={<UserFooter/>} /> */}
+
           </Routes>
           
 
