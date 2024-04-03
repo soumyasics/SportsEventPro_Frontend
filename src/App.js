@@ -8,6 +8,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Userhome from './Components/User/Userhome';
 import Features from './Components/User/Features';
 import Navbar from './Components/User/Navbar';
+import Reset from './Components/User/Reset';
 
 function App() {
 
@@ -17,9 +18,9 @@ function App() {
 
       <Routes>
           <Route exact path="/" element={<LandingPage/>} />
-          <Route exact path="user/" element={<Userhome/>} />
-          <Route exact path="Features/" element={<Features/>} />
-          <Route exact path="Navbar/" element={<Navbar/>} />
+          <Route exact path="/user" element={[<Navbar/>,<Userhome/>,<Features/>]}/>
+          <Route exact path="/Navbar" element={<Navbar/>} />
+          <Route exact path="/Navbar" element={<Reset/>} />
           </Routes>
           
 
