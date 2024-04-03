@@ -11,3 +11,10 @@
     top: 48px;
     right: 44px;
 }
+.BG{
+    height: 150px;
+    position: relative;
+    bottom: -49px;
+    z-index: 2;
+    background-color: white;
+}
