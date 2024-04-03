@@ -162,31 +162,6 @@ function UserLogin() {
                                                                                 <div className="UserLoginBdiv">
 
                                                                               </div>
-      {/* </div> */}
-      {/* <div>
-        <img className="UserLogoImg3" src={logo} />
-      </div>
-      <div>
-        <div class="UserLoginLinks">
-          <a class="UserLoginLinks" href="">
-            Home
-          </a>
-          <a class="UserLoginLinks" href="">
-            About
-          </a>
-          <a class="UserLoginLinks" href="">
-            Login
-          </a>
-          <a class="UserLoginLinks" href="">
-            Blog
-          </a>
-          <a class="UserLoginLinks" href="">
-            Success Stories
-          </a>
-          <a class="UserLoginLinks" href="">
-            FAQs
-          </a>
-        </div> */}
       </div>
     </div>
   );
