@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './AdminLogin.css'
-import ImgL from '../Assets/image 5.png'
+import ImgL from '../../Assets/image 5.png'
 
 function AdminLogin() {
     const [data, setData] = useState({

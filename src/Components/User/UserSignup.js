@@ -2,7 +2,7 @@ import React from 'react'
 import'./UserSignup.css'
 import img1 from '../../Assets/Frame 18.png'
 import img2 from '../../Assets/Ellipse 1.png'
-import img3 from '../../Assets/image 6.png'
+import img3 from '../../Assets/image.png'
 
 function UserSignup() {
   return (
