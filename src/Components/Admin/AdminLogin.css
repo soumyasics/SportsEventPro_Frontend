@@ -86,13 +86,13 @@
 form{
     border: 2px solid white;
     height: 495px;
-    background-image: url(../Assets/bg-1.png);
+    background-image: url(../../Assets/bg-1.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     bottom: 13px;
  
-}
+} 
 
 
 
