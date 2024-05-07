@@ -1,0 +1,126 @@
+body {
+    position: relative;
+    bottom: 72px;
+    width: 1522px;
+    height: 512px;
+    background-color: #1b97ff;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    box-sizing: border-box;
+    width: 450px;
+    height: 550px;
+    padding: 48px 68px;
+    margin-top: 112px;
+}
+
+.dropdowninput {
+    height: 47px;
+    width: 246px;
+
+    margin-left: 160px;
+    border-radius: 10px;
+    margin-left: 200px;
+    margin-bottom: 25px;
+
+}
+
+.input1 {
+    height: 47px;
+    width: 246px;
+    margin-left: 160px;
+    border-radius: 10px;
+    margin-top: 29px;
+    margin-left: 400px;
+    margin-bottom: 25px;
+    color: #151513;
+}
+
+.input2 {
+    height: 47px;
+    width: 246px;
+
+    margin-left: 160px;
+    border-radius: 10px;
+    margin-left: 400px;
+    margin-bottom: 25px;
+
+
+}
+
+.input3 {
+    height: 47px;
+    width: 246px;
+
+    margin-left: 160px;
+    border-radius: 10px;
+    margin-left: 400px;
+    margin-bottom: 25px;
+
+}
+
+.input4 {
+    height: 47px;
+    width: 246px;
+
+    margin-left: 160px;
+    border-radius: 10px;
+    margin-left: 400px;
+    margin-bottom: 25px;
+
+}
+
+.input5 {
+    height: 47px;
+    width: 246px;
+
+    margin-left: 160px;
+    border-radius: 10px;
+    margin-left: 400px;
+    margin-bottom: 25px;
+
+}
+
+.input6 {
+    height: 47px;
+    width: 246px;
+
+    margin-left: 160px;
+    border-radius: 10px;
+
+    margin-top: 20px;
+    margin-left: 400px;
+    margin-bottom: 25px;
+
+}
+
+/* .div {
+    color: white;
+    background-color: white;
+    height: 400px;
+    width: 500px;
+    position: relative;
+    right: 400px;
+    background-image: url("./Assets/image\ 6.png")
+} */
+
+.img1 {
+    height: 412px;
+    position: relative;
+    right: 405px;
+    top: 30px;
+}
+
+.mainform {
+    position: absolute;
+    left: 388px;
+
+}
+.text{
+    color: white;
+}
