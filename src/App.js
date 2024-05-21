@@ -12,7 +12,7 @@ import Teamcoach from './Components/User/Teamcoach';
 import UserLogin from './Components/User/UserLogin';
 import UserSignup from './Components/User/UserSignup';
 import UserFooter from './Components/User/UserFooter';
-// import AdminLogin from './Components/Admin/AdminLogin';
+import AdminLogin from './Components/Admin/AdminLogin';
 import Navbar2 from './Components/Navbar2';
 import TeamCoachLogin from './Components/TeamCoach/TeamCoachLogin';
 
@@ -32,13 +32,10 @@ function App() {
           <Route exact path="/Navbar" element={<Navbar/>} />
           <Route exact path="/UserLogin" element={[<Navbar/>,<UserLogin/>,<UserFooter/>]} />
           <Route exact path="/UserSignup" element={[<Navbar/>,<UserSignup/>,<UserFooter/>]} />
-          <Route exact path="/UserFooter" element={<UserFooter/>} /> 
-          {/* <Route exact path="/AdminLogin" element={[<Navbar/>,<Navbar2/>,<AdminLogin/>,<UserFooter/>]} /> */}
-           <Route exact path="/TeamCoachLogin" element={[<Navbar/>,<TeamCoachLogin/>]} />
-          <Route exact path="/TeamCoach" element={[<Teamcoach/>]} /> 
-          <Route exact path="/USERT" element={[<UserSignup/>]} />
-
-
+          <Route exact path="/UserFooter" element={<UserFooter/>} />
+          <Route exact path="/AdminLogin" element={[<Navbar/>,<Navbar2/>,<AdminLogin/>,<UserFooter/>]} />
+          <Route exact path="/TeamCoachLogin" element={[<Navbar/>,<TeamCoachLogin/>,<UserFooter/>]} />
+          <Route exact path="/TeamCoach" element={[<Teamcoach/>]} />
 
           </Routes>
           

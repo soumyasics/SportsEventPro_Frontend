@@ -10,13 +10,13 @@ import img6 from "../../Assets/image.png"
 function TeamCoachLogin() {
     const [data, setData] = useState({
   
-        email: '',
-        password: ''
+        Email: '',
+        Password: ''
     })
     const [errors, setErrors] = useState({
     
-        email: '',
-        password: ''
+        Email: '',
+        Password: ''
     })
     let formIsValid;
     const handleChange = (event) => {
@@ -42,86 +42,84 @@ function TeamCoachLogin() {
     
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(data);
     
         let errors = {};
          formIsValid = true;
     
-        errors.email = validateField('email', data.email);
-        errors.password = validateField('Password', data.password);
+        errors.Email = validateField('Email', data.Email);
+        errors.Password = validateField('Password', data.Password);
     
     
     
     
         setErrors(errors);
-    
     }
 
     return (
         <div>
-            <div class="background">
+            <div class="teambackground">
                 
                         <div>
-                        <div class="UserLoginh1">
-                            <h1 class="UserLoginh1">Team Coach Login</h1>
+                        <div class="teamLoginh1">
+                            <h1 class="teamLoginh1">Team Coach Login</h1>
                         </div>
-                        <div class="backgroundimg">
-                    <img class="userloginimg"src={img6} alt="image not found"></img>
-                    
+                        <div class="teambackgroundimg">
+                    <img class="teamloginimg"src={img6} alt="image not found"></img>
+                    </div>
+                    </div>
                         </div>
-                        <div class="login">
+                        <div class="teamlogin">
                         <div>
-                            <p className="UserLoginp1"></p>
+                            <p className="teamLoginp1"></p>
                             <input
-                                className="UserLogininput1"
-                                type="email"
+                                className="teamLogininput1"
+                                type="Email"
                                 placeholder="Email"
-                                name="email"
-                                value={data.email}
+                                name="Email"
+                                value={data.Email}
                                 onChange={handleChange}
                             ></input>
                                                  <div class='AdminValidationEmail'>
-                      {errors.email && <div className="text-danger ">{errors.email}</div>}
+                      {errors.Email && <div className="text-danger ">{errors.Email}</div>}
                       </div>
                         </div>
 
                         <div>
-                            <p className="UserLoginp2"></p>
+                            <p className="teamLoginp2"></p>
                             <input
-                                className="UserLogininput2"
-                                type="password"
+                                className="teamLogininput2"
+                                type="Password"
                                 placeholder="Password"
-                                name="password"
-                                value={data.password}
+                                name="Password"
+                                value={data.Password}
                                 onChange={handleChange}
 
                             ></input>
                                         <div class="AdminValidationPass">
-                      {errors.password && (
-            <div className="text-danger">{errors.password}</div>
+                      {errors.Password && (
+            <div className="text-danger">{errors.Password}</div>
           )}
           </div>
                         </div>
 
                     </div>
                     <div>
-                        <a className="UserLoginReset" href="">
-                            Reset Password
+                        <a className="teamLoginReset" href="forgetpassword">
+                            Forget Password
                         </a>
                     </div>
                     <div>
-                        <a className="UserLoginSignin" href="">
+                        <a className="teamLoginSignin" href="signup">
                             Sign up
                         </a>
                     </div>
 
                     <div>
-                        <button className="UserLoginButton" type="submit" onClick={handleSubmit}>
+                        <button className="teamLoginButton" type="submit" onClick={handleSubmit}>
                             Login
                         </button>
                         </div>
-                    </div>
-                
-            </div>
         </div>
 
     )
