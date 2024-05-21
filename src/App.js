@@ -34,7 +34,7 @@ function App() {
           <Route exact path="/UserSignup" element={[<Navbar/>,<UserSignup/>,<UserFooter/>]} />
           <Route exact path="/UserFooter" element={<UserFooter/>} />
           <Route exact path="/AdminLogin" element={[<Navbar/>,<Navbar2/>,<AdminLogin/>,<UserFooter/>]} />
-          <Route exact path="/TeamCoachLogin" element={[<Navbar/>,<TeamCoachLogin/>]} />
+          <Route exact path="/TeamCoachLogin" element={[<Navbar/>,<TeamCoachLogin/>,<UserFooter/>]} />
           </Routes>
           
 

@@ -41,6 +41,7 @@ function UserLogin() {
   
   const handleSubmit = (event) => {
       event.preventDefault();
+      console.log(data);
   
       let errors = {};
        formIsValid = true;
@@ -55,7 +56,6 @@ function UserLogin() {
   
       if (formIsValid) {
           console.log("data", data);
-          alert('Password is required')
       }
   
   }
