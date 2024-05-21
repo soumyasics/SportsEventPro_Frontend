@@ -49,10 +49,7 @@ function AdminLogin() {
     
         setErrors(errors);
     
-        // if (formIsValid) {
-        //     console.log("data", data);
-        //     alert('Password is required')
-        // }
+       
     
     }
     

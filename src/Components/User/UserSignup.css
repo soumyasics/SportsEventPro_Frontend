@@ -93,5 +93,19 @@
     height: 357px;
     position: relative;
     right: 322px;
-    bottom: 276px;
+    bottom: 277px;
 }
+
+.validationEmail{
+    margin-left: 135px;
+}
+.validationpassword{
+    margin-left: 169px;
+}
+.validationdateofbirth{
+    margin-left: 188px;
+}
+.validationusername{
+    margin-left: 169px;
+}
+
