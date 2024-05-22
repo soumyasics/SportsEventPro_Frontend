@@ -7,8 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Userhome from './Components/User/Userhome';
 import Features from './Components/User/Features';
 import Navbar from './Components/User/Navbar';
-import Teamcoach from './Components/User/Teamcoach';
-
+import TeamcoachReg from './Components/TeamCoach/TeamcoachReg';
 import UserLogin from './Components/User/UserLogin';
 import UserSignup from './Components/User/UserSignup';
 import UserFooter from './Components/User/UserFooter';
@@ -35,7 +34,7 @@ function App() {
           <Route exact path="/UserFooter" element={<UserFooter/>} />
           <Route exact path="/AdminLogin" element={[<Navbar/>,<Navbar2/>,<AdminLogin/>,<UserFooter/>]} />
           <Route exact path="/TeamCoachLogin" element={[<Navbar/>,<TeamCoachLogin/>,<UserFooter/>]} />
-          <Route exact path="/TeamCoach" element={[<Teamcoach/>]} />
+          <Route exact path="/TeamCoachreg" element={<TeamcoachReg/>} />
 
           </Routes>
           

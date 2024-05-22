@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import "./Teamcoach.css"
-import img from './Assets/image 6.png'
-function Teamcoach() {
+import "./TeamcoachReg.css"
+import img from '../../Assets/image 6.png'
+function TeamcoachReg() {
 
 
     const [data, setData] = useState({
@@ -9,10 +9,12 @@ function Teamcoach() {
         name: '',
         district: '',
         email: '',
+        password:'',
         contactnumber: '',
         teamname: '',
         experienceinyears: '',
-        experience:[]
+        experience:[],
+        profile:'',
 
     })
     const [errors, setErrors] = useState({
@@ -20,10 +22,12 @@ function Teamcoach() {
         name: '',
         district: '',
         email: '',
+        password:'',
         contactnumber: '',
         teamname: '',
         experienceinyears: '',
-        experience:[]
+        experience:[],
+        profile:'',
 
     })
     let formIsValid;
@@ -59,9 +63,10 @@ function Teamcoach() {
         errors.district = validateField('name', data.district);
         errors.contactnumber = validateField('contactnumber', data.contactnumber);
         errors.name = validateField('name', data.name);
-        errors.experienceinyears = validateField('expireanceinyears', data.experienceinyears);
+        errors.experienceinyears = validateField('experience in years', data.experienceinyears);
         errors.teamname = validateField('teamname', data.teamname);
-        // errors.expireance = validateField('experience', data.experience);
+        errors.password = validateField('password', data.password);
+        errors.profile = validateField('profile', data.profile);
 
 
 
@@ -71,9 +76,8 @@ function Teamcoach() {
 
         if (formIsValid) {
             console.log("data", data);
-            alert('missing any field')
-        }
 
+        }
     }
 
 
@@ -120,6 +124,16 @@ function Teamcoach() {
                                 {errors.email && <div className="text-danger ">{errors.email}</div>}
                             </div>
                             <div>
+                                <input className='input3' type='password' placeholder='password' name="password"
+                                    value={data.password}
+                                    onChange={handleChange} />
+
+                            </div>
+                            <div class='validationemail'>
+                                {errors.password && <div className="text-danger ">{errors.password}</div>}
+                            </div>
+
+                            <div>
                                 <input className='input4' type='number' placeholder='Contact number' name="contactnumber"
                                     value={data.contactnumber}
                                     onChange={handleChange} />
@@ -165,6 +179,13 @@ function Teamcoach() {
 
                             </div>
                             <div>
+                               
+                                <input className='input6' type='file' placeholder='Experience' name="profile"
+                                    value={data.profile}
+                                    onChange={handleChange} /> <label>profile pic</label>
+
+                            </div>
+                            <div>
                                 <input className='input6' type='submit' placeholder='submit' onClick={handleSubmit}
                                      />
 
@@ -190,4 +211,4 @@ function Teamcoach() {
     )
 }
 
-export default Teamcoach
+export default TeamcoachReg;
