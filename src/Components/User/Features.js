@@ -1,13 +1,13 @@
 import React from 'react'
 import './Features.css'
-import i from './Assets/Rectangle 7.png'
-import i2 from './Assets/Rectangle 8.png'
-import i3 from './Assets/Rectangle 9.png'
-import i4 from './Assets/Rectangle 10.png'
-import i5 from './Assets/Rectangle 6.png'
-import i6 from './Assets/Ellipse 5.png'
-import i7 from './Assets/Rectangle 32.png'
-import i8 from './Assets/Rectangle 11.png'
+import i from '../../Assets/Rectangle 7.png'
+import i2 from '../../Assets/Rectangle 8.png'
+import i3 from '../../Assets/Rectangle 9.png'
+import i4 from '../../Assets/Rectangle 10.png'
+import i5 from '../../Assets/Rectangle 6.png'
+import i6 from '../../Assets/Ellipse 5.png'
+import i7 from '../../Assets/Rectangle 32.png'
+import i8 from '../../Assets/Rectangle 11.png'
 
 
 

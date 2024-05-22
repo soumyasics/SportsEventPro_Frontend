@@ -12,7 +12,7 @@ import UserLogin from './Components/User/UserLogin';
 import UserSignup from './Components/User/UserSignup';
 import UserFooter from './Components/User/UserFooter';
 import AdminLogin from './Components/Admin/AdminLogin';
-import Navbar2 from './Components/Navbar2';
+import Navbar2 from './Components/LandingComponents/Navbar2';
 import TeamCoachLogin from './Components/TeamCoach/TeamCoachLogin';
 
 
