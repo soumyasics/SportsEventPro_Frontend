@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./Teamcoach.css"
-import img from './Assets/image 6.png'
+import img from '../../Assets/image 6.png'
 function Teamcoach() {
 
 

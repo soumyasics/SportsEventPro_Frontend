@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./UserLogin.css";
 import logo from "../../Assets/Frame 18.png";
 import drop from "../../Assets/Ellipse 1.png";
-import lock from '../../Assets/image 5.png'
+import lock from '../../Assets/image 5.png';
 
 function UserLogin() {
 

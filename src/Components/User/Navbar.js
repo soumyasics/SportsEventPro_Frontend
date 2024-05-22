@@ -1,8 +1,6 @@
 import React from 'react'
 import './Navbar.css'
-import logo from './Assets/Frame 17.png'
-import second from './Assets/Ellipse 1.png'
-
+import logo from '../../Assets/Frame 17.png'
 
 
 function Navbar() {

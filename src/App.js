@@ -7,7 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Userhome from './Components/User/Userhome';
 import Features from './Components/User/Features';
 import Navbar from './Components/User/Navbar';
-import Teamcoach from './Components/User/Teamcoach';
+import Teamcoach from './Components/TeamCoach/Teamcoach';
 
 import UserLogin from './Components/User/UserLogin';
 import UserSignup from './Components/User/UserSignup';
