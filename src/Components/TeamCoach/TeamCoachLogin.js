@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './TeamCoachLogin.css'
 import img6 from "../../Assets/image.png"
+import axios from 'axios'
 
 
 
@@ -10,13 +11,13 @@ import img6 from "../../Assets/image.png"
 function TeamCoachLogin() {
     const [data, setData] = useState({
   
-        Email: '',
-        Password: ''
+        email: '',
+        password: ''
     })
     const [errors, setErrors] = useState({
     
-        Email: '',
-        Password: ''
+        email: '',
+        password: ''
     })
     let formIsValid;
     const handleChange = (event) => {
@@ -32,7 +33,7 @@ function TeamCoachLogin() {
       };
       const validateField = (fieldName, value) => {
         if (!value.trim()) {
-          formIsValid=true;
+          formIsValid=false;
             return `${fieldName} is required`;
         }
         return '';
@@ -41,20 +42,45 @@ function TeamCoachLogin() {
     
     
     const handleSubmit = (event) => {
+
         event.preventDefault();
         console.log(data);
     
         let errors = {};
          formIsValid = true;
     
-        errors.Email = validateField('Email', data.Email);
-        errors.Password = validateField('Password', data.Password);
+        errors.email = validateField('email', data.email);
+        errors.password = validateField('password', data.password);
     
-    
+    if(formIsValid){
+        BackendData()
+    }
     
     
         setErrors(errors);
+        
     }
+
+const BackendData = () => {
+console.log("fun called",data);
+    axios.post('http://localhost:4038/sports_event_pro_api/loginTeamCoach',data)
+      .then(response => {
+        console.log(response);
+        if(response.data.status==200){
+            alert("Login Successful")
+        }else
+alert(response.data.msg)       
+        
+    
+      })
+      .catch(error => {
+        console.error(error);
+     
+    
+})
+}
+
+
 
     return (
         <div>
@@ -69,19 +95,20 @@ function TeamCoachLogin() {
                     </div>
                     </div>
                         </div>
+                        <form onSubmit={handleSubmit}>
                         <div class="teamlogin">
                         <div>
                             <p className="teamLoginp1"></p>
                             <input
                                 className="teamLogininput1"
-                                type="Email"
-                                placeholder="Email"
-                                name="Email"
-                                value={data.Email}
+                                type="email"
+                                placeholder="email"
+                                name="email"
+                                value={data.email}
                                 onChange={handleChange}
                             ></input>
-                                                 <div class='AdminValidationEmail'>
-                      {errors.Email && <div className="text-danger ">{errors.Email}</div>}
+                                                 <div class='AdminValidationemail'>
+                      {errors.email && <div className="text-danger ">{errors.email}</div>}
                       </div>
                         </div>
 
@@ -89,24 +116,31 @@ function TeamCoachLogin() {
                             <p className="teamLoginp2"></p>
                             <input
                                 className="teamLogininput2"
-                                type="Password"
-                                placeholder="Password"
-                                name="Password"
-                                value={data.Password}
+                                type="password"
+                                placeholder="password"
+                                name="password"
+                                value={data.password}
                                 onChange={handleChange}
 
                             ></input>
                                         <div class="AdminValidationPass">
-                      {errors.Password && (
-            <div className="text-danger">{errors.Password}</div>
+                      {errors.password && (
+            <div className="text-danger">{errors.password}</div>
           )}
           </div>
+          
                         </div>
 
                     </div>
                     <div>
+                        <button className="teamLoginButton" type="submit">
+                            Login
+                        </button>
+                        </div>
+                    </form>
+                    <div>
                         <a className="teamLoginReset" href="forgetpassword">
-                            Forget Password
+                            Forget password
                         </a>
                     </div>
                     <div>
@@ -115,11 +149,7 @@ function TeamCoachLogin() {
                         </a>
                     </div>
 
-                    <div>
-                        <button className="teamLoginButton" type="submit" onClick={handleSubmit}>
-                            Login
-                        </button>
-                        </div>
+                    
         </div>
 
     )
