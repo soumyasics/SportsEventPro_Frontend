@@ -1,19 +1,19 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LandingNavbar from './Components/LandingComponents/LandingNavbar';
-import LandingPage from './Components/LandingComponents/LandingPage';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import Userhome from './Components/User/Userhome';
-import Features from './Components/User/Features';
+// import LandingNavbar from './Components/LandingComponents/LandingNavbar';
+// import LandingPage from './Components/LandingComponents/LandingPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// import Userhome from './Components/User/Userhome';
+// import Features from './Components/User/Features';
 import Navbar from './Components/User/Navbar';
-import TeamcoachReg from './Components/TeamCoach/TeamcoachReg';
-import UserLogin from './Components/User/UserLogin';
-import UserSignup from './Components/User/UserSignup';
-import UserFooter from './Components/User/UserFooter';
+// import TeamcoachReg from './Components/TeamCoach/TeamcoachReg';
+// import UserLogin from './Components/User/UserLogin';
+// import UserSignup from './Components/User/UserSignup';
+// import UserFooter from './Components/User/UserFooter';
 import AdminLogin from './Components/Admin/AdminLogin';
-import Navbar2 from './Components/LandingComponents/Navbar2';
-import TeamCoachLogin from './Components/TeamCoach/TeamCoachLogin';
+// import Navbar2 from './Components/LandingComponents/Navbar2';
+// import TeamCoachLogin from './Components/TeamCoach/TeamCoachLogin';
 
 
 function App() {
@@ -24,17 +24,17 @@ function App() {
       <div className="App">
       
       <Routes>
-           <Route exact path="/" element={[<Navbar/>,<LandingPage/>,<Features/>]} />
+           {/* <Route exact path="/" element={[<Navbar/>,<LandingPage/>,<Features/>]} />
           <Route exact path="/userhome" element={<Userhome/>} />
           <Route exact path="/Features" element={<Features/>} />
          
           <Route exact path="/Navbar" element={<Navbar/>} />
           <Route exact path="/UserLogin" element={[<Navbar/>,<UserLogin/>,<UserFooter/>]} />
           <Route exact path="/UserSignup" element={[<Navbar/>,<UserSignup/>,<UserFooter/>]} />
-          <Route exact path="/UserFooter" element={<UserFooter/>} />
-          <Route exact path="/AdminLogin" element={[<Navbar/>,<Navbar2/>,<AdminLogin/>,<UserFooter/>]} />
-          <Route exact path="/TeamCoachLogin" element={[<Navbar/>,<TeamCoachLogin/>,<UserFooter/>]} />
-          <Route exact path="/TeamCoachreg" element={<TeamcoachReg/>} />
+          <Route exact path="/UserFooter" element={<UserFooter/>} /> */}
+          <Route exact path="/AdminLogin" element={<AdminLogin/>} />
+          {/* <Route exact path="/TeamCoachLogin" element={[<Navbar/>,<TeamCoachLogin/>,<UserFooter/>]} />
+          <Route exact path="/TeamCoachreg" element={<TeamcoachReg/>} /> */}
 
           </Routes>
           
