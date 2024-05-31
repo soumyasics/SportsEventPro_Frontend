@@ -1,0 +1,62 @@
+
+body{
+    background-color: #1b97ff;
+    height: min-content;
+}
+.contactinput1 {
+    height: 47px;
+    width: 246px;
+    margin-left: 160px;
+    margin-top: 29px;
+    margin-left: 400px;
+    margin-bottom: 25px;
+    color: #151513;
+}
+.contactinput3 {
+    height: 47px;
+    width: 246px;
+    margin-left: 160px;
+    margin-left: 400px;
+    margin-bottom: 25px;
+}
+.contactinput4 {
+    height: 130px;
+    width: 246px;
+    margin-left: 160px;
+    margin-left: 400px;
+    margin-bottom: 25px;
+}
+
+.contactmainform {
+    position: absolute;
+    left: 547px;
+    top: 131px;
+}
+.contacthead{
+    color: white;
+    position: absolute;
+    top: 57px;
+    right: 275px;
+    font-weight: bolder;
+    font-size: 60px;
+}
+.contactmaindiv1{
+    left: -121px;
+    width: 43%;
+    background-color: white;
+}
+.contactmaindiv2{
+    width: 50%;
+    background-color: #1b97ff ;
+}
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.contactimg{
+    margin-top: 70px;
+    margin-left: 3px;
+    height: 352px;
+}
