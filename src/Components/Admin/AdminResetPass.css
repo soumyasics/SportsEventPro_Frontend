@@ -1,0 +1,33 @@
+.container{
+    margin-top: 62px;
+    width: 500px;
+    margin-left: 800px;
+}
+.button{
+    margin-left: 812px;
+    margin-top: 23px;
+    color: white;
+    background-color: black;
+    width: 224px;
+    height: 50px;
+}
+.resetimg{
+    margin-top: -500px;
+    width: 419px;
+    margin-left: 173px;
+}
+.mail{
+    width: 444px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.password{
+    width: 444px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.cpassword{
+    width: 444px;
+    height: 50px;
+    margin-bottom: 20px;
+}

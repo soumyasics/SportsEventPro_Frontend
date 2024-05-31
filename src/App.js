@@ -2,10 +2,11 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import LandingNavbar from './Components/LandingComponents/LandingNavbar';
 // import LandingPage from './Components/LandingComponents/LandingPage';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 // import Userhome from './Components/User/Userhome';
 // import Features from './Components/User/Features';
+// import Navbar from './Components/User/Navbar';
 // import Navbar from './Components/User/Navbar';
 // import TeamcoachReg from './Components/TeamCoach/TeamcoachReg';
 // import UserLogin from './Components/User/UserLogin';
@@ -13,7 +14,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // import UserFooter from './Components/User/UserFooter';
 // import AdminLogin from './Components/Admin/AdminLogin';
 // import Navbar2 from './Components/LandingComponents/Navbar2';
-import TeamCoachLogin from './Components/TeamCoach/TeamCoachLogin';
+// import TeamCoachLogin from './Components/TeamCoach/TeamCoachLogin';
+import AdminResetPass from './Components/Admin/AdminResetPass';
 
 
 function App() {
@@ -33,9 +35,12 @@ function App() {
           <Route exact path="/UserSignup" element={[<Navbar/>,<UserSignup/>,<UserFooter/>]} />
           <Route exact path="/UserFooter" element={<UserFooter/>} /> */}
           {/* <Route exact path="/AdminLogin" element={<AdminLogin/>} /> */}
-           <Route exact path="/TeamCoachLogin" element={<TeamCoachLogin/>} />
+           {/* <Route exact path="/TeamCoachLogin" element={<TeamCoachLogin/>} /> */}
           {/* <Route exact path="/TeamCoachreg" element={<TeamcoachReg/>} />  */}
+          <Route exact path="/" element={<AdminResetPass/>} />
 
+          
+           {/* <Route exact path="/Contact" element={[<Navbar/>,<Contact/>,<UserFooter/>]} />  */}
           </Routes>
           
 
