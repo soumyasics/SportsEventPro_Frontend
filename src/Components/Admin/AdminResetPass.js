@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './AdminResetPass.css'
 import resetimg from "../../Assets/Security On 1.png"
 import axios from 'axios'
+import axiosInstance from '../Constant/BaseURL'
 
 function AdminResetPass() {
     const [data, setData] = useState({
@@ -63,7 +64,7 @@ function AdminResetPass() {
 
 const BackendData = () => {
 console.log("fun called",data);
-    axios.post('http://localhost:4038/sports_event_pro_api/adminpassword',data)
+    axiosInstance.post('adminpassword',data)
       .then(response => {
         console.log(response);
         if(response.data.status==200){
