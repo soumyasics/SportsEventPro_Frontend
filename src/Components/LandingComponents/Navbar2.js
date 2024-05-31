@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from "../../Assets/Frame 18.png";
-import drop from "../../Assets/Ellipse 1.png";
+import logo from "../../src/Assets/Frame 18.png";
+import drop from "../../src/Assets/Ellipse 1.png";
 
 
 function Navbar2() {

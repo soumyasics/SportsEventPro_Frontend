@@ -7,14 +7,13 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 // import Userhome from './Components/User/Userhome';
 // import Features from './Components/User/Features';
 // import Navbar from './Components/User/Navbar';
-import TeamcoachReg from './Components/TeamCoach/TeamcoachReg';
+// import TeamcoachReg from './Components/TeamCoach/TeamcoachReg';
 // import UserLogin from './Components/User/UserLogin';
 // import UserSignup from './Components/User/UserSignup';
 // import UserFooter from './Components/User/UserFooter';
-import AdminLogin from './Components/Admin/AdminLogin';
-// import Navbar2 from './Components/LandingComponents/Navbar2';
-// import TeamCoachLogin from './Components/TeamCoach/TeamCoachLogin';
-// import Contact from './Components/LandingComponents/Contact';
+// import AdminLogin from './Components/Admin/AdminLogin';
+//  import TeamCoachLogin from './Components/TeamCoach/TeamCoachLogin';
+import AdminResetPass from './Components/Admin/AdminResetPass';
 
 
 function App() {
@@ -33,12 +32,14 @@ function App() {
           <Route exact path="/UserLogin" element={[<Navbar/>,<UserLogin/>,<UserFooter/>]} />
           <Route exact path="/UserSignup" element={[<Navbar/>,<UserSignup/>,<UserFooter/>]} />
           <Route exact path="/UserFooter" element={<UserFooter/>} /> */}
-          <Route exact path="/AdminLogin" element={<AdminLogin/>} />
-          {/* <Route exact path="/TeamCoachLogin" element={[<Navbar/>,<TeamCoachLogin/>,<UserFooter/>]} /> */}
-          <Route exact path="/TeamCoachreg" element={[<TeamcoachReg/>]} />
+          {/* <Route exact path="/AdminLogin" element={<AdminLogin/>} /> */}
+          {/* <Route exact path="/TeamCoachLogin" element={<TeamCoachLogin/>} /> */}
+          <Route exact path="/AdminResetPass" element={<AdminResetPass/>} />
+
+          {/* <Route exact path="/TeamCoachreg" element={[<Navbar/>,<TeamcoachReg/>,<UserFooter/>]} /> */}
 
           
-          {/* <Route exact path="/Contact" element={[<Navbar/>,<Contact/>,<UserFooter/>]} /> */}
+           {/* <Route exact path="/Contact" element={[<Navbar/>,<Contact/>,<UserFooter/>]} />  */}
           </Routes>
           
 
