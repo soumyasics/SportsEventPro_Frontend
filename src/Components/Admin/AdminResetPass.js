@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './AdminResetPass.css'
 import resetimg from "../../Assets/Security On 1.png"
+import axios from 'axios'
+
 
 
 function AdminResetPass() {
@@ -57,11 +59,33 @@ function AdminResetPass() {
 
         if (formIsValid) {
             console.log("data", data);
-
+            BackendData()
         }
+        
+        
+            setErrors(errors);
+            
+        }
+    
+    const BackendData = () => {
+    console.log("fun called",data);
+        axios.post('http://localhost:4038/sports_event_pro_api/adminpassword',data)
+          .then(response => {
+            console.log(response);
+            if(response.data.status==200){
+                alert("Password reset Successful")
+            }else
+    alert(response.data.msg)
+            
+        
+          })
+          .catch(error => {
+            console.error(error);
+         
+        
+    })
     }
-
-    return (
+        return (
         <div>
 
             <div className='container'>
