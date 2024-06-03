@@ -53,13 +53,23 @@ function AdminResetPass() {
         errors.password = validateField('Password', data.password);
         errors.confirmpassword = validateField('Confirm Password', data.confirmpassword);
 
-
         setErrors(errors);
-    if(formIsValid ){
-        BackendData()
-    }
-
-         setErrors(errors);
+      const abc=()=>{
+            if(formIsValid && data.email=="admin@gmail.com"){
+                BackendData()
+            }
+            else{
+                alert("user not found")
+            }
+        }
+        if (data.password == data.confirmpassword){
+            abc()
+        }else{
+            alert("password does not match")
+        }
+      
+        
+        
     }
 
 const BackendData = () => {
