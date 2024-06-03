@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './AdminResetPass.css'
 import resetimg from "../../Assets/Security On 1.png"
 import axios from 'axios'
+import axiosInstance from '../Constant/BaseURL'
 
 
 
@@ -56,10 +57,21 @@ function AdminResetPass() {
 
 
         setErrors(errors);
+const nunnu=()=>{
+        if (formIsValid && data.email=="admin@gmail.com") {
 
-        if (formIsValid) {
             console.log("data", data);
-            BackendData()
+            BackendData()}
+            else{
+                alert("user not found")
+            }
+        }
+        if (data.password==data.confirmpassword){
+            nunnu()
+        }
+        else{
+            alert("password does not match")
+        
         }
         
         
@@ -69,7 +81,7 @@ function AdminResetPass() {
     
     const BackendData = () => {
     console.log("fun called",data);
-        axios.post('http://localhost:4038/sports_event_pro_api/adminpassword',data)
+        axiosInstance.post('adminpassword',data)
           .then(response => {
             console.log(response);
             if(response.data.status==200){

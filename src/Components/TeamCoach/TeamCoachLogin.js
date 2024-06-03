@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './TeamCoachLogin.css'
 import img6 from "../../Assets/image.png"
 import axios from 'axios'
+import axiosInstance from '../Constant/BaseURL'
 
 
 
@@ -63,7 +64,7 @@ function TeamCoachLogin() {
 
 const BackendData = () => {
 console.log("fun called",data);
-    axios.post('http://localhost:4038/sports_event_pro_api/loginTeamCoach',data)
+    axiosInstance.post('loginTeamCoach',data)
       .then(response => {
         console.log(response);
         if(response.data.status==200){
