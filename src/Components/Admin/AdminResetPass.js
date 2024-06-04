@@ -4,6 +4,8 @@ import resetimg from "../../Assets/Security On 1.png"
 import axios from 'axios'
 import axiosInstance from '../Constant/BaseURL'
 
+
+
 function AdminResetPass() {
     const [data, setData] = useState({
 
@@ -55,44 +57,55 @@ function AdminResetPass() {
 
 
         setErrors(errors);
-    if(formIsValid ){
-        BackendData()
-    }
+const nunnu=()=>{
+        if (formIsValid && data.email=="admin@gmail.com") {
 
-         setErrors(errors);
-    }
-
-const BackendData = () => {
-console.log("fun called",data);
-    axiosInstance.post('adminpassword',data)
-      .then(response => {
-        console.log(response);
-        if(response.data.status==200){
-            alert(response.data.msg)
-        }else
-alert(response.data.msg)       
+            console.log("data", data);
+            BackendData()}
+            else{
+                alert("user not found")
+            }
+        }
+        if (data.password==data.confirmpassword){
+            nunnu()
+        }
+        else{
+            alert("password does not match")
         
-    
-      })
-      .catch(error => {
-        console.error(error);
-     
-    
-})
-}
-
-    
-
-    return (
+        }
+        
+        
+            setErrors(errors);
+            
+        }
+    const BackendData = () => {
+    console.log("fun called",data);
+        axiosInstance.post('adminpassword',data)
+          .then(response => {
+            console.log(response);
+            if(response.data.status==200){
+                alert("Password reset Successful")
+            }else
+    alert(response.data.msg)
+            
+        
+          })
+          .catch(error => {
+            console.error(error);
+         
+        
+    })
+    }
+        return (
         <div>
 
-            <div className='container'>
+            <div className='adminresetdiv1'>
                 <h1>Reset Password</h1>
                 <p>Reset your password to secure your account.</p>
                 <form>
                     <div>
                         <label>E-mail Id</label></div>
-                    <input className='mail' type='mail' placeholder='Enter your email' name="email"
+                    <input className='adminmail' type='mail' placeholder='Enter your email' name="email"
                         value={data.email}
                         onChange={handleChange} />
                     <div class='validationname'>
@@ -100,14 +113,14 @@ alert(response.data.msg)
                     </div>
                     <div>
                         <label>Password</label></div>
-                    <input className='password' type='password' placeholder='password' name="password"
+                    <input className='adminpassword' type='password' placeholder='password' name="password"
                         value={data.password}
                         onChange={handleChange} />
                     <div class='validationname'>
                         {errors.password && <div className="text-danger ">{errors.password}</div>}
                     </div>
                     <div> <label>Confirm Password</label></div>
-                    <input className='cpassword' type='password' placeholder='confirm password' name="confirmpassword"
+                    <input className='admincpassword' type='password' placeholder='confirm password' name="confirmpassword"
                         value={data.confirmpassword}
                         onChange={handleChange} />
                     <div class='validationname'>
@@ -118,10 +131,10 @@ alert(response.data.msg)
 
             </div>
             <div>
-                <input className='button' type='submit' placeholder='submit' onClick={handleSubmit}
+                <input className='adminbutton' type='submit' placeholder='submit' onClick={handleSubmit}
                 />
             </div>
-            <img class='resetimg' src={resetimg} />
+            <img class='adminresetimg' src={resetimg} />
 
         </div>
     )

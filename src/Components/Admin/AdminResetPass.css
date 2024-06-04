@@ -1,9 +1,9 @@
-.container{
+.adminresetdiv1{
     margin-top: 62px;
     width: 500px;
     margin-left: 800px;
 }
-.button{
+.adminbutton{
     margin-left: 812px;
     margin-top: 23px;
     color: white;
@@ -11,22 +11,22 @@
     width: 224px;
     height: 50px;
 }
-.resetimg{
+.adminresetimg{
     margin-top: -500px;
     width: 419px;
     margin-left: 173px;
 }
-.mail{
+.adminmail{
     width: 444px;
     height: 50px;
     margin-bottom: 20px;
 }
-.password{
+.adminpassword{
     width: 444px;
     height: 50px;
     margin-bottom: 20px;
 }
-.cpassword{
+.admincpassword{
     width: 444px;
     height: 50px;
     margin-bottom: 20px;
