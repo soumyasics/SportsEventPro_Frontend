@@ -78,7 +78,6 @@ const nunnu=()=>{
             setErrors(errors);
             
         }
-    
     const BackendData = () => {
     console.log("fun called",data);
         axiosInstance.post('adminpassword',data)
@@ -100,13 +99,13 @@ const nunnu=()=>{
         return (
         <div>
 
-            <div className='container'>
+            <div className='adminresetdiv1'>
                 <h1>Reset Password</h1>
                 <p>Reset your password to secure your account.</p>
                 <form>
                     <div>
                         <label>E-mail Id</label></div>
-                    <input className='mail' type='mail' placeholder='Enter your email' name="email"
+                    <input className='adminmail' type='mail' placeholder='Enter your email' name="email"
                         value={data.email}
                         onChange={handleChange} />
                     <div class='validationname'>
@@ -114,14 +113,14 @@ const nunnu=()=>{
                     </div>
                     <div>
                         <label>Password</label></div>
-                    <input className='password' type='password' placeholder='password' name="password"
+                    <input className='adminpassword' type='password' placeholder='password' name="password"
                         value={data.password}
                         onChange={handleChange} />
                     <div class='validationname'>
                         {errors.password && <div className="text-danger ">{errors.password}</div>}
                     </div>
                     <div> <label>Confirm Password</label></div>
-                    <input className='cpassword' type='password' placeholder='confirm password' name="confirmpassword"
+                    <input className='admincpassword' type='password' placeholder='confirm password' name="confirmpassword"
                         value={data.confirmpassword}
                         onChange={handleChange} />
                     <div class='validationname'>
@@ -132,10 +131,10 @@ const nunnu=()=>{
 
             </div>
             <div>
-                <input className='button' type='submit' placeholder='submit' onClick={handleSubmit}
+                <input className='adminbutton' type='submit' placeholder='submit' onClick={handleSubmit}
                 />
             </div>
-            <img class='resetimg' src={resetimg} />
+            <img class='adminresetimg' src={resetimg} />
 
         </div>
     )
