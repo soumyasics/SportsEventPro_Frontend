@@ -1,0 +1,88 @@
+.button{
+    width: 119px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    margin-bottom: 90px;
+    margin-top: 46px;
+}
+.mail{
+    width: 475px;
+    height: 44px;
+}
+.city{
+    width: 475px;
+    height: 44px;
+}
+.address{
+    width: 475px;
+    height: 44px;
+}
+.teamname{
+    width: 475px;
+    height: 44px;
+}
+.password{
+    width: 475px;
+    height: 44px;
+}
+.number{
+    width: 475px;
+    height: 44px;
+}
+.pincode{
+    width: 475px;
+    height: 44px;
+}
+.teammembers{
+    width: 475px;
+    height: 44px;
+}
+.name{
+    width: 475px;
+    height: 44px;
+}
+.experience{
+    width: 475px;
+    height: 44px;
+}
+.cpassword{
+    width: 475px;
+    height: 44px;
+}
+.state{
+    width: 475px;
+    border: 0px;
+    height: 44px;
+}
+.form-control{
+    width: 475px;
+    height: 44px;
+}
+.country{
+    width: 475px;
+    height: 44px;
+    border: 0px;
+}
+.btn{
+    margin-left: 3px;
+    background-color: #e2e4e4;
+    padding: 0px;
+}
+.teamcoachn1{
+    margin-bottom: 35px;
+}
+
+.teamcoachn2{
+    margin-bottom: 35px;
+}
+.TeamcoachregMaindiv{
+    text-align: center;
+}
+.teamcoachform{
+ columns: 2;
+    text-align: left;
+    margin-left: 156px;
+    letter-spacing: 2px;
+    margin-top: 65px;
+}

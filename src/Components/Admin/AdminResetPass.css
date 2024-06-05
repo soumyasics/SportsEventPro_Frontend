@@ -1,0 +1,33 @@
+.maindiv-1{
+    margin-top: 62px;
+    width: 500px;
+    margin-left: 800px;
+}
+.adminbutton{
+    margin-left: 812px;
+    margin-top: 23px;
+    color: white;
+    background-color: black;
+    width: 224px;
+    height: 50px;
+}
+.adminresetimg{
+    margin-top: -500px;
+    width: 419px;
+    margin-left: 173px;
+}
+.adminmail{
+    width: 444px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.adminpassword{
+    width: 444px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.admincpassword{
+    width: 444px;
+    height: 50px;
+    margin-bottom: 20px;
+}

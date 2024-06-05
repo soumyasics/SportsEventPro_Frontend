@@ -1,0 +1,130 @@
+.landingPageImg-1 {
+    width: 190.5px;
+    height: 190.5px;
+    background: url(../../Assets/userhomeimage-1.jpeg) lightgray 50% / cover no-repeat;
+    margin-top: 100px;
+}
+
+.landingPageHead {
+    margin-top: 30px;
+    margin-left: 170px;
+}
+
+.landingpagehead-1 {
+    margin-left: 201px;
+    width: 1000px;
+    margin-top: -117px;
+}
+
+.landingpageimg2 {
+    width: 343px;
+    height: 340px;
+    margin: left -40px;
+
+}
+
+.landingpageimg3 {
+    width: 343px;
+    height: 340px;
+
+}
+
+.landingpageimg4 {
+    width: 343px;
+    height: 340px;
+
+}
+
+.landingpagediv-1 {
+    margin-left: 170px;
+    width: 1337px;
+    margin-top: 100px;
+}
+
+.landingpagebutton-1 {
+    display: flex;
+    width: 343px;
+    padding: 4px 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: #92F9FF;
+    color: #000;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+
+}
+
+.landingpagebutton-2 {
+    display: flex;
+
+    padding: 4px 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    width: 343px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: #F67104;
+    color: #000;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+
+}
+
+.landingpagebutton-3 {
+    display: flex;
+    width: 343px;
+    padding: 4px 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: rgba(11, 153, 34, 0.51);
+    color: #000;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.landingpageh1 {
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    align-self: stretch;
+}
+
+.landingpageh2 {
+    color: #000;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    align-self: stretch;
+}
+
+.landingpagediv3 {
+    margin-left: 30px;
+}
+
+.landingpagediv4 {
+    margin-left: 30px;
+}

@@ -1,0 +1,48 @@
+
+.Enquiriesinput1 {
+    height: 39px;
+    width: 449px;
+    border-radius: 6px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.Enquiriesinput3 {
+    height: 39px;
+    width: 449px;
+    border-radius: 6px;
+    margin-top: 25px;
+    margin-bottom: 28px;
+
+}
+.Enquiriesinput4 {
+    height: 39px;
+    width: 449px;
+    border-radius: 6px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+.Enquiriesinput2{
+    height: 39px;
+    width: 449px;
+    border-radius: 6px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.Enquiriesmaindiv1{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Enquiriestext-1{
+    text-align: center;
+}
+.Enquiriestext-2{
+    text-align: center;
+}
+.Enquiriesb-1{
+    margin-left: 2px;
+}
