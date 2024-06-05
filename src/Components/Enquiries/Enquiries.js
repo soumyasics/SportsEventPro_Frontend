@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import './Contact.css'
-import img from '../../Assets/contact.jpg'
+import './Enquiries.css'
 
 
-function Contact() {
+function Enquiries() {
     const [data, setData] = useState({
 
         name: '',
@@ -70,60 +69,119 @@ function Contact() {
     return (
         <div>
         
-            <div className='contactmaindiv1'>
-            <div class="div" >
-                        <img className='contactimg' src={img} />
+            <div className='Enquiriesmaindiv1'>
+            <form>
+
+<div className='row'>
+
+            <div class="Enquiriestext-1" >
+                <h1 >ENQUIRIES</h1>
                     </div>
-            </div>
-            <div className='contactmaindiv2'>
-                <form>
-                    <hi class="contacthead">CONTACT US</hi>
+</div>
+<div className='row'>
+
+                    <div >
+                        <h6 class="Enquiriestext-2">Fill in the details</h6>
+                    </div>
+
+
+</div>
                     
-                    <div class="contactmainform" >
-                        <div >
-                            <input className='contactinput1' type='text' placeholder='Name' name="name"
+
+<div className='row'>
+
+<div className='col-6'>
+<div><label>Name</label>
+
+                            <input className='Enquiriesinput1' type='text' placeholder='Name' name="name"
                                 value={data.name}
                                 onChange={handleChange} />
                         </div>
-                        <div class='validationemail'>
+                        <div class='validationemail '>
                             {errors.name && <div className="text-danger ">{errors.name}</div>}
                         </div>
+</div>
+<div className='col-6'>
+
+<label>Email</label>
+
                         <div>
-                            <input className='contactinput3' type='email' placeholder='Email' name="email"
+                            <input className='Enquiriesinput2' type='email' placeholder='Email' name="email"
                                 value={data.email}
                                 onChange={handleChange} />
                         </div>
+
                         <div class='validationemail'>
                             {errors.email && <div className="text-danger ">{errors.email}</div>}
                         </div>
-                        <div>
-                            <input className='contactinput3' type='number' placeholder='Contact number' name="contactnumber"
+</div>
+ </div>
+
+<div className='row'>
+
+<div className='col-6'>
+<label>Enquiriy Type</label>
+<div className='Enquiriesinput3'>
+<input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" checked/>
+<label class="btn" for="option5">Checked</label>
+
+<input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off"/>
+<label class="btn" for="option6">Radio</label>
+
+<input type="radio" class="btn-check" name="options-base" id="option7" autocomplete="off" disabled/>
+<label class="btn" for="option7">Disabled</label>
+
+<input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off"/>
+<label class="btn" for="option8">Radio</label></div>
+
+</div>
+
+
+
+<div className='col-6'>
+<label>Contact Number</label>
+
+<div >
+                            <input className='Enquiriesinput3' type='number' placeholder='Contact Number' name="contactnumber"
                                 value={data.contactnumber}
                                 onChange={handleChange} />
                         </div>
                         <div class='validationemail'>
                             {errors.contactnumber && <div className="text-danger ">{errors.contactnumber}</div>}
                         </div>
-                        <div>
-                            <input className='contactinput4' type='text' placeholder='Description' name="description"
+</div>
+
+
+</div>
+<div className='row'>
+
+<div className='col-6'>
+<div>
+                            <input className='Enquiriesinput4' type='text' placeholder='Message' name="description"
                                 value={data.description}
                                 onChange={handleChange} />
                         </div>
                         <div class='validationemail'>
                             {errors.description && <div className="text-danger ">{errors.description}</div>}
                         </div>
+</div>
+</div>
+
+
+
+
+
                         <div>
                                 <input className='input6' type='submit' placeholder='submit' onClick={handleSubmit}
                                      />
                             </div>
-                    </div>
                 </form>
-        </div>
         
+        </div>
 
     </div>
 
     )
 }
 
-export default Contact
+export default Enquiries
