@@ -16,8 +16,6 @@ function Userhome() {
                 </div>
             
           </div>
-
-
       </div>
     )
 }
