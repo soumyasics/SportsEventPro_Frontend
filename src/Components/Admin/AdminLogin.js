@@ -64,7 +64,7 @@ else{
     <div>
   <div className='col-6'>
         <form>
-        <div className='container'>
+        <div className='adminlogin-div1'>
 
           <div >
             <div class="AdminLoginh1">

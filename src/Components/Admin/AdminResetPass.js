@@ -96,7 +96,7 @@ alert(response.data.msg)
     return (
         <div>
 
-            <div className='container'>
+            <div className='maindiv-1'>
                 <h1>Reset Password</h1>
                 <p>Reset your password to secure your account.</p>
                 <form>
