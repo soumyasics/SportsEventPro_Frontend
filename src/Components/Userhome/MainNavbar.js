@@ -20,7 +20,7 @@ function MainNavbar() {
 <div className='col-3 navbarmaindiv-3 '>
 <ul class="nav justify-content-end">
   <li class="nav-item">
-    <a class="nav-link active mainnavbartext" aria-current="page" href="#">Home</a>
+    <a class="nav-link active mainnavbartext" aria-current="page" href="/">Home</a>
   </li>
   <li class="nav-item">
     <a class="nav-link mainnavbartext" href="Aboutpage">About</a>
@@ -30,7 +30,7 @@ function MainNavbar() {
   </li>
   <li class="nav-item">
     <a class="nav-link mainnavbartext" href="#">Login</a>
-  </li>
+  </li> 
 </ul>
 </div>
 

@@ -16,22 +16,22 @@ function UserFooter() {
       <div className="footerdiv-3">
       <div class="row">
   <div class="col-md-1">
-  <button className='userfooterbutton-1'>HOME</button>
+  <button className='userfooterbutton-1'>Home</button>
 </div>
 <div class="col-md-1">
-<button className='userfooterbutton-2'>ABOUT</button>
+<button className='userfooterbutton-2'>About</button>
 </div>
 <div class="col-md-1">
-<button className='userfooterbutton-3'>CONTACT</button>
+<button className='userfooterbutton-3'>Contact</button>
 </div>
 <div class="col-md-1">
-<button className='userfooterbutton-4'>LOGIN</button>
+<button className='userfooterbutton-4'>Login</button>
 </div>
 <div class="col-md-1">
-<button className='userfooterbutton-5'>BLOG</button>
+<button className='userfooterbutton-5'>Blog</button>
 </div>
 <div class="col-md-1">
-<button className='userfooterbutton-6'>SUCCESS STORIES</button>
+<button className='userfooterbutton-6'>Success stories</button>
 </div>
 <div class="col-md-1">
 <button className='userfooterbutton-7'>FAQs</button>
@@ -39,6 +39,7 @@ function UserFooter() {
 </div>
 </div>
 </div>
+
     </div>
   );
 }

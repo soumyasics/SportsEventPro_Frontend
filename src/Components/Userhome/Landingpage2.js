@@ -12,4 +12,4 @@ function Landingpage2() {
   )
 }
 
-export default Landingpage2
+export default Landingpage2 

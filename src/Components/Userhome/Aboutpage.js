@@ -19,7 +19,7 @@ function Aboutpage() {
      <h6 className='Aboutpagetext-2 '>Learn more about The Sport Tournament app And how it promotes The sports engagement</h6>
 </div>
 </div>
-
+ 
 
 
 <div className='Aboutpagemaindiv2'>
