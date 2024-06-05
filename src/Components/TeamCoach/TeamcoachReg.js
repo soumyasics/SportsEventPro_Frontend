@@ -340,7 +340,7 @@ function TeamcoachReg() {
             <div className='teamcoachn1'>
 
                <div> <label>Confirm Password</label></div>
-                <input className='cpassword' type='password' placeholder='confirm password' name="password"
+                <input className='cpassword' type='password' placeholder='Confirm password' name="confirmpassword"
                     value={data.confirmpassword}
                     onChange={handleChange} />
                                                             <div class='validationname'>
