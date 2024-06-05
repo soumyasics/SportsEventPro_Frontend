@@ -88,7 +88,7 @@ function TeamcoachReg() {
 
         errors.email = validateField('Email', data.email);
         errors.name = validateField('Name', data.name);
-
+        errors.contactnumber=validateField('Contact number',data.contactnumber)
         errors.category = validateField('Category', data.category);
         errors.totalmembers = validateField('Totalmembers', data.totalmembers);
         errors.pincode = validateField('Pincode', data.pincode);
@@ -147,14 +147,22 @@ function TeamcoachReg() {
                 <div>
             <label>Select Category</label>
             </div>
-            <input type="checkbox" class="btn-check" id="btn-check-4" autocomplete="off"value={data.category}
-                    onChange={handleChange}/>
 
-            <label class="btn" for="btn-check-4">CRICKET</label>
-            <label class="btn" for="btn-check-4">FOOTBALL</label>
-            <label class="btn" for="btn-check-4">TENNIS</label>
-            <label class="btn" for="btn-check-4">BADMINTON</label>
-            <label class="btn" for="btn-check-4">HOCKEY</label>
+            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
+            <label class="btn" for="btn-check-5">Cricket</label>
+            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
+
+            <label class="btn" for="btn-check-5">Football</label>
+            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
+
+            <label class="btn" for="btn-check-5">Tennis</label>
+            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
+
+            <label class="btn" for="btn-check-5">Badminton</label>
+            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
+
+            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
+            <label class="btn" for="btn-check-5">Hockey</label>
             <div class='validationname'>
                 {errors.category && <div className="text-danger ">{errors.category}</div>}
             </div>
@@ -163,7 +171,7 @@ function TeamcoachReg() {
             <div className='teamcoachn1'>
                 <div>
                 <label>Total Team Members</label></div>
-                <input className='teammembers' type='number' placeholder='Address' name="address"
+                <input className='teammembers' type='number' placeholder='Total Members' name="totalmembers"
                     value={data.totalmembers}
                     onChange={handleChange} />
                     <div class='validationname'>
@@ -204,7 +212,7 @@ function TeamcoachReg() {
                 <label>Contact Number</label>
                 </div>
                 <input className='number' type='number' placeholder='Enter your contact number' name="contactnumber"
-                    value={data.number}
+                    value={data.contactnumber}
                     onChange={handleChange} />
                                     <div class='validationname'>
                 {errors.number && <div className="text-danger ">{errors.number}</div>}
@@ -332,7 +340,7 @@ function TeamcoachReg() {
             <div className='teamcoachn1'>
 
                <div> <label>Confirm Password</label></div>
-                <input className='cpassword' type='password' placeholder='confirm password' name="password"
+                <input className='cpassword' type='password' placeholder='Confirm password' name="confirmpassword"
                     value={data.confirmpassword}
                     onChange={handleChange} />
                                                             <div class='validationname'>
@@ -343,10 +351,10 @@ function TeamcoachReg() {
             
             </div>
                 </form>
+                </div>
                 <div>
                 <input className='button' type='submit' placeholder='submit' onClick={handleSubmit}
                      />
-            </div>
             </div>
             {/* </div>
             </div> */}

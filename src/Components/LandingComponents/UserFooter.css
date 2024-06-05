@@ -1,0 +1,129 @@
+.footerdiv-1{
+    width: 1519px;
+    height: 80px;
+    flex-shrink: 0;
+    background: #000;
+}
+.footerh1{
+    color: #FFF;
+    font-family: "Noto Sans";
+    font-size: 24.52px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    width: 180px;
+    margin-left: 647px;
+}
+.footerdiv-2{
+    
+    margin-top: -57px;
+}
+.footerdot{
+    width: 48.427px;
+    height: 10.756px;
+    flex-shrink: 0;
+    background: url(data:image/jpeg;base64,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) lightgray 50% / cover no-repeat;
+    margin-left: 581px;
+    margin-bottom: -18px;
+    margin-top: 12px;
+}
+    .userfooterbutton-1{
+        border: 0px;
+        background-color: white;
+        color: #000;
+        text-shadow: 0px 0.582px 0.582px rgba(0, 0, 0, 0.25);
+        font-family: sans-serif;
+        font-size: 22.866px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-left: 244px;
+
+    }
+    .userfooterbutton-2{
+        border: 0px;
+        background-color: white;
+        color: #000;
+text-shadow: 0px 0.582px 0.582px rgba(0, 0, 0, 0.25);
+font-family: sans-serif;
+font-size: 22.866px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-left: 244px;
+
+    }
+    .userfooterbutton-3{
+        border: 0px;
+        background-color: white;
+        color: #000;
+text-shadow: 0px 0.582px 0.582px rgba(0, 0, 0, 0.25);
+font-family: sans-serif;
+font-size: 22.866px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-left: 244px;
+
+    }
+    .userfooterbutton-4{
+        border: 0px;
+        background-color: white;
+        color: #000;
+text-shadow: 0px 0.582px 0.582px rgba(0, 0, 0, 0.25);
+font-family: sans-serif;
+font-size: 22.866px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-left: 277px;
+    }
+    .userfooterbutton-5{
+        border: 0px;
+        background-color: white;
+        color: #000;
+text-shadow: 0px 0.582px 0.582px rgba(0, 0, 0, 0.25);
+font-family: sans-serif;
+font-size: 22.866px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-left: 264px;
+    }
+    .userfooterbutton-6{
+        border: 0px;
+        background-color: white;
+        color: #000;
+        text-shadow: 0px 0.582px 0.582px rgba(0, 0, 0, 0.25);
+        font-family: sans-serif;
+        font-size: 22.866px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        width: 229px;
+        margin-left: 247px;
+
+    }
+    .userfooterbutton-7{
+        border: 0px;
+        background-color: white;
+        margin-left: 150px;
+        color: #000;
+        text-shadow: 0px 0.582px 0.582px rgba(0, 0, 0, 0.25);
+        font-family: sans-serif;
+        font-size: 22.866px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-left: 379px;
+    }
+    .footerdiv-3{
+        margin-top: 129px;
+        width: 1410px;
+        margin-bottom: 60px;
+        
+    }
+    .userfootermaindiv{
+        margin-top: 10px
+    }
