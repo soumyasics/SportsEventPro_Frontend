@@ -1,7 +1,7 @@
 .landingPageImg-1{
     width: 190.5px;
     height: 190.5px;
-    background: url(http://localhost:3000/static/media/userhomeimage-1.4df4416b9682e808af23.jpeg) lightgray 50% / cover no-repeat;
+    background: url(../../Assets/userhomeimage-1.jpeg) lightgray 50% / cover no-repeat;
     margin-top: 100px;}
 .landingPageHead{
     margin-top: 30px;
