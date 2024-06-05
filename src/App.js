@@ -13,7 +13,7 @@ import Landingpage3 from './Components/Userhome/Landingpage3';
 import Aboutpage from './Components/Userhome/Aboutpage';
 import MainNavbar from './Components/Userhome/MainNavbar';
 import TeamcoachReg from './Components/TeamCoach/TeamcoachReg';
-
+import Enquiries  from './Components/Enquiries/Enquiries';
 
 
 function App() {
@@ -35,7 +35,10 @@ function App() {
           <Route exact path="/MainNavbar" element={<MainNavbar/>} />
            <Route exact path="/TeamCoachLogin" element={<TeamCoachLogin/>} />
           <Route exact path="/TeamCoachreg" element={<TeamcoachReg/>} /> 
-          <Route exact path="/" element={<AdminResetPass/>} />
+          <Route exact path="/AdminResetPass" element={<AdminResetPass/>} />
+          <Route exact path="/Aboutpage" element={<Aboutpage/>} />
+          <Route exact path="/Enquiries" element={<Enquiries/>} />
+
           </Routes>
           
 
