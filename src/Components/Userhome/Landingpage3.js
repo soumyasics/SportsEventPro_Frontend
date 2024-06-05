@@ -13,7 +13,7 @@ function Landingpage3() {
             <div>
         <h1 className='landingpagehead-1'>Featured Tournaments</h1>
         </div>
-       
+        
         </div>
 
             <div className='landingpagediv-1'>

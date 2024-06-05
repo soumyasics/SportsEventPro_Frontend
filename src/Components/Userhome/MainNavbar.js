@@ -30,7 +30,7 @@ function MainNavbar() {
   </li>
   <li class="nav-item">
     <a class="nav-link mainnavbartext" href="#">Login</a>
-  </li>
+  </li> 
 </ul>
 </div>
 
