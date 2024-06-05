@@ -4,6 +4,8 @@ import resetimg from "../../Assets/Security On 1.png"
 import axios from 'axios'
 import axiosInstance from '../Constant/BaseURL'
 
+
+
 function AdminResetPass() {
     const [data, setData] = useState({
 
@@ -102,7 +104,7 @@ alert(response.data.msg)
                 <form>
                     <div>
                         <label>E-mail Id</label></div>
-                    <input className='mail' type='mail' placeholder='Enter your email' name="email"
+                    <input className='adminmail' type='mail' placeholder='Enter your email' name="email"
                         value={data.email}
                         onChange={handleChange} />
                     <div class='validationname'>
@@ -110,14 +112,14 @@ alert(response.data.msg)
                     </div>
                     <div>
                         <label>Password</label></div>
-                    <input className='password' type='password' placeholder='password' name="password"
+                    <input className='adminpassword' type='password' placeholder='password' name="password"
                         value={data.password}
                         onChange={handleChange} />
                     <div class='validationname'>
                         {errors.password && <div className="text-danger ">{errors.password}</div>}
                     </div>
                     <div> <label>Confirm Password</label></div>
-                    <input className='cpassword' type='password' placeholder='confirm password' name="confirmpassword"
+                    <input className='admincpassword' type='password' placeholder='confirm password' name="confirmpassword"
                         value={data.confirmpassword}
                         onChange={handleChange} />
                     <div class='validationname'>
@@ -128,10 +130,10 @@ alert(response.data.msg)
 
             </div>
             <div>
-                <input className='button' type='submit' placeholder='submit' onClick={handleSubmit}
+                <input className='adminbutton' type='submit' placeholder='submit' onClick={handleSubmit}
                 />
             </div>
-            <img class='resetimg' src={resetimg} />
+            <img class='adminresetimg' src={resetimg} />
 
         </div>
     )

@@ -2,14 +2,13 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import Landingpage2 from './Components/LandingComponents/Landingpage2';
+import Userhome from '../src/Components/User/Userhome';
+import Landingpage3 from '../src/Components/User/Landingpage3';
+import Landingpage4 from '../src/Components/User/Landingpage4';
+import UserFooter from '../src/Components/LandingComponents/UserFooter';
 import AdminLogin from './Components/Admin/AdminLogin';
-import AdminResetPass from './Components/Admin/AdminResetPass';
-import Enquiries from './Components/Enquiries/Enquiries';
-import Aboutpage from './Components/LandingComponents/Aboutpage';
 import TeamCoachLogin from './Components/TeamCoach/TeamCoachLogin';
-import TeamcoachReg from './Components/TeamCoach/TeamcoachReg';
-import MainNavbar from './Components/LandingComponents/MainNavbar';
+import AdminResetPass from './Components/Admin/AdminResetPass';
 
 
 function App() {
@@ -20,18 +19,16 @@ function App() {
       <div className="App">
       
       <Routes>
-         
+          <Route exact path="/userhome" element={[<Userhome/>,<Landingpage3/>,<Landingpage4/>,<UserFooter/>]} />
+          <Route exact path="/landingpage3" element={<Landingpage3/>} />
+          <Route exact path='/landingpage4' element={<Landingpage4/>}/>
+          <Route exact path='/userfooter' element={<UserFooter/>}/>
+          <Route exact path='/userhome' element={<Userhome/>}/>
+          <Route exact path="/UserFooter" element={<UserFooter/>} />
+          <Route exact path="/AdminLogin" element={<AdminLogin/>} /> 
+           <Route exact path="/TeamCoachLogin" element={<TeamCoachLogin/>} />
           <Route exact path="/TeamCoachreg" element={<TeamcoachReg/>} /> 
-          <Route exact path="/TeamCoachlogin" element={<TeamCoachLogin/>} /> 
-
-          <Route exact path="/AdminLogin" element={<AdminLogin/>} />
-          <Route exact path="/AdminResetPass" element={<AdminResetPass/>} />
-          <Route exact path="/Landingpage2" element={<Landingpage2/>} />     
-           <Route exact path="/Enquiries" element={[<Enquiries/>]} /> 
-           <Route exact path="/Aboutpage" element={[<Aboutpage/>]} />
-           <Route exact path="/MainNavbar" element={[<MainNavbar/>]} />
-
-
+          <Route exact path="/" element={<AdminResetPass/>} />
           </Routes>
           
 
