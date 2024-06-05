@@ -118,7 +118,7 @@ function TeamcoachReg() {
     }
     return (
         <div>
-            <div className='continer'>
+            <div className='TeamcoachregMaindiv'>
                 {/* <div className='row'>
                     <div className='col-4'> */}
                 

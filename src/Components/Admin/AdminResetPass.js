@@ -55,51 +55,50 @@ function AdminResetPass() {
         errors.password = validateField('Password', data.password);
         errors.confirmpassword = validateField('Confirm Password', data.confirmpassword);
 
-
         setErrors(errors);
-const nunnu=()=>{
-        if (formIsValid && data.email=="admin@gmail.com") {
-
-            console.log("data", data);
-            BackendData()}
+      const abc=()=>{
+            if(formIsValid && data.email=="admin@gmail.com"){
+                BackendData()
+            }
             else{
                 alert("user not found")
             }
         }
-        if (data.password==data.confirmpassword){
-            nunnu()
-        }
-        else{
+        if (data.password == data.confirmpassword){
+            abc()
+        }else{
             alert("password does not match")
-        
         }
+      
         
         
-            setErrors(errors);
-            
-        }
-    const BackendData = () => {
-    console.log("fun called",data);
-        axiosInstance.post('adminpassword',data)
-          .then(response => {
-            console.log(response);
-            if(response.data.status==200){
-                alert("Password reset Successful")
-            }else
-    alert(response.data.msg)
-            
-        
-          })
-          .catch(error => {
-            console.error(error);
-         
-        
-    })
     }
-        return (
+
+const BackendData = () => {
+console.log("fun called",data);
+    axiosInstance.post('adminpassword',data)
+      .then(response => {
+        console.log(response);
+        if(response.data.status==200){
+            alert(response.data.msg)
+        }else
+alert(response.data.msg)       
+        
+    
+      })
+      .catch(error => {
+        console.error(error);
+     
+    
+})
+}
+
+    
+
+    return (
         <div>
 
-            <div className='adminresetdiv1'>
+            <div className='maindiv-1'>
                 <h1>Reset Password</h1>
                 <p>Reset your password to secure your account.</p>
                 <form>
