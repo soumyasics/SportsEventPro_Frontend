@@ -50,8 +50,8 @@ function Enquiries() {
         formIsValid = true;
 
         errors.email = validateField('email', data.email);
-        errors.contactnumber = validateField('contactnumber', data.contactnumber);
-        errors.description = validateField('description', data.description);
+        errors.contactnumber = validateField('contact number', data.contactnumber);
+        errors.description = validateField('message', data.description);
         errors.name = validateField('name', data.name);
 
 
@@ -72,13 +72,13 @@ function Enquiries() {
             <div className='Enquiriesmaindiv1'>
             <form>
 
-<div className='row'>
+<div className='row Enquiriesmaindiv-2'>
 
             <div class="Enquiriestext-1" >
                 <h1 >ENQUIRIES</h1>
                     </div>
 </div>
-<div className='row'>
+<div className='row Enquiriesmaindiv-3'>
 
                     <div >
                         <h6 class="Enquiriestext-2">Fill in the details</h6>
@@ -93,7 +93,7 @@ function Enquiries() {
 <div className='col-6'>
 <div><label>Name</label>
 
-                            <input className='Enquiriesinput1' type='text' placeholder='Name' name="name"
+                            <input className='Enquiriesinput1' type='text' placeholder='Enter Name' name="name"
                                 value={data.name}
                                 onChange={handleChange} />
                         </div>
@@ -106,7 +106,7 @@ function Enquiries() {
 <label>Email</label>
 
                         <div>
-                            <input className='Enquiriesinput2' type='email' placeholder='Email' name="email"
+                            <input className='Enquiriesinput2' type='email' placeholder='Enter Email' name="email"
                                 value={data.email}
                                 onChange={handleChange} />
                         </div>
@@ -121,19 +121,16 @@ function Enquiries() {
 
 <div className='col-6'>
 <label>Enquiriy Type</label>
-<div className='Enquiriesinput3'>
-<input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" checked/>
-<label class="btn" for="option5">Checked</label>
-
-<input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off"/>
-<label class="btn" for="option6">Radio</label>
-
-<input type="radio" class="btn-check" name="options-base" id="option7" autocomplete="off" disabled/>
-<label class="btn" for="option7">Disabled</label>
-
-<input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off"/>
-<label class="btn" for="option8">Radio</label></div>
-
+<div className='Enquiriesdiv-1-3'>
+<input type="radio" class="btn-check " name="options" id="option1" autocomplete="off" checked/>
+<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option1">General</label>
+<input type="radio" class="btn-check Enquiriesteaxt-1-3" name="options" id="option1" autocomplete="off" checked/>
+<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option1">Registration</label>
+<input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked/>
+<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option1">Schedule</label>
+<input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked/>
+<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option1">Others</label>
+</div>
 </div>
 
 
@@ -171,8 +168,8 @@ function Enquiries() {
 
 
 
-                        <div>
-                                <input className='input6' type='submit' placeholder='submit' onClick={handleSubmit}
+                        <div  className='Enquiriesdiv-7'>
+                                <input className='Enquiriesinput6' type='submit' placeholder='submit' onClick={handleSubmit}
                                      />
                             </div>
                 </form>

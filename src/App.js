@@ -30,14 +30,14 @@ function App() {
           <Route exact path='/userfooter' element={<UserFooter/>}/>
           <Route exact path='/userhome' element={<Userhome/>}/>
           <Route exact path="/UserFooter" element={<UserFooter/>} />
-          <Route exact path="/AdminLogin" element={<AdminLogin/>} />
+          <Route exact path="/AdminLogin" element={[<MainNavbar/>,<AdminLogin/>,<UserFooter/>]} />
           <Route exact path="/Landingpage2" element={<Landingpage2/>} />
           <Route exact path="/MainNavbar" element={<MainNavbar/>} />
            <Route exact path="/TeamCoachLogin" element={<TeamCoachLogin/>} />
           <Route exact path="/TeamCoachreg" element={<TeamcoachReg/>} /> 
-          <Route exact path="/AdminResetPass" element={<AdminResetPass/>} />
-          <Route exact path="/Aboutpage" element={<Aboutpage/>} />
-          <Route exact path="/Enquiries" element={<Enquiries/>} />
+          <Route exact path="/AdminResetPass" element={[<MainNavbar/>,<AdminResetPass/>,<UserFooter/>]} />
+          <Route exact path="/Aboutpage" element={[<MainNavbar/>,<Aboutpage/>,<UserFooter/>]} />
+          <Route exact path="/Enquiries" element={[,<Enquiries/>,]}/>
 
           </Routes>
           
