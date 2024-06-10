@@ -90,20 +90,20 @@ function Enquiries() {
 
 <div className='row'>
 
-<div className='col-6'>
-<div><label>Name</label>
+<div className='col-6 '>
+<div><label className='Enquiriestext-1-1'>Name</label>
 
                             <input className='Enquiriesinput1' type='text' placeholder='Enter Name' name="name"
                                 value={data.name}
                                 onChange={handleChange} />
                         </div>
-                        <div class='validationemail '>
+                        <div class='Enquiriesvalidation '>
                             {errors.name && <div className="text-danger ">{errors.name}</div>}
                         </div>
 </div>
 <div className='col-6'>
 
-<label>Email</label>
+<label className='Enquiriestext-1-1'>Email</label>
 
                         <div>
                             <input className='Enquiriesinput2' type='email' placeholder='Enter Email' name="email"
@@ -111,7 +111,7 @@ function Enquiries() {
                                 onChange={handleChange} />
                         </div>
 
-                        <div class='validationemail'>
+                        <div class='Enquiriesvalidation'>
                             {errors.email && <div className="text-danger ">{errors.email}</div>}
                         </div>
 </div>
@@ -119,31 +119,31 @@ function Enquiries() {
 
 <div className='row'>
 
-<div className='col-6'>
-<label>Enquiriy Type</label>
+<div className='col-6 Enquiries-div-main'>
+<label className='Enquiriestext-1-1'>Enquiriy Type</label>
 <div className='Enquiriesdiv-1-3'>
 <input type="radio" class="btn-check " name="options" id="option1" autocomplete="off" checked/>
 <label class="btn btn-secondary Enquiriesteaxt-1-3" for="option1">General</label>
-<input type="radio" class="btn-check Enquiriesteaxt-1-3" name="options" id="option1" autocomplete="off" checked/>
-<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option1">Registration</label>
-<input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked/>
-<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option1">Schedule</label>
-<input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked/>
-<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option1">Others</label>
+<input type="radio" class="btn-check Enquiriesteaxt-1-3" name="options" id="option2" autocomplete="off" checked/>
+<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option2">Registration</label>
+<input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" checked/>
+<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option3">Schedule</label>
+<input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" checked/>
+<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option4">Others</label>
 </div>
 </div>
 
 
 
-<div className='col-6'>
-<label>Contact Number</label>
+<div className='col-6 Enquiries-div-main'>
+<label className='Enquiriestext-1-1'>Contact Number</label>
 
 <div >
                             <input className='Enquiriesinput3' type='number' placeholder='Contact Number' name="contactnumber"
                                 value={data.contactnumber}
                                 onChange={handleChange} />
                         </div>
-                        <div class='validationemail'>
+                        <div class='Enquiriesvalidation'>
                             {errors.contactnumber && <div className="text-danger ">{errors.contactnumber}</div>}
                         </div>
 </div>
@@ -152,13 +152,15 @@ function Enquiries() {
 </div>
 <div className='row'>
 
-<div className='col-6'>
+<div className='col-6 Enquiries-div-main'>
+<label className='Enquiriestext-1-1'>Message</label>
+
 <div>
                             <input className='Enquiriesinput4' type='text' placeholder='Message' name="description"
                                 value={data.description}
                                 onChange={handleChange} />
                         </div>
-                        <div class='validationemail'>
+                        <div class='Enquiriesvalidation'>
                             {errors.description && <div className="text-danger ">{errors.description}</div>}
                         </div>
 </div>
