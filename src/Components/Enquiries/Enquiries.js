@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
 import './Enquiries.css'
+import axiosInstance from '../Constant/BaseURL';
 
 
 function Enquiries() {
+
+
+    
     const [data, setData] = useState({
 
         name: '',
         email: '',
         contactnumber: '',
-        description:''
+        message:''
+        
 
 
     })
@@ -17,7 +22,7 @@ function Enquiries() {
         name: '',
         email: '',
         contactnumber: '',
-        description:''
+        message:''
 
     })
     let formIsValid;
@@ -51,11 +56,12 @@ function Enquiries() {
 
         errors.email = validateField('email', data.email);
         errors.contactnumber = validateField('contact number', data.contactnumber);
-        errors.description = validateField('message', data.description);
+        errors.message = validateField('message', data.message);
         errors.name = validateField('name', data.name);
 
 
 
+BackendData();
 
 
         setErrors(errors);
@@ -65,6 +71,35 @@ function Enquiries() {
 
         }
     }
+
+
+
+
+
+    const BackendData = () => {
+        console.log("fun called",data);
+            axiosInstance.post('addEnquiry',data)
+              .then(response => {
+                console.log(response);
+                if(response.data.status==200){
+                    alert(response.data.msg)
+                }else
+        alert(response.data.msg)       
+                
+            
+              })
+              .catch(error => {
+                console.error(error);
+             
+            
+        })
+        }
+        
+        
+
+
+
+
 
     return (
         <div>
@@ -124,11 +159,11 @@ function Enquiries() {
 <div className='Enquiriesdiv-1-3'>
 <input type="radio" class="btn-check " name="options" id="option1" autocomplete="off" checked/>
 <label class="btn btn-secondary Enquiriesteaxt-1-3" for="option1">General</label>
-<input type="radio" class="btn-check Enquiriesteaxt-1-3" name="options" id="option2" autocomplete="off" checked/>
+<input type="radio" class="btn-check Enquiriesteaxt-1-3" name="options" id="option2" autocomplete="off" />
 <label class="btn btn-secondary Enquiriesteaxt-1-3" for="option2">Registration</label>
-<input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" checked/>
+<input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" />
 <label class="btn btn-secondary Enquiriesteaxt-1-3" for="option3">Schedule</label>
-<input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" checked/>
+<input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" />
 <label class="btn btn-secondary Enquiriesteaxt-1-3" for="option4">Others</label>
 </div>
 </div>
@@ -156,12 +191,12 @@ function Enquiries() {
 <label className='Enquiriestext-1-1'>Message</label>
 
 <div>
-                            <input className='Enquiriesinput4' type='text' placeholder='Message' name="description"
-                                value={data.description}
+                            <input className='Enquiriesinput4' type='text' placeholder='Message' name="message"
+                                value={data.message}
                                 onChange={handleChange} />
                         </div>
                         <div class='Enquiriesvalidation'>
-                            {errors.description && <div className="text-danger ">{errors.description}</div>}
+                            {errors.message && <div className="text-danger ">{errors.message}</div>}
                         </div>
 </div>
 </div>
