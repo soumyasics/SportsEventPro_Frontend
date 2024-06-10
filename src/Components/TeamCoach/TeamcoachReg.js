@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
 import "./TeamcoachReg.css"
-import img from '../../Assets/image 6.png'
 function TeamcoachReg() {
 
 
+
     const [plus, setPlus] = useState(
-        0
+        1
     )
 
 
 
-    const add=(event)=>{
-        setPlus(plus+1)
+    const add = (event) => {
+        setPlus(plus + 1)
         event.preventDefault()
     }
-    const sub=(event)=>{
-        setPlus(plus-1)
+    const sub = (event) => {
+        setPlus(plus - 1)
         event.preventDefault()
     }
 
@@ -148,158 +148,108 @@ function TeamcoachReg() {
                                             <label>Select Category</label>
                                         </div>
 
-                                        <input type="radio" class="btn-check " name="options" id="option1" autocomplete="off" checked />
-                                        <label class="btn btn-secondary Enquiriesteaxt-1-6" for="option1" value={data.category}
-                                            onChange={handleChange} >Cricket</label>
+                                        <div className='a'>
+                                        <input type="radio" class="btn-check" name="category" id="category1" autocomplete="off" checked />
+                                        <label class="btn btn-secondary" for="category1">Cricket</label>
+                                        <input type="radio" class="btn-check" name="category" id="category2" autocomplete="off" />
+                                        <label class="btn btn-secondary" for="category2">Football</label>
+                                        <input type="radio" class="btn-check" name="category" id="category3" autocomplete="off" />
+                                        <label class="btn btn-secondary" for="category3">Tennis</label>
+                                        <input type="radio" class="btn-check" name="category" id="category4" autocomplete="off" />
+                                        <label class="btn btn-secondary" for="category4">Badminton</label>
+                                        <input type="radio" class="btn-check" name="category" id="category5" autocomplete="off" />
+                                        <label class="btn btn-secondary" for="category5">Hockey</label>
+                                        </div>
 
-                                        <input type="radio" class="btn-check " name="options" id="option2" autocomplete="off" checked />
-                                        <label class="btn btn-secondary Enquiriesteaxt-1-6" for="option2" value={data.category}
-                                            onChange={handleChange} >Football</label>
 
-                                        <input type="radio" class="btn-check " name="options" id="option3" autocomplete="off" checked />
-                                        <label class="btn btn-secondary Enquiriesteaxt-1-6" for="option3" value={data.category}
-                                            onChange={handleChange} >Tennis</label>
+                                    </div>
 
-                                        <input type="radio" class="btn-check " name="options" id="option4" autocomplete="off" checked />
-                                        <label class="btn btn-secondary Enquiriesteaxt-1-6" for="option4" value={data.category}
-                                            onChange={handleChange} >Badminton</label>
 
-                                        <input type="radio" class="btn-check " name="options" id="option5" autocomplete="off" checked />
-                                        <label class="btn btn-secondary Enquiriesteaxt-1-6" for="option5" value={data.category}
-                                            onChange={handleChange} >Hockey</label>
+                                    <div className='teamcoachn1'>
+                                        <div className='teamCoachRegDiv-Text'>
+                                            <label>Total Team Members</label></div>
 
-                                        <div class='validationname'>
-                                            {errors.category && <div className="text-danger ">{errors.category}</div>}
+
+
+                                        <button className='teamCoachregbutton-1' onClick={sub}>-</button>
+                                        {plus}
+                                        <div className='teamCoachregtotalmembers'>
+
+                                            <button className=' teamCoachregbutton-2' onClick={add} >+</button>
                                         </div>
                                     </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-                                    
-                                        <div className='teamcoachn1'>
+                                    <div className='teamcoachn1'>
+                                        <div className='teamCoachRegDiv-Text'>
+                                            <label>Pincode</label></div>
+                                        <input className='TeamCoachField-3' type='number' placeholder='Enter 6-Digit Pincode' name="pincode"
+                                            value={data.pincode}
+                                            onChange={handleChange} />
+                                        <div class='validationname'>
+                                            {errors.pincode && <div className="text-danger ">{errors.pincode}</div>}
+                                        </div>
+                                    </div>
+                                    <div className='teamcoachn1'>
+                                        <div class="dropdown dropdowninput">
                                             <div className='teamCoachRegDiv-Text'>
-                                                <label>Total Team Members</label></div>
+                                                <label>State</label>
+                                            </div>
+                                            <div className='TeamCoachField-4'>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Kerala</option>
+                                                    <option value="1">Jammu & Kashmir</option>
+                                                    <option value="2">Tamilnadu</option>
+                                                    <option value="3">Karnataka</option>
+                                                    <option value="4">Haryana</option>
+                                                    <option value="5">Andrapradesh</option>
 
-                                                
-
-                                                <button className='teamCoachregbutton-1' onClick={sub}>-</button>
-                                                {plus}
-                                                <div className='teamCoachregtotalmembers'>
-                                                
-                                                <button className=' teamCoachregbutton-2' onClick={add} >+</button>
-                                                </div>
-
-
-                                            {/* <input className='TeamCoachField-2' type='number' placeholder='0' name="totalmembers"
-                                                value={data.totalmembers}
-                                                onChange={handleChange} /> */}
-                                            <div class='validationname'>
-                                                {errors.totalmembers && <div className="text-danger ">{errors.totalmembers}</div>}
+                                                </select>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div className='teamcoachn1'>
+                                        <div className='teamCoachRegDiv-Text'>
+                                            <label>Contact Number</label>
+                                        </div>
+                                        <input className='TeamCoachField-5' type='number' placeholder='Enter your contact number' name="contactnumber"
+                                            value={data.contactnumber}
+                                            onChange={handleChange} />
+                                        <div class='validationname'>
+                                            {errors.contactnumber && <div className="text-danger ">{errors.contactnumber}</div>}
+                                        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                        <div className='teamcoachn1'>
-                                            <div className='teamCoachRegDiv-Text'>
-                                                <label>Pincode</label></div>
-                                            <input className='TeamCoachField-3' type='number' placeholder='Enter 6-Digit Pincode' name="pincode"
-                                                value={data.pincode}
+                                    </div>
+                                    <div className='teamcoachn1'>
+                                        <div className='teamCoachRegDiv-Text'>
+                                            <label>Coach License</label>
+                                        </div>
+                                        <div className='teamCoachregDiv-uploads'>
+                                            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
+                                                value={data.license}
                                                 onChange={handleChange} />
-                                            <div class='validationname'>
-                                                {errors.pincode && <div className="text-danger ">{errors.pincode}</div>}
-                                            </div>
                                         </div>
-                                        <div className='teamcoachn1'>
-                                            <div class="dropdown dropdowninput">
-                                                <div className='teamCoachRegDiv-Text'>
-                                                    <label>State</label>
-                                                </div>
-                                                <div className='TeamCoachField-4'>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>State</option>
-                                                        <option value="1">Kerala</option>
-                                                        <option value="2">Tamilnadu</option>
-                                                        <option value="3">Karnataka</option>
-                                                        <option value="4">Haryana</option>
-                                                        <option value="5">Andrapradesh</option>
-                                                        <option value="6">Andrapradesh</option>
-                                                        <option value="7">Andrapradesh</option>
-                                                        <option value="8">Andrapradesh</option>
+                                        <div class='validationname'>
+                                            {errors.license && <div className="text-danger ">{errors.license}</div>}
+                                        </div>
 
-                                                    </select>
-                                                </div>
-                                                <div class='validationname'>
-                                                    {errors.state && <div className="text-danger ">{errors.state}</div>}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className='teamcoachn1'>
+                                    </div>
+
+                                    <div className='teamcoachn1'>
+                                        <div className='TeamCoachFieldDiv-pass'>
                                             <div className='teamCoachRegDiv-Text'>
-                                                <label>Contact Number</label>
-                                            </div>
-                                            <input className='TeamCoachField-5' type='number' placeholder='Enter your contact number' name="contactnumber"
-                                                value={data.contactnumber}
+                                                <label>Password</label></div>
+                                            <input className='TeamCoachField-6' type='password' placeholder='Password' name="password"
+                                                value={data.password}
                                                 onChange={handleChange} />
-                                            <div class='validationname'>
-                                                {errors.contactnumber && <div className="text-danger ">{errors.contactnumber}</div>}
-                                            </div>
-
                                         </div>
-                                        <div className='teamcoachn1'>
-                                            <div className='teamCoachRegDiv-Text'>
-                                                <label>Coach License</label>
-                                            </div>
-                                            <div className='teamCoachregDiv-uploads'>
-                                                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
-                                                    value={data.license}
-                                                    onChange={handleChange} />
-                                            </div>
-                                            <div class='validationname'>
-                                                {errors.license && <div className="text-danger ">{errors.license}</div>}
-                                            </div>
-
+                                        <div class='validationname'>
+                                            {errors.password && <div className="text-danger ">{errors.password}</div>}
                                         </div>
+                                    </div>
 
-                                        <div className='teamcoachn1'>
-                                            <div className='TeamCoachFieldDiv-pass'>
-                                                <div className='teamCoachRegDiv-Text'>
-                                                    <label>Password</label></div>
-                                                <input className='TeamCoachField-6' type='password' placeholder='Password' name="password"
-                                                    value={data.password}
-                                                    onChange={handleChange} />
-                                            </div>
-                                            <div class='validationname'>
-                                                {errors.password && <div className="text-danger ">{errors.password}</div>}
-                                            </div>
-                                        </div>
 
-                                    
                                 </div>
                                 <div className='teamcoachn1'>
                                     <div className='teamCoachRegDiv-Text'>
@@ -357,15 +307,13 @@ function TeamcoachReg() {
                                         </div>
                                         <div className='TeamCoachField-10'>
                                             <select class="form-select" aria-label="Default select example">
-                                                <option selected>Country</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option selected>India</option>
+                                                <option value="1">Canada</option>
+                                                <option value="2">Japan</option>
+                                                <option value="3">Germany</option>
                                             </select>
                                         </div>
-                                        <div class='validationname'>
-                                            {errors.country && <div className="text-danger ">{errors.country}</div>}
-                                        </div>
+
 
                                     </div>
                                 </div>

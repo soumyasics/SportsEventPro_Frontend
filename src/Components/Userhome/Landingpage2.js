@@ -4,9 +4,9 @@ import "./Landingpage2.css"
 function Landingpage2() {
   return (
     <div>
-        <div className='Landingpage'>
+        <div className='LandingPageDiv-1'>
         
-<img src={img} className='center-img'/>
+<img src={img} className='LandingPageCenter-img'/>
 </div>
     </div>
   )
