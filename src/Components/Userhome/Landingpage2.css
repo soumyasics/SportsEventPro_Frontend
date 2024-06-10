@@ -1,13 +1,16 @@
-.Landingpage{
-     height: 100vh;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+.LandingPageDiv-1{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 265px;
+    flex-shrink: 0;
+    margin-top: 170px;
  }
 
- .center-img {
+ .LandingPageCenter-img{
      max-width: 100%;
-     max-height: 100%;
  } 
 
 
