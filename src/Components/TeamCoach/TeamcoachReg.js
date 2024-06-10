@@ -4,58 +4,62 @@ import img from '../../Assets/image 6.png'
 function TeamcoachReg() {
 
 
+    const [plus, setPlus] = useState(
+        0
+    )
+
+
+
+    const add=(event)=>{
+        setPlus(plus+1)
+        event.preventDefault()
+    }
+    const sub=(event)=>{
+        setPlus(plus-1)
+        event.preventDefault()
+    }
+
+
     const [data, setData] = useState({
 
+
+
         name: '',
-        category:'',
-        totalmembers:'',
-        pincode:'',
-        state:'',
-        number:'',
-        license:'',
-        password:'',
-        image:'',
-        teamname:'',
-        district: '',
-        email: '',
-        address:'',
-        city:'',
-        country:'',
-        experience:'',
-        confirmpassword:'',
-        
+        category: '',
+        totalmembers: '',
+        pincode: '',
+        state: '',
         contactnumber: '',
+        license: '',
+        password: '',
+        image: '',
         teamname: '',
-  
-        profile:'',
+        address: '',
+        city: '',
+        country: '',
+        email: '',
+        experience: '',
+        confirmpassword: '',
 
     })
     const [errors, setErrors] = useState({
 
         name: '',
-        category:'',
-        totalmembers:'',
-        pincode:'',
-        state:'',
-        number:'',
-        license:'',
-        password:'',
-        image:'',
-        teamname:'',
-        district: '',
-        email: '',
-        address:'',
-        city:'',
-        country:'',
-        experience:'',
-        confirmpassword:'',
-
+        category: '',
+        totalmembers: '',
+        pincode: '',
+        state: '',
         contactnumber: '',
+        license: '',
+        password: '',
+        image: '',
         teamname: '',
-        
-
-        profile:'',
-
+        address: '',
+        city: '',
+        country: '',
+        email: '',
+        experience: '',
+        confirmpassword: '',
     })
     let formIsValid;
     const handleChange = (event) => {
@@ -88,12 +92,11 @@ function TeamcoachReg() {
 
         errors.email = validateField('Email', data.email);
         errors.name = validateField('Name', data.name);
-        errors.contactnumber=validateField('Contact number',data.contactnumber)
+        errors.contactnumber = validateField('Contact number', data.contactnumber)
         errors.category = validateField('Category', data.category);
         errors.totalmembers = validateField('Totalmembers', data.totalmembers);
         errors.pincode = validateField('Pincode', data.pincode);
         errors.state = validateField('State', data.state);
-        errors.number = validateField('Number', data.number);
         errors.license = validateField('License', data.license);
         errors.password = validateField('Password', data.password);
         errors.image = validateField('Image', data.image);
@@ -119,246 +122,297 @@ function TeamcoachReg() {
     return (
         <div>
             <div className='TeamcoachregMaindiv'>
-                {/* <div className='row'>
-                    <div className='col-4'> */}
-                
-            <div className='registration'>
-            <div className='head'>
-                <h1 className='teamhead1'>Team Coach Registration</h1>
-                <h2 className='teamhead2'>Fill in the details</h2>
-            </div>
-            <div className='teamcoachform'>
-                <form>
-                    <div className='container'>
-                    
-                <div className='teamcoachn1'>
-                    <div>
-                    <label>Name</label>
+                <div className='registration'>
+                    <div className='head'>
+                        <h1 className='teamCoachReghead1'>Team Coach Registration</h1>
+                        <h2 className='teamCoachReghead2'>Fill in the details</h2>
                     </div>
-                <input className='name' type='text' placeholder='Enter Name' name="name"
-                    value={data.name}
-                    onChange={handleChange} />
-                    <div class='validationname'>
-                {errors.name && <div className="text-danger ">{errors.name}</div>}
-            </div>
-            </div>
-            <div className=''>
-            <div className='teamcoachn1'>
-                <div>
-            <label>Select Category</label>
-            </div>
+                    <div className='teamcoachform'>
+                        <form>
+                            <div className='container'>
 
-            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
-            <label class="btn" for="btn-check-5">Cricket</label>
-            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
-
-            <label class="btn" for="btn-check-5">Football</label>
-            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
-
-            <label class="btn" for="btn-check-5">Tennis</label>
-            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
-
-            <label class="btn" for="btn-check-5">Badminton</label>
-            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
-
-            <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"/>
-            <label class="btn" for="btn-check-5">Hockey</label>
-            <div class='validationname'>
-                {errors.category && <div className="text-danger ">{errors.category}</div>}
-            </div>
-            </div>
-            <div className=''>
-            <div className='teamcoachn1'>
-                <div>
-                <label>Total Team Members</label></div>
-                <input className='teammembers' type='number' placeholder='Total Members' name="totalmembers"
-                    value={data.totalmembers}
-                    onChange={handleChange} />
-                    <div class='validationname'>
-                {errors.totalmembers && <div className="text-danger ">{errors.totalmembers}</div>}
-            </div>
-            </div>
-            <div className='teamcoachn1'>
-                <div>
-                <label>Pincode</label></div>
-                <input className='pincode' type='number' placeholder='Enter 6-Digit Pincode' name="pincode"
-                    value={data.pincode}
-                    onChange={handleChange} />
-                    <div class='validationname'>
-                {errors.pincode && <div className="text-danger ">{errors.pincode}</div>}
-            </div>
-            </div>
-            <div className='teamcoachn1'>
-            <div class="dropdown dropdowninput">
-                <div>
-                <label>State</label></div>
-            
-                <button class="btn btn-secondary dropdown-toggle dropdowninput" className='state' type="button" data-bs-toggle="dropdown" aria-expanded="false"value={data.state}
-                    onChange={handleChange} >
-                    Enter Your State
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Football</a></li>
-                    <li><a class="dropdown-item" href="#">Cricket</a></li>
-                    <li><a class="dropdown-item" href="#">Hockey</a></li>
-                </ul>
-                <div class='validationname'>
-                {errors.state && <div className="text-danger ">{errors.state}</div>}
-            </div>
-            </div>
-            </div>
-            <div className='teamcoachn1'>
-                <div>
-                <label>Contact Number</label>
-                </div>
-                <input className='number' type='number' placeholder='Enter your contact number' name="contactnumber"
-                    value={data.contactnumber}
-                    onChange={handleChange} />
+                                <div className='teamcoachn1'>
+                                    <div className='teamCoachRegDiv-Text'>
+                                        <label>Name</label>
+                                    </div>
+                                    <input className='TeamCoachField-1' type='text' placeholder='Enter Name' name="name"
+                                        value={data.name}
+                                        onChange={handleChange} />
                                     <div class='validationname'>
-                {errors.number && <div className="text-danger ">{errors.number}</div>}
-            </div>
+                                        {errors.name && <div className="text-danger ">{errors.name}</div>}
+                                    </div>
+                                </div>
+                                <div className=''>
+                                    <div className='teamcoachn1'>
+                                        <div className='teamCoachRegDiv-Text'>
+                                            <label>Select Category</label>
+                                        </div>
 
-            </div>
-            <div className='teamcoachn1'>
-                <div>
-                <label>Coach License</label>
-                </div>
-                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
-                    value={data.license}
-                    onChange={handleChange} />
-                                    <div class='validationname'>
-                {errors.license && <div className="text-danger ">{errors.license}</div>}
-            </div>
+                                        <input type="radio" class="btn-check " name="options" id="option1" autocomplete="off" checked />
+                                        <label class="btn btn-secondary Enquiriesteaxt-1-6" for="option1" value={data.category}
+                                            onChange={handleChange} >Cricket</label>
 
-            </div>
+                                        <input type="radio" class="btn-check " name="options" id="option2" autocomplete="off" checked />
+                                        <label class="btn btn-secondary Enquiriesteaxt-1-6" for="option2" value={data.category}
+                                            onChange={handleChange} >Football</label>
 
-            <div className='teamcoachn1'>
-                <div>
-                <label>Password</label></div>
-                <input className='password' type='password' placeholder='password' name="password"
-                    value={data.password}
-                    onChange={handleChange} />
-                                                        <div class='validationname'>
-                {errors.password && <div className="text-danger ">{errors.password}</div>}
-            </div>
-            </div>
+                                        <input type="radio" class="btn-check " name="options" id="option3" autocomplete="off" checked />
+                                        <label class="btn btn-secondary Enquiriesteaxt-1-6" for="option3" value={data.category}
+                                            onChange={handleChange} >Tennis</label>
 
-            </div>
-            </div>
-            <div className='teamcoachn1'>
-                <div>
-                <label>Image</label></div>
-                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
-                    value={data.image}
-                    onChange={handleChange} />
-                    <div class='validationname'>
-                {errors.image && <div className="text-danger ">{errors.image}</div>}
-            </div>
-            </div>
-            
-           
-            
-            <div className='teamcoachn1'>
-                <div>
-                <label>Team Name</label></div>
-                <input className='teamname' type='text' placeholder='Enter Team Name' name="teamname"
-                    value={data.teamname}
-                    onChange={handleChange} />
+                                        <input type="radio" class="btn-check " name="options" id="option4" autocomplete="off" checked />
+                                        <label class="btn btn-secondary Enquiriesteaxt-1-6" for="option4" value={data.category}
+                                            onChange={handleChange} >Badminton</label>
+
+                                        <input type="radio" class="btn-check " name="options" id="option5" autocomplete="off" checked />
+                                        <label class="btn btn-secondary Enquiriesteaxt-1-6" for="option5" value={data.category}
+                                            onChange={handleChange} >Hockey</label>
+
                                         <div class='validationname'>
-                {errors.teamname && <div className="text-danger ">{errors.teamname}</div>}
-            </div>
+                                            {errors.category && <div className="text-danger ">{errors.category}</div>}
+                                        </div>
+                                    </div>
 
-            </div>
-            <div className='teamcoachn1'>
-                <div>
-                <label>Address</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    
+                                        <div className='teamcoachn1'>
+                                            <div className='teamCoachRegDiv-Text'>
+                                                <label>Total Team Members</label></div>
+
+                                                
+
+                                                <button className='teamCoachregbutton-1' onClick={sub}>-</button>
+                                                {plus}
+                                                <div className='teamCoachregtotalmembers'>
+                                                
+                                                <button className=' teamCoachregbutton-2' onClick={add} >+</button>
+                                                </div>
+
+
+                                            {/* <input className='TeamCoachField-2' type='number' placeholder='0' name="totalmembers"
+                                                value={data.totalmembers}
+                                                onChange={handleChange} /> */}
+                                            <div class='validationname'>
+                                                {errors.totalmembers && <div className="text-danger ">{errors.totalmembers}</div>}
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        <div className='teamcoachn1'>
+                                            <div className='teamCoachRegDiv-Text'>
+                                                <label>Pincode</label></div>
+                                            <input className='TeamCoachField-3' type='number' placeholder='Enter 6-Digit Pincode' name="pincode"
+                                                value={data.pincode}
+                                                onChange={handleChange} />
+                                            <div class='validationname'>
+                                                {errors.pincode && <div className="text-danger ">{errors.pincode}</div>}
+                                            </div>
+                                        </div>
+                                        <div className='teamcoachn1'>
+                                            <div class="dropdown dropdowninput">
+                                                <div className='teamCoachRegDiv-Text'>
+                                                    <label>State</label>
+                                                </div>
+                                                <div className='TeamCoachField-4'>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>State</option>
+                                                        <option value="1">Kerala</option>
+                                                        <option value="2">Tamilnadu</option>
+                                                        <option value="3">Karnataka</option>
+                                                        <option value="4">Haryana</option>
+                                                        <option value="5">Andrapradesh</option>
+                                                        <option value="6">Andrapradesh</option>
+                                                        <option value="7">Andrapradesh</option>
+                                                        <option value="8">Andrapradesh</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class='validationname'>
+                                                    {errors.state && <div className="text-danger ">{errors.state}</div>}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='teamcoachn1'>
+                                            <div className='teamCoachRegDiv-Text'>
+                                                <label>Contact Number</label>
+                                            </div>
+                                            <input className='TeamCoachField-5' type='number' placeholder='Enter your contact number' name="contactnumber"
+                                                value={data.contactnumber}
+                                                onChange={handleChange} />
+                                            <div class='validationname'>
+                                                {errors.contactnumber && <div className="text-danger ">{errors.contactnumber}</div>}
+                                            </div>
+
+                                        </div>
+                                        <div className='teamcoachn1'>
+                                            <div className='teamCoachRegDiv-Text'>
+                                                <label>Coach License</label>
+                                            </div>
+                                            <div className='teamCoachregDiv-uploads'>
+                                                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
+                                                    value={data.license}
+                                                    onChange={handleChange} />
+                                            </div>
+                                            <div class='validationname'>
+                                                {errors.license && <div className="text-danger ">{errors.license}</div>}
+                                            </div>
+
+                                        </div>
+
+                                        <div className='teamcoachn1'>
+                                            <div className='TeamCoachFieldDiv-pass'>
+                                                <div className='teamCoachRegDiv-Text'>
+                                                    <label>Password</label></div>
+                                                <input className='TeamCoachField-6' type='password' placeholder='Password' name="password"
+                                                    value={data.password}
+                                                    onChange={handleChange} />
+                                            </div>
+                                            <div class='validationname'>
+                                                {errors.password && <div className="text-danger ">{errors.password}</div>}
+                                            </div>
+                                        </div>
+
+                                    
+                                </div>
+                                <div className='teamcoachn1'>
+                                    <div className='teamCoachRegDiv-Text'>
+                                        <label>Image</label></div>
+                                    <div className='teamCoachregDiv-uploads'>
+                                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
+                                            value={data.image}
+                                            onChange={handleChange} /></div>
+                                    <div class='validationname'>
+                                        {errors.image && <div className="text-danger ">{errors.image}</div>}
+                                    </div>
+                                </div>
+
+
+
+                                <div className='teamcoachn1'>
+                                    <div className='teamCoachRegDiv-Text'>
+                                        <label>Team Name</label></div>
+                                    <input className='TeamCoachField-7' type='text' placeholder='Enter Team Name' name="teamname"
+                                        value={data.teamname}
+                                        onChange={handleChange} />
+                                    <div class='validationname'>
+                                        {errors.teamname && <div className="text-danger ">{errors.teamname}</div>}
+                                    </div>
+
+                                </div>
+                                <div className='teamcoachn1'>
+                                    <div className='teamCoachRegDiv-Text'>
+                                        <label>Address</label>
+                                    </div>
+                                    <input className='TeamCoachField-8' type='text' placeholder='Enter Address' name="address"
+                                        value={data.address}
+                                        onChange={handleChange} />
+                                    <div class='validationname'>
+                                        {errors.address && <div className="text-danger ">{errors.address}</div>}
+                                    </div>
+                                </div>
+
+                                <div className='teamcoachn1'>
+                                    <div className='teamCoachRegDiv-Text'>
+                                        <label>City</label></div>
+                                    <input className='TeamCoachField-9' type='text' placeholder='Enter City' name="city"
+                                        value={data.city}
+                                        onChange={handleChange} />
+                                    <div class='validationname'>
+                                        {errors.city && <div className="text-danger ">{errors.city}</div>}
+                                    </div>
+                                </div>
+
+
+                                <div className='teamcoachn1'>
+                                    <div class="dropdown dropdowninput">
+                                        <div className='teamCoachRegDiv-Text'>
+                                            <label>Country</label>
+                                        </div>
+                                        <div className='TeamCoachField-10'>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Country</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class='validationname'>
+                                            {errors.country && <div className="text-danger ">{errors.country}</div>}
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div className='teamcoachn1'>
+                                    <div className='teamCoachRegDiv-Text'>
+                                        <label>E-mail Id</label></div>
+                                    <input className='TeamCoachField-11' type='mail' placeholder='Enter your email' name="email"
+                                        value={data.email}
+                                        onChange={handleChange} />
+                                    <div class='validationname'>
+                                        {errors.email && <div className="text-danger ">{errors.email}</div>}
+                                    </div>
+                                </div>
+
+                                <div className='teamcoachn1'>
+                                    <div className='teamCoachRegDiv-Text'>
+                                        <label>Describe Experience</label>
+                                    </div>
+                                    <input className='TeamCoachField-12' type='text' placeholder='Describe experience' name="experience"
+                                        value={data.experience}
+                                        onChange={handleChange} />
+                                    <div class='validationname'>
+                                        {errors.experience && <div className="text-danger ">{errors.experience}</div>}
+                                    </div>
+                                </div>
+
+                                <div className='teamcoachn1'>
+
+                                    <div className='teamCoachRegDiv-Text'> <label>Confirm Password</label></div>
+                                    <input className='TeamCoachField-13' type='password' placeholder='Confirm password' name="confirmpassword"
+                                        value={data.confirmpassword}
+                                        onChange={handleChange} />
+                                    <div class='validationname'>
+                                        {errors.confirmpassword && <div className="text-danger ">{errors.confirmpassword}</div>}
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <input className='TeamCoachButton' type='submit' placeholder='submit' onClick={handleSubmit}
+                        />
+                    </div>
                 </div>
-                <input className='address' type='text' placeholder='Enter Address' name="address"
-                    value={data.address}
-                    onChange={handleChange} />
-            <div class='validationname'>
-                {errors.address && <div className="text-danger ">{errors.address}</div>}
-            </div>
-            </div>
-
-            <div className='teamcoachn1'>
-                <div>
-                <label>City</label></div>
-                <input className='city' type='text' placeholder='Enter City' name="city"
-                    value={data.city}
-                    onChange={handleChange} />
-                                                            <div class='validationname'>
-                {errors.city && <div className="text-danger ">{errors.city}</div>}
-            </div>
-            </div>
-            
-            
-            <div className='teamcoachn1'>
-            <div class="dropdown dropdowninput">
-                <div>
-                <label>Country</label>
-                </div>
-                <button class="btn btn-secondary dropdown-toggle dropdowninput" className='country' type="button" data-bs-toggle="dropdown" aria-expanded="false"value={data.country}
-                    onChange={handleChange}>
-                    Enter Your Country
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Football</a></li>
-                    <li><a class="dropdown-item" href="#">Cricket</a></li>
-                    <li><a class="dropdown-item" href="#">Hockey</a></li>
-                </ul>
-                <div class='validationname'>
-                {errors.country && <div className="text-danger ">{errors.country}</div>}
-            </div>
-
-            </div>
-            </div>
-            
-            <div className='teamcoachn1'>
-                <div>
-                <label>E-mail Id</label></div>
-                <input className='mail' type='mail' placeholder='Enter your email' name="email"
-                    value={data.email}
-                    onChange={handleChange} />
-                                                            <div class='validationname'>
-                {errors.email && <div className="text-danger ">{errors.email}</div>}
-            </div>
-            </div>
-            
-            <div className='teamcoachn1'>
-                <div>
-                <label>Describe Experience</label>
-                </div>
-                <input className='experience' type='text' placeholder='Describe experience' name="experience"
-                    value={data.experience}
-                    onChange={handleChange} />
-                                                            <div class='validationname'>
-                {errors.experience && <div className="text-danger ">{errors.experience}</div>}
-            </div>
-            </div>
-
-            <div className='teamcoachn1'>
-
-               <div> <label>Confirm Password</label></div>
-                <input className='cpassword' type='password' placeholder='Confirm password' name="confirmpassword"
-                    value={data.confirmpassword}
-                    onChange={handleChange} />
-                                                            <div class='validationname'>
-                {errors.confirmpassword && <div className="text-danger ">{errors.confirmpassword}</div>}
-            </div>
-            </div>
-            
-            
-            </div>
-                </form>
-                </div>
-                <div>
-                <input className='button' type='submit' placeholder='submit' onClick={handleSubmit}
-                     />
-            </div>
-            {/* </div>
-            </div> */}
-            </div>
             </div>
         </div>
     )
