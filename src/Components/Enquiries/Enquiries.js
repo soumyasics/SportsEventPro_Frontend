@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
 import './Enquiries.css'
+import axiosInstance from '../Constant/BaseURL';
 
 
 function Enquiries() {
+
+
+    
     const [data, setData] = useState({
 
         name: '',
         email: '',
         contactnumber: '',
-        description:''
+        message:''
+        
 
 
     })
@@ -17,7 +22,7 @@ function Enquiries() {
         name: '',
         email: '',
         contactnumber: '',
-        description:''
+        message:''
 
     })
     let formIsValid;
@@ -50,12 +55,13 @@ function Enquiries() {
         formIsValid = true;
 
         errors.email = validateField('email', data.email);
-        errors.contactnumber = validateField('contactnumber', data.contactnumber);
-        errors.description = validateField('description', data.description);
+        errors.contactnumber = validateField('contact number', data.contactnumber);
+        errors.message = validateField('message', data.message);
         errors.name = validateField('name', data.name);
 
 
 
+BackendData();
 
 
         setErrors(errors);
@@ -66,19 +72,48 @@ function Enquiries() {
         }
     }
 
+
+
+
+
+    const BackendData = () => {
+        console.log("fun called",data);
+            axiosInstance.post('addEnquiry',data)
+              .then(response => {
+                console.log(response);
+                if(response.data.status==200){
+                    alert(response.data.msg)
+                }else
+        alert(response.data.msg)       
+                
+            
+              })
+              .catch(error => {
+                console.error(error);
+             
+            
+        })
+        }
+        
+        
+
+
+
+
+
     return (
         <div>
         
             <div className='Enquiriesmaindiv1'>
             <form>
 
-<div className='row'>
+<div className='row Enquiriesmaindiv-2'>
 
             <div class="Enquiriestext-1" >
                 <h1 >ENQUIRIES</h1>
                     </div>
 </div>
-<div className='row'>
+<div className='row Enquiriesmaindiv-3'>
 
                     <div >
                         <h6 class="Enquiriestext-2">Fill in the details</h6>
@@ -90,28 +125,28 @@ function Enquiries() {
 
 <div className='row'>
 
-<div className='col-6'>
-<div><label>Name</label>
+<div className='col-6 '>
+<div><label className='Enquiriestext-1-1'>Name</label>
 
-                            <input className='Enquiriesinput1' type='text' placeholder='Name' name="name"
+                            <input className='Enquiriesinput1' type='text' placeholder='Enter Name' name="name"
                                 value={data.name}
                                 onChange={handleChange} />
                         </div>
-                        <div class='validationemail '>
+                        <div class='Enquiriesvalidation '>
                             {errors.name && <div className="text-danger ">{errors.name}</div>}
                         </div>
 </div>
 <div className='col-6'>
 
-<label>Email</label>
+<label className='Enquiriestext-1-1'>Email</label>
 
                         <div>
-                            <input className='Enquiriesinput2' type='email' placeholder='Email' name="email"
+                            <input className='Enquiriesinput2' type='email' placeholder='Enter Email' name="email"
                                 value={data.email}
                                 onChange={handleChange} />
                         </div>
 
-                        <div class='validationemail'>
+                        <div class='Enquiriesvalidation'>
                             {errors.email && <div className="text-danger ">{errors.email}</div>}
                         </div>
 </div>
@@ -119,34 +154,31 @@ function Enquiries() {
 
 <div className='row'>
 
-<div className='col-6'>
-<label>Enquiriy Type</label>
-<div className='Enquiriesinput3'>
-<input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" checked/>
-<label class="btn" for="option5">Checked</label>
-
-<input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off"/>
-<label class="btn" for="option6">Radio</label>
-
-<input type="radio" class="btn-check" name="options-base" id="option7" autocomplete="off" disabled/>
-<label class="btn" for="option7">Disabled</label>
-
-<input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off"/>
-<label class="btn" for="option8">Radio</label></div>
-
+<div className='col-6 Enquiries-div-main'>
+<label className='Enquiriestext-1-1'>Enquiriy Type</label>
+<div className='Enquiriesdiv-1-3'>
+<input type="radio" class="btn-check " name="options" id="option1" autocomplete="off" checked/>
+<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option1">General</label>
+<input type="radio" class="btn-check Enquiriesteaxt-1-3" name="options" id="option2" autocomplete="off" />
+<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option2">Registration</label>
+<input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" />
+<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option3">Schedule</label>
+<input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" />
+<label class="btn btn-secondary Enquiriesteaxt-1-3" for="option4">Others</label>
+</div>
 </div>
 
 
 
-<div className='col-6'>
-<label>Contact Number</label>
+<div className='col-6 Enquiries-div-main'>
+<label className='Enquiriestext-1-1'>Contact Number</label>
 
 <div >
                             <input className='Enquiriesinput3' type='number' placeholder='Contact Number' name="contactnumber"
                                 value={data.contactnumber}
                                 onChange={handleChange} />
                         </div>
-                        <div class='validationemail'>
+                        <div class='Enquiriesvalidation'>
                             {errors.contactnumber && <div className="text-danger ">{errors.contactnumber}</div>}
                         </div>
 </div>
@@ -155,14 +187,16 @@ function Enquiries() {
 </div>
 <div className='row'>
 
-<div className='col-6'>
+<div className='col-6 Enquiries-div-main'>
+<label className='Enquiriestext-1-1'>Message</label>
+
 <div>
-                            <input className='Enquiriesinput4' type='text' placeholder='Message' name="description"
-                                value={data.description}
+                            <input className='Enquiriesinput4' type='text' placeholder='Message' name="message"
+                                value={data.message}
                                 onChange={handleChange} />
                         </div>
-                        <div class='validationemail'>
-                            {errors.description && <div className="text-danger ">{errors.description}</div>}
+                        <div class='Enquiriesvalidation'>
+                            {errors.message && <div className="text-danger ">{errors.message}</div>}
                         </div>
 </div>
 </div>
@@ -171,8 +205,8 @@ function Enquiries() {
 
 
 
-                        <div>
-                                <input className='input6' type='submit' placeholder='submit' onClick={handleSubmit}
+                        <div  className='Enquiriesdiv-7'>
+                                <input className='Enquiriesinput6' type='submit' placeholder='submit' onClick={handleSubmit}
                                      />
                             </div>
                 </form>

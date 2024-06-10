@@ -19,7 +19,7 @@ function Landingpage4() {
             <h1 className='landingpage4head-3'>START YOUR FIRST EVENT TODAY</h1>
         </div>
         </div>
-      
+       
     </div>
   )
 }

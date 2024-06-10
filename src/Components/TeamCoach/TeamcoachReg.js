@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./TeamcoachReg.css"
+import axiosInstance from '../Constant/BaseURL'
 function TeamcoachReg() {
 
 
@@ -110,7 +111,7 @@ function TeamcoachReg() {
 
 
 
-
+BackendData();
 
         setErrors(errors);
 
@@ -119,6 +120,33 @@ function TeamcoachReg() {
 
         }
     }
+
+
+
+
+
+
+
+
+    const BackendData = () => {
+        console.log("fun called",data);
+            axiosInstance.post('registerTeamCoach',data)
+              .then(response => {
+                console.log(response);
+                if(response.data.status==200){
+                    alert(response.data.msg)
+                }else
+        alert(response.data.msg)       
+                
+            
+              })
+              .catch(error => {
+                console.error(error);
+             
+            
+        })
+        }
+        
     return (
         <div>
             <div className='TeamcoachregMaindiv'>
