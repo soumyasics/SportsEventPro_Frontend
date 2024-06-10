@@ -1,74 +1,74 @@
-.button{
-    width: 119px;
-    height: 50px;
-    background-color: black;
-    color: white;
-    margin-bottom: 90px;
-    margin-top: 46px;
+.TeamCoachButton{
+    width: 240px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #000;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 60px;
+    margin-top: 40px;
 }
-.mail{
+.TeamCoachField-11{
     width: 475px;
-    height: 44px;
+    height: 35px;
 }
-.city{
+.TeamCoachField-9{
     width: 475px;
-    height: 44px;
+    height: 35px;
 }
-.address{
+.TeamCoachField-8{
     width: 475px;
-    height: 44px;
+    height: 96px;
 }
-.teamname{
+.TeamCoachField-7{
     width: 475px;
-    height: 44px;
+    height: 35px;
 }
-.password{
+.TeamCoachField-6{
     width: 475px;
-    height: 44px;
+    height: 35px;
+   
 }
-.number{
+.TeamCoachField-5{
     width: 475px;
-    height: 44px;
+    height: 35px;
 }
-.pincode{
+.TeamCoachField-3{
     width: 475px;
-    height: 44px;
+    height: 35px;
 }
-.teammembers{
+.TeamCoachField-2{
+    width: 36px;
+    height: fit-content;
+    margin-bottom: 67px;
+    background-color: #d9d9d9;
+}
+.TeamCoachField-1{
     width: 475px;
-    height: 44px;
+    height: 35px;
 }
-.name{
+.TeamCoachField-12{
     width: 475px;
-    height: 44px;
+    height: 96px;
 }
-.experience{
+.TeamCoachField-13{
     width: 475px;
-    height: 44px;
+    height: 35px;
 }
-.cpassword{
+.TeamCoachField-4{
     width: 475px;
-    height: 44px;
+    height: 35px;
 }
-.state{
+
+.TeamCoachField-10{
     width: 475px;
-    border: 0px;
-    height: 44px;
+    height: 35px;
 }
-.form-control{
-    width: 475px;
-    height: 44px;
-}
-.country{
-    width: 475px;
-    height: 44px;
-    border: 0px;
-}
-.btn{
-    margin-left: 3px;
-    background-color: #e2e4e4;
-    padding: 0px;
-}
+
 .teamcoachn1{
     margin-bottom: 35px;
 }
@@ -85,4 +85,53 @@
     margin-left: 156px;
     letter-spacing: 2px;
     margin-top: 65px;
+}
+.teamCoachregDiv-uploads{
+    width: 475px;
+}
+.teamCoachRegDiv-Text{
+    color: #000;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px;
+}
+.TeamCoachFieldDiv-pass{
+    margin-top: 93px;
+}
+.teamCoachReghead1{
+    color: #000;
+text-align: center;
+font-family: Roboto;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 48px;
+}
+.teamCoachReghead2{
+    color: #000;
+text-align: center;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+}
+.teamCoachregbutton-1{
+    background-color: #d9d9d9;
+    border-radius: 7px;
+}
+.teamCoachregbutton-2{
+    background-color: #d9d9d9;
+    border-radius: 7px;
+    margin-left: 53px;
+}
+.teamCoachregtotalmembers{
+    width: 79px;
+    height: 27px;
+    background: rgba(217, 217, 217, 0.58);
+    border-radius: 7px;
+    margin-top: -28px;
+    margin-bottom: 106px;
 }
