@@ -6,6 +6,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 60px;
+margin-top: 50px;
 }
 .Aboutpagediv-2{
     display: flex;
@@ -23,50 +24,41 @@ align-self: stretch;
 .Aboutpageimg-1{
     width: 100px;
     height: 100px;
-    margin-left: 123px;
-    flex-shrink: 0;
+    
 }
 .Aboutpageimg-2{
     width: 100px;
 height: 100px;
-flex-shrink: 0;
-margin-left: 138px;
-
 }
 
 .Aboutpagediv-4{
 margin-top: 120px;
 }
 .Aboutpagetext-3{
-    margin-top: 13px;
     font-size: medium;
-    margin-left: 101px;   
-}
+    margin-left: 158px;}
 .Aboutpagetext-5{
-    margin-top: 13px;
     font-size: medium;
-    margin-left: 101px;   
-}
+    margin-left: 158px;}
 
 .Aboutpagetext-4{
     font-size: large;
     margin-top: 27px;
 }
 .Aboutpagemaindiv2{
-    margin-bottom: 60px;
-    margin-top: 60px;
+    margin-bottom: 35px;
+    margin-top: 15px;
 }
 .Aboutpagemaindiv3{
-    border: solid rgb(220, 192, 192);
-    border-radius: 10px;
-    width: 93%;
-    margin-left: 54px;    
+    border-radius: 6px;
+    border: var(--items, 1px) solid rgba(0, 0, 0, 0.10);
+    width: 100%;
 
 }
 .Aboutpagetextmission{
     font-size: large;
     font-weight: bold;
-    margin-left: 100px;
+    margin-left: 60px;
 }
 .ms{
     margin-top: 20px;
@@ -84,3 +76,13 @@ margin-top: 120px;
 .Aboutdiv2{
     margin-left: -32px;
 }
+.aboutpageourmission{
+    border-radius: 6px;
+border: var(--items, 1px) solid rgba(0, 0, 0, 0.10);
+margin-left: 17px;
+
+}
+.aboutpageourchoose{
+    border-radius: 6px;
+    border: var(--items, 1px) solid rgba(0, 0, 0, 0.10);
+    margin-left: 157px;}
