@@ -1,33 +1,102 @@
 .AdminResetPassmaindiv-1{
-    margin-top: 62px;
-    width: 500px;
-    margin-left: 800px;
+    margin-top: 120px;
+
 }
 .AdminResetPassButton{
-    margin-left: 812px;
-    margin-top: 23px;
     color: white;
     background-color: black;
-    width: 224px;
-    height: 50px;
+    width: 240px;
+    height: 48px;
+    border-radius: 11px;
+    margin-top: 45px;
+    margin-left: 132px;
+
 }
 .AdminResetPassimg{
-    margin-top: -500px;
-    width: 419px;
-    margin-left: 173px;
-}
+    width: 500px;
+    height: 500px;
+    margin-top: 120px;
+    margin-left: 194px;}
 .AdminResetPassMail{
-    width: 444px;
-    height: 50px;
-    margin-bottom: 20px;
+    height: 40px;
+    color: rgba(0, 0, 0, 0.50);
+    width: 486px;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    padding: 8px 12px;
+    overflow: hidden;
+    color: rgb(18 16 16);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
 }
 .AdminResetPassword{
-    width: 444px;
-    height: 50px;
-    margin-bottom: 20px;
+    height: 40px;
+    color: rgba(0, 0, 0, 0.50);
+    width: 486px;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    padding: 8px 12px;
+    overflow: hidden;
+    color: rgb(18 16 16);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+
 }
 .AdminResetConfirmPass{
-    width: 444px;
-    height: 50px;
-    margin-bottom: 20px;
+    height: 40px;
+    color: rgba(0, 0, 0, 0.50);
+    width: 486px;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    padding: 8px 12px;
+    overflow: hidden;
+    color: rgb(18 16 16);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+}
+
+.adminresetpasstext{
+        margin-bottom: 55px;
+        margin-left: 88px;
+}
+.adminresetpasstext-2{
+font-size: medium;
+align-content: start;
+}
+.adminresetpasstext-1{
+    color: #000;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    align-content: start;
+    
+}
+
+.adminresetlabel{
+    color: #000;
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px; 
 }

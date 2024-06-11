@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './AdminResetPass.css'
-import resetimg from "../../Assets/Security On 1.png"
+import resetimg from "../../Assets/giflap.gif"
 import axios from 'axios'
 import axiosInstance from '../Constant/BaseURL'
 
@@ -97,44 +97,50 @@ alert(response.data.msg)
 
     return (
         <div>
+<div className='row'>
+            <div className='col-6'> 
+                           <img class='AdminResetPassimg' src={resetimg} />
+            </div>
 
-            <div className='AdminResetPassmaindiv-1'>
-                <h1>Reset Password</h1>
-                <p>Reset your password to secure your account.</p>
+            <div className='AdminResetPassmaindiv-1 col-6'>
+                <div className='adminresetpasstext'>
+                <h1 className='adminresetpasstext-1'>Reset Password</h1>
+                <p className='adminresetpasstext-2'>Reset your password to secure your account.</p>
+                </div>
                 <form>
                     <div>
-                        <label>E-mail Id</label></div>
+                        <label className='adminresetlabel'>E-mail Id</label></div>
                     <input className='AdminResetPassMail' type='mail' placeholder='Enter your email' name="email"
                         value={data.email}
                         onChange={handleChange} />
-                    <div class='validationname'>
+                    <div >
                         {errors.email && <div className="text-danger ">{errors.email}</div>}
                     </div>
                     <div>
-                        <label>Password</label></div>
+                        <label className='adminresetlabel'>Password</label></div>
                     <input className='AdminResetPassword' type='password' placeholder='password' name="password"
                         value={data.password}
                         onChange={handleChange} />
-                    <div class='validationname'>
+                    <div>
                         {errors.password && <div className="text-danger ">{errors.password}</div>}
                     </div>
-                    <div> <label>Confirm Password</label></div>
+                    <div> <label className='adminresetlabel'>Confirm Password</label></div>
                     <input className='AdminResetConfirmPass' type='password' placeholder='confirm password' name="confirmpassword"
                         value={data.confirmpassword}
                         onChange={handleChange} />
-                    <div class='validationname'>
+                    <div >
                         {errors.confirmpassword && <div className="text-danger ">{errors.confirmpassword}</div>}
                     </div>
 
                 </form>
 
-            </div>
             <div>
                 <input className='AdminResetPassButton' type='submit' placeholder='submit' onClick={handleSubmit}
                 />
             </div>
-            <img class='AdminResetPassimg' src={resetimg} />
+            </div>
 
+            </div>
         </div>
     )
 }
