@@ -31,7 +31,7 @@ function App() {
           <Route exact path='/userfooter' element={<UserFooter/>}/>
           <Route exact path='/home' element={<Userhome/>}/>
           <Route exact path="/UserFooter" element={<UserFooter/>} />
-          <Route exact path="/AdminLogin" element={[<MainNavbar/>,<AdminLogin/>,<UserFooter/>]} />
+          <Route exact path="/AdminLogin" element={[<AdminLogin/>]} />
           <Route exact path="/Landingpage2" element={<Landingpage2/>} />
           <Route exact path="/MainNavbar" element={<MainNavbar/>} />
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass/>} />

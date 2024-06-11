@@ -62,8 +62,10 @@ else{
 
   return (
     <div>
-  <div className='col-6'>
-        <form>
+      
+  <div className='row'>
+    <div className='col-6'>
+        <form >
         <div className='adminlogin-div1'>
 
           <div >
@@ -71,7 +73,7 @@ else{
               <h1 class="AdminLoginh1"> Admin Login</h1>
             </div>
             <div className='adminLogindiv1'>
-              <p className="AdminLoginp1">username</p>
+              <p className="AdminLoginp1">Username</p>
               <input
                 className="AdminLogininput1"
                 type="email"
@@ -108,7 +110,7 @@ else{
 
           <div>
 
-            <button className="AdminLoginButton" type="submit" onClick={handleSubmit} >
+            <button className="AdminLoginButton" type="submit" onClick={handleSubmit}>
               Login
             </button>
           </div>
@@ -118,12 +120,14 @@ else{
 
           </form>
           </div>
-          
 
-        <div >
+          <div className='col-5'>
                                <img className="AdminLoginImg4" src={ImgL} alt="image not found"/>
 
                                        </div>
+          
+
+          </div>
           
 
 
