@@ -15,6 +15,9 @@ import MainNavbar from './Components/Userhome/MainNavbar';
 import TeamcoachReg from './Components/TeamCoach/TeamcoachReg';
 import Enquiries  from './Components/Enquiries/Enquiries';
 import TeamCoachForgetPass from './Components/TeamCoach/TeamCoachForgetPass';
+import TeamCoachLandingPage1 from './Components/TeamCoach/TeamCoachLandingPage1';
+import TeamCoachLandingPage2 from './Components/TeamCoach/TeamCoachLandingPage2';
+import TeamCoachLandingPage3 from './Components/TeamCoach/TeamCoachLandingPage3';
 
 
 function App() {
@@ -34,6 +37,9 @@ function App() {
           <Route exact path="/AdminLogin" element={[<MainNavbar/>,<AdminLogin/>,<UserFooter/>]} />
           <Route exact path="/Landingpage2" element={<Landingpage2/>} />
           <Route exact path="/MainNavbar" element={<MainNavbar/>} />
+          <Route exact path="/TeamCoachLandingPage1" element={<TeamCoachLandingPage1/>} />
+          <Route exact path="/TeamCoachLandingPage2" element={<TeamCoachLandingPage2/>} />
+          <Route exact path="/TeamCoachLandingPage3" element={<TeamCoachLandingPage3/>} />
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass/>} />
            <Route exact path="/TeamCoachLogin" element={<TeamCoachLogin/>} />
           <Route exact path="/TeamCoachreg" element={<TeamcoachReg/>} /> 
