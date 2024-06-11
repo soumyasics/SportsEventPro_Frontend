@@ -1,9 +1,9 @@
-.maindiv-1{
+.AdminResetPassmaindiv-1{
     margin-top: 62px;
     width: 500px;
     margin-left: 800px;
 }
-.adminbutton{
+.AdminResetPassButton{
     margin-left: 812px;
     margin-top: 23px;
     color: white;
@@ -11,22 +11,22 @@
     width: 224px;
     height: 50px;
 }
-.adminresetimg{
+.AdminResetPassimg{
     margin-top: -500px;
     width: 419px;
     margin-left: 173px;
 }
-.adminmail{
+.AdminResetPassMail{
     width: 444px;
     height: 50px;
     margin-bottom: 20px;
 }
-.adminpassword{
+.AdminResetPassword{
     width: 444px;
     height: 50px;
     margin-bottom: 20px;
 }
-.admincpassword{
+.AdminResetConfirmPass{
     width: 444px;
     height: 50px;
     margin-bottom: 20px;
