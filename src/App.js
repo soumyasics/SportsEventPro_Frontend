@@ -21,7 +21,7 @@ function App() {
 
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="sports_event_pro">
       <div className="App">
       
       <Routes>
