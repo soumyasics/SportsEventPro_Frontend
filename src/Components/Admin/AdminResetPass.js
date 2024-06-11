@@ -98,13 +98,13 @@ alert(response.data.msg)
     return (
         <div>
 
-            <div className='maindiv-1'>
+            <div className='AdminResetPassmaindiv-1'>
                 <h1>Reset Password</h1>
                 <p>Reset your password to secure your account.</p>
                 <form>
                     <div>
                         <label>E-mail Id</label></div>
-                    <input className='adminmail' type='mail' placeholder='Enter your email' name="email"
+                    <input className='AdminResetPassMail' type='mail' placeholder='Enter your email' name="email"
                         value={data.email}
                         onChange={handleChange} />
                     <div class='validationname'>
@@ -112,14 +112,14 @@ alert(response.data.msg)
                     </div>
                     <div>
                         <label>Password</label></div>
-                    <input className='adminpassword' type='password' placeholder='password' name="password"
+                    <input className='AdminResetPassword' type='password' placeholder='password' name="password"
                         value={data.password}
                         onChange={handleChange} />
                     <div class='validationname'>
                         {errors.password && <div className="text-danger ">{errors.password}</div>}
                     </div>
                     <div> <label>Confirm Password</label></div>
-                    <input className='admincpassword' type='password' placeholder='confirm password' name="confirmpassword"
+                    <input className='AdminResetConfirmPass' type='password' placeholder='confirm password' name="confirmpassword"
                         value={data.confirmpassword}
                         onChange={handleChange} />
                     <div class='validationname'>
@@ -130,10 +130,10 @@ alert(response.data.msg)
 
             </div>
             <div>
-                <input className='adminbutton' type='submit' placeholder='submit' onClick={handleSubmit}
+                <input className='AdminResetPassButton' type='submit' placeholder='submit' onClick={handleSubmit}
                 />
             </div>
-            <img class='adminresetimg' src={resetimg} />
+            <img class='AdminResetPassimg' src={resetimg} />
 
         </div>
     )
