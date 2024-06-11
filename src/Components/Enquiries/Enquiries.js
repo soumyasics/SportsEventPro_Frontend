@@ -12,7 +12,8 @@ function Enquiries() {
         name: '',
         email: '',
         contactnumber: '',
-        message:''
+        message:'',
+        enquiriestype:''
         
 
 
@@ -22,7 +23,8 @@ function Enquiries() {
         name: '',
         email: '',
         contactnumber: '',
-        message:''
+        message:'',
+        enquiriestype:''
 
     })
     let formIsValid;
@@ -58,8 +60,7 @@ function Enquiries() {
         errors.contactnumber = validateField('contact number', data.contactnumber);
         errors.message = validateField('message', data.message);
         errors.name = validateField('name', data.name);
-
-
+        errors.enquiriestype = validateField('enquiriestype',data.enquiriestype)
 
 BackendData();
 
@@ -157,15 +158,18 @@ BackendData();
 <div className='col-6 Enquiries-div-main'>
 <label className='Enquiriestext-1-1'>Enquiriy Type</label>
 <div className='Enquiriesdiv-1-3'>
-<input type="radio" class="btn-check " name="options" id="option1" autocomplete="off" checked/>
+<input type="radio" class="btn-check " name="enquiriestype" id="option1" autocomplete="off"  onChange={handleChange} value="General"/>
 <label class="btn btn-secondary Enquiriesteaxt-1-3" for="option1">General</label>
-<input type="radio" class="btn-check Enquiriesteaxt-1-3" name="options" id="option2" autocomplete="off" />
+<input type="radio" class="btn-check Enquiriesteaxt-1-3" name="enquiriestype" id="option2" autocomplete="off" onChange={handleChange} value="Registration"/>
 <label class="btn btn-secondary Enquiriesteaxt-1-3" for="option2">Registration</label>
-<input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" />
+<input type="radio" class="btn-check" name="enquiriestype" id="option3" autocomplete="off" onChange={handleChange} value="Schedule"/>
 <label class="btn btn-secondary Enquiriesteaxt-1-3" for="option3">Schedule</label>
-<input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" />
+<input type="radio" class="btn-check" name="enquiriestype" id="option4" autocomplete="off" onChange={handleChange} value="other"/>
 <label class="btn btn-secondary Enquiriesteaxt-1-3" for="option4">Others</label>
 </div>
+<div class='Enquiriesvalidationoption'>
+                            {errors.enquiriestype && <div className="text-danger ">{errors.enquiriestype}</div>}
+                        </div>
 </div>
 
 
