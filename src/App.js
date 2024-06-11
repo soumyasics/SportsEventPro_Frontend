@@ -37,7 +37,7 @@ function App() {
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass/>} />
            <Route exact path="/TeamCoachLogin" element={<TeamCoachLogin/>} />
           <Route exact path="/TeamCoachreg" element={<TeamcoachReg/>} /> 
-          <Route exact path="/AdminResetPass" element={[<MainNavbar/>,<AdminResetPass/>,<UserFooter/>]} />
+          <Route exact path="/AdminResetPass" element={[<AdminResetPass/>]} />
           <Route exact path="/Aboutpage" element={[<Aboutpage/>]} />
           <Route exact path="/Enquiries" element={[<MainNavbar/>,<Enquiries/>,<UserFooter/>]}/>
 
