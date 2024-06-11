@@ -177,7 +177,7 @@ BackendData();
                                         </div>
 
                                         <div className='a'>
-                                        <input type="radio" class="btn-check" name="category" id="category1" autocomplete="off" checked />
+                                        <input type="radio" class="btn-check" name="category" id="category1" autocomplete="off" checked style={{backgroundColor: "lightblue"}}/>
                                         <label class="btn btn-secondary" for="category1">Cricket</label>
                                         <input type="radio" class="btn-check" name="category" id="category2" autocomplete="off" />
                                         <label class="btn btn-secondary" for="category2">Football</label>
