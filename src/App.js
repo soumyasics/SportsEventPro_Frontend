@@ -34,17 +34,17 @@ function App() {
           <Route exact path='/userfooter' element={<UserFooter/>}/>
           <Route exact path='/home' element={<Userhome/>}/>
           <Route exact path="/UserFooter" element={<UserFooter/>} />
-          <Route exact path="/AdminLogin" element={[<AdminLogin/>]} />
+          <Route exact path="/AdminLogin" element={[<MainNavbar/>,<AdminLogin/>,<UserFooter/>]} />
           <Route exact path="/Landingpage2" element={<Landingpage2/>} />
           <Route exact path="/MainNavbar" element={<MainNavbar/>} />
           <Route exact path="/TeamCoachLandingPage1" element={<TeamCoachLandingPage1/>} />
           <Route exact path="/TeamCoachLandingPage2" element={<TeamCoachLandingPage2/>} />
           <Route exact path="/TeamCoachLandingPage3" element={<TeamCoachLandingPage3/>} />
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass/>} />
-           <Route exact path="/TeamCoachLogin" element={<TeamCoachLogin/>} />
-          <Route exact path="/TeamCoachreg" element={<TeamcoachReg/>} /> 
+           <Route exact path="/TeamCoachLogin" element={[<MainNavbar/>,<TeamCoachLogin/>,<UserFooter/>]} />
+          <Route exact path="/TeamCoachreg" element={[<MainNavbar/>,<TeamcoachReg/>,<UserFooter/>]} /> 
           <Route exact path="/AdminResetPass" element={<AdminResetPass/>} />
-          <Route exact path="/Aboutpage" element={[<Aboutpage/>]} />
+          <Route exact path="/Aboutpage" element={[<MainNavbar/>,<Aboutpage/>,<UserFooter/>]} />
           <Route exact path="/Enquiries" element={[<MainNavbar/>,<Enquiries/>,<UserFooter/>]}/>
 
           </Routes>
