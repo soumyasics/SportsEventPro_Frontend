@@ -18,6 +18,7 @@ import TeamCoachForgetPass from './Components/TeamCoach/TeamCoachForgetPass';
 import TeamCoachLandingPage1 from './Components/TeamCoach/TeamCoachLandingPage1';
 import TeamCoachLandingPage2 from './Components/TeamCoach/TeamCoachLandingPage2';
 import TeamCoachLandingPage3 from './Components/TeamCoach/TeamCoachLandingPage3';
+import TeamCoachViewpage from './Components/TeamCoach/TeamCoachViewpage';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
           <Route exact path="/AdminResetPass" element={<AdminResetPass/>} />
           <Route exact path="/Aboutpage" element={[<Aboutpage/>]} />
           <Route exact path="/Enquiries" element={[<MainNavbar/>,<Enquiries/>,<UserFooter/>]}/>
+          <Route exact path="/TeamCoachViewpage" element={[<TeamCoachViewpage/>]}/>
 
           </Routes>
           

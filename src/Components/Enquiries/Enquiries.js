@@ -56,11 +56,11 @@ function Enquiries() {
         let errors = {};
         formIsValid = true;
 
-        errors.email = validateField('email', data.email);
-        errors.contactnumber = validateField('contact number', data.contactnumber);
-        errors.message = validateField('message', data.message);
-        errors.name = validateField('name', data.name);
-        errors.enquiriestype = validateField('enquiriestype',data.enquiriestype)
+        errors.email = validateField('Email', data.email);
+        errors.contactnumber = validateField('Contact number', data.contactnumber);
+        errors.message = validateField('Message', data.message);
+        errors.name = validateField('Name', data.name);
+        errors.enquiriestype = validateField('Enquiry type',data.enquiriestype)
 
 BackendData();
 
