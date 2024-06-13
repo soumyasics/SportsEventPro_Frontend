@@ -69,13 +69,11 @@ function AdminResetPass() {
         }else{
             alert("password does not match")
         }
-      
-        
-        
+
     }
 
 const BackendData = () => {
-console.log("fun called",data);
+alert("Reset successfull",data);
     axiosInstance.post('adminpassword',data)
       .then(response => {
         console.log(response);
