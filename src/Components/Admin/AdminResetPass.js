@@ -121,7 +121,7 @@ alert(response.data.msg)
                     <input className='AdminResetPassword' type='password' placeholder='password' name="password"
                         value={data.password}
                         onChange={handleChange} />
-                    <div>
+                    <div class="AdminValidationPass">
                         {errors.password && <div className="text-danger ">{errors.password}</div>}
                     </div>
                     <div> <label className='adminresetlabel'>Confirm Password</label></div>
