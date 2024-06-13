@@ -25,34 +25,42 @@ function Aboutpage() {
           <div className='Aboutpagemaindiv2'>
 
             <div className='row '>
-              <div className='col-5 aboutpageourmission'>
+              <div className='col-6 aboutpageourmission'>
+<div className='row aboutpagepadding'>
+                <div className='col-4 '>
                 <img className='Aboutpageimg-1' src={img1} />
+                </div>
 
 
-
-
+                <div className='col-8'>
                 <label className='Aboutpagetextmission'>Our Mission</label>
 
                 <h5 className='Aboutpagetext-5'>To provide a platform for sports enthusiasts to compltete and connect</h5>
+                </div>
 
-
-
+ </div>
               </div>
 
 
 
 
 
-              <div className='col-5 aboutpageourchoose '>
-                <img className='Aboutpageimg-2' src={img2} />
+              <div className='col-6 aboutpageourchoose '>
 
+<div className='row aboutpagepadding'>
+
+                <div className='col-4'>
+                <img className='Aboutpageimg-2' src={img2} />
+                </div>
+
+                <div className='col-8'>
 
                 <label className='Aboutpagetextmission'>Why Choose Us</label>
 
                 <h5 className='Aboutpagetext-3'>we offer a veriety of sports events catering to different interests</h5>
+                </div>
 
-
-
+ </div>
               </div>
             </div>
           </div>
@@ -60,14 +68,14 @@ function Aboutpage() {
 
 
           <div className='Aboutpagemaindiv3'>
-            <div className='row'>
+            <div className='row aboutpagepadding-2'>
 
               <div className='col-2'>
 
                 <img className='Aboutpageimg-3' src={img3} />
 
               </div>
-              <div className='col-10'>
+              <div className='col-10 Aboutpagetext-4-div'>
 
                 <h3 className='Aboutpagetext-4'>Welcome to ous us sports tournament website,your hub for exciting competitons nationwide.Explore
                   upcoming events register your team, and stay updated with live scores and match schedules </h3>

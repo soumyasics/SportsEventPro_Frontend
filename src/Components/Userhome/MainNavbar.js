@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Mainnavbar.css"
 import img from "../../Assets/Frame 18.jpg"
+import { Link } from 'react-router-dom'
 function MainNavbar() {
   return (
     <div>
@@ -20,16 +21,17 @@ function MainNavbar() {
 <div className='col-3 navbarmaindiv-3 '>
 <ul class="nav justify-content-end">
   <li class="nav-item">
-    <a class="nav-link active mainnavbartext" aria-current="page" href="/">Home</a>
+  <Link to="/"  class="nav-link mainnavbartext">Home</Link>
   </li>
   <li class="nav-item">
-    <a class="nav-link mainnavbartext" href="Aboutpage">About</a>
+    
+  <Link to="/Aboutpage"  class="nav-link mainnavbartext">About</Link>
   </li>
   <li class="nav-item">
-    <a class="nav-link mainnavbartext" href="Enquiries">Contact</a>
+  <Link to="/Enquiries"  class="nav-link mainnavbartext">Contact</Link>
   </li>
   <li class="nav-item">
-    <a class="nav-link mainnavbartext" href="#">Login</a>
+  <Link to="/AdminLogin"  class="nav-link mainnavbartext">Login</Link>
   </li> 
 </ul>
 </div>
