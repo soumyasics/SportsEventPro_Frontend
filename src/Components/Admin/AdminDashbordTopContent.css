@@ -1,0 +1,53 @@
+.AdminDashbordTopContentDiv-1{
+    background: url('../../Assets/AdminDashbordTopContent1.png') lightgray 50% / cover no-repeat;
+    width: 100px;
+    height: 100px;
+}
+.AdminDashbordTopContentDiv-2{
+    background: url('../../Assets/AdminDashbordTopContent2.png') lightgray 50% / cover no-repeat;
+    width: 100px;
+    height: 100px;
+}
+.AdminDashbordTopContentDiv-3{
+    background: url('../../Assets/AdminDashbordTopContent3.png') lightgray 50% / cover no-repeat;
+    width: 100px;
+    height: 100px;
+}
+.AdminDashbordTopContentSubDiv-1{
+    text-align: left;
+    margin-top: -97px;
+    margin-left: 118px;
+}
+.AdminDashbordTopContentSubDiv-2{
+    text-align: left;
+    margin-top: -97px;
+    margin-left: 118px;
+}
+.AdminDashbordTopContentSubDiv-3{
+    text-align: left;
+    margin-top: -97px;
+    margin-left: 118px;
+}
+.AdminDashbordTopContentHead{
+    text-align: center;
+    color: #000;
+text-align: center;
+margin-top: 44.6px;
+margin-bottom: 45.25px;
+font-size: 30.167px;
+font-style: normal;
+font-weight: 700;
+line-height: 36.2px; /* 120% */
+}
+.AdminDashboardContentStyle{
+    border: 1px solid rgb(0, 0, 0, 0.10);
+border-radius: 5px;
+align-content: center;
+height: 125px;
+}
+.AdminDashboardContentStylerow{
+    gap: 40px;
+    width: 1375px;
+    margin-left: -43px;
+    margin-bottom: 70px;
+}

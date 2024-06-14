@@ -212,16 +212,16 @@ function TeamcoachReg() {
                                         </div>
 
                                         <div className='TeamCoachRegCategory'>
-                                            <input type="radio" class="btn-check" name="category" id="category1" autocomplete="off" onChange={handleChange} value={"cricket"}/>
-                                            <label class="btn btn-secondary category-1-5" for="category1">Cricket</label>
+                                            <input type="radio" class="btn-check" name="category" id="category1"  autocomplete="off" onChange={handleChange} value={"cricket"}/>
+                                            <label class="btn btn-secondary category-1-5" for="category1"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Cricket</label>
                                             <input type="radio" class="btn-check" name="category" id="category2" autocomplete="off" onChange={handleChange} value={"football"}/>
-                                            <label class="btn btn-secondary category-1-5" for="category2">Football</label>
+                                            <label class="btn btn-secondary category-1-5" for="category2"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Football</label>
                                             <input type="radio" class="btn-check" name="category" id="category3" autocomplete="off" onChange={handleChange} value={"tennis"}/>
-                                            <label class="btn btn-secondary category-1-5" for="category3">Tennis</label>
+                                            <label class="btn btn-secondary category-1-5" for="category3" style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}}>Tennis</label>
                                             <input type="radio" class="btn-check" name="category" id="category4" autocomplete="off" onChange={handleChange} value={"badminton"}/>
-                                            <label class="btn btn-secondary category-1-5" for="category4">Badminton</label>
+                                            <label class="btn btn-secondary category-1-5" for="category4"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Badminton</label>
                                             <input type="radio" class="btn-check" name="category" id="category5" autocomplete="off" onChange={handleChange} value={"hockey"}/>
-                                            <label class="btn btn-secondary category-1-5" for="category5">Hockey</label>
+                                            <label class="btn btn-secondary category-1-5" for="category5"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Hockey</label>
                                         </div>
                                         <div class='categoryvalidation'>
                             {errors.category && <div className="text-danger ">{errors.category}</div>}
@@ -261,7 +261,7 @@ function TeamcoachReg() {
                                                 <div class="col">
                                                 <button className='teamCoachregbutton-1' onClick={sub}>-</button>
                                                 </div>
-                                                <div class="col">
+                                                <div class="col"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',marginLeft:"-22px",marginRight:"-22px"}} >
                                                 {plus}
                                                 </div>
                                                 <div class="col">

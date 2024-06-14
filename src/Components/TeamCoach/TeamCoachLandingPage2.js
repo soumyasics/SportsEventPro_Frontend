@@ -7,7 +7,8 @@ function TeamCoachLandingPage2() {
       <div class="container text-center">
   <div class="row">
     <div class="col">
-      
+<div className='TeamCoachLandingPage2-img'>
+      </div>
     </div>
     <div class="col">
       

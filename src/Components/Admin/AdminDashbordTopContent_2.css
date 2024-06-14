@@ -1,0 +1,58 @@
+.AdminDashbordTopContent_2-img1{
+    background: url("../../Assets/AdminDashbordTopContent6.png") rgb(255, 255, 255) 50% / cover no-repeat;
+    width: 100px;
+    height: 100px;
+}
+.AdminDashbordTopContent_2-img2{
+    background: url("../../Assets/AdminDashbordTopContent5.png") lightgray 50% / cover no-repeat;
+    width: 100px;
+    height: 100px;
+}
+
+.AdminDashbordTopContent_2-button1{
+    background-color: white;
+    border: 0px;
+}
+.AdminDashbordTopContent_2-Div2{
+    display: flex;
+    padding: 21.95px var(--items, 0px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 13.25px;
+    flex: 1 0;
+    text-align: -webkit-center;
+}
+.AdminDashbordTopContent_2-Div3{
+    display: flex;
+    padding: 7.95px var(--items, 0px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 13.25px;
+    flex: 1 0 0;
+    margin-top: 8px;
+    text-align: -webkit-center;
+}
+.AdminDashbordTopContent_Div1{
+    display: flex;
+    padding: 50px var(--items, 0px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    text-align: left;
+    color: #000;
+    font-size: 26.5px;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 162px;
+}
+.AdminDashbordTopContent_2-Div4{
+    flex: 1 0;
+    text-align: -webkit-center;
+    margin-left: -348px;
+}
+.AdminDashbordTopContent_2-line{
+    width: 1110px;
+    margin: auto;
+}
