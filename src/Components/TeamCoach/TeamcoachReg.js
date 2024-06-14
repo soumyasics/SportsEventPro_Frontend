@@ -355,18 +355,18 @@ function TeamcoachReg() {
                                             </div>
                                             <div className='TeamCoachField-4'>
                                                 <select class="form-select" aria-label="Default select example" >
-                                                    <option selected>Select Your State</option>
-                                                    <option onChange={handleChange} value="kerala" >Kerala</option>
-                                                    <option onChange={handleChange} value="Jammu & Kashmir" >Jammu & Kashmir</option>
-                                                    <option onChange={handleChange} value="Tamilnadu" >Tamilnadu</option>
-                                                    <option onChange={handleChange} value="Karnataka" >Karnataka</option>
-                                                    <option onChange={handleChange} value="Haryana" >Haryana</option>
-                                                    <option onChange={handleChange} value="Andrapradesh" >Andrapradesh</option>
+                                                    {/* <option selected>Select Your State</option> */}
+                                                    <option selected value="kerala" >Kerala</option>
+                                                    <option value="Jammu & Kashmir" >Jammu & Kashmir</option>
+                                                    <option value="Tamilnadu" >Tamilnadu</option>
+                                                    <option value="Karnataka" >Karnataka</option>
+                                                    <option value="Haryana" >Haryana</option>
+                                                    <option value="Andrapradesh" >Andrapradesh</option>
 
                                                 </select>
-                                                <div class=''>
+                                                {/* <div class=''>
                             {errors.states && <div className="text-danger ">{errors.states}</div>}
-                        </div>
+                        </div> */}
 
                                             </div>
                                         </div>
@@ -380,16 +380,16 @@ function TeamcoachReg() {
                                             </div>
                                             <div className='TeamCoachField-10'>
                                                 <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select Your State</option>
-                                                    <option value="India" onChange={handleChange}>India</option>
-                                                    <option value="Canada" onChange={handleChange}>Canada</option>
-                                                    <option value="Japan" onChange={handleChange}>Japan</option>
-                                                    <option value="Germany" onChange={handleChange}>Germany</option>
+                                                {/* <option selected>Select Your State</option> */}
+                                                    <option selected value="India">India</option>
+                                                    <option value="Canada">Canada</option>
+                                                    <option value="Japan">Japan</option>
+                                                    <option value="Germany">Germany</option>
                                                 </select>
                                             </div>
-                                            <div class='Countryvalidationoption'>
+                                            {/* <div class='Countryvalidationoption'>
                             {errors.country && <div className="text-danger ">{errors.country}</div>}
-                        </div>
+                        </div> */}
 
                                         </div>
                                     </div>
