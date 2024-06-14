@@ -19,6 +19,7 @@ import TeamCoachLandingPage1 from './Components/TeamCoach/TeamCoachLandingPage1'
 import TeamCoachLandingPage2 from './Components/TeamCoach/TeamCoachLandingPage2';
 import TeamCoachLandingPage3 from './Components/TeamCoach/TeamCoachLandingPage3';
 import TeamCoachViewpage from './Components/TeamCoach/TeamCoachViewpage';
+import Adminsidebar from './Components/Admin/Adminsidebar';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route exact path="/Aboutpage" element={[<MainNavbar/>,<Aboutpage/>,<UserFooter/>]} />
           <Route exact path="/Enquiries" element={[<MainNavbar/>,<Enquiries/>,<UserFooter/>]}/>
           <Route exact path="/TeamCoachViewpage" element={[<TeamCoachViewpage/>]}/>
+          <Route exact path="/Adminsidebar" element={[<Adminsidebar/>]}/>
 
           </Routes>
           

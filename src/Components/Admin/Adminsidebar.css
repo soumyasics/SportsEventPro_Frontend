@@ -1,0 +1,42 @@
+.adminsidebarmaindiv1{
+    padding: var(--items, 39px) var(--items, 35px) var(--items, 374px) var(--items, 35px);
+    flex-direction: column;
+    align-items: center;
+    background: #292929;
+    height: 100vh;
+    width: 319px;
+}
+.adminsidebarbutton-1{
+    border-radius: 20px;
+border: 2px solid #FFF;
+background: rgba(233, 225, 4, 0.60);
+display: flex;
+width: 230px;
+padding: 8px 40px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+
+.adminsidebarmaindiv-2{
+    display: flex;
+width: 230px;
+padding: 8px 40px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+.adminsidebarbutton-2{
+    border-radius: 20px;
+border: 1px solid #FFF;
+display: flex;
+width: 230px;
+padding: 8px 40px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+background-color: #292929;
+color: white;
+margin-top: 15px;
+
+}
