@@ -1,0 +1,129 @@
+.TeamCoachViewpagediv-1 {
+    display: grid;
+    align-content: center;
+    height: 300px;
+    margin-left: 200px;
+}
+
+.TeamCoachViewpagediv-2 {
+    display: grid;
+    align-content: center;
+    height: 300px;
+}
+
+.TeamCoachViewpagediv-10 {
+    display: grid;
+    align-content: center;
+    height: 300px;
+}
+.TeamCoachViewpagediv-11 {
+    display: grid;
+    align-content: center;
+    height: 300px;
+}
+.TeamCoachViewpagediv-10-button{
+    display: grid;
+width: 160px;
+padding: 12px;
+flex-direction: column;
+align-items: end;
+border-radius: 8px;
+background: #1877F2;
+color: white;
+
+}
+.TeamCoachViewpagediv-11-button{
+    display: grid;
+    width: 160px;
+    padding: 12px;
+    flex-direction: column;
+    align-content: normal;
+    align-items: center;
+    border-radius: 8px;
+background: #000;
+color: white;
+
+
+
+
+}
+
+.TeamCoachViewpagelabel{
+    color: #000;
+font-family: Roboto;
+font-size: 15.423px;
+font-style: normal;
+font-weight: 800;
+line-height: 21.592px; 
+}
+.TeamCoachViewpageimpdiv-style{
+    margin-left: 170px;
+    align-items: center;
+    gap: 12.338px;
+    flex: 1 0;
+    align-self: stretch;}
+
+.TeamCoachViewpagecommon-style-1{
+    /* margin-left: 76px; */
+    border-radius: 23.135px;
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+width: 46.269px;
+height: 46.269px;
+padding: var(--items, 11.576px) var(--items, 11.269px) var(--items, 10.693px) var(--items, 11px);
+justify-content: center;
+align-items: center;
+}
+
+
+
+.TeamCoachViewpagetext-1{
+color: #000;
+font-family: Roboto;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 48px;
+width: 520px;
+align-self: stretch;
+}
+
+.TeamCoachViewpageimg-1-backend{
+    width: 102px;
+height: 105px;
+margin-left: 197px;
+flex-shrink: 0;
+}
+
+.TeamCoachViewpageimg-2-backend{
+
+color: #000;
+font-family: Roboto;
+font-size: 15.423px;
+font-style: normal;
+font-weight: bold;
+line-height: 21.592px; 
+margin-left: 197px;
+
+}
+.TeamCoachViewpagemainrow-1{
+display: flex;
+padding: 15.423px var(--items, 0px);
+justify-content: center;
+align-items: center;
+border-bottom: 1px solid rgb(192, 186, 186);
+}
+
+.TeamCoachViewpagemainrow-right-1{
+    margin-left: 250px;
+}
+/* .TeamCoachViewpagemainhr{
+    margin: 0px;
+    stroke-width: 0.771px;
+stroke: rgba(0, 0, 0, 0.10);
+width: 401px;
+height: var(--items, 0px);
+} */
+ .TeamCoachViewpagelabel-2{
+    margin-left: 47px;
+ }
