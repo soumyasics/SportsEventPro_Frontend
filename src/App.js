@@ -22,6 +22,7 @@ import AdminDashbordTopContent from './Components/Admin/AdminDashbordTopContent'
 import AdminDashbordTopContent_2 from './Components/Admin/AdminDashbordTopContent_2';
 import TeamCoachViewpage from './Components/TeamCoach/TeamCoachViewpage';
 import Adminsidebar from './Components/Admin/Adminsidebar';
+import TeamCoachTopbar from './Components/TeamCoach/TeamCoachTopbar';
 
 
 function App() {
@@ -55,6 +56,8 @@ function App() {
           <Route exact path="/TeamCoachViewpage" element={[<TeamCoachViewpage/>]}/>
           <Route exact path="/Adminsidebar1" element={[<Adminsidebar/>]}/>
           <Route exact path="/Adminsidebar" element={[<Adminsidebar/>,<AdminDashbordTopContent/>]}/>
+          <Route exact path="/Adminsidebar2" element={[<AdminDashbordTopContent/>]}/>
+          <Route exact path="/nav" element={[<TeamCoachTopbar/>]}/>
 
           </Routes>
           
