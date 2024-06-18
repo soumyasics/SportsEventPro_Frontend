@@ -35,7 +35,7 @@ function TeamCoachViewpage() {
          </div>
     <div className='col-4 TeamCoachViewpagediv-2'>
 <label className='TeamCoachViewpageimg-1-backend'></label><br></br>
-<label className='TeamCoachViewpageimg-2-backend'>ssdsfsadsdsad</label><br></br>
+<label className='TeamCoachViewpageimg-2-backend'></label><br></br>
 
     </div>
 
