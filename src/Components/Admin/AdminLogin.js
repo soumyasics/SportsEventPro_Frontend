@@ -62,7 +62,7 @@ else{
 
   return (
     <div>
-      
+     <div className='container'>
   <div className='row'>
     <div className='col-6'>
         <form >
@@ -132,6 +132,7 @@ else{
 
 
     </div>
+    </div> 
   )
 }
 
