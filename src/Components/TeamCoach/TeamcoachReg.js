@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import "./TeamcoachReg.css"
 import axiosInstance from '../Constant/BaseURL'
+import axiosMultipartInstance from '../Constant/multiPart'
+
 function TeamcoachReg() {
 
 
@@ -26,15 +28,14 @@ function TeamcoachReg() {
         setPlus(plus - 1)
         event.preventDefault()
     }
-
-
+console.log(plus);
     const [data, setData] = useState({
 
 
 
         name: '',
         category: '',
-        totalmembers: '',
+        totalmembers: plus,
         pincode: '',
         states: '',
         contactnumber: '',
@@ -54,7 +55,6 @@ function TeamcoachReg() {
 
         name: '',
         category: '',
-        totalmembers: '',
         pincode: '',
         states: '',
         contactnumber: '',
@@ -74,12 +74,27 @@ function TeamcoachReg() {
     
     let formIsValid;
     const handleChange = (event) => {
-        const { name, value } = event.target;
-        
+        console.log("ty",event.target.type);
+        const { name, value, files } = event.target;
+    if (files) {
+      setData(prevData => ({
+        ...prevData,
+        [name]: files[0]
+      }));
+    } 
+    else if (event.target.type=="radio") {
         setData(prevData => ({
             ...prevData,
             [name]: value
         }));
+    }
+    
+    else {
+      setData(prevData => ({
+        ...prevData,
+        [name]: value
+      }));
+    }
         setErrors(prevErrors => ({
             ...prevErrors,
             [name]: ''
@@ -107,12 +122,11 @@ function TeamcoachReg() {
         errors.name = validateField('Name', data.name);
         errors.contactnumber = validateField('Contact number', data.contactnumber)
         errors.category = validateField('Category', data.category);
-        errors.totalmembers = validateField('Totalmembers', data.totalmembers);
         errors.pincode = validateField('Pincode', data.pincode);
         errors.states =validateField('States', data.states)
-        errors.license = validateField('License', data.license);
+        // errors.license = validateField('License', data.license);
         errors.password = validateField('Password', data.password);
-        errors.image = validateField('Image', data.image);
+        // errors.image = validateField('Image', data.image);
         errors.teamname = validateField('Teamname', data.teamname);
         errors.address = validateField('Address', data.address);
         errors.city = validateField('City', data.city);
@@ -129,7 +143,8 @@ function TeamcoachReg() {
 
         if (formIsValid) {
             console.log("data", data);
-
+          
+           
         }
     }
 
@@ -142,7 +157,28 @@ function TeamcoachReg() {
 
     const BackendData = () => {
         console.log("fun called", data);
-        axiosInstance.post('registerTeamCoach', data)
+// console.log("2 form",formData);
+ let formData = new FormData();
+
+            formData.append('name',data.name);
+            formData.append('category', data.category);
+            formData.append('totalteammembers', data.totalmembers);
+            formData.append('pincode', data.pincode);
+            formData.append('state', data.states);
+            formData.append('contact', data.contactnumber);
+            formData.append('password', data.password);
+            formData.append('files', data.image);
+            formData.append('files', data.license);
+            formData.append('teamName', data.teamname);
+            formData.append('address', data.address);
+            formData.append('city', data.city);
+            formData.append('country', data.country);
+            formData.append('email', data.email);
+            formData.append('experience', data.experience);
+        
+            
+    console.log(formData);
+        axiosMultipartInstance.post('registerTeamCoach', formData)
             .then(response => {
                 console.log(response);
                 if (response.data.status == 200) {
@@ -191,7 +227,7 @@ function TeamcoachReg() {
                                             <label>Image</label></div>
                                         <div className='teamCoachregDiv-uploads'>
                                             <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
-                                                value={data.image}
+                                               name="image" required
                                                 onChange={handleChange} /></div>
                                         <div class='teamCoachRegvalidationname'>
                                             {errors.image && <div className="text-danger ">{errors.image}</div>}
@@ -354,7 +390,7 @@ function TeamcoachReg() {
                                                 <label>State</label>
                                             </div>
                                             <div className='TeamCoachField-4'>
-                                                <select class="form-select" aria-label="Default select example" >
+                                                <select class="form-select" aria-label="Default select example" name="states" onChange={handleChange} >
                                                     {/* <option selected>Select Your State</option> */}
                                                     <option selected value="kerala" >Kerala</option>
                                                     <option value="Jammu & Kashmir" >Jammu & Kashmir</option>
@@ -379,7 +415,7 @@ function TeamcoachReg() {
                                                 <label>Country</label>
                                             </div>
                                             <div className='TeamCoachField-10'>
-                                                <select class="form-select" aria-label="Default select example">
+                                                <select class="form-select" aria-label="Default select example" name="country" onChange={handleChange}>
                                                 {/* <option selected>Select Your State</option> */}
                                                     <option selected value="India">India</option>
                                                     <option value="Canada">Canada</option>
@@ -448,8 +484,8 @@ function TeamcoachReg() {
                                         </div>
                                         <div className='teamCoachregDiv-uploads'>
                                             <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
-                                                value={data.license}
-                                                onChange={handleChange} />
+                                               name="license"
+                                                onChange={handleChange} required/>
                                         </div>
                                         <div class='teamCoachRegvalidationname'>
                                             {errors.license && <div className="text-danger ">{errors.license}</div>}
