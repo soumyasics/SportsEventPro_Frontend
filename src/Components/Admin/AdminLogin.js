@@ -45,7 +45,7 @@ function AdminLogin() {
     errors.password = validateField('Password', data.password);
 
 
-if(data.email=="admin" && data.password=="admin@123"){
+if(data.email=="admin" && data.password=="1234"){
   alert("successfully logined")
 }
 else{
