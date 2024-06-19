@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './TeamCoachLogin.css'
-import img6 from "../../Assets/image.png"
+import img6 from "../../Assets/Teamcoachlogin.gif"
 import axios from 'axios'
 import axiosInstance from '../Constant/BaseURL'
 
@@ -85,23 +85,20 @@ alert(response.data.msg)
 
     return (
         <div>
-            <div class="teambackground">
+<div className='row'>
+            <div class="teamcoachloginmaindiv col-5 ">
                 
                         <div>
-                        <div class="teamLoginh1">
-                            <h1 class="teamLoginh1">Team Coach Login</h1>
+                        <div class="teamcoachloginh1">
+                            <h1 class="teamcoachloginh1">Team Coach Login</h1>
                         </div>
-                        <div class="teambackgroundimg">
-                    <img class="teamloginimg"src={img6} alt="image not found"></img>
                     </div>
-                    </div>
-                        </div>
                         <form onSubmit={handleSubmit}>
-                        <div class="teamlogin">
+                        <div class="teamcoachlogin">
                         <div>
-                            <p className="teamLoginp1"></p>
+                          <label className='teamcoachloginuser'>Username</label>
                             <input
-                                className="teamLogininput1"
+                                className="teamcoachloginput1"
                                 type="email"
                                 placeholder="email"
                                 name="email"
@@ -109,14 +106,15 @@ alert(response.data.msg)
                                 onChange={handleChange}
                             ></input>
                                                  <div class='AdminValidationemail'>
-                      {errors.email && <div className="text-danger ">{errors.email}</div>}
+                      {errors.email && <div className="text-danger">{errors.email}</div>}
                       </div>
                         </div>
 
                         <div>
-                            <p className="teamLoginp2"></p>
+                            <label className='teamcoachloginuser'>Password</label>
+
                             <input
-                                className="teamLogininput2"
+                                className="teamcoachloginput2"
                                 type="password"
                                 placeholder="password"
                                 name="password"
@@ -134,23 +132,27 @@ alert(response.data.msg)
 
                     </div>
                     <div>
-                        <button className="teamLoginButton" type="submit">
+                        <button className="teamcoachloginButton" type="submit">
                             Login
                         </button>
                         </div>
                     </form>
                     <div>
-                        <a className="teamLoginReset" href="forgetpassword">
+                        <a className="teamcoachloginReset" href="forgetpassword">
                             Forget password
                         </a>
                     </div>
                     <div>
-                        <a className="teamLoginSignin" href="signup">
+                        <a className="teamcoachloginSignin" href="signup">
                             Sign up
                         </a>
                     </div>
+                    </div>
 
-                    
+                    <div class="teamcoachloginbackgroundimg col-5">
+                    <img class="teamcoachloginimg"src={img6} alt="image not found"></img>
+                    </div>
+                    </div>
         </div>
 
     )

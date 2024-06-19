@@ -1,170 +1,62 @@
- .teamLoginh1{
-    color: white;
-    font-size: 67px;
-    margin-left: 334px;
-    margin-top: 60px;
-
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-}
-.teamLoginReset{
-    margin-right: 19px;
-    color: white;
-}
-.teambackgroundimg{
-    background-color: white;
-    height: 686px;
+.teamcoachloginimg{
     width: 500px;
-    margin-top: -150px;
+    height: 500px;
+    flex-shrink: 0;
 }
-.teamlogin{
-    margin-top: -545px;
-}
-.teamloginimg{
-    width: 330px;
-    margin-top: 134px;
-}
-.teamLoginSignin{
+.teamcoachloginput1{
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
     font-size: 14px;
-    color: white;
-    position: relative;
-    top: -24px;
-    right: -339px;
-}
-button:hover{
-    background-color: rgb(255, 255, 255);
-    color: rgb(56, 56, 56);
-}
-/* button{
-    border: 0px;
-} */
-.teamLogininput1{
-    padding-left: 24px;
-    padding-right: 148px;
-    height: 51px;
-    margin-left: 374px;
-    margin-top: 53px;
-    border: 0px;
-}
-.teamLogininput2{
-border: 0px;
-padding-left: 24px;
-padding-right: 148px;
-height: 51px;
-margin-left: 374px;
-margin-top: -14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    height: 30px;
+flex: 1 0 0;
+width: 501px;
 
 }
-.teamLoginBackground1{
-    border: 4px solid white;
-   background-color: aqua;
-   height: 120px;
-}
 
-
-.teamLoginDrop{
-    margin-left: 538px;
-    /* position: relative;
-    bottom: 31px; */
-    
-}
-.teamLoginp1{
-    margin-left: 122px;
-    /* position: relative;
-    top: 38px; */
-}
-.teamLoginp2{
-    margin-left: 92px;
-    /* position: relative;
-    top: 21px; */
-}
-.teamLoginReset{
+.teamcoachloginput2{
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
     font-size: 14px;
-    margin-left: 143px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    height: 30px;
+flex: 1 0 0;
+width: 501px;
 }
 
-.teamLoginButton{
-    padding-left: 110px;
-    padding-right: 109px;
-    height: 58px;
-    margin-left: 364px;
-    background-color: rgb(24, 89, 193);
-    color: white;
+.teamcoachloginButton{
+    display: flex;
+    width: 240px;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+background: #000;
 }
-
-.teamLoginImg1{
-    margin-right: 1073px;
+.teamcoachloginmaindiv{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 40px;
+align-self: stretch;
 }
-
-.teamLoginImg2{
-    margin-left: 974px;
-    width: 54px;
-    position: relative;
-    bottom: 19px;
+.teamcoachloginuser{
+    color: #000;
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 20px; /* 142.857% */
 }
-.teamLoginBdiv{
-    background-color: #1b97ff;;
-    height: 93px;
-    position: relative;
-    bottom: -3px;
-}
-.teamLoginBG{
-    border: 2px solid white;
-    height: 471px;
-    background-image: url(../../Assets/bg-1.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    bottom: 13px;
-}
-.teamLoginImg4{
-    margin-right: 294px;
-    height: 345px;
-    position: absolute;
-    bottom: -3px;
-    left: 65px;
-}
-.teamvalidationEmail{
-    margin-left: 169px;
-}
-.teamvalidationPass{
-    margin-left: 169px;
-}
-/* body{
-    background-color: #1b97ff;
-} */
-.teambackground{
-    color: white;
-}
-.teamempty{
-    background-color: rgb(255, 255, 255);
-    width: 129px;
-    height: 19px;
-    position: relative;
-    left: 183px;
-    bottom: -37px;
-}
-.text-danger {
-    --bs-text-opacity: 1;
-    color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important;
-    margin-bottom: 1px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
