@@ -2,7 +2,7 @@
     display: grid;
     align-content: center;
     height: 300px;
-    margin-left: 200px;
+    margin-left: 48px;
 }
 
 .Teamcoachviewprofilepopupdiv-2 {
@@ -63,7 +63,9 @@ line-height: 21.592px;
     align-items: center;
     gap: 12.338px;
     flex: 1 0;
-    align-self: stretch;}
+    align-self: stretch;
+    margin-top: -9px;
+}
 
 .Teamcoachviewprofilepopupcommon-style-1{
     /* margin-left: 76px; */
@@ -92,9 +94,10 @@ align-self: stretch;
 
 .Teamcoachviewprofilepopupimg-1-backend{
     width: 102px;
-height: 105px;
-margin-left: 197px;
-flex-shrink: 0;
+    height: 105px;
+    margin-left: 197px;
+    flex-shrink: 0;
+    background-color: aqua;
 }
 
 .Teamcoachviewprofilepopupimg-2-backend{
@@ -133,3 +136,8 @@ height: var(--items, 0px);
     height: 300px;
  }
 
+.Teamcoachviewprofilepopup-button{
+    width: 0px;
+    margin-top: 135px;
+    margin-right: -124px;
+}

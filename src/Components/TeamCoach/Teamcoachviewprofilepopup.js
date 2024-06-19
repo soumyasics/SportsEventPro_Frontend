@@ -18,32 +18,29 @@ function Teamcoachviewprofilepopup() {
   return (
     <div>
 
-<div>
-<div  className='Teamcoachviewprofilepopupmain-1-20'>
 
-<div className='row '>
-    <div className='col Teamcoachviewprofilepopupdiv-1'>
-        <h1 className='Teamcoachviewprofilepopuptext-1'>Coach Details</h1>
-         </div>
-    <div className='col-4 Teamcoachviewprofilepopupdiv-2'>
-<label className='Teamcoachviewprofilepopupimg-1-backend'></label><br></br>
-<label className='Teamcoachviewprofilepopupimg-2-backend'></label><br></br>
+
+
+
+                  <div>
+                          <div className='Teamcoachviewprofilepopupmain-1-20'>
+                          <div class="container text-center">
+                                  <div className='row '>
+                                          <div className='col Teamcoachviewprofilepopupdiv-1'>
+                                                  <h1 className='Teamcoachviewprofilepopuptext-1'>Coach Details</h1>
+                                          </div>
+                                          <div class="form-check form-switch Teamcoachviewprofilepopup-button">
+                                                                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+                                                          </div>
+                                          <div className='col-4 Teamcoachviewprofilepopupdiv-2'>
+                                                         
+                                                  <label className='Teamcoachviewprofilepopupimg-1-backend'></label><br></br>
+                                                  <label className='Teamcoachviewprofilepopupimg-2-backend'></label><br></br>
 
     </div>
 
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -98,38 +95,10 @@ function Teamcoachviewprofilepopup() {
 </div>
 
 
-
-
-
-
-
 </div>
 
 
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -181,36 +150,9 @@ function Teamcoachviewprofilepopup() {
 
 </div>
 
-
-
-
-
-
-
-
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
 
 <div className='row Teamcoachviewprofilepopupdiv-5 Teamcoachviewprofilepopupimpdiv-style'>
 
@@ -499,7 +441,7 @@ function Teamcoachviewprofilepopup() {
 
 
 
-
+</div>
 
 
         
