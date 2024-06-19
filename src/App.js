@@ -52,7 +52,7 @@ function App() {
           <Route exact path="/AdminTopbar" element={<AdminTopbar/>} />
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass/>} />
           <Route exact path='/AdminDashbordTopContent_2' element={<AdminDashbordTopContent_2/>}/>
-           <Route exact path="/TeamCoachLogin" element={[,<TeamCoachLogin/>,]} />
+          <Route exact path="/TeamCoachLogin" element={[,<TeamCoachLogin/>,]} />
           <Route exact path="/TeamCoachreg" element={[<MainNavbar/>,<TeamcoachReg/>,<UserFooter/>]} /> 
           <Route exact path="/AdminResetPass" element={<AdminResetPass/>} />
           <Route exact path="/Aboutpage" element={[<MainNavbar/>,<Aboutpage/>,<UserFooter/>]} />
@@ -64,7 +64,6 @@ function App() {
           <Route exact path="/nav" element={[<TeamCoachTopbar/>]}/>
           <Route exact path="/Teamcoachdetailspopup" element={[<Teamcoachdetailspopup/>]}/>
           <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup/>]}/>
-
           </Routes>
           
 
