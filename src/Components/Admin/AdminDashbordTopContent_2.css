@@ -12,6 +12,7 @@
 .AdminDashbordTopContent_2-button1{
     background-color: white;
     border: 0px;
+    width: 174px;
 }
 .AdminDashbordTopContent_2-Div2{
     display: flex;
@@ -44,8 +45,7 @@
     color: #000;
     font-size: 26.5px;
     font-style: normal;
-    font-weight: 700;
-    margin-left: 162px;
+    margin-left: 131px;
 }
 .AdminDashbordTopContent_2-Div4{
     flex: 1 0;
@@ -59,4 +59,31 @@
 }
 .style{
     margin-left: 200px;
+}
+.AdminDashbordTopContent_2-button1{
+    width: 191px;
+}
+.AdminDashbordTopContent_Div2{
+    display: flex;
+    padding: 50px var(--items, 0px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    text-align: left;
+    color: #000;
+    font-size: 26.5px;
+    font-style: normal;
+    margin-left: 131px;
+}
+.AdminDashbordTopContent_Div3{
+    display: flex;
+    padding: 50px var(--items, 0px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    text-align: left;
+    color: #000;
+    font-size: 26.5px;
+    font-style: normal;
+    margin-left: 131px;
 }

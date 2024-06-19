@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './TeamCoachViewpage.css'
 import img1 from '../../Assets/solar_phone-bold-duotone.jpg'
 import img2 from '../../Assets/ri_open-arm-fill.jpg'
@@ -12,6 +12,8 @@ import img9 from '../../Assets/arcticons_asr-licence.jpg'
 import img10 from '../../Assets/emojione_flag-for-india.jpg'
 import img11 from '../../Assets/carbon_location-filled.jpg'
 import img12 from '../../Assets/arcticons_team-fight-tactics.jpg'
+import axios from 'axios'
+import axiosInstance from '../Constant/BaseURL'
 
 
 
@@ -35,7 +37,7 @@ function TeamCoachViewpage() {
          </div>
     <div className='col-4 TeamCoachViewpagediv-2'>
 <label className='TeamCoachViewpageimg-1-backend'></label><br></br>
-<label className='TeamCoachViewpageimg-2-backend'>ssdsfsadsdsad</label><br></br>
+<label className='TeamCoachViewpageimg-2-backend'></label><br></br>
 
     </div>
 

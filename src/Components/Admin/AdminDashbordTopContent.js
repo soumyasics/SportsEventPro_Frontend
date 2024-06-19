@@ -12,7 +12,7 @@ function AdminDashbordTopContent() {
                             
                             <div className='AdminDashbordTopContentDiv-1'></div>
                             <div className='AdminDashbordTopContentSubDiv-1'>    
-                            <h2>Total Viewers</h2>
+                            <h2 style={{fontSize:"23px"}}>Total Viewers</h2>
                             <h1>0</h1>
                             
                             </div>
@@ -20,14 +20,14 @@ function AdminDashbordTopContent() {
                         <div class="col AdminDashboardContentStyle">
                         <div className='AdminDashbordTopContentDiv-2'></div>
                         <div className='AdminDashbordTopContentSubDiv-2'> 
-                            <h2>Total Organizers</h2>
+                            <h2 style={{fontSize:"23px"}}>Total Organizers</h2>
                             <h1 style={{marginBottom:"70px"}}>0</h1>
                             </div>
                         </div>
                         <div class="col AdminDashboardContentStyle">
                         <div className='AdminDashbordTopContentDiv-3'></div>
                         <div className='AdminDashbordTopContentSubDiv-3'>
-                            <h2>Total Team Coaches</h2>
+                            <h2 style={{fontSize:"23px"}}>Total Team Coaches</h2>
                             <h1>0</h1>
                             </div>
                         </div>

@@ -2,16 +2,19 @@
     background: url('../../Assets/AdminDashbordTopContent1.png') lightgray 50% / cover no-repeat;
     width: 100px;
     height: 100px;
+    margin-bottom: 6px;
 }
 .AdminDashbordTopContentDiv-2{
     background: url('../../Assets/AdminDashbordTopContent2.png') lightgray 50% / cover no-repeat;
     width: 100px;
     height: 100px;
+    margin-top: 13px;
 }
 .AdminDashbordTopContentDiv-3{
     background: url('../../Assets/AdminDashbordTopContent3.png') lightgray 50% / cover no-repeat;
     width: 100px;
     height: 100px;
+    margin-top: -6px;
 }
 .AdminDashbordTopContentSubDiv-1{
     text-align: left;
@@ -32,7 +35,7 @@
     text-align: center;
     color: #000;
     text-align: center;
-    margin-top: -810.4px;
+    margin-top: -703.4px;
     margin-bottom: 45.25px;
     font-size: 30.167px;
     font-style: normal;
