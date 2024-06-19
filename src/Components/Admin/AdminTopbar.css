@@ -1,8 +1,9 @@
-.AdminTopbarMainDiv{
+.AdminTopbarMainDiv {
     background-color: black;
     height: 60px;
 }
-.AdminTopbarHead{
+
+.AdminTopbarHead {
     color: white;
     margin-top: -16px;
     margin-left: 20px;
@@ -12,7 +13,8 @@
     font-weight: 500;
     line-height: 36px;
 }
-.img{
+
+.AdminTopbarimg {
     vertical-align: middle;
     margin-left: -77px;
     margin-bottom: -32px;
