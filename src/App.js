@@ -23,6 +23,7 @@ import AdminDashbordTopContent_2 from './Components/Admin/AdminDashbordTopConten
 import TeamCoachViewpage from './Components/TeamCoach/TeamCoachViewpage';
 import Adminsidebar from './Components/Admin/Adminsidebar';
 import TeamCoachTopbar from './Components/TeamCoach/TeamCoachTopbar';
+import AdminTopbar from './Components/Admin/AdminTopbar';
 
 
 function App() {
@@ -45,7 +46,8 @@ function App() {
           <Route exact path="/TeamCoachLandingPage2" element={<TeamCoachLandingPage2/>} />
           <Route exact path="/TeamCoachLandingPage3" element={<TeamCoachLandingPage3/>} />
           <Route exact path='/AdminDashbordTopContent' element={<AdminDashbordTopContent/>}/>
-          <Route exact path='/AdminDashbord' element={[<AdminDashbordTopContent/>,<AdminDashbordTopContent_2/>]}/>
+          <Route exact path='/AdminDashbord' element={[<AdminTopbar/>,<Adminsidebar/>,<AdminDashbordTopContent/>,<AdminDashbordTopContent_2/>]}/>
+          <Route exact path="/AdminTopbar" element={<AdminTopbar/>} />
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass/>} />
           <Route exact path='/AdminDashbordTopContent_2' element={<AdminDashbordTopContent_2/>}/>
            <Route exact path="/TeamCoachLogin" element={[<MainNavbar/>,<TeamCoachLogin/>,<UserFooter/>]} />
