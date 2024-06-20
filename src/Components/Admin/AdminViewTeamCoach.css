@@ -10,6 +10,15 @@
 
 }
 
+.AdminViewTeamCoach-h1 {
+
+    font-family: "Roboto";
+    font-weight: 700;
+    font-style: normal;
+    
+
+}
+
 .AdminViewTeamCoach-Table {
 
     
@@ -34,11 +43,3 @@
 
 }
 
-.AdminViewTeamCoach-h1 {
-
-    font-family: "Roboto";
-    font-weight: 700;
-    font-style: normal;
-    
-
-}
