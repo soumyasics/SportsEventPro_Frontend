@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./AdminViewCoachRequest.css"
 import img from "../../Assets/frame2.png"
 import axiosInstance from "../Constant/BaseURL";
+import { Link, useNavigate } from "react-router-dom";
 
 function AdminViewCoachRequest() {
+    const navigate=useNavigate()
 
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
@@ -30,6 +32,10 @@ function AdminViewCoachRequest() {
     useEffect(() => {
         console.log("users", userData);
     })
+
+   const viewDetails=(id)=>{
+navigate(`/Teamcoachdetailspopup/${id}`)
+    }
     return (
 
         <div className="AdminCoachRequestParentDiv">
@@ -76,7 +82,7 @@ function AdminViewCoachRequest() {
 
                                     <li className="col-3 text-end">
 
-                                        <button className="btn btn-primary px-4">View Details</button>
+                                        <button className="btn btn-primary px-4" onClick={()=>{viewDetails(x._id)}}> View Details</button>
 
                                     </li>
 
