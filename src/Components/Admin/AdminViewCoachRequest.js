@@ -7,7 +7,7 @@ function AdminViewCoachRequest() {
 
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
-    console.log("url,",url);
+    console.log("url,", url);
     useEffect(() => {
 
         let res;
@@ -37,58 +37,65 @@ function AdminViewCoachRequest() {
             <div className="container AdminCoachRequestListBackground">
 
                 <h3 className="AdminCoachRequestH3">Team Coach Requests</h3>
+                
+                <ul className="AdminCoachRequestList">
 
-                <ul className="AdminCoachRequestListElements">
                     {
-                        userData.map(x=>{
-return(
-    <>
-    <li className="col-1 text-end pe-3">
 
-    {/* <img src={img} alt="frame" /> */}
-    <img
-                          src={`${url}/${x?.profilePic?.filename}`}
-                          alt={img}
-                          className="AdminCoachRequest-img"
-                        />
+                        userData.map(x => {
 
-</li>
+                            return (
 
-<li className="col-3 text-start ">
+                                <div className="AdminCoachRequestListElements">
 
-    <h5 className="fs-5"> {x.name}{/*Player Name*/}</h5>
-    <h6 className="fw-light fs-6 ">Sport : {x.category}</h6>
+                                    <li className="col-1 text-end pe-3">
 
-</li>
+                                        {/* <img src={img} alt="frame" /> */}
 
-<li className="col-5 text-start">
+                                        <img
+                                            src={`${url}/${x?.profilePic?.filename}`}
+                                            alt={img}
+                                            className="AdminCoachRequest-img"
+                                        />
 
-    <h5 className="fs-5"> Team Name: {x.teamName}</h5>
-    <h6 className="fw-light fs-6 ">Total Team Members{x.totalteammembers} {/*Number Of teammates*/}</h6>
+                                    </li>
 
-</li>
+                                    <li className="col-3 text-start ">
 
-<li className="col-3 text-end">
+                                        <h5 className="fs-5"> {x.name}{/*Player Name*/}</h5>
+                                        <h6 className="fw-light fs-6 ">Sport : {x.category}</h6>
 
-    <button className="btn btn-primary px-4">View Details</button>
+                                    </li>
 
-</li>
-</>
-)
+                                    <li className="col-5 text-start">
+
+                                        <h5 className="fs-5"> Team Name: {x.teamName}</h5>
+                                        <h6 className="fw-light fs-6 ">Total Team Members{x.totalteammembers} {/*Number Of teammates*/}</h6>
+
+                                    </li>
+
+                                    <li className="col-3 text-end">
+
+                                        <button className="btn btn-primary px-4">View Details</button>
+
+                                    </li>
+
+                                </div>
+
+                            )
+
                         })
+                        
                     }
 
-                 
-
-
                 </ul>
-
+            
                 <div className="text-end">
 
                     <a href=" " alt=" " >View More</a>
 
                 </div>
-
+                
             </div>
 
         </div>

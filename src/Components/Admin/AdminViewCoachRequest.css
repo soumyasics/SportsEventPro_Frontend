@@ -18,6 +18,13 @@
 
 }
 
+.AdminCoachRequestList {
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
 .AdminCoachRequestListElements {
 
     margin-top: 40px;
