@@ -13,7 +13,7 @@ import Landingpage3 from './Components/Userhome/Landingpage3';
 import Aboutpage from './Components/Userhome/Aboutpage';
 import MainNavbar from './Components/Userhome/MainNavbar';
 import TeamcoachReg from './Components/TeamCoach/TeamcoachReg';
-import Enquiries  from './Components/Enquiries/Enquiries';
+import Enquiries from './Components/Enquiries/Enquiries';
 import TeamCoachForgetPass from './Components/TeamCoach/TeamCoachForgetPass';
 import TeamCoachLandingPage1 from './Components/TeamCoach/TeamCoachLandingPage1';
 import TeamCoachLandingPage2 from './Components/TeamCoach/TeamCoachLandingPage2';
@@ -23,6 +23,7 @@ import AdminDashbordTopContent_2 from './Components/Admin/AdminDashbordTopConten
 import TeamCoachViewpage from './Components/TeamCoach/TeamCoachViewpage';
 import Adminsidebar from './Components/Admin/Adminsidebar';
 import AdminViewCoachRequest from './Components/Admin/AdminViewCoachRequest'
+import AdminViewTeamCoach from './Components/Admin/AdminViewTeamCoach';
 import TeamCoachTopbar from './Components/TeamCoach/TeamCoachTopbar';
 import Teamcoachdetailspopup from './Components/TeamCoach/Teamcoachdetailspopup';
 import Teamcoachviewprofilepopup from './Components/TeamCoach/Teamcoachviewprofilepopup';
@@ -30,43 +31,47 @@ import AdminTopbar from './Components/Admin/AdminTopbar';
 
 function App() {
 
-  
+
   return (
     <BrowserRouter basename="sports_event_pro">
+
       <div className="App">
-      
-      <Routes>
-          <Route exact path="/" element={[<MainNavbar/>,<Userhome/>,<Landingpage2/>,<Landingpage3/>,<Aboutpage/>,<Landingpage4/>,<UserFooter/>]} />
-          <Route exact path="/landingpage3" element={<Landingpage3/>} />
-          <Route exact path='/landingpage4' element={<Landingpage4/>}/>
-          <Route exact path='/userfooter' element={<UserFooter/>}/>
-          <Route exact path="/UserFooter" element={<UserFooter/>} />
-          <Route exact path="/AdminLogin" element={[<MainNavbar/>,<AdminLogin/>,<UserFooter/>]} />
-          <Route exact path="/Landingpage2" element={<Landingpage2/>} />
-          <Route exact path="/MainNavbar" element={<MainNavbar/>} />
-          <Route exact path="/TeamCoachLandingPage1" element={<TeamCoachLandingPage1/>} />
-          <Route exact path="/TeamCoachLandingPage2" element={<TeamCoachLandingPage2/>} />
-          <Route exact path="/TeamCoachLandingPage3" element={<TeamCoachLandingPage3/>} />
-          <Route exact path='/AdminDashbordTopContent' element={<AdminDashbordTopContent/>}/>
-          <Route exact path='/AdminDashbord' element={[<AdminTopbar/>,<Adminsidebar/>,<AdminDashbordTopContent/>,<AdminDashbordTopContent_2/>]}/>
-          <Route exact path="/AdminTopbar" element={<AdminTopbar/>} />
-          <Route exact path='/ViewCoachRequest' element={[<MainNavbar/>,<AdminViewCoachRequest/>]}/>
-          <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass/>} />
-          <Route exact path='/AdminDashbordTopContent_2' element={<AdminDashbordTopContent_2/>}/>
-          <Route exact path="/TeamCoachLogin" element={[,<TeamCoachLogin/>,]} />
-          <Route exact path="/TeamCoachreg" element={[<MainNavbar/>,<TeamcoachReg/>,<UserFooter/>]} /> 
-          <Route exact path="/AdminResetPass" element={<AdminResetPass/>} />
-          <Route exact path="/Aboutpage" element={[<MainNavbar/>,<Aboutpage/>,<UserFooter/>]} />
-          <Route exact path="/Enquiries" element={[<MainNavbar/>,<Enquiries/>,<UserFooter/>]}/>
-          <Route exact path="/TeamCoachViewpage" element={[<TeamCoachTopbar/>,<TeamCoachViewpage/>]}/>
-          <Route exact path="/Adminsidebar1" element={[<Adminsidebar/>]}/>
-          <Route exact path="/Adminsidebar" element={[<Adminsidebar/>,<AdminDashbordTopContent/>]}/>
-          <Route exact path="/Adminsidebar2" element={[<AdminDashbordTopContent/>]}/>
-          <Route exact path="/nav" element={[<TeamCoachTopbar/>]}/>
-          <Route exact path="/Teamcoachdetailspopup" element={[<Teamcoachdetailspopup/>]}/>
-          <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup/>]}/>
-          </Routes>
-          
+
+        <Routes>
+
+          <Route exact path="/" element={[<MainNavbar />, <Userhome />, <Landingpage2 />, <Landingpage3 />, <Aboutpage />, <Landingpage4 />, <UserFooter />]} />
+          <Route exact path="/landingpage3" element={<Landingpage3 />} />
+          <Route exact path='/landingpage4' element={<Landingpage4 />} />
+          <Route exact path='/userfooter' element={<UserFooter />} />
+          <Route exact path="/UserFooter" element={<UserFooter />} />
+          <Route exact path="/AdminLogin" element={[<MainNavbar />, <AdminLogin />, <UserFooter />]} />
+          <Route exact path="/Landingpage2" element={<Landingpage2 />} />
+          <Route exact path="/MainNavbar" element={<MainNavbar />} />
+          <Route exact path="/TeamCoachLandingPage1" element={<TeamCoachLandingPage1 />} />
+          <Route exact path="/TeamCoachLandingPage2" element={<TeamCoachLandingPage2 />} />
+          <Route exact path="/TeamCoachLandingPage3" element={<TeamCoachLandingPage3 />} />
+          <Route exact path='/AdminDashbordTopContent' element={<AdminDashbordTopContent />} />
+          <Route exact path='/AdminDashbord' element={[<AdminTopbar />, <Adminsidebar />, <AdminDashbordTopContent />, <AdminDashbordTopContent_2 />]} />
+          <Route exact path="/AdminTopbar" element={<AdminTopbar />} />
+          <Route exact path='/AdminViewTeamCoach' element={[<MainNavbar/>,<AdminViewTeamCoach/>]}/>
+          <Route exact path='/ViewCoachRequest' element={[<MainNavbar />, <AdminViewCoachRequest />]} />
+          <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />
+          <Route exact path='/AdminDashbordTopContent_2' element={<AdminDashbordTopContent_2 />} />
+          <Route exact path="/TeamCoachLogin" element={[<TeamCoachLogin />,]} />
+          <Route exact path="/TeamCoachreg" element={[<MainNavbar />, <TeamcoachReg />, <UserFooter />]} />
+          <Route exact path="/AdminResetPass" element={<AdminResetPass />} />
+          <Route exact path="/Aboutpage" element={[<MainNavbar />, <Aboutpage />, <UserFooter />]} />
+          <Route exact path="/Enquiries" element={[<MainNavbar />, <Enquiries />, <UserFooter />]} />
+          <Route exact path="/TeamCoachViewpage" element={[<TeamCoachTopbar />, <TeamCoachViewpage />]} />
+          <Route exact path="/Adminsidebar1" element={[<Adminsidebar />]} />
+          <Route exact path="/Adminsidebar" element={[<Adminsidebar />, <AdminDashbordTopContent />]} />
+          <Route exact path="/Adminsidebar2" element={[<AdminDashbordTopContent />]} />
+          <Route exact path="/nav" element={[<TeamCoachTopbar />]} />
+          <Route exact path="/Teamcoachdetailspopup" element={[<Teamcoachdetailspopup />]} />
+          <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup />]} />
+
+        </Routes>
+
 
 
 
