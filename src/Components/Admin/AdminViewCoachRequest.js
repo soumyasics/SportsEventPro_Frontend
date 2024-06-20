@@ -4,16 +4,6 @@ import img from "../../Assets/frame2.png"
 
 function AdminViewCoachRequest () {
 
-    // const coachreqs = [
-    //     "me name uno",
-    //     "me name dos",
-    //     "me name tres"
-    // ];
-
-    // function AdminViewCoachRequestList () {
-
-    // }
-
     return (
 
         <div className="AdminCoachRequestParentDiv">
