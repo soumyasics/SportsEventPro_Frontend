@@ -1,9 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./AdminViewCoachRequest.css"
 import img from "../../Assets/frame2.png"
+import axiosInstance from "../Constant/BaseURL";
 
-function AdminViewCoachRequest () {
+function AdminViewCoachRequest() {
 
+    const [userData, setUserData] = useState([]);
+    const url = axiosInstance.defaults.url;
+    console.log("url,",url);
+    useEffect(() => {
+
+        let res;
+
+
+        axiosInstance.post(`viewTeamCoachReqsByAdmin`).then(res => {
+
+            console.log(res);
+
+            if ((res.data.data).length > 0)
+                setUserData(res.data.data);
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+
+
+
+    }, []);
+    useEffect(() => {
+        console.log("users", userData);
+    })
     return (
 
         <div className="AdminCoachRequestParentDiv">
@@ -13,42 +39,56 @@ function AdminViewCoachRequest () {
                 <h3 className="AdminCoachRequestH3">Team Coach Requests</h3>
 
                 <ul className="AdminCoachRequestListElements">
+                    {
+                        userData.map(x=>{
+return(
+    <>
+    <li className="col-1 text-end pe-3">
 
-                    <li className = "col-1 text-end pe-3">
+    {/* <img src={img} alt="frame" /> */}
+    <img
+                          src={`${url}/${x?.profilePic?.filename}`}
+                          alt={img}
+                          className="AdminCoachRequest-img"
+                        />
 
-                        <img src = {img} alt="frame"/>
+</li>
 
-                    </li>
+<li className="col-3 text-start ">
 
-                    <li className="col-3 text-start ">
-                        
-                        <h5 className="fs-5"> Lenin{/*Player Name*/}</h5>
-                        <h6 className = "fw-light fs-6 "> Sport: VolleyBall</h6>
+    <h5 className="fs-5"> {x.name}{/*Player Name*/}</h5>
+    <h6 className="fw-light fs-6 ">Sport : {x.category}</h6>
 
-                    </li>
+</li>
 
-                    <li className="col-5 text-start">
+<li className="col-5 text-start">
 
-                        <h5 className="fs-5"> Team Name: The Slammers</h5>
-                        <h6 className = "fw-light fs-6 "> Total Team Members: 11 {/*Number Of teammates*/}</h6>
+    <h5 className="fs-5"> Team Name: {x.teamName}</h5>
+    <h6 className="fw-light fs-6 ">Total Team Members{x.totalteammembers} {/*Number Of teammates*/}</h6>
 
-                    </li>
+</li>
 
-                    <li className="col-3 text-end">
+<li className="col-3 text-end">
 
-                        <button className="btn btn-primary px-4">View Details</button>
+    <button className="btn btn-primary px-4">View Details</button>
 
-                    </li>
-                   
-                    
+</li>
+</>
+)
+                        })
+                    }
+
+                 
+
+
                 </ul>
 
-                <div className = "text-end">
+                <div className="text-end">
 
                     <a href=" " alt=" " >View More</a>
 
                 </div>
-                
+
             </div>
 
         </div>
