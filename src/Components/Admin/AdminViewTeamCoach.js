@@ -35,8 +35,7 @@ function AdminViewTeamCoach () {
                         <td className='col-2 AdminViewTeamCoach-tableBodyData'>Cricket {/* Sport */}</td>
                         <td className='col-2 AdminViewTeamCoach-tableBodyData'>11 {/* Team Count */}</td>
                         <td className='col-2 AdminViewTeamCoach-tableBodyData'x><a href=" " alt=""> View More </a> {/* Coach Name */}</td>
-                            
-
+                        
                     </tr>
 
                 </tbody>
