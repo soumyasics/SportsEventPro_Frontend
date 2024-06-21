@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './AdminLogin.css'
 import ImgL from '../../Assets/admin.gif'
+import { useNavigate } from 'react-router-dom'
 
 function AdminLogin() {
   const [data, setData] = useState({
@@ -8,6 +9,7 @@ function AdminLogin() {
     email: '',
     password: ''
   })
+  const navigate=useNavigate()
   const [errors, setErrors] = useState({
 
     email: '',
@@ -45,8 +47,10 @@ function AdminLogin() {
     errors.password = validateField('Password', data.password);
 
 
-if(data.email=="admin" && data.password=="1234"){
+if(data.email=="admin" && data.password=="admin@123"){
   alert("successfully logined")
+  localStorage.setItem('admin',1)
+  navigate('/AdminDashbord')
 }
 else{
   alert("username or password is wrong")

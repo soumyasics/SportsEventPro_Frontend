@@ -1,5 +1,6 @@
 import React from 'react'
 import "../../Components/Admin/AdminDashbordTopContent_2.css"
+import { Link } from 'react-router-dom'
 
 function AdminDashbordTopContent_2() {
   return (
@@ -12,12 +13,12 @@ function AdminDashbordTopContent_2() {
     <div className='AdminDashbordTopContent_2-Div2'>
     <div class="col style">
       <div className='AdminDashbordTopContent_2-img1'></div>
-      <button className='AdminDashbordTopContent_2-button1'>View All Requests</button>
+      <button className='AdminDashbordTopContent_2-button1'><Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>View All Requests</Link></button>
     </div></div>
     <div className='AdminDashbordTopContent_2-Div3'>
     <div class="col style">
       <div className='AdminDashbordTopContent_2-img2'></div>
-      <button className='AdminDashbordTopContent_2-button1'>View All Team Coaches</button>    </div>
+      <button className='AdminDashbordTopContent_2-button1'><Link to='/AdminViewTeamCoach' className='AdminDashbordTopContent_2-link'>View All Team Coaches</Link></button>    </div>
   </div>
   </div>
 </div>

@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.AdminViewTeamCoachMainDivBG {
+    
+    font-family: "Roboto";
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+
+}
+
+.AdminViewTeamCoach-h1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; 
+    margin-top: 50px;
+
+}
+
+.AdminViewTeamCoach-Table {
+
+    margin-top: 50px;
+    border: 1.304px solid #B9B9B9;
+    border-radius: 6px;
+    border-collapse:separate;
+    border-spacing: 0;
+
+}
+
+.AdminViewTeamCoach-tableHeadRow {
+
+    display: flex;
+    width: 1295px;
+    height: 65px;
+    text-align: left;
+    background: #A9ADC582;
+    
+
+}
+
+.AdminViewTeamCoach-tableHeadData {
+
+    border-right: 1.304px solid #B9B9B9;
+    padding-left: 13px;
+    padding-top: 15.6px;
+
+}
+.AdminViewTeamCoach-tableHeadDataEnd {
+
+    padding-left: 13px;
+    padding-top: 15.6px;
+    
+}
+
+.AdminViewTeamCoach-tableBodyRow {
+
+    display: flex;
+    width: 1295px;
+    height: 65px;
+    text-align: left;
+    background: #00000000;
+    border-top: 1.304px solid #B9B9B9; 
+    
+}
+
+.AdminViewTeamCoach-tableBodyData {
+
+    border-right: 1.304px solid #B9B9B9;
+    padding-left: 13px;
+    padding-top: 15.6px;
+
+}
