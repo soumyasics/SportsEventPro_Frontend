@@ -42,6 +42,11 @@ function AdminViewTeamCoach () {
 
             </table>
 
+            <div class="btn-group AdminViewTeamCoach-Pagination" role="group" >
+                <button type="button" class="btn btn-outline-secondary text-outline-light ">Previous</button>
+                <button type="button" class="btn btn-outline-secondary text-outline-light ps-4 pe-4 ">Next</button>
+            </div>
+
         </div>
 
     );
