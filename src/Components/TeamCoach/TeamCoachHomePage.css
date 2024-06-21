@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.TeamCoachHomePage-img-1 {
+
+    background-image: url("../../Assets/teamcoachhomepage_1.png");    
+    width: 1401px;
+    height: 528px;
+    margin-top: 75px;
+    margin-left: -54px;
+
+}
+
+
+.TeamCoachHomePage-TextContainDiv{
+
+    width: 463px;
+    height: 96px;
+    margin-left: 869px;
+
+}
+
+.TeamCoachHomePage-h1-1 {
+
+    padding-top: 129px;
+    color: #FFF;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; 
+
+}
+
+.TeamCoachHomePage-p-1{
+
+    color: var(--icon-color, #FFF);
+    text-align: right;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; 
+
+}
+
+.TeamCoachHomePage-SpanContainDiv {
+
+    width: 278px;
+    height: 111px;
+    background-color: black;
+    text-align: right;
+    display: flex;
+    padding: 26px 44.887px 25.222px 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 97px;
+    background: #000;
+    box-shadow: 2px 0px 28px 0px rgba(233, 225, 4, 0.75) inset;
+    margin-left: 1054px;
+    margin-top: 250px;
+    
+}
+
+.TeamCoachHomePage-span {
+
+    color: var(--icon-color, #FFF);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.75px;
+    text-transform: capitalize;
+    padding-left: 35px;
+    padding-top: 15px;
+
+}
+
+.TeamCoachHomePage-h1-2 {
+
+    text-align: right;
+    color: white;
+    font-family: Roboto;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    text-transform: capitalize;
+
+}
+
+.TeamCoachHomePage-icon-1 {
+
+    width: 30px;
+    height: 33px;
+    margin-top: -40px; 
+    margin-left: 220px;
+
+}

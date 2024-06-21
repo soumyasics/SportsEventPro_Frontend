@@ -28,6 +28,7 @@ import TeamCoachTopbar from './Components/TeamCoach/TeamCoachTopbar';
 import Teamcoachdetailspopup from './Components/TeamCoach/Teamcoachdetailspopup';
 import Teamcoachviewprofilepopup from './Components/TeamCoach/Teamcoachviewprofilepopup';
 import AdminTopbar from './Components/Admin/AdminTopbar';
+import TeamCoachHomePage from './Components/TeamCoach/TeamCoachHomePage'
 
 function App() {
 
@@ -58,6 +59,7 @@ function App() {
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />
           <Route exact path='/AdminDashbordTopContent_2' element={<AdminDashbordTopContent_2 />} />
           <Route exact path="/TeamCoachLogin" element={[<TeamCoachLogin />,]} />
+          <Route exact path="/TeamCoachHomePage" element={[<MainNavbar/>,<TeamCoachHomePage/>]}/>
           <Route exact path="/TeamCoachreg" element={[<MainNavbar />, <TeamcoachReg />, <UserFooter />]} />
           <Route exact path="/AdminResetPass" element={<AdminResetPass />} />
           <Route exact path="/Aboutpage" element={[<MainNavbar />, <Aboutpage />, <UserFooter />]} />
