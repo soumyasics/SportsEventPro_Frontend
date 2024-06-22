@@ -112,6 +112,7 @@
 
     background-color: #F0F0F0;
     padding-top: 50px;
+    padding-bottom: 50px;
 
 }
 
@@ -121,10 +122,10 @@
     flex-direction: column;
     width: 606px;
     height: 126px;
-    border: 3px solid black;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: 50%;
     transform: translate(-50%);
+    margin-bottom: 30px;
 
 }
 
@@ -141,7 +142,6 @@
 
 .TeamCoachHomePage-p-2 {
 
-
     color: #000;
     text-align: center;
     font-family: Roboto;
@@ -150,4 +150,19 @@
     font-weight: 500;
     line-height: 24px;
 
+}
+
+.TeamCoachHomePage-Card {
+
+    width: 307px;
+    height: 436px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.482);
+    margin-left: 100px;
+    margin-right: 50px;
+
+}
+
+.TeamCoachHomePage-Card-CardBody {
+    background-color: white;
 }

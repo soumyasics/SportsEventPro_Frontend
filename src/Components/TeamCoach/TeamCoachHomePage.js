@@ -1,6 +1,7 @@
 import React from 'react'
 import "./TeamCoachHomePage.css"
 import img from "../../Assets/teamcoachhomepage_2.png"
+import SoccerTourneyImg from "../../Assets/FOOTBALL POSTER TEMPLATE 1(1).png"
 
 function TeamCoachHomePage() {
 
@@ -44,17 +45,18 @@ function TeamCoachHomePage() {
 
                 <div>
 
-                    <div className = ''>
+                    <div className = 'TeamCoachHomepage-CardContain'>
 
-                        <div className = "card">
+                        <div className = "card TeamCoachHomePage-Card">
 
-                            <img src="..." className = "card-img-top" alt="..."/>
+                            <img src = {SoccerTourneyImg} className = "card-img-top" alt = "..."/>
 
-                                <div className = "card-body">
+                            <div className = "card-body TeamCoachHomePage-Card-CardBody">
 
-                                    <p className = "card-text ">Soccer Tournament</p>
+                                <p className = "card-text ">Soccer Tournament</p>
 
-                                </div>
+                            </div>
+
                         </div>
 
                     </div>
