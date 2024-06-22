@@ -1,17 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.TeamCoachHomePage-img-1 {
+/* splash screen css start */
+/* div containing the splash img */
+.TeamCoachHomePage-PrioDiv-1 {
 
-    background-image: url("../../Assets/teamcoachhomepage_1.png");    
-    width: 1401px;
-    height: 528px;
-    margin-top: 75px;
-    margin-left: -54px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 
 }
 
+/* div containing the img and the content on it */
+.TeamCoachHomePage-img-1 {
 
-.TeamCoachHomePage-TextContainDiv{
+    background-image: url("../../Assets/Teamcoachhomepage_1.png");
+    width: 1401px;
+    height: 528px;
+    margin-left: 50%;
+    transform: translate(-50%);
+
+}
+
+/* img content start */
+.TeamCoachHomePage-Text-Contain-Div-1 {
 
     width: 463px;
     height: 96px;
@@ -28,11 +38,11 @@
     font-size: 56px;
     font-style: normal;
     font-weight: 700;
-    line-height: 48px; 
+    line-height: 48px;
 
 }
 
-.TeamCoachHomePage-p-1{
+.TeamCoachHomePage-p-1 {
 
     color: var(--icon-color, #FFF);
     text-align: right;
@@ -40,7 +50,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px; 
+    line-height: 24px;
 
 }
 
@@ -59,7 +69,7 @@
     box-shadow: 2px 0px 28px 0px rgba(233, 225, 4, 0.75) inset;
     margin-left: 1054px;
     margin-top: 250px;
-    
+
 }
 
 .TeamCoachHomePage-span {
@@ -78,7 +88,7 @@
 
 }
 
-.TeamCoachHomePage-h1-2 {
+.TeamCoachHomePage-span-2 {
 
     text-align: right;
     color: white;
@@ -96,7 +106,226 @@
 
     width: 30px;
     height: 33px;
-    margin-top: -40px; 
+    margin-top: -40px;
     margin-left: 220px;
 
 }
+
+/* img content end */
+/* splash screen css start */
+
+/* upcoming events css start */
+/* upcoming events div */
+.TeamCoachHomePage-PrioDiv-2 {
+
+    background-color: #F0F0F0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+
+}
+
+/* div containing the heading start */
+.TeamViewCoachHomePage-Text-Contain-Div-2 {
+
+    display: flex;
+    flex-direction: column;
+    width: 606px;
+    height: 126px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 50%;
+    transform: translate(-50%);
+
+}
+
+.TeamCoachHomePage-h1-2 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+
+}
+
+.TeamCoachHomePage-p-2 {
+
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+
+}
+
+/* div containing the heading end */
+
+/* div containing the cards */
+.TeamCoachHomepage-Card-Contain {
+
+    display: flex;
+    flex-direction: row;
+    height: max-content;
+    width: max-content;
+
+}
+
+/* css for the 1st card */
+.TeamCoachHomePage-Card-Start {
+
+    width: 307px;
+    height: 531px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.20);
+    margin-left: 75px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+
+}
+
+/* css for the rest of the cards */
+.TeamCoachHomePage-Card {
+
+    width: 307px;
+    height: 531px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.20);
+    margin-right: 50px;
+    margin-bottom: 30px;
+
+}
+
+/* css for the img inside the card */
+.TeamCoachHomePage-Card-Img {
+
+    height: 430.5px;
+    width: 303.8px;
+
+}
+
+/* css for the body part of the card */
+.TeamCoachHomePage-Card-Body {
+
+    background-color: white;
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 0px;
+    padding-top: 11px;
+
+}
+
+/* css for the 1st line of text in card body */
+.TeamCoachHomePage-Card-Body-Text-1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 16.717px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.075px;
+    margin-top: 4px;
+
+}
+
+/* css for the 2nd line of text in card body */
+.TeamCoachHomePage-Card-Body-Text-2 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 20.896px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29.255px;
+    margin-top: -5px;
+}
+
+/* upcoming events css start */
+
+.TeamCoachHomePage-PrioDiv-3 {
+
+    background-color: #000;
+    width: 100%;
+    color: white;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+}
+
+.TeamCoachHomePage-Enroll-Contain {
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.TeamCoachHomePage-Text-Contain-Div-2 {
+
+    margin-left: 100px;
+    width: 50%;
+    margin-right: 45px;
+
+}
+
+.TeamCoachHomePage-Text-Contain-p-1 {
+
+    text-align: center;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 45px;
+    margin-bottom: 30px;
+
+}
+
+.TeamCoachHomePage-Text-Contain-p-2 {
+
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 30px;
+
+}
+
+.TeamCoachHomePage-Text-Contain-p-3 {
+
+    text-align: center;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 30px;
+
+}
+
+.TeamCoachHomePage-Text-Contain-Button-1 {
+
+    padding: 15px 60px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 50px;
+
+}
+
+/* upcoming events css end */
