@@ -3,6 +3,7 @@ import './TeamCoachLogin.css'
 import img6 from "../../Assets/Teamcoachlogin.gif"
 import axios from 'axios'
 import axiosInstance from '../Constant/BaseURL'
+import { Link } from 'react-router-dom'
 
 
 
@@ -138,14 +139,14 @@ alert(response.data.msg)
                         </div>
                     </form>
                     <div>
-                        <a className="teamcoachloginReset" href="forgetpassword">
+                        <Link className="teamcoachloginReset" to='TeamCoachForgetPass'>
                             Forget password
-                        </a>
+                        </Link>
                     </div>
                     <div>
-                        <a className="teamcoachloginSignin" href="signup">
-                            Sign up
-                        </a>
+                        <Link to="/TeamCoachreg" className="teamcoachloginSignin" >
+                            Sign up here
+                        </Link>
                     </div>
                     </div>
 
