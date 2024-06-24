@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* primary div */
+.OrganiserRegistration-Div-1 {
+
+    width: 1100px;
+    margin-top: 60px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 60px;
+
+}
+
+/* css for the heading part start */
+.OrganiserRegistration-Heading-Contain {
+
+    text-align: center;
+
+}
+
+.OrganiserRegistration-Heading-h1-1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+
+}
+
+.OrganiserRegistration-Heading-h1-2 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+}
+/* css for the heading part end */
+
+/* css for the input field container */
+.OrganiserRegistration-Content-Contain {
+
+    display: flex;
+    flex-direction: row;
+    
+}
+
+/* css for the input field left column  */
+
+.OrganiserRegistration-Content-Left-Column {
+
+    display: flex;
+    flex-direction: column;
+    margin-right: 65px;
+
+}
+
+.OrganiserRegistration-Content-Input-Start {
+
+    display: flex;
+    width: 510px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 60px;
+
+}
+
+.OrganiserRegistration-Content-Input {
+
+    display: flex;
+    width: 510px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 45px;
+
+}
+
+.OrganiserRegistration-Content-Input-End {
+
+    display: flex;
+    width: 510px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 45px;
+    margin-bottom: 50px;
+
+}
+
+
+.OrganiserRegistration-Content-h1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 4px;
+    margin-left: 1px;
+
+}
+
+.OrganiserRegistration-Content-input-1 {
+
+    padding: 8px 12px;
+    width: 510px;
+    height: 36px;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10); 
+
+}
+
+select.input-lg {
+    -webkit-appearance: none;
+    appearance: none;
+    -o-appearance: none;
+    /* no standardized syntax available, no ie-friendly solution available */
+  }
+
+.OrganiserRegistration-Content-Input-Country {
+
+    background-color: white;
+    padding: 8px 12px;
+    width: 510px;
+    height: 36px;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10); 
+
+}
+
+.OrganiserRegistration-Content-Input-Select-Option {
+
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+}
+
+.OrganiserRegistration-Content-input-password {
+
+    background-image: url("../../Assets/OrganiserRegistration_1.png");
+    background-position-x: 98%;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    padding: 8px 12px;
+    width: 510px;
+    height: 36px;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10); 
+
+}
+
+.OrganiserRegistration-Content-input-photo {
+
+    background-image: url("../../Assets/OrganiserRegistration_2.png");
+    background-position-x: 98%;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    padding: 8px 12px;
+    width: 510px;
+    height: 36px;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10); 
+
+}
+
+.OrganiserRegistration-Content-input-description {
+
+    padding: 8px 12px;
+    width: 510px;
+    height: 65px;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10); 
+
+}
+
+.OrganiserRegistration-button {
+
+    width: 240px;
+    height: 48px;
+    margin-left: 50%;
+    transform: translate(-50%);
+
+}
