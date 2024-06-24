@@ -27,7 +27,7 @@ function TeamCoachHomePage() {
 
                     <div className='TeamCoachHomePage-SpanContainDiv'>
 
-                        <span className='TeamCoachHomePage-span'>To Participate In Upcoming Events <span className='TeamCoachHomePage-span-2'> Enroll Now </span><img src={img} alt='click here' className='justify-content-end TeamCoachHomePage-icon-1 ' /></span>
+                        {/* <span className='TeamCoachHomePage-span'>To Participate In Upcoming Events <span className='TeamCoachHomePage-span-2'> Enroll Now </span><img src={img} alt='click here' className='justify-content-end TeamCoachHomePage-icon-1 ' /></span> */}
 
                     </div>
 

@@ -3,21 +3,21 @@ import './TeamCoachLogin.css'
 import img6 from "../../Assets/Teamcoachlogin.gif"
 import axios from 'axios'
 import axiosInstance from '../Constant/BaseURL'
-import { Link } from 'react-router-dom'
-
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
  
 
 
 function TeamCoachLogin() {
+    const navigate=useNavigate()
     const [data, setData] = useState({
   
-        username: '',
+        email: '',
         password: ''
     })
     const [errors, setErrors] = useState({
     
-        username: '',
+        email: '',
         password: ''
     })
     let formIsValid;
@@ -50,7 +50,7 @@ function TeamCoachLogin() {
         let errors = {};
          formIsValid = true;
     
-        errors.username = validateField('Username', data.username);
+        errors.email = validateField('Username', data.email);
         errors.password = validateField('Password', data.password);
     
     if(formIsValid){
@@ -69,6 +69,8 @@ console.log("fun called",data);
         console.log(response);
         if(response.data.status==200){
             alert("Login Successful")
+            localStorage.setItem('admin',1)
+            navigate('/teamcoachhomepage')
         }else
 alert(response.data.msg)       
         
@@ -102,11 +104,11 @@ alert(response.data.msg)
                                 type="email"
                                 placeholder="Enter Your Username"
                                 name="email"
-                                value={data.username}
+                                value={data.email}
                                 onChange={handleChange}
                             ></input>
                                                  <div class='TeamcoachValidationUsername'>
-                      {errors.username && <div className="text-danger TeamCoachLoginValidation-1">{errors.username}</div>}
+                      {errors.email && <div className="text-danger TeamCoachLoginValidation-1">{errors.email}</div>}
                       </div>
                         </div>
 
