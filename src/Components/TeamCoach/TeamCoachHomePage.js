@@ -1,11 +1,11 @@
 import React from 'react'
 import "./TeamCoachHomePage.css"
-import img from "../../Assets/teamcoachhomepage_2.png"
+import img from "../../Assets/Teamcoachhomepage_2.png"
 import img2 from "../../Assets/Teamcoachhomepage_5.jpeg"
 import img3 from "../../Assets/Teamcoachhomepage_6.jpeg"
 import img4 from "../../Assets/Teamcoachhomepage_7.jpeg"
-import img5 from "../../Assets/teamcoachhomepage-3.png"
-import img6 from '../../Assets/teamcoachhomepage-4.png'
+import img5 from "../../Assets/Teamcoachhomepage_3.png"
+import img6 from '../../Assets/Teamcoachhomepage_4.png'
 
 function TeamCoachHomePage() {
 
