@@ -3,7 +3,7 @@ import './TeamCoachLogin.css'
 import img6 from "../../Assets/Teamcoachlogin.gif"
 import axios from 'axios'
 import axiosInstance from '../Constant/BaseURL'
-
+import { Link } from 'react-router-dom'
 
 
  
@@ -12,12 +12,12 @@ import axiosInstance from '../Constant/BaseURL'
 function TeamCoachLogin() {
     const [data, setData] = useState({
   
-        email: '',
+        username: '',
         password: ''
     })
     const [errors, setErrors] = useState({
     
-        email: '',
+        username: '',
         password: ''
     })
     let formIsValid;
@@ -50,8 +50,8 @@ function TeamCoachLogin() {
         let errors = {};
          formIsValid = true;
     
-        errors.email = validateField('email', data.email);
-        errors.password = validateField('password', data.password);
+        errors.username = validateField('Username', data.username);
+        errors.password = validateField('Password', data.password);
     
     if(formIsValid){
         BackendData()
@@ -76,15 +76,15 @@ alert(response.data.msg)
       })
       .catch(error => {
         console.error(error);
-     
-    
 })
 }
 
 
 
+
     return (
         <div>
+            <div class="container text-center">
 <div className='row'>
             <div class="teamcoachloginmaindiv col-5 ">
                 
@@ -100,13 +100,13 @@ alert(response.data.msg)
                             <input
                                 className="teamcoachloginput1"
                                 type="email"
-                                placeholder="email"
+                                placeholder="Enter Your Username"
                                 name="email"
-                                value={data.email}
+                                value={data.username}
                                 onChange={handleChange}
                             ></input>
-                                                 <div class='AdminValidationemail'>
-                      {errors.email && <div className="text-danger">{errors.email}</div>}
+                                                 <div class='TeamcoachValidationUsername'>
+                      {errors.username && <div className="text-danger TeamCoachLoginValidation-1">{errors.username}</div>}
                       </div>
                         </div>
 
@@ -116,42 +116,42 @@ alert(response.data.msg)
                             <input
                                 className="teamcoachloginput2"
                                 type="password"
-                                placeholder="password"
+                                placeholder="Enter Your Password"
                                 name="password"
                                 value={data.password}
                                 onChange={handleChange}
 
                             ></input>
-                                        <div class="AdminValidationPass">
+                            </div>
+                                                <div>
+                        <Link to="/TeamCoachForgetPass"  class="teamcoachloginReset">Forget Password</Link>
+                    </div>
+                                        <div>
                       {errors.password && (
-            <div className="text-danger">{errors.password}</div>
+            <div className="text-danger TeamCoachLoginValidation-2">{errors.password}</div>
           )}
+          
           </div>
           
-                        </div>
+                    
+                    </div>
 
-                    </div>
-                    <div>
-                        <button className="teamcoachloginButton" type="submit">
-                            Login
-                        </button>
-                        </div>
                     </form>
-                    <div>
-                        <a className="teamcoachloginReset" href="forgetpassword">
-                            Forget password
-                        </a>
-                    </div>
-                    <div>
-                        <a className="teamcoachloginSignin" href="signup">
-                            Sign up
-                        </a>
-                    </div>
+
                     </div>
 
                     <div class="teamcoachloginbackgroundimg col-5">
                     <img class="teamcoachloginimg"src={img6} alt="image not found"></img>
                     </div>
+                    </div>
+                    <div>
+                        <button className="teamcoachloginButton" type="submit"onClick={handleSubmit}>
+                            Login
+                        </button>
+                        </div>
+                        <div>
+                            <p className='teamcoachloginSignin-p1'>don't have an account ? <Link to="/TeamcoachReg"  class="teamcoachloginSignin">Sign Up</Link></p>
+                        </div>
                     </div>
         </div>
 
