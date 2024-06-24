@@ -9,10 +9,6 @@ function TeamcoachReg() {
 
 
 
-    // const mystyle = {
-    //     background:  "DodgerBlue",
-    //       };
-
 
     const [plus, setPlus] = useState(
         1
@@ -124,9 +120,7 @@ console.log(plus);
         errors.category = validateField('Category', data.category);
         errors.pincode = validateField('Pincode', data.pincode);
         errors.states =validateField('States', data.states)
-        // errors.license = validateField('License', data.license);
         errors.password = validateField('Password', data.password);
-        // errors.image = validateField('Image', data.image);
         errors.teamname = validateField('Teamname', data.teamname);
         errors.address = validateField('Address', data.address);
         errors.city = validateField('City', data.city);
@@ -157,7 +151,6 @@ console.log(plus);
 
     const BackendData = () => {
         console.log("fun called", data);
-// console.log("2 form",formData);
  let formData = new FormData();
 
             formData.append('name',data.name);
@@ -178,14 +171,14 @@ console.log(plus);
         
             
     console.log(formData);
-        axiosMultipartInstance.post('registerTeamCoach', formData)
+        axiosMultipartInstance.post('registerTeamCoach', data)
             .then(response => {
                 console.log(response);
                 if (response.data.status == 200) {
                     alert(response.data.msg)
                 } else
                     alert(response.data.msg)
-
+                    
 
             })
             .catch(error => {
@@ -193,6 +186,9 @@ console.log(plus);
 
 
             })
+        
+        
+            
     }
 
     return (
@@ -391,7 +387,6 @@ console.log(plus);
                                             </div>
                                             <div className='TeamCoachField-4'>
                                                 <select class="form-select" aria-label="Default select example" name="states" onChange={handleChange} >
-                                                    {/* <option selected>Select Your State</option> */}
                                                     <option selected value="kerala" >Kerala</option>
                                                     <option value="Jammu & Kashmir" >Jammu & Kashmir</option>
                                                     <option value="Tamilnadu" >Tamilnadu</option>
@@ -400,9 +395,7 @@ console.log(plus);
                                                     <option value="Andrapradesh" >Andrapradesh</option>
 
                                                 </select>
-                                                {/* <div class=''>
-                            {errors.states && <div className="text-danger ">{errors.states}</div>}
-                        </div> */}
+                                             
 
                                             </div>
                                         </div>
@@ -416,7 +409,6 @@ console.log(plus);
                                             </div>
                                             <div className='TeamCoachField-10'>
                                                 <select class="form-select" aria-label="Default select example" name="country" onChange={handleChange}>
-                                                {/* <option selected>Select Your State</option> */}
                                                     <option selected value="India">India</option>
                                                     <option value="Canada">Canada</option>
                                                     <option value="Japan">Japan</option>

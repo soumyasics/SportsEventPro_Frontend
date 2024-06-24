@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../Components/TeamCoach/TeamCoachLandingPage1.css'
+import './TeamCoachLandingPage1.css'
 
 
 function TeamCoachLandingPage1() {
