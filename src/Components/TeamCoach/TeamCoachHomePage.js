@@ -4,8 +4,8 @@ import img from "../../Assets/Teamcoachhomepage_2.png"
 import img2 from "../../Assets/Teamcoachhomepage_5.jpeg"
 import img3 from "../../Assets/Teamcoachhomepage_6.jpeg"
 import img4 from "../../Assets/Teamcoachhomepage_7.jpeg"
-import img5 from "../../Assets/Teamcoachhomepage-3.png"
-import img6 from '../../Assets/Teamcoachhomepage-4.png'
+import img5 from "../../Assets/Teamcoachhomepage_3.png"
+import img6 from '../../Assets/Teamcoachhomepage_4.png'
 
 function TeamCoachHomePage() {
 
@@ -27,7 +27,7 @@ function TeamCoachHomePage() {
 
                     <div className='TeamCoachHomePage-SpanContainDiv'>
 
-                        {/* <span className='TeamCoachHomePage-span'>To Participate In Upcoming Events <span className='TeamCoachHomePage-span-2'> Enroll Now </span><img src={img} alt='click here' className='justify-content-end TeamCoachHomePage-icon-1 ' /></span> */}
+                        <span className='TeamCoachHomePage-span'>To Participate In Upcoming Events <span className='TeamCoachHomePage-span-2'> Enroll Now </span><img src={img} alt='click here' className='justify-content-end TeamCoachHomePage-icon-1 ' /></span>
 
                     </div>
 

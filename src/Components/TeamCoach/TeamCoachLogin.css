@@ -2,6 +2,7 @@
     width: 500px;
     height: 500px;
     flex-shrink: 0;
+    margin-top: 119px;
 }
 .teamcoachloginput1{
     display: flex;
@@ -36,7 +37,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: 24px;
-    margin-left: 325px;
+    margin-left: 308px;
     margin-top: -53px;
 }
 .teamcoachloginmaindiv{
@@ -81,7 +82,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: -406px;
+    margin-left: -437px;
 }
 .teamcoachloginSignin{
     color: #000;
