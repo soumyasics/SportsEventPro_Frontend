@@ -28,7 +28,8 @@ import TeamCoachTopbar from './Components/TeamCoach/TeamCoachTopbar';
 import Teamcoachdetailspopup from './Components/TeamCoach/Teamcoachdetailspopup';
 import Teamcoachviewprofilepopup from './Components/TeamCoach/Teamcoachviewprofilepopup';
 import AdminTopbar from './Components/Admin/AdminTopbar';
-import TeamCoachHomePage from './Components/TeamCoach/TeamCoachHomePage'
+import TeamCoachHomePage from './Components/TeamCoach/TeamCoachHomePage';
+import OrganiserRegistration from './Components/Organiser/OrganiserRegistration';
 
 function App() {
 
@@ -59,7 +60,7 @@ function App() {
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />
           <Route exact path='/AdminDashbordTopContent_2' element={<AdminDashbordTopContent_2 />} />
           <Route exact path="/TeamCoachLogin" element={[<TeamCoachLogin />,]} />
-          <Route exact path="/TeamCoachHomePage" element={[<MainNavbar/>,<TeamCoachHomePage/>]}/>
+          <Route exact path="/TeamCoachHomePage" element={[<MainNavbar/>,<TeamCoachHomePage/>,<Aboutpage/>,<UserFooter/>]}/>
           <Route exact path="/TeamCoachreg" element={[<MainNavbar />, <TeamcoachReg />, <UserFooter />]} />
           <Route exact path="/AdminResetPass" element={<AdminResetPass />} />
           <Route exact path="/Aboutpage" element={[<MainNavbar />, <Aboutpage />, <UserFooter />]} />
@@ -71,6 +72,7 @@ function App() {
           <Route exact path="/nav" element={[<TeamCoachTopbar />]} />
           <Route exact path="/Teamcoachdetailspopup/:id" element={[<Teamcoachdetailspopup />]} />
           <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup />]} />
+          <Route exact path='/OrganiserRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
 
         </Routes>
 
