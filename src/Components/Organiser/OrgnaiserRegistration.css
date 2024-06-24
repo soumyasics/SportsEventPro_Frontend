@@ -130,8 +130,9 @@
     -moz-appearance: none; /* Remove default arrow in Firefox */
     background-image: url("../../Assets/OrganiserRegistration.svg");
     background-repeat: no-repeat;
+    background-size: 5%;
     background-color: white;
-    background-position-x: 98%;
+    background-position-x: 97%;
     background-position-y: center;
     padding: 8px 12px;
     width: 510px;
@@ -167,10 +168,7 @@
 
 .OrganiserRegistration-Content-input-password {
 
-    background-image: url("../../Assets/OrganiserRegistration_1.png");
-    background-position-x: 98%;
-    background-position-y: center;
-    background-repeat: no-repeat;
+    z-index: 0;
     padding: 8px 12px;
     width: 510px;
     height: 36px;
@@ -188,12 +186,31 @@
 
 }
 
+.OrganiserRegistrationPassword-Container-Div {
+
+    width: 515px;
+    height: 40px;
+
+}
+
+.Password-Change-Button {
+
+    background-color: #0000;
+    border: none;
+    position: absolute;
+    z-index: 1;
+    margin-top: 0.4%;
+    margin-left: -3%;
+
+}
+
 .OrganiserRegistration-Content-input-photo {
 
     background-image: url('../../Assets/OrganiserRegistration_2.png');
     background-repeat: no-repeat;
     background-position-x: 98%;
     background-position-y: center;
+    background-size: 3%;
     cursor: pointer;
     padding: 8px 12px;
     width: 510px;

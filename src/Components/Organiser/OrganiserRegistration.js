@@ -1,7 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './OrgnaiserRegistration.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+
 
 function OrganiserRegistration() {
+
+
+    const [icon,setIcon] = useState(faEye)
+    const [reIcon,setReIcon] = useState(faEye)
+
+    function PasswordButtonOnClick () {
+
+        var pWordState = document.getElementById("pword")
+        
+
+        if (pWordState.type === "password" ) {
+
+            pWordState.type = "text"
+            setIcon(faEyeSlash)
+
+        }
+
+        else {
+
+            pWordState.type = "password"
+            setIcon(faEye)
+
+        }
+
+    }
+
+    function RePasswordButtonOnClick () {
+
+        var rePWordState = document.getElementById("rePWord")
+
+        if (rePWordState.type === "password") {
+
+            rePWordState.type = "text"
+            setReIcon(faEyeSlash)
+
+        }
+
+        else {
+
+            rePWordState.type = "password"
+            setReIcon(faEye)
+
+        }
+
+    }
 
     return (
 
@@ -73,16 +121,28 @@ function OrganiserRegistration() {
                         <div className = 'OrganiserRegistration-Content-Input'>
 
                             <h1 className = 'OrganiserRegistration-Content-h1'>Password</h1>
-                            <input type = 'password' placeholder = 'Enter Password' className = 'OrganiserRegistration-Content-input-password'/>
-                        
+
+                            <div className = 'OrganiserRegistrationPassword-Container-Div'>
+
+                                <input type = 'password' placeholder = 'Enter Password' id = 'pword' className = 'OrganiserRegistration-Content-input-password'/>
+                                <button className = 'Password-Change-Button' onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
+
+
+                            </div>
+
                         </div>
 
                         {/* input field: ConfirmPassword */}
                         <div className = 'OrganiserRegistration-Content-Input-End'>
 
                             <h1 className = 'OrganiserRegistration-Content-h1'>Confirm Password</h1>
-                            <input type = 'password' placeholder = 'Re-enter Your Password' className = 'OrganiserRegistration-Content-input-password'/>
-                        
+                            
+                            <div className = 'OrganiserRegistrationPassword-Container-Div'>
+
+                                <input type = 'password' placeholder = 'Re-enter Your Password' id = 'rePWord' className = 'OrganiserRegistration-Content-input-password'/>
+                                <button className = 'Password-Change-Button' onClick = {RePasswordButtonOnClick}><FontAwesomeIcon icon = {reIcon}/></button>
+
+                            </div>
                         </div>
 
                     </div>
