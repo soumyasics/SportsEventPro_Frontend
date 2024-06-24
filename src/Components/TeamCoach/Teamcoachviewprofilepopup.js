@@ -24,7 +24,7 @@ function Teamcoachviewprofilepopup() {
 
                   <div>
                           <div className='Teamcoachviewprofilepopupmain-1-20'>
-                          <div class="container text-center">
+                          <div class=" text-center">
                                   <div className='row '>
                                           <div className='col Teamcoachviewprofilepopupdiv-1'>
                                                   <h1 className='Teamcoachviewprofilepopuptext-1'>Coach Details</h1>
