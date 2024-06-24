@@ -1,6 +1,5 @@
 import React from 'react'
 import './OrgnaiserRegistration.css'
-import img from "../../Assets/OrganiserRegistration.svg"
 
 function OrganiserRegistration() {
 
