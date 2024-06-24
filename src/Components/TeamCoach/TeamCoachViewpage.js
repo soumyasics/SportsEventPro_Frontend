@@ -16,6 +16,9 @@ import axios from 'axios'
 import axiosInstance from '../Constant/BaseURL'
 import { useParams } from 'react-router-dom'
 
+const url = axiosInstance.defaults.url;
+
+console.log("url,", url);
 
 
 
@@ -30,6 +33,35 @@ import { useParams } from 'react-router-dom'
 
 function TeamCoachViewpage() {
 
+
+
+
+
+                const {id} = useParams()
+        const [userData, setUserData] = useState();
+        
+
+        useEffect(() => {
+
+                let res;
+        
+        
+                axiosInstance.post(`viewTeamCoachById/${id}`).then(res => {
+        
+                    console.log(res);
+        
+                   
+                        setUserData(res.data.data);
+                    
+                }).catch(err => {
+                    console.log(err);
+                })
+        
+        
+        
+            }, [id]);
+            console.log(userData);
+
     
   return (
     <div>
@@ -39,8 +71,12 @@ function TeamCoachViewpage() {
         <h1 className='TeamCoachViewpagetext-1'>Coach Details</h1>
          </div>
     <div className='col-4 TeamCoachViewpagediv-2'>
-<label className='TeamCoachViewpageimg-1-backend'></label><br></br>
-<label className='TeamCoachViewpageimg-2-backend'></label><br></br>
+        
+        <div className='TeamCoachViewpageimgdiv-1-1'>
+<label className='TeamCoachViewpageimg-1-backend'>        <img src={`${url}/${userData?.profilePic?.filename}`}/>
+</label><br></br>
+<label className='TeamCoachViewpageimg-2-backend'>{userData ? userData.name : ''}</label><br></br>
+</div>
 
     </div>
 
@@ -63,7 +99,7 @@ function TeamCoachViewpage() {
 <div className='row TeamCoachViewpagediv-3 TeamCoachViewpageimpdiv-style'>
 
 
-<div className='col-4 '>
+<div className='col '>
 
     <div className='row TeamCoachViewpagemainrow-1'>
 
@@ -77,7 +113,7 @@ function TeamCoachViewpage() {
         </div>
 
         <div className='col-5'>
-        <label className='TeamCoachViewpagelabel-2'></label>
+        <label className='TeamCoachViewpagelabel-2'>{userData ? userData.contact : ''}</label>
 
         </div>
 
@@ -87,7 +123,7 @@ function TeamCoachViewpage() {
 
 </div>
 
-<div className='col-4 TeamCoachViewpagemainrow-right-1'>
+<div className='col TeamCoachViewpagemainrow-right-1'>
 
 
 <div className='row TeamCoachViewpagemainrow-1'>
@@ -102,7 +138,7 @@ function TeamCoachViewpage() {
         </div>
 
         <div className='col-5'>
-        <label className='TeamCoachViewpagelabel-2'></label>
+        <label className='TeamCoachViewpagelabel-2'>{userData ? userData.category : ''}</label>
 
         </div>
 
@@ -147,7 +183,7 @@ function TeamCoachViewpage() {
 
 
 <div className='row TeamCoachViewpagediv-4 TeamCoachViewpageimpdiv-style'>
-<div className='col-4'>
+<div className='col'>
 
     <div className='row TeamCoachViewpagemainrow-1'>
 
@@ -161,7 +197,7 @@ function TeamCoachViewpage() {
         </div>
 
         <div className='col-5'>
-        <label className='TeamCoachViewpagelabel-2'></label>
+        <label className='TeamCoachViewpagelabel-2'>{userData ? userData.email : ''}</label>
 
         </div>
 
@@ -171,7 +207,7 @@ function TeamCoachViewpage() {
 
 </div>
 
-<div className='col-4 TeamCoachViewpagemainrow-right-1'>
+<div className='col TeamCoachViewpagemainrow-right-1'>
 
 
 <div className='row TeamCoachViewpagemainrow-1'>
@@ -186,7 +222,7 @@ function TeamCoachViewpage() {
         </div>
 
         <div className='col-5'>
-        <label className='TeamCoachViewpagelabel-2'></label>
+        <label className='TeamCoachViewpagelabel-2'>{userData ? userData.teamName : ''}</label>
 
         </div>
 
@@ -227,7 +263,7 @@ function TeamCoachViewpage() {
 
 <div className='row TeamCoachViewpagediv-5 TeamCoachViewpageimpdiv-style'>
 
-<div className='col-4'>
+<div className='col'>
 
     <div className='row TeamCoachViewpagemainrow-1'>
 
@@ -241,7 +277,7 @@ function TeamCoachViewpage() {
         </div>
 
         <div className='col-5'>
-        <label className='TeamCoachViewpagelabel-2'></label>
+        <label className='TeamCoachViewpagelabel-2'>{userData ? userData.totalteammembers: ''}</label>
 
         </div>
 
@@ -251,7 +287,7 @@ function TeamCoachViewpage() {
 
 
 </div>
-<div className='col-4 TeamCoachViewpagemainrow-right-1'>
+<div className='col TeamCoachViewpagemainrow-right-1'>
 
 
 <div className='row TeamCoachViewpagemainrow-1'>
@@ -266,7 +302,7 @@ function TeamCoachViewpage() {
         </div>
 
         <div className='col-5'>
-        <label className='TeamCoachViewpagelabel-2'></label>
+        <label className='TeamCoachViewpagelabel-2'>{userData ? userData.address : ''}</label>
 
         </div>
 
@@ -302,7 +338,7 @@ function TeamCoachViewpage() {
 
 
 <div className='row TeamCoachViewpagediv-6 TeamCoachViewpageimpdiv-style'>
-<div className='col-4'>
+<div className='col'>
 
     <div className='row TeamCoachViewpagemainrow-1'>
 
@@ -316,7 +352,7 @@ function TeamCoachViewpage() {
         </div>
 
         <div className='col-5'>
-        <label className='TeamCoachViewpagelabel-2'></label>
+        <label className='TeamCoachViewpagelabel-2'>{userData ? userData.pincode : ''}</label>
 
         </div>
 
@@ -326,7 +362,7 @@ function TeamCoachViewpage() {
 
 
 </div>
-<div className='col-4 TeamCoachViewpagemainrow-right-1'>
+<div className='col TeamCoachViewpagemainrow-right-1'>
 
 
 <div className='row TeamCoachViewpagemainrow-1'>
@@ -341,7 +377,7 @@ function TeamCoachViewpage() {
         </div>
 
         <div className='col-5'>
-        <label className='TeamCoachViewpagelabel-2'></label>
+        <label className='TeamCoachViewpagelabel-2'>{userData ? userData.city : ''}</label>
 
         </div>
 
@@ -365,7 +401,7 @@ function TeamCoachViewpage() {
 
 <div className='row TeamCoachViewpagediv-7 TeamCoachViewpageimpdiv-style'>
 
-<div className='col-4'>
+<div className='col'>
 
     <div className='row TeamCoachViewpagemainrow-1'>
 
@@ -379,7 +415,7 @@ function TeamCoachViewpage() {
         </div>
 
         <div className='col-5'>
-        <label className='TeamCoachViewpagelabel-2'></label>
+        <label className='TeamCoachViewpagelabel-2'>{userData ? userData.state : ''}</label>
 
         </div>
 
@@ -388,7 +424,7 @@ function TeamCoachViewpage() {
 </div>
 
 </div>
-<div className='col-4 TeamCoachViewpagemainrow-right-1'>
+<div className='col TeamCoachViewpagemainrow-right-1'>
 
 
 <div className='row TeamCoachViewpagemainrow-1'>
@@ -425,7 +461,7 @@ function TeamCoachViewpage() {
 
 <div className='row TeamCoachViewpagediv-8 TeamCoachViewpageimpdiv-style'>
 
-<div className='col-4'>
+<div className='col'>
 
     <div className='row TeamCoachViewpagemainrow-1'>
 
@@ -439,7 +475,7 @@ function TeamCoachViewpage() {
         </div>
 
         <div className='col-5'>
-        <label className='TeamCoachViewpagelabel-2'></label>
+        <label className='TeamCoachViewpagelabel-2'>{userData ? userData.country : ''}</label>
 
         </div>
 
@@ -448,7 +484,7 @@ function TeamCoachViewpage() {
 </div>
 
 </div>
-<div className='col-4 TeamCoachViewpagemainrow-right-1'>
+<div className='col TeamCoachViewpagemainrow-right-1'>
 
 
 <div className='row TeamCoachViewpagemainrow-1'>
@@ -487,14 +523,8 @@ function TeamCoachViewpage() {
 
 
 
-<div className='row '>
-    <div className='col-4'></div>
-    <div className='col-2 TeamCoachViewpagediv-10'>
-        <button className='TeamCoachViewpagediv-10-button'>Done</button>
-         </div>
-    <div className='col-6 TeamCoachViewpagediv-11'>
+<div className='row TeamCoachViewpagediv-11'>
     <button className='TeamCoachViewpagediv-11-button'>Edit</button>
-    </div>
 
 
 </div>

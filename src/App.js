@@ -65,7 +65,7 @@ function App() {
           <Route exact path="/AdminResetPass" element={<AdminResetPass />} />
           <Route exact path="/Aboutpage" element={[<MainNavbar />, <Aboutpage />, <UserFooter />]} />
           <Route exact path="/Enquiries" element={[<MainNavbar />, <Enquiries />, <UserFooter />]} />
-          <Route exact path="/TeamCoachViewpage" element={[<TeamCoachTopbar />, <TeamCoachViewpage />]} />
+          <Route exact path="/TeamCoachViewpage/:id" element={[<TeamCoachTopbar />, <TeamCoachViewpage />]} />
           <Route exact path="/Adminsidebar1" element={[<Adminsidebar />]} />
           <Route exact path="/Adminsidebar" element={[<Adminsidebar />, <AdminDashbordTopContent />]} />
           <Route exact path="/Adminsidebar2" element={[<AdminDashbordTopContent />]} />

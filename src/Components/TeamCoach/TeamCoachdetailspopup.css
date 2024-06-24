@@ -1,15 +1,6 @@
-.Teamcoachdetailspopupdiv-1 {
-    display: grid;
-    align-content: center;
-    height: 300px;
-    margin-left: 200px;
-}
 
-.Teamcoachdetailspopupdiv-2 {
-    display: grid;
-    align-content: center;
-    height: 300px;
-}
+
+
 
 .Teamcoachdetailspopupdiv-10 {
     display: grid;
@@ -50,6 +41,29 @@ margin-left: 32px;
 
 }
 
+ .Teamcoachdetailspopup-1-5{
+    height: 300px;
+ }
+
+
+
+
+
+
+
+ .Teamcoachdetailspopupdiv-1 {
+    display: grid;
+    align-content: center;
+    height: 300px;
+    margin-left: 120px;
+}
+
+ .Teamcoachdetailspopupdiv-2 {
+    display: grid;
+    align-content: center;
+    height: 300px;
+} 
+
 .Teamcoachdetailspopuplabel{
     color: #000;
 font-family: Roboto;
@@ -58,15 +72,14 @@ font-style: normal;
 font-weight: 800;
 line-height: 21.592px; 
 }
-.Teamcoachdetailspopupimpdiv-style{
-    margin-left: 170px;
+ .Teamcoachdetailspopupimpdiv-style{
+    margin-left: 70px;
     align-items: center;
     gap: 12.338px;
     flex: 1 0;
-    align-self: stretch;}
+    align-self: stretch;} 
 
 .Teamcoachdetailspopupcommon-style-1{
-    /* margin-left: 76px; */
     border-radius: 23.135px;
     background: rgba(0, 0, 0, 0.05);
     display: flex;
@@ -92,12 +105,11 @@ align-self: stretch;
 
 .Teamcoachdetailspopupimg-1-backend{
     width: 102px;
-    height: 105px;
-    margin-left: 208px;
-    flex-shrink: 0;
-    align-content: center;}
+height: 105px;
+flex-shrink: 0;
+}
 
-.Teamcoachdetailspopupimg-2-backend{
+ .Teamcoachdetailspopupimg-2-backend{
 
 color: #000;
 font-family: Roboto;
@@ -105,10 +117,11 @@ font-size: 15.423px;
 font-style: normal;
 font-weight: bold;
 line-height: 21.592px; 
-text-align: center;
-}
+
+} 
 .Teamcoachdetailspopupmainrow-1{
 display: flex;
+width: 500px;
 padding: 15.423px var(--items, 0px);
 justify-content: center;
 align-items: center;
@@ -116,19 +129,11 @@ border-bottom: 1px solid rgb(192, 186, 186);
 }
 
 .Teamcoachdetailspopupmainrow-right-1{
-    margin-left: 250px;
+    margin-left: 100px;
 }
-/* .Teamcoachdetailspopupmainhr{
-    margin: 0px;
-    stroke-width: 0.771px;
-stroke: rgba(0, 0, 0, 0.10);
-width: 401px;
-height: var(--items, 0px);
-} */
  .Teamcoachdetailspopuplabel-2{
     margin-left: 47px;
+ } 
+ .Teamcoachdetailspopupimgdiv-1-1{
+text-align: center;
  }
- .Teamcoachdetailspopup-1-5{
-    height: 300px;
- }
-

@@ -56,7 +56,7 @@ function Teamcoachdetailspopup() {
                                             
 
 
-
+<div className='container'>
 
                         <div className='Teamcoachdetailspopupmain-1-20'>
 
@@ -65,13 +65,15 @@ function Teamcoachdetailspopup() {
                                                 <h1 className='Teamcoachdetailspopuptext-1'>Coach Details</h1>
                                         </div>
                                         <div className='col-4 Teamcoachdetailspopupdiv-2'>
-                                                <label className='Teamcoachdetailspopupimg-1-backend'><img
-                                            src={`${url}/${userData?.profilePic?.filename}`}
+                                        <div className='Teamcoachdetailspopupimgdiv-1-1'>
+
+                                                <label className='Teamcoachdetailspopupimg-1-backend'>
+        <img src={`${url}/${userData?.profilePic?.filename}`}
                                             className="AdminCoachRequest-img"
                                         />
                                                         </label><br></br>
                                                 <label className='Teamcoachdetailspopupimg-2-backend'>{userData ? userData.name : ''}</label><br></br>
-
+                                                </div>
                                         </div>
 
 
@@ -90,7 +92,7 @@ function Teamcoachdetailspopup() {
                                 <div className='row Teamcoachdetailspopupdiv-3 Teamcoachdetailspopupimpdiv-style'>
 
 
-                                        <div className='col-4 '>
+                                        <div className='col'>
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
 
@@ -114,7 +116,7 @@ function Teamcoachdetailspopup() {
 
                                         </div>
 
-                                        <div className='col-4 Teamcoachdetailspopupmainrow-right-1'>
+                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
 
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
@@ -174,7 +176,7 @@ function Teamcoachdetailspopup() {
 
 
                                 <div className='row Teamcoachdetailspopupdiv-4 Teamcoachdetailspopupimpdiv-style'>
-                                        <div className='col-4'>
+                                        <div className='col'>
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
 
@@ -198,7 +200,7 @@ function Teamcoachdetailspopup() {
 
                                         </div>
 
-                                        <div className='col-4 Teamcoachdetailspopupmainrow-right-1'>
+                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
 
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
@@ -254,7 +256,7 @@ function Teamcoachdetailspopup() {
 
                                 <div className='row Teamcoachdetailspopupdiv-5 Teamcoachdetailspopupimpdiv-style'>
 
-                                        <div className='col-4'>
+                                        <div className='col'>
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
 
@@ -278,7 +280,7 @@ function Teamcoachdetailspopup() {
 
 
                                         </div>
-                                        <div className='col-4 Teamcoachdetailspopupmainrow-right-1'>
+                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
 
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
@@ -329,7 +331,7 @@ function Teamcoachdetailspopup() {
 
 
                                 <div className='row Teamcoachdetailspopupdiv-6 Teamcoachdetailspopupimpdiv-style'>
-                                        <div className='col-4'>
+                                        <div className='col'>
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
 
@@ -353,7 +355,7 @@ function Teamcoachdetailspopup() {
 
 
                                         </div>
-                                        <div className='col-4 Teamcoachdetailspopupmainrow-right-1'>
+                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
 
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
@@ -392,7 +394,7 @@ function Teamcoachdetailspopup() {
 
                                 <div className='row Teamcoachdetailspopupdiv-7 Teamcoachdetailspopupimpdiv-style'>
 
-                                        <div className='col-4'>
+                                        <div className='col'>
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
 
@@ -415,7 +417,7 @@ function Teamcoachdetailspopup() {
                                                 </div>
 
                                         </div>
-                                        <div className='col-4 Teamcoachdetailspopupmainrow-right-1'>
+                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
 
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
@@ -452,7 +454,7 @@ function Teamcoachdetailspopup() {
 
                                 <div className='row Teamcoachdetailspopupdiv-8 Teamcoachdetailspopupimpdiv-style'>
 
-                                        <div className='col-4'>
+                                        <div className='col'>
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
 
@@ -475,7 +477,7 @@ function Teamcoachdetailspopup() {
                                                 </div>
 
                                         </div>
-                                        <div className='col-4 Teamcoachdetailspopupmainrow-right-1'>
+                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
 
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
@@ -547,6 +549,7 @@ function Teamcoachdetailspopup() {
 
 
 
+                        </div>
                         </div>
                 </div>
         )
