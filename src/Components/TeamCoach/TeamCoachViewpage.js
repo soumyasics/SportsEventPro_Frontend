@@ -14,6 +14,7 @@ import img11 from '../../Assets/carbon_location-filled.jpg'
 import img12 from '../../Assets/arcticons_team-fight-tactics.jpg'
 import axios from 'axios'
 import axiosInstance from '../Constant/BaseURL'
+import { useParams } from 'react-router-dom'
 
 
 
@@ -28,9 +29,10 @@ import axiosInstance from '../Constant/BaseURL'
 
 
 function TeamCoachViewpage() {
+
+    
   return (
     <div>
-
 <div className='row '>
     <div className='col TeamCoachViewpagediv-1'>
         <h1 className='TeamCoachViewpagetext-1'>Coach Details</h1>
@@ -512,8 +514,7 @@ function TeamCoachViewpage() {
 
 
 
-
-    </div>
+</div>
   )
 }
 

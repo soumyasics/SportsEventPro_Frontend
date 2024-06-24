@@ -15,6 +15,9 @@ import img12 from '../../Assets/arcticons_team-fight-tactics.jpg'
 import { useParams } from 'react-router-dom'
 
 import axiosInstance from '../Constant/BaseURL'
+const url = axiosInstance.defaults.url;
+
+console.log("url,", url);
 
 
 
@@ -23,6 +26,7 @@ import axiosInstance from '../Constant/BaseURL'
 function Teamcoachdetailspopup() {
         const {id} = useParams()
         const [userData, setUserData] = useState();
+        
 
         useEffect(() => {
 
@@ -42,12 +46,18 @@ function Teamcoachdetailspopup() {
         
         
         
-            }, []);
+            }, [id]);
+            console.log(userData);
+
+
         return (
 
-
-
                 <div>
+                                            
+
+
+
+
                         <div className='Teamcoachdetailspopupmain-1-20'>
 
                                 <div className='row '>
@@ -55,16 +65,17 @@ function Teamcoachdetailspopup() {
                                                 <h1 className='Teamcoachdetailspopuptext-1'>Coach Details</h1>
                                         </div>
                                         <div className='col-4 Teamcoachdetailspopupdiv-2'>
-                                                <label className='Teamcoachdetailspopupimg-1-backend'></label><br></br>
-                                                <label className='Teamcoachdetailspopupimg-2-backend'></label><br></br>
+                                                <label className='Teamcoachdetailspopupimg-1-backend'><img
+                                            src={`${url}/${userData?.profilePic?.filename}`}
+                                            className="AdminCoachRequest-img"
+                                        />
+                                                        </label><br></br>
+                                                <label className='Teamcoachdetailspopupimg-2-backend'>{userData ? userData.name : ''}</label><br></br>
 
                                         </div>
 
 
                                 </div>
-
-
-
 
 
 
@@ -88,12 +99,12 @@ function Teamcoachdetailspopup() {
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel' >Contact Number</label>
+                                                                <label className='Teamcoachdetailspopuplabel ' >Contact Number</label>
 
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'></label>
+                                                                <label className='Teamcoachdetailspopuplabel-2 Teamcoachdetailspopupimg-2-backend'>{userData ? userData.contact : ''}</label>
 
                                                         </div>
 
@@ -118,7 +129,7 @@ function Teamcoachdetailspopup() {
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'></label>
+                                                                <label className='Teamcoachdetailspopuplabel-2 Teamcoachdetailspopupimg-2-backend'>{userData ? userData.category : ''}</label>
 
                                                         </div>
 
@@ -177,7 +188,7 @@ function Teamcoachdetailspopup() {
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'></label>
+                                                                <label className='Teamcoachdetailspopuplabel-2 Teamcoachdetailspopupimg-2-backend'>{userData ? userData.email : ''}</label>
 
                                                         </div>
 
@@ -202,7 +213,7 @@ function Teamcoachdetailspopup() {
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'></label>
+                                                                <label className='Teamcoachdetailspopuplabel-2 Teamcoachdetailspopupimg-2-backend'>{userData ? userData.teamName : ''}</label>
 
                                                         </div>
 
@@ -257,7 +268,7 @@ function Teamcoachdetailspopup() {
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'></label>
+                                                                <label className='Teamcoachdetailspopuplabel-2 Teamcoachdetailspopupimg-2-backend'>{userData ? userData.totalteammembers: ''}</label>
 
                                                         </div>
 
@@ -282,7 +293,7 @@ function Teamcoachdetailspopup() {
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'></label>
+                                                                <label className='Teamcoachdetailspopuplabel-2 Teamcoachdetailspopupimg-2-backend'>{userData ? userData.address : ''}</label>
 
                                                         </div>
 
@@ -332,7 +343,7 @@ function Teamcoachdetailspopup() {
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'></label>
+                                                                <label className='Teamcoachdetailspopuplabel-2 Teamcoachdetailspopupimg-2-backend'>{userData ? userData.pincode : ''}</label>
 
                                                         </div>
 
@@ -357,7 +368,7 @@ function Teamcoachdetailspopup() {
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'></label>
+                                                                <label className='Teamcoachdetailspopuplabel-2 Teamcoachdetailspopupimg-2-backend'>{userData ? userData.city : ''}</label>
 
                                                         </div>
 
@@ -395,7 +406,7 @@ function Teamcoachdetailspopup() {
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'></label>
+                                                                <label className='Teamcoachdetailspopuplabel-2 Teamcoachdetailspopupimg-2-backend'>{userData ? userData.state : ''}</label>
 
                                                         </div>
 
@@ -455,7 +466,7 @@ function Teamcoachdetailspopup() {
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'></label>
+                                                                <label className='Teamcoachdetailspopuplabel-2 Teamcoachdetailspopupimg-2-backend'>{userData ? userData.country : ''}</label>
 
                                                         </div>
 
@@ -537,7 +548,6 @@ function Teamcoachdetailspopup() {
 
 
                         </div>
-
                 </div>
         )
 }
