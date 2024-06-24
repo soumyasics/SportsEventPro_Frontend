@@ -40,11 +40,8 @@ function OrganiserRegistration() {
                         <div className = 'OrganiserRegistration-Content-Input'>
                             
                             <h1 className = 'OrganiserRegistration-Content-h1'>Country</h1>
-                                
-                            {/* <input type = 'select' placeholder = 'Enter Your Country' className = 'OrganiserRegistration-Content-Input-Country'/> */}
 
-                            <select className = "OrganiserRegistration-Content-Input-Country" aria-label="Default select example">
-                                
+                            <select className = "OrganiserRegistration-Content-Input-Country" aria-label="Default select example">                                
                                 
                                 <option className = 'OrganiserRegistration-Content-Input-Select-Option' selected>Select Your Country</option>
                         
@@ -112,7 +109,16 @@ function OrganiserRegistration() {
                         <div className = 'OrganiserRegistration-Content-Input'>
 
                             <h1 className = 'OrganiserRegistration-Content-h1'>State</h1>
-                            <input type = 'text' placeholder = 'Enter Your State' className = 'OrganiserRegistration-Content-Input-Country'/>
+                            <select className = "OrganiserRegistration-Content-Input-Country" aria-label="Default select example">
+                                
+                                
+                                <option className = 'OrganiserRegistration-Content-Input-Select-Option' selected>Select Your Country</option>
+                        
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+
+                            </select>
                         
                         </div>
 
@@ -128,7 +134,7 @@ function OrganiserRegistration() {
                         <div className = 'OrganiserRegistration-Content-Input'>
 
                             <h1 className = 'OrganiserRegistration-Content-h1'>Organiser License</h1>
-                            <input type = 'text' placeholder = 'Upload Document' className = 'OrganiserRegistration-Content-input-photo'/>
+                            <input type = 'file' placeholder = 'Upload Document' className = 'OrganiserRegistration-Content-input-photo'/>
                         
                         </div>
 

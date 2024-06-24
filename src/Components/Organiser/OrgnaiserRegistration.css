@@ -123,19 +123,20 @@
 
 }
 
-select.input-lg {
-    -webkit-appearance: none;
-    appearance: none;
-    -o-appearance: none;
-    /* no standardized syntax available, no ie-friendly solution available */
-  }
-
 .OrganiserRegistration-Content-Input-Country {
 
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Remove default arrow in Safari */
+    -moz-appearance: none; /* Remove default arrow in Firefox */
+    background-image: url("../../Assets/OrganiserRegistration.svg");
+    background-repeat: no-repeat;
     background-color: white;
+    background-position-x: 98%;
+    background-position-y: center;
     padding: 8px 12px;
     width: 510px;
     height: 36px;
+    cursor: pointer;
     overflow: hidden;
     color: rgba(0, 0, 0, 0.50);
     text-overflow: ellipsis;
@@ -193,6 +194,7 @@ select.input-lg {
     background-repeat: no-repeat;
     background-position-x: 98%;
     background-position-y: center;
+    cursor: pointer;
     padding: 8px 12px;
     width: 510px;
     height: 36px;
@@ -212,14 +214,12 @@ select.input-lg {
 
 input[type=file]::file-selector-button {
     font: inherit;
-  
     -webkit-appearance: icon;
-  
-      appearance: icon;
-      position: absolute;
-      background-color: #00000000;
-      color: #00000000;
-      border: none;
+    appearance: icon;
+    position: absolute;
+    background-color: #00000000;
+    color: #00000000;
+    border: none;
   
 }
 
