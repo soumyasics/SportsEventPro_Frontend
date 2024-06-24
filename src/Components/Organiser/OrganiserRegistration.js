@@ -1,5 +1,6 @@
 import React from 'react'
 import './OrgnaiserRegistration.css'
+import img from "../../Assets/OrganiserRegistration.svg"
 
 function OrganiserRegistration() {
 
@@ -38,13 +39,25 @@ function OrganiserRegistration() {
                         
                         {/* input field: Country */}
                         <div className = 'OrganiserRegistration-Content-Input'>
-
+                            
                             <h1 className = 'OrganiserRegistration-Content-h1'>Country</h1>
-                            <input type = 'text' placeholder = 'Enter Your Country' className = 'OrganiserRegistration-Content-input-country'/>
+                                
+                            {/* <input type = 'select' placeholder = 'Enter Your Country' className = 'OrganiserRegistration-Content-Input-Country'/> */}
+
+                            <select className = "OrganiserRegistration-Content-Input-Country" aria-label="Default select example">
+                                
+                                
+                                <option className = 'OrganiserRegistration-Content-Input-Select-Option' selected>Select Your Country</option>
                         
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+
+                            </select>
+
                         </div>
 
-                        {/* input field: EMail ID */}
+                        {/* input field: Email ID */}
                         <div className = 'OrganiserRegistration-Content-Input'>
 
                             <h1 className = 'OrganiserRegistration-Content-h1'>Email ID</h1>
@@ -84,7 +97,7 @@ function OrganiserRegistration() {
                         <div className = 'OrganiserRegistration-Content-Input-Start'>
 
                             <h1 className = 'OrganiserRegistration-Content-h1'>Photo</h1>
-                            <input type = 'text' placeholder = 'Upload Photo' className = 'OrganiserRegistration-Content-input-photo'/>
+                            <input type = 'file' placeholder = 'Upload Photo' className = 'OrganiserRegistration-Content-input-photo'/>
                         
                         </div>
 
@@ -100,7 +113,7 @@ function OrganiserRegistration() {
                         <div className = 'OrganiserRegistration-Content-Input'>
 
                             <h1 className = 'OrganiserRegistration-Content-h1'>State</h1>
-                            <input type = 'text' placeholder = 'Enter Your State' className = 'OrganiserRegistration-Content-input-country'/>
+                            <input type = 'text' placeholder = 'Enter Your State' className = 'OrganiserRegistration-Content-Input-Country'/>
                         
                         </div>
 
