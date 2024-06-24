@@ -28,7 +28,8 @@ import TeamCoachTopbar from './Components/TeamCoach/TeamCoachTopbar';
 import Teamcoachdetailspopup from './Components/TeamCoach/Teamcoachdetailspopup';
 import Teamcoachviewprofilepopup from './Components/TeamCoach/Teamcoachviewprofilepopup';
 import AdminTopbar from './Components/Admin/AdminTopbar';
-import TeamCoachHomePage from './Components/TeamCoach/TeamCoachHomePage'
+import TeamCoachHomePage from './Components/TeamCoach/TeamCoachHomePage';
+import OrganiserRegistration from './Components/Organiser/OrganiserRegistration';
 
 function App() {
 
@@ -71,6 +72,7 @@ function App() {
           <Route exact path="/nav" element={[<TeamCoachTopbar />]} />
           <Route exact path="/Teamcoachdetailspopup/:id" element={[<Teamcoachdetailspopup />]} />
           <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup />]} />
+          <Route exact path='/OrganiserRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
 
         </Routes>
 
