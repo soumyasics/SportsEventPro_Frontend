@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./AdminViewCoachRequest.css"
-import img from "../../Assets/frame2.png"
-import axiosInstance from "../Constant/BaseURL";
+import img from "../../../Assets/frame2.png"
+import axiosInstance from "../../Constant/BaseURL";
 import { Link, useNavigate } from "react-router-dom";
 
 function AdminViewCoachRequest() {
