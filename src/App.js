@@ -33,6 +33,7 @@ import OrganiserRegistration from './Components/Organiser/OrganiserRegistration'
 import TeamCoachEditProfile from './Components/TeamCoach/TeamCoachEditProfile';
 import AdminViewOrganiserRequest from './Components/Admin/Organiser/AdminViewOrganiserRequest';
 import AdminViewOrganiser from './Components/Admin/Organiser/AdminViewOrganiser';
+import OrganiserLogin from './Components/Organiser/OrganiserLogin';
 function App() {
 
 
@@ -78,6 +79,7 @@ function App() {
           <Route exact path="/Teamcoachdetailspopup/:id" element={[<Teamcoachdetailspopup />]} />
           <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup />]} />
           <Route exact path='/OrganiserRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
+          <Route exact path='/OrganiserLogin' element={[<MainNavbar/>,<OrganiserLogin/>,<UserFooter/>]} />
 
         </Routes>
 
