@@ -1,5 +1,6 @@
 import React from 'react';
 import "./AdminViewTeamCoach.css"
+import img from '../../../Assets/Search Button.svg'
 
 function AdminViewTeamCoach () {
     
@@ -9,6 +10,13 @@ function AdminViewTeamCoach () {
 
             <h1 className = 'AdminViewTeamCoach-h1'>Team Coaches List</h1>
             
+            <div className = 'AdmiViewTeamCoach-search-container'>
+
+                <input type = 'search' placeholder = 'Search Here' className = 'AdminViewOrganiser-search'></input>
+                <button className = 'AdminViewOrganiser-search-button'> <img src = {img} alt = ' '/> </button>
+
+            </div>
+
             <table className = 'AdminViewTeamCoach-Table ' >
 
                 <thead >

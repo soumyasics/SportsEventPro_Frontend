@@ -22,13 +22,13 @@
 
 }
 
-.AdmiViewOrganiser-search-container {
+.AdmiViewTeamCoach-search-container {
 
     height: 46px;
 
 }
 
-.AdminViewOrganiser-search {
+.AdminViewTeamCoach-search {
 
     z-index: 0;
     margin-top: 40px;
@@ -44,7 +44,7 @@
 
 }
 
-.AdminViewOrganiser-search-button {
+.AdminViewTeamCoach-search-button {
 
     position: absolute;
     z-index: 1;
