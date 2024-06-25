@@ -22,6 +22,48 @@
 
 }
 
+.AdmiViewOrganiser-search-container {
+
+    height: 46px;
+
+}
+
+.AdminViewOrganiser-search {
+
+    z-index: 0;
+    margin-top: 40px;
+    margin-left: 76.5%;
+    margin-bottom: 16.5px;
+    padding-left: 18px;
+    height: 43px;
+    width: 304px;
+    border-radius: 82px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #fff;
+    box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
+
+}
+
+.AdminViewOrganiser-search-button {
+
+    position: absolute;
+    z-index: 1;
+    margin-top: 45.5px;
+    margin-left: -41px;
+    border: 1px solid #CFCFCF;
+    background-color: #CFCFCF;
+    border-radius: 50px;
+    box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
+    display: inline-flex;
+    height: 32px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+
+}
+
 .AdminViewOrganiser-Table {
 
     margin-top: 50px;
