@@ -382,26 +382,8 @@ console.log(plus);
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
-                                    <div className='teamcoachn1'>
-                                        <div class="dropdown dropdowninput">
-                                            <div className='teamCoachRegDiv-Text'>
-                                                <label>State</label>
-                                            </div>
-                                            <div className='TeamCoachField-4'>
-                                                <select class="form-select" aria-label="Default select example" name="states" onChange={handleChange} >
-                                                    <option selected value="kerala" >Kerala</option>
-                                                    <option value="Jammu & Kashmir" >Jammu & Kashmir</option>
-                                                    <option value="Tamilnadu" >Tamilnadu</option>
-                                                    <option value="Karnataka" >Karnataka</option>
-                                                    <option value="Haryana" >Haryana</option>
-                                                    <option value="Andrapradesh" >Andrapradesh</option>
 
-                                                </select>
-                                             
 
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="col">
                                     <div className='teamcoachn1'>
@@ -417,10 +399,6 @@ console.log(plus);
                                                     <option value="Germany">Germany</option>
                                                 </select>
                                             </div>
-                                            {/* <div class='Countryvalidationoption'>
-                            {errors.country && <div className="text-danger ">{errors.country}</div>}
-                        </div> */}
-
                                         </div>
                                     </div>
                                 </div>
