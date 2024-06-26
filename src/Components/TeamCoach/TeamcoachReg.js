@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import "./TeamcoachReg.css"
 import axiosInstance from '../Constant/BaseURL'
 import axiosMultipartInstance from '../Constant/multiPart'
+import { useNavigate } from 'react-router-dom'
 
 function TeamcoachReg() {
 
-
+const navigate=useNavigate()
 
 
 
@@ -35,7 +36,7 @@ console.log(plus);
         pincode: '',
         states: '',
         contactnumber: '',
-        license: '',
+        certificate: '',
         password: '',
         image: '',
         teamname: '',
@@ -54,7 +55,7 @@ console.log(plus);
         pincode: '',
         states: '',
         contactnumber: '',
-        license: '',
+        certificate: '',
         password: '',
         image: '',
         teamname: '',
@@ -161,7 +162,7 @@ console.log(plus);
             formData.append('contact', data.contactnumber);
             formData.append('password', data.password);
             formData.append('files', data.image);
-            formData.append('files', data.license);
+            formData.append('files', data.certificate);
             formData.append('teamName', data.teamname);
             formData.append('address', data.address);
             formData.append('city', data.city);
@@ -171,11 +172,12 @@ console.log(plus);
         
             
     console.log(formData);
-        axiosMultipartInstance.post('registerTeamCoach', data)
+        axiosMultipartInstance.post('registerTeamCoach', formData)
             .then(response => {
                 console.log(response);
                 if (response.data.status == 200) {
                     alert(response.data.msg)
+                    navigate('/TeamCoachLogin')
                 } else
                     alert(response.data.msg)
                     
@@ -472,15 +474,15 @@ console.log(plus);
                                 <div class="col">
                                     <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
-                                            <label>Coach License</label>
+                                            <label>Coach certificate</label>
                                         </div>
                                         <div className='teamCoachregDiv-uploads'>
                                             <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
-                                               name="license"
+                                               name="certificate"
                                                 onChange={handleChange} required/>
                                         </div>
                                         <div class='teamCoachRegvalidationname'>
-                                            {errors.license && <div className="text-danger ">{errors.license}</div>}
+                                            {errors.certificate && <div className="text-danger ">{errors.certificate}</div>}
                                         </div>
 
                                     </div>
