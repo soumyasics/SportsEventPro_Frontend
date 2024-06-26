@@ -3,8 +3,33 @@ import img6 from "../../Assets/OrganiserLogin.gif"
 import axiosInstance from '../Constant/BaseURL'
 import { Link, useNavigate } from 'react-router-dom'
 import './OrganiserLogin.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 
 function OrganiserLogin() {
+
+    const [icon,setIcon] = useState(faEye)
+
+    function PasswordButtonOnClick () {
+
+        var pWordState = document.getElementById("pword")     
+
+        if (pWordState.type === "password" ) {
+
+            pWordState.type = "text"
+            setIcon(faEyeSlash)
+
+        }
+
+        else {
+
+            pWordState.type = "password"
+            setIcon(faEye)
+
+        }
+
+    }
+
 
     const navigate = useNavigate()
     const [data, setData] = useState({
@@ -137,7 +162,7 @@ function OrganiserLogin() {
                                     
                                     <input
                                         className="Organiserloginput1"
-                                        type="email"
+                                        type="text"
                                         placeholder="Enter Your Username"
                                         name="email"
                                         value={data.email}
@@ -156,15 +181,21 @@ function OrganiserLogin() {
                                     
                                     <label className='Organiserloginuser'>Password</label>
 
-                                    <input
-                                        className="Organiserloginput2"
-                                        type="password"
-                                        placeholder="Enter Your Password"
-                                        name="password"
-                                        value={data.password}
-                                        onChange={handleChange}
+                                    <div>
 
-                                    />
+                                        <input
+                                            className="Organiserloginput2"
+                                            type="password"
+                                            placeholder="Enter Your Password"
+                                            name="password"
+                                            id='pword'
+                                            value={data.password}
+                                            onChange={handleChange}
+
+                                        />
+                                        <button className = 'OrganiserLogin-Password-Change-Button' onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
+                                    
+                                    </div>
 
                                 </div>
 
