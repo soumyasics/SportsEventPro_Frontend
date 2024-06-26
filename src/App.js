@@ -34,6 +34,11 @@ import TeamCoachEditProfile from './Components/TeamCoach/TeamCoachEditProfile';
 import AdminViewOrganiserRequest from './Components/Admin/Organiser/AdminViewOrganiserRequest';
 import AdminViewOrganiser from './Components/Admin/Organiser/AdminViewOrganiser';
 import OrganiserLogin from './Components/Organiser/OrganiserLogin';
+import OrganiserForgotPassword from './Components/Organiser/OrganiserForgotPassword';
+import OrganiserDashboard from './Components/Organiser/OrganiserDashboard';
+import OrganiserSideBar from './Components/Organiser/OrganiserSideBar'
+import OrganiserDashboardNavBar from './Components/Organiser/OrganiserDashboardNavBar';
+
 function App() {
 
 
@@ -80,6 +85,8 @@ function App() {
           <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup />]} />
           <Route exact path='/OrganiserRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
           <Route exact path='/OrganiserLogin' element={[<MainNavbar/>,<OrganiserLogin/>,<UserFooter/>]} />
+          <Route exact path='/OrganiserForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
+          <Route exact path='/OrganiserDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
 
         </Routes>
 
