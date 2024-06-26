@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.OrganiserTopbarMainDiv {
+
+    background-color: black;
+    height: 60px;
+    font-family: Roboto;
+
+}
+
+.OrganiserTopbar {
+
+    display: flex;
+    flex-direction: row;
+    padding-top: 4px;
+
+}
+
+.OrganiserTopbarimg {
+
+    vertical-align: middle;
+    margin-left: -60px;
+    margin-bottom: -28px;
+
+}
+
+.OrganiserTopbarHead {
+
+    color: white;
+    margin-top: -16px;
+    margin-left: 20px;
+    color: var(--icon-color, #FFF);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+
+}
+
+.Organiser-search-container {
+
+    height: 46px;
+    width: 306px;
+    margin-top: 5px;
+    margin-left: 200%;
+
+}
+
+.Organiser-search {
+
+    z-index: 0;
+    padding-left: 18px;
+    height: 43px;
+    width: 304px;
+    border-radius: 82px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #fff;
+    box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
+
+}
+
+.Organiser-search-button {
+
+    position: absolute;
+    z-index: 1;
+    margin-top: 5.5px;
+    margin-left: -41px;
+    border: 1px solid #CFCFCF;
+    background-color: #CFCFCF;
+    border-radius: 50px;
+    box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
+    display: inline-flex;
+    height: 32px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+}
+
+.OrganiserProfContainDiv {
+
+    display: flex;
+    display: row;
+    margin-left: 305%;
+
+}
+
+.Organiserh1ContainDiv {
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+
+}
+
+.Organiser-h1 {
+
+    color: white;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 15.423px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21.592px; /* 140% */
+
+}
