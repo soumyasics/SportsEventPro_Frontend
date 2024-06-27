@@ -56,7 +56,7 @@ function OrganiserSideBar() {
                     <div class="dropdown">
 
                         <a class="btn OrganiserSideBarbutton-2" data-bs-toggle="collapse" href="#li-2" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Blogs <FontAwesomeIcon className='mt-1 ' style={{ marginLeft: "66.5%" }} icon={faAngleDown}/>
+                            Blogs <FontAwesomeIcon className='mt-1 ' style={{ marginLeft: "66.5%" }} icon={faAngleDown} />
                         </a>
 
                         <ul class="collapse list-group mt-2 rounded-2" id='li-2'>
@@ -76,7 +76,33 @@ function OrganiserSideBar() {
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>Logout</button>
+                        <button type="button" class="OrganiserSideBarbutton-2" data-bs-toggle="modal" data-bs-target="#Logout-Modal">Logout</button>
+
+                        <div class="modal fade" id="Logout-Modal" tabindex="-1" aria-hidden="true">
+
+                            <div class="modal-dialog modal-dialog-centered" style={{width:"747px" , height:"298px"}}>
+
+                                <div class="modal-content ModalDialog-content">
+
+                                    <div class="modal-body">
+
+                                        <h1 className='ModalDialog-h1'>Logout</h1>
+                                        <p className='ModalDialog-p'>Are you sure you want to log out ? </p>
+                                        
+                                        <div className='ModalDialog-button-contain'>
+
+                                            <button type="button" class="ModalDialog-button-1">Yes</button>
+                                            <button type="button" class="ModalDialog-button-2" data-bs-dismiss="modal">No</button>
+                                            
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            
+                        </div>
 
                     </div>
 
