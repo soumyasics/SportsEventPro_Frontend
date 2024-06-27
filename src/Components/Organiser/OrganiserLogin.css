@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.Organiserloginimg {
+.Organizerloginimg {
 
     width: 500px;
     height: 500px;
@@ -9,7 +9,7 @@
 
 }
 
-.Organiserloginput1 {
+.Organizerloginput1 {
 
     display: flex;
     width: 525px;
@@ -23,7 +23,7 @@
 
 }
 
-.Organiserloginput2 {
+.Organizerloginput2 {
 
     display: flex;
     width: 525px;
@@ -36,7 +36,14 @@
 
 }
 
-.OrganiserLogin-Password-Change-Button {
+.OrganizerPassword {
+
+    width: 515px;
+    height: 40px;
+
+}
+
+.OrganizerLogin-Password-Change-Button {
 
     background-color: #0000;
     border: none;
@@ -47,7 +54,7 @@
 
 }
 
-.OrganiserloginButton {
+.OrganizerloginButton {
 
     display: flex;
     width: 240px;
@@ -67,7 +74,7 @@
 
 }
 
-.Organiserloginmaindiv {
+.Organizerloginmaindiv {
 
     display: flex;
     flex-direction: column;
@@ -79,7 +86,7 @@
 
 }
 
-.Organiserloginuser {
+.Organizerloginuser {
 
     color: #000;
     font-family: Roboto;
@@ -91,7 +98,7 @@
 
 }
 
-.Organiserloginh1 {
+.Organizerloginh1 {
 
     color: #000;
     font-family: Roboto;
@@ -102,7 +109,7 @@
 
 }
 
-.OrganiserloginReset {
+.OrganizerloginReset {
 
     color: #000;
     font-family: Roboto;
@@ -114,7 +121,7 @@
 
 }
 
-.OrganiserloginSignin-p1 {
+.OrganizerloginSignin-p1 {
 
     color: #000;
     font-family: Roboto;
@@ -129,7 +136,7 @@
 
 }
 
-.OrganiserloginSignin {
+.OrganizerloginSignin {
 
     color: #000;
     font-family: Roboto;
@@ -141,13 +148,13 @@
 
 }
 
-.OrganiserLoginValidation-1 {
+.OrganizerLoginValidation-1 {
 
     margin-left: -371px;
 
 }
 
-.OrganiserLoginValidation-2 {
+.OrganizerLoginValidation-2 {
 
     margin-left: -377px;
     /* margin-top: 58px; */
