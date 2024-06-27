@@ -6,7 +6,7 @@ import './OrganiserLogin.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 
-function OrganiserLogin() {
+function OrganizerLogin() {
 
     const [icon,setIcon] = useState(faEye)
 
@@ -98,7 +98,7 @@ function OrganiserLogin() {
     const BackendData = () => {
 
         console.log("function called", data);
-        axiosInstance.post('loginOrganiser', data)
+        axiosInstance.post('loginOrganizer', data)
 
         .then(response => {
 
@@ -108,7 +108,7 @@ function OrganiserLogin() {
 
                 alert("Login Successful")
                 localStorage.setItem('admin', 1)
-                navigate('/Organiserhomepage')
+                navigate('/Organizerhomepage')
 
             } 
             
@@ -140,13 +140,13 @@ function OrganiserLogin() {
                 
                 <div className='row'>
 
-                    <div class="Organiserloginmaindiv col-5 ">
+                    <div class="Organizerloginmaindiv col-5 ">
 
                         <div>
 
-                            <div class="Organiserloginh1">
+                            <div class="Organizerloginh1">
 
-                                <h1>Team Coach Login</h1>
+                                <h1>Organizer Login</h1>
 
                             </div>
 
@@ -154,14 +154,14 @@ function OrganiserLogin() {
 
                         <form onSubmit={handleSubmit}>
 
-                            <div class="Organiserlogin">
+                            <div class="Organizerlogin">
 
                                 <div>
                                     
-                                    <label className='Organiserloginuser'>Username</label>
+                                    <label className='Organizerloginuser'>Username</label>
                                     
                                     <input
-                                        className="Organiserloginput1"
+                                        className="Organizerloginput1"
                                         type="text"
                                         placeholder="Enter Your Username"
                                         name="email"
@@ -169,9 +169,9 @@ function OrganiserLogin() {
                                         onChange={handleChange}
                                     />
                                     
-                                    <div class='OrganiserValidationUsername'>
+                                    <div class='OrganizerValidationUsername'>
                                        
-                                        {errors.email && <div className="text-danger OrganiserLoginValidation-1">{errors.email}</div>}
+                                        {errors.email && <div className="text-danger OrganizerLoginValidation-1">{errors.email}</div>}
                                     
                                     </div>
                                 
@@ -179,35 +179,37 @@ function OrganiserLogin() {
 
                                 <div>
                                     
-                                    <label className='Organiserloginuser'>Password</label>
+                                    <label className='Organizerloginuser'>Password</label>
 
                                     <div>
+                                        
+                                        <div className = 'OrganizerPassword'>
 
-                                        <input
-                                            className="Organiserloginput2"
-                                            type="password"
-                                            placeholder="Enter Your Password"
-                                            name="password"
-                                            id='pword'
-                                            value={data.password}
-                                            onChange={handleChange}
-
-                                        />
-                                        <button className = 'OrganiserLogin-Password-Change-Button' onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
+                                            <input
+                                                className="Organizerloginput2"
+                                                type="password"
+                                                placeholder="Enter Your Password"
+                                                name="password"
+                                                id='pword'
+                                                value={data.password}
+                                                onChange={handleChange}
+                                            />
+                                            <button className = 'OrganizerLogin-Password-Change-Button' onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
                                     
+                                        </div>
                                     </div>
 
                                 </div>
 
                                 <div>
 
-                                    <Link to="/OrganiserForgetPass" class="OrganiserloginReset">Forget Password?</Link>
+                                    <Link to="/OrganizerForgetPass" class="OrganizerloginReset">Forget Password?</Link>
                                 
                                 </div>
                                 <div>
 
                                     {errors.password && (
-                                        <div className="text-danger OrganiserLoginValidation-2">{errors.password}</div>
+                                        <div className="text-danger OrganizerLoginValidation-2">{errors.password}</div>
                                     )}
 
                                 </div>
@@ -219,9 +221,9 @@ function OrganiserLogin() {
 
                     </div>
 
-                    <div class="Organiserloginbackgroundimg col-5">
+                    <div class="Organizerloginbackgroundimg col-5">
                         
-                        <img class="Organiserloginimg" src={img6} alt=" not found"></img>
+                        <img class="Organizerloginimg" src={img6} alt=" not found"></img>
                     
                     </div>
 
@@ -229,7 +231,7 @@ function OrganiserLogin() {
 
                 <div>
                     
-                    <button className="OrganiserloginButton" type="submit" onClick={handleSubmit}>
+                    <button className="OrganizerloginButton" type="submit" onClick={handleSubmit}>
                         Login
                     </button>
 
@@ -237,7 +239,7 @@ function OrganiserLogin() {
 
                 <div>
 
-                    <p className='OrganiserloginSignin-p1'>Don't have an account ? <Link to="/OrganiserReg" class="OrganiserloginSignin">Sign Up</Link></p>
+                    <p className='OrganizerloginSignin-p1'>Don't have an account ? <Link to="/OrganizerReg" class="OrganizerloginSignin">Sign Up</Link></p>
                 
                 </div>
 
@@ -249,4 +251,4 @@ function OrganiserLogin() {
 
 }
 
-export default OrganiserLogin
+export default OrganizerLogin
