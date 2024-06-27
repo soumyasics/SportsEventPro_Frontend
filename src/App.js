@@ -33,7 +33,7 @@ import OrganiserRegistration from './Components/Organiser/OrganiserRegistration'
 import TeamCoachEditProfile from './Components/TeamCoach/TeamCoachEditProfile';
 import AdminViewOrganiserRequest from './Components/Admin/Organiser/AdminViewOrganiserRequest';
 import AdminViewOrganiser from './Components/Admin/Organiser/AdminViewOrganiser';
-import OrganiserLogin from './Components/Organiser/OrganiserLogin';
+import OrganizerLogin from './Components/Organiser/OrganiserLogin';
 import OrganiserForgotPassword from './Components/Organiser/OrganiserForgotPassword';
 import OrganiserDashboard from './Components/Organiser/OrganiserDashboard';
 import OrganiserSideBar from './Components/Organiser/OrganiserSideBar'
@@ -83,10 +83,10 @@ function App() {
           <Route exact path="/nav" element={[<TeamCoachTopbar />]} />
           <Route exact path="/Teamcoachdetailspopup/:id" element={[<Teamcoachdetailspopup />]} />
           <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup />]} />
-          <Route exact path='/OrganiserRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
-          <Route exact path='/OrganiserLogin' element={[<MainNavbar/>,<OrganiserLogin/>,<UserFooter/>]} />
-          <Route exact path='/OrganiserForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
-          <Route exact path='/OrganiserDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
+          <Route exact path='/OrganizerRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerLogin' element={[<MainNavbar/>,<OrganizerLogin/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
+          <Route exact path='/OrganizerDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
 
         </Routes>
 
