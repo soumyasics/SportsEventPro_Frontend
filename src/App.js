@@ -38,6 +38,7 @@ import OrganiserForgotPassword from './Components/Organiser/OrganiserForgotPassw
 import OrganiserDashboard from './Components/Organiser/OrganiserDashboard';
 import OrganiserSideBar from './Components/Organiser/OrganiserSideBar'
 import OrganiserDashboardNavBar from './Components/Organiser/OrganiserDashboardNavBar';
+import OrganiserViewProfile from './Components/Organiser/OrganiserViewProfile';
 
 function App() {
 
@@ -75,7 +76,7 @@ function App() {
           <Route exact path="/AdminResetPass" element={<AdminResetPass />} />
           <Route exact path="/Aboutpage" element={[<MainNavbar />, <Aboutpage />, <UserFooter />]} />
           <Route exact path="/Enquiries" element={[<MainNavbar />, <Enquiries />, <UserFooter />]} />
-          <Route exact path="/TeamCoachViewpage/:id" element={[<TeamCoachTopbar />, <TeamCoachViewpage />]} />
+          <Route exact path="/TeamCoachViewpage" element={[, <TeamCoachViewpage />]} />
           <Route exact path="/Adminsidebar1" element={[<Adminsidebar />]} />
           <Route exact path="/Adminsidebar" element={[<Adminsidebar />, <AdminDashbordTopContent />]} />
           <Route exact path='/TeamCoachEditProfile' element={[<TeamCoachEditProfile/>]}/>
@@ -83,10 +84,11 @@ function App() {
           <Route exact path="/nav" element={[<TeamCoachTopbar />]} />
           <Route exact path="/Teamcoachdetailspopup/:id" element={[<Teamcoachdetailspopup />]} />
           <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup />]} />
-          <Route exact path='/OrganiserRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
-          <Route exact path='/OrganiserLogin' element={[<MainNavbar/>,<OrganiserLogin/>,<UserFooter/>]} />
-          <Route exact path='/OrganiserForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
-          <Route exact path='/OrganiserDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
+          <Route exact path='/OrganizerRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerLogin' element={[<MainNavbar/>,<OrganiserLogin/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
+          <Route exact path='/OrganizerDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
+          <Route exact path='/OrganizerViewProfile' element={[,<OrganiserViewProfile/>,]} />
 
         </Routes>
 
