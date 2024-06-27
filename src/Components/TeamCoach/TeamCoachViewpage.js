@@ -46,7 +46,7 @@ function TeamCoachViewpage() {
                 let res;
         
         
-                axiosInstance.post(`viewTeamCoachById/${id}`).then(res => {
+                axiosInstance.post(`viewTeamCoachById`).then(res => {
         
                     console.log(res);
         
