@@ -12,7 +12,7 @@ import img9 from '../../Assets/arcticons_asr-licence.jpg'
 import img10 from '../../Assets/emojione_flag-for-india.jpg'
 import img11 from '../../Assets/carbon_location-filled.jpg'
 import img12 from '../../Assets/arcticons_team-fight-tactics.jpg'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import axiosInstance from '../Constant/BaseURL'
 const url = axiosInstance.defaults.url;
@@ -27,7 +27,7 @@ function Teamcoachdetailspopup() {
         const { id } = useParams()
         const [userData, setUserData] = useState({});
 
-        
+        const navigate=useNavigate()
 
         useEffect(() => {
 
@@ -55,8 +55,9 @@ function Teamcoachdetailspopup() {
                         console.log(res);
 
                     if (res.data.status === 200) {
-                      
+                      alert('Team Coach Approved')
                         console.log(res);
+                        navigate('/AdminViewTeamCoach')
                     }
                   })
                   .catch((error) => {
@@ -72,8 +73,9 @@ function Teamcoachdetailspopup() {
 
                     if (res.data.status === 200) {
                       
+                        alert('Team Coach Request Rejected')
                         console.log(res);
-                    }
+                        navigate('/AdminViewTeamCoach')                    }
                   })
                   .catch((error) => {
                     console.error("Error!", error);
