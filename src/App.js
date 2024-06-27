@@ -83,10 +83,10 @@ function App() {
           <Route exact path="/nav" element={[<TeamCoachTopbar />]} />
           <Route exact path="/Teamcoachdetailspopup/:id" element={[<Teamcoachdetailspopup />]} />
           <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup />]} />
-          <Route exact path='/OrganiserRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
-          <Route exact path='/OrganiserLogin' element={[<MainNavbar/>,<OrganiserLogin/>,<UserFooter/>]} />
-          <Route exact path='/OrganiserForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
-          <Route exact path='/OrganiserDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
+          <Route exact path='/OrganizerRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerLogin' element={[<MainNavbar/>,<OrganiserLogin/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
+          <Route exact path='/OrganizerDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
 
         </Routes>
 
