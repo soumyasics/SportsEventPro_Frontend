@@ -3,7 +3,8 @@ import './TeamCoachLogin.css'
 import img6 from "../../Assets/Teamcoachlogin.gif"
 import axios from 'axios'
 import axiosInstance from '../Constant/BaseURL'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import {  Navigate, useNavigate } from 'react-router-dom'
 
  
 
@@ -68,9 +69,15 @@ console.log("fun called",data);
       .then(response => {
         console.log(response);
         if(response.data.status==200){
+            if(response.data.data.adminApproved){
             alert("Login Successful")
             localStorage.setItem('admin',1)
             navigate('/teamcoachhomepage')
+            }
+            else{
+                alert("Please get Approval from Admin")
+                window.location.reload(false)
+            }
         }else
 alert(response.data.msg)       
         
@@ -139,7 +146,9 @@ alert(response.data.msg)
                     </div>
 
                     </form>
-
+                    <div>
+                      
+                    </div>
                     </div>
 
                     <div class="teamcoachloginbackgroundimg col-5">

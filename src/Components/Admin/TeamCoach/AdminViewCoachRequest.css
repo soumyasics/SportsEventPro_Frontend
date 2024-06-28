@@ -6,6 +6,10 @@
     background-color: #EEE;
     padding: 40px;
     border-radius: 32px;
+    top:50px;
+    position: absolute;
+    left:400px;
+    width:60%;
     
 }
 
@@ -45,4 +49,19 @@
     height: 60px;
     width:80px;
     padding-right: 20px;
+}
+.AdminCoachRequestH5{
+    color:red;
+    font-size: large;
+}
+.AdminViewTeamCoach-Stylerow{
+    gap: 40px;
+    /* width: 1375px; */
+    top:50px;
+    position: absolute;
+    float: left;
+    margin-left: 244px;
+    margin-bottom: 70px;
+    width: 1126px;
+    
 }
