@@ -38,6 +38,7 @@ import OrganiserForgotPassword from './Components/Organiser/OrganiserForgotPassw
 import OrganiserDashboard from './Components/Organiser/OrganiserDashboard';
 import OrganiserSideBar from './Components/Organiser/OrganiserSideBar'
 import OrganiserDashboardNavBar from './Components/Organiser/OrganiserDashboardNavBar';
+import OrganiserViewProfile from './Components/Organiser/OrganiserViewProfile';
 
 function App() {
 
@@ -75,7 +76,7 @@ function App() {
           <Route exact path="/AdminResetPass" element={<AdminResetPass />} />
           <Route exact path="/Aboutpage" element={[<MainNavbar />, <Aboutpage />, <UserFooter />]} />
           <Route exact path="/Enquiries" element={[<MainNavbar />, <Enquiries />, <UserFooter />]} />
-          <Route exact path="/TeamCoachViewpage/:id" element={[<TeamCoachTopbar />, <TeamCoachViewpage />]} />
+          <Route exact path="/TeamCoachViewpage" element={[, <TeamCoachViewpage />]} />
           <Route exact path="/Adminsidebar1" element={[<Adminsidebar />]} />
           <Route exact path="/Adminsidebar" element={[<Adminsidebar />, <AdminDashbordTopContent />]} />
           <Route exact path='/TeamCoachEditProfile' element={[<TeamCoachEditProfile/>]}/>
