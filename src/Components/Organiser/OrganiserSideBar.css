@@ -59,13 +59,14 @@
 
 }
 
-.ModalDialog-content {
+.modal-body {
 
-    border-radius: 20px;
-    border: 1px solid #000;
+    border-radius: 20px !important;
+    border: 1px solid #000 !important;
     background: var(--icon-color, #FFF);
-
-    /* fix the fucking modal size. */
+    width:  747px !important;
+    height:  298px !important;
+    margin-left: -15%;
 
 }
 
@@ -79,8 +80,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin-top: 40px;
-    margin-left: ;
+    margin-top: 60px;
 
 }
 
@@ -103,6 +103,7 @@
     margin-left: 50%;
     transform: translate(-50%);
     margin-bottom: 77px;
+    margin-top: 28px;
 
 }
 

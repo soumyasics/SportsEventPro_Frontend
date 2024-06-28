@@ -82,7 +82,7 @@ function OrganiserSideBar() {
 
                             <div class="modal-dialog modal-dialog-centered" style={{width:"747px" , height:"298px"}}>
 
-                                <div class="modal-content ModalDialog-content">
+                                <div >
 
                                     <div class="modal-body">
 
