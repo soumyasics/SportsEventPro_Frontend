@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.AdminCoachRequestListBackground {
+
+    margin-top: 40px;
+    background-color: #EEE;
+    padding: 40px;
+    border-radius: 32px;
+    top:50px;
+    position: absolute;
+    left:400px;
+    width:60%;
+    
+}
+
+.AdminCoachRequestH3 {
+
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+.AdminCoachRequestList {
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.AdminCoachRequestListElements {
+
+    margin-top: 40px;
+    padding-bottom: 20px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border-bottom: 1px solid black;
+}
+
+.AdminCoachRequest-aTag {
+
+    text-align: right;
+
+}
+.AdminCoachRequest-img{
+    height: 60px;
+    width:80px;
+    padding-right: 20px;
+}
+.AdminCoachRequestH5{
+    color:red;
+    font-size: large;
+}
+.AdminViewTeamCoach-Stylerow{
+    gap: 40px;
+    /* width: 1375px; */
+    top:50px;
+    position: absolute;
+    float: left;
+    margin-left: 244px;
+    margin-bottom: 70px;
+    width: 1126px;
+    
+}

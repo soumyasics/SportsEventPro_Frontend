@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-.AdminViewTeamCoachMainDivBG {
+.AdminViewOrganiserMainDivBG {
     
     font-family: "Roboto";
     font-weight: 500;
@@ -10,7 +10,7 @@
 
 }
 
-.AdminViewTeamCoach-h1 {
+.AdminViewOrganiser-h1 {
 
     color: #000;
     font-family: Roboto;
@@ -22,7 +22,49 @@
 
 }
 
-.AdminViewTeamCoach-Table {
+.AdmiViewOrganiser-search-container {
+
+    height: 46px;
+
+}
+
+.AdminViewOrganiser-search {
+
+    z-index: 0;
+    margin-top: 40px;
+    margin-left: 76.5%;
+    margin-bottom: 16.5px;
+    padding-left: 18px;
+    height: 43px;
+    width: 304px;
+    border-radius: 82px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #fff;
+    box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
+
+}
+
+.AdminViewOrganiser-search-button {
+
+    position: absolute;
+    z-index: 1;
+    margin-top: 45.5px;
+    margin-left: -41px;
+    border: 1px solid #CFCFCF;
+    background-color: #CFCFCF;
+    border-radius: 50px;
+    box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
+    display: inline-flex;
+    height: 32px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+
+}
+
+.AdminViewOrganiser-Table {
 
     margin-top: 50px;
     border: 1.304px solid #B9B9B9;
@@ -32,7 +74,7 @@
 
 }
 
-.AdminViewTeamCoach-tableHeadRow {
+.AdminViewOrganiser-tableHeadRow {
 
     display: flex;
     width: 1295px;
@@ -43,21 +85,21 @@
 
 }
 
-.AdminViewTeamCoach-tableHeadData {
+.AdminViewOrganiser-tableHeadData {
 
     border-right: 1.304px solid #B9B9B9;
     padding-left: 13px;
     padding-top: 15.6px;
 
 }
-.AdminViewTeamCoach-tableHeadDataEnd {
+.AdminViewOrganiser-tableHeadDataEnd {
 
     padding-left: 13px;
     padding-top: 15.6px;
     
 }
 
-.AdminViewTeamCoach-tableBodyRow {
+.AdminViewOrganiser-tableBodyRow {
 
     display: flex;
     width: 1295px;
@@ -68,7 +110,7 @@
     
 }
 
-.AdminViewTeamCoach-tableBodyData {
+.AdminViewOrganiser-tableBodyData {
 
     border-right: 1.304px solid #B9B9B9;
     padding-left: 13px;
@@ -76,7 +118,7 @@
 
 }
 
-.AdminViewTeamCoach-Pagination {
+.AdminViewOrganiser-Pagination {
 
     margin-top: 100px;
     margin-left: 8px;

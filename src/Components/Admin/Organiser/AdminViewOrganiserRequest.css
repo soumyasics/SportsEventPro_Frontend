@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.AdminCoachRequestListBackground {
+.AdminOrganiserRequestListBackground {
 
     margin-top: 40px;
     background-color: #EEE;
     padding: 40px;
     border-radius: 32px;
+    height: auto;
     
 }
 
-.AdminCoachRequestH3 {
+.AdminOrganiserRequestH3 {
 
     text-align: center;
     font-family: "Roboto", sans-serif;
@@ -18,14 +19,14 @@
 
 }
 
-.AdminCoachRequestList {
+.AdminOrganiserRequestList {
 
     display: flex;
     flex-direction: column;
     
 }
 
-.AdminCoachRequestListElements {
+.AdminOrganiserRequestListElements {
 
     margin-top: 40px;
     padding-bottom: 20px;
@@ -36,12 +37,12 @@
     border-bottom: 1px solid black;
 }
 
-.AdminCoachRequest-aTag {
+.AdminOrganiserRequest-aTag {
 
     text-align: right;
 
 }
-.AdminCoachRequest-img{
+.AdminOrganiserRequest-img{
     height: 60px;
     width:80px;
     padding-right: 20px;

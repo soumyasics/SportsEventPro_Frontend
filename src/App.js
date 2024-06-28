@@ -22,8 +22,8 @@ import AdminDashbordTopContent from './Components/Admin/AdminDashbordTopContent'
 import AdminDashbordTopContent_2 from './Components/Admin/AdminDashbordTopContent_2';
 import TeamCoachViewpage from './Components/TeamCoach/TeamCoachViewpage';
 import Adminsidebar from './Components/Admin/Adminsidebar';
-import AdminViewCoachRequest from './Components/Admin/AdminViewCoachRequest'
-import AdminViewTeamCoach from './Components/Admin/AdminViewTeamCoach';
+import AdminViewCoachRequest from './Components/Admin/TeamCoach/AdminViewCoachRequest'
+import AdminViewTeamCoach from './Components/Admin/TeamCoach/AdminViewTeamCoach';
 import TeamCoachTopbar from './Components/TeamCoach/TeamCoachTopbar';
 import Teamcoachdetailspopup from './Components/TeamCoach/Teamcoachdetailspopup';
 import Teamcoachviewprofilepopup from './Components/TeamCoach/Teamcoachviewprofilepopup';
@@ -31,6 +31,14 @@ import AdminTopbar from './Components/Admin/AdminTopbar';
 import TeamCoachHomePage from './Components/TeamCoach/TeamCoachHomePage';
 import OrganiserRegistration from './Components/Organiser/OrganiserRegistration';
 import TeamCoachEditProfile from './Components/TeamCoach/TeamCoachEditProfile';
+import AdminViewOrganiserRequest from './Components/Admin/Organiser/AdminViewOrganiserRequest';
+import AdminViewOrganiser from './Components/Admin/Organiser/AdminViewOrganiser';
+import OrganizerLogin from './Components/Organiser/OrganiserLogin';
+import OrganiserForgotPassword from './Components/Organiser/OrganiserForgotPassword';
+import OrganiserDashboard from './Components/Organiser/OrganiserDashboard';
+import OrganiserSideBar from './Components/Organiser/OrganiserSideBar'
+import OrganiserDashboardNavBar from './Components/Organiser/OrganiserDashboardNavBar';
+import OrganiserViewProfile from './Components/Organiser/OrganiserViewProfile';
 
 function App() {
 
@@ -57,7 +65,9 @@ function App() {
           <Route exact path='/AdminDashbord' element={[<AdminTopbar />, <Adminsidebar />, <AdminDashbordTopContent />, <AdminDashbordTopContent_2 />]} />
           <Route exact path="/AdminTopbar" element={<AdminTopbar />} />
           <Route exact path='/AdminViewTeamCoach' element={[<MainNavbar/>,<AdminViewTeamCoach/>]}/>
-          <Route exact path='/ViewCoachRequest' element={[<MainNavbar />, <AdminViewCoachRequest />]} />
+          <Route exact path='/AdminViewOrganiser' element={[<MainNavbar/>,<AdminViewOrganiser/>]} />
+          <Route exact path='/AdminViewOrganiserRequest' element={[<MainNavbar/>,<AdminViewOrganiserRequest/>]} />
+          <Route exact path='/ViewCoachRequest' element={[<MainNavbar />,<Adminsidebar />, <AdminViewCoachRequest />]} />
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />
           <Route exact path='/AdminDashbordTopContent_2' element={<AdminDashbordTopContent_2 />} />
           <Route exact path="/TeamCoachLogin" element={[<TeamCoachLogin />,]} />
@@ -66,15 +76,18 @@ function App() {
           <Route exact path="/AdminResetPass" element={<AdminResetPass />} />
           <Route exact path="/Aboutpage" element={[<MainNavbar />, <Aboutpage />, <UserFooter />]} />
           <Route exact path="/Enquiries" element={[<MainNavbar />, <Enquiries />, <UserFooter />]} />
-          <Route exact path="/TeamCoachViewpage/:id" element={[<TeamCoachTopbar />, <TeamCoachViewpage />]} />
+          <Route exact path="/TeamCoachViewpage" element={[, <TeamCoachViewpage />]} />
           <Route exact path="/Adminsidebar1" element={[<Adminsidebar />]} />
           <Route exact path="/Adminsidebar" element={[<Adminsidebar />, <AdminDashbordTopContent />]} />
           <Route exact path='/TeamCoachEditProfile' element={[<TeamCoachEditProfile/>]}/>
           <Route exact path="/Adminsidebar2" element={[<AdminDashbordTopContent />]} />
           <Route exact path="/nav" element={[<TeamCoachTopbar />]} />
-          <Route exact path="/Teamcoachdetailspopup/:id" element={[<Teamcoachdetailspopup />]} />
+          <Route exact path="/Teamcoachdetailspopup/:id" element={[<MainNavbar />,<Adminsidebar />,<Teamcoachdetailspopup />]} />
           <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup />]} />
-          <Route exact path='/OrganiserRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerLogin' element={[<MainNavbar/>,<OrganizerLogin/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
+          <Route exact path='/OrganizerDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
 
         </Routes>
 

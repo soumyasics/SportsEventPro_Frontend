@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import "./TeamcoachReg.css"
 import axiosInstance from '../Constant/BaseURL'
 import axiosMultipartInstance from '../Constant/multiPart'
+import { useNavigate } from 'react-router-dom'
 
 function TeamcoachReg() {
 
-
+const navigate=useNavigate()
 
 
 
@@ -33,9 +34,9 @@ console.log(plus);
         category: '',
         totalmembers: plus,
         pincode: '',
-        states: '',
+        state: '',
         contactnumber: '',
-        license: '',
+        certificate: '',
         password: '',
         image: '',
         teamname: '',
@@ -52,9 +53,9 @@ console.log(plus);
         name: '',
         category: '',
         pincode: '',
-        states: '',
+        state: '',
         contactnumber: '',
-        license: '',
+        certificate: '',
         password: '',
         image: '',
         teamname: '',
@@ -119,7 +120,7 @@ console.log(plus);
         errors.contactnumber = validateField('Contact number', data.contactnumber)
         errors.category = validateField('Category', data.category);
         errors.pincode = validateField('Pincode', data.pincode);
-        errors.states =validateField('States', data.states)
+        errors.state =validateField('States', data.state)
         errors.password = validateField('Password', data.password);
         errors.teamname = validateField('Teamname', data.teamname);
         errors.address = validateField('Address', data.address);
@@ -157,11 +158,11 @@ console.log(plus);
             formData.append('category', data.category);
             formData.append('totalteammembers', data.totalmembers);
             formData.append('pincode', data.pincode);
-            formData.append('state', data.states);
+            formData.append('state', data.state);
             formData.append('contact', data.contactnumber);
             formData.append('password', data.password);
             formData.append('files', data.image);
-            formData.append('files', data.license);
+            formData.append('files', data.certificate);
             formData.append('teamName', data.teamname);
             formData.append('address', data.address);
             formData.append('city', data.city);
@@ -171,11 +172,12 @@ console.log(plus);
         
             
     console.log(formData);
-        axiosMultipartInstance.post('registerTeamCoach', data)
+        axiosMultipartInstance.post('registerTeamCoach', formData)
             .then(response => {
                 console.log(response);
                 if (response.data.status == 200) {
                     alert(response.data.msg)
+                    navigate('/TeamCoachLogin')
                 } else
                     alert(response.data.msg)
                     
@@ -357,11 +359,14 @@ console.log(plus);
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="col">
                                     <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>City</label></div>
                                         <input className='TeamCoachField-9' type='text' placeholder='Enter City' name="city"
+
+                                        
                                             value={data.city}
                                             onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
@@ -381,7 +386,18 @@ console.log(plus);
                             <div class="row">
                                 <div class="col">
 
+                                <div className='teamcoachn1'>
+                                        <div className='teamCoachRegDiv-Text'>
+                                            <label>State</label></div>
+                                        <input className='TeamCoachField-9' type='text' placeholder='Enter State' name="state"
 
+                                        
+                                            value={data.city}
+                                            onChange={handleChange} />
+                                        <div class='teamCoachRegvalidationname'>
+                                            {errors.state && <div className="text-danger ">{errors.state}</div>}
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col">
                                     <div className='teamcoachn1'>
@@ -450,15 +466,15 @@ console.log(plus);
                                 <div class="col">
                                     <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
-                                            <label>Coach License</label>
+                                            <label>Coach certificate</label>
                                         </div>
                                         <div className='teamCoachregDiv-uploads'>
                                             <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
-                                               name="license"
+                                               name="certificate"
                                                 onChange={handleChange} required/>
                                         </div>
                                         <div class='teamCoachRegvalidationname'>
-                                            {errors.license && <div className="text-danger ">{errors.license}</div>}
+                                            {errors.certificate && <div className="text-danger ">{errors.certificate}</div>}
                                         </div>
 
                                     </div>
