@@ -8,14 +8,7 @@ function TeamcoachReg() {
 
 const navigate=useNavigate()
 
-
-
-
-    const [plus, setPlus] = useState(
-        1
-    )
-
-
+    const [plus, setPlus] = useState(1)
 
     const add = (event) => {
         setPlus(plus + 1)
@@ -27,9 +20,6 @@ const navigate=useNavigate()
     }
 console.log(plus);
     const [data, setData] = useState({
-
-
-
         name: '',
         category: '',
         totalmembers: plus,
@@ -67,8 +57,6 @@ console.log(plus);
         confirmpassword: '',
     })
 
-
-    
     let formIsValid;
     const handleChange = (event) => {
         console.log("ty",event.target.type);
@@ -97,17 +85,37 @@ console.log(plus);
             [name]: ''
         }));
     };
+
+    function validateContact(fieldName, value) {
+        if (!value.trim()) {
+          return `${fieldName} is required`;
+        } else if (value.length !== 10) {
+          return 'Please enter a valid Contact Number';
+        }
+        return '';
+      }
+
+      function validatePincode(fieldName, value) {
+        if (!value.trim()) {
+          return `${fieldName} is required`;
+        } else if (value.length !== 6) {
+          return 'Please enter a valid Contact Number';
+        }
+        return '';
+      }
+    
     
     const validateField = (fieldName, value) => {
         if (!value.trim()) {
             formIsValid = true;
             return `${fieldName} is required`;
         }
+        if(fieldName === "Email" && !value.endsWith("@gmail.com")){
+            return "Email must be a valid Email address"
+          }
         return '';
     };
     
-    
-
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(data);
@@ -117,23 +125,35 @@ console.log(plus);
 
         errors.email = validateField('Email', data.email);
         errors.name = validateField('Name', data.name);
-        errors.contactnumber = validateField('Contact number', data.contactnumber)
+        errors.contactnumber = validateContact('Contact number', data.contactnumber)
         errors.category = validateField('Category', data.category);
-        errors.pincode = validateField('Pincode', data.pincode);
+        errors.pincode = validatePincode('Pincode', data.pincode);
         errors.state =validateField('States', data.state)
-        errors.password = validateField('Password', data.password);
+        // errors.password = validateField('Password', data.password);
         errors.teamname = validateField('Teamname', data.teamname);
         errors.address = validateField('Address', data.address);
         errors.city = validateField('City', data.city);
         errors.country = validateField('Country', data.country);
         errors.experience = validateField('Experience', data.experience);
-        errors.confirmpassword = validateField('Confirm Password', data.confirmpassword);
+        // errors.confirmpassword = validateField('Confirm Password', data.confirmpassword);
 
-
-
-
+        const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,}$/;
+      if (!data.password.trim()) {
+        formIsValid = false;
+        errors.password = "Password is required";
+      } else if (!passwordRegex.test(data.password)) { // Pass the password to the test method
+        errors.password =
+          "Password must contain at least one number, one special character, and one capital letter";
+      }
+    
+      if (!data.confirmpassword.trim()) {
+        formIsValid = false;
+        errors.confirmpassword = "Confirm Password is required";
+      } else if (data.confirmpassword !== data.password) {
+        formIsValid = false;
+        errors.confirmpassword = "Passwords do not match";
+      }
         BackendData();
-
         setErrors(errors);
 
         if (formIsValid) {
@@ -142,13 +162,6 @@ console.log(plus);
            
         }
     }
-
-
-
-
-
-
-
 
     const BackendData = () => {
         console.log("fun called", data);
@@ -188,9 +201,7 @@ console.log(plus);
 
 
             })
-        
-        
-            
+       
     }
 
     return (
@@ -234,9 +245,6 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
@@ -246,7 +254,11 @@ console.log(plus);
                                         </div>
 
                                         <div className='TeamCoachRegCategory'>
-                                            <input type="radio" class="btn-check" name="category" id="category1"  autocomplete="off" onChange={handleChange} value={"cricket"}/>
+                                            <input type="radio" 
+                                            class="btn-check" 
+                                            name="category" 
+                                            id="category1"  
+                                            autocomplete="off" onChange={handleChange} value={"cricket"}/>
                                             <label class="btn btn-secondary category-1-5" for="category1"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Cricket</label>
                                             <input type="radio" class="btn-check" name="category" id="category2" autocomplete="off" onChange={handleChange} value={"football"}/>
                                             <label class="btn btn-secondary category-1-5" for="category2"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Football</label>
@@ -260,7 +272,6 @@ console.log(plus);
                                         <div class='categoryvalidation'>
                             {errors.category && <div className="text-danger ">{errors.category}</div>}
                         </div>
-
                                     </div>
                                 </div>
                                 <div class="col">
@@ -278,9 +289,6 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
@@ -303,27 +311,7 @@ console.log(plus);
                                                 </div>
                                             </div>
                                         </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                            
-                                            
-
-
-                                            
-                                        
+                                    </div>     
                                     </div>
                                 </div>
                                 <div class="col">
@@ -341,17 +329,13 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
                                     <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>Pincode</label></div>
-                                        <input className='TeamCoachField-3' type='number' placeholder='Enter 6-Digit Pincode' name="pincode"
+                                        <input className='TeamCoachField-3' type='text' placeholder='Enter 6-Digit Pincode' name="pincode"
                                             value={data.pincode}
                                             onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
@@ -376,12 +360,6 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
@@ -390,9 +368,7 @@ console.log(plus);
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>State</label></div>
                                         <input className='TeamCoachField-9' type='text' placeholder='Enter State' name="state"
-
-                                        
-                                            value={data.city}
+                                         value={data.state}
                                             onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
                                             {errors.state && <div className="text-danger ">{errors.state}</div>}
@@ -418,12 +394,6 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
@@ -431,7 +401,7 @@ console.log(plus);
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>Contact Number</label>
                                         </div>
-                                        <input className='TeamCoachField-5' type='number' placeholder='Enter your contact number' name="contactnumber"
+                                        <input className='TeamCoachField-5' type='text' placeholder='Enter your contact number' name="contactnumber"
                                             value={data.contactnumber}
                                             onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
@@ -444,7 +414,7 @@ console.log(plus);
                                     <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>E-mail Id</label></div>
-                                        <input className='TeamCoachField-11' type='mail' placeholder='Enter your email' name="email"
+                                        <input className='TeamCoachField-11' type='email' placeholder='Enter your email' name="email"
                                             value={data.email}
                                             onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
@@ -455,12 +425,6 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
@@ -494,12 +458,7 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-                        <div class="container text-center">
+                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
                                     <div className='teamcoachn1'>
@@ -532,47 +491,6 @@ console.log(plus);
                             </div>
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div>
                         <input className='TeamCoachButton' type='submit' placeholder='submit' onClick={handleSubmit}/>
                     </div>

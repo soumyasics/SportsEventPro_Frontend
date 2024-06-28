@@ -12,16 +12,13 @@ import img9 from '../../Assets/arcticons_asr-licence.jpg'
 import img10 from '../../Assets/emojione_flag-for-india.jpg'
 import img11 from '../../Assets/carbon_location-filled.jpg'
 import img12 from '../../Assets/arcticons_team-fight-tactics.jpg'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 import axiosInstance from '../Constant/BaseURL'
 const url = axiosInstance.defaults.url;
 
 console.log("url,", url);
-
-
-
-
 
 function Teamcoachdetailspopup() {
         const { id } = useParams()
@@ -89,505 +86,165 @@ function Teamcoachdetailspopup() {
 
 
         return (
-                <div>
-                                            
-
-
-<div className='container Teamcoachdetailspopupdiv-1-1'>
-
-                        <div className=''>
-
-                                <div className='row '>
-                                        <div className='col Teamcoachdetailspopupdiv-1'>
-                                                <h1 className='Teamcoachdetailspopuptext-1'>Coach Details</h1>
-                                        </div>
-                                        <div className='col-4 Teamcoachdetailspopupdiv-2'>
-                                        <div className='Teamcoachdetailspopupimgdiv-1-1'>
-
-                                                <label className='Teamcoachdetailspopupimg-1-backend'>
-        <img src={`${url}/${userData?.profilePic?.filename}`}
-                                            className="AdminCoachRequest-img"
-                                        />
-                                                        </label><br></br>
-                                                <label className='Teamcoachdetailspopupimg-2-backend'>{userData ? userData.name : ''}</label><br></br>
-                                                </div>
-                                        </div>
-
-
+                <div className='mb-5'>
+                        <div className='mt-5 ms-5 container'>
+                                <Link to='/ViewCoachRequest' className='teamcoach-details-arrowlink'><IoMdArrowRoundBack className='teamcoach-details-arrow'/></Link>
+                                <span className='ms-3 teamcoach-details-span'>Coach Details</span>
+                                <div className='teamcoach-details-imgdiv'>
+                                        <img src={`${url}/${userData?.profilePic?.filename}`}
+                                            className="teamcoach-details-img">
+                                        </img>
                                 </div>
-
-
-
-
-
-
-
-
-
-
-
-                                <div className='row Teamcoachdetailspopupdiv-3 Teamcoachdetailspopupimpdiv-style'>
-
-
-                                        <div className='col'>
-
-                                                <div className='row Teamcoachdetailspopupmainrow-1'>
-
-                                                        <div className='col'>
-                                                                <img className='Teamcoachdetailspopupcommon-style-1' src={img1}></img>
-                                                        </div>
-
-                                                        <div className='col'>
-                                                                <label className='Teamcoachdetailspopuplabel ' >Contact Number</label>
-
-                                                        </div>
-
-                                                        <div className='col'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'>{userData.contact}</label>
-
-                                                        </div>
-
-
+                        </div>
+                        <div className='row container'>
+                                <div className='col container'>
+                                        <div className='row Teamcoachdetailspopupmainrow-1 container ms-5 ps-5 '>
+                                                <div className='col-2 '>
+                                                        <img className='Teamcoachdetailspopupcommon-style-1' src={img1}></img>
+                                                </div>
+                                                <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel ' >Contact Number</label>
 
                                                 </div>
-
+                                                <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel-2'>{userData.contact}</label>
+                                                </div>
                                         </div>
-
+                                        <div className='row Teamcoachdetailspopupmainrow-1 container ms-5 ps-5'>
+                                                <div className='col-2'>
+                                                        <img className='Teamcoachdetailspopupcommon-style-1' src={img4}></img>
+                                                </div>
+                                                <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel'>Email id</label>
+                                                </div>
+                                                <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel-2'>{userData.email}</label>
+                                                </div>
+                                        </div>
+                                        <div className='row Teamcoachdetailspopupmainrow-1 container ms-5 ps-5'>
+                                                <div className='col-2'>
+                                                        <img className='Teamcoachdetailspopupcommon-style-1' src={img7}></img>
+                                                </div>
+                                                <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel'>Total team members</label>
+                                                </div>
+                                                <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel-2'>{userData.totalteammembers}</label>
+                                                </div>
+                                        </div>
+                                        <div className='row Teamcoachdetailspopupmainrow-1 ms-5 ps-5'>
+                                                <div className='col-2'>
+                                                        <img className='Teamcoachdetailspopupcommon-style-1' src={img5}></img>
+                                                </div>
+                                                <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel'>Pincode</label>
+                                                </div>
+                                                <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel-2'>{userData.pincode}</label>
+                                                </div>
+                                        </div>
+                                        <div className='row Teamcoachdetailspopupmainrow-1 ms-5 ps-5'>
+                                                <div className='col-2'>
+                                                        <img className='Teamcoachdetailspopupcommon-style-1' src={img5}></img>
+                                                </div>
+                                                <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel'>State</label>
+                                                </div>
+                                                <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel-2'>{userData.state}</label>
+                                                </div>
+                                        </div>
+                                        <div className='row Teamcoachdetailspopupmainrow-1 ms-5 ps-5'>
+                                                <div className='col-2'>
+                                                        <img className='Teamcoachdetailspopupcommon-style-1' src={img10}></img>
+                                                </div>
+                                                <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel'>Country</label>
+                                                </div>                                                        <div className='col-5'>
+                                                        <label className='Teamcoachdetailspopuplabel-2'>{userData.country}</label>
+                                                </div>
+                                        </div>     
+                                </div>
+                                <div className='col'>
                                         <div className='col Teamcoachdetailspopupmainrow-right-1'>
-
-
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
-
                                                         <div className='col-2'>
                                                                 <img className='Teamcoachdetailspopupcommon-style-1' src={img6}></img>
                                                         </div>
-
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel'> Catogory</label>
-
                                                         </div>
-
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.category}</label>
-
                                                         </div>
-
-
-
                                                 </div>
-
-
-
-
-
-
-
-                                        </div>
-
-
-
-
-
-                                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                <div className='row Teamcoachdetailspopupdiv-4 Teamcoachdetailspopupimpdiv-style'>
-                                        <div className='col'>
-
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
-
-                                                        <div className='col-2'>
-                                                                <img className='Teamcoachdetailspopupcommon-style-1' src={img4}></img>
-                                                        </div>
-
-                                                        <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel'>Email id</label>
-
-                                                        </div>
-
-                                                        <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'>{userData.mail}</label>
-
-                                                        </div>
-
-
-
-                                                </div>
-
-                                        </div>
-
-                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
-
-
-                                                <div className='row Teamcoachdetailspopupmainrow-1'>
-
                                                         <div className='col-2'>
                                                                 <img className='Teamcoachdetailspopupcommon-style-1' src={img12}></img>
                                                         </div>
-
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel'>Team Name</label>
-
                                                         </div>
-
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.teamName}</label>
-
                                                         </div>
-
-
-
                                                 </div>
-
-
-
-
-
-
-
-
-                                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                </div>
-
-
-
-
-
-
-
-
-
-                                <div className='row Teamcoachdetailspopupdiv-5 Teamcoachdetailspopupimpdiv-style'>
-
-                                        <div className='col'>
-
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
-
-                                                        <div className='col-2'>
-                                                                <img className='Teamcoachdetailspopupcommon-style-1' src={img7}></img>
-                                                        </div>
-
-                                                        <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel'>Total team members</label>
-
-                                                        </div>
-
-                                                        <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'>{userData.totalteammembers}</label>
-
-                                                        </div>
-
-
-
-                                                </div>
-
-
-                                        </div>
-                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
-
-
-                                                <div className='row Teamcoachdetailspopupmainrow-1'>
-
                                                         <div className='col-2'>
                                                                 <img className='Teamcoachdetailspopupcommon-style-1' src={img11}></img>
                                                         </div>
-
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel'>Address</label>
-
                                                         </div>
-
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.address}</label>
-
                                                         </div>
-
-
-
                                                 </div>
-
-
-
-
-
-
-
-                                        </div>
-
-
-
-
-
-
-
-
-
-                                </div>
-
-
-
-
-
-
-
-
-
-
-                                <div className='row Teamcoachdetailspopupdiv-6 Teamcoachdetailspopupimpdiv-style'>
-                                        <div className='col'>
-
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
-
-                                                        <div className='col-2'>
-                                                                <img className='Teamcoachdetailspopupcommon-style-1' src={img5}></img>
-                                                        </div>
-
-                                                        <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel'>Pincode</label>
-
-                                                        </div>
-
-                                                        <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'>{userData.pincode}</label>
-
-                                                        </div>
-
-
-
-                                                </div>
-
-
-                                        </div>
-                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
-
-
-                                                <div className='row Teamcoachdetailspopupmainrow-1'>
-
                                                         <div className='col-2'>
                                                                 <img className='Teamcoachdetailspopupcommon-style-1' src={img3}></img>
                                                         </div>
-
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel'>City</label>
-
                                                         </div>
-
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.city}</label>
-
                                                         </div>
-
-
-
                                                 </div>
-
-
-
-
-
-
-
-                                        </div>
-
-
-
-                                </div>
-
-
-
-                                <div className='row Teamcoachdetailspopupdiv-7 Teamcoachdetailspopupimpdiv-style'>
-
-                                        <div className='col'>
-
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
-
-                                                        <div className='col-2'>
-                                                                <img className='Teamcoachdetailspopupcommon-style-1' src={img8}></img>
-                                                        </div>
-
-                                                        <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel'>State</label>
-
-                                                        </div>
-
-                                                        <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'>{userData.state}</label>
-
-                                                        </div>
-
-
-
-                                                </div>
-
-                                        </div>
-                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
-
-
-                                                <div className='row Teamcoachdetailspopupmainrow-1'>
-
                                                         <div className='col-2'>
                                                                 <img className='Teamcoachdetailspopupcommon-style-1' src={img9}></img>
                                                         </div>
-
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel'>Coach License</label>
-
                                                         </div>
-
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'></label>
-
                                                         </div>
-
-
-
                                                 </div>
-
-
-
-
-
-
-
-                                        </div>
-
-                                </div>
-
-
-
-                                <div className='row Teamcoachdetailspopupdiv-8 Teamcoachdetailspopupimpdiv-style'>
-
-                                        <div className='col'>
-
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
-
-                                                        <div className='col-2'>
-                                                                <img className='Teamcoachdetailspopupcommon-style-1' src={img10}></img>
-                                                        </div>
-
-                                                        <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel'>Country</label>
-
-                                                        </div>
-
-                                                        <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'>{userData.country}</label>
-
-                                                        </div>
-
-
-
-                                                </div>
-
-                                        </div>
-                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
-
-
-                                                <div className='row Teamcoachdetailspopupmainrow-1'>
-
                                                         <div className='col-2'>
                                                                 <img className='Teamcoachdetailspopupcommon-style-1' src={img2}></img>
                                                         </div>
-
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel'>Experience</label>
-
                                                         </div>
-
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel-2'>{userData.xperience}</label>
-
+                                                                <label className='Teamcoachdetailspopuplabel-2'>{userData.experience}</label>
                                                         </div>
-
-
-
                                                 </div>
-
-
-
-
-
-
-
+                                                
                                         </div>
-
                                 </div>
-
-
-
-
-
-
-
-                                <div className='row Teamcoachdetailspopup-1-5'>
-                                        <div className='col-3'></div>
-                                        <div className='col-3 Teamcoachdetailspopupdiv-10'>
-                                                <button className='Teamcoachdetailspopupdiv-10-button' onClick={()=>{approve(userData._id)}}>Approve</button>
-                                        </div>
-                                        <div className='col-3 Teamcoachdetailspopupdiv-11'>
-                                                <button className='Teamcoachdetailspopupdiv-11-button' onClick={()=>{reject(userData._id)}}>Reject</button>
-                                        </div>
-                                        <div className='col-3'></div>
-
-
+                        </div>  
+                        <div className='row mt-5'>
+                                <div className='col teamcoach-details-approvebtndiv'>
+                                        <button className='teamcoach-details-approvebtn' onClick={()=>{approve(userData._id)}}>Approve</button>
                                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        </div>
-                        </div>
+                                <div className='col teamcoach-details-approvebtndiv2'>
+                                       <button className='teamcoach-details-approvebtn' onClick={()=>{reject(userData._id)}}>Reject</button>
+                                </div>
+                        </div>                                   
                 </div>
         )
 }

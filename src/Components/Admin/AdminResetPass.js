@@ -99,14 +99,9 @@ function AdminResetPass() {
 
 
             <div className='row'>
-
-
                 <div className='col-6'>
                     <img class='AdminResetPassimg' src={resetimg} />
                 </div>
-
-
-
                 <div className='AdminResetPassmaindiv-1 col-6'>
                     <div className='adminresetpasstext'>
                         <h1 className='adminresetpasstext-1'>Reset Password</h1>
