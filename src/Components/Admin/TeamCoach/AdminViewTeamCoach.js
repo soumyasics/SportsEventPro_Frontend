@@ -1,20 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./AdminViewTeamCoach.css"
 import img from '../../../Assets/Search Button.svg'
+import { useNavigate } from 'react-router-dom';
+import axiosInstance from "../../Constant/BaseURL";
 
 function AdminViewTeamCoach () {
-    
+    const navigate=useNavigate()
+
+    const [userData, setUserData] = useState([]);
+    const url = axiosInstance.defaults.url;
+    console.log("url,", url);
+    useEffect(() => {
+
+        let res;
+
+
+        axiosInstance.post(`viewTeamCoachs`).then(res => {
+
+            console.log(res);
+
+            if ((res.data.data).length > 0)
+                setUserData(res.data.data);
+            else
+            setUserData(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+
+
+
+    }, []);
+    useEffect(() => {
+        console.log("users", userData);
+    })
+
+   const viewDetails=(id)=>{
+navigate(`/Teamcoachdetailspopup/${id}`)
+    }
     return (
 
-        <div className = 'container AdminViewTeamCoachMainDivBG '>
-            <div className='AdminViewTeamCoach-Stylerow'>
+        <div className = 'container AdminViewTeamCoachMainDivBG AdminViewTeamCoach-Stylerow'>
+
 
             <h1 className = 'AdminViewTeamCoach-h1'>Team Coaches List</h1>
             
             <div className = 'AdmiViewTeamCoach-search-container'>
 
-                <input type = 'search' placeholder = 'Search Here' className = 'AdminViewOrganiser-search'></input>
-                <button className = 'AdminViewOrganiser-search-button'> <img src = {img} alt = ' '/> </button>
+                <input type = 'search' placeholder = 'Search Here' className = 'AdminViewTeamCoach-search'></input>
+                <button className = 'AdminViewTeamCoach-search-button'> <img src = {img} alt = ' '/> </button>
 
             </div>
 
@@ -35,17 +69,26 @@ function AdminViewTeamCoach () {
                 </thead>
 
                 <tbody>
+                {
 
+(userData&&userData.length>0)?(userData.map(x => {
+
+     return(
                     <tr className='AdminViewTeamCoach-tableBodyRow' >
 
                         <td className='col-2 AdminViewTeamCoach-tableBodyData'>1 {/*Sl No*/}</td>
-                        <td className='col-2 AdminViewTeamCoach-tableBodyData'>Raju {/* Coach Name */}</td>
-                        <td className='col-2 AdminViewTeamCoach-tableBodyData'>The King {/* Team Name */}</td>
-                        <td className='col-2 AdminViewTeamCoach-tableBodyData'>Cricket {/* Sport */}</td>
-                        <td className='col-2 AdminViewTeamCoach-tableBodyData'>11 {/* Team Count */}</td>
+                        <td className='col-2 AdminViewTeamCoach-tableBodyData'>{x.name} {/* Coach Name */}</td>
+                        <td className='col-2 AdminViewTeamCoach-tableBodyData'>{x.teamName} {/* Team Name */}</td>
+                        <td className='col-2 AdminViewTeamCoach-tableBodyData'>{x.category} {/* Sport */}</td>
+                        <td className='col-2 AdminViewTeamCoach-tableBodyData'>{x.totalteammembers} {/* Team Count */}</td>
                         <td className='col-2 AdminViewTeamCoach-tableBodyData'x><a href=" " alt=""> View More </a> {/* Coach Name */}</td>
                         
                     </tr>
+     )})):(
+        <h1 className="AdminCoachRequestH5">No Approved Teamcoaches Found</h1>
+      )
+      
+  }
 
                 </tbody>
 
@@ -56,7 +99,7 @@ function AdminViewTeamCoach () {
                 <button type="button" className="btn btn-outline-secondary text-outline-light ps-4 pe-4 ">Next</button>
             </div>
 
-       </div> </div>
+       </div> 
 
     );
 
