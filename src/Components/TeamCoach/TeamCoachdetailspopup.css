@@ -1,147 +1,121 @@
-
-
-
-.Teamcoachdetailspopupdiv-1-1 {
-    top:50px;
-    position: absolute;
-    left:400px;
-    width:60%;
-
+.Teamcoachdetailspopupdiv-1 {
+    text-align: center;
 }
 
-.Teamcoachdetailspopupdiv-10 {
-    display: grid;
-    align-content: center;
-    height: 300px;
-
-}
-.Teamcoachdetailspopupdiv-11 {
-    display: grid;
-    align-content: center;
-    height: 300px;
-}
-.Teamcoachdetailspopupdiv-10-button{
-    display: grid;
-width: 232px;
-padding: 8px;
-flex-direction: column;
-align-items: end;
-border-radius: 8px;
-background: #DADADA;
-color: black;
-margin-left: 32px;
-
-}
-.Teamcoachdetailspopupdiv-11-button{
-    display: grid;
-    width: 232px;
-    padding: 8px;
-    flex-direction: column;
-    align-content: normal;
-    align-items: center;
-    border-radius: 8px;
-    background: #DADADA;
-    color: black;
-    margin-left: 92px;
-
-
-
-
+.TeamCoachDetailscontaindiv {
+    width: 1096px;
+    margin-left: 25%;
+    margin-top: -45%;
+    padding-left: 70px;
 }
 
- .Teamcoachdetailspopup-1-5{
-    height: 300px;
- }
-
-
-
-
-
-
-
- .Teamcoachdetailspopupdiv-1 {
-    display: grid;
-    align-content: center;
-    height: 80px;
-    margin-left: 120px;
-}
-
- .Teamcoachdetailspopupdiv-2 {
-    display: grid;
-    align-content: center;
-    height: 100px;
-} 
-
-.Teamcoachdetailspopuplabel{
+.Teamcoachdetailspopuptext-1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 100px;
+    margin-top: 46px;
+    text-align: left;
+    margin-left: 105px;
     color: #000;
-font-family: Roboto;
-font-size: 15.423px;
-font-style: normal;
-font-weight: 800;
-line-height: 21.592px; 
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
 }
- .Teamcoachdetailspopupimpdiv-style{
-    margin-left: 70px;
-    align-items: center;
-    gap: 12.338px;
-    flex: 1 0;
-    align-self: stretch;} 
 
-.Teamcoachdetailspopupcommon-style-1{
-    border-radius: 23.135px;
-    background: rgba(0, 0, 0, 0.05);
+.Teamcoachdetailspopupdiv-2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Teamcoachdetailspopupimgdiv-1-1 {
     display: flex;
-width: 46.269px;
-height: 46.269px;
-padding: var(--items, 11.576px) var(--items, 11.269px) var(--items, 10.693px) var(--items, 11px);
-justify-content: center;
-align-items: center;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 32.5px;
 }
 
-
-
-.Teamcoachdetailspopuptext-1{
-color: #000;
-font-family: Roboto;
-font-size: 40px;
-font-style: normal;
-font-weight: 700;
-line-height: 20px;
-width: 520px;
-align-self: stretch;
+.AdminCoachRequest-img {
+    width: 102px;
+    height: 105px;
+    flex-shrink: 0;
+    border-radius: 50%;
 }
 
-.Teamcoachdetailspopupimg-1-backend{
-    width: 152px;
-height: 105px;
-flex-shrink: 0;
+.Teamcoachdetailspopupimg-2-backend {
+    color: #000;
+    font-family: Roboto;
+    font-size: 15.423px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21.592px;
 }
 
- .Teamcoachdetailspopupimg-2-backend{
-
-color: #000;
-font-family: Roboto;
-font-size: 15.423px;
-font-style: normal;
-font-weight: bold;
-line-height: 21.592px; 
-
-} 
-.Teamcoachdetailspopupmainrow-1{
-display: flex;
-width: 500px;
-padding: 15.423px var(--items, 0px);
-justify-content: center;
-align-items: center;
-border-bottom: 1px solid rgb(192, 186, 186);
+.Teamcoachdetailspopupimpdiv-style {
+    margin-bottom: 20px;
 }
 
-.Teamcoachdetailspopupmainrow-right-1{
-    margin-left: 100px;
+.Teamcoachdetailspopupmainrow-1 {
+    display: flex;
+    align-items: center;
 }
- .Teamcoachdetailspopuplabel-2{
-    margin-left: 47px;
- } 
- .Teamcoachdetailspopupimgdiv-1-1{
-text-align: center;
- }
+
+.Teamcoachdetailspopupcommon-style-1 {
+    width: 24px;
+    height: 24px;
+}
+
+.Teamcoachdetailspopuplabel {
+    color: #000;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 15.423px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21.592px;
+    margin-left: -20%;
+}
+
+.Teamcoachdetailspopuplabel-2 {
+    font-size: 16px;
+    margin-left: auto;
+}
+
+.Teamcoachdetailspopupbtn-main {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.Teamcoachdetailspopupbtn-style {
+    margin-bottom: 10px;
+}
+
+.Teamcoachdetailspopupbtn-1,
+.Teamcoachdetailspopupbtn-2 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 232px;
+    height: 48px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-top: 94px;
+
+}
+
+.Teamcoachdetailspopupbtn-1 {
+    background-color: #4caf50;
+    color: white;
+    margin-left: 50px;
+}
+
+.Teamcoachdetailspopupbtn-2 {
+    background-color: #f44336;
+    color: white;
+    margin-left: -173px;
+}
