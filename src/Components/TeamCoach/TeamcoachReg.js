@@ -34,7 +34,7 @@ console.log(plus);
         category: '',
         totalmembers: plus,
         pincode: '',
-        states: '',
+        state: '',
         contactnumber: '',
         certificate: '',
         password: '',
@@ -53,7 +53,7 @@ console.log(plus);
         name: '',
         category: '',
         pincode: '',
-        states: '',
+        state: '',
         contactnumber: '',
         certificate: '',
         password: '',
@@ -120,7 +120,7 @@ console.log(plus);
         errors.contactnumber = validateField('Contact number', data.contactnumber)
         errors.category = validateField('Category', data.category);
         errors.pincode = validateField('Pincode', data.pincode);
-        errors.states =validateField('States', data.states)
+        errors.state =validateField('States', data.state)
         errors.password = validateField('Password', data.password);
         errors.teamname = validateField('Teamname', data.teamname);
         errors.address = validateField('Address', data.address);
@@ -158,7 +158,7 @@ console.log(plus);
             formData.append('category', data.category);
             formData.append('totalteammembers', data.totalmembers);
             formData.append('pincode', data.pincode);
-            formData.append('state', data.states);
+            formData.append('state', data.state);
             formData.append('contact', data.contactnumber);
             formData.append('password', data.password);
             formData.append('files', data.image);
@@ -359,11 +359,14 @@ console.log(plus);
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="col">
                                     <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>City</label></div>
                                         <input className='TeamCoachField-9' type='text' placeholder='Enter City' name="city"
+
+                                        
                                             value={data.city}
                                             onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
@@ -383,7 +386,18 @@ console.log(plus);
                             <div class="row">
                                 <div class="col">
 
+                                <div className='teamcoachn1'>
+                                        <div className='teamCoachRegDiv-Text'>
+                                            <label>State</label></div>
+                                        <input className='TeamCoachField-9' type='text' placeholder='Enter State' name="state"
 
+                                        
+                                            value={data.city}
+                                            onChange={handleChange} />
+                                        <div class='teamCoachRegvalidationname'>
+                                            {errors.state && <div className="text-danger ">{errors.state}</div>}
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col">
                                     <div className='teamcoachn1'>

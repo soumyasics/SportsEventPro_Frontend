@@ -6,7 +6,8 @@ function AdminViewTeamCoach () {
     
     return (
 
-        <div className = 'container AdminViewTeamCoachMainDivBG'>
+        <div className = 'container AdminViewTeamCoachMainDivBG '>
+            <div className='AdminViewTeamCoach-Stylerow'>
 
             <h1 className = 'AdminViewTeamCoach-h1'>Team Coaches List</h1>
             
@@ -55,7 +56,7 @@ function AdminViewTeamCoach () {
                 <button type="button" className="btn btn-outline-secondary text-outline-light ps-4 pe-4 ">Next</button>
             </div>
 
-        </div>
+       </div> </div>
 
     );
 

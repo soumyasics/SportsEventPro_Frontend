@@ -89,14 +89,13 @@ function Teamcoachdetailspopup() {
 
 
         return (
-
                 <div>
                                             
 
 
-<div className='container'>
+<div className='container Teamcoachdetailspopupdiv-1-1'>
 
-                        <div className='Teamcoachdetailspopupmain-1-20'>
+                        <div className=''>
 
                                 <div className='row '>
                                         <div className='col Teamcoachdetailspopupdiv-1'>
@@ -134,16 +133,16 @@ function Teamcoachdetailspopup() {
 
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
 
-                                                        <div className='col-2'>
+                                                        <div className='col'>
                                                                 <img className='Teamcoachdetailspopupcommon-style-1' src={img1}></img>
                                                         </div>
 
-                                                        <div className='col-5'>
+                                                        <div className='col'>
                                                                 <label className='Teamcoachdetailspopuplabel ' >Contact Number</label>
 
                                                         </div>
 
-                                                        <div className='col-5'>
+                                                        <div className='col'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.contact}</label>
 
                                                         </div>
@@ -164,7 +163,7 @@ function Teamcoachdetailspopup() {
                                                         </div>
 
                                                         <div className='col-5'>
-                                                                <label className='Teamcoachdetailspopuplabel'>Select Catogory</label>
+                                                                <label className='Teamcoachdetailspopuplabel'> Catogory</label>
 
                                                         </div>
 

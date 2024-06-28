@@ -1,11 +1,19 @@
 
 
 
+.Teamcoachdetailspopupdiv-1-1 {
+    top:50px;
+    position: absolute;
+    left:400px;
+    width:60%;
+
+}
 
 .Teamcoachdetailspopupdiv-10 {
     display: grid;
     align-content: center;
     height: 300px;
+
 }
 .Teamcoachdetailspopupdiv-11 {
     display: grid;
@@ -54,14 +62,14 @@ margin-left: 32px;
  .Teamcoachdetailspopupdiv-1 {
     display: grid;
     align-content: center;
-    height: 300px;
+    height: 80px;
     margin-left: 120px;
 }
 
  .Teamcoachdetailspopupdiv-2 {
     display: grid;
     align-content: center;
-    height: 300px;
+    height: 100px;
 } 
 
 .Teamcoachdetailspopuplabel{
@@ -98,13 +106,13 @@ font-family: Roboto;
 font-size: 40px;
 font-style: normal;
 font-weight: 700;
-line-height: 48px;
+line-height: 20px;
 width: 520px;
 align-self: stretch;
 }
 
 .Teamcoachdetailspopupimg-1-backend{
-    width: 102px;
+    width: 152px;
 height: 105px;
 flex-shrink: 0;
 }

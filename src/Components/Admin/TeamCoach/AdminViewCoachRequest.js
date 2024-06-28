@@ -21,6 +21,8 @@ function AdminViewCoachRequest() {
 
             if ((res.data.data).length > 0)
                 setUserData(res.data.data);
+            else
+            setUserData(null)
             console.log(res.data.data);
         }).catch(err => {
             console.log(err);
@@ -45,14 +47,13 @@ navigate(`/Teamcoachdetailspopup/${id}`)
                 <h3 className="AdminCoachRequestH3">Team Coach Requests</h3>
                 
                 <ul className="AdminCoachRequestList">
-
+{console.log(userData&&userData.length>0)}
                     {
 
-                        userData.map(x => {
+                       (userData&&userData.length>0)?(userData.map(x => {
 
-                            return (
-
-                                <div className="AdminCoachRequestListElements">
+                            return(
+                                 <div className="AdminCoachRequestListElements">
 
                                     <li className="col-1 text-end pe-3">
 
@@ -87,20 +88,29 @@ navigate(`/Teamcoachdetailspopup/${id}`)
                                     </li>
 
                                 </div>
-
                             )
 
-                        })
+                               
+{console.log(x.teamName)}
+                            
+
+                        })):(
+                          <h1 className="AdminCoachRequestH5">No New Requests  Found</h1>
+                        )
                         
                     }
 
-                </ul>
+                </ul>{
+                     (userData&&userData.length>0)?(userData.map(x => {
+                        <div className="text-end">
+
+                        <a href=" " alt=" " >View More</a>
+    
+                    </div>}
+                     )):(<p></p>)
+                }
             
-                <div className="text-end">
-
-                    <a href=" " alt=" " >View More</a>
-
-                </div>
+               
                 
             </div>
 
