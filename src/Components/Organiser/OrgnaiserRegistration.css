@@ -230,9 +230,10 @@
 }
 
 input[type=file]::file-selector-button {
+
     font: inherit;
-    -webkit-appearance: icon;
-    appearance: icon;
+    -webkit-appearance: none;
+    appearance: none;
     position: absolute;
     background-color: #00000000;
     color: #00000000;

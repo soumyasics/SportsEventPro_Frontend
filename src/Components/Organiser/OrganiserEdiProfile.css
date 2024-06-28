@@ -17,7 +17,6 @@
     align-self: center;
     width: 473px;
     height: 48px;
-    border: 1px solid;
 
 }
 
@@ -56,3 +55,18 @@
 
 }
 
+.OrganiserEditProfile-body {
+
+    display: flex;
+    flex-direction: row;
+    border: 2px solid;
+
+}
+
+.OrganiserEditProfile-body-left {
+
+    display: flex;
+    flex-direction: column;
+    border: 2px solid;
+
+}

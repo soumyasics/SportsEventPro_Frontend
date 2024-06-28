@@ -37,6 +37,21 @@ function OrganiserEditProfile() {
 
             </div>
 
+            <div className='OrganiserEditProfile-body'>
+
+                <div className='OrganiserEditProfile-body-left'>
+
+                    <div>
+
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
 
     )
