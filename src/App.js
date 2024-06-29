@@ -39,6 +39,7 @@ import OrganiserDashboard from './Components/Organiser/OrganiserDashboard';
 import OrganiserSideBar from './Components/Organiser/OrganiserSideBar'
 import OrganiserDashboardNavBar from './Components/Organiser/OrganiserDashboardNavBar';
 import OrganiserViewProfile from './Components/Organiser/OrganiserViewProfile';
+import AdminViewAprvdCoachIndividual from './Components/Admin/TeamCoach/AdminViewAprvdCoachIndividual';
 import AdminMain from './Components/Admin/AdminMain';
 
 function App() {
@@ -65,7 +66,9 @@ function App() {
           {/* <Route exact path='/AdminDashbord' element={[<AdminTopbar />, <Adminsidebar />, <AdminDashbordTopContent />, <AdminDashbordTopContent_2 />]} /> */}
          <Route path='/admindashboard' element={[<AdminTopbar/>,<AdminMain data="admindashboard"/>]}/>
           <Route exact path="/AdminTopbar" element={<AdminTopbar />} />
-          <Route exact path='/AdminViewTeamCoach' element={[<MainNavbar/>,<AdminViewTeamCoach/>]}/>
+          <Route exact path='/AdminViewTeamCoach' element={[<AdminTopbar />, <Adminsidebar />,,<AdminViewTeamCoach/>]}/>
+          <Route exact path='/AdminViewAprvdCoachIndividual/:id' element={[<AdminTopbar />, <Adminsidebar />,,<AdminViewAprvdCoachIndividual/>]}/>
+
           <Route exact path='/AdminViewOrganiser' element={[<MainNavbar/>,<AdminViewOrganiser/>]} />
           <Route exact path='/AdminViewOrganiserRequest' element={[<MainNavbar/>,<AdminViewOrganiserRequest/>]} />
           <Route exact path='/ViewCoachRequest' element={[<MainNavbar />,<Adminsidebar />, <AdminViewCoachRequest />]} />
@@ -82,6 +85,7 @@ function App() {
           <Route exact path="/TeamCoachLogin" element={[<TeamCoachLogin />,]} />
           <Route exact path="/TeamCoachHomePage" element={[<MainNavbar/>,<TeamCoachHomePage/>,<Aboutpage/>,<UserFooter/>]}/>
           <Route exact path="/TeamCoachreg" element={[<MainNavbar />, <TeamcoachReg />, <UserFooter />]} />
+          <Route exact path="/AdminResetPass" element={[<AdminTopbar />, <Adminsidebar />,<AdminResetPass />]} />
           <Route exact path="/Aboutpage" element={[<MainNavbar />, <Aboutpage />, <UserFooter />]} />
           <Route exact path="/Enquiries" element={[<MainNavbar />, <Enquiries />, <UserFooter />]} />
           <Route exact path="/TeamCoachViewpage" element={[, <TeamCoachViewpage />]} />

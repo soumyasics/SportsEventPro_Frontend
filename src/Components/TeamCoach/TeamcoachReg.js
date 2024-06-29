@@ -24,7 +24,7 @@ console.log(plus);
         category: '',
         totalmembers: plus,
         pincode: '',
-        state: '',
+        state: 'Kerala',
         contactnumber: '',
         certificate: '',
         password: '',
@@ -371,7 +371,7 @@ console.log(plus);
                                          value={data.state}
                                             onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
-                                            {errors.state && <div className="text-danger ">{errors.state}</div>}
+                                            {/* {errors.state && <div className="text-danger ">{errors.state}</div>} */}
                                         </div>
                                     </div>
                                 </div>
@@ -379,14 +379,14 @@ console.log(plus);
                                     <div className='teamcoachn1'>
                                         <div class="dropdown dropdowninput">
                                             <div className='teamCoachRegDiv-Text'>
-                                                <label>Country</label>
+                                                <label>State</label>
                                             </div>
                                             <div className='TeamCoachField-10'>
-                                                <select class="form-select" aria-label="Default select example" name="country" onChange={handleChange}>
-                                                    <option selected value="India">India</option>
-                                                    <option value="Canada">Canada</option>
-                                                    <option value="Japan">Japan</option>
-                                                    <option value="Germany">Germany</option>
+                                                <select class="form-select" aria-label="Default select example" name="state" onChange={handleChange}>
+                                                    <option selected value="Kerala">Kerala</option>
+                                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                                    <option value="Karnataka">Karnataka</option>
+                                                    <option value="Maharashtra">Maharashtra</option>
                                                 </select>
                                             </div>
                                         </div>
