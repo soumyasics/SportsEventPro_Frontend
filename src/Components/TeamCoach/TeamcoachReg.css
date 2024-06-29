@@ -134,3 +134,8 @@ width: 151px;
     text-align: center;
     margin-top: -27px;
 }
+
+/* .btn-check:checked + .btn-secondary{
+    background-color: blue;
+    color: white;
+} */

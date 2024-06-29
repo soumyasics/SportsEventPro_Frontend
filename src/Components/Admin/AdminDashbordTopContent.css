@@ -1,4 +1,4 @@
-.AdminDashbordTopContentDiv-1{
+/* .AdminDashbordTopContentDiv-1{
     background: url('../../Assets/AdminDashbordTopContent1.png') lightgray 50% / cover no-repeat;
     width: 100px;
     height: 100px;
@@ -51,9 +51,26 @@ height: 125px;
 }
 .AdminDashboardContentStylerow{
     gap: 40px;
-    /* width: 1375px; */
+    width: 1375px;
     margin-left: 244px;
     margin-bottom: 70px;
     width: 1126px;
     
+} */
+
+
+.Admin-Dashboard-Content-Style{
+    height: 20vh;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0, 0.10);
+    border-radius: 5px;
+}
+.Admin-Dashboard-Content-topcontent1img{
+    height: 13vh;
+    width: 80%;
+}
+.Admin-Dashboard-Content-span{
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
 }
