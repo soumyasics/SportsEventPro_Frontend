@@ -1,89 +1,68 @@
-import React, { useEffect, useState } from 'react'
-import './TeamCoachdetailspopup.css'
-import img1 from '../../Assets/solar_phone-bold-duotone.jpg'
-import img2 from '../../Assets/ri_open-arm-fill.jpg'
-import img3 from '../../Assets/mdi_city.jpg'
-import img4 from '../../Assets/material-symbols_mail-outline.jpg'
-import img5 from '../../Assets/majesticons_pin-line.jpg'
-import img6 from '../../Assets/gg_list.jpg'
-import img7 from '../../Assets/frame.jpg'
-import img8 from '../../Assets/ep_place.jpg'
-import img9 from '../../Assets/arcticons_asr-licence.jpg'
-import img10 from '../../Assets/emojione_flag-for-india.jpg'
-import img11 from '../../Assets/carbon_location-filled.jpg'
-import img12 from '../../Assets/arcticons_team-fight-tactics.jpg'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import "./TeamCoachdetailspopup.css";
+import img1 from "../../Assets/solar_phone-bold-duotone.svg";
+import img2 from "../../Assets/ri_open-arm-fill.jpg";
+import img3 from "../../Assets/mdi_city.jpg";
+import img4 from "../../Assets/material-symbols_mail-outline.jpg";
+import img5 from "../../Assets/majesticons_pin-line.jpg";
+import img6 from "../../Assets/gg_list.jpg";
+import img7 from "../../Assets/frame.jpg";
+import img8 from "../../Assets/ep_place.jpg";
+import img9 from "../../Assets/arcticons_asr-licence.jpg";
+import img10 from "../../Assets/emojione_flag-for-india.jpg";
+import img11 from "../../Assets/carbon_location-filled.jpg";
+import img12 from "../../Assets/arcticons_team-fight-tactics.jpg";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-import axiosInstance from '../Constant/BaseURL'
+import axiosInstance from "../Constant/BaseURL";
 const url = axiosInstance.defaults.url;
 
 console.log("url,", url);
 
 function Teamcoachdetailspopup() {
-        const { id } = useParams()
-        const [userData, setUserData] = useState({});
+  const { id } = useParams();
+  const [userData, setUserData] = useState({});
+  const navigate = useNavigate();
 
-        const navigate=useNavigate()
+  useEffect(() => {
+    axiosInstance
+      .post(`viewTeamCoachById/${id}`)
+      .then((res) => {
+        setUserData(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [id]);
 
-        useEffect(() => {
+  const approve = (id) => {
+    axiosInstance
+      .post(`/approveTeamCoachById/${id}`)
+      .then((res) => {
+        if (res.data.status === 200) {
+          alert("Team Coach Approved");
+          navigate("/AdminViewTeamCoach");
+        }
+      })
+      .catch((error) => {
+        console.error("Error!", error);
+      });
+  };
 
-                let res;
-
-
-                axiosInstance.post(`viewTeamCoachById/${id}`).then(res => {
-
-                        console.log(res);
-
-
-                        setUserData(res.data.data);
-
-                }).catch(err => {
-                        console.log(err);
-                })
-
-
-
-        }, []);
-        const approve = (id) => {
-                axiosInstance
-                  .post(`/approveTeamCoachById/${id}`)
-                  .then((res) => {
-                        console.log(res);
-
-                    if (res.data.status === 200) {
-                      alert('Team Coach Approved')
-                        console.log(res);
-                        navigate('/AdminViewTeamCoach')
-                    }
-                  })
-                  .catch((error) => {
-                    console.error("Error!", error);
-                  });
-              };
-      
-        const reject = (id) => {
-                axiosInstance
-                  .post(`/rejectTeamCoachById/${id}`)
-                  .then((res) => {
-                        console.log(res);
-
-                    if (res.data.status === 200) {
-                      
-                        alert('Team Coach Request Rejected')
-                        console.log(res);
-                        navigate('/AdminViewTeamCoach')                    }
-                  })
-                  .catch((error) => {
-                    console.error("Error!", error);
-                  });
-              };
-        
-        
-        
-            
-            console.log(userData);
-
+  const reject = (id) => {
+    axiosInstance
+      .post(`/rejectTeamCoachById/${id}`)
+      .then((res) => {
+        if (res.data.status === 200) {
+          alert("Team Coach Request Rejected");
+          navigate("/AdminViewTeamCoach");
+        }
+      })
+      .catch((error) => {
+        console.error("Error!", error);
+      });
+  };
 
         return (
                 <div className='mb-5'>
@@ -97,8 +76,8 @@ function Teamcoachdetailspopup() {
                                 </div>
                         </div>
                         <div className='row container'>
-                                <div className='col container'>
-                                        <div className='row Teamcoachdetailspopupmainrow-1 container ms-5 ps-5 '>
+                                <div className='col-5 container'>
+                                        <div className='row Teamcoachdetailspopupmainrow-1 container ms-5 ps-5 container '>
                                                 <div className='col-2 '>
                                                         <img className='Teamcoachdetailspopupcommon-style-1' src={img1}></img>
                                                 </div>
@@ -109,7 +88,9 @@ function Teamcoachdetailspopup() {
                                                 <div className='col-5'>
                                                         <label className='Teamcoachdetailspopuplabel-2'>{userData.contact}</label>
                                                 </div>
+                                                <hr className="mt-2"></hr>
                                         </div>
+                                        
                                         <div className='row Teamcoachdetailspopupmainrow-1 container ms-5 ps-5'>
                                                 <div className='col-2'>
                                                         <img className='Teamcoachdetailspopupcommon-style-1' src={img4}></img>
@@ -120,6 +101,7 @@ function Teamcoachdetailspopup() {
                                                 <div className='col-5'>
                                                         <label className='Teamcoachdetailspopuplabel-2'>{userData.email}</label>
                                                 </div>
+                                                <hr className="mt-2"></hr>
                                         </div>
                                         <div className='row Teamcoachdetailspopupmainrow-1 container ms-5 ps-5'>
                                                 <div className='col-2'>
@@ -131,6 +113,7 @@ function Teamcoachdetailspopup() {
                                                 <div className='col-5'>
                                                         <label className='Teamcoachdetailspopuplabel-2'>{userData.totalteammembers}</label>
                                                 </div>
+                                                <hr className="mt-2"></hr>
                                         </div>
                                         <div className='row Teamcoachdetailspopupmainrow-1 ms-5 ps-5'>
                                                 <div className='col-2'>
@@ -142,10 +125,11 @@ function Teamcoachdetailspopup() {
                                                 <div className='col-5'>
                                                         <label className='Teamcoachdetailspopuplabel-2'>{userData.pincode}</label>
                                                 </div>
+                                                <hr className="mt-2"></hr>
                                         </div>
                                         <div className='row Teamcoachdetailspopupmainrow-1 ms-5 ps-5'>
                                                 <div className='col-2'>
-                                                        <img className='Teamcoachdetailspopupcommon-style-1' src={img5}></img>
+                                                        <img className='Teamcoachdetailspopupcommon-style-1' src={img8}></img>
                                                 </div>
                                                 <div className='col-5'>
                                                         <label className='Teamcoachdetailspopuplabel'>State</label>
@@ -153,8 +137,9 @@ function Teamcoachdetailspopup() {
                                                 <div className='col-5'>
                                                         <label className='Teamcoachdetailspopuplabel-2'>{userData.state}</label>
                                                 </div>
+                                                <hr className="mt-2"></hr>
                                         </div>
-                                        <div className='row Teamcoachdetailspopupmainrow-1 ms-5 ps-5'>
+                                        <div className='row Teamcoachdetailspopupmainrow-1 ms-5 ps-5 '>
                                                 <div className='col-2'>
                                                         <img className='Teamcoachdetailspopupcommon-style-1' src={img10}></img>
                                                 </div>
@@ -163,10 +148,13 @@ function Teamcoachdetailspopup() {
                                                 </div>                                                        <div className='col-5'>
                                                         <label className='Teamcoachdetailspopuplabel-2'>{userData.country}</label>
                                                 </div>
-                                        </div>     
+                                                <hr className="mt-2"></hr> 
+                                        </div>   
+                                         
                                 </div>
-                                <div className='col'>
-                                        <div className='col Teamcoachdetailspopupmainrow-right-1'>
+                                <div className="col-2"></div>
+                                <div className='col-5 container'>
+                                        <div className='col Teamcoachdetailspopupmainrow-right-1 container'>
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
                                                         <div className='col-2'>
                                                                 <img className='Teamcoachdetailspopupcommon-style-1' src={img6}></img>
@@ -177,6 +165,7 @@ function Teamcoachdetailspopup() {
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.category}</label>
                                                         </div>
+                                                        <hr className="mt-2"></hr>
                                                 </div>
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
                                                         <div className='col-2'>
@@ -188,6 +177,7 @@ function Teamcoachdetailspopup() {
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.teamName}</label>
                                                         </div>
+                                                        <hr className="mt-2"></hr>
                                                 </div>
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
                                                         <div className='col-2'>
@@ -199,6 +189,7 @@ function Teamcoachdetailspopup() {
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.address}</label>
                                                         </div>
+                                                        <hr className="mt-2"></hr>
                                                 </div>
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
                                                         <div className='col-2'>
@@ -210,6 +201,7 @@ function Teamcoachdetailspopup() {
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.city}</label>
                                                         </div>
+                                                        <hr className="mt-2"></hr>
                                                 </div>
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
                                                         <div className='col-2'>
@@ -221,6 +213,7 @@ function Teamcoachdetailspopup() {
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'></label>
                                                         </div>
+                                                        <hr className="mt-2"></hr>
                                                 </div>
                                                 <div className='row Teamcoachdetailspopupmainrow-1'>
                                                         <div className='col-2'>
@@ -232,6 +225,7 @@ function Teamcoachdetailspopup() {
                                                         <div className='col-5'>
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.experience}</label>
                                                         </div>
+                                                        <hr className="mt-2"></hr>
                                                 </div>
                                                 
                                         </div>
@@ -249,4 +243,4 @@ function Teamcoachdetailspopup() {
         )
 }
 
-export default Teamcoachdetailspopup
+export default Teamcoachdetailspopup;
