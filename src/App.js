@@ -39,6 +39,7 @@ import OrganiserDashboard from './Components/Organiser/OrganiserDashboard';
 import OrganiserSideBar from './Components/Organiser/OrganiserSideBar'
 import OrganiserDashboardNavBar from './Components/Organiser/OrganiserDashboardNavBar';
 import OrganiserViewProfile from './Components/Organiser/OrganiserViewProfile';
+import AdminViewAprvdCoachIndividual from './Components/Admin/TeamCoach/AdminViewAprvdCoachIndividual';
 
 function App() {
 
@@ -65,6 +66,8 @@ function App() {
           <Route exact path='/AdminDashbord' element={[<AdminTopbar />, <Adminsidebar />, <AdminDashbordTopContent />, <AdminDashbordTopContent_2 />]} />
           <Route exact path="/AdminTopbar" element={<AdminTopbar />} />
           <Route exact path='/AdminViewTeamCoach' element={[<AdminTopbar />, <Adminsidebar />,,<AdminViewTeamCoach/>]}/>
+          <Route exact path='/AdminViewAprvdCoachIndividual/:id' element={[<AdminTopbar />, <Adminsidebar />,,<AdminViewAprvdCoachIndividual/>]}/>
+
           <Route exact path='/AdminViewOrganiser' element={[<MainNavbar/>,<AdminViewOrganiser/>]} />
           <Route exact path='/AdminViewOrganiserRequest' element={[<MainNavbar/>,<AdminViewOrganiserRequest/>]} />
           <Route exact path='/ViewCoachRequest' element={[<MainNavbar />,<Adminsidebar />, <AdminViewCoachRequest />]} />

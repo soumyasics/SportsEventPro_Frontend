@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./AdminViewTeamCoach.css"
 import img from '../../../Assets/Search Button.svg'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from "../../Constant/BaseURL";
 
 function AdminViewTeamCoach () {
@@ -81,7 +81,7 @@ navigate(`/Teamcoachdetailspopup/${id}`)
                         <td className='col-2 AdminViewTeamCoach-tableBodyData'>{x.teamName} {/* Team Name */}</td>
                         <td className='col-2 AdminViewTeamCoach-tableBodyData'>{x.category} {/* Sport */}</td>
                         <td className='col-2 AdminViewTeamCoach-tableBodyData'>{x.totalteammembers} {/* Team Count */}</td>
-                        <td className='col-2 AdminViewTeamCoach-tableBodyData'x><a href=" " alt=""> View More </a> {/* Coach Name */}</td>
+                        <td className='col-2 AdminViewTeamCoach-tableBodyData'x><Link to={`/AdminViewAprvdCoachIndividual/${x._id}`} alt=""> View More </Link> {/* Coach Name */}</td>
                         
                     </tr>
      )})):(
