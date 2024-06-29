@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
-import "./TeamCoachdetailspopup.css";
-import img1 from "../../Assets/solar_phone-bold-duotone.svg";
-import img2 from "../../Assets/ri_open-arm-fill.jpg";
-import img3 from "../../Assets/mdi_city.jpg";
-import img4 from "../../Assets/material-symbols_mail-outline.jpg";
-import img5 from "../../Assets/majesticons_pin-line.jpg";
-import img6 from "../../Assets/gg_list.jpg";
-import img7 from "../../Assets/frame.jpg";
-import img8 from "../../Assets/ep_place.jpg";
-import img9 from "../../Assets/arcticons_asr-licence.jpg";
-import img10 from "../../Assets/emojione_flag-for-india.jpg";
-import img11 from "../../Assets/carbon_location-filled.jpg";
-import img12 from "../../Assets/arcticons_team-fight-tactics.jpg";
+import "../../TeamCoach/TeamCoachdetailspopup.css";
+import img1 from "../../../Assets/solar_phone-bold-duotone.svg";
+import img2 from "../../../Assets/ri_open-arm-fill.jpg";
+import img3 from "../../../Assets/mdi_city.jpg";
+import img4 from "../../../Assets/material-symbols_mail-outline.jpg";
+import img5 from "../../../Assets/majesticons_pin-line.jpg";
+import img6 from "../../../Assets/gg_list.jpg";
+import img7 from "../../../Assets/frame.jpg";
+import img8 from "../../../Assets/ep_place.jpg";
+import img9 from "../../../Assets/arcticons_asr-licence.jpg";
+import img10 from "../../../Assets/emojione_flag-for-india.jpg";
+import img11 from "../../../Assets/carbon_location-filled.jpg";
+import img12 from "../../../Assets/arcticons_team-fight-tactics.jpg";
 import { useNavigate, useParams } from "react-router-dom";
 
-import axiosInstance from "../Constant/BaseURL";
+import axiosInstance from "../../Constant/BaseURL";
 const url = axiosInstance.defaults.url;
 
 console.log("url,", url);
