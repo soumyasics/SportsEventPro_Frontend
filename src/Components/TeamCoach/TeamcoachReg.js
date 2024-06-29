@@ -267,7 +267,7 @@ console.log(plus);
                                             <input type="radio" class="btn-check" name="category" id="category4" autocomplete="off" onChange={handleChange} value={"badminton"}/>
                                             <label class="btn btn-secondary category-1-5" for="category4"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Badminton</label>
                                             <input type="radio" class="btn-check" name="category" id="category5" autocomplete="off" onChange={handleChange} value={"hockey"}/>
-                                            <label class="btn btn-secondary category-1-5" for="category5"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Hockey</label>
+                                            <label class="btn btn-secondary category-1-5" for="category5"style={{backgroundColor:'rggitba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Hockey</label>
                                         </div>
                                         <div class='categoryvalidation'>
                             {errors.category && <div className="text-danger ">{errors.category}</div>}
@@ -379,14 +379,14 @@ console.log(plus);
                                     <div className='teamcoachn1'>
                                         <div class="dropdown dropdowninput">
                                             <div className='teamCoachRegDiv-Text'>
-                                                <label>State</label>
+                                                <label>Country</label>
                                             </div>
                                             <div className='TeamCoachField-10'>
-                                                <select class="form-select" aria-label="Default select example" name="state" onChange={handleChange}>
-                                                    <option selected value="Kerala">Kerala</option>
-                                                    <option value="Tamil Nadu">Tamil Nadu</option>
-                                                    <option value="Karnataka">Karnataka</option>
-                                                    <option value="Maharashtra">Maharashtra</option>
+                                                <select class="form-select" aria-label="Default select example" name="country" onChange={handleChange}>
+                                                    <option selected value="India">India</option>
+                                                    <option value="Japan">Japan</option>
+                                                    <option value="Brazil">Brazil</option>
+                                                    <option value="China">China</option>
                                                 </select>
                                             </div>
                                         </div>
