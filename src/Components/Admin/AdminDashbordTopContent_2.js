@@ -43,7 +43,8 @@ function AdminDashbordTopContent_2() {
             <img src={topcontent6} className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className='text-center'>
-            <button className='AdminDashbordTopContent_2-button1'><Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>View All Requests</Link></button>
+            <button className='AdminDashbordTopContent_2-button1'>
+              <Link to='/AdminViewOrganiserRequest' className='AdminDashbordTopContent_2-link'>View All Requests</Link></button>
           </div>
         </div>
         <div className='col'>
@@ -51,7 +52,7 @@ function AdminDashbordTopContent_2() {
             <img src={topcontent5} className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className='text-center'>
-            <button className='AdminDashbordTopContent_2-button1'><Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>View All Requests</Link></button>
+            <button className='AdminDashbordTopContent_2-button1'><Link to='/AdminViewOrganiser' className='AdminDashbordTopContent_2-link'>View All Oraganizer</Link></button>
           </div>
         </div>
       </div>
