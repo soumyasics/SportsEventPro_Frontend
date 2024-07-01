@@ -13,6 +13,7 @@ import img10 from "../../../Assets/emojione_flag-for-india.jpg";
 import img11 from "../../../Assets/carbon_location-filled.jpg";
 import img12 from "../../../Assets/arcticons_team-fight-tactics.jpg";
 import { useNavigate, useParams } from "react-router-dom";
+import './AdminViewAprvdCoachIndividual.css'
 
 import axiosInstance from "../../Constant/BaseURL";
 const url = axiosInstance.defaults.url;
@@ -24,49 +25,64 @@ function Teamcoachdetailspopup() {
   const [userData, setUserData] = useState({});
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const loadData=()=>{
     axiosInstance
-      .post(`viewTeamCoachById/${id}`)
-      .then((res) => {
-        console.log(res.data.data);
-        setUserData(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    .post(`viewTeamCoachById/${id}`)
+    .then((res) => {
+      console.log(res.data.data);
+      setUserData(res.data.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+  useEffect(() => {
+   loadData()
   }, [id]);
 
-  const approve = (id) => {
-    axiosInstance
-      .post(`/approveTeamCoachById/${id}`)
-      .then((res) => {
-        if (res.data.status === 200) {
-          alert("Team Coach Approved");
-          navigate("/AdminViewTeamCoach");
-        }
-      })
-      .catch((error) => {
-        console.error("Error!", error);
-      });
-  };
+ 
 
-  const reject = (id) => {
-    axiosInstance
-      .post(`/rejectTeamCoachById/${id}`)
-      .then((res) => {
-        if (res.data.status === 200) {
-          alert("Team Coach Request Rejected");
-          navigate("/AdminViewTeamCoach");
-        }
-      })
-      .catch((error) => {
-        console.error("Error!", error);
-      });
-  };
+
+  const handleActive = (id) => {
+    console.log(id);
+    axiosInstance.post(`/activateTeamCoachById/${id}`)
+    .then((res)=>{
+      if(res.data.status === 200){
+        
+userData.isActive=true   
+loadData()
+}
+    })
+    .catch((err) => {
+      console.log("Error",err);
+    })
+  }
+
+  const handleDeactive = (id) => {
+    axiosInstance.post(`/deActivateTeamCoachById/${id}`)
+    .then((res) => {
+      if(res.data.status === 200){
+        userData.isActive=false   
+        loadData()
+
+      }
+    })
+    .catch((err) => {
+      console.log("Error",err);
+    })
+  }
+  const toggleUserActiveState = (users) => {
+    if(users.isActive){
+      handleDeactive(users._id)
+    }
+    else{
+      handleActive(users._id)
+    }
+  }
 
   return (
-    <div className=" Teamcoachdetailspopupdiv-1-1">
-      <div className="TeamCoachDetailscontaindiv">
+    <div className="Teamcoachdetailspopupdiv-1-1">
+      <div className=".AdminViewActiveCoaches-div1 w-75 bg-light container">
         <div className="row">
           <div className="col Teamcoachdetailspopupdiv-1">
             <h1 className="Teamcoachdetailspopuptext-1">Coach Details</h1>
@@ -280,32 +296,26 @@ function Teamcoachdetailspopup() {
                 />
               </div>
               <div className="col-5">
-                <label className="Teamcoachdetailspopuplabel">Country</label>
+                <label className="Teamcoachdetailspopuplabel">State</label>
               </div>
               <div className="col-5">
                 <label className="Teamcoachdetailspopuplabel-2">
-                  {userData.country}
+                  {userData.state}
                 </label>
               </div>
             </div>
           </div>
         </div>
         <div className="row Teamcoachdetailspopupbtn-main">
+         
           <div className="col Teamcoachdetailspopupbtn-style">
+            
             <button
-              className="Teamcoachdetailspopupbtn-1"
-              onClick={() => approve(userData._id)}
-            >
-              Approve
-            </button>
-          </div>
-          <div className="col Teamcoachdetailspopupbtn-style">
-            <button
-              className="Teamcoachdetailspopupbtn-2"
-              onClick={() => reject(userData._id)}
-            >
-              Reject
-            </button>
+                     className={`toggle-button ${userData.isActive ? 'active' : 'inactive'}`} 
+                    onClick={()=>{toggleUserActiveState(userData)}}
+                    >
+                      {userData.isActive ? 'Active' : 'Inactive'}
+                    </button>
           </div>
         </div>
       </div>

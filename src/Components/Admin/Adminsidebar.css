@@ -5,8 +5,8 @@
     background: #292929;
     /* width: 319px;
     height: 729px; */
-    height: 120vh;
-    width: 100%;
+    min-height: 120vh;
+    /* width: 25%; */
 }
 .adminsidebarbutton-1{
     border-radius: 20px;

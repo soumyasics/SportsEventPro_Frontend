@@ -9,20 +9,23 @@ function TeamcoachReg() {
 const navigate=useNavigate()
 
     const [plus, setPlus] = useState(1)
-
+let count=0
     const add = (event) => {
         setPlus(plus + 1)
+        count=plus+1
         event.preventDefault()
     }
     const sub = (event) => {
         setPlus(plus - 1)
+        count=plus-1
+
         event.preventDefault()
     }
 console.log(plus);
     const [data, setData] = useState({
         name: '',
         category: '',
-        totalmembers: plus,
+        totalmembers: count,
         pincode: '',
         state: 'Kerala',
         contactnumber: '',
@@ -38,6 +41,8 @@ console.log(plus);
         confirmpassword: '',
 
     })
+    const [selectedCategory, setSelectedCategory] = useState('');
+
     const [errors, setErrors] = useState({
 
         name: '',
@@ -51,7 +56,7 @@ console.log(plus);
         teamname: '',
         address: '',
         city: '',
-        country: '',
+        country: 'India',
         email: '',
         experience: '',
         confirmpassword: '',
@@ -66,6 +71,10 @@ console.log(plus);
         ...prevData,
         [name]: files[0]
       }));
+
+      if (name === 'category') {
+        setSelectedCategory(value);
+      }
     } 
     else if (event.target.type=="radio") {
         setData(prevData => ({
@@ -166,10 +175,10 @@ console.log(plus);
     const BackendData = () => {
         console.log("fun called", data);
  let formData = new FormData();
-
+console.log(plus);
             formData.append('name',data.name);
             formData.append('category', data.category);
-            formData.append('totalteammembers', data.totalmembers);
+            formData.append('totalteammembers', plus);
             formData.append('pincode', data.pincode);
             formData.append('state', data.state);
             formData.append('contact', data.contactnumber);
@@ -253,7 +262,7 @@ console.log(plus);
                                             <label>Select Category</label>
                                         </div>
 
-                                        <div className='TeamCoachRegCategory'>
+                                        {/* <div className='TeamCoachRegCategory'>
                                             <input type="radio" 
                                             class="btn-check" 
                                             name="category" 
@@ -268,7 +277,60 @@ console.log(plus);
                                             <label class="btn btn-secondary category-1-5" for="category4"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Badminton</label>
                                             <input type="radio" class="btn-check" name="category" id="category5" autocomplete="off" onChange={handleChange} value={"hockey"}/>
                                             <label class="btn btn-secondary category-1-5" for="category5"style={{backgroundColor:'rggitba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Hockey</label>
-                                        </div>
+                                        </div> */}
+
+
+
+
+
+
+
+<div className='TeamCoachRegCategory'>
+                {['Cricket', 'Football', 'Tennis', 'Badminton', 'Hockey'].map((category, index) => (
+                  <React.Fragment key={index}>
+                    <input
+                      type="radio"
+                      className="btn-check"
+                      name="category"
+                      id={`category${index}`}
+                      autoComplete="off"
+                      onChange={handleChange}
+                      value={category.toLowerCase()}
+                      checked={data.category === category.toLowerCase()} // Ensure the radio button is checked based on state
+                    />
+                    <label
+                      className={`btn btn-secondary category-1-5 ${data.category === category.toLowerCase() ? 'selected-button' : ''}`}
+                      htmlFor={`category${index}`}
+                      style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.05)',
+                        color: 'black',
+                        fontSize: '14px',
+                        fontWeight: '600',
+                        marginLeft: '10px',
+                        marginRight: '10px'
+                      }}
+                    >
+                      {category}
+                    </label>
+                  </React.Fragment>
+                ))}
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                         <div class='categoryvalidation'>
                             {errors.category && <div className="text-danger ">{errors.category}</div>}
                         </div>
@@ -367,9 +429,14 @@ console.log(plus);
                                 <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>State</label></div>
-                                        <input className='TeamCoachField-9' type='text' placeholder='Enter State' name="state"
-                                         value={data.state}
-                                            onChange={handleChange} />
+
+                                            <select class="form-select" aria-label="Default select example" name="state" onChange={handleChange}>
+                                                    <option selected value="Kerala">Kerala</option>
+                                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                                    <option value="Karnataka">Karnataka</option>
+                                                    <option value="Maharashtra">Maharashtra</option>
+                                                </select>
+                                        
                                         <div class='teamCoachRegvalidationname'>
                                             {/* {errors.state && <div className="text-danger ">{errors.state}</div>} */}
                                         </div>
@@ -382,12 +449,7 @@ console.log(plus);
                                                 <label>Country</label>
                                             </div>
                                             <div className='TeamCoachField-10'>
-                                                <select class="form-select" aria-label="Default select example" name="country" onChange={handleChange}>
-                                                    <option selected value="India">India</option>
-                                                    <option value="Japan">Japan</option>
-                                                    <option value="Brazil">Brazil</option>
-                                                    <option value="China">China</option>
-                                                </select>
+                                            <input className='TeamCoachField-9' type='text' value="India" disabled name="country" onChange={handleChange} />
                                             </div>
                                         </div>
                                     </div>

@@ -7,6 +7,8 @@
     font-weight: 500;
     font-style: normal;
     text-align: center;
+    background-color :#fff;
+    min-height:  800px;
 
 }
 
@@ -49,7 +51,7 @@
     position: absolute;
     z-index: 1;
     margin-top: 45.5px;
-    margin-left: 400px;
+    /* margin-left: 400px; */
     border: 1px solid #CFCFCF;
     background-color: #CFCFCF;
     border-radius: 50px;
@@ -71,13 +73,14 @@
     border-radius: 6px;
     border-collapse: separate;
     border-spacing: 0;
+    width: 100%;
 
 }
 
 .AdminViewTeamCoach-tableHeadRow {
 
     display: flex;
-    width:900px;
+    /* width:950px; */
     height: 65px;
     text-align: left;
     background: #A9ADC582;
@@ -103,7 +106,7 @@
 .AdminViewTeamCoach-tableBodyRow {
 
     display: flex;
-    width: 900px;
+    /* width: 950px; */
     height: 65px;
     text-align: left;
     background: #00000000;
@@ -129,10 +132,8 @@
     gap: 40px;
     /* width: 1375px; */
     top:50px;
-    position: absolute;
-    float: left;
-    margin-left: 350px;
+  
     margin-bottom: 70px;
-    width: 900px;
+    width: 100%;
     
 }

@@ -108,7 +108,7 @@ function OrganizerLogin() {
 
                 alert("Login Successful")
                 localStorage.setItem('admin', 1)
-                navigate('/Organizerhomepage')
+                navigate('/OrganizerDashboard')
 
             } 
             
@@ -158,12 +158,12 @@ function OrganizerLogin() {
 
                                 <div>
                                     
-                                    <label className='Organizerloginuser'>Username</label>
+                                    <label className='Organizerloginuser'>Email Id</label>
                                     
                                     <input
                                         className="Organizerloginput1"
                                         type="text"
-                                        placeholder="Enter Your Username"
+                                        placeholder="Enter Your email-id"
                                         name="email"
                                         value={data.email}
                                         onChange={handleChange}
@@ -239,7 +239,7 @@ function OrganizerLogin() {
 
                 <div>
 
-                    <p className='OrganizerloginSignin-p1'>Don't have an account ? <Link to="/OrganizerReg" class="OrganizerloginSignin">Sign Up</Link></p>
+                    <p className='OrganizerloginSignin-p1'>Don't have an account ? <Link to="/OrganizerRegistration" class="OrganizerloginSignin">Sign Up</Link></p>
                 
                 </div>
 

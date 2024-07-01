@@ -19,11 +19,11 @@ function MainNavbar() {
   <img className='navbarmainimg-1' src={img}/>
 </div>
 
-<div className='col-8'>
+<div className='col-7'>
 <h1 className='navbarmaintext-1 '>Sports Event Pro</h1>
 </div>
 
-<div className='col-3 navbarmaindiv-3 '>
+<div className='col-4 navbarmaindiv-3 '>
 <ul class="nav justify-content-end">
   <li class="nav-item">
   <Link to="/"  class="nav-link mainnavbartext">Home</Link>

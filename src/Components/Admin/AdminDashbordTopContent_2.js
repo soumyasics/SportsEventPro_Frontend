@@ -3,6 +3,8 @@ import "../../Components/Admin/AdminDashbordTopContent_2.css"
 import { Link } from 'react-router-dom'
 import topcontent6 from '../../Assets/AdminDashbordTopContent6.png'
 import topcontent5 from '../../Assets/AdminDashbordTopContent5.png'
+import axiosInstance from '../Constant/BaseURL'
+
 function AdminDashbordTopContent_2() {
   return (
     <div className='container'>
@@ -11,20 +13,24 @@ function AdminDashbordTopContent_2() {
           <h1 className='AdminDashbordTopContent_Div1'>Team Coaches</h1>
         </div>
         <div className='col container'>
-          <div className='text-center'>
-            <img src={topcontent6} className='Admin-Dashbord-TopContent-img6'/>
-          </div>
-          <div className='text-center'>
-            <button className='AdminDashbordTopContent_2-button1'><Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>View All Requests</Link></button>
-          </div>
+          <Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>
+            <div className='text-center'>
+              <img src={topcontent6} className='Admin-Dashbord-TopContent-img6' />
+            </div>
+            <div className='text-center'>
+              <button className='AdminDashbordTopContent_2-button1'>View All Requests</button>
+            </div>
+            </Link>
         </div>
         <div className='col'>
-        <div className='text-center'>
-            <img src={topcontent5} className='Admin-Dashbord-TopContent-img6'/>
+        <Link to='/AdminViewTeamCoach' className='AdminDashbordTopContent_2-link'>
+          <div className='text-center'>
+            <img src={topcontent5} className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className='text-center'>
-            <button className='AdminDashbordTopContent_2-button1'><Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>View All Requests</Link></button>
+            <button className='AdminDashbordTopContent_2-button1'>View All Coaches</button>
           </div>
+          </Link>
         </div>
       </div>
       <hr></hr>
@@ -34,15 +40,15 @@ function AdminDashbordTopContent_2() {
         </div>
         <div className='col container'>
           <div className='text-center'>
-            <img src={topcontent6} className='Admin-Dashbord-TopContent-img6'/>
+            <img src={topcontent6} className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className='text-center'>
             <button className='AdminDashbordTopContent_2-button1'><Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>View All Requests</Link></button>
           </div>
         </div>
         <div className='col'>
-        <div className='text-center'>
-            <img src={topcontent5} className='Admin-Dashbord-TopContent-img6'/>
+          <div className='text-center'>
+            <img src={topcontent5} className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className='text-center'>
             <button className='AdminDashbordTopContent_2-button1'><Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>View All Requests</Link></button>
@@ -54,10 +60,10 @@ function AdminDashbordTopContent_2() {
         <div className='col container ms-5 ps-5 '>
           <h1 className='AdminDashbordTopContent_Div1'>View All Team Viewers</h1>
         </div>
-        
+
         <div className='col-8 text-center'>
           <div className=''>
-            <img src={topcontent5} className='Admin-Dashbord-TopContent-img6'/>
+            <img src={topcontent5} className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className=''>
             <button className='AdminDashbordTopContent_2-button1'><Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>View All Requests</Link></button>
@@ -94,7 +100,7 @@ function AdminDashbordTopContent_2() {
       </div>
       </div>
 </div> */}
-{/* <hr className='AdminDashbordTopContent_2-line'></hr>
+      {/* <hr className='AdminDashbordTopContent_2-line'></hr>
 <div class="container text-center" style={{height:"160px"}}>
   <div class="row">
     <div class="col style">
