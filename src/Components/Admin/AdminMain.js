@@ -9,6 +9,9 @@ import AdminViewTeamCoach from './TeamCoach/AdminViewTeamCoach'
 import AdminViewAprvdCoachIndividual from './TeamCoach/AdminViewAprvdCoachIndividual'
 import Teamcoachdetailspopup from '../TeamCoach/Teamcoachdetailspopup'
 import { useNavigate } from 'react-router-dom'
+import AdminallViewOrganizerRequest from './Organiser/AdminallViewOrganizerRequest'
+import AdminViewOrganiserRequest from './Organiser/AdminViewOrganiserRequest'
+import AdminViewOrganiser from './Organiser/AdminViewOrganiser'
 
 function AdminMain({data}) {
   const navigate = useNavigate(); 
@@ -29,18 +32,22 @@ function AdminMain({data}) {
             <div className='col-9'>
                 {data === 'admindashboard'?(
                     <AdminDashbordTopContent/>
-                    // <AdminDashbordTopContent_2/>
+                    
                 ):data === 'resetpswd'?(
                     <AdminResetPass/>
                 ):data === 'ViewCoachRequest'?(
                   <AdminViewCoachRequest/>
-              ):data === 'AdminViewTeamCoach'?(
+                ):data === 'AdminViewTeamCoach'?(
                 <AdminViewTeamCoach/>
-            ):data === 'Teamcoachdetailspopup'?(
-              <Teamcoachdetailspopup/>
-          ):data === 'AdminViewAprvdCoachIndividual'?(
-              <AdminViewAprvdCoachIndividual/>
-          ):(
+                ):data === 'Teamcoachdetailspopup'?(
+                <Teamcoachdetailspopup/>
+                ):data === 'AdminViewAprvdCoachIndividual'?(
+                <AdminViewAprvdCoachIndividual/>
+                ):data === 'adminvieworganiserrequest'?(
+                  <AdminViewOrganiserRequest/>
+                ):data === 'adminvieworganizerreq'?(
+                <AdminViewOrganiser/>
+                ):(
                     <AdminDashbordTopContent/>
                 )}
             </div>

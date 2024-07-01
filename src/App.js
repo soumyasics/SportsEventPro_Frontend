@@ -42,6 +42,7 @@ import OrganiserViewProfile from './Components/Organiser/OrganiserViewProfile';
 import AdminViewAprvdCoachIndividual from './Components/Admin/TeamCoach/AdminViewAprvdCoachIndividual';
 import AdminMain from './Components/Admin/AdminMain';
 import AdminNav from './Components/Admin/Nav/AdminNav'
+import AdminallViewOrganizerRequest from './Components/Admin/Organiser/AdminallViewOrganizerRequest';
 function App() {
 
 
@@ -69,8 +70,9 @@ function App() {
           <Route exact path='/AdminViewTeamCoach' element={[<AdminNav />, <AdminMain data="AdminViewTeamCoach"/>]}/>
           <Route exact path='/AdminViewAprvdCoachIndividual/:id' element={[<AdminTopbar />,<AdminMain data="AdminViewAprvdCoachIndividual"/>]}/>
 
-          <Route exact path='/AdminViewOrganiser' element={[<AdminNav/>,<AdminViewOrganiser/>]} />
-          <Route exact path='/AdminViewOrganiserRequest' element={[<AdminNav/>,<AdminViewOrganiserRequest/>]} />
+          <Route exact path='/AdminViewOrganiser' element={[<AdminNav/>,<AdminMain data='adminvieworganizerreq'/>]} />
+          <Route exact path='/AdminViewOrganiser1' element={[<AdminNav/>,<AdminViewOrganiser/>]} />
+          <Route exact path='/AdminViewOrganiserRequest' element={[<AdminNav/>,<AdminMain data='adminvieworganiserrequest'/>]} />
           <Route exact path='/ViewCoachRequest' element={[<AdminNav />, <AdminMain data="ViewCoachRequest"  />]} />
           <Route exact path='/AdminDashbordTopContent_2' element={<AdminDashbordTopContent_2 />} />
           <Route exact path='/AdminDashbordTopContent' element={<AdminDashbordTopContent/>} />
@@ -102,7 +104,7 @@ function App() {
           <Route exact path='/OrganizerLogin' element={[<MainNavbar/>,<OrganizerLogin/>,<UserFooter/>]} />
           <Route exact path='/OrganizerForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
           <Route exact path='/OrganizerDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
-
+          <Route path='/adminoraganizerviewrequest' element={[<MainNavbar/>,<AdminMain data='adminallvieworganizerpage'/>]} />
         </Routes>
 
 
