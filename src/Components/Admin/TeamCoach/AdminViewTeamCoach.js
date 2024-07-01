@@ -94,7 +94,7 @@ navigate(`/Teamcoachdetailspopup/${id}`)
 
             </table>
 
-            <div className="btn-group AdminViewTeamCoach-Pagination" role="group" >
+            <div className="btn-group mt-3 mb-3" role="group" >
                 <button type="button" className="btn btn-outline-secondary text-outline-light ">Previous</button>
                 <button type="button" className="btn btn-outline-secondary text-outline-light ps-4 pe-4 ">Next</button>
             </div>

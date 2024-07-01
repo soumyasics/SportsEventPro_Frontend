@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Adminsidebar from './Adminsidebar'
 import AdminDashbordTopContent from './AdminDashbordTopContent'
 import AdminResetPass from './AdminResetPass'
 import AdminLogin from './AdminLogin'
 import AdminDashbordTopContent_2 from './AdminDashbordTopContent_2'
+import AdminViewCoachRequest from './TeamCoach/AdminViewCoachRequest'
+import AdminViewTeamCoach from './TeamCoach/AdminViewTeamCoach'
+import AdminViewAprvdCoachIndividual from './TeamCoach/AdminViewAprvdCoachIndividual'
+import Teamcoachdetailspopup from '../TeamCoach/Teamcoachdetailspopup'
+import { useNavigate } from 'react-router-dom'
 
 function AdminMain({data}) {
+  const navigate = useNavigate(); 
+
+  useEffect(() => {
+    console.log(localStorage.getItem("admin"));
+    if (localStorage.getItem("admin") == 0) {
+      navigate("/AdminLogin");
+    }
+  }, [navigate]); 
   return (
     <div>
       <div>
@@ -19,7 +32,15 @@ function AdminMain({data}) {
                     // <AdminDashbordTopContent_2/>
                 ):data === 'resetpswd'?(
                     <AdminResetPass/>
-                ):(
+                ):data === 'ViewCoachRequest'?(
+                  <AdminViewCoachRequest/>
+              ):data === 'AdminViewTeamCoach'?(
+                <AdminViewTeamCoach/>
+            ):data === 'Teamcoachdetailspopup'?(
+              <Teamcoachdetailspopup/>
+          ):data === 'AdminViewAprvdCoachIndividual'?(
+              <AdminViewAprvdCoachIndividual/>
+          ):(
                     <AdminDashbordTopContent/>
                 )}
             </div>

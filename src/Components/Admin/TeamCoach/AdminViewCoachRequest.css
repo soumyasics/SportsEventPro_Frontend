@@ -7,9 +7,9 @@
     padding: 40px;
     border-radius: 32px;
     top:50px;
-    position: absolute;
+    /* position: absolute; */
     left:400px;
-    width:60%;
+    width:100%;
     
 }
 
@@ -48,15 +48,14 @@
 .AdminCoachRequest-img{
     height: 60px;
     width:80px;
-    padding-right: 20px;
+    padding-right: 5px;
 }
 .AdminCoachRequestH5{
     color:red;
     font-size: large;
 }
-.AdminViewTeamCoach-Stylerow{
+/* .AdminViewTeamCoach-Stylerow{
     gap: 40px;
-    /* width: 1375px; */
     top:50px;
     position: absolute;
     float: left;
@@ -64,4 +63,4 @@
     margin-bottom: 70px;
     width: 1126px;
     
-}
+} */
