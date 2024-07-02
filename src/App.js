@@ -44,6 +44,7 @@ import AdminMain from './Components/Admin/AdminMain';
 import AdminNav from './Components/Admin/Nav/AdminNav'
 import AdminallViewOrganizerRequest from './Components/Admin/Organiser/AdminallViewOrganizerRequest';
 import OrganiserEditProfile from './Components/Organiser/OrganiserEditProfile';
+import ViewerRegistration from './Components/Viewer/ViewerRegistration';
 
 function App() {
 
@@ -92,7 +93,7 @@ function App() {
           <Route exact path="/AdminResetPass" element={[<AdminTopbar />, <Adminsidebar />,<AdminResetPass />]} />
           <Route exact path="/Aboutpage" element={[<MainNavbar />, <Aboutpage />, <UserFooter />]} />
           <Route exact path="/Enquiries" element={[<MainNavbar />, <Enquiries />, <UserFooter />]} />
-          <Route exact path="/TeamCoachViewpage" element={[, <TeamCoachViewpage />]} />
+          <Route exact path="/TeamCoachViewpage" element={[<TeamCoachViewpage />]} />
           <Route exact path='/TeamCoachEditProfile' element={[<TeamCoachEditProfile/>]}/>
           <Route exact path="/nav" element={[<TeamCoachTopbar />]} />
           <Route exact path="/Teamcoachdetailspopup/:id" element={[<AdminNav />, <AdminMain data="Teamcoachdetailspopup"  />]} />
@@ -101,7 +102,7 @@ function App() {
           <Route exact path="/TeamCoachLandingPage2" element={<TeamCoachLandingPage2 />} />
           <Route exact path="/TeamCoachLandingPage3" element={<TeamCoachLandingPage3 />} />
           
-          {/* Oraganizer */}
+          {/* Organizer */}
           <Route exact path='/OrganizerRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
           <Route exact path='/OrganizerLogin' element={[<MainNavbar/>,<OrganizerLogin/>,<UserFooter/>]} />
           <Route exact path='/OrganizerForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
@@ -109,6 +110,11 @@ function App() {
           <Route exact path='/OrganizerEditProfile' element={[<OrganiserEditProfile/>]} />
 
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar/>,<AdminMain data='adminallvieworganizerpage'/>]} />
+
+          {/* Viewer */}
+          <Route exact path='/ViewerRegistration' element={[<MainNavbar/>,<ViewerRegistration/>,<UserFooter/>]}/>
+          
+
         </Routes>
 
 
