@@ -110,7 +110,7 @@ function App() {
           <Route exact path='/OrganizerDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar/>,<AdminMain data='adminallvieworganizerpage'/>]} />
           <Route path='/adminViewOrganizerToApprove/:id' element={[<MainNavbar/>,<AdminMain data='adminViewOrganizerToApprove'/>]} />
-          <Route path='/viewallorganizer' element={<AdminallViewOrganizerRequest/>}/>
+          {/* <Route path='/viewallorganizer' element={<AdminallViewOrganizerRequest/>}/> */}
         </Routes>
 
 
