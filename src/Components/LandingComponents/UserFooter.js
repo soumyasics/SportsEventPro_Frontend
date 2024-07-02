@@ -4,8 +4,8 @@ import "./UserFooter.css";
 function UserFooter() {
   return (
     <div>
-      <div className="userfootermaindiv">
-      <div className='footerdiv-1'>
+      <div className="userfootermaindiv ">
+      <div className='footerdiv-1 mt-2' >
       </div>
       <div className="footerdiv-2">
         <div className="footerdot">

@@ -87,7 +87,7 @@ function OrganiserRegistration() {
         email: '',
         description: '',
         confirmpassword: '',
-        experience:0
+        experience:''
     })
 
     let formIsValid;

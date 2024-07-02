@@ -73,7 +73,6 @@ function AdminResetPass() {
     }
 
     const BackendData = () => {
-        alert("Reset successfull", data);
         axiosInstance.post('adminpassword', data)
             .then(response => {
                 console.log(response);

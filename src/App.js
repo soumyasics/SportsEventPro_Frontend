@@ -43,6 +43,8 @@ import AdminViewAprvdCoachIndividual from './Components/Admin/TeamCoach/AdminVie
 import AdminMain from './Components/Admin/AdminMain';
 import AdminNav from './Components/Admin/Nav/AdminNav'
 import AdminallViewOrganizerRequest from './Components/Admin/Organiser/AdminallViewOrganizerRequest';
+import AdminViewOrganizerToApprove from './Components/Admin/Organiser/AdminViewOrganizerToApprove';
+
 function App() {
 
 
@@ -60,7 +62,7 @@ function App() {
           <Route exact path="/UserFooter" element={<UserFooter />} />
           <Route exact path="/Landingpage2" element={<Landingpage2 />} />
           <Route exact path="/MainNavbar" element={<MainNavbar />} />
-          
+
           {/* Admin */}
           <Route exact path="/AdminLogin" element={[<MainNavbar />, <AdminLogin />, <UserFooter />]} />
           <Route exact path='/AdminDashbordTopContent' element={<AdminDashbordTopContent />} />
@@ -73,6 +75,8 @@ function App() {
           <Route exact path='/AdminViewOrganiser' element={[<AdminNav/>,<AdminMain data='adminvieworganizerreq'/>]} />
           <Route exact path='/AdminViewOrganiser1' element={[<AdminNav/>,<AdminViewOrganiser/>]} />
           <Route exact path='/AdminViewOrganiserRequest' element={[<AdminNav/>,<AdminMain data='adminvieworganiserrequest'/>]} />
+          <Route exact path='/AdminallViewOrganizerRequest/:id' element={[<AdminNav/>,<AdminMain data='AdminallViewOrganizerRequest'/>]} />
+
           <Route exact path='/ViewCoachRequest' element={[<AdminNav />, <AdminMain data="ViewCoachRequest"  />]} />
           <Route exact path='/AdminDashbordTopContent_2' element={<AdminDashbordTopContent_2 />} />
           <Route exact path='/AdminDashbordTopContent' element={<AdminDashbordTopContent/>} />
@@ -84,7 +88,7 @@ function App() {
 
           {/* Team Coach */}
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />
-          <Route exact path="/TeamCoachLogin" element={[<TeamCoachLogin />,]} />
+          <Route exact path="/TeamCoachLogin" element={[<MainNavbar />,<TeamCoachLogin />, <UserFooter />]} />
           <Route exact path="/TeamCoachHomePage" element={[<MainNavbar/>,<TeamCoachHomePage/>,<Aboutpage/>,<UserFooter/>]}/>
           <Route exact path="/TeamCoachreg" element={[<MainNavbar />, <TeamcoachReg />, <UserFooter />]} />
           <Route exact path="/AdminResetPass" element={[<AdminTopbar />, <Adminsidebar />,<AdminResetPass />]} />
@@ -105,6 +109,8 @@ function App() {
           <Route exact path='/OrganizerForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
           <Route exact path='/OrganizerDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar/>,<AdminMain data='adminallvieworganizerpage'/>]} />
+          <Route path='/adminViewOrganizerToApprove/:id' element={[<MainNavbar/>,<AdminMain data='adminViewOrganizerToApprove'/>]} />
+
         </Routes>
 
 

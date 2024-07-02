@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState } from "react";
 import "../../TeamCoach/TeamCoachdetailspopup.css";
 import img1 from "../../../Assets/solar_phone-bold-duotone.svg";
@@ -13,22 +15,22 @@ import img10 from "../../../Assets/emojione_flag-for-india.jpg";
 import img11 from "../../../Assets/carbon_location-filled.jpg";
 import img12 from "../../../Assets/arcticons_team-fight-tactics.jpg";
 import { useNavigate, useParams } from "react-router-dom";
-import './AdminViewAprvdCoachIndividual.css'
+import '../TeamCoach/AdminViewAprvdCoachIndividual.css'
 
 import axiosInstance from "../../Constant/BaseURL";
 const url = axiosInstance.defaults.url;
 
 console.log("url,", url);
 
-function Teamcoachdetailspopup() {
-  const { id } = useParams();
+function AdminViewOrganizerToApprove() {
+    const { id } = useParams();
   const [userData, setUserData] = useState({});
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
 
   const loadData=()=>{
     axiosInstance
-    .post(`viewTeamCoachById/${id}`)
+    .post(`viewOrganizerById/${id}`)
     .then((res) => {
       console.log(res.data.data);
       setUserData(res.data.data);
@@ -81,18 +83,45 @@ loadData()
     }
   }
 
+  const approve = (id) => {
+    axiosInstance
+      .post(`/approveOrganizerById/${id}`)
+      .then((res) => {
+        if (res.data.status === 200) {
+          alert("Team Coach Approved");
+          navigate("/AdminViewOrganiser");
+        }
+      })
+      .catch((error) => {
+        console.error("Error!", error);
+      });
+  };
+
+  const reject = (id) => {
+    axiosInstance
+      .post(`/deleteOrganizerById/${id}`)
+      .then((res) => {
+        if (res.data.status === 200) {
+          alert("Team Coach Request Rejected");
+          navigate("/AdminViewTeamCoach");
+        }
+      })
+      .catch((error) => {
+        console.error("Error!", error);
+      });
+  };
   return (
     <div className="Teamcoachdetailspopupdiv-1-1">
       <div className=".AdminViewActiveCoaches-div1 w-75 bg-light container">
         <div className="row">
           <div className="col Teamcoachdetailspopupdiv-1">
-            <h1 className="Teamcoachdetailspopuptext-1">Coach Details</h1>
+            <h1 className="Teamcoachdetailspopuptext-1">Organizer Details</h1>
           </div>
           <div className="col-4 Teamcoachdetailspopupdiv-2">
             <div className="Teamcoachdetailspopupimgdiv-1-1">
               <label className="Teamcoachdetailspopupimg-1-backend">
                 <img
-                  src={`${url}/${userData?.profilePic?.filename}`}
+                  src={`${url}/${userData?.photo?.filename}`}
                   className="AdminCoachRequest-img"
                   alt="Profile"
                 />
@@ -137,11 +166,11 @@ loadData()
                 />
               </div>
               <div className="col-5">
-                <label className="Teamcoachdetailspopuplabel">Category</label>
+                <label className="Teamcoachdetailspopuplabel">Experience</label>
               </div>
               <div className="col-5">
                 <label className="Teamcoachdetailspopuplabel-2">
-                  {userData.category}
+                  {userData.experience}
                 </label>
               </div>
             </div>
@@ -177,17 +206,17 @@ loadData()
                 />
               </div>
               <div className="col-5">
-                <label className="Teamcoachdetailspopuplabel">Team Name</label>
+                <label className="Teamcoachdetailspopuplabel">Address</label>
               </div>
               <div className="col-5">
                 <label className="Teamcoachdetailspopuplabel-2">
-                  {userData.teamName}
+                  {userData.address}
                 </label>
               </div>
             </div>
           </div>
         </div>
-        <div className="row Teamcoachdetailspopupdiv-5 Teamcoachdetailspopupimpdiv-style">
+         {/* <div className="row Teamcoachdetailspopupdiv-5 Teamcoachdetailspopupimpdiv-style">
           <div className="col">
             <div className="row Teamcoachdetailspopupmainrow-1">
               <div className="col-2">
@@ -208,7 +237,7 @@ loadData()
                 </label>
               </div>
             </div>
-          </div>
+          </div> 
           <div className="col Teamcoachdetailspopupmainrow-right-1">
             <div className="row Teamcoachdetailspopupmainrow-1">
               <div className="col-2">
@@ -228,7 +257,7 @@ loadData()
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="row Teamcoachdetailspopupdiv-6 Teamcoachdetailspopupimpdiv-style">
           <div className="col">
             <div className="row Teamcoachdetailspopupmainrow-1">
@@ -283,7 +312,6 @@ loadData()
                 <label className="Teamcoachdetailspopuplabel">License</label>
               </div>
               <div className="col-5">
-                <label className="Teamcoachdetailspopuplabel-2">Document</label>
                 <button
                   className="btn btn-link"
                   onClick={() => setShowModal(true)}
@@ -317,12 +345,24 @@ loadData()
          
           <div className="col Teamcoachdetailspopupbtn-style">
             
-            <button
-                     className={`toggle-button ${userData.isActive ? 'active' : 'inactive'}`} 
-                    onClick={()=>{toggleUserActiveState(userData)}}
-                    >
-                      {userData.isActive ? 'Active' : 'Inactive'}
-                    </button>
+          <div className="row mt-5">
+        <div className="col teamcoach-details-approvebtndiv">
+          <button
+            className="teamcoach-details-approvebtn "
+            onClick={() => approve(userData._id)}
+          >
+            Approve
+          </button>
+        </div>
+        <div className="col teamcoach-details-approvebtndiv2">
+          <button
+            className="teamcoach-details-approvebtn"
+            onClick={() => reject(userData._id)}
+          >
+            Reject
+          </button>
+        </div>
+      </div>
           </div>
         </div>
       </div>
@@ -374,4 +414,7 @@ loadData()
   );
 }
 
-export default Teamcoachdetailspopup;
+
+
+
+export default AdminViewOrganizerToApprove
