@@ -79,7 +79,7 @@ navigate(`/Teamcoachdetailspopup/${id}`)
                         <td className = 'col-2 AdminViewOrganiser-tableBodyData'>{x.contact}</td>
                         <td className = 'col-2 AdminViewOrganiser-tableBodyData'>{x.email} {/* Email id */}</td>
                         <td className = 'col-2 AdminViewOrganiser-tableBodyData'>{x.state} {/* State */}</td>
-                        <td className = 'col-2 AdminViewOrganiser-tableBodyData'><Link to = {`/AdminallViewOrganizerRequest/${x._id}`} alt = ""> View More </Link> {/* View more */}</td>
+                        <td className = 'col-2 AdminViewOrganiser-tableBodyData-end'><Link to = {`/AdminallViewOrganizerRequest/${x._id}`} alt = ""> View More </Link> {/* View more */}</td>
 
                     </tr>
   )})):(
