@@ -70,7 +70,7 @@
     margin-top: 50px;
     border: 1.304px solid #B9B9B9;
     border-radius: 6px;
-    border-collapse:separate;
+    /* border-collapse:separate; */
     border-spacing: 0;
 
 }
@@ -86,13 +86,13 @@
 .AdminViewOrganiser-tableHeadData {
 
     border-right: 1.304px solid #B9B9B9;
-    padding-left: 13px;
+    /* padding-left: 13px; */
     padding-top: 15.6px;
 
 }
 .AdminViewOrganiser-tableHeadDataEnd {
 
-    padding-left: 13px;
+    /* padding-left: 13px; */
     padding-top: 15.6px;
     
 }
@@ -111,7 +111,7 @@
 .AdminViewOrganiser-tableBodyData {
 
     border-right: 1.304px solid #B9B9B9;
-    padding-left: 13px;
+    /* padding-left: 13px; */
     padding-top: 15.6px;
 
 }

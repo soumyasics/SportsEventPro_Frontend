@@ -21,10 +21,12 @@ console.log("url", url);
 function AdminallViewOrganizerRequest() {
     const {id} =useParams();
     const[data,setData]=useState({});
+    const [showModal, setShowModal] = useState(false);
      
     const navigate =useNavigate();
 
-    useEffect (() => {
+
+    const loadData=()=>{
         axiosInstance.post(`viewOrganizerById/${id}`)
         .then((res) => {
             setData(res.data.data)
@@ -32,24 +34,47 @@ function AdminallViewOrganizerRequest() {
         .catch((err) =>{
             console.log(err);
         })
+    }
+    useEffect (() => {
+       
     },[id])
 
-    const approve = (id) => {
-        axiosInstance.post(`approveOrganizerById/${id}`)
+    const handleActive = (id) => {
+        console.log(id);
+        axiosInstance.post(`/activateOrganizerById/${id}`)
+        .then((res)=>{
+          if(res.data.status === 200){
+            
+    data.isActive=true   
+    loadData()
+    }
+        })
+        .catch((err) => {
+          console.log("Error",err);
+        })
+      }
+    
+      const handleDeactive = (id) => {
+        axiosInstance.post(`/deActivateOrganizerById/${id}`)
         .then((res) => {
-            if(res.data.status === 200){
-                alert("Organizer Approved")
-                navigate('/adminvieworganizer')
-            }
+          if(res.data.status === 200){
+            data.isActive=false   
+            loadData()
+    
+          }
         })
-        .catch((error) => {
-            console.error("Error",error);
+        .catch((err) => {
+          console.log("Error",err);
         })
-    }
-
-    const reject = (id) => {
-        axiosInstance.post(``)
-    }
+      }
+    const toggleUserActiveState = (users) => {
+        if(users.isActive){
+          handleDeactive(users._id)
+        }
+        else{
+          handleActive(users._id)
+        }
+      }
   return (
     <div>
         <div className='ms-5 mt-5'>
@@ -57,13 +82,13 @@ function AdminallViewOrganizerRequest() {
             <span className='ms-5 pt-2 adminview-organizer-request-span'>Organizer Details</span>
         </div>
         <div className='adminview-organizer-request-imgdiv container ms-5 '>
-            <img src={image47} className='adminview-organizer-request-img'></img>
+            <img src={`${url}/${data?.photo?.filename}`} className='adminview-organizer-request-img'></img>
         </div>
         <div className='row container'>
             <div className='col-5'>
                 <div className='row container ms-5 mt-5 '>
                     <div className='col-1 ms-3 container'>
-                        <img src={`${url}/${data?.photo?.filename}`} 
+                        <img src= {image47}
                         className='adminview-organizer-request-img1'></img>
                     </div>
                     <div className='col-4'>
@@ -127,7 +152,7 @@ function AdminallViewOrganizerRequest() {
                         <label>{data.country}</label>
                     </div>
                     <div className='col-6'>
-                        <label>India</label>
+                        <label>Country</label>
                     </div>
                 </div><div className='container'>
                     <hr></hr>
@@ -170,10 +195,15 @@ function AdminallViewOrganizerRequest() {
                         <img src={img10} className='adminview-organizer-request-img1'></img>
                     </div>
                     <div className='col-4'>
-                        <label>{data.organizerlicense}</label>
+                        <label>License</label>
                     </div>
                     <div className='col-6'>
-                        <label></label>
+                    <button
+                  className="btn btn-link"
+                  onClick={() => setShowModal(true)}
+                >
+                  View Document
+                </button>
                     </div>
                 </div><div className='container'>
                     <hr></hr>
@@ -193,7 +223,62 @@ function AdminallViewOrganizerRequest() {
                     <hr></hr>
                 </div>
             </div>
+
+            <div className='row container ms-5 mt-5'>
+            <div className='col-1 ms-3'>
+            <button
+                     className={`toggle-button ${data.isActive ? 'active' : 'inactive'}`} 
+                    onClick={()=>{toggleUserActiveState(data)}}
+                    >
+                      {data.isActive ? 'Active' : 'Inactive'}
+                    </button>
+
+</div></div>
         </div>
+
+        <div
+        className={`modal fade ${showModal ? "show d-block" : "d-none"}`}
+        tabIndex="-1"
+        role="dialog"
+        aria-labelledby="documentModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="documentModalLabel">
+                Document
+              </h5>
+              <button
+                type="button"
+                className="close"
+                aria-label="Close"
+                onClick={() => setShowModal(false)}
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="">
+              <div className="img-container">
+                <img
+                  src={`${url}/${data?.organizerlicense?.filename}`}
+                  alt="Document"
+                  className="img-fluid"
+                />
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={() => setShowModal(false)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

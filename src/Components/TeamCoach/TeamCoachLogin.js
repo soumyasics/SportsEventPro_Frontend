@@ -70,13 +70,17 @@ console.log("fun called",data);
         console.log(response);
         if(response.data.status==200){
             if(response.data.data.adminApproved){
-            alert("Login Successful")
-            localStorage.setItem('admin',1)
+            // alert("Login Successful")
+            localStorage.setItem('tcId',response.data.data._id)
             navigate('/teamcoachhomepage')
             }
-            else{
-                alert("Please get Approval from Admin")
+            else if(!response.data.data.isActive){
+                alert(" Your Account Has Been Deactivated By Admmin ")
                 window.location.reload(false)
+            }
+            else {
+                alert("Please get Approval from Admin!")
+                window.location.reload(false) 
             }
         }else
 alert(response.data.msg)       
@@ -105,11 +109,11 @@ alert(response.data.msg)
                         <form onSubmit={handleSubmit}>
                         <div class="teamcoachlogin">
                         <div>
-                          <label className='teamcoachloginuser'>Username</label>
+                          <label className='teamcoachloginuser'>Email</label>
                             <input
                                 className="teamcoachloginput1"
                                 type="email"
-                                placeholder="Enter Your Username"
+                                placeholder="Enter Your Email"
                                 name="email"
                                 value={data.email}
                                 onChange={handleChange}
