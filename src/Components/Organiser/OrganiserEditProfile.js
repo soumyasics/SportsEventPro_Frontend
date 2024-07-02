@@ -1,8 +1,9 @@
 import React from 'react'
-import './OrganiserEdiProfile.css'
+import './OrganiserEditProfile.css'
 import img from "../../Assets/Back Button.svg"
 import tempimg from '../../Assets/tmpimage.png'
 import img2 from '../../Assets/circum_edit.svg'
+
 
 function OrganiserEditProfile() {
     
@@ -37,13 +38,13 @@ function OrganiserEditProfile() {
 
             </div>
 
-            <div className='OrganiserEditProfile-body'>
+            <div className='container OrganiserEditProfile-body'>
 
                 <div className='OrganiserEditProfile-body-left'>
 
-                    <div>
+                    <div className='OrganiserEditProfile-body-left-name'>
 
-                        
+                        <img src='' alt=' '/>
 
                     </div>
 

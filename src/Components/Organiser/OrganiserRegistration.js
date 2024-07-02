@@ -124,8 +124,8 @@ function OrganiserRegistration() {
 
                             <div className = 'OrganiserRegistrationPassword-Container-Div'>
 
-                                <input type = 'password' placeholder = 'Enter Password' id = 'pword' className = 'OrganiserRegistration-Content-input-password'/>
-                                <button className = 'Password-Change-Button' onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
+                                    <input type = 'password' placeholder = 'Enter Password' id = 'pword' className = 'OrganiserRegistration-Content-input-password'/>
+                                    <button className = 'Password-Change-Button' onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
 
 
                             </div>
