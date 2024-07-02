@@ -283,7 +283,7 @@ loadData()
                 <label className="Teamcoachdetailspopuplabel">License</label>
               </div>
               <div className="col-5">
-                <label className="Teamcoachdetailspopuplabel-2">Document</label>
+                <label className="Teamcoachdetailspopuplabel-2"></label>
                 <button
                   className="btn btn-link"
                   onClick={() => setShowModal(true)}

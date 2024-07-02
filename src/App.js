@@ -72,8 +72,8 @@ function App() {
           <Route exact path='/AdminViewTeamCoach' element={[<AdminNav />, <AdminMain data="AdminViewTeamCoach"/>]}/>
           <Route exact path='/AdminViewAprvdCoachIndividual/:id' element={[<AdminTopbar />,<AdminMain data="AdminViewAprvdCoachIndividual"/>]}/>
 
-          <Route exact path='/AdminViewOrganiser' element={[<AdminNav/>,<AdminMain data='adminvieworganizerreq'/>]} />
-          <Route exact path='/AdminViewOrganiser1' element={[<AdminNav/>,<AdminViewOrganiser/>]} />
+          <Route exact path='/AdminViewOrganiser' element={[<AdminNav/>,<AdminMain data='adminvieworganizerreq'/>]} /> 
+          {/* <Route exact path='/AdminViewOrganiser1' element={[<AdminNav/>,<AdminViewOrganiserRequest/>]} /> */}
           <Route exact path='/AdminViewOrganiserRequest' element={[<AdminNav/>,<AdminMain data='adminvieworganiserrequest'/>]} />
           <Route exact path='/AdminallViewOrganizerRequest/:id' element={[<AdminNav/>,<AdminMain data='AdminallViewOrganizerRequest'/>]} />
 
@@ -110,7 +110,7 @@ function App() {
           <Route exact path='/OrganizerDashboard' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserDashboard/>,<UserFooter/>]}/>
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar/>,<AdminMain data='adminallvieworganizerpage'/>]} />
           <Route path='/adminViewOrganizerToApprove/:id' element={[<MainNavbar/>,<AdminMain data='adminViewOrganizerToApprove'/>]} />
-
+          <Route path='/viewallorganizer' element={<AdminallViewOrganizerRequest/>}/>
         </Routes>
 
 
