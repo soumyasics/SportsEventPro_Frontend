@@ -35,7 +35,7 @@ function AdminViewOrganiserRequest() {
     })
 
     const viewDetails = (id) => {
-        navigate(`/adminoraganizerviewrequest/${id}`)
+        navigate(`/adminViewOrganizerToApprove/${id}`)
     }
     return (
 
@@ -111,7 +111,7 @@ function AdminViewOrganiserRequest() {
                 <div className="container adminview-organizerrequest-listbackground">
                     <h3 className="adminview-organizerrequest-h3">Organizer Request</h3>
 
-                    <ul className="adminview-organizerrequest-list">
+                    {/* <ul className="adminview-organizerrequest-list">
                         {console.log(userData && userData.length > 0)}
                         {
                             (userData && userData.length > 0) ? (userData.map (x =>{
@@ -141,7 +141,68 @@ function AdminViewOrganiserRequest() {
                                 <h5 className="adminview-organizerrequest-h5">No New Request Found</h5>
                             )
                         }
-                    </ul>
+                    </ul> */}
+
+
+
+
+
+
+<ul className="AdminCoachRequestList">
+{console.log(userData&&userData.length>0)}
+                    {
+
+                       (userData&&userData.length>0)?(userData.map(x => {
+
+                            return(
+                                 <div className="AdminCoachRequestListElements">
+
+                                    <li className="col-1 text-end pe-3 ml-5">
+
+                                        {/* <img src={img} alt="frame" /> */}
+
+                                        <img
+                                            src={`${url}/${x?.photo?.filename}`}
+                                            alt={img}
+                                            className="AdminCoachRequest-img"
+                                        />
+
+                                    </li>
+
+                                    <li className="col-3 text-start  ml-1 ">
+
+                                        <h5 className="fs-5"> {x.name}{/*Player Name*/}</h5>
+                                       
+
+                                    </li>
+
+                                    <li className="col-5 text-start">
+
+                                        <h5 className="fs-5">  {x.email}</h5>
+                                        <h6 className="fw-light fs-6 ">{x.contact} {/*Number Of teammates*/}</h6>
+
+                                    </li>
+
+                                    <li className="col-3 text-end">
+
+                                        <button className="btn btn-primary px-4" onClick={()=>{viewDetails(x._id)}}> View Details</button>
+
+                                    </li>
+
+                                </div>
+                            )
+
+                               
+{console.log(x.teamName)}
+                            
+
+                        })):(
+                          <h1 className="AdminCoachRequestH5">No New Requests  Found</h1>
+                        )
+                        
+                    }
+
+                </ul>
                 </div>
             </div>
         </div>

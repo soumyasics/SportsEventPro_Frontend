@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom'
 import AdminallViewOrganizerRequest from './Organiser/AdminallViewOrganizerRequest'
 import AdminViewOrganiserRequest from './Organiser/AdminViewOrganiserRequest'
 import AdminViewOrganiser from './Organiser/AdminViewOrganiser'
+import AdminViewOrganizerToApprove from './Organiser/AdminViewOrganizerToApprove'
 
 function AdminMain({data}) {
   const navigate = useNavigate(); 
@@ -47,7 +48,11 @@ function AdminMain({data}) {
                   <AdminViewOrganiserRequest/>
                 ):data === 'adminvieworganizerreq'?(
                 <AdminViewOrganiser/>
-                ):(
+                ):data === 'adminViewOrganizerToApprove'?(
+                  <AdminViewOrganizerToApprove/>
+                  ):data === 'AdminallViewOrganizerRequest'?(
+                    <AdminallViewOrganizerRequest/>
+                    ):(
                     <AdminDashbordTopContent/>
                 )}
             </div>

@@ -241,7 +241,7 @@ function Teamcoachdetailspopup() {
       <div className="row mt-5">
         <div className="col teamcoach-details-approvebtndiv">
           <button
-            className="teamcoach-details-approvebtn"
+            className="teamcoach-details-approvebtn "
             onClick={() => approve(userData._id)}
           >
             Approve
@@ -283,7 +283,7 @@ function Teamcoachdetailspopup() {
             <div className="">
               <div className="img-container">
                 <img
-                  src={`${url}/${userData?.profilePic?.filename}`}
+                  src={`${url}/${userData?.certificate?.filename}`}
                   alt="Document"
                   className="img-fluid"
                 />
