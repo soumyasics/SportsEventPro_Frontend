@@ -50,7 +50,7 @@ function AdminLogin() {
 if(data.email=="admin" && data.password=="admin@123"){
   alert("successfully logined")
   localStorage.setItem('admin',1)
-  navigate('/AdminDashbord')
+  navigate('/adminmain')
 }
 else{
   alert("username or password is wrong")

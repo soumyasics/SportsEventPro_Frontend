@@ -8,33 +8,26 @@ function TeamcoachReg() {
 
 const navigate=useNavigate()
 
-
-
-
-    const [plus, setPlus] = useState(
-        1
-    )
-
-
-
+    const [plus, setPlus] = useState(1)
+let count=0
     const add = (event) => {
         setPlus(plus + 1)
+        count=plus+1
         event.preventDefault()
     }
     const sub = (event) => {
         setPlus(plus - 1)
+        count=plus-1
+
         event.preventDefault()
     }
 console.log(plus);
     const [data, setData] = useState({
-
-
-
         name: '',
         category: '',
-        totalmembers: plus,
+        totalmembers: count,
         pincode: '',
-        state: '',
+        state: 'Kerala',
         contactnumber: '',
         certificate: '',
         password: '',
@@ -48,6 +41,8 @@ console.log(plus);
         confirmpassword: '',
 
     })
+    const [selectedCategory, setSelectedCategory] = useState('');
+
     const [errors, setErrors] = useState({
 
         name: '',
@@ -61,14 +56,12 @@ console.log(plus);
         teamname: '',
         address: '',
         city: '',
-        country: '',
+        country: 'India',
         email: '',
         experience: '',
         confirmpassword: '',
     })
 
-
-    
     let formIsValid;
     const handleChange = (event) => {
         console.log("ty",event.target.type);
@@ -78,6 +71,10 @@ console.log(plus);
         ...prevData,
         [name]: files[0]
       }));
+
+      if (name === 'category') {
+        setSelectedCategory(value);
+      }
     } 
     else if (event.target.type=="radio") {
         setData(prevData => ({
@@ -97,17 +94,37 @@ console.log(plus);
             [name]: ''
         }));
     };
+
+    function validateContact(fieldName, value) {
+        if (!value.trim()) {
+          return `${fieldName} is required`;
+        } else if (value.length !== 10) {
+          return 'Please enter a valid Contact Number';
+        }
+        return '';
+      }
+
+      function validatePincode(fieldName, value) {
+        if (!value.trim()) {
+          return `${fieldName} is required`;
+        } else if (value.length !== 6) {
+          return 'Please enter a valid Contact Number';
+        }
+        return '';
+      }
+    
     
     const validateField = (fieldName, value) => {
         if (!value.trim()) {
             formIsValid = true;
             return `${fieldName} is required`;
         }
+        if(fieldName === "Email" && !value.endsWith("@gmail.com")){
+            return "Email must be a valid Email address"
+          }
         return '';
     };
     
-    
-
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(data);
@@ -117,23 +134,35 @@ console.log(plus);
 
         errors.email = validateField('Email', data.email);
         errors.name = validateField('Name', data.name);
-        errors.contactnumber = validateField('Contact number', data.contactnumber)
+        errors.contactnumber = validateContact('Contact number', data.contactnumber)
         errors.category = validateField('Category', data.category);
-        errors.pincode = validateField('Pincode', data.pincode);
+        errors.pincode = validatePincode('Pincode', data.pincode);
         errors.state =validateField('States', data.state)
-        errors.password = validateField('Password', data.password);
+        // errors.password = validateField('Password', data.password);
         errors.teamname = validateField('Teamname', data.teamname);
         errors.address = validateField('Address', data.address);
         errors.city = validateField('City', data.city);
         errors.country = validateField('Country', data.country);
         errors.experience = validateField('Experience', data.experience);
-        errors.confirmpassword = validateField('Confirm Password', data.confirmpassword);
+        // errors.confirmpassword = validateField('Confirm Password', data.confirmpassword);
 
-
-
-
+        const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,}$/;
+      if (!data.password.trim()) {
+        formIsValid = false;
+        errors.password = "Password is required";
+      } else if (!passwordRegex.test(data.password)) { // Pass the password to the test method
+        errors.password =
+          "Password must contain at least one number, one special character, and one capital letter";
+      }
+    
+      if (!data.confirmpassword.trim()) {
+        formIsValid = false;
+        errors.confirmpassword = "Confirm Password is required";
+      } else if (data.confirmpassword !== data.password) {
+        formIsValid = false;
+        errors.confirmpassword = "Passwords do not match";
+      }
         BackendData();
-
         setErrors(errors);
 
         if (formIsValid) {
@@ -143,20 +172,13 @@ console.log(plus);
         }
     }
 
-
-
-
-
-
-
-
     const BackendData = () => {
         console.log("fun called", data);
  let formData = new FormData();
-
+console.log(plus);
             formData.append('name',data.name);
             formData.append('category', data.category);
-            formData.append('totalteammembers', data.totalmembers);
+            formData.append('totalteammembers', plus);
             formData.append('pincode', data.pincode);
             formData.append('state', data.state);
             formData.append('contact', data.contactnumber);
@@ -188,9 +210,7 @@ console.log(plus);
 
 
             })
-        
-        
-            
+       
     }
 
     return (
@@ -234,9 +254,6 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
@@ -245,8 +262,12 @@ console.log(plus);
                                             <label>Select Category</label>
                                         </div>
 
-                                        <div className='TeamCoachRegCategory'>
-                                            <input type="radio" class="btn-check" name="category" id="category1"  autocomplete="off" onChange={handleChange} value={"cricket"}/>
+                                        {/* <div className='TeamCoachRegCategory'>
+                                            <input type="radio" 
+                                            class="btn-check" 
+                                            name="category" 
+                                            id="category1"  
+                                            autocomplete="off" onChange={handleChange} value={"cricket"}/>
                                             <label class="btn btn-secondary category-1-5" for="category1"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Cricket</label>
                                             <input type="radio" class="btn-check" name="category" id="category2" autocomplete="off" onChange={handleChange} value={"football"}/>
                                             <label class="btn btn-secondary category-1-5" for="category2"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Football</label>
@@ -255,12 +276,64 @@ console.log(plus);
                                             <input type="radio" class="btn-check" name="category" id="category4" autocomplete="off" onChange={handleChange} value={"badminton"}/>
                                             <label class="btn btn-secondary category-1-5" for="category4"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Badminton</label>
                                             <input type="radio" class="btn-check" name="category" id="category5" autocomplete="off" onChange={handleChange} value={"hockey"}/>
-                                            <label class="btn btn-secondary category-1-5" for="category5"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Hockey</label>
-                                        </div>
+                                            <label class="btn btn-secondary category-1-5" for="category5"style={{backgroundColor:'rggitba(0, 0, 0, 0.05)',color:"black",fontSize:"14px",fontWeight:"600",marginLeft:"10px",marginRight:"10px"}} >Hockey</label>
+                                        </div> */}
+
+
+
+
+
+
+
+<div className='TeamCoachRegCategory'>
+                {['Cricket', 'Football', 'Tennis', 'Badminton', 'Hockey'].map((category, index) => (
+                  <React.Fragment key={index}>
+                    <input
+                      type="radio"
+                      className="btn-check"
+                      name="category"
+                      id={`category${index}`}
+                      autoComplete="off"
+                      onChange={handleChange}
+                      value={category.toLowerCase()}
+                      checked={data.category === category.toLowerCase()} // Ensure the radio button is checked based on state
+                    />
+                    <label
+                      className={`btn btn-secondary category-1-5 ${data.category === category.toLowerCase() ? 'selected-button' : ''}`}
+                      htmlFor={`category${index}`}
+                      style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.05)',
+                        color: 'black',
+                        fontSize: '14px',
+                        fontWeight: '600',
+                        marginLeft: '10px',
+                        marginRight: '10px'
+                      }}
+                    >
+                      {category}
+                    </label>
+                  </React.Fragment>
+                ))}
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                         <div class='categoryvalidation'>
                             {errors.category && <div className="text-danger ">{errors.category}</div>}
                         </div>
-
                                     </div>
                                 </div>
                                 <div class="col">
@@ -278,9 +351,6 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
@@ -303,27 +373,7 @@ console.log(plus);
                                                 </div>
                                             </div>
                                         </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                            
-                                            
-
-
-                                            
-                                        
+                                    </div>     
                                     </div>
                                 </div>
                                 <div class="col">
@@ -341,17 +391,13 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
                                     <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>Pincode</label></div>
-                                        <input className='TeamCoachField-3' type='number' placeholder='Enter 6-Digit Pincode' name="pincode"
+                                        <input className='TeamCoachField-3' type='text' placeholder='Enter 6-Digit Pincode' name="pincode"
                                             value={data.pincode}
                                             onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
@@ -376,12 +422,6 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
@@ -389,13 +429,16 @@ console.log(plus);
                                 <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>State</label></div>
-                                        <input className='TeamCoachField-9' type='text' placeholder='Enter State' name="state"
 
+                                            <select class="form-select" aria-label="Default select example" name="state" onChange={handleChange}>
+                                                    <option selected value="Kerala">Kerala</option>
+                                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                                    <option value="Karnataka">Karnataka</option>
+                                                    <option value="Maharashtra">Maharashtra</option>
+                                                </select>
                                         
-                                            value={data.city}
-                                            onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
-                                            {errors.state && <div className="text-danger ">{errors.state}</div>}
+                                            {/* {errors.state && <div className="text-danger ">{errors.state}</div>} */}
                                         </div>
                                     </div>
                                 </div>
@@ -406,24 +449,13 @@ console.log(plus);
                                                 <label>Country</label>
                                             </div>
                                             <div className='TeamCoachField-10'>
-                                                <select class="form-select" aria-label="Default select example" name="country" onChange={handleChange}>
-                                                    <option selected value="India">India</option>
-                                                    <option value="Canada">Canada</option>
-                                                    <option value="Japan">Japan</option>
-                                                    <option value="Germany">Germany</option>
-                                                </select>
+                                            <input className='TeamCoachField-9' type='text' value="India" disabled name="country" onChange={handleChange} />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
@@ -431,7 +463,7 @@ console.log(plus);
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>Contact Number</label>
                                         </div>
-                                        <input className='TeamCoachField-5' type='number' placeholder='Enter your contact number' name="contactnumber"
+                                        <input className='TeamCoachField-5' type='text' placeholder='Enter your contact number' name="contactnumber"
                                             value={data.contactnumber}
                                             onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
@@ -444,7 +476,7 @@ console.log(plus);
                                     <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>E-mail Id</label></div>
-                                        <input className='TeamCoachField-11' type='mail' placeholder='Enter your email' name="email"
+                                        <input className='TeamCoachField-11' type='email' placeholder='Enter your email' name="email"
                                             value={data.email}
                                             onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
@@ -455,12 +487,6 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
@@ -494,12 +520,7 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-                        <div class="container text-center">
+                         <div class="container text-center">
                             <div class="row">
                                 <div class="col">
                                     <div className='teamcoachn1'>
@@ -532,47 +553,6 @@ console.log(plus);
                             </div>
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div>
                         <input className='TeamCoachButton' type='submit' placeholder='submit' onClick={handleSubmit}/>
                     </div>

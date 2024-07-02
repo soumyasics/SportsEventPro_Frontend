@@ -1,0 +1,22 @@
+
+
+.adminview-organizer-request{
+    font-size: 30px;
+}
+.adminview-organizer-request-span{
+    font-size: 30px;
+    font-weight: bold;
+}
+.adminview-organizer-request-img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    margin-right: 150px;
+}
+.adminview-organizer-request-imgdiv{
+    text-align: right;
+}
+.adminview-organizer-request-img1{
+    height: 30px;
+    width: 30px;
+}

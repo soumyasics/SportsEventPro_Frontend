@@ -21,18 +21,18 @@
     align-content: center;
     height: 300px;
 }
-.Teamcoachviewprofilepopupdiv-10-button{
+/* .Teamcoachviewprofilepopupdiv-10-button{
     display: grid;
-width: 232px;
-padding: 8px;
-flex-direction: column;
-align-items: end;
-border-radius: 8px;
-background: #DADADA;
-color: black;
-margin-left: 32px;
+    width: 232px;
+    padding: 8px;
+    flex-direction: column;
+    align-items: end;
+    border-radius: 8px;
+    background: #DADADA;
+    color: black;
+    text-align: right;
 
-}
+} */
 .Teamcoachviewprofilepopupdiv-11-button{
     display: grid;
     width: 232px;
@@ -140,4 +140,40 @@ height: var(--items, 0px);
     width: 0px;
     margin-top: 135px;
     margin-right: -124px;
+}
+
+.teamcoach-details-arrow{
+    font-size: 40px;
+}
+
+.teamcoach-details-span{
+    font-size: 30px;
+    font-weight: bold;
+}
+.teamcoach-details-img{
+    height: 200px;
+    width: 200px;
+    border-radius: 150px;
+    margin-top: -70px;
+}
+.teamcoach-details-imgdiv{
+    text-align: right;
+}
+.teamcoach-details-img1{
+    background-color:gray ;
+}
+.teamcoach-details-label{
+    font-weight: bold;
+}
+.teamcoach-details-approvebtn{
+    height:45px;
+    width: 200px;
+    border-radius: 10px;
+    background: #DADADA;
+}
+.teamcoach-details-approvebtndiv{
+    text-align: right;
+}
+.teamcoach-details-arrowlink{
+    color: black;
 }

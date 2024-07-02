@@ -5,7 +5,7 @@ import img from '../../../Assets/Search Button.svg'
 function AdminViewOrganiser() {
 
     return (
-
+  
         <div className = 'container AdminViewOrganiserMainDivBG'>
 
             <h1 className = 'AdminViewOrganiser-h1'>Organiser List</h1>
@@ -17,11 +17,11 @@ function AdminViewOrganiser() {
 
             </div>
 
-            <table className = 'AdminViewOrganiser-Table ' >
+            <table className = 'AdminViewOrganiser-Table container ' >
 
                 <thead >
 
-                    <tr className = ' AdminViewOrganiser-tableHeadRow'>
+                    <tr className = ' AdminViewOrganiser-tableHeadRow container'>
 
                         <td className = 'col-2 AdminViewOrganiser-tableHeadData'>Sl</td>
                         <td className = 'col-2 AdminViewOrganiser-tableHeadData'>Coach Name</td>
@@ -35,7 +35,7 @@ function AdminViewOrganiser() {
 
                 <tbody>
 
-                    <tr className = 'AdminViewOrganiser-tableBodyRow' >
+                    <tr className = 'AdminViewOrganiser-tableBodyRow container' >
 
                         <td className = 'col-2 AdminViewOrganiser-tableBodyData'>1 {/*Sl No*/}</td>
                         <td className = 'col-2 AdminViewOrganiser-tableBodyData'>Raju {/* Coach Name */}</td>
