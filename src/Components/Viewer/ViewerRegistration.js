@@ -3,7 +3,6 @@ import './ViewerRegistration.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 import axiosInstance from '../Constant/BaseURL'
-import axiosMultipartInstance from '../Constant/multiPart'
 import { useNavigate } from 'react-router-dom'
 
 function ViewerRegistration() {
@@ -56,38 +55,33 @@ function ViewerRegistration() {
 
 
     const [data, setData] = useState({
-        name: '',
-        pincode: '',
-        state: 'Kerala',
-        contactnumber: '',
-        license: '',
-        password: '',
-        image: '',
-        address: '',
-        city: '',
-        country: 'India',
-        email: '',
-        description: '',
-        confirmpassword: '',
-        experience: 0
+        name:'',
+        gender:'', 
+        address:"", 
+        pincode:'', 
+        city:'', 
+        state:'Kerala', 
+        country:'India', 
+        contact:'', 
+        email:'', 
+        password:'',
+        confirmpassword:''
 
     })
-    const [selectedCategory, setSelectedCategory] = useState('');
 
     const [errors, setErrors] = useState({
 
-        name: '',
-        pincode: '',
-        contactnumber: '',
-        license: '',
-        password: '',
-        image: '',
-        address: '',
-        city: '',
-        email: '',
-        description: '',
-        confirmpassword: '',
-        experience: 0
+        name:'',
+        gender:'', 
+        address:"", 
+        pincode:'', 
+        city:'', 
+        state:'', 
+        country:'', 
+        contact:'', 
+        email:'', 
+        password:'',
+        confirmpassword:''
     })
 
     let formIsValid;
@@ -160,15 +154,13 @@ function ViewerRegistration() {
 
         errors.email = validateField('Email', data.email);
         errors.name = validateField('Name', data.name);
-        errors.contactnumber = validateContact('Contact number', data.contactnumber)
+        errors.contact = validateContact('Contact number', data.contact)
         errors.pincode = validatePincode('Pincode', data.pincode);
         errors.state = validateField('States', data.state)
         errors.address = validateField('Address', data.address);
         errors.city = validateField('City', data.city);
         errors.country = validateField('Country', data.country);
-        errors.country = validateField('experience', data.experience);
 
-        errors.description = validateField('description', data.description);
 
         const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,}$/;
         if (!data.password.trim()) {
@@ -198,43 +190,24 @@ function ViewerRegistration() {
 
     const BackendData = () => {
         console.log("fun called", data);
-        let formData = new FormData();
+       
 
-        formData.append('name', data.name);
-
-        formData.append('pincode', data.pincode);
-        formData.append('state', data.state);
-        formData.append('contact', data.contactnumber);
-        formData.append('password', data.password);
-        formData.append('files', data.image);
-        formData.append('files', data.license);
-        formData.append('address', data.address);
-        formData.append('city', data.city);
-        formData.append('country', data.country);
-        formData.append('email', data.email);
-        formData.append('experience', data.experience);
-        formData.append('description', data.description);
+        axiosInstance.post('Viewerreg', data)
+            .then(response => {
+                console.log(response);
+                if (response.data.status == 200) {
+                    alert(response.data.msg)
+                    navigate('/ViewerLogin')
+                } else
+                    alert(response.data.msg)
 
 
-        console.log(formData);
-
-        // please change this to viewer register backend please
-        // axiosMultipartInstance.post('registerOrganizer', formData)
-        //     .then(response => {
-        //         console.log(response);
-        //         if (response.data.status == 200) {
-        //             alert(response.data.msg)
-        //             navigate('/OrganizerLogin')
-        //         } else
-        //             alert(response.data.msg)
+            })
+            .catch(error => {
+                console.error(error);
 
 
-        //     })
-        //     .catch(error => {
-        //         console.error(error);
-
-
-        //     })
+            })
 
     }
 
@@ -276,17 +249,17 @@ function ViewerRegistration() {
 
 
                                     <div className='ms-4'>
-                                        <input type='radio' name='gender' id='male' />
+                                        <input type='radio' name='gender' id='male' value="Male"  onChange={handleChange} checked={data.gender === 'Male'}/>
                                         <label className='ms-1' />Male
                                     </div>
 
                                     <div className='ms-3'>
-                                        <input type='radio' name='gender' id='female' />
+                                        <input type='radio' name='gender' id='female' value='Female' onChange={handleChange} checked={data.gender === 'Female'}/>
                                         <label className='ms-1' />Female
                                     </div>
 
                                     <div className='ms-3'>
-                                        <input type='radio' name='gender' id='other' />
+                                        <input type='radio' name='gender' id='other' value='other' onChange={handleChange} checked={data.gender === 'Other'}/>
                                         <label className='ms-1' />Other
                                     </div>
 
@@ -298,10 +271,10 @@ function ViewerRegistration() {
                             <div className='ViewerRegistration-Content-Input'>
 
                                 <h1 className='ViewerRegistration-Content-h1'>Contact Number</h1>
-                                <input type='text' placeholder='Enter Your Contact Number' className='ViewerRegistration-Content-input-1' name="contactnumber"
-                                    value={data.contactnumber}
+                                <input type='text' placeholder='Enter Your Contact Number' className='ViewerRegistration-Content-input-1' name="contact"
+                                    value={data.contact}
                                     onChange={handleChange} />
-                                {errors.contactnumber && <div className="text-danger ">{errors.contactnumber}</div>}
+                                {errors.contact && <div className="text-danger ">{errors.contact}</div>}
 
                             </div>
 
@@ -322,7 +295,8 @@ function ViewerRegistration() {
                             <div className='ViewerRegistration-Content-Input'>
 
                                 <h1 className='ViewerRegistration-Content-h1'>City</h1>
-                                <input type='text' placeholder='Enter City' className='ViewerRegistration-Content-input-1' name="city" />
+                                <input type='text' placeholder='Enter City' value={data.city} className='ViewerRegistration-Content-input-1' name="city" onChange={handleChange} />
+                                {errors.city && <div className="text-danger ">{errors.city}</div>}
 
                             </div>
 
@@ -330,11 +304,12 @@ function ViewerRegistration() {
                             <div className='ViewerRegistration-Content-Input-End'>
 
                                 <h1 className='ViewerRegistration-Content-h1'>State</h1>
-                                <select className="ViewerRegistration-Content-Input-Country" aria-label="Default select example">
+                                <select className="ViewerRegistration-Content-Input-Country" aria-label="Default select example" name="state" value={data.state}
+                                 onChange={handleChange}>
 
 
-                                    <option className='ViewerRegistration-Content-Input-Select-Option' selected name="state" value={data.state}
-                                        onChange={handleChange}>Kerala</option>
+                                    <option className='ViewerRegistration-Content-Input-Select-Option' selected 
+                                       >Kerala</option>
 
                                     <option value="Goa">Goa</option>
                                     <option value="Tamil Nadu">Tamil Nadu</option>
@@ -356,18 +331,8 @@ function ViewerRegistration() {
                             <div className='ViewerRegistration-Content-Input-Start'>
 
                                 <h1 className='ViewerRegistration-Content-h1'>Country</h1>
-                                <select className="ViewerRegistration-Content-Input-Country" aria-label="Default select example">
+                                <input type='text'  className='ViewerRegistration-Content-input-1' value="India"  />
 
-
-                                    <option className='ViewerRegistration-Content-Input-Select-Option' selected name="country"
-                                        onChange={handleChange}>Select Your Country</option>
-
-                                    <option value="India">India</option>
-                                    <option value="USA">USA</option>
-                                    <option value="Japan">Japan</option>
-                                    <option value="Russia">Russia</option>
-
-                                </select>
 
 
                             </div>
