@@ -162,7 +162,7 @@ function TeamCoachHomePage() {
 
             </div>
 
-            {/* Enroll for events section start */}
+            {/* Enroll for events section end */}
 
 
         </div>
