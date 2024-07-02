@@ -100,7 +100,7 @@ function ViewerLogin() {
 
 
         console.log("function called", data);
-        axiosInstance.post('loginOrganizer', data)
+        axiosInstance.post('viewerLogin', data)
 
         .then(response => {
 
@@ -109,8 +109,8 @@ function ViewerLogin() {
             if (response.data.status == 200) {
 
                 alert("Login Successful")
-                localStorage.setItem('admin', 1)
-                navigate('/OrganizerDashboard')
+                localStorage.setItem('viewerId', response.data.data._id)
+                navigate('/ViewerHomePage')
 
             } 
             
