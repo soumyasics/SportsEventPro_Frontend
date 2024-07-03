@@ -205,7 +205,7 @@ function ViewerLogin() {
 
                                 <div>
 
-                                    <Link to="/ViewerForgetPass" class="ViewerloginReset">Forget Password?</Link>
+                                    <Link to="/ViewerForgotPassword" class="ViewerloginReset">Forget Password?</Link>
                                 
                                 </div>
                                 <div>
