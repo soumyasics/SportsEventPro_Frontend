@@ -1,23 +1,23 @@
-.OrganiserViewProfile-1 {
+.ViewerViewProfile-1 {
     display: grid;
     align-content: center;
     height: 300px;
     margin-left: 90px;
 }
 
-.OrganiserViewProfile-2 {
+.ViewerViewProfile-2 {
     display: grid;
     align-content: center;
     height: 300px;
 }
 
-.OrganiserViewProfilediv-10 {
+.ViewerViewProfilediv-10 {
     display: grid;
     align-content: center;
     height: 300px;
 }
 
-.OrganiserViewProfilediv-10-button {
+.ViewerViewProfilediv-10-button {
     display: grid;
     width: 160px;
     padding: 12px;
@@ -29,7 +29,7 @@
 
 }
 
-.OrganiserViewProfile-11-button {
+.ViewerViewProfile-11-button {
     display: grid;
     width: 160px;
     padding: 12px;
@@ -41,10 +41,11 @@
     color: white;
     margin-top: 80px;
     margin-bottom: 80px;
-    margin-left: 47%;
+    margin-left: 50%;
+    transform: translate(-50%);
 }
 
-.OrganiserViewProfilelabel {
+.ViewerViewProfilelabel {
     color: #000;
     font-family: Roboto;
     font-size: 15.423px;
@@ -53,7 +54,7 @@
     line-height: 21.592px;
 }
 
-.OrganiserViewProfileimpdiv-style {
+.ViewerViewProfileimpdiv-style {
     margin-left: 70px;
     align-items: center;
     gap: 12.338px;
@@ -61,7 +62,7 @@
     align-self: stretch;
 }
 
-.OrganiserViewProfilecommon-style-1 {
+.ViewerViewProfilecommon-style-1 {
     border-radius: 23.135px;
     background: rgba(0, 0, 0, 0.05);
     display: flex;
@@ -73,9 +74,16 @@
     size: 100%;
 }
 
+.ViewerViewProfilecommon-style-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    size: 100%;
+}
 
 
-.OrganiserViewProfiletext-1 {
+
+.ViewerViewProfiletext-1 {
     color: #000;
     font-family: Roboto;
     font-size: 40px;
@@ -86,13 +94,13 @@
     align-self: stretch;
 }
 
-.OrganiserViewProfileimg-1-backend {
+.ViewerViewProfileimg-1-backend {
     width: 102px;
     height: 105px;
     flex-shrink: 0;
 }
 
-.OrganiserViewProfileimg-2-backend {
+.ViewerViewProfileimg-2-backend {
 
     color: #000;
     font-family: Roboto;
@@ -103,7 +111,7 @@
 
 }
 
-.OrganiserViewProfilemainrow-1 {
+.ViewerViewProfilemainrow-1 {
     display: flex;
     width: 500px;
     padding: 20.423px var(--items, 0px);
@@ -112,18 +120,18 @@
     border-bottom: 1px solid rgb(192, 186, 186);
 }
 
-.OrganiserViewProfilemainrow-right-1 {
+.ViewerViewProfilemainrow-right-1 {
     margin-left: 100px;
 }
 
-.OrganiserViewProfilelabel-2 {
+.ViewerViewProfilelabel-2 {
     margin-left: 47px;
 }
 
-.OrganiserViewProfileimgdiv-1-1 {
+.ViewerViewProfileimgdiv-1-1 {
     text-align: center;
 }
 
-.OrganiserViewProfileimg-13 {
+.ViewerViewProfileimg-13 {
     margin-right: 30px;
 }

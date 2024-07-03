@@ -72,9 +72,7 @@ function ViewerNavBar() {
 
                         </ul>
 
-                        <li className="nav-item" style={{ listStyle: "none" , marginLeft:"78.5px" , marginRight:'20px'}}>
-
-                            {/* className='nav-link text-light ' */}
+                        <li className="nav-item" style={{ listStyle: "none", marginLeft: "78.5px", marginRight: '20px' }}>
 
                             <div className="dropdown-center">
 
@@ -85,21 +83,21 @@ function ViewerNavBar() {
                                     style={{ background: "none", border: "none" }}
                                 >
 
-                                    <img src={img2} alt=' ' /> 
-                                    
+                                    <img src={img2} alt=' ' />
+
                                 </button>
 
                                 <ul className="dropdown-menu " style={{ marginLeft: "-110px" }} >
 
                                     <li>
 
-                                        <a className="dropdown-item" href=" "><img src={img3} alt=' ' style={{marginRight:"10px"}}/>Profile</a>
+                                        <a className="dropdown-item" href=" "><img src={img3} alt=' ' style={{ marginRight: "10px" }} />Profile</a>
 
                                     </li>
 
                                     <li>
 
-                                        <a className="dropdown-item" href=" "><img src={img4} alt=' ' style={{marginRight:"10px"}}/>Logout</a>
+                                        <button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#Logout-Modal" ><img src={img4} alt=' ' style={{ marginRight: "10px" }} />Logout</button>
 
                                     </li>
 
@@ -114,6 +112,32 @@ function ViewerNavBar() {
                 </div>
 
             </nav>
+
+            <div class="modal fade" id="Logout-Modal" tabindex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+
+                <div class="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
+
+                    <div className="modal-content">
+
+                        <div class="modal-body">
+
+                            <h1 className='ModalDialog-h1'>Logout</h1>
+                            <p className='ModalDialog-p'>Are you sure you want to log out ? </p>
+
+                            <div className='ModalDialog-button-contain'>
+
+                                <button type="button" class="ModalDialog-button-1">Yes</button>
+                                <button type="button" class="ModalDialog-button-2" data-bs-dismiss="modal">No</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
