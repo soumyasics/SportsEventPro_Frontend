@@ -69,9 +69,11 @@
     font-style: normal;
     font-weight: 500;
     line-height: 24px;
-    margin-left: 308px;
-    margin-top: -130px;
-
+    margin-top: 64px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 0px;
+    
 }
 
 .Viewerloginmaindiv {
@@ -129,10 +131,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: -437px;
     margin-top: 25px;
-    margin-bottom: 160px;
-
 
 }
 
