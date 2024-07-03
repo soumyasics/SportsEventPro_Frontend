@@ -50,7 +50,11 @@ import ViewerRegistration from './Components/Viewer/ViewerRegistration';
 import ViewerLogin from './Components/Viewer/ViewerLogin';
 import ViewerForgotPassword from './Components/Viewer/ViewerForgotPassword';
 import ViewerHomePage from './Components/Viewer/ViewerHomePage';
+<<<<<<< HEAD
 import AdminEnquiriesViewpage from './Components/Admin/AdminEnquiriesViewpage';
+=======
+import ViewerNavBar from './Components/Viewer/ViewerNavBar';
+>>>>>>> 60839427dc28a53352083f1c3cd513e0c7610831
 
 function App() {
 
@@ -82,8 +86,8 @@ function App() {
           <Route exact path='/AdminViewTeamCoach' element={[<AdminNav />, <AdminMain data="AdminViewTeamCoach" />]} />
           <Route exact path='/AdminViewAprvdCoachIndividual/:id' element={[<AdminTopbar />, <AdminMain data="AdminViewAprvdCoachIndividual" />]} />
 
-          <Route exact path='/AdminViewOrganiser' element={[<AdminNav/>,<AdminMain data='adminvieworganizerreq'/>]} />
-          <Route exact path='/AdminViewOrganiser1' element={[<AdminNav/>,<AdminViewOrganiser/>]} />
+          <Route exact path='/AdminViewOrganiser' element={[<AdminNav/>,<AdminMain data='adminvieworganizerreq'/>]} /> 
+          {/* <Route exact path='/AdminViewOrganiser1' element={[<AdminNav/>,<AdminViewOrganiserRequest/>]} /> */}
           <Route exact path='/AdminViewOrganiserRequest' element={[<AdminNav/>,<AdminMain data='adminvieworganiserrequest'/>]} />
           <Route exact path='/AdminallViewOrganizerRequest/:id' element={[<AdminNav/>,<AdminMain data='AdminallViewOrganizerRequest'/>]} />
 
@@ -140,7 +144,7 @@ function App() {
           <Route exact path='/ViewerRegistration' element={[<MainNavbar />, <ViewerRegistration />, <UserFooter />]} />
           <Route exact path='/ViewerLogin' element={[<MainNavbar />, <ViewerLogin />, <UserFooter />]} />
           <Route exact path='/ViewerForgotPassword' element={[<MainNavbar />, <ViewerForgotPassword />, <UserFooter />]} />
-          <Route exact path='/ViewerHomePage' element={[<ViewerHomePage />,<Aboutpage/>,<UserFooter/>]} />
+          <Route exact path='/ViewerHomePage' element={[<ViewerNavBar/>,<ViewerHomePage />,<Aboutpage/>,<UserFooter/>]} />
 
         </Routes>
 
