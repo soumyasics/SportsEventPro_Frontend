@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import img6 from "../../Assets/OrganiserLogin.gif"
 import axiosInstance from '../Constant/BaseURL'
 import { Link, useNavigate } from 'react-router-dom'
@@ -8,13 +8,13 @@ import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 
 function ViewerLogin() {
 
-    const [icon,setIcon] = useState(faEye)
+    const [icon, setIcon] = useState(faEye)
 
-    function PasswordButtonOnClick () {
+    function PasswordButtonOnClick() {
 
-        var pWordState = document.getElementById("pword")     
+        var pWordState = document.getElementById("pword")
 
-        if (pWordState.type === "password" ) {
+        if (pWordState.type === "password") {
 
             pWordState.type = "text"
             setIcon(faEyeSlash)
@@ -102,32 +102,32 @@ function ViewerLogin() {
         console.log("function called", data);
         axiosInstance.post('viewerLogin', data)
 
-        .then(response => {
+            .then(response => {
 
-            console.log(response);
+                console.log(response);
 
-            if (response.data.status == 200) {
+                if (response.data.status == 200) {
 
-                alert("Login Successful")
-                localStorage.setItem('viewerId', response.data.data._id)
-                navigate('/ViewerHomePage')
+                    alert("Login Successful")
+                    localStorage.setItem('viewerId', response.data.data._id)
+                    navigate('/ViewerHomePage')
 
-            } 
-            
-            else {
+                }
 
-                alert(response.data.msg)
+                else {
 
-            }
+                    alert(response.data.msg)
+
+                }
 
 
-        })
+            })
 
-        .catch(error => {
+            .catch(error => {
 
-            console.error(error);
+                console.error(error);
 
-        })
+            })
 
     }
 
@@ -139,8 +139,8 @@ function ViewerLogin() {
         <div>
 
             <div class="container text-center">
-                
-                <div className='row'>
+
+                <div className='row' style={{marginBottom:"98px"}}>
 
                     <div class="Viewerloginmaindiv col-5 ">
 
@@ -159,9 +159,9 @@ function ViewerLogin() {
                             <div class="Viewerlogin">
 
                                 <div>
-                                    
+
                                     <label className='Viewerloginuser'>Email Id</label>
-                                    
+
                                     <input
                                         className="Viewerloginput1"
                                         type="text"
@@ -170,22 +170,22 @@ function ViewerLogin() {
                                         value={data.email}
                                         onChange={handleChange}
                                     />
-                                    
+
                                     <div class='ViewerValidationUsername'>
-                                       
+
                                         {errors.email && <div className="text-danger ViewerLoginValidation-1">{errors.email}</div>}
-                                    
+
                                     </div>
-                                
+
                                 </div>
 
                                 <div>
-                                    
+
                                     <label className='Viewerloginuser'>Password</label>
 
                                     <div>
-                                        
-                                        <div className = 'ViewerPassword'>
+
+                                        <div className='ViewerPassword'>
 
                                             <input
                                                 className="Viewerloginput2"
@@ -196,18 +196,34 @@ function ViewerLogin() {
                                                 value={data.password}
                                                 onChange={handleChange}
                                             />
-                                            <button className = 'ViewerLogin-Password-Change-Button' onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
-                                    
+                                            <button className='ViewerLogin-Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
+
                                         </div>
+
                                     </div>
 
                                 </div>
 
                                 <div>
 
-                                    <Link to="/ViewerForgetPass" class="ViewerloginReset">Forget Password?</Link>
-                                
+                                    <Link to="/ViewerForgotPassword" class="ViewerloginReset">Forget Password?</Link>
+
                                 </div>
+
+                                <div>
+
+                                    <button className="ViewerloginButton" type="submit" onClick={handleSubmit}>
+                                        Login
+                                    </button>
+
+                                </div>
+
+                                <div>
+
+                                    <p className='ViewerloginSignin-p1'>Don't have an account ? <Link to="/ViewerRegistration" class="ViewerloginSignin">Sign Up</Link></p>
+
+                                </div>
+
                                 <div>
 
                                     {errors.password && (
@@ -224,25 +240,11 @@ function ViewerLogin() {
                     </div>
 
                     <div class="Viewerloginbackgroundimg col-5">
-                        
+
                         <img class="Viewerloginimg" src={img6} alt=" not found"></img>
-                    
+
                     </div>
 
-                </div>
-
-                <div>
-                    
-                    <button className="ViewerloginButton" type="submit" onClick={handleSubmit}>
-                        Login
-                    </button>
-
-                </div>
-
-                <div>
-
-                    <p className='ViewerloginSignin-p1'>Don't have an account ? <Link to="/ViewerRegistration" class="ViewerloginSignin">Sign Up</Link></p>
-                
                 </div>
 
             </div>
