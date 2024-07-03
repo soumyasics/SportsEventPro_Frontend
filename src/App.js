@@ -81,8 +81,8 @@ function App() {
           <Route exact path='/AdminViewTeamCoach' element={[<AdminNav />, <AdminMain data="AdminViewTeamCoach" />]} />
           <Route exact path='/AdminViewAprvdCoachIndividual/:id' element={[<AdminTopbar />, <AdminMain data="AdminViewAprvdCoachIndividual" />]} />
 
-          <Route exact path='/AdminViewOrganiser' element={[<AdminNav/>,<AdminMain data='adminvieworganizerreq'/>]} />
-          <Route exact path='/AdminViewOrganiser1' element={[<AdminNav/>,<AdminViewOrganiser/>]} />
+          <Route exact path='/AdminViewOrganiser' element={[<AdminNav/>,<AdminMain data='adminvieworganizerreq'/>]} /> 
+          {/* <Route exact path='/AdminViewOrganiser1' element={[<AdminNav/>,<AdminViewOrganiserRequest/>]} /> */}
           <Route exact path='/AdminViewOrganiserRequest' element={[<AdminNav/>,<AdminMain data='adminvieworganiserrequest'/>]} />
           <Route exact path='/AdminallViewOrganizerRequest/:id' element={[<AdminNav/>,<AdminMain data='AdminallViewOrganizerRequest'/>]} />
 

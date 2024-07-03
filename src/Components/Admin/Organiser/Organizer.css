@@ -20,3 +20,10 @@
     height: 30px;
     width: 30px;
 }
+.adminview-organizer-request-approvebtn{
+    height: 40px;
+    width: 150px;
+    background-color:rgba(122, 121, 121, 0.863) ;
+    border: none;
+    border-radius: 10px;
+}

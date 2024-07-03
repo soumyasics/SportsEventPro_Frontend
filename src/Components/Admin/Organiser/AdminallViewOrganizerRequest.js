@@ -36,7 +36,7 @@ function AdminallViewOrganizerRequest() {
         })
     }
     useEffect (() => {
-       
+       loadData()
     },[id])
 
     const handleActive = (id) => {
@@ -78,7 +78,7 @@ function AdminallViewOrganizerRequest() {
   return (
     <div>
         <div className='ms-5 mt-5'>
-            <Link to='' className='text-dark'><FaArrowLeft className='adminview-organizer-request'/></Link>
+            <Link to='/AdminViewOrganiser' className='text-dark'><FaArrowLeft className='adminview-organizer-request'/></Link>
             <span className='ms-5 pt-2 adminview-organizer-request-span'>Organizer Details</span>
         </div>
         <div className='adminview-organizer-request-imgdiv container ms-5 '>
@@ -149,10 +149,10 @@ function AdminallViewOrganizerRequest() {
                         <img src={img10} className='adminview-organizer-request-img1'></img>
                     </div>
                     <div className='col-4'>
-                        <label>{data.country}</label>
+                        <label>Country</label>
                     </div>
                     <div className='col-6'>
-                        <label>Country</label>
+                        <label>{data.country}</label>
                     </div>
                 </div><div className='container'>
                     <hr></hr>
@@ -192,7 +192,7 @@ function AdminallViewOrganizerRequest() {
 
                 <div className='row container ms-5 mt-5'>
                     <div className='col-1 ms-3'>
-                        <img src={img10} className='adminview-organizer-request-img1'></img>
+                        <img src={img9} className='adminview-organizer-request-img1'></img>
                     </div>
                     <div className='col-4'>
                         <label>License</label>
@@ -225,15 +225,16 @@ function AdminallViewOrganizerRequest() {
             </div>
 
             <div className='row container ms-5 mt-5'>
-            <div className='col-1 ms-3'>
-            <button
+            <div className='col mt-3 text-center'>
+              <button
                      className={`toggle-button ${data.isActive ? 'active' : 'inactive'}`} 
                     onClick={()=>{toggleUserActiveState(data)}}
                     >
                       {data.isActive ? 'Active' : 'Inactive'}
                     </button>
 
-</div></div>
+</div>
+</div>
         </div>
 
         <div
