@@ -44,17 +44,14 @@ import AdminMain from './Components/Admin/AdminMain';
 import AdminNav from './Components/Admin/Nav/AdminNav'
 import AdminallViewOrganizerRequest from './Components/Admin/Organiser/AdminallViewOrganizerRequest';
 import AdminViewOrganizerToApprove from './Components/Admin/Organiser/AdminViewOrganizerToApprove';
-
 import OrganiserEditProfile from './Components/Organiser/OrganiserEditProfile';
 import ViewerRegistration from './Components/Viewer/ViewerRegistration';
 import ViewerLogin from './Components/Viewer/ViewerLogin';
 import ViewerForgotPassword from './Components/Viewer/ViewerForgotPassword';
 import ViewerHomePage from './Components/Viewer/ViewerHomePage';
-<<<<<<< HEAD
 import AdminEnquiriesViewpage from './Components/Admin/AdminEnquiriesViewpage';
-=======
 import ViewerNavBar from './Components/Viewer/ViewerNavBar';
->>>>>>> 60839427dc28a53352083f1c3cd513e0c7610831
+
 
 function App() {
 
