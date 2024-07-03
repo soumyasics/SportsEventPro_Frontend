@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.ViewerNavbar-Nav {
+
+    height: 80px;
+
+}
+
+.ViewerNavBar-Nav-a-1 {
+
+    color: white;
+    font-family: Roboto;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    margin-left: 20px;
+
+}
+
+.ViewerNavBar-Nav-a-1:hover {
+
+    color: white;
+
+}
+
+.ViewerNavBar-Nav-li-a {
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.8px;
+    
+
+}

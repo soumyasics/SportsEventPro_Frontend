@@ -8,15 +8,45 @@ import img6 from '../../Assets/Teamcoachhomepage_4.png'
 import img7 from '../../Assets/ViewerHomepage-1.jpg'
 import img8 from '../../Assets/viewerhomepage-2.png'
 import img9 from '../../Assets/Rectangle 1.png'
+import img10 from '../../Assets/image 4.png'
+import img11 from '../../Assets/image 3.png'
+import img12 from '../../Assets/image 15.png'
 
 function ViewerHomePage() {
+
 
     return (
 
         <div>
 
-            {/* div containing the header and the header abckground img */}
+            {/* div containing the header and the header background img */}
             <div className='ViewerHomePage-PrioDiv-1'>
+
+                <div class="carousel slide carousel-fade ViewerHomePage-Carousel" data-bs-ride="carousel" >
+
+                    <div class="carousel-inner">
+                        
+                        <div class="carousel-item active">
+
+                            <img src={img10} class="w-100" alt="..." />
+
+                        </div>
+
+                        <div class="carousel-item">
+
+                            <img src={img11} class="w-100" alt="..." />
+
+                        </div>
+
+                        <div class="carousel-item">
+
+                            <img src={img12} class="w-100" alt="..." />
+
+                        </div>
+                        
+                    </div>
+
+                </div>
 
                 {/* div containing the black layer over the header bg img */}
                 <div className='ViewerHomePage-Div-Header-Text'>
@@ -180,10 +210,10 @@ function ViewerHomePage() {
 
                 <div className='ViewerHomePage-img-1'>
 
-                    <img src={img7} alt=' '/>
+                    <img src={img7} alt=' ' />
 
                 </div>
-                
+
                 <div>
 
                     <h1 className='ViewerHomePage-img-h1'>Suggestions for you...</h1>
@@ -192,7 +222,7 @@ function ViewerHomePage() {
 
                         <div className='card'>
 
-                            <img src={img8} alt=' ' className='rounded-top'/>
+                            <img src={img8} alt=' ' className='rounded-top' />
 
                             <div className='card-body ViewerHomePage-img-cardtext-contain'>
 
@@ -204,7 +234,7 @@ function ViewerHomePage() {
                         </div>
                         <div className='card'>
 
-                            <img src={img9} alt=' ' className='rounded-top'/>
+                            <img src={img9} alt=' ' className='rounded-top' />
 
                             <div className='card-body ViewerHomePage-img-cardtext-contain'>
 
@@ -218,7 +248,7 @@ function ViewerHomePage() {
                     </div>
 
                 </div>
-                
+
             </div>
 
         </div>
