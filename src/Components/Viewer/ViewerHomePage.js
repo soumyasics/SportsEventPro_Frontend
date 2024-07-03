@@ -22,7 +22,7 @@ function ViewerHomePage() {
             {/* div containing the header and the header background img */}
             <div className='ViewerHomePage-PrioDiv-1'>
 
-                <div class="carousel slide carousel-fade ViewerHomePage-Carousel" data-bs-ride="carousel" >
+                <div class="carousel slide carousel-fade ViewerHomePage-Carousel" data-bs-ride="carousel" data-bs-interval="2000" >
 
                     <div class="carousel-inner">
                         
