@@ -17,30 +17,25 @@ import img12 from '../../Assets/arcticons_team-fight-tactics.jpg'
 function Teamcoachviewprofilepopup() {
   return (
     <div>
-
-
-
-
-
                   <div>
                           <div className='Teamcoachviewprofilepopupmain-1-20'>
-                          <div class=" text-center">
+                                <div class=" text-center">
                                   <div className='row '>
                                           <div className='col Teamcoachviewprofilepopupdiv-1'>
                                                   <h1 className='Teamcoachviewprofilepopuptext-1'>Coach Details</h1>
                                           </div>
                                           <div class="form-check form-switch Teamcoachviewprofilepopup-button">
                                                                   <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
-                                                          </div>
+                                        </div>
                                           <div className='col-4 Teamcoachviewprofilepopupdiv-2'>
                                                          
                                                   <label className='Teamcoachviewprofilepopupimg-1-backend'></label><br></br>
                                                   <label className='Teamcoachviewprofilepopupimg-2-backend'></label><br></br>
 
-    </div>
+                                           </div>
 
 
-</div>
+                                    </div>
 
 
 
