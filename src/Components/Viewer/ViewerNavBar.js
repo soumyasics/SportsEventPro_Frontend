@@ -89,17 +89,17 @@ function ViewerNavBar() {
                                     
                                 </button>
 
-                                <ul className="dropdown-menu " style={{ marginLeft: "-105px" }} >
+                                <ul className="dropdown-menu " style={{ marginLeft: "-110px" }} >
 
                                     <li>
 
-                                        <a className="dropdown-item" href=" "><img src={img3} alt=' ' />Profile</a>
+                                        <a className="dropdown-item" href=" "><img src={img3} alt=' ' style={{marginRight:"10px"}}/>Profile</a>
 
                                     </li>
 
                                     <li>
 
-                                        <a className="dropdown-item" href=" "><img src={img4} alt=' ' />Logout</a>
+                                        <a className="dropdown-item" href=" "><img src={img4} alt=' ' style={{marginRight:"10px"}}/>Logout</a>
 
                                     </li>
 
