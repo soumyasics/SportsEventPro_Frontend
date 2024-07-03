@@ -82,7 +82,7 @@ function App() {
           <Route exact path='/TeamCoachEditProfile' element={[<TeamCoachEditProfile/>]}/>
           <Route exact path="/Adminsidebar2" element={[<AdminDashbordTopContent />]} />
           <Route exact path="/nav" element={[<TeamCoachTopbar />]} />
-          <Route exact path="/Teamcoachdetailspopup/:id" element={[<MainNavbar />,<Adminsidebar />,<Teamcoachdetailspopup />]} />
+          <Route exact path="/Teamcoachdetailspopup/:id" element={[<Teamcoachdetailspopup />]} />
           <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup />]} />
           <Route exact path='/OrganizerRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
           <Route exact path='/OrganizerLogin' element={[<MainNavbar/>,<OrganizerLogin/>,<UserFooter/>]} />
