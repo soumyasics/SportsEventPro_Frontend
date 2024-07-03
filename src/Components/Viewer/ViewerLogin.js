@@ -142,7 +142,7 @@ function ViewerLogin() {
 
                 <div className='row' style={{marginBottom:"98px"}}>
 
-                    <div class="Viewerloginmaindiv col-5 ">
+                    <div class="Viewerloginmaindiv col-5" style={{marginTop:"98px"}}>
 
                         <div>
 
