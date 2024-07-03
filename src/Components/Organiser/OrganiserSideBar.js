@@ -80,20 +80,20 @@ function OrganiserSideBar() {
 
                         <div class="modal fade" id="Logout-Modal" tabindex="-1" aria-hidden="true">
 
-                            <div class="modal-dialog modal-dialog-centered" style={{width:"747px" , height:"298px"}}>
+                            <div class="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
 
-                                <div >
+                                <div>
 
                                     <div class="modal-body">
 
                                         <h1 className='ModalDialog-h1'>Logout</h1>
                                         <p className='ModalDialog-p'>Are you sure you want to log out ? </p>
-                                        
+
                                         <div className='ModalDialog-button-contain'>
 
                                             <button type="button" class="ModalDialog-button-1">Yes</button>
                                             <button type="button" class="ModalDialog-button-2" data-bs-dismiss="modal">No</button>
-                                            
+
                                         </div>
 
                                     </div>
@@ -101,7 +101,7 @@ function OrganiserSideBar() {
                                 </div>
 
                             </div>
-                            
+
                         </div>
 
                     </div>
