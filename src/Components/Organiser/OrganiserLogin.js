@@ -107,7 +107,7 @@ function OrganizerLogin() {
             if (response.data.status == 200) {
 
                 alert("Login Successful")
-                localStorage.setItem('admin', 1)
+                localStorage.setItem('organizerId',response.data.data._id )
                 navigate('/OrganizerDashboard')
 
             } 
