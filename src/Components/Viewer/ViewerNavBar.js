@@ -4,6 +4,7 @@ import img from '../../Assets/Frame 19.png'
 import img2 from '../../Assets/iconamoon_profile-bold.svg'
 import img3 from '../../Assets/iconamoon_profile-bold(1).svg'
 import img4 from '../../Assets/Log_Out.svg'
+import { Link } from 'react-router-dom'
 
 
 function ViewerNavBar() {
@@ -30,7 +31,7 @@ function ViewerNavBar() {
 
                             <li className="nav-item">
 
-                                <a className="nav-link text-light ViewerNavBar-Nav-li-a" aria-current="page" href=" ">Home</a>
+                                <Link to="/ViewerHomePage"><a className="nav-link text-light ViewerNavBar-Nav-li-a" aria-current="page" href=" ">Home</a></Link>
 
                             </li>
 
@@ -91,7 +92,7 @@ function ViewerNavBar() {
 
                                     <li>
 
-                                        <a className="dropdown-item" href=" "><img src={img3} alt=' ' style={{ marginRight: "10px" }} />Profile</a>
+                                        <Link to="/ViewerProfile" className='ViewerLink'><a className="dropdown-item" href=" x"><img src={img3} alt=' ' style={{ marginRight: "10px" }} />Profile</a></Link>
 
                                     </li>
 

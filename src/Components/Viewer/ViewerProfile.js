@@ -64,7 +64,7 @@ function ViewerProfile() {
 
                     <div className='col ViewerViewProfile-1'>
 
-                        <h1 className='ViewerViewProfiletext-1'><img className='ViewerViewProfileimg-13' src={img13} alt='' />
+                        <h1 className='ViewerViewProfiletext-1'><Link to="/ViewerHomePage"><img className='ViewerViewProfileimg-13' src={img13} alt='' /></Link>
                             Profile
                         </h1>
 
