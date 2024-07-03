@@ -67,7 +67,7 @@ function AdminDashbordTopContent_2() {
             <img src={topcontent5} className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className=''>
-            <button className='AdminDashbordTopContent_2-button1'><Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>View All Requests</Link></button>
+            <button className='AdminDashbordTopContent_2-button1'><Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>View All Viewers</Link></button>
           </div>
         </div>
       </div>

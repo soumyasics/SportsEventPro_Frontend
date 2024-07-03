@@ -1,18 +1,29 @@
-import React from 'react'
-import './Adminsidebar.css'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from "react";import './Adminsidebar.css'
 
-
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 function Adminsidebar() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (localStorage.getItem("adminId" == null)) {
+          navigate("/");
+        }
+      },[navigate]);
+    const logout = () => {
+        localStorage.setItem('admin',0)
+        navigate("/AdminLogin");
+      };
     return (
         <div>
             <div className='adminsidebarmaindiv1'>
                 <div className='adminsidebarmaindiv2'>
                     <Link to='/admindashboard' className='admin-dash-link'><h6 className='adminsidebarbutton-1'>Dashboard</h6></Link>
                     <Link className='admin-dash-link1'><h6 className='adminsidebarbutton-2'>Event Request</h6></Link>
+                    <Link className='admin-dash-link1'><h6 className='adminsidebarbutton-2'>View All Events</h6></Link>
+
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle adminsidebarbutton-2 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Reports
@@ -27,7 +38,7 @@ function Adminsidebar() {
                     <Link className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Enquries</h6></Link>
                     <Link className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Complaints</h6></Link>
                     <Link to='/AdminResetPass' className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Reset Password</h6></Link>
-                    <Link className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Logout</h6></Link>
+                    <Link to={'/'} onClick={logout} className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Logout</h6></Link>
                 </div>
             </div>
             {/* <div className='adminsidebarmaindiv1'>
