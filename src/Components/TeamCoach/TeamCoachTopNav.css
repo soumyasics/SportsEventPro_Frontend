@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.TeamCoachNavbar-Nav {
+
+    height: 80px;
+
+}
+
+.TeamCoachNavBar-Nav-a-1 {
+
+    color: white;
+    font-family: Roboto;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    margin-left: 20px;
+
+}
+
+.TeamCoachNavBar-Nav-a-1:hover {
+
+    color: white;
+
+}
+
+.TeamCoachLink {
+
+    text-decoration: none;
+    color: black;
+
+}
+
+.TeamCoachNavBar-Nav-li-a {
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+
+}
+
+.TeamCoachNavBar-Nav-li-a-2 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.TeamCoachNavBar-noti-contain {
+
+    margin-left: -110px;
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+
+}
+
+.modal-body {
+
+    border-radius: 20px !important;
+    border: 1px solid #000 !important;
+    background: var(--icon-color, #FFF);
+    width: 747px !important;
+    height: 298px !important;
+
+}
+
+.ModalDialog-h1 {
+
+    color: #000;
+    text-align: center;
+    text-shadow: 0px 1.146px 1.146px rgba(0, 0, 0, 0.25);
+    font-family: "Noto Sans";
+    font-size: 27.371px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 60px;
+
+}
+
+.ModalDialog-p {
+
+    color: #000;
+    font-family: "Noto Sans";
+    font-size: 15.844px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    margin-top: 21px;
+
+}
+
+.ModalDialog-button-contain {
+
+    width: max-content;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 77px;
+    margin-top: 28px;
+
+}
+
+.ModalDialog-button-1 {
+
+    width: 86px;
+    height: 33px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 17.014px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+
+}
+
+.ModalDialog-button-2 {
+
+    width: 86px;
+    height: 33px;
+    border: none;
+    background-color: #000;
+    color: var(--icon-color, #FFF);
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 17.014px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 16px;
+
+}
+
+.TeamCoach-search-container {
+
+    height: 46px;
+    width: 306px;
+    margin-top: 5px;
+
+}
+
+.TeamCoach-search {
+
+    z-index: 0;
+    padding-left: 18px;
+    height: 43px;
+    width: 304px;
+    border-radius: 82px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #fff;
+    box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
+
+}
+
+.TeamCoach-search-button {
+
+    position: absolute;
+    z-index: 1;
+    margin-top: 5.5px;
+    margin-left: -41px;
+    border: 1px solid #CFCFCF;
+    background-color: #CFCFCF;
+    border-radius: 50px;
+    box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
+    display: inline-flex;
+    height: 32px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+}

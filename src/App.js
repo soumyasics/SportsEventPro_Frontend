@@ -53,6 +53,7 @@ import ViewerHomePage from './Components/Viewer/ViewerHomePage';
 import ViewerNavBar from './Components/Viewer/ViewerNavBar';
 import ViewerProfile from './Components/Viewer/ViewerProfile';
 import ViewerEditProfile from './Components/Viewer/ViewerEditProfile';
+import TeamCoachTopNav from './Components/TeamCoach/TeamCoachTopNav';
 
 function App() {
 
@@ -104,7 +105,7 @@ function App() {
           {/* Team Coach */}
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />
           <Route exact path="/TeamCoachLogin" element={[<MainNavbar />,<TeamCoachLogin />, <UserFooter />]} />
-          <Route exact path="/TeamCoachHomePage" element={[<MainNavbar/>,<TeamCoachHomePage/>,<Aboutpage/>,<UserFooter/>]}/>
+          <Route exact path="/TeamCoachHomePage" element={[<TeamCoachTopNav/>,<TeamCoachHomePage/>,<Aboutpage/>,<UserFooter/>]}/>
           <Route exact path="/TeamCoachreg" element={[<MainNavbar />, <TeamcoachReg />, <UserFooter />]} />
           <Route exact path="/AdminResetPass" element={[<AdminTopbar />, <Adminsidebar />, <AdminResetPass />]} />
           <Route exact path="/Aboutpage" element={[<MainNavbar />, <Aboutpage />, <UserFooter />]} />
