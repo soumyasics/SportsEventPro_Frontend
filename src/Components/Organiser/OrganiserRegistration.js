@@ -11,7 +11,7 @@ function OrganiserRegistration() {
     const navigate = useNavigate()
     const [icon, setIcon] = useState(faEyeSlash)
     const [reIcon, setReIcon] = useState(faEyeSlash)
-    
+
 
     function PasswordButtonOnClick() {
 
@@ -86,7 +86,7 @@ function OrganiserRegistration() {
         email: '',
         description: '',
         confirmpassword: '',
-        experience:''
+        experience: ''
     })
 
     let formIsValid;
@@ -278,7 +278,6 @@ function OrganiserRegistration() {
                                 <h1 className='OrganiserRegistration-Content-h1'>Country</h1>
                                 <input type='text' value="India" className='OrganiserRegistration-Content-input-1' />
 
-
                             </div>
 
                             {/* input field: Email ID */}
@@ -316,7 +315,6 @@ function OrganiserRegistration() {
                                     <button className='Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
                                     {errors.password && <div className="text-danger ">{errors.password}</div>}
 
-
                                 </div>
 
                             </div>
@@ -335,6 +333,7 @@ function OrganiserRegistration() {
                                     {errors.confirmpassword && <div className="text-danger ">{errors.confirmpassword}</div>}
 
                                 </div>
+                                
                             </div>
 
                         </div>
