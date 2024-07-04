@@ -60,7 +60,7 @@ function OrganiserEditProfile() {
                             <img src={img3} alt=' ' className='OrganiserEditProfile-body-common-img' />
                             <label className='OrganiserEditProfile-body-common-label'>Name</label>
                         </div>
-                        
+
                         <input type='text' className='OrganiserEditProfile-body-input' />
 
                     </div>
@@ -109,7 +109,15 @@ function OrganiserEditProfile() {
                             <label className='OrganiserEditProfile-body-common-label'>State</label>
                         </div>
 
-                        <input type='text' className='OrganiserEditProfile-body-input' />
+                        <select className='OrganiserEditProfile-body-input-state' aria-label="Default select example">
+
+                            <option className='OrganiserRegistration-Content-Input-Select-Option' selected name="state" value="Kerala">Kerala</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Maharashtra">Maharashtra</option>
+
+                        </select>
 
                     </div>
 
@@ -124,8 +132,16 @@ function OrganiserEditProfile() {
                             <img src={img8} alt=' ' className='OrganiserEditProfile-body-common-img' />
                             <label className='OrganiserEditProfile-body-common-label'>Country</label>
                         </div>
-                        
-                        <input type='text' className='OrganiserEditProfile-body-input' />
+
+                        <select className='OrganiserEditProfile-body-input-state' aria-label="Default select example">
+
+                            <option className='OrganiserRegistration-Content-Input-Select-Option' selected name="state" value="India">India</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Austria">Austria</option>
+
+                        </select>
 
                     </div>
 
@@ -161,7 +177,8 @@ function OrganiserEditProfile() {
                             <label className='OrganiserEditProfile-body-common-label'>Organizer License</label>
                         </div>
 
-                        <input type='text' className='OrganiserEditProfile-body-input' />
+                        <input type='file' id='fileType' className='OrganiserEditProfile-body-input-file' />
+                        
 
                     </div>
 
