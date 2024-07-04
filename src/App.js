@@ -111,9 +111,9 @@ function App() {
           <Route exact path="/Aboutpage" element={[<MainNavbar />, <Aboutpage />, <UserFooter />]} />
           <Route exact path="/Enquiries" element={[<MainNavbar />, <Enquiries />, <UserFooter />]} />
           <Route exact path="/TeamCoachViewpage" element={[<TeamCoachViewpage />]} />
-          <Route exact path='/TeamCoachEditProfile' element={[<TeamCoachEditProfile />]} />
+          <Route exact path='/TeamCoachEditProfile' element={[<TeamCoachTopNav/>,<TeamCoachEditProfile />,<UserFooter/>]} />
           <Route exact path="/Teamcoachdetailspopup/:id" element={[<AdminNav />, <AdminMain data="Teamcoachdetailspopup" />]} />
-          <Route exact path="/Teamcoachviewprofilepopup" element={[<Teamcoachviewprofilepopup />]} />
+          <Route exact path="/Teamcoachviewprofilepopup" element={[<TeamCoachTopNav/>,<Teamcoachviewprofilepopup />, <UserFooter />]} />
           <Route exact path="/TeamCoachLandingPage1" element={<TeamCoachLandingPage1 />} />
           <Route exact path="/TeamCoachLandingPage2" element={<TeamCoachLandingPage2 />} />
           <Route exact path="/TeamCoachLandingPage3" element={<TeamCoachLandingPage3 />} />
