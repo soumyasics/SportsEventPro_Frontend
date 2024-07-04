@@ -8,10 +8,10 @@ import { useNavigate } from 'react-router-dom'
 
 function OrganiserRegistration() {
 
-
-    const [icon, setIcon] = useState(faEye)
-    const [reIcon, setReIcon] = useState(faEye)
     const navigate = useNavigate()
+    const [icon, setIcon] = useState(faEyeSlash)
+    const [reIcon, setReIcon] = useState(faEyeSlash)
+    
 
     function PasswordButtonOnClick() {
 
@@ -20,14 +20,14 @@ function OrganiserRegistration() {
         if (pWordState.type === "password") {
 
             pWordState.type = "text"
-            setIcon(faEyeSlash)
+            setIcon(faEye)
 
         }
 
         else {
 
             pWordState.type = "password"
-            setIcon(faEye)
+            setIcon(faEyeSlash)
 
         }
 
@@ -40,14 +40,14 @@ function OrganiserRegistration() {
         if (rePWordState.type === "password") {
 
             rePWordState.type = "text"
-            setReIcon(faEyeSlash)
+            setReIcon(faEye)
 
         }
 
         else {
 
             rePWordState.type = "password"
-            setReIcon(faEye)
+            setReIcon(faEyeSlash)
 
         }
 

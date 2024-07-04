@@ -3,25 +3,69 @@ import "./TeamcoachReg.css"
 import axiosInstance from '../Constant/BaseURL'
 import axiosMultipartInstance from '../Constant/multiPart'
 import { useNavigate } from 'react-router-dom'
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function TeamcoachReg() {
 
-const navigate=useNavigate()
+    const navigate = useNavigate()
+    const [icon,setIcon] = useState(faEyeSlash)
+    const [reIcon,setReIcon] = useState(faEyeSlash)
+
+    function PasswordButtonOnClick() {
+
+        var pWordState = document.getElementById("pword")
+
+        if (pWordState.type === "password") {
+
+            pWordState.type = "text"
+            setIcon(faEye)
+
+        }
+
+        else {
+
+            pWordState.type = "password"
+            setIcon(faEyeSlash)
+
+        }
+
+    }
+
+    function RePasswordButtonOnClick() {
+
+        var rePWordState = document.getElementById("rePWord")
+
+        if (rePWordState.type === "password") {
+
+            rePWordState.type = "text"
+            setReIcon(faEye)
+
+        }
+
+        else {
+
+            rePWordState.type = "password"
+            setReIcon(faEyeSlash)
+
+        }
+
+    }
 
     const [plus, setPlus] = useState(1)
-let count=0
+    let count = 0
     const add = (event) => {
         setPlus(plus + 1)
-        count=plus+1
+        count = plus + 1
         event.preventDefault()
     }
     const sub = (event) => {
         setPlus(plus - 1)
-        count=plus-1
+        count = plus - 1
 
         event.preventDefault()
     }
-console.log(plus);
+    console.log(plus);
     const [data, setData] = useState({
         name: '',
         category: '',
@@ -64,31 +108,31 @@ console.log(plus);
 
     let formIsValid;
     const handleChange = (event) => {
-        console.log("ty",event.target.type);
+        console.log("ty", event.target.type);
         const { name, value, files } = event.target;
-    if (files) {
-      setData(prevData => ({
-        ...prevData,
-        [name]: files[0]
-      }));
+        if (files) {
+            setData(prevData => ({
+                ...prevData,
+                [name]: files[0]
+            }));
 
-      if (name === 'category') {
-        setSelectedCategory(value);
-      }
-    } 
-    else if (event.target.type=="radio") {
-        setData(prevData => ({
-            ...prevData,
-            [name]: value
-        }));
-    }
-    
-    else {
-      setData(prevData => ({
-        ...prevData,
-        [name]: value
-      }));
-    }
+            if (name === 'category') {
+                setSelectedCategory(value);
+            }
+        }
+        else if (event.target.type == "radio") {
+            setData(prevData => ({
+                ...prevData,
+                [name]: value
+            }));
+        }
+
+        else {
+            setData(prevData => ({
+                ...prevData,
+                [name]: value
+            }));
+        }
         setErrors(prevErrors => ({
             ...prevErrors,
             [name]: ''
@@ -97,34 +141,34 @@ console.log(plus);
 
     function validateContact(fieldName, value) {
         if (!value.trim()) {
-          return `${fieldName} is required`;
+            return `${fieldName} is required`;
         } else if (value.length !== 10) {
-          return 'Please enter a valid Contact Number';
+            return 'Please enter a valid Contact Number';
         }
         return '';
-      }
+    }
 
-      function validatePincode(fieldName, value) {
+    function validatePincode(fieldName, value) {
         if (!value.trim()) {
-          return `${fieldName} is required`;
+            return `${fieldName} is required`;
         } else if (value.length !== 6) {
-          return 'Please enter a valid Contact Number';
+            return 'Please enter a valid Contact Number';
         }
         return '';
-      }
-    
-    
+    }
+
+
     const validateField = (fieldName, value) => {
         if (!value.trim()) {
             formIsValid = true;
             return `${fieldName} is required`;
         }
-        if(fieldName === "Email" && !value.endsWith("@gmail.com")){
+        if (fieldName === "Email" && !value.endsWith("@gmail.com")) {
             return "Email must be a valid Email address"
-          }
+        }
         return '';
     };
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(data);
@@ -137,7 +181,7 @@ console.log(plus);
         errors.contactnumber = validateContact('Contact number', data.contactnumber)
         errors.category = validateField('Category', data.category);
         errors.pincode = validatePincode('Pincode', data.pincode);
-        errors.state =validateField('States', data.state)
+        errors.state = validateField('States', data.state)
         // errors.password = validateField('Password', data.password);
         errors.teamname = validateField('Teamname', data.teamname);
         errors.address = validateField('Address', data.address);
@@ -147,53 +191,53 @@ console.log(plus);
         // errors.confirmpassword = validateField('Confirm Password', data.confirmpassword);
 
         const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,}$/;
-      if (!data.password.trim()) {
-        formIsValid = false;
-        errors.password = "Password is required";
-      } else if (!passwordRegex.test(data.password)) { // Pass the password to the test method
-        errors.password =
-          "Password must contain at least one number, one special character, and one capital letter";
-      }
-    
-      if (!data.confirmpassword.trim()) {
-        formIsValid = false;
-        errors.confirmpassword = "Confirm Password is required";
-      } else if (data.confirmpassword !== data.password) {
-        formIsValid = false;
-        errors.confirmpassword = "Passwords do not match";
-      }
+        if (!data.password.trim()) {
+            formIsValid = false;
+            errors.password = "Password is required";
+        } else if (!passwordRegex.test(data.password)) { // Pass the password to the test method
+            errors.password =
+                "Password must contain at least one number, one special character, and one capital letter";
+        }
+
+        if (!data.confirmpassword.trim()) {
+            formIsValid = false;
+            errors.confirmpassword = "Confirm Password is required";
+        } else if (data.confirmpassword !== data.password) {
+            formIsValid = false;
+            errors.confirmpassword = "Passwords do not match";
+        }
         BackendData();
         setErrors(errors);
 
         if (formIsValid) {
             console.log("data", data);
-          
-           
+
+
         }
     }
 
     const BackendData = () => {
         console.log("fun called", data);
- let formData = new FormData();
-console.log(plus);
-            formData.append('name',data.name);
-            formData.append('category', data.category);
-            formData.append('totalteammembers', plus);
-            formData.append('pincode', data.pincode);
-            formData.append('state', data.state);
-            formData.append('contact', data.contactnumber);
-            formData.append('password', data.password);
-            formData.append('files', data.image);
-            formData.append('files', data.certificate);
-            formData.append('teamName', data.teamname);
-            formData.append('address', data.address);
-            formData.append('city', data.city);
-            formData.append('country', data.country);
-            formData.append('email', data.email);
-            formData.append('experience', data.experience);
-        
-            
-    console.log(formData);
+        let formData = new FormData();
+        console.log(plus);
+        formData.append('name', data.name);
+        formData.append('category', data.category);
+        formData.append('totalteammembers', plus);
+        formData.append('pincode', data.pincode);
+        formData.append('state', data.state);
+        formData.append('contact', data.contactnumber);
+        formData.append('password', data.password);
+        formData.append('files', data.image);
+        formData.append('files', data.certificate);
+        formData.append('teamName', data.teamname);
+        formData.append('address', data.address);
+        formData.append('city', data.city);
+        formData.append('country', data.country);
+        formData.append('email', data.email);
+        formData.append('experience', data.experience);
+
+
+        console.log(formData);
         axiosMultipartInstance.post('registerTeamCoach', formData)
             .then(response => {
                 console.log(response);
@@ -202,7 +246,7 @@ console.log(plus);
                     navigate('/TeamCoachLogin')
                 } else
                     alert(response.data.msg)
-                    
+
 
             })
             .catch(error => {
@@ -210,7 +254,7 @@ console.log(plus);
 
 
             })
-       
+
     }
 
     return (
@@ -245,7 +289,7 @@ console.log(plus);
                                             <label>Image</label></div>
                                         <div className='teamCoachregDiv-uploads'>
                                             <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
-                                               name="image" required
+                                                name="image" required
                                                 onChange={handleChange} /></div>
                                         <div class='teamCoachRegvalidationname'>
                                             {errors.image && <div className="text-danger ">{errors.image}</div>}
@@ -285,36 +329,36 @@ console.log(plus);
 
 
 
-<div className='TeamCoachRegCategory'>
-                {['Cricket', 'Football', 'Tennis', 'Badminton', 'Hockey'].map((category, index) => (
-                  <React.Fragment key={index}>
-                    <input
-                      type="radio"
-                      className="btn-check"
-                      name="category"
-                      id={`category${index}`}
-                      autoComplete="off"
-                      onChange={handleChange}
-                      value={category.toLowerCase()}
-                      checked={data.category === category.toLowerCase()} // Ensure the radio button is checked based on state
-                    />
-                    <label
-                      className={`btn btn-secondary category-1-5 ${data.category === category.toLowerCase() ? 'selected-button' : ''}`}
-                      htmlFor={`category${index}`}
-                      style={{
-                        backgroundColor: 'rgba(0, 0, 0, 0.05)',
-                        color: 'black',
-                        fontSize: '14px',
-                        fontWeight: '600',
-                        marginLeft: '10px',
-                        marginRight: '10px'
-                      }}
-                    >
-                      {category}
-                    </label>
-                  </React.Fragment>
-                ))}
-              </div>
+                                        <div className='TeamCoachRegCategory'>
+                                            {['Cricket', 'Football', 'Tennis', 'Badminton', 'Hockey'].map((category, index) => (
+                                                <React.Fragment key={index}>
+                                                    <input
+                                                        type="radio"
+                                                        className="btn-check"
+                                                        name="category"
+                                                        id={`category${index}`}
+                                                        autoComplete="off"
+                                                        onChange={handleChange}
+                                                        value={category.toLowerCase()}
+                                                        checked={data.category === category.toLowerCase()} // Ensure the radio button is checked based on state
+                                                    />
+                                                    <label
+                                                        className={`btn btn-secondary category-1-5 ${data.category === category.toLowerCase() ? 'selected-button' : ''}`}
+                                                        htmlFor={`category${index}`}
+                                                        style={{
+                                                            backgroundColor: 'rgba(0, 0, 0, 0.05)',
+                                                            color: 'black',
+                                                            fontSize: '14px',
+                                                            fontWeight: '600',
+                                                            marginLeft: '10px',
+                                                            marginRight: '10px'
+                                                        }}
+                                                    >
+                                                        {category}
+                                                    </label>
+                                                </React.Fragment>
+                                            ))}
+                                        </div>
 
 
 
@@ -332,8 +376,8 @@ console.log(plus);
 
 
                                         <div class='categoryvalidation'>
-                            {errors.category && <div className="text-danger ">{errors.category}</div>}
-                        </div>
+                                            {errors.category && <div className="text-danger ">{errors.category}</div>}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -358,22 +402,22 @@ console.log(plus);
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>Total Team Members</label></div>
 
-                                            <div className='teamCoachregtotalmembers'>
+                                        <div className='teamCoachregtotalmembers'>
 
-                                        <div class="container text-center">
-                                            <div class="row">
-                                                <div class="col">
-                                                <button className='teamCoachregbutton-1' onClick={sub}>-</button>
-                                                </div>
-                                                <div class="col"style={{backgroundColor:'rgba(0, 0, 0, 0.05)',marginLeft:"-22px",marginRight:"-22px"}} >
-                                                {plus}
-                                                </div>
-                                                <div class="col">
-                                                <button className=' teamCoachregbutton-2' onClick={add} >+</button>
+                                            <div class="container text-center">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <button className='teamCoachregbutton-1' onClick={sub}>-</button>
+                                                    </div>
+                                                    <div class="col" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', marginLeft: "-22px", marginRight: "-22px" }} >
+                                                        {plus}
+                                                    </div>
+                                                    <div class="col">
+                                                        <button className=' teamCoachregbutton-2' onClick={add} >+</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>     
                                     </div>
                                 </div>
                                 <div class="col">
@@ -405,14 +449,14 @@ console.log(plus);
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col">
                                     <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>City</label></div>
                                         <input className='TeamCoachField-9' type='text' placeholder='Enter City' name="city"
 
-                                        
+
                                             value={data.city}
                                             onChange={handleChange} />
                                         <div class='teamCoachRegvalidationname'>
@@ -426,17 +470,17 @@ console.log(plus);
                             <div class="row">
                                 <div class="col">
 
-                                <div className='teamcoachn1'>
+                                    <div className='teamcoachn1'>
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>State</label></div>
 
-                                            <select class="form-select" aria-label="Default select example" name="state" onChange={handleChange}>
-                                                    <option selected value="Kerala">Kerala</option>
-                                                    <option value="Tamil Nadu">Tamil Nadu</option>
-                                                    <option value="Karnataka">Karnataka</option>
-                                                    <option value="Maharashtra">Maharashtra</option>
-                                                </select>
-                                        
+                                        <select class="form-select" aria-label="Default select example" name="state" onChange={handleChange}>
+                                            <option selected value="Kerala">Kerala</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                        </select>
+
                                         <div class='teamCoachRegvalidationname'>
                                             {/* {errors.state && <div className="text-danger ">{errors.state}</div>} */}
                                         </div>
@@ -449,7 +493,7 @@ console.log(plus);
                                                 <label>Country</label>
                                             </div>
                                             <div className='TeamCoachField-10'>
-                                            <input className='TeamCoachField-9' type='text' value="India" disabled name="country" onChange={handleChange} />
+                                                <input className='TeamCoachField-9' type='text' value="India" disabled name="country" onChange={handleChange} />
                                             </div>
                                         </div>
                                     </div>
@@ -496,8 +540,8 @@ console.log(plus);
                                         </div>
                                         <div className='teamCoachregDiv-uploads'>
                                             <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"
-                                               name="certificate"
-                                                onChange={handleChange} required/>
+                                                name="certificate"
+                                                onChange={handleChange} required />
                                         </div>
                                         <div class='teamCoachRegvalidationname'>
                                             {errors.certificate && <div className="text-danger ">{errors.certificate}</div>}
@@ -520,16 +564,19 @@ console.log(plus);
                                 </div>
                             </div>
                         </div>
-                         <div class="container text-center">
+                        <div class="container text-center">
                             <div class="row">
                                 <div class="col">
                                     <div className='teamcoachn1'>
                                         <div className='TeamCoachFieldDiv-pass'>
                                             <div className='teamCoachRegDiv-Text'>
                                                 <label>Password</label></div>
-                                            <input className='TeamCoachField-6' type='password' placeholder='Password' name="password"
+                                            <input className='TeamCoachField-6' id='pword' type='password' placeholder='Password' name="password"
                                                 value={data.password}
-                                                onChange={handleChange} />
+                                                onChange={handleChange} 
+                                            />
+                                            <button className='passbutt' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon}/></button>
+
                                         </div>
                                         <div class='teamCoachRegvalidationname'>
                                             {errors.password && <div className="text-danger ">{errors.password}</div>}
@@ -541,9 +588,11 @@ console.log(plus);
                                     <div className='teamcoachn1'>
 
                                         <div className='teamCoachRegDiv-Text'> <label>Confirm Password</label></div>
-                                        <input className='TeamCoachField-13' type='password' placeholder='Confirm password' name="confirmpassword"
+                                        <input className='TeamCoachField-13' id='rePWord' type='password' placeholder='Confirm password' name="confirmpassword"
                                             value={data.confirmpassword}
-                                            onChange={handleChange} />
+                                            onChange={handleChange} 
+                                        />
+                                        <button className='passbutt' onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon}/></button>
 
                                         <div class='teamCoachRegvalidationname'>
                                             {errors.confirmpassword && <div className="text-danger ">{errors.confirmpassword}</div>}
@@ -554,7 +603,7 @@ console.log(plus);
                         </div>
                     </div>
                     <div>
-                        <input className='TeamCoachButton' type='submit' placeholder='submit' onClick={handleSubmit}/>
+                        <input className='TeamCoachButton' type='submit' placeholder='submit' onClick={handleSubmit} />
                     </div>
                 </div>
             </div>

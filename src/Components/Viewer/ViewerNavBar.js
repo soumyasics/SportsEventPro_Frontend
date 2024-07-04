@@ -31,7 +31,7 @@ function ViewerNavBar() {
 
                             <li className="nav-item">
 
-                                <Link to="/ViewerHomePage"><a className="nav-link text-light ViewerNavBar-Nav-li-a" aria-current="page" href=" ">Home</a></Link>
+                                <Link to="/ViewerHomePage" style={{textDecoration:"none"}}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Home</a></Link>
 
                             </li>
 

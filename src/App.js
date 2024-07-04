@@ -52,6 +52,7 @@ import ViewerForgotPassword from './Components/Viewer/ViewerForgotPassword';
 import ViewerHomePage from './Components/Viewer/ViewerHomePage';
 import ViewerNavBar from './Components/Viewer/ViewerNavBar';
 import ViewerProfile from './Components/Viewer/ViewerProfile';
+import ViewerEditProfile from './Components/Viewer/ViewerEditProfile';
 
 function App() {
 
@@ -141,6 +142,7 @@ function App() {
           <Route exact path='/ViewerForgotPassword' element={[<MainNavbar />, <ViewerForgotPassword />, <UserFooter />]} />
           <Route exact path='/ViewerHomePage' element={[<ViewerNavBar/>,<ViewerHomePage />,<Aboutpage/>,<UserFooter/>]} />
           <Route exact path='/ViewerProfile' element = {[<ViewerNavBar/>,<ViewerProfile/>,<UserFooter/>]}/>
+          <Route exact path='/ViewerEditProfile' element={<ViewerEditProfile/>} />
 
 
         </Routes>
