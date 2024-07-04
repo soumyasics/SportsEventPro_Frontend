@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 .OrganiserEditProfile-headercontainer {
 
     display: flex;
@@ -28,7 +30,7 @@
 }
 
 .OrganiserEditProfile-headercontainer-h1 {
-    
+
     margin-left: 30px;
     color: #000;
     font-family: Roboto;
@@ -42,7 +44,7 @@
 .OrganiserEditProfile-headercontainer-container-2-profilepicture {
 
     border-radius: 50%;
-    vertical-align:text-bottom;
+    vertical-align: text-bottom;
 
 }
 
@@ -50,7 +52,7 @@
 
     background-color: #00000000;
     border: none;
-    border-radius:50%;
+    border-radius: 50%;
     margin-left: -70px;
 
 }
@@ -62,6 +64,8 @@
     border: 2px solid;
     align-items: flex-start;
     gap: 260px;
+    margin-top: 50px;
+    padding-left: 80px;
 
 }
 
@@ -69,6 +73,90 @@
 
     display: flex;
     flex-direction: column;
-    border: 2px solid;
+    align-items: flex-start;
+    gap: 38px;
+
+}
+
+.OrganiserEditProfile-body-common {
+
+    display: flex;
+    flex-direction: row;
+    padding: var(--items, 0px) 1px 10px 1px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+
+}
+
+.OrganiserEditProfile-body-right {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 38px;
+
+}
+
+.OrganiserEditProfile-body-common-img-contain {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 212px;
+
+}
+
+.OrganiserEditProfile-body-common-img {
+
+    display: flex;
+    width: 46.269px;
+    height: 46.269px;
+    padding: var(--items, 11px) var(--items, 11.269px) var(--items, 11.269px) var(--items, 11px);
+    flex-shrink: 0;
+    border-radius: 23.135px;
+    background: rgba(0, 0, 0, 0.05);
+
+}
+
+.OrganiserEditProfile-body-common-label {
+
+    margin-left: 10px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 15.423px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21.592px;
+    text-transform: capitalize;
+
+}
+
+.OrganiserEditProfile-body-input {
+
+    display: flex;
+    width: 213px;
+    height: 33px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+
+}
+
+.OrganiserEditProfile-body-button {
+
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 240px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #1877F2;
+    color: white;
 
 }

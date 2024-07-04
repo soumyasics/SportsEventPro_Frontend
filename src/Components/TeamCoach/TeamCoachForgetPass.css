@@ -85,3 +85,12 @@
 .TeamCoachForgetPass-valid{
     margin-top: -22px;
 }
+
+.Passwordbutt {
+
+    background: none;
+    border: none;
+    position: absolute;
+    margin-top: 1.2%;
+    margin-left: 32.7%;
+}
