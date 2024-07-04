@@ -18,7 +18,7 @@ function TeamCoachTopNav() {
 
             <nav className="navbar navbar-expand-lg bg-black TeamCoachNavbar-Nav">
 
-                <div className="container-fluid">
+                <div className="container-fluid" style={{zIndex:"1"}}>
 
                     <a className="navbar-brand TeamCoachNavBar-Nav-a-1" href=" "><img src={img} alt='' style={{ marginLeft: "20px", marginRight: "20px" }} />Sports Event Pro</a>
 
@@ -30,7 +30,7 @@ function TeamCoachTopNav() {
 
                     <div className="collapse navbar-collapse" id="navbarNav">
 
-                        <ul className="navbar-nav" style={{ marginLeft: "156px", marginRight: "180px" }}>
+                        <ul className="navbar-nav Ul-Nav">
 
                             <li className="nav-item" style={{ marginLeft: "20px", marginRight: "20px" }}>
 
@@ -128,11 +128,12 @@ function TeamCoachTopNav() {
                         </li>
 
 
-                        {/* Notification */}
+                        {/* Notification dropdown */}
                         <li className="nav-item" style={{ listStyle: "none", marginLeft: "10px" }}>
 
                             <div className="dropdown-center">
-
+                                
+                                {/* the button */}
                                 <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
                                     type="button"
                                     data-bs-toggle="dropdown"
@@ -143,27 +144,172 @@ function TeamCoachTopNav() {
                                     <img src={img6} alt=' ' />
 
                                 </button>
-
+                                
+                                {/* the dropdown starts here..... */}
                                 <ul className="dropdown-menu TeamCoachNavBar-noti-contain" >
 
-                                    <li>
+                                    <li className='TeamCoachNavBar-noti-li'>
+                                        
+                                        {/* a single row start */}
+                                        <div className='TeamCoachNavBar-noti-div'> 
+                                            
+                                            <div className='TeamCoachNavbar-noti-div-div'>
 
-                                        <div>
+                                                <div>
+                                                    <img src={img7} alt=''/>
+                                                </div>
 
+                                                <div>
+                                                    
+                                                    {/* to map notfification array do it to stuff inside this */}
+                                                    <div>
+
+                                                        <h1 className='TeamCoachNavBar-noti-div-div-h1'>TVM Junior Sports</h1>
+                                                        
+                                                        <div className='TeamCoachNavBar-noti-div-div-div'>
+                                                            <h2 className='TeamCoachNavBar-noti-div-div-h2'>Football</h2>
+                                                        </div>
+
+                                                    </div>
+                                                    
+                                                    <div>
+                                                        
+                                                        <h2 className='TeamCoachNavBar-noti-div-div-h2'>Biggest Sports tournament held in Trivandrum. Don’t miss it!</h2>
+                                                        
+                                                        <div className='TeamCoachNavBar-noti-div-div-div-2'>
+                                                            <h2 className='TeamCoachNavBar-noti-div-div-h2'>12/12/2024, 2:00 PM</h2>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
                                             
 
                                         </div>
-                                        
+                                        {/* a single row end */}
+                                        {/* a single row start */}
+                                        <div className='TeamCoachNavBar-noti-div'> 
+                                            
+                                            <div className='TeamCoachNavbar-noti-div-div'>
 
-                                    </li>
+                                                <div>
+                                                    <img src={img7} alt=''/>
+                                                </div>
 
-                                    <li>
+                                                <div>
+                                                    
+                                                    {/* to map notfification array do it to stuff inside this */}
+                                                    <div>
 
-                                        <button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#Logout-Modal" ><img src={img4} alt=' ' style={{ marginRight: "10px" }} />Logout</button>
+                                                        <h1 className='TeamCoachNavBar-noti-div-div-h1'>TVM Junior Sports</h1>
+                                                        
+                                                        <div className='TeamCoachNavBar-noti-div-div-div'>
+                                                            <h2 className='TeamCoachNavBar-noti-div-div-h2'>Football</h2>
+                                                        </div>
 
+                                                    </div>
+                                                    
+                                                    <div>
+                                                        
+                                                        <h2 className='TeamCoachNavBar-noti-div-div-h2'>Biggest Sports tournament held in Trivandrum. Don’t miss it!</h2>
+                                                        
+                                                        <div className='TeamCoachNavBar-noti-div-div-div-2'>
+                                                            <h2 className='TeamCoachNavBar-noti-div-div-h2'>12/12/2024, 2:00 PM</h2>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            
+
+                                        </div>
+                                        {/* a single row end */}
+                                        {/* a single row start */}
+                                        <div className='TeamCoachNavBar-noti-div'> 
+                                            
+                                            <div className='TeamCoachNavbar-noti-div-div'>
+
+                                                <div>
+                                                    <img src={img7} alt=''/>
+                                                </div>
+
+                                                <div>
+                                                    
+                                                    {/* to map notfification array do it to stuff inside this */}
+                                                    <div>
+
+                                                        <h1 className='TeamCoachNavBar-noti-div-div-h1'>TVM Junior Sports</h1>
+                                                        
+                                                        <div className='TeamCoachNavBar-noti-div-div-div'>
+                                                            <h2 className='TeamCoachNavBar-noti-div-div-h2'>Football</h2>
+                                                        </div>
+
+                                                    </div>
+                                                    
+                                                    <div>
+                                                        
+                                                        <h2 className='TeamCoachNavBar-noti-div-div-h2'>Biggest Sports tournament held in Trivandrum. Don’t miss it!</h2>
+                                                        
+                                                        <div className='TeamCoachNavBar-noti-div-div-div-2'>
+                                                            <h2 className='TeamCoachNavBar-noti-div-div-h2'>12/12/2024, 2:00 PM</h2>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            
+
+                                        </div>
+                                        {/* a single row end */}
+                                        {/* a single row start */}
+                                        <div className='TeamCoachNavBar-noti-div'> 
+                                            
+                                            <div className='TeamCoachNavbar-noti-div-div'>
+
+                                                <div>
+                                                    <img src={img7} alt=''/>
+                                                </div>
+
+                                                <div>
+                                                    
+                                                    {/* to map notfification array do it to stuff inside this */}
+                                                    <div>
+
+                                                        <h1 className='TeamCoachNavBar-noti-div-div-h1'>TVM Junior Sports</h1>
+                                                        
+                                                        <div className='TeamCoachNavBar-noti-div-div-div'>
+                                                            <h2 className='TeamCoachNavBar-noti-div-div-h2'>Football</h2>
+                                                        </div>
+
+                                                    </div>
+                                                    
+                                                    <div>
+                                                        
+                                                        <h2 className='TeamCoachNavBar-noti-div-div-h2'>Biggest Sports tournament held in Trivandrum. Don’t miss it!</h2>
+                                                        
+                                                        <div className='TeamCoachNavBar-noti-div-div-div-2'>
+                                                            <h2 className='TeamCoachNavBar-noti-div-div-h2'>12/12/2024, 2:00 PM</h2>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            
+
+                                        </div>
+                                        {/* a single row end */}
                                     </li>
 
                                 </ul>
+                                {/* dropdown ends here...... */}
 
                             </div>
 

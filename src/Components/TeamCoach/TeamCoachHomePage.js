@@ -126,29 +126,10 @@ function TeamCoachHomePage() {
 
                     <div className = 'TeamCoachHomePage-Text-Contain-Div-2'>
 
-                        <div>
-
-                            <p className = 'TeamCoachHomePage-Text-Contain-p-1'>Enroll For Events</p>
-
-                        </div>
-
-                        <div>
-
-                            <p className = ' TeamCoachHomePage-Text-Contain-p-2'>Sports are physical activities that test your skills and fitness. They can be competitive, with teams or individuals vying for victory. From soccer to swimming, sports offer fun, exercise, and a chance to push your limits.</p>
-
-                        </div>
-
-                        <div>
-
-                            <p className = 'TeamCoachHomePage-Text-Contain-p-3'>Choose the favouirite sports you are looking for and enrol your slot now...</p>
-
-                        </div>
-
-                        <div>
-
-                            <button className = 'btn btn-light rounded-4 TeamCoachHomePage-Text-Contain-Button-1'>Enroll Now</button>
-
-                        </div>
+                        <p className = 'TeamCoachHomePage-Text-Contain-p-1'>Enroll For Events</p>
+                        <p className = ' TeamCoachHomePage-Text-Contain-p-2'>Sports are physical activities that test your skills and fitness. They can be competitive, with teams or individuals vying for victory. From soccer to swimming, sports offer fun, exercise, and a chance to push your limits.</p>
+                        <p className = 'TeamCoachHomePage-Text-Contain-p-3'>Choose the favouirite sports you are looking for and enrol your slot now...</p>
+                        <button className = 'btn btn-light rounded-4 TeamCoachHomePage-Text-Contain-Button-1'>Enroll Now</button>
 
                     </div>
 

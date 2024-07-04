@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .TeamCoachNavbar-Nav {
-
+    
     height: 80px;
-
+    
 }
 
 .TeamCoachNavBar-Nav-a-1 {
-
+    
     color: white;
     font-family: Roboto;
     font-size: 28px;
@@ -15,13 +15,13 @@
     font-weight: 500;
     line-height: 36px;
     margin-left: 20px;
-
+    
 }
 
 .TeamCoachNavBar-Nav-a-1:hover {
-
+    
     color: white;
-
+    
 }
 
 .TeamCoachLink {
@@ -56,10 +56,97 @@
 
 .TeamCoachNavBar-noti-contain {
 
-    margin-left: -110px;
-    margin-top: 10px;
+    width: 599px;
+    height: auto;
+    border-radius: 32px;
+    background: #000;
+    margin-left: -510px;
+    margin-top: 30px !important;
     background-color: black;
     color: white;
+}
+
+.TeamCoachNavBar-noti-li {
+
+    display: flex;
+    width: 560px;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+.TeamCoachNavBar-noti-div {
+
+    display: flex;
+    flex-direction: column;
+    padding: var(--items, 15.5px) var(--items, 52.731px) var(--items, 15.5px) var(--items, 30px);
+    border-radius: 20px;
+    border: 1px solid var(--icon-color, #FFF);
+    margin-left: 40px;
+    margin-top: 38px;
+
+}
+
+.TeamCoachNavbar-noti-div-div {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 17px;
+
+}
+
+.TeamCoachNavBar-noti-div-div-h1 {
+
+    flex: 1 0 0;
+    align-self: stretch;
+    color: var(--icon-color, #FFF);
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+
+}
+
+.TeamCoachNavBar-noti-div-div-div {
+
+    display: flex;
+    height: 24px;
+    width: 75px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #232323;
+
+}
+
+.TeamCoachNavBar-noti-div-div-div-2 {
+
+    display: flex;
+    width: 168px;
+    height: 29px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--icon-color, #FFF);
+
+}
+
+
+.TeamCoachNavBar-noti-div-div-h2 {
+
+    display: flex;
+    height: 24px;
+    padding-top: 5px;
+    gap: 10px;
+    color: var(--icon-color, #FFF);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
 
 }
 

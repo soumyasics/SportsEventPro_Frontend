@@ -13,6 +13,7 @@
 .TeamCoachHomePage-img-1 {
 
     background-image: url("../../Assets/Teamcoachhomepage_1.png");
+    background-repeat: no-repeat;
     width: 1401px;
     height: 528px;
     margin-left: 50%;
@@ -171,6 +172,8 @@
     flex-direction: row;
     height: max-content;
     width: max-content;
+    margin-left: 50%;
+    transform: translate(-50%);
 
 }
 
@@ -255,6 +258,7 @@
     align-items: flex-start;
     margin-top: 100px;
     margin-bottom: 50px;
+    
 
 }
 
@@ -264,14 +268,16 @@
     flex-direction: row;
     margin-top: 50px;
     margin-bottom: 50px;
-
+    margin-left: 50%;
+    transform: translate(-50%);
+    width: max-content;
 }
 
 .TeamCoachHomePage-Text-Contain-Div-2 {
 
-    margin-left: 100px;
-    width: 50%;
+    margin-left: 30px;
     margin-right: 45px;
+    width: 654px;
 
 }
 
