@@ -71,12 +71,12 @@ navigate(`/Teamcoachdetailspopup/${id}`)
                 <tbody>
                 {
 
-(userData&&userData.length>0)?(userData.map(x => {
+(userData&&userData.length>0)?(userData.map((x,index,) => {
 
      return(
                     <tr className='AdminViewTeamCoach-tableBodyRow' >
 
-                        <td className='col-2 AdminViewTeamCoach-tableBodyData'>1 {/*Sl No*/}</td>
+                        <td className='col-2 AdminViewTeamCoach-tableBodyData'> {index+1}</td>
                         <td className='col-2 AdminViewTeamCoach-tableBodyData'>{x.name} {/* Coach Name */}</td>
                         <td className='col-2 AdminViewTeamCoach-tableBodyData'>{x.teamName} {/* Team Name */}</td>
                         <td className='col-2 AdminViewTeamCoach-tableBodyData'>{x.category} {/* Sport */}</td>

@@ -9,6 +9,8 @@ import axiosInstance from '../Constant/BaseURL'
 function AdminDashbordTopContent() {
 
     const [coaches, setCoaches] = useState([]);
+    const [organizers, setOrganizers] = useState([]);
+    const[viewers,setViewers]=useState([])
 
 
     useEffect(() => {
@@ -26,10 +28,36 @@ function AdminDashbordTopContent() {
             console.error("Error!", error);
           });
       }, []);
-
-    const[viewers,setViewers]=useState([])
-    const[organizer,setOrganizer]=useState([])
-    const[teamCoach,setTeamCoach]=useState([])
+      useEffect(() => {
+        axiosInstance
+          .post("/viewOrganizers")
+          .then((res) => {
+            if (res.data.status === 200) {
+              console.log(res);
+              setOrganizers(res.data.data || []);
+            } else {
+                setOrganizers([]);
+            }
+          })
+          .catch((error) => {
+            console.error("Error!", error);
+          });
+      }, []);
+      useEffect(() => {
+        axiosInstance
+          .post("/viewOrganizers")
+          .then((res) => {
+            if (res.data.status === 200) {
+              console.log(res);
+              setOrganizers(res.data.data || []);
+            } else {
+                setOrganizers([]);
+            }
+          })
+          .catch((error) => {
+            console.error("Error!", error);
+          });
+      }, []);
     return (
         <div>
             <div className='container mt-5'> 
@@ -44,10 +72,9 @@ function AdminDashbordTopContent() {
                                 <div className='col'>
                                     <div className='AdminDashbordTopContentDiv-1 mt-2'>
                                         <h4>Total Viewers</h4>
+                                        <span className='Admin-Dashboard-Content-span mt-1 text-center'>{viewers.length}</span>
                                     </div>
-                                    <div className=' Admin-Dashboard-Content-span mt-1 text-center'>
-                                        <span>0</span>
-                                    </div>
+                                   
                                     
                                 </div>
                             </div>
@@ -61,9 +88,8 @@ function AdminDashbordTopContent() {
                                 <div className='col-8'>
                                     <div className='AdminDashbordTopContentDiv-1 mt-2'>
                                         <h4>Total Organizers</h4>
-                                    </div>
-                                    <div className=' Admin-Dashboard-Content-span mt-4 text-center'>
-                                        <span className=''>0</span>
+                                        <span className='Admin-Dashboard-Content-span mt-4 text-center'>{organizers.length}</span>
+
                                     </div>
                                     
                                 </div>
@@ -78,10 +104,9 @@ function AdminDashbordTopContent() {
                                 <div className='col-7'>
                                     <div className='AdminDashbordTopContentDiv-1 mt-2'>
                                         <h4>Total TeamCoaches</h4>
+                                        <span className='Admin-Dashboard-Content-span mt-4 text-center'> {coaches.length}</span>
                                     </div>
-                                    <div className=' Admin-Dashboard-Content-span mt-4 text-center'>
-                                        <span>{coaches.length}</span>
-                                    </div>
+                                   
                                     
                                 </div>
                             </div>
