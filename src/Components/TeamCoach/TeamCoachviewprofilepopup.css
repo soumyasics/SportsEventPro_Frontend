@@ -41,9 +41,10 @@
     align-content: normal;
     align-items: center;
     border-radius: 8px;
-    background: #DADADA;
-    color: black;
+    background: #9e9999;
+    color: rgb(247, 244, 244) !important;
     margin-left: 92px;
+    text-decoration: none;
 
 
 
@@ -182,4 +183,11 @@ height: var(--items, 0px);
 }
 .teamcoach-details-arrowlink{
     color: black;
+}
+.TeamCoachViewProfilediv-11-button{
+    color: rgb(248, 244, 244);
+ 
+    text-decoration: none;
+  
+
 }
