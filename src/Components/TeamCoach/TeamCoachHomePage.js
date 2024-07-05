@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import "./TeamCoachHomePage.css"
 import img from "../../Assets/Teamcoachhomepage_2.png"
 import img2 from "../../Assets/Teamcoachhomepage_5.jpeg"
@@ -6,25 +6,17 @@ import img3 from "../../Assets/Teamcoachhomepage_6.jpeg"
 import img4 from "../../Assets/Teamcoachhomepage_7.jpeg"
 import img5 from "../../Assets/Teamcoachhomepage_3.png"
 import img6 from '../../Assets/Teamcoachhomepage_4.png'
-import { Link, useNavigate } from 'react-router-dom';
 
 function TeamCoachHomePage() {
-    const navigate=useNavigate()
 
-    useEffect(() => {
-        console.log(localStorage.getItem("admin"));
-        if (localStorage.getItem("tcId") == "") {
-          navigate("/TeamCoachLogin");
-        }
-      }, [navigate]); 
     return (
 
         <div>
             {/* splash image section start */}
 
-            <div className='TeamCoachHomePage-PrioDiv-1'>
+            <div className='text-center justify-content-center TeamCoachHomePage-PrioDiv-1'>
 
-                <div className='TeamCoachHomePage-img-1'>
+                <div className='TeamCoachHomePage-img-1 '>
 
                     <div className='TeamCoachHomePage-Text-Contain-Div-1'>
 
