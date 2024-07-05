@@ -17,18 +17,18 @@ function TeamCoachTopNav() {
 
 
 
-const navigate=useNavigate()
+    const navigate = useNavigate()
     const handleLogout = () => {
-   
-        console.log("Logging out..."); 
-        localStorage.setItem('tcId',"")
+
+        console.log("Logging out...");
+        localStorage.setItem('tcId', "")
         navigate('/')
     };
     useEffect(() => {
         if (localStorage.getItem("tcId") == "") {
-          navigate("/TeamCoachLogin");
+            navigate("/TeamCoachLogin");
         }
-      }, [navigate]); 
+    }, [navigate]);
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-black TeamCoachNavbar-Nav">
@@ -161,7 +161,7 @@ const navigate=useNavigate()
                 </div>
             </div> */}
 
-<div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+            <div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
                     <div className="modal-content">
                         <div className="modal-body">

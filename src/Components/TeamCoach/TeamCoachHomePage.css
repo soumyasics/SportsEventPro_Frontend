@@ -16,8 +16,8 @@
     width: 100%;
     height: 528px;
     margin-left: 50%;
-    background-repeat: no-repeat;
     transform: translate(-50%);
+    background-repeat: no-repeat;
 
 }
 
@@ -254,6 +254,7 @@
     align-items: flex-start;
     margin-top: 100px;
     margin-bottom: 50px;
+    
 
 }
 
@@ -263,14 +264,16 @@
     flex-direction: row;
     margin-top: 50px;
     margin-bottom: 50px;
-
+    margin-left: 50%;
+    transform: translate(-50%);
+    width: max-content;
 }
 
 .TeamCoachHomePage-Text-Contain-Div-2 {
 
-    margin-left: 100px;
-    width: 50%;
+    margin-left: 30px;
     margin-right: 45px;
+    width: 654px;
 
 }
 

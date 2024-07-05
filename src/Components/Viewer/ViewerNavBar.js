@@ -15,7 +15,7 @@ function ViewerNavBar() {
 
             <nav className="navbar navbar-expand-lg bg-black ViewerNavbar-Nav">
 
-                <div className="container-fluid">
+                <div className="container-fluid ">
 
                     <a className="navbar-brand ViewerNavBar-Nav-a-1" href=" "><img src={img} alt='' style={{ marginLeft: "20px", marginRight: "20px" }} />Sports Event Pro</a>
 
@@ -27,7 +27,7 @@ function ViewerNavBar() {
 
                     <div className="collapse navbar-collapse" id="navbarNav">
 
-                        <ul className="navbar-nav" style={{ marginLeft: "151px", marginRight: "151px" }}>
+                        <ul className="navbar-nav">
 
                             <li className="nav-item">
 
