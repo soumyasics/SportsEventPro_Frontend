@@ -13,10 +13,10 @@
 .TeamCoachHomePage-img-1 {
 
     background-image: url("../../Assets/Teamcoachhomepage_1.png");
-    width: 70%;
+    background-repeat: no-repeat;
+    width: 1401px;
     height: 528px;
     margin-left: 50%;
-    background-repeat: no-repeat;
     transform: translate(-50%);
 
 }
@@ -26,7 +26,7 @@
 
     width: 463px;
     height: 96px;
-    margin-left: 60%;
+    margin-left: 869px;
 
 }
 
@@ -68,7 +68,7 @@
     border-radius: 97px;
     background: #000;
     box-shadow: 2px 0px 28px 0px rgba(233, 225, 4, 0.75) inset;
-    margin-left: 72.5%;
+    margin-left: 1054px;
     margin-top: 250px;
 
 }
@@ -122,7 +122,7 @@
     background-color: #F0F0F0;
     padding-top: 50px;
     padding-bottom: 50px;
-    width: 100;
+    width: 100%;
 
 }
 
@@ -135,6 +135,8 @@
     height: 126px;
     margin-top: 50px;
     margin-bottom: 30px;
+    margin-left: 50%;
+    transform: translate(-50%);
 
 }
 
@@ -146,7 +148,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: 48px;
-    text-align: center;
 
 }
 
@@ -171,16 +172,20 @@
     flex-direction: row;
     height: max-content;
     width: max-content;
-    gap: 50px;
+    margin-left: 50%;
+    transform: translate(-50%);
 
 }
 
 /* css for the 1st card */
 .TeamCoachHomePage-Card-Start {
 
-    height: 100%;
-    width: 90%;
+    width: 307px;
+    height: 531px;
+    border-radius: 10px;
     border: 2px solid rgba(0, 0, 0, 0.20);
+    margin-left: 75px;
+    margin-right: 50px;
     margin-bottom: 30px;
 
 }
@@ -188,24 +193,25 @@
 /* css for the rest of the cards */
 .TeamCoachHomePage-Card {
 
-    height: max-content;
-    width: max-content;
+    width: 307px;
+    height: 531px;
+    border-radius: 10px;
     border: 2px solid rgba(0, 0, 0, 0.20);
+    margin-right: 50px;
     margin-bottom: 30px;
 
 }
 
 /* css for the img inside the card */
-/* .TeamCoachHomePage-Card-Img {
+.TeamCoachHomePage-Card-Img {
 
-    height: 100%;
-    width: 100%;
+    height: 430.5px;
+    width: 303.8px;
 
-} */
+}
 
 /* css for the body part of the card */
 .TeamCoachHomePage-Card-Body {
-
 
     background-color: white;
     text-align: left;
