@@ -15,9 +15,9 @@ function ViewerNavBar() {
 
             <nav className="navbar navbar-expand-lg bg-black ViewerNavbar-Nav">
 
-                <div className="container-fluid ">
+                <div className="ViewerNavbar-Nav-1">
 
-                    <a className="navbar-brand ViewerNavBar-Nav-a-1" href=" "><img src={img} alt='' style={{ marginLeft: "20px", marginRight: "20px" }} />Sports Event Pro</a>
+                    <a className="navbar-brand ViewerNavBar-Nav-a-1" href=" "><img src={img} alt='' style={{ marginRight: "20px" }} />Sports Event Pro</a>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -25,9 +25,9 @@ function ViewerNavBar() {
 
                     </button>
 
-                    <div className="collapse navbar-collapse" id="navbarNav">
+                    <div className="collapse navbar-collapse " id="navbarNav">
 
-                        <ul className="navbar-nav">
+                        <ul className="navbar-nav NavbarNav-ul">
 
                             <li className="nav-item">
 
@@ -73,7 +73,7 @@ function ViewerNavBar() {
 
                         </ul>
 
-                        <li className="nav-item" style={{ listStyle: "none", marginLeft: "78.5px", marginRight: '20px' }}>
+                        <li className="nav-item ViewerNavBar-Navli" >
 
                             <div className="dropdown-center">
 
