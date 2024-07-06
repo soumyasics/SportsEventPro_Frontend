@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import "../../Components/TeamCoach/TeamCoachEditProfile.css";
 import img1 from '../../Assets/solar_phone-bold-duotone.jpg';
 import img2 from '../../Assets/ri_open-arm-fill.jpg';
@@ -15,6 +15,7 @@ import img12 from '../../Assets/arcticons_team-fight-tactics.jpg';
 import img13 from "../../Assets/circum_edit.jpg";
 import axiosInstance from '../Constant/BaseURL';
 import { useNavigate } from 'react-router-dom';
+import axiosMultipartInstance from '../Constant/multiPart';
 
 const url = axiosInstance.defaults.url;
 
@@ -37,9 +38,11 @@ function TeamCoachEditProfile() {
         email: '',
         experience: '',
         confirmpassword: '',
+        profilePic:null
     });
 
     const navigate = useNavigate();
+    const fileInputRef = useRef(null);
 
     useEffect(() => {
         axiosInstance
@@ -60,22 +63,37 @@ function TeamCoachEditProfile() {
             [name]: value,
         }));
     };
-    
+
+    const handlePenClick = () => {
+        fileInputRef.current.click();
+    };
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setData((prevData) => ({
+                ...prevData,
+                profilePic:file
+            }));
+        }
+    };
+
     const handleUpdate = () => {
-        axiosInstance
+        console.log("data",data);
+        axiosMultipartInstance
             .post(`editTeamCoachById/${id}`, data)
             .then((res) => {
                 console.log(res);
-                if(res.data.status==200){
-                        alert("Profile Updated Successfully");
-                        navigate('/TeamCoachHomePage')
+                if (res.data.status == 200) {
+                    alert("Profile Updated Successfully");
+                    navigate('/TeamCoachHomePage');
                 }
             })
             .catch((err) => {
                 console.log(err);
             });
-        }
-    
+    };
+
     return (
         <div>
             <div className='TeamCoachEditProfilemain-1-20'>
@@ -89,10 +107,18 @@ function TeamCoachEditProfile() {
                                 <img
                                     src={`${url}/${data?.profilePic?.filename}`}
                                     className="AdminCoachRequest-img"
+                                    alt="Profile"
                                 />
-                                <button className='TeamCoachEditProfileimgButton'>
-                                    <img className='TeamCoachEditProfilebuttonimage' src={img13}></img>
+                                <button className='TeamCoachEditProfileimgButton' onClick={handlePenClick}>
+                                    <img className='TeamCoachEditProfilebuttonimage' src={img13} alt="Edit" />
                                 </button>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef}
+                                    name="profilePic"
+                                    style={{ display: 'none' }}
+                                    onChange={handleFileChange}
+                                />
                             </label><br></br>
                             <label className='TeamCoachEditProfileimg-2-backend'></label><br></br>
                         </div>
@@ -232,25 +258,6 @@ function TeamCoachEditProfile() {
                         <div className='col-4'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img5}></img>
-                                </div>
-                                <div className='col-5'>
-                                    <label className='TeamCoachEditProfilelabel'>Pincode</label>
-                                </div>
-                                <div className='col-5'>
-                                    <input
-                                        className='TeamCoachEditProfilelabel-2 TeamCoachEditProfileimg-2-backend'
-                                        type='text'
-                                        name='pincode'
-                                        value={data.pincode}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
-                            <div className='row TeamCoachEditProfilemainrow-1'>
-                                <div className='col-2'>
                                     <img className='TeamCoachEditProfilecommon-style-1' src={img3}></img>
                                 </div>
                                 <div className='col-5'>
@@ -267,6 +274,44 @@ function TeamCoachEditProfile() {
                                 </div>
                             </div>
                         </div>
+                        <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
+                            <div className='row TeamCoachEditProfilemainrow-1'>
+                                <div className='col-2'>
+                                <img className='TeamCoachEditProfilecommon-style-1' src={img9}></img>
+                                </div>
+                                <div className='col-5'>
+                                    <label className='TeamCoachEditProfilelabel'>Experience</label>
+                                </div>
+                                <div className='col-5'>
+                                    <input
+                                        className='TeamCoachEditProfilelabel-2 TeamCoachEditProfileimg-2-backend'
+                                        type='text'
+                                        name='experience'
+                                        value={data.experience}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    {/* <div className='row TeamCoachEditProfilediv-8 TeamCoachEditProfileimpdiv-style'>
+                        <div className='col-4'>
+                            <div className='row TeamCoachEditProfilemainrow-1'>
+                                <div className='col-2'>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img9}></img>
+                                </div>
+                                <div className='col-5'>
+                                    <label className='TeamCoachEditProfilelabel'>Experience</label>
+                                </div>
+                                <div className='col-5'>
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+                      
+                    </div> */}
                     </div>
 
                     <div className='row TeamCoachEditProfilediv-7 TeamCoachEditProfileimpdiv-style'>
@@ -279,22 +324,14 @@ function TeamCoachEditProfile() {
                                     <label className='TeamCoachEditProfilelabel'>State</label>
                                 </div>
                                 <div className='col-5'>
-                                    <div className=''>
+                                    <div className="col">
                                         <div className="dropdown dropdowninput">
                                             <div className='TeamCoachEditProfilelabel-2'>
-                                                <select
-                                                    className="form-select"
-                                                    aria-label="Default select example"
-                                                    name="state"
-                                                    value={data.state}
-                                                    onChange={handleChange}
-                                                >
-                                                    <option selected value="1"></option>
-                                                    <option value="Jammu & Kashmir">Jammu & Kashmir</option>
-                                                    <option value="Tamilnadu">Tamilnadu</option>
+                                                <select className="form-select" aria-label="Default select example" name="state" value={data.state} onChange={handleChange}>
+                                                    <option selected value="1">Select your state</option>
+                                                    <option value="Kerala">Kerala</option>
                                                     <option value="Karnataka">Karnataka</option>
-                                                    <option value="Haryana">Haryana</option>
-                                                    <option value="Andrapradesh">Andrapradesh</option>
+                                                    <option value="Tamil Nadu">Tamil Nadu</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -302,70 +339,35 @@ function TeamCoachEditProfile() {
                                 </div>
                             </div>
                         </div>
-                        {/* <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
-                            <div className='row TeamCoachEditProfilemainrow-1'>
-                                <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img9}></img>
-                                </div>
-                                <div className='col-5'>
-                                    <label className='TeamCoachEditProfilelabel'>Coach License</label>
-                                </div>
-                                <div className='col-5'>
-                                    <input className='TeamCoachEditProfilelabel-3' type='file' name='certificate' onChange={handleChange} />
-                                </div>
-                            </div>
-                        </div> */}
-                    </div>
 
-                    {/* <div className='row TeamCoachEditProfilediv-8 TeamCoachEditProfileimpdiv-style'>
-                        <div className='col-4'>
-                            <div className='row TeamCoachEditProfilemainrow-1'>
-                                <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img10}></img>
-                                </div>
-                                <div className='col-5'>
-                                    <label className='TeamCoachEditProfilelabel'>Country</label>
-                                </div>
-                                <div className='col-5'>
-                                    <div className="col">
-                                        <div className="dropdown dropdowninput">
-                                            <div className='TeamCoachEditProfilelabel-2'>
-                                            <input
-                                        className='TeamCoachEditProfilelabel-2 TeamCoachEditProfileimg-2-backend'
-                                        type='text'
-                                        name='contact'
-                                        disabled
-                                        value='India'
-                                    />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img2}></img>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img5}></img>
                                 </div>
                                 <div className='col-5'>
-                                    <label className='TeamCoachEditProfilelabel'>Experience</label>
+                                    <label className='TeamCoachEditProfilelabel'>Pincode</label>
                                 </div>
                                 <div className='col-5'>
                                     <input
-                                        className='TeamCoachEditProfilelabel-2'
+                                        className='TeamCoachEditProfilelabel-2 TeamCoachEditProfileimg-2-backend'
                                         type='text'
-                                        name='experience'
-                                        value={data.experience}
+                                        name='pincode'
+                                        value={data.pincode}
                                         onChange={handleChange}
                                     />
                                 </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
 
-                    <div className='TeamCoachEditProfile-1-5'>
-                        <button className='TeamCoachEditProfilediv-11-button' onClick={handleUpdate}>Update</button>
+
+                  
+
+                    <div className='row TeamCoachEditProfilediv-10'>
+                        <div className='col'>
+                            <button className='TeamCoachEditProfilebutton-1' onClick={handleUpdate}>Update</button>
+                        </div>
                     </div>
                 </div>
             </div>
