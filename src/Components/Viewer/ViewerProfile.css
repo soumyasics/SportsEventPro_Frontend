@@ -2,7 +2,7 @@
     display: grid;
     align-content: center;
     height: 300px;
-    margin-left: 90px;
+    /* margin-left: 90px; */
 }
 
 .ViewerViewProfile-2 {
@@ -31,7 +31,7 @@
 
 .ViewerViewProfile-11-button {
     display: grid;
-    width: 160px;
+    width: 200px;
     padding: 12px;
     flex-direction: column;
     align-content: normal;
@@ -55,7 +55,7 @@
 }
 
 .ViewerViewProfileimpdiv-style {
-    margin-left: 70px;
+    /* margin-left: 70px; */
     align-items: center;
     gap: 12.338px;
     flex: 1 0;

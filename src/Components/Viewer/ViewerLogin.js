@@ -196,7 +196,7 @@ function ViewerLogin() {
                                                 value={data.password}
                                                 onChange={handleChange}
                                             />
-                                            <button className='ViewerLogin-Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
+                                            <button  type="button" className='ViewerLogin-Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
 
                                         </div>
 

@@ -28,16 +28,16 @@ console.log("url,", url);
 function ViewerProfile() {
 
     const navigate = useNavigate()
-    const { id } = useParams()
-    const [userData, setUserData] = useState();
-
+ 
+    const [userData, setUserData] = useState({});
+const id= localStorage.getItem('viewerId')
 
     useEffect(() => {
 
         let res;
 
 
-        axiosInstance.post(`viewTeamCoachById`).then(res => {
+        axiosInstance.post(`viewviewersById/${id}`).then(res => {
 
             console.log(res);
 
@@ -53,7 +53,9 @@ function ViewerProfile() {
     }, [id]);
     console.log(userData);
 
-
+const navigate1=()=>{
+    navigate('/ViewerEditProfile')
+}
     return (
 
         <div>
@@ -70,17 +72,7 @@ function ViewerProfile() {
 
                     </div>
 
-                    <div className='col-4 ViewerViewProfile-2'>
-
-                        <div className='ViewerViewProfileimgdiv-1-1'>
-
-                            <label className='ViewerViewProfileimg-1-backend'><img src={`${url}/${userData?.profilePic?.filename}`} alt=' ' />
-                            </label><br></br>
-                            <label className='ViewerViewProfileimg-2-backend'>{userData ? userData.name : ''}</label><br></br>
-
-                        </div>
-
-                    </div>
+                   
 
                 </div>
 
@@ -101,7 +93,7 @@ function ViewerProfile() {
                             </div>
 
                             <div className='col-5'>
-                                <label className='ViewerViewProfilelabel-2'>{userData ? userData.Gender : ''}</label>
+                                <label className='ViewerViewProfilelabel-2'>{userData ? userData.gender : ''}</label>
                             </div>
 
                         </div>
@@ -123,7 +115,7 @@ function ViewerProfile() {
                             </div>
 
                             <div className='col-5'>
-                                <label className='ViewerViewProfilelabel-2'></label>
+                                <label className='ViewerViewProfilelabel-2'>{userData.address}</label>
                             </div>
 
                         </div>
@@ -243,7 +235,7 @@ function ViewerProfile() {
                             </div>
 
                             <div className='col-5'>
-                                <label className='ViewerViewProfilelabel-2'>{userData ? userData.State : ''}</label>
+                                <label className='ViewerViewProfilelabel-2'>{userData ? userData.state : ''}</label>
 
                             </div>
 
@@ -277,7 +269,7 @@ function ViewerProfile() {
 
                 <div className='row ViewerViewProfile-11'>
 
-                    <button className='ViewerViewProfile-11-button'>Edit</button>
+                    <button className='ViewerViewProfile-11-button' onClick={()=>{navigate1()}}>Edit</button>
 
                 </div>
 
