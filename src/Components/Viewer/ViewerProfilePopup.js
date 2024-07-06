@@ -13,6 +13,8 @@ import img9 from '../../Assets/arcticons_asr-licence.jpg'
 import img10 from '../../Assets/subway_world-1.svg'
 import img11 from '../../Assets/carbon_location-filled.jpg'
 import img12 from '../../Assets/arcticons_team-fight-tactics.jpg'
+import img14 from '../../Assets/cross.svg'
+import img15 from '../../Assets/tick.svg'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
@@ -28,6 +30,13 @@ function ViewerProfilePopup() {
     const navigate = useNavigate()
     const [userData, setUserData] = useState({});
     const id = localStorage.getItem('viewerId')
+
+    const [isActive, setIsActive] = useState(false);
+
+    const toggleButton = () => {
+        setIsActive(!isActive);
+    };
+
 
     useEffect(() => {
         axiosInstance.post(`viewviewersById/${id}`).then(res => {
@@ -83,8 +92,12 @@ function ViewerProfilePopup() {
                         <Link to="/ViewerHomePage">
                             <img className='ViewerViewProfileimg-13' src={img13} alt='' />
                         </Link>
-                        Edit  Profile
+                        Viewers Details
                     </h1>
+                </div>
+                <div className={`toggle-button ${isActive ? 'active' : 'inactive'}`} onClick={toggleButton}>
+                    <span className="status-text">{isActive ? 'Active' : 'Inactive'}</span>
+                    <span className="icon">{isActive ? <img src={img15} alt="test"/> : <img src={img14} alt="test"/>}</span>
                 </div>
             </div>
 
