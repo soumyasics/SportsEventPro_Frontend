@@ -2,19 +2,19 @@ import React, { useState } from 'react'
 import './OrganiserForgotPassword.css'
 import axiosInstance from '../Constant/BaseURL';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye,faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 
 function OrganiserForgotPassword() {
 
-    const [icon,setIcon] = useState(faEye)
-    const [reIcon,setReIcon] = useState(faEye)
+    const [icon, setIcon] = useState(faEye)
+    const [reIcon, setReIcon] = useState(faEye)
 
-    function PasswordButtonOnClick () {
+    function PasswordButtonOnClick() {
 
         var pWordState = document.getElementById("pword")
-        
 
-        if (pWordState.type === "password" ) {
+
+        if (pWordState.type === "password") {
 
             pWordState.type = "text"
             setIcon(faEyeSlash)
@@ -30,7 +30,7 @@ function OrganiserForgotPassword() {
 
     }
 
-    function RePasswordButtonOnClick () {
+    function RePasswordButtonOnClick() {
 
         var rePWordState = document.getElementById("rePWord")
 
@@ -118,7 +118,7 @@ function OrganiserForgotPassword() {
         if (formIsValid) {
 
             BackendData()
-            
+
         }
 
         setErrors(errors);
@@ -138,8 +138,8 @@ function OrganiserForgotPassword() {
                 if (response.data.status == 200) {
 
                     alert("Login Successful")
-                } 
-                
+                }
+
                 else {
 
                     alert(response.data.msg)
@@ -157,7 +157,7 @@ function OrganiserForgotPassword() {
 
         <div>
 
-            <div class="container text-center OrganiserForgetPass">
+            <div class="container OrganiserForgetPass">
 
                 <div class="row">
 
@@ -173,7 +173,7 @@ function OrganiserForgotPassword() {
 
                             <div className='OrganiserForgetPass-Head'>
 
-                                <h1 className='OrganiserForgetPass-Head1'>Forget Password</h1>
+                                <h1 className='OrganiserForgetPass-Head1'>Forgot Password</h1>
 
                             </div>
 
@@ -181,60 +181,60 @@ function OrganiserForgotPassword() {
 
                                 <div>
 
-                                    <label className='OrganiserForgetPass-label'>E-mail</label>
+                                    <label className='OrganiserForgetPass-label'>Email Id</label>
 
                                 </div>
-                                
+
                                 <input className="OrganiserForgetPass-field" type="email" placeholder="Enter your E-mail" name="email" value={data.email} onChange={handleChange} />
-                                
+
                                 <div class='OrganiserForgetPass-valid'>
-                                    
+
                                     {errors.email && <div className="text-danger ">{errors.email}</div>}
-                                
+
                                 </div>
 
                                 <div className='OrganiserForgetPassDiv-1'>
-                                    
-                                    <div>
 
-                                        <label className='OrganiserForgetPass-label'>Enter a new password</label>
+                                    <div className='OrganiserForgetPasswordDiv-1-div'>
+
+                                        <label className='OrganiserForgetPass-label'>New password</label>
+                                        <input className="OrganiserForgetPass-field" type="password" placeholder="Enter new password" name="password" value={data.password} id='pword' onChange={handleChange} />
+                                        <button className='Organiser-Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
                                     
                                     </div>
-                                    
-                                    <input className="OrganiserForgetPass-field" type="password" placeholder="Enter a new password" name="password" value={data.password} id='pword' onChange={handleChange} />
-                                    <button className = 'Organiser-Password-Change-Button' onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
 
                                     <div class='OrganiserForgetPass-valid'>
 
                                         {errors.password && <div className="text-danger ">{errors.password}</div>}
-                                   
+
                                     </div>
 
                                 </div>
 
                                 <div className='OrganiserForgetPassDiv-1'>
 
-                                    <div>
+                                    <div className='OrganiserForgetPasswordDiv-1-div'>
 
                                         <label className='OrganiserForgetPass-label'>Confirm password</label>
-                                    
+                                        <input className="OrganiserForgetPass-field" type="password" placeholder="Confirm password" name="confirm password" id='rePWord' onChange={handleChange} />
+                                        <button className='Organiser-Password-Change-Button' onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon} /></button>
+
                                     </div>
-                                    
-                                    <input className="OrganiserForgetPass-field" type="password" placeholder="Confirm password" name="confirm password" id='rePWord' onChange={handleChange} />
-                                    <button className = 'Organiser-Password-Change-Button' onClick = {RePasswordButtonOnClick}><FontAwesomeIcon icon = {reIcon}/></button>
+
+
 
                                     <div class='OrganiserForgetPass-valid'>
-                                        
+
                                         {errors.confirm_password && <div className="text-danger ">{errors.confirm_password}</div>}
-                                    
+
                                     </div>
-                                
+
                                 </div>
 
-                                <div>
+                                <div style={{marginLeft:'50%',transform:"translate(-50%)"}}>
 
-                                    <input className='OrganiserForgetPass-button' type='reset' placeholder='Reset' onClick={handleSubmit}/>
-                                
+                                    <button className='OrganiserForgetPass-button' type='button' onClick={handleSubmit} >Submit</button>
+
                                 </div>
 
                             </div>
