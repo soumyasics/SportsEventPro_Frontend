@@ -1,0 +1,16 @@
+.adminViewOrgreq-details-approvebtndiv2{
+
+    color:aliceblue;
+    height:45px;
+    width: 200px;
+    border-radius: 10px;
+    background: #035c03;
+}
+.adminViewOrgreq-details-rejectbtndiv2{
+
+    color:aliceblue;
+    height:45px;
+    width: 200px;
+    border-radius: 10px;
+    background: #b33019;
+}

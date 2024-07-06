@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './OrganiserSideBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { Link, useNavigate } from 'react-router-dom'
 
 function OrganiserSideBar() {
+    const navigate = useNavigate()
+    const handleLogout = (e) => {
+        console.log(e);
 
+        console.log("Logging out...");
+        localStorage.setItem('organizerId', "")
+        navigate('/')
+    };
+    useEffect(() => {
+        if (localStorage.getItem("organizerId") == "") {
+            navigate("/");
+        }
+    }, [navigate]);
     return (
 
         <div>
@@ -78,7 +91,7 @@ function OrganiserSideBar() {
 
                         <button type="button" class="OrganiserSideBarbutton-2" data-bs-toggle="modal" data-bs-target="#Logout-Modal">Logout</button>
 
-                        <div class="modal fade" id="Logout-Modal" tabindex="-1" aria-hidden="true">
+                        {/* <div class="modal fade" id="Logout-Modal" tabIndex="-1" aria-hidden="true">
 
                             <div class="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
 
@@ -87,12 +100,15 @@ function OrganiserSideBar() {
                                     <div class="modal-body">
 
                                         <h1 className='ModalDialog-h1'>Logout</h1>
-                                        <p className='ModalDialog-p'>Are you sure you want to log out ? </p>
+                                        <p className='ModalDialog-p'>Are you sure you want to log out ? jhjhj</p>
 
                                         <div className='ModalDialog-button-contain'>
+                            <Link onClick={()=>{console.log('hi')}}>
+                            <button type="button" >Yes</button>
+                            </Link>
+                                    <input type='button' onClick={()=>{alert('hello');}} value='btn'       ></input>
 
-                                            <button type="button" class="ModalDialog-button-1">Yes</button>
-                                            <button type="button" class="ModalDialog-button-2" data-bs-dismiss="modal">No</button>
+                                            <button type="button" class="ModalDialog-button-2" data-bs-dismiss="modal" >No</button>
 
                                         </div>
 
@@ -102,8 +118,22 @@ function OrganiserSideBar() {
 
                             </div>
 
-                        </div>
+                        </div> */}
 
+<div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
+                    <div className="modal-content">
+                        <div className="modal-body">
+                            <h1 className='ModalDialog-h1'>Logout</h1>
+                            <p className='ModalDialog-p'>Are you sure you want to log out ?</p>
+                            <div className='ModalDialog-button-contain'>
+                                <button type="button" className="ModalDialog-button-1" onClick={handleLogout} data-bs-dismiss="modal">Yes</button>
+                                <button type="button" className="ModalDialog-button-2" data-bs-dismiss="modal">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
                     </div>
 
                 </div>

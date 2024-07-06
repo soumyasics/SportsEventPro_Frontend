@@ -16,7 +16,7 @@ import img11 from "../../../Assets/carbon_location-filled.jpg";
 import img12 from "../../../Assets/arcticons_team-fight-tactics.jpg";
 import { useNavigate, useParams } from "react-router-dom";
 import '../TeamCoach/AdminViewAprvdCoachIndividual.css'
-
+import './AdminViewOrganizerToApprove.css'
 import axiosInstance from "../../Constant/BaseURL";
 const url = axiosInstance.defaults.url;
 
@@ -46,43 +46,6 @@ function AdminViewOrganizerToApprove() {
  
 
 
-  const handleActive = (id) => {
-    console.log(id);
-    axiosInstance.post(`/activateTeamCoachById/${id}`)
-    .then((res)=>{
-      if(res.data.status === 200){
-        
-userData.isActive=true   
-loadData()
-}
-    })
-    .catch((err) => {
-      console.log("Error",err);
-    })
-  }
-
-  const handleDeactive = (id) => {
-    axiosInstance.post(`/deActivateTeamCoachById/${id}`)
-    .then((res) => {
-      if(res.data.status === 200){
-        userData.isActive=false   
-        loadData()
-
-      }
-    })
-    .catch((err) => {
-      console.log("Error",err);
-    })
-  }
-  const toggleUserActiveState = (users) => {
-    if(users.isActive){
-      handleDeactive(users._id)
-    }
-    else{
-      handleActive(users._id)
-    }
-  }
-
   const approve = (id) => {
     axiosInstance
       .post(`/approveOrganizerById/${id}`)
@@ -98,6 +61,7 @@ loadData()
   };
 
   const reject = (id) => {
+    console.log("in reject");
     axiosInstance
       .post(`/deleteOrganizerById/${id}`)
       .then((res) => {
@@ -348,15 +312,15 @@ loadData()
           <div className="row mt-5">
         <div className="col teamcoach-details-approvebtndiv">
           <button
-            className="teamcoach-details-approvebtn "
+            className="adminViewOrgreq-details-approvebtndiv2 "
             onClick={() => approve(userData._id)}
           >
             Approve
           </button>
         </div>
-        <div className="col teamcoach-details-approvebtndiv2">
+        <div className="col teamcoach-details-approvebtndiv2" style={{backgrondColor:'red'}}>
           <button
-            className="teamcoach-details-approvebtn"
+            className="adminViewOrgreq-details-rejectbtndiv2"
             onClick={() => reject(userData._id)}
           >
             Reject
@@ -392,7 +356,7 @@ loadData()
             <div className="">
               <div className="img-container">
                 <img
-                  src={`${url}/${userData?.certificate?.filename}`}
+                  src={`${url}/${userData?.organizerlicense?.filename}`}
                   alt="Document"
                   className="img-fluid"
                 />

@@ -194,7 +194,7 @@ function OrganizerLogin() {
                                                 value={data.password}
                                                 onChange={handleChange}
                                             />
-                                            <button className = 'OrganizerLogin-Password-Change-Button' onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
+                                            <button className = 'OrganizerLogin-Password-Change-Button' type="button" onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
                                     
                                         </div>
                                     </div>
