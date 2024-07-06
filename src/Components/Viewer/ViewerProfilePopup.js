@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './ViewerProfile.css'
+import './ViewerProfilePopup.css'
 import img13 from '../../Assets/Vector.svg'
 import img1 from '../../Assets/solar_phone-bold-duotone.jpg'
 import img2 from '../../Assets/ri_open-arm-fill.jpg'
@@ -13,23 +13,30 @@ import img9 from '../../Assets/arcticons_asr-licence.jpg'
 import img10 from '../../Assets/subway_world-1.svg'
 import img11 from '../../Assets/carbon_location-filled.jpg'
 import img12 from '../../Assets/arcticons_team-fight-tactics.jpg'
+import img14 from '../../Assets/cross.svg'
+import img15 from '../../Assets/tick.svg'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
 
-
-
 import nameIcon from '../../Assets/nameIcon.png'
-import './ViewerEditProfile.css'
 
 import axiosInstance from '../Constant/BaseURL'
 import { Link, useNavigate } from 'react-router-dom'
 
-function ViewerEditProfile() {
+function ViewerProfilePopup() {
+
     const url = axiosInstance.defaults.url;
     const navigate = useNavigate()
     const [userData, setUserData] = useState({});
     const id = localStorage.getItem('viewerId')
+
+    const [isActive, setIsActive] = useState(false);
+
+    const toggleButton = () => {
+        setIsActive(!isActive);
+    };
+
 
     useEffect(() => {
         axiosInstance.post(`viewviewersById/${id}`).then(res => {
@@ -85,8 +92,12 @@ function ViewerEditProfile() {
                         <Link to="/ViewerHomePage">
                             <img className='ViewerViewProfileimg-13' src={img13} alt='' />
                         </Link>
-                        Edit  Profile
+                        Viewers Details
                     </h1>
+                </div>
+                <div className={`toggle-button ${isActive ? 'active' : 'inactive'}`} onClick={toggleButton}>
+                    <span className="status-text">{isActive ? 'Active' : 'Inactive'}</span>
+                    <span className="icon">{isActive ? <img src={img15} alt="test"/> : <img src={img14} alt="test"/>}</span>
                 </div>
             </div>
 
@@ -94,13 +105,15 @@ function ViewerEditProfile() {
                 <div className='col'>
                     <div className='row ViewerViewProfilemainrow-1'>
                         <div className='col-2'>
-                            <img className='ViewerViewProfilecommon-style-1' src={nameIcon} alt='' />
+                            <img className='ViewerViewProfilecommon-style-1' src={img8} alt='' />
                         </div>
                         <div className='col-5'>
-                            <label className='ViewerViewProfilelabel'>Name</label>
+                            <label className='ViewerViewProfilelabel'>Gender</label>
                         </div>
                         <div className='col-5'>
-                            <input type="text" className='viewer-dit-prof-text' name="name" value={userData.name || ''} onChange={handleChange} />
+                            <div className='ViewerRegistration-Content-Input-2'>
+                                <label className='ViewerRegistration-Content-Input-2-label'></label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,7 +127,7 @@ function ViewerEditProfile() {
                             <label className='ViewerViewProfilelabel'>Address</label>
                         </div>
                         <div className='col-5'>
-                            <input type="text" className='viewer-dit-prof-text' name="address" value={userData.address || ''} onChange={handleChange} />
+                            <label className='ViewerRegistration-Content-Input-2-label'></label>
                         </div>
                     </div>
                 </div>
@@ -130,7 +143,7 @@ function ViewerEditProfile() {
                             <label className='ViewerViewProfilelabel'>Contact Number</label>
                         </div>
                         <div className='col-5'>
-                            <input type="text" className='viewer-dit-prof-text' name="contact" value={userData.contact || ''} onChange={handleChange} />
+                            <label className='ViewerRegistration-Content-Input-2-label'></label>
                         </div>
                     </div>
                 </div>
@@ -144,7 +157,7 @@ function ViewerEditProfile() {
                             <label className='ViewerViewProfilelabel'>Pincode</label>
                         </div>
                         <div className='col-5'>
-                            <input type="text" className='viewer-dit-prof-text' name="pincode" value={userData.pincode || ''} onChange={handleChange} />
+                            <label className='ViewerRegistration-Content-Input-2-label'></label>
                         </div>
                     </div>
                 </div>
@@ -160,7 +173,7 @@ function ViewerEditProfile() {
                             <label className='ViewerViewProfilelabel'>Email ID</label>
                         </div>
                         <div className='col-5'>
-                            <input type="text" className='viewer-dit-prof-text' name="email" value={userData.email || ''} onChange={handleChange} />
+                            <label className='ViewerRegistration-Content-Input-2-label'></label>
                         </div>
                     </div>
                 </div>
@@ -174,7 +187,7 @@ function ViewerEditProfile() {
                             <label className='ViewerViewProfilelabel'>City</label>
                         </div>
                         <div className='col-5'>
-                            <input type="text" className='viewer-dit-prof-text' name="city" value={userData.city || ''} onChange={handleChange} />
+                            <label className='ViewerRegistration-Content-Input-2-label'></label>
                         </div>
                     </div>
                 </div>
@@ -192,53 +205,17 @@ function ViewerEditProfile() {
 
                         <div className='col-5 viewer-dit-prof-text'>
 
-                            <select className="ViewerEditProfile-Content-Input-Country" aria-label="Default select example" onChange={handleChange} name="state" value={userData.state}
-                            >
-                                <option className='ViewerRegistration-Content-Input-Select-Option' selected
-                                >Kerala</option>
+                            <label className='ViewerRegistration-Content-Input-2-label'></label>
 
-                                <option value="Goa">Goa</option>
-                                <option value="Tamil Nadu">Tamil Nadu</option>
-                                <option value="Karnataka">Karnataka</option>
-                                <option value="Maharashtra">Maharashtra</option>
-
-                            </select>                        </div>
-                    </div>
-                </div>
-
-                <div className='col ViewerViewProfilemainrow-right-1'>
-                    <div className='row ViewerViewProfilemainrow-1'>
-                        <div className='col-2'>
-                            <img className='ViewerViewProfilecommon-style-1' src={img8} alt='' />
-                        </div>
-                        <div className='col-5'>
-                            <label className='ViewerViewProfilelabel'>Gender</label>
-                        </div>
-                        <div className='col-5'>
-                            <div className='ViewerRegistration-Content-Input-2'>
-                                <div className='ms-4'>
-                                    <input type='radio' name='gender' id='male' onChange={handleChange} value="Male" checked={userData.gender === 'Male'} />
-                                    <label className='ms-1' />Male
-                                </div>
-                                <div className='ms-3'>
-                                    <input type='radio' name='gender' id='female' onChange={handleChange} value='Female' checked={userData.gender === 'Female'} />
-                                    <label className='ms-1' />Female
-                                </div>
-                                <div className='ms-3'>
-                                    <input type='radio' name='gender' id='other' onChange={handleChange} value='other' checked={userData.gender === 'Other'} />
-                                    <label className='ms-1' />Other
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-            <div className='row ViewerViewProfile-11'>
-                <button className='ViewerViewProfile-11-button' onClick={handleUpdate}>Update</button>
-            </div>
         </div>
     )
+
 }
 
-export default ViewerEditProfile
+export default ViewerProfilePopup

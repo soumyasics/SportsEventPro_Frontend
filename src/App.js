@@ -54,6 +54,8 @@ import ViewerNavBar from './Components/Viewer/ViewerNavBar';
 import ViewerProfile from './Components/Viewer/ViewerProfile';
 import ViewerEditProfile from './Components/Viewer/ViewerEditProfile';
 import TeamCoachTopNav from './Components/TeamCoach/TeamCoachTopNav';
+import ViewAllViewer from './Components/Viewer/ViewAllViewer';
+import ViewerProfilePopup from './Components/Viewer/ViewerProfilePopup';
 
 function App() {
 
@@ -100,7 +102,9 @@ function App() {
           <Route exact path="/Adminsidebar2" element={[<AdminDashbordTopContent />]} />
           <Route exact path="/Adminsidebar1" element={[<Adminsidebar />]} />
           <Route exact path="/Adminsidebar" element={[<Adminsidebar />, <AdminDashbordTopContent />]} />
-          <Route path='/adminmain' element={[<AdminNav />, <AdminMain />]} />
+          <Route exact path='/adminmain' element={[<AdminNav />, <AdminMain />]} />
+          <Route exact path='/ViewAllViewer' element={[<ViewAllViewer/>]} />
+          <Route exact path='/ViewerProfilePopup' element={[<ViewerProfilePopup/>]}/>
 
           {/* Team Coach */}
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />
@@ -143,6 +147,7 @@ function App() {
           <Route exact path='/ViewerHomePage' element={[<ViewerNavBar/>,<ViewerHomePage />,<Aboutpage/>,<UserFooter/>]} />
           <Route exact path='/ViewerProfile' element = {[<ViewerNavBar/>,<ViewerProfile/>,<UserFooter/>]}/>
           <Route exact path='/ViewerEditProfile' element={<ViewerEditProfile/>} />
+          
 
 
         </Routes>

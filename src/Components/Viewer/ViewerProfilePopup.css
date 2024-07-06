@@ -1,0 +1,68 @@
+.viewer-dit-prof-text {
+    border: none;
+    outline: none;
+    padding: 5px;
+    /* Optional: Adjust as needed */
+    background-color: transparent;
+    /* Optional: Adjust as needed */
+}
+
+/* Additional styling to ensure consistency */
+.viewer-dit-prof-text:focus {
+    border: none;
+    outline: none;
+}
+
+.ViewerRegistration-Content-Input-2-label {
+
+    color: #000;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 15.423px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21.592px;
+
+}
+
+.toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+    height: 36px;
+    margin-top: 10%;
+    margin-right: 15%;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.toggle-button .status-text {
+    color: white;
+    font-size: 16px;
+}
+
+.toggle-button .icon {
+    background-color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 10px; */
+}
+
+.toggle-button.active {
+    background-color: #28a745;
+    /* Green */
+    transform: scale(1.1);
+}
+
+.toggle-button.inactive {
+    background-color: #dc3545;
+    /* Red */
+    transform: scale(1);
+}
