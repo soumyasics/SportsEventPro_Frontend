@@ -1,0 +1,26 @@
+.viewer-dit-prof-text {
+    border: none;
+    outline: none;
+    padding: 5px;
+    /* Optional: Adjust as needed */
+    background-color: transparent;
+    /* Optional: Adjust as needed */
+}
+
+/* Additional styling to ensure consistency */
+.viewer-dit-prof-text:focus {
+    border: none;
+    outline: none;
+}
+
+.ViewerRegistration-Content-Input-2-label {
+
+    color: #000;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 15.423px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21.592px;
+
+}
