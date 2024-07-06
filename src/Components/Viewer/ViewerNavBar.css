@@ -4,6 +4,15 @@
 
     height: 80px;
     width: 100%;
+    display: flex;
+    padding: 20px;
+}
+
+.ViewerNavbar-Nav-1 {
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 
 }
 
@@ -15,13 +24,35 @@
     font-style: normal;
     font-weight: 500;
     line-height: 36px;
-    margin-left: 20px;
-
+    text-align: left;
+    
 }
 
 .ViewerNavBar-Nav-a-1:hover {
 
     color: white;
+
+}
+
+.NavbarNav-ul {
+
+    display: flex;
+    height: 36px;
+    width: max-content;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 65%;
+    transform: translate(-65%);
+
+}
+
+.ViewerNavBar-Navli {
+
+    position: absolute;
+    left: 98%;
+    transform: translate(-100%);
+    list-style: none;
 
 }
 
@@ -49,8 +80,8 @@
     border-radius: 20px !important;
     border: 1px solid #000 !important;
     background: var(--icon-color, #FFF);
-    width:  747px !important;
-    height:  298px !important;
+    width: 747px !important;
+    height: 298px !important;
 
 }
 
