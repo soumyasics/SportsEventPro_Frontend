@@ -18,12 +18,11 @@
     -moz-appearance: none; /* Remove default arrow in Firefox */
     background-image: url("../../Assets/OrganiserRegistration.svg");
     background-repeat: no-repeat;
-    background-size: 3%;
+    background-size: 15%;
     background-color: white;
-    background-position-x: 97%;
+    background-position-x: 90%;
     background-position-y: center;
     padding: 8px 12px;
-
     height: 36px;
     cursor: pointer;
     overflow: hidden;
@@ -37,5 +36,11 @@
     line-height: 20px;
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0.10); 
+
+}
+
+input[type='radio']{
+
+    accent-color: black;
 
 }

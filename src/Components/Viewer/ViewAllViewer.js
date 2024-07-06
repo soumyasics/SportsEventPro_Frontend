@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './ViewAllViewer.css'
-import img from '../../../Assets/Search Button.svg'
+import img from '../../Assets/Search Button.svg'
 import { Link, useNavigate } from 'react-router-dom';
-import axiosInstance from "../../Constant/BaseURL";
+import axiosInstance from "../Constant/BaseURL";
 
 function ViewAllViewer() {
 
