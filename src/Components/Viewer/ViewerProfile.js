@@ -18,26 +18,25 @@ import axiosInstance from '../Constant/BaseURL'
 import { useParams } from 'react-router-dom'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 
-
+import nameIcon from '../../Assets/nameIcon.png'
 
 const url = axiosInstance.defaults.url;
-console.log("url,", url);
 
 
 
 function ViewerProfile() {
 
     const navigate = useNavigate()
-    const { id } = useParams()
-    const [userData, setUserData] = useState();
-
+ 
+    const [userData, setUserData] = useState({});
+const id= localStorage.getItem('viewerId')
 
     useEffect(() => {
 
         let res;
 
 
-        axiosInstance.post(`viewTeamCoachById`).then(res => {
+        axiosInstance.post(`viewviewersById/${id}`).then(res => {
 
             console.log(res);
 
@@ -53,7 +52,9 @@ function ViewerProfile() {
     }, [id]);
     console.log(userData);
 
-
+const navigate1=()=>{
+    navigate('/ViewerEditProfile')
+}
     return (
 
         <div>
@@ -70,20 +71,53 @@ function ViewerProfile() {
 
                     </div>
 
-                    <div className='col-4 ViewerViewProfile-2'>
-
-                        <div className='ViewerViewProfileimgdiv-1-1'>
-
-                            <label className='ViewerViewProfileimg-1-backend'><img src={`${url}/${userData?.profilePic?.filename}`} alt=' ' />
-                            </label><br></br>
-                            <label className='ViewerViewProfileimg-2-backend'>{userData ? userData.name : ''}</label><br></br>
-
-                        </div>
-
-                    </div>
+                   
 
                 </div>
+                <div className='row ViewerViewProfile-3 ViewerViewProfileimpdiv-style'>
+                <div className='col'>
+                    <div className='row ViewerViewProfilemainrow-1'>
+                        <div className='col-2'>
+                            <img className='ViewerViewProfilecommon-style-1' src={nameIcon} alt='' />
+                        </div>
+                        <div className='col-5'>
+                            <label className='ViewerViewProfilelabel'>Name</label>
+                        </div>
+                        <div className='col-5'>
+                            <input type="text" className='viewer-dit-prof-text'  name="name"  value={userData.name || ''} />
+                        </div>
+                    </div>
+                </div>
 
+                <div className='row ViewerViewProfile-7 ViewerViewProfileimpdiv-style'>
+
+<div className='col'>
+<div className='col ViewerViewProfilemainrow-right-1'>
+    <div className='row ViewerViewProfilemainrow-1'>
+
+        {/* State */}
+        <div className='col-2'>
+            <img className='ViewerViewProfilecommon-style-2' src={img7} alt=' '></img>
+        </div>
+
+        <div className='col-5'>
+            <label className='ViewerViewProfilelabel'>State</label>
+
+        </div>
+
+        <div className='col-5'>
+            <label className='ViewerViewProfilelabel-2'>{userData ? userData.state : ''}</label>
+
+        </div>
+</div>
+    </div>
+
+</div>
+
+
+</div>
+
+            </div>
                 <div className='row ViewerViewProfile-3 ViewerViewProfileimpdiv-style'>
 
 
@@ -101,7 +135,7 @@ function ViewerProfile() {
                             </div>
 
                             <div className='col-5'>
-                                <label className='ViewerViewProfilelabel-2'>{userData ? userData.Gender : ''}</label>
+                                <label className='ViewerViewProfilelabel-2'>{userData ? userData.gender : ''}</label>
                             </div>
 
                         </div>
@@ -123,7 +157,7 @@ function ViewerProfile() {
                             </div>
 
                             <div className='col-5'>
-                                <label className='ViewerViewProfilelabel-2'></label>
+                                <label className='ViewerViewProfilelabel-2'>{userData.address}</label>
                             </div>
 
                         </div>
@@ -226,58 +260,11 @@ function ViewerProfile() {
 
                 </div>
 
-                <div className='row ViewerViewProfile-7 ViewerViewProfileimpdiv-style'>
-
-                    <div className='col'>
-
-                        <div className='row ViewerViewProfilemainrow-1'>
-
-                            {/* State */}
-                            <div className='col-2'>
-                                <img className='ViewerViewProfilecommon-style-2' src={img7} alt=' '></img>
-                            </div>
-
-                            <div className='col-5'>
-                                <label className='ViewerViewProfilelabel'>State</label>
-
-                            </div>
-
-                            <div className='col-5'>
-                                <label className='ViewerViewProfilelabel-2'>{userData ? userData.State : ''}</label>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div className='col ViewerViewProfilemainrow-right-1'>
-
-                        <div className='row ViewerViewProfilemainrow-1'>
-
-                            {/* Country */}
-                            <div className='col-2'>
-                                <img className='ViewerViewProfilecommon-style-1' src={img10} alt=''></img>
-                            </div>
-
-                            <div className='col-5'>
-                                <label className='ViewerViewProfilelabel'>Country</label>
-
-                            </div>
-
-                            <div className='col-5'>
-                                <label className='ViewerViewProfilelabel-2'>{userData ? userData.country : ''}</label>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
+             
 
                 <div className='row ViewerViewProfile-11'>
 
-                    <button className='ViewerViewProfile-11-button'>Edit</button>
+                    <button className='ViewerViewProfile-11-button' onClick={()=>{navigate1()}}>Edit</button>
 
                 </div>
 

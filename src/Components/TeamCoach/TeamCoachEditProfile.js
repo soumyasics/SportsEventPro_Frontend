@@ -60,6 +60,7 @@ function TeamCoachEditProfile() {
             [name]: value,
         }));
     };
+    
     const handleUpdate = () => {
         axiosInstance
             .post(`editTeamCoachById/${id}`, data)

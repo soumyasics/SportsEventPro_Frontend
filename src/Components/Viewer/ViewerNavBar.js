@@ -1,14 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './ViewerNavBar.css'
 import img from '../../Assets/Frame 19.png'
 import img2 from '../../Assets/iconamoon_profile-bold.svg'
 import img3 from '../../Assets/iconamoon_profile-bold(1).svg'
 import img4 from '../../Assets/Log_Out.svg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function ViewerNavBar() {
+    const navigate = useNavigate()
 
+    const handleLogout = () => {
+
+        console.log("Logging out...");
+        localStorage.setItem('viewerId', "")
+        navigate('/')
+    };
+
+    useEffect(() => {
+        if (localStorage.getItem("viewerId") == "") {
+            navigate("/");
+        }
+    }, [navigate]);
     return (
 
         <div>
@@ -118,7 +131,7 @@ function ViewerNavBar() {
 
                 <div class="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
 
-                    <div className="modal-content">
+                    {/* <div className="modal-content">
 
                         <div class="modal-body">
 
@@ -127,15 +140,28 @@ function ViewerNavBar() {
 
                             <div className='ModalDialog-button-contain'>
 
-                                <button type="button" class="ModalDialog-button-1">Yes</button>
+                                <button type="button" class="ModalDialog-button-1" onClick={handleLogout}>Yes</button>
                                 <button type="button" class="ModalDialog-button-2" data-bs-dismiss="modal">No</button>
 
                             </div>
 
                         </div>
 
+                    </div> */}
+ <div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
+                    <div className="modal-content">
+                        <div className="modal-body">
+                            <h1 className='ModalDialog-h1'>Logout</h1>
+                            <p className='ModalDialog-p'>Are you sure you want to log out ?</p>
+                            <div className='ModalDialog-button-contain'>
+                                <button type="submit" className="ModalDialog-button-1" onClick={handleLogout} data-bs-dismiss="modal">Yes</button>
+                                <button type="button" className="ModalDialog-button-2" data-bs-dismiss="modal">No</button>
+                            </div>
+                        </div>
                     </div>
-
+                </div>
+            </div>
                 </div>
 
             </div>

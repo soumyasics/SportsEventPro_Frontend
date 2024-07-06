@@ -312,7 +312,7 @@ function OrganiserRegistration() {
                                     <input type='password' placeholder='Enter Password' id='pword' className='OrganiserRegistration-Content-input-password' name="password"
                                         value={data.password}
                                         onChange={handleChange} />
-                                    <button className='Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
+                                    <button className='Password-Change-Button' type="button" onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
                                     {errors.password && <div className="text-danger ">{errors.password}</div>}
 
                                 </div>
@@ -329,7 +329,7 @@ function OrganiserRegistration() {
                                     <input type='password' placeholder='Confirm password' name="confirmpassword"
                                         value={data.confirmpassword}
                                         onChange={handleChange} id='rePWord' className='OrganiserRegistration-Content-input-password' />
-                                    <button className='Password-Change-Button' onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon} /></button>
+                                    <button className='Password-Change-Button' type="button" onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon} /></button>
                                     {errors.confirmpassword && <div className="text-danger ">{errors.confirmpassword}</div>}
 
                                 </div>

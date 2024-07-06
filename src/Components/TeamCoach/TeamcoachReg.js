@@ -575,7 +575,7 @@ function TeamcoachReg() {
                                                 value={data.password}
                                                 onChange={handleChange} 
                                             />
-                                            <button className='passbutt' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon}/></button>
+                                            <button className='passbutt' type="button" onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon}/></button>
 
                                         </div>
                                         <div class='teamCoachRegvalidationname'>
@@ -592,7 +592,7 @@ function TeamcoachReg() {
                                             value={data.confirmpassword}
                                             onChange={handleChange} 
                                         />
-                                        <button className='passbutt' onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon}/></button>
+                                        <button className='passbutt' type="button" onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon}/></button>
 
                                         <div class='teamCoachRegvalidationname'>
                                             {errors.confirmpassword && <div className="text-danger ">{errors.confirmpassword}</div>}

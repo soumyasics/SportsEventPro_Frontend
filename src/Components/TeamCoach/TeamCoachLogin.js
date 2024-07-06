@@ -157,7 +157,7 @@ function TeamCoachLogin() {
                                         value={data.password}
                                         onChange={handleChange}
                                         />
-                                        <button className='passwordIcon' onClick={setPwordState}>
+                                        <button className='passwordIcon' type="button" onClick={setPwordState}>
                                             <FontAwesomeIcon icon={icon}/>
                                         </button>
                                 </div>
