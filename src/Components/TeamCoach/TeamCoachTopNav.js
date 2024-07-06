@@ -32,7 +32,7 @@ function TeamCoachTopNav() {
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-black TeamCoachNavbar-Nav">
-                <div className="container-fluid">
+                <div className="TeamCoachNavbar-Nav-1">
                     <a className="navbar-brand TeamCoachNavBar-Nav-a-1" href="/">
                         <img src={img} alt="Logo" style={{ marginLeft: "20px", marginRight: "20px" }} />
                         Sports Event Pro
@@ -41,7 +41,7 @@ function TeamCoachTopNav() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav" style={{ marginRight: "180px" }}>
+                        <ul className="navbar-nav TeamCoachNavbarNav-ul" style={{ marginRight: "180px" }}>
                             <li className="nav-item" style={{ marginRight: "20px" }}>
                                 <Link to="/TeamCoachHomePage" style={{ textDecoration: "none" }}>
                                     <a className="nav-link text-light TeamCoachNavBar-Nav-li-a" href="/">Home</a>
@@ -90,59 +90,61 @@ function TeamCoachTopNav() {
                                     </ul>
                                 </div>
                             </li>
+                            {/* Search */}
+                            <li className='nav-item '>
+                                <div className='TeamCoach-search-container'>
+                                    <input type='search' placeholder='Search Here' className='TeamCoach-search'></input>
+                                    <button className='TeamCoach-search-button'>
+                                        <img src={img1} alt="Search" />
+                                    </button>
+                                </div>
+                            </li>
                         </ul>
-                        {/* Search */}
-                        <li className='nav-item ' style={{ listStyle: "none" }}>
-                            <div className='TeamCoach-search-container'>
-                                <input type='search' placeholder='Search Here' className='TeamCoach-search'></input>
-                                <button className='TeamCoach-search-button'>
-                                    <img src={img1} alt="Search" />
-                                </button>
-                            </div>
-                        </li>
-                        {/* Notification */}
-                        <li className="nav-item" style={{ listStyle: "none" }}>
-                            <div className="dropdown-center">
-                                <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
-                                    type="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                    style={{ background: "none", border: "none" }}>
-                                    <img src={img6} alt="Notifications" />
-                                </button>
-                                <ul className="dropdown-menu TeamCoachNavBar-noti-contain">
-                                    {/* Notification items can go here */}
-                                </ul>
-                            </div>
-                        </li>
-                        {/* Profile */}
-                        <li className="nav-item" style={{ listStyle: "none", marginLeft: "10px", marginRight: '10px' }}>
-                            <div className="dropdown-center">
-                                <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
-                                    type="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                    style={{ background: "none", border: "none" }}>
-                                    <img src={img2} alt="Profile" />
-                                </button>
-                                <ul className="dropdown-menu" style={{ marginLeft: "-110px", marginTop: "10px" }}>
-                                    <li>
-                                        <Link to="/Teamcoachviewprofilepopup" className='TeamCoachLink'>
-                                            <a className="dropdown-item" href="/">
-                                                <img src={img3} alt="Profile" style={{ marginRight: "10px" }} />
-                                                Profile
-                                            </a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#Logout-Modal">
-                                            <img src={img4} alt="Logout" style={{ marginRight: "10px" }} />
-                                            Logout
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                        <div className='TeamCoachNavBar-Navli'>
+                            {/* Notification */}
+                            <li className="nav-item" style={{ listStyle: "none" }}>
+                                <div className="dropdown-center">
+                                    <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                        style={{ background: "none", border: "none" }}>
+                                        <img src={img6} alt="Notifications" />
+                                    </button>
+                                    <ul className="dropdown-menu TeamCoachNavBar-noti-contain">
+                                        {/* Notification items can go here */}
+                                    </ul>
+                                </div>
+                            </li>
+                            {/* Profile */}
+                            <li className="nav-item" style={{ listStyle: "none", marginLeft: "10px", marginRight: '10px' }}>
+                                <div className="dropdown-center">
+                                    <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                        style={{ background: "none", border: "none" }}>
+                                        <img src={img2} alt="Profile" />
+                                    </button>
+                                    <ul className="dropdown-menu" style={{ marginLeft: "-110px", marginTop: "10px" }}>
+                                        <li>
+                                            <Link to="/Teamcoachviewprofilepopup" className='TeamCoachLink'>
+                                                <a className="dropdown-item" href="/">
+                                                    <img src={img3} alt="Profile" style={{ marginRight: "10px" }} />
+                                                    Profile
+                                                </a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#Logout-Modal">
+                                                <img src={img4} alt="Logout" style={{ marginRight: "10px" }} />
+                                                Logout
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </div>
                     </div>
                 </div>
             </nav>
