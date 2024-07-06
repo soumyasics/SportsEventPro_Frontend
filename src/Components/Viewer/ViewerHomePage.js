@@ -22,28 +22,32 @@ function ViewerHomePage() {
             {/* div containing the header and the header background img */}
             <div className='ViewerHomePage-PrioDiv-1'>
 
-                <div class="carousel slide carousel-fade ViewerHomePage-Carousel" data-bs-ride="carousel" data-bs-interval="2000" >
+                <div className='ViewerHomePage-bgDiv'>
 
-                    <div class="carousel-inner">
-                        
-                        <div class="carousel-item active">
+                    <div class="carousel slide carousel-fade ViewerHomePage-Carousel" data-bs-ride="carousel" data-bs-interval="2000" >
 
-                            <img src={img10} class="w-100" alt="..." />
+                        <div class="carousel-inner" style={{height:"100%"}}>
+
+                            <div class="carousel-item active">
+
+                                <img src={img10} class="w-100" style= {{ height: "80%" }} alt="..." />
+
+                            </div>
+
+                            <div class="carousel-item">
+
+                                <img src={img11} class="w-100" style= {{ height: "80%" }} alt="..." />
+
+                            </div>
+
+                            <div class="carousel-item">
+
+                                <img src={img12} class="w-100" style= {{ height: "80%" }} alt="..." />
+
+                            </div>
 
                         </div>
 
-                        <div class="carousel-item">
-
-                            <img src={img11} class="w-100" alt="..." />
-
-                        </div>
-
-                        <div class="carousel-item">
-
-                            <img src={img12} class="w-100" alt="..." />
-
-                        </div>
-                        
                     </div>
 
                 </div>
@@ -208,45 +212,49 @@ function ViewerHomePage() {
             {/* suggestions for you section start */}
             <div className='ViewerHomePage-PrioDiv-4'>
 
-                <div className='ViewerHomePage-img-1'>
+                <div className='ViewerHomePage-PrioDiv-4-imgcontain'>
 
-                    <img src={img7} alt=' ' />
+                    <div className='ViewerHomePage-img-1'>
 
-                </div>
+                        <img src={img7} alt=' ' />
 
-                <div>
+                    </div>
 
-                    <h1 className='ViewerHomePage-img-h1'>Suggestions for you...</h1>
+                    <div>
 
-                    <div className='ViewerHomePage-img-contain'>
+                        <h1 className='ViewerHomePage-img-h1'>Suggestions for you...</h1>
 
-                        <div className='card'>
+                        <div className='ViewerHomePage-img-contain'>
 
-                            <img src={img8} alt=' ' className='rounded-top' />
+                            <div className='card'>
 
-                            <div className='card-body ViewerHomePage-img-cardtext-contain'>
+                                <img src={img8} alt=' ' className='rounded-top' />
 
-                                <h1 className='card-title ViewerHomePage-img-cardtext-1'>local cricket match</h1>
-                                <p className='card-text ViewerHomePage-img-cardtext-2'>next week</p>
+                                <div className='card-body ViewerHomePage-img-cardtext-contain'>
+
+                                    <h1 className='card-title ViewerHomePage-img-cardtext-1'>local cricket match</h1>
+                                    <p className='card-text ViewerHomePage-img-cardtext-2'>next week</p>
+
+                                </div>
 
                             </div>
 
-                        </div>
-                        <div className='card'>
+                            <div className='card'>
 
-                            <img src={img9} alt=' ' className='rounded-top' />
+                                <img src={img9} alt=' ' className='rounded-top' />
 
-                            <div className='card-body ViewerHomePage-img-cardtext-contain'>
+                                <div className='card-body ViewerHomePage-img-cardtext-contain'>
 
-                                <h1 className='card-title ViewerHomePage-img-cardtext-1'>Foot Ball Event</h1>
-                                <p className='card-text ViewerHomePage-img-cardtext-2'>Coming soon</p>
+                                    <h1 className='card-title ViewerHomePage-img-cardtext-1'>Foot Ball Event</h1>
+                                    <p className='card-text ViewerHomePage-img-cardtext-2'>Coming soon</p>
+
+                                </div>
 
                             </div>
 
                         </div>
 
                     </div>
-
                 </div>
 
             </div>
