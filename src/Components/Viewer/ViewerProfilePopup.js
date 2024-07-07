@@ -29,75 +29,97 @@ function ViewerProfilePopup() {
     const url = axiosInstance.defaults.url;
     const navigate = useNavigate()
     const [userData, setUserData] = useState({});
-    const id = localStorage.getItem('viewerId')
+    const {id} = useParams()
 
     const [isActive, setIsActive] = useState(false);
 
     const toggleButton = () => {
         setIsActive(!isActive);
+        console.log("worked");
     };
-
+const fetchdata=(id)=>{
+    axiosInstance.post(`viewviewersById/${id}`).then(res => {
+        console.log(";id",res.data.data);
+        setUserData(res.data.data);
+    }).catch(err => {
+        console.log(err);
+    })
+}
 
     useEffect(() => {
-        axiosInstance.post(`viewviewersById/${id}`).then(res => {
-            setUserData(res.data.data);
-        }).catch(err => {
-            console.log(err);
-        })
+        fetchdata(id)
     }, [id]);
 
-
-
-    const handleChange = (event) => {
-        console.log("ty", event.target.type);
-        const { name, value, files } = event.target;
-
-        if (event.target.type == "radio") {
-            setUserData(prevData => ({
-                ...prevData,
-                [name]: value
-            }));
-        }
-
-        else {
-            setUserData(prevData => ({
-                ...prevData,
-                [name]: value
-            }));
-        }
-
-    };
-
-
-    const handleUpdate = () => {
-        axiosInstance
-            .post(`editviewersById/${id}`, userData)
-            .then((res) => {
-                console.log(res);
-                if (res.data.status == 200) {
-                    alert("Profile Updated Successfully");
-                    navigate('/ViewerHomePage')
-                }
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+    const handleActive = (id) => {
+        console.log(id);
+        axiosInstance.post(`/activateviewersById/${id}`)
+        .then((res)=>{
+          if(res.data.status === 200){
+            
+    userData.isActive=true   
+    fetchdata(id)
     }
+        })
+        .catch((err) => {
+          console.log("Error",err);
+        })
+      }
+    
+      const handleDeactive = (id) => {
+        axiosInstance.post(`/deActivateviewersById/${id}`)
+        .then((res) => {
+          if(res.data.status === 200){
+            userData.isActive=false   
+            fetchdata(id)
+    
+          }
+        })
+        .catch((err) => {
+          console.log("Error",err);
+        })
+      }
+    const toggleUserActiveState = (users) => {
+        console.log(users.isActive);
+        if(users.isActive){
+          handleDeactive(users._id)
+        }
+        else{
+          handleActive(users._id)
+        }
+      }
+
+
+
+
+    // const handleUpdate = () => {
+    //     axiosInstance
+    //         .post(`editviewersById/${id}`, userData)
+    //         .then((res) => {
+    //             console.log(res);
+    //             if (res.data.status == 200) {
+    //                 alert("Profile Updated Successfully");
+    //                 navigate('/ViewerHomePage')
+    //             }
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         });
+    // }
 
     return (
         <div className='container'>
             <div className='row viewer-dit-prof-text'>
                 <div className='col ViewerViewProfile-1'>
                     <h1 className='ViewerViewProfiletext-1'>
-                        <Link to="/ViewerHomePage">
+                        <Link to="/admindashboard">
                             <img className='ViewerViewProfileimg-13' src={img13} alt='' />
                         </Link>
                         Viewers Details
                     </h1>
                 </div>
-                <div className={`toggle-button ${isActive ? 'active' : 'inactive'}`} onClick={toggleButton}>
-                    <span className="status-text">{isActive ? 'Active' : 'Inactive'}</span>
-                    <span className="icon">{isActive ? <img src={img15} alt="test"/> : <img src={img14} alt="test"/>}</span>
+                <div className={`toggle-button ${userData.isActive ? 'active' : 'inactive'}`} onClick={()=>{toggleUserActiveState(userData)}}>
+                    <span className="status-text">{userData.isActive ? 'Active' : 'Inactive'}</span>
+                    <span className="icon">{userData.isActive ? <img src={img15} alt="test"/> : <img src={img14} alt="test"/>}</span>
                 </div>
             </div>
 
@@ -112,7 +134,7 @@ function ViewerProfilePopup() {
                         </div>
                         <div className='col-5'>
                             <div className='ViewerRegistration-Content-Input-2'>
-                                <label className='ViewerRegistration-Content-Input-2-label'></label>
+                                <label className='ViewerRegistration-Content-Input-2-label'>{userData.gender}</label>
                             </div>
                         </div>
                     </div>
@@ -127,7 +149,7 @@ function ViewerProfilePopup() {
                             <label className='ViewerViewProfilelabel'>Address</label>
                         </div>
                         <div className='col-5'>
-                            <label className='ViewerRegistration-Content-Input-2-label'></label>
+                            <label className='ViewerRegistration-Content-Input-2-label'>{userData.address}</label>
                         </div>
                     </div>
                 </div>
@@ -143,7 +165,7 @@ function ViewerProfilePopup() {
                             <label className='ViewerViewProfilelabel'>Contact Number</label>
                         </div>
                         <div className='col-5'>
-                            <label className='ViewerRegistration-Content-Input-2-label'></label>
+                            <label className='ViewerRegistration-Content-Input-2-label'>{userData.contact}</label>
                         </div>
                     </div>
                 </div>
@@ -157,7 +179,7 @@ function ViewerProfilePopup() {
                             <label className='ViewerViewProfilelabel'>Pincode</label>
                         </div>
                         <div className='col-5'>
-                            <label className='ViewerRegistration-Content-Input-2-label'></label>
+                            <label className='ViewerRegistration-Content-Input-2-label'>{userData.pincode}</label>
                         </div>
                     </div>
                 </div>
@@ -173,7 +195,7 @@ function ViewerProfilePopup() {
                             <label className='ViewerViewProfilelabel'>Email ID</label>
                         </div>
                         <div className='col-5'>
-                            <label className='ViewerRegistration-Content-Input-2-label'></label>
+                            <label className='ViewerRegistration-Content-Input-2-label'>{userData.email}</label>
                         </div>
                     </div>
                 </div>
@@ -187,7 +209,7 @@ function ViewerProfilePopup() {
                             <label className='ViewerViewProfilelabel'>City</label>
                         </div>
                         <div className='col-5'>
-                            <label className='ViewerRegistration-Content-Input-2-label'></label>
+                            <label className='ViewerRegistration-Content-Input-2-label'>{userData.city}</label>
                         </div>
                     </div>
                 </div>
@@ -205,7 +227,7 @@ function ViewerProfilePopup() {
 
                         <div className='col-5 viewer-dit-prof-text'>
 
-                            <label className='ViewerRegistration-Content-Input-2-label'></label>
+                            <label className='ViewerRegistration-Content-Input-2-label'>{userData.state}</label>
 
                         </div>
                     </div>

@@ -59,7 +59,7 @@ function AdminDashbordTopContent_2() {
       <hr></hr>
       <div className='row container'>
         <div className='col container ms-5 ps-5 '>
-          <h1 className='AdminDashbordTopContent_Div1'>View All Team Viewers</h1>
+          <h1 className='AdminDashbordTopContent_Div1'>View All  Viewers</h1>
         </div>
 
         <div className='col-8 text-center'>
@@ -67,7 +67,7 @@ function AdminDashbordTopContent_2() {
             <img src={topcontent5} className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className=''>
-            <button className='AdminDashbordTopContent_2-button1'><Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>View All Viewers</Link></button>
+            <button className='AdminDashbordTopContent_2-button1'><Link to='/admin-viewAllViewer' className='AdminDashbordTopContent_2-link'>View All Viewers</Link></button>
           </div>
         </div>
       </div>
