@@ -13,6 +13,7 @@ import AdminallViewOrganizerRequest from './Organiser/AdminallViewOrganizerReque
 import AdminViewOrganiserRequest from './Organiser/AdminViewOrganiserRequest'
 import AdminViewOrganiser from './Organiser/AdminViewOrganiser'
 import AdminViewOrganizerToApprove from './Organiser/AdminViewOrganizerToApprove'
+import ViewAllViewer from '../Viewer/ViewAllViewer'
 
 function AdminMain({data}) {
   const navigate = useNavigate(); 
@@ -52,7 +53,9 @@ function AdminMain({data}) {
                   <AdminViewOrganizerToApprove/>
                   ):data === 'AdminallViewOrganizerRequest'?(
                     <AdminallViewOrganizerRequest/>
-                    ):(
+                    ):data === 'admin-viewAllViewer'?(
+                      <ViewAllViewer/>
+                      ):(
                     <AdminDashbordTopContent/>
                 )}
             </div>

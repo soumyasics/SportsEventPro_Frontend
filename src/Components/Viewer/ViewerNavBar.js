@@ -111,7 +111,7 @@ function ViewerNavBar() {
 
                                     <li>
 
-                                        <button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#Logout-Modal" ><img src={img4} alt=' ' style={{ marginRight: "10px" }} />Logout</button>
+                                        <button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#Logout-Modal" ><img src={img4} alt=' ' style={{ marginRight: "10px" }} onClick={handleLogout}/>Logout</button>
 
                                     </li>
 
@@ -131,7 +131,7 @@ function ViewerNavBar() {
 
                 <div class="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
 
-                    {/* <div className="modal-content">
+                    <div className="modal-content">
 
                         <div class="modal-body">
 
@@ -147,8 +147,8 @@ function ViewerNavBar() {
 
                         </div>
 
-                    </div> */}
- <div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+                    </div>
+ {/* <div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
                     <div className="modal-content">
                         <div className="modal-body">
@@ -161,7 +161,7 @@ function ViewerNavBar() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
                 </div>
 
             </div>

@@ -16,7 +16,7 @@ function ViewAllViewer() {
         let res;
 
 
-        axiosInstance.post(`viewViewers`).then(res => {
+        axiosInstance.post(`viewviewerss`).then(res => {
 
             console.log(res);
 
@@ -79,10 +79,10 @@ function ViewAllViewer() {
 
                                     <td className='col-2 Viewer-tableBodyData'> {index + 1}</td>
                                     <td className='col-2 Viewer-tableBodyData'>{x.name} {/* Viewer Name */}</td>
-                                    <td className='col-2 Viewer-tableBodyData'>{x.teamName} {/* Viewer contact number */}</td>
-                                    <td className='col-2 Viewer-tableBodyData'>{x.category} {/* ]email.id */}</td>
-                                    <td className='col-2 Viewer-tableBodyData'>{x.totalteammembers} {/* state */}</td>
-                                    <td className='col-2 Viewer-tableBodyData' x><Link to={`/AdminViewAprvdCoachIndividual/${x._id}`} alt=""> View More </Link></td>
+                                    <td className='col-2 Viewer-tableBodyData'>{x.contact} {/* Viewer contact number */}</td>
+                                    <td className='col-2 Viewer-tableBodyData'>{x.email} {/* ]email.id */}</td>
+                                    <td className='col-2 Viewer-tableBodyData'>{x.state} {/* state */}</td>
+                                    <td className='col-2 Viewer-tableBodyData' x><Link to={`/ViewerProfilePopup/${x._id}`} alt=""> View More </Link></td>
 
                                 </tr>
                             )
