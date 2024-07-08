@@ -56,6 +56,7 @@ import ViewerEditProfile from './Components/Viewer/ViewerEditProfile';
 import TeamCoachTopNav from './Components/TeamCoach/TeamCoachTopNav';
 import ViewAllViewer from './Components/Viewer/ViewAllViewer';
 import ViewerProfilePopup from './Components/Viewer/ViewerProfilePopup';
+import AddEvent from './Components/Events/AddEvent';
 
 function App() {
 
@@ -153,7 +154,7 @@ function App() {
 
 
 {/* Events */}
-<Route exact path='/Add-Events' element={[<OrganiserDashboardNavBar />, <OrganiserSideBar />, <OrganiserDashboard />,<Events/>, <UserFooter />]} />
+<Route exact path='/Add-Events' element={[<OrganiserDashboardNavBar />, <OrganiserSideBar />, <OrganiserDashboard />,<AddEvent/>, <UserFooter />]} />
 
         </Routes>
 
