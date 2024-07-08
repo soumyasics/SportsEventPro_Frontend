@@ -9,8 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function TeamcoachReg() {
 
     const navigate = useNavigate()
-    const [icon,setIcon] = useState(faEyeSlash)
-    const [reIcon,setReIcon] = useState(faEyeSlash)
+    const [icon, setIcon] = useState(faEyeSlash)
+    const [reIcon, setReIcon] = useState(faEyeSlash)
 
     function PasswordButtonOnClick() {
 
@@ -573,9 +573,9 @@ function TeamcoachReg() {
                                                 <label>Password</label></div>
                                             <input className='TeamCoachField-6' id='pword' type='password' placeholder='Password' name="password"
                                                 value={data.password}
-                                                onChange={handleChange} 
+                                                onChange={handleChange}
                                             />
-                                            <button className='passbutt' type="button" onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon}/></button>
+                                            <button className='passbutt' type="button" onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
 
                                         </div>
                                         <div class='teamCoachRegvalidationname'>
@@ -590,9 +590,9 @@ function TeamcoachReg() {
                                         <div className='teamCoachRegDiv-Text'> <label>Confirm Password</label></div>
                                         <input className='TeamCoachField-13' id='rePWord' type='password' placeholder='Confirm password' name="confirmpassword"
                                             value={data.confirmpassword}
-                                            onChange={handleChange} 
+                                            onChange={handleChange}
                                         />
-                                        <button className='passbutt' type="button" onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon}/></button>
+                                        <button className='passbutt' type="button" onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon} /></button>
 
                                         <div class='teamCoachRegvalidationname'>
                                             {errors.confirmpassword && <div className="text-danger ">{errors.confirmpassword}</div>}
