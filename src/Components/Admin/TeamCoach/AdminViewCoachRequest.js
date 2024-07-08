@@ -40,7 +40,7 @@ navigate(`/Teamcoachdetailspopup/${id}`)
     }
     return (
 
-        <div className="AdminCoachRequestParentDiv">
+        <div className="AdminCoachRequestParentDiv container">
 
             <div className="container AdminCoachRequestListBackground">
 
@@ -55,7 +55,7 @@ navigate(`/Teamcoachdetailspopup/${id}`)
                             return(
                                  <div className="AdminCoachRequestListElements">
 
-                                    <li className="col-1 text-end pe-3">
+                                    <li className="col-1 text-end pe-3 ml-5">
 
                                         {/* <img src={img} alt="frame" /> */}
 
@@ -67,7 +67,7 @@ navigate(`/Teamcoachdetailspopup/${id}`)
 
                                     </li>
 
-                                    <li className="col-3 text-start ">
+                                    <li className="col-3 text-start  ml-1 ">
 
                                         <h5 className="fs-5"> {x.name}{/*Player Name*/}</h5>
                                         <h6 className="fw-light fs-6 ">Sport : {x.category}</h6>

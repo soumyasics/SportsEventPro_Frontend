@@ -78,6 +78,15 @@
     margin-top: 45px;
 
 }
+.OrganiserRegistration-Content-Input-2 {
+
+    display: flex;
+    width: 510px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 21px;
+
+}
 
 .OrganiserRegistration-Content-Input-End {
 
@@ -229,10 +238,11 @@
 
 }
 
-input[type=file]::file-selector-button {
+.OrganiserRegistration-Content-input-photo[type=file]::file-selector-button {
+
     font: inherit;
-    -webkit-appearance: icon;
-    appearance: icon;
+    -webkit-appearance: none;
+    appearance: none;
     position: absolute;
     background-color: #00000000;
     color: #00000000;

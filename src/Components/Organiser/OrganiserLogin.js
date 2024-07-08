@@ -107,8 +107,8 @@ function OrganizerLogin() {
             if (response.data.status == 200) {
 
                 alert("Login Successful")
-                localStorage.setItem('admin', 1)
-                navigate('/Organizerhomepage')
+                localStorage.setItem('organizerId',response.data.data._id )
+                navigate('/OrganizerDashboard')
 
             } 
             
@@ -158,12 +158,12 @@ function OrganizerLogin() {
 
                                 <div>
                                     
-                                    <label className='Organizerloginuser'>Username</label>
+                                    <label className='Organizerloginuser'>Email Id</label>
                                     
                                     <input
                                         className="Organizerloginput1"
                                         type="text"
-                                        placeholder="Enter Your Username"
+                                        placeholder="Enter Your email-id"
                                         name="email"
                                         value={data.email}
                                         onChange={handleChange}
@@ -194,7 +194,7 @@ function OrganizerLogin() {
                                                 value={data.password}
                                                 onChange={handleChange}
                                             />
-                                            <button className = 'OrganizerLogin-Password-Change-Button' onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
+                                            <button className = 'OrganizerLogin-Password-Change-Button' type="button" onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
                                     
                                         </div>
                                     </div>
@@ -239,7 +239,7 @@ function OrganizerLogin() {
 
                 <div>
 
-                    <p className='OrganizerloginSignin-p1'>Don't have an account ? <Link to="/OrganizerReg" class="OrganizerloginSignin">Sign Up</Link></p>
+                    <p className='OrganizerloginSignin-p1'>Don't have an account ? <Link to="/OrganizerRegistration" class="OrganizerloginSignin">Sign Up</Link></p>
                 
                 </div>
 

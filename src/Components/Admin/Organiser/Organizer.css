@@ -1,0 +1,29 @@
+
+
+.adminview-organizer-request{
+    font-size: 30px;
+}
+.adminview-organizer-request-span{
+    font-size: 30px;
+    font-weight: bold;
+}
+.adminview-organizer-request-img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    margin-right: 150px;
+}
+.adminview-organizer-request-imgdiv{
+    text-align: right;
+}
+.adminview-organizer-request-img1{
+    height: 30px;
+    width: 30px;
+}
+.adminview-organizer-request-approvebtn{
+    height: 40px;
+    width: 150px;
+    background-color:rgba(122, 121, 121, 0.863) ;
+    border: none;
+    border-radius: 10px;
+}

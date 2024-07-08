@@ -1,32 +1,38 @@
-.teamcoachloginimg{
+.teamcoachloginimg {
     width: 500px;
     height: 500px;
     flex-shrink: 0;
     margin-top: 119px;
 }
-.teamcoachloginput1{
+
+.teamcoachloginput1 {
     display: flex;
     width: 525px;
     padding: 8px 12px;
     align-items: center;
     gap: 4px;
-    margin-bottom: 17px;
+    margin-bottom: 40px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--icon-color, #FFF);
 }
 
-.teamcoachloginput2{
+.teamcoachloginput2 {
     display: flex;
     width: 525px;
     padding: 8px 12px;
     align-items: center;
     gap: 4px;
-    /* margin-bottom: -41px; */
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--icon-color, #FFF);
+
 }
 
-.teamcoachloginButton{
+.teamcoachloginButton {
     display: flex;
     width: 240px;
     padding: 12px;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
@@ -37,10 +43,13 @@
     font-style: normal;
     font-weight: 500;
     line-height: 24px;
-    margin-left: 308px;
-    margin-top: -53px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-top: 54px;
+
 }
-.teamcoachloginmaindiv{
+
+.teamcoachloginmaindiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,7 +58,8 @@
     align-self: stretch;
     margin-left: 173px;
 }
-.teamcoachloginuser{
+
+.teamcoachloginuser {
     color: #000;
     font-family: Roboto;
     font-size: 14px;
@@ -58,7 +68,8 @@
     line-height: 20px;
     margin-left: -462px;
 }
-.teamcoachloginh1{
+
+.teamcoachloginh1 {
     color: #000;
     font-family: Roboto;
     font-size: 40px;
@@ -66,37 +77,56 @@
     font-weight: 700;
     line-height: 48px;
 }
-.teamcoachloginReset{
+
+.teamcoachloginReset {
+
     color: #000;
     font-family: Roboto;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
-    margin-left: 418px;
+    margin-left: 78%;
+    text-decoration: none;
+
 }
-.teamcoachloginSignin-p1{
+
+.teamcoachloginSignin-p1 {
     color: #000;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: -437px;
+    margin-top: 25px;
 }
-.teamcoachloginSignin{
+
+.teamcoachloginSignin {
     color: #000;
-font-family: Roboto;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-text-decoration-line: underline;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
 }
-.TeamCoachLoginValidation-1{
+
+.TeamCoachLoginValidation-1 {
     margin-left: -371px;
 }
-.TeamCoachLoginValidation-2{
+
+.TeamCoachLoginValidation-2 {
     margin-left: -377px;
     /* margin-top: 58px; */
+}
+
+.passwordIcon {
+
+    background: none;
+    border: none;
+    position: absolute;
+    z-index: 1;
+    margin-top: -2.2%;
+    margin-left: 14.5%;
+
 }

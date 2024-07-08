@@ -13,10 +13,11 @@
 
 }
 .AdminResetPassimg{
-    width: 500px;
+    width: 100%;
     height: 500px;
     margin-top: 120px;
-    margin-left: 194px;}
+    /* margin-left: 194px; */
+}
 .AdminResetPassMail{
     height: 40px;
     color: rgba(0, 0, 0, 0.50);

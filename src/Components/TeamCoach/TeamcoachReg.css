@@ -134,3 +134,22 @@ width: 151px;
     text-align: center;
     margin-top: -27px;
 }
+
+/* .btn-check:checked + .btn-secondary{
+    background-color: blue;
+    color: white;
+} */
+
+
+.selected-button {
+    background-color: darkgrey !important;
+    color: white !important;
+}
+
+.passbutt {
+
+    background: none;
+    border: none;
+    margin-left: -6%;
+
+}

@@ -1,4 +1,4 @@
-.AdminDashbordTopContent_2-img1{
+/* .AdminDashbordTopContent_2-img1{
     background: url("../../Assets/AdminDashbordTopContent6.png") rgb(255, 255, 255) 50% / cover no-repeat;
     width: 100px;
     height: 100px;
@@ -7,8 +7,16 @@
     background: url("../../Assets/AdminDashbordTopContent5.png") lightgray 50% / cover no-repeat;
     width: 100px;
     height: 100px;
-}
+} */
 
+.Admin-Dashbord-TopContent-img6{
+    height: 10vh;
+    width: 100px;
+}
+.Admin-Dashbord-TopContent-img5{
+    height: 10vh;
+    width: 100px;
+}
 .AdminDashbordTopContent_2-button1{
     background-color: white;
     border: 0px;
@@ -45,17 +53,16 @@
     color: #000;
     font-size: 26.5px;
     font-style: normal;
-    margin-left: 131px;
 }
 .AdminDashbordTopContent_2-Div4{
     flex: 1 0;
     text-align: -webkit-center;
-    margin-left: -348px;
+    /* margin-left: -348px; */
 }
 .AdminDashbordTopContent_2-line{
     width: 1110px;
     margin: auto;
-    margin-left: 354px;
+    /* margin-left: 354px; */
 }
 .style{
     margin-left: 200px;
@@ -73,7 +80,6 @@
     color: #000;
     font-size: 26.5px;
     font-style: normal;
-    margin-left: 131px;
 }
 .AdminDashbordTopContent_Div3{
     display: flex;
@@ -85,7 +91,6 @@
     color: #000;
     font-size: 26.5px;
     font-style: normal;
-    margin-left: 131px;
 }
 .AdminDashbordTopContent_2-link{
     text-decoration: none;

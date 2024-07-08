@@ -16,7 +16,7 @@ function AdminViewOrganiserRequest() {
         let res;
 
 
-        axiosInstance.post(`viewTeamCoachReqsByAdmin`).then(res => {
+        axiosInstance.post(`viewOrganizerReqsForAdmin`).then(res => {
 
             console.log(res);
 
@@ -35,19 +35,19 @@ function AdminViewOrganiserRequest() {
     })
 
     const viewDetails = (id) => {
-        navigate(`/Teamcoachdetailspopup/${id}`)
+        navigate(`/adminViewOrganizerToApprove/${id}`)
     }
     return (
 
-        <div className="AdminOrganiserRequestParentDiv">
+        // <div className="AdminOrganiserRequestParentDiv">
 
-            <div className="container AdminOrganiserRequestListBackground">
+        //     <div className="container AdminOrganiserRequestListBackground">
 
-                <h3 className="AdminOrganiserRequestH3">Organiser Requests</h3>
+        //         <h3 className="AdminOrganiserRequestH3">Organiser Requests</h3>
 
-                <ul className="AdminOrganiserRequestList">
+        //         <ul className="AdminOrganiserRequestList">
 
-                    {
+        //             {
 
                         // userData.map(x => {
 
@@ -93,21 +93,121 @@ function AdminViewOrganiserRequest() {
 
                         // })
 
+                    // }
+
+    //             </ul>
+
+    //             <div className="text-end">
+
+    //                 <a href=" " alt=" " >View More</a>
+
+    //             </div>
+
+    //         </div>
+
+    //     </div>
+        <div>
+            <div className="adminview-organizerrequest-parentdiv container">
+                <div className="container adminview-organizerrequest-listbackground">
+                    <h3 className="adminview-organizerrequest-h3">Organizer Request</h3>
+
+                    {/* <ul className="adminview-organizerrequest-list">
+                        {console.log(userData && userData.length > 0)}
+                        {
+                            (userData && userData.length > 0) ? (userData.map (x =>{
+                                return(
+                                    <div className="adminview-organizerrequest-listelement">
+                                        <li className="col-1 text-end pe-3 ml-5">
+                                            <img
+                                            src=""
+                                            alt="img"
+                                            className="adminview-organizerrequest-imgprofile"
+                                            />   
+                                        </li>
+                                        <li className="col-3 text-start  ml-1 ">
+                                            <h5 className="fs-5"></h5>
+                                            <h6 className="fw-light fs-6 "></h6>
+                                        </li>
+                                        <li>
+                                            <h5 className="fs-5"></h5>
+                                            <h6 className="fw-light fs-6 "></h6>
+                                        </li>
+                                        <li className="col-3 text-end">
+                                            <button className="btn btn-primary px-4" onClick={()=>{viewDetails(x._id)}}></button>
+                                        </li>
+                                    </div>
+                                )
+                            })):(
+                                <h5 className="adminview-organizerrequest-h5">No New Request Found</h5>
+                            )
+                        }
+                    </ul> */}
+
+
+
+
+
+
+<ul className="AdminCoachRequestList">
+{console.log(userData&&userData.length>0)}
+                    {
+
+                       (userData&&userData.length>0)?(userData.map(x => {
+
+                            return(
+                                 <div className="AdminCoachRequestListElements">
+
+                                    <li className="col-1 text-end pe-3 ml-5">
+
+                                        {/* <img src={img} alt="frame" /> */}
+
+                                        <img
+                                            src={`${url}/${x?.photo?.filename}`}
+                                            alt={img}
+                                            className="AdminCoachRequest-img"
+                                        />
+
+                                    </li>
+
+                                    <li className="col-3 text-start  ml-1 ">
+
+                                        <h5 className="fs-5"> {x.name}{/*Player Name*/}</h5>
+                                       
+
+                                    </li>
+
+                                    <li className="col-5 text-start">
+
+                                        <h5 className="fs-5">  {x.email}</h5>
+                                        <h6 className="fw-light fs-6 ">{x.contact} {/*Number Of teammates*/}</h6>
+
+                                    </li>
+
+                                    <li className="col-3 text-end">
+
+                                        <button className="btn btn-primary px-4" onClick={()=>{viewDetails(x._id)}}> View Details</button>
+
+                                    </li>
+
+                                </div>
+                            )
+
+                               
+{console.log(x.teamName)}
+                            
+
+                        })):(
+                          <h1 className="AdminCoachRequestH5">No New Requests  Found</h1>
+                        )
+                        
                     }
 
                 </ul>
-
-                <div className="text-end">
-
-                    <a href=" " alt=" " >View More</a>
-
                 </div>
-
             </div>
-
         </div>
-
     )
+    
 
 
 }
