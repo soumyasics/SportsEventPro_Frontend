@@ -157,3 +157,14 @@
     align-self: stretch;
 
 }
+
+.tdDiv-h1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 13.499px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}

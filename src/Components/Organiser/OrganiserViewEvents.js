@@ -5,6 +5,7 @@ import axiosInstance from "../Constant/BaseURL";
 import img from '../../Assets/Search Button.svg'
 import img2 from '../../Assets/Group 228.svg'
 import img3 from '../../Assets/Group 229.svg'
+import img4 from '../../Assets/Group 227.svg'
 
 function OrganiserViewEvents() {
 
@@ -86,7 +87,24 @@ function OrganiserViewEvents() {
                                     <td className='col-2 OrganizerViewEvents-tableBodyData'>{/* Date of event */}</td>
                                     <td className='col-2 OrganizerViewEvents-tableBodyData'> {/* Category */}</td>
                                     <td className='col-2 OrganizerViewEvents-tableBodyData'> {/* Venue */}</td>
-                                    <td className='col-2 OrganizerViewEvents-tableBodyData-end'>{/*Request Status */}</td>
+                                    <td className='col-2 OrganizerViewEvents-tableBodyData-end'>
+                                        {isApproved === "approved" ? (
+                                            <div className='tdDiv'>
+                                                <img src={img3} alt='' />
+                                                <h1 className='tdDiv-h1'>Approved</h1>
+                                            </div>
+                                        ):isApproved === "pending" ? (
+                                            <div className='tdDiv'>
+                                                <img src={img2} alt='' />
+                                                <h1 className='tdDiv-h1'>Pending</h1>
+                                            </div>
+                                        ):
+                                            <div>
+                                                <img src={img4} alt=''/>
+                                                <h1 className='tdDiv-h1'>Rejected</h1>
+                                            </div>
+                                        }
+                                    </td>
 
                                 </tr>
                             )
