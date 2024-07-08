@@ -99,7 +99,7 @@ function OrganiserViewEvents() {
                                                 <h1 className='tdDiv-h1'>Pending</h1>
                                             </div>
                                         ):
-                                            <div>
+                                            <div className='tdDiv'>
                                                 <img src={img4} alt=''/>
                                                 <h1 className='tdDiv-h1'>Rejected</h1>
                                             </div>
