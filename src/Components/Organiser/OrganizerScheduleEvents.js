@@ -89,6 +89,8 @@ function OrganizerScheduleEvents() {
 
                     </div>
 
+                    <button className='AButton'>Send Request</button>
+
                 </div>
 
             </div>
