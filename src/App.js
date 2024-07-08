@@ -79,7 +79,7 @@ function App() {
           <Route exact path="/TeamCoachViewpage" element={[, <TeamCoachViewpage />]} />
           <Route exact path="/Adminsidebar1" element={[<Adminsidebar />]} />
           <Route exact path="/Adminsidebar" element={[<Adminsidebar />, <AdminDashbordTopContent />]} />
-          <Route exact path='/TeamCoachEditProfile' element={[<TeamCoachEditProfile/>]}/>
+          <Route exact path='/TeamCoachEditProfile/:id' element={[<TeamCoachEditProfile/>]}/>
           <Route exact path="/Adminsidebar2" element={[<AdminDashbordTopContent />]} />
           <Route exact path="/nav" element={[<TeamCoachTopbar />]} />
           <Route exact path="/Teamcoachdetailspopup/:id" element={[<MainNavbar />,<Adminsidebar />,<Teamcoachdetailspopup />]} />

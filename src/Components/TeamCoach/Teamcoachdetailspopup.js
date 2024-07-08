@@ -115,17 +115,6 @@ function Teamcoachdetailspopup() {
 
 
                                 </div>
-
-
-
-
-
-
-
-
-
-
-
                                 <div className='row Teamcoachdetailspopupdiv-3 Teamcoachdetailspopupimpdiv-style'>
 
 
@@ -175,43 +164,8 @@ function Teamcoachdetailspopup() {
 
 
                                                 </div>
-
-
-
-
-
-
-
                                         </div>
-
-
-
-
-
                                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 <div className='row Teamcoachdetailspopupdiv-4 Teamcoachdetailspopupimpdiv-style'>
                                         <div className='col'>
 
@@ -230,13 +184,8 @@ function Teamcoachdetailspopup() {
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.mail}</label>
 
                                                         </div>
-
-
-
                                                 </div>
-
                                         </div>
-
                                         <div className='col Teamcoachdetailspopupmainrow-right-1'>
 
 
@@ -255,42 +204,9 @@ function Teamcoachdetailspopup() {
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.teamName}</label>
 
                                                         </div>
-
-
-
                                                 </div>
-
-
-
-
-
-
-
-
                                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 </div>
-
-
-
-
-
-
-
-
-
                                 <div className='row Teamcoachdetailspopupdiv-5 Teamcoachdetailspopupimpdiv-style'>
 
                                         <div className='col'>
@@ -335,38 +251,9 @@ function Teamcoachdetailspopup() {
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.address}</label>
 
                                                         </div>
-
-
-
                                                 </div>
-
-
-
-
-
-
-
                                         </div>
-
-
-
-
-
-
-
-
-
                                 </div>
-
-
-
-
-
-
-
-
-
-
                                 <div className='row Teamcoachdetailspopupdiv-6 Teamcoachdetailspopupimpdiv-style'>
                                         <div className='col'>
 
@@ -410,25 +297,9 @@ function Teamcoachdetailspopup() {
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.city}</label>
 
                                                         </div>
-
-
-
                                                 </div>
-
-
-
-
-
-
-
                                         </div>
-
-
-
                                 </div>
-
-
-
                                 <div className='row Teamcoachdetailspopupdiv-7 Teamcoachdetailspopupimpdiv-style'>
 
                                         <div className='col'>
@@ -448,9 +319,6 @@ function Teamcoachdetailspopup() {
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.state}</label>
 
                                                         </div>
-
-
-
                                                 </div>
 
                                         </div>
@@ -472,23 +340,9 @@ function Teamcoachdetailspopup() {
                                                                 <label className='Teamcoachdetailspopuplabel-2'></label>
 
                                                         </div>
-
-
-
                                                 </div>
-
-
-
-
-
-
-
                                         </div>
-
                                 </div>
-
-
-
                                 <div className='row Teamcoachdetailspopupdiv-8 Teamcoachdetailspopupimpdiv-style'>
 
                                         <div className='col'>
@@ -532,27 +386,9 @@ function Teamcoachdetailspopup() {
                                                                 <label className='Teamcoachdetailspopuplabel-2'>{userData.xperience}</label>
 
                                                         </div>
-
-
-
                                                 </div>
-
-
-
-
-
-
-
                                         </div>
-
                                 </div>
-
-
-
-
-
-
-
                                 <div className='row Teamcoachdetailspopup-1-5'>
                                         <div className='col-3'></div>
                                         <div className='col-3 Teamcoachdetailspopupdiv-10'>
@@ -562,34 +398,10 @@ function Teamcoachdetailspopup() {
                                                 <button className='Teamcoachdetailspopupdiv-11-button' onClick={()=>{reject(userData._id)}}>Reject</button>
                                         </div>
                                         <div className='col-3'></div>
-
-
                                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         </div>
                         </div>
                 </div>
         )
 }
-
 export default Teamcoachdetailspopup
