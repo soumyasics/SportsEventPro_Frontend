@@ -6,6 +6,8 @@ import img from '../../Assets/Search Button.svg'
 
 function ViewAllEvents() {
 
+
+
     const navigate = useNavigate()
 
     const [userData, setUserData] = useState([]);
