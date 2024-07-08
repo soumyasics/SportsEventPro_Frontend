@@ -247,9 +247,9 @@ function Teamcoachdetailspopup() {
             Approve
           </button>
         </div>
-        <div className="col teamcoach-details-approvebtndiv2">
+        <div className="col teamcoach-details-rejectbtndiv2">
           <button
-            className="teamcoach-details-approvebtn"
+            className="teamcoach-details-rejectbtn"
             onClick={() => reject(userData._id)}
           >
             Reject

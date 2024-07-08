@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './AdminLogin.css'
 import ImgL from '../../Assets/admin.gif'
 import { useNavigate } from 'react-router-dom'
+import axiosInstance from '../Constant/BaseURL'
 
 function AdminLogin() {
   const [data, setData] = useState({
@@ -47,22 +48,55 @@ function AdminLogin() {
     errors.password = validateField('Password', data.password);
 
 
-if(data.email=="admin@gmail.com" && data.password=="admin@123"){
-  // alert("successfully logined")
-  localStorage.setItem('admin',1)
-  navigate('/adminmain')
-}
-else{
-  alert("username or password is wrong")
-}
+// if(data.email=="admin@gmail.com" && data.password=="admin@123"){
+//   // alert("successfully logined")
+//   localStorage.setItem('admin',1)
+//   navigate('/adminmain')
+// }
+// else{
+//   alert("username or password is wrong")
+// }
 
     setErrors(errors);
-
+    BackendData()
 
 
   }
 
 
+  const BackendData = () => {
+
+    console.log("function called", data);
+    axiosInstance.post('adminLogin', data)
+
+    .then(response => {
+
+        console.log(response);
+
+        if (response.data.status == 200) {
+
+            alert("Login Successful")
+            localStorage.setItem('admin', 1)
+            navigate('/admindashboard')
+
+        } 
+        
+        else {
+
+            alert(response.data.msg)
+
+        }
+
+
+    })
+
+    .catch(error => {
+
+        console.error(error);
+
+    })
+
+}
 
   return (
     <div>

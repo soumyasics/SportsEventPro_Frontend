@@ -107,7 +107,7 @@ function OrganizerLogin() {
             if (response.data.status == 200) {
 
                 alert("Login Successful")
-                localStorage.setItem('admin', 1)
+                localStorage.setItem('organizerId',response.data.data._id )
                 navigate('/OrganizerDashboard')
 
             } 
@@ -194,7 +194,7 @@ function OrganizerLogin() {
                                                 value={data.password}
                                                 onChange={handleChange}
                                             />
-                                            <button className = 'OrganizerLogin-Password-Change-Button' onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
+                                            <button className = 'OrganizerLogin-Password-Change-Button' type="button" onClick = {PasswordButtonOnClick}><FontAwesomeIcon icon = {icon}/></button>
                                     
                                         </div>
                                     </div>

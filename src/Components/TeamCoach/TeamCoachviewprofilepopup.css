@@ -41,9 +41,10 @@
     align-content: normal;
     align-items: center;
     border-radius: 8px;
-    background: #DADADA;
-    color: black;
+    background: #9e9999;
+    color: rgb(247, 244, 244) !important;
     margin-left: 92px;
+    text-decoration: none;
 
 
 
@@ -169,11 +170,24 @@ height: var(--items, 0px);
     height:45px;
     width: 200px;
     border-radius: 10px;
-    background: #DADADA;
+    background: #035c03;
+}
+.teamcoach-details-rejectbtn{
+    height:45px;
+    width: 200px;
+    border-radius: 10px;
+    background: #d41e11;
 }
 .teamcoach-details-approvebtndiv{
     text-align: right;
 }
 .teamcoach-details-arrowlink{
     color: black;
+}
+.TeamCoachViewProfilediv-11-button{
+    color: rgb(248, 244, 244);
+ 
+    text-decoration: none;
+  
+
 }

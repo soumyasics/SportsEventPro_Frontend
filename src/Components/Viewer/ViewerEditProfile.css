@@ -1,0 +1,46 @@
+.viewer-dit-prof-text {
+    border: none;
+    outline: none;
+    padding: 5px; /* Optional: Adjust as needed */
+    background-color: transparent; /* Optional: Adjust as needed */
+}
+
+/* Additional styling to ensure consistency */
+.viewer-dit-prof-text:focus {
+    border: none;
+    outline: none;
+}
+
+.ViewerEditProfile-Content-Input-Country {
+
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Remove default arrow in Safari */
+    -moz-appearance: none; /* Remove default arrow in Firefox */
+    background-image: url("../../Assets/OrganiserRegistration.svg");
+    background-repeat: no-repeat;
+    background-size: 15%;
+    background-color: white;
+    background-position-x: 90%;
+    background-position-y: center;
+    padding: 8px 12px;
+    height: 36px;
+    cursor: pointer;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10); 
+
+}
+
+input[type='radio']{
+
+    accent-color: black;
+
+}

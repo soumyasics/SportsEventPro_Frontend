@@ -3,8 +3,10 @@ import img from '../../../Assets/Search Button.svg'
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from "../../Constant/BaseURL";
+
 function AdminViewOrganiser() {
-    const navigate=useNavigate()
+
+    const navigate = useNavigate()
 
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
@@ -21,7 +23,7 @@ function AdminViewOrganiser() {
             if ((res.data.data).length > 0)
                 setUserData(res.data.data);
             else
-            setUserData(null)
+                setUserData(null)
             console.log(res.data.data);
         }).catch(err => {
             console.log(err);
@@ -34,66 +36,67 @@ function AdminViewOrganiser() {
         console.log("users", userData);
     })
 
-   const viewDetails=(id)=>{
-navigate(`/Teamcoachdetailspopup/${id}`)
-   }
+    const viewDetails = (id) => {
+        navigate(`/Teamcoachdetailspopup/${id}`)
+    }
     return (
-  
-        <div className = 'container AdminViewOrganiserMainDivBG'>
 
-            <h1 className = 'AdminViewOrganiser-h1'>Organiser List</h1>
-            
-            <div className = 'AdmiViewOrganiser-search-container'>
+        <div className='container AdminViewOrganiserMainDivBG'>
 
-                <input type = 'search' placeholder = 'Search Here' className = 'AdminViewOrganiser-search'></input>
-                <button className = 'AdminViewOrganiser-search-button'> <img src = {img} alt = ' '/> </button>
+            <h1 className='AdminViewOrganiser-h1'>Organiser List</h1>
+
+            <div className='AdmiViewOrganiser-search-container'>
+
+                <input type='search' placeholder='Search Here' className='AdminViewOrganiser-search'></input>
+                <button className='AdminViewOrganiser-search-button'> <img src={img} alt=' ' /> </button>
 
             </div>
 
-            <table className = 'AdminViewOrganiser-Table container ' >
+            <table className='AdminViewOrganiser-Table container ' >
 
                 <thead >
 
-                    <tr className = ' AdminViewOrganiser-tableHeadRow container'>
+                    <tr className=' AdminViewOrganiser-tableHeadRow container'>
 
-                        <td className = 'col-2 AdminViewOrganiser-tableHeadData'>Sl</td>
-                        <td className = 'col-2 AdminViewOrganiser-tableHeadData'>Organizer Name</td>
-                        <td className = 'col-2 AdminViewOrganiser-tableHeadData'>Contact Number</td>
-                        <td className = 'col-2 AdminViewOrganiser-tableHeadData'>Email Id</td>
-                        <td className = 'col-2 AdminViewOrganiser-tableHeadData'>State</td>
-                        <td className = 'col-2 AdminViewOrganiser-tableHeadDataEnd'>View</td>
+                        <td className='col-2 AdminViewOrganiser-tableHeadData'>Sl</td>
+                        <td className='col-2 AdminViewOrganiser-tableHeadData'>Organizer Name</td>
+                        <td className='col-2 AdminViewOrganiser-tableHeadData'>Contact Number</td>
+                        <td className='col-2 AdminViewOrganiser-tableHeadData'>Email Id</td>
+                        <td className='col-2 AdminViewOrganiser-tableHeadData'>State</td>
+                        <td className='col-2 AdminViewOrganiser-tableHeadDataEnd'>View</td>
 
                     </tr>
                 </thead>
 
                 <tbody>
-                {
+                    {
 
-(userData&&userData.length>0)?(userData.map((x,index) => {
+                        (userData && userData.length > 0) ? (userData.map((x, index) => {
 
-     return(
-                    <tr className = 'AdminViewOrganiser-tableBodyRow container' >
+                            return (
+                                <tr className='AdminViewOrganiser-tableBodyRow container' >
 
-                        <td className = 'col-2 AdminViewOrganiser-tableBodyData'>{index}</td>
-                        <td className = 'col-2 AdminViewOrganiser-tableBodyData'>{x.name}</td>
-                        <td className = 'col-2 AdminViewOrganiser-tableBodyData'>{x.contact}</td>
-                        <td className = 'col-2 AdminViewOrganiser-tableBodyData'>{x.email} {/* Email id */}</td>
-                        <td className = 'col-2 AdminViewOrganiser-tableBodyData'>{x.state} {/* State */}</td>
-                        <td className = 'col-2 AdminViewOrganiser-tableBodyData-end'><Link to = {`/AdminallViewOrganizerRequest/${x._id}`} alt = ""> View More </Link> {/* View more */}</td>
+                                    <td className='col-2 AdminViewOrganiser-tableBodyData'>{index}</td>
+                                    <td className='col-2 AdminViewOrganiser-tableBodyData'>{x.name}</td>
+                                    <td className='col-2 AdminViewOrganiser-tableBodyData'>{x.contact}</td>
+                                    <td className='col-2 AdminViewOrganiser-tableBodyData'>{x.email} {/* Email id */}</td>
+                                    <td className='col-2 AdminViewOrganiser-tableBodyData'>{x.state} {/* State */}</td>
+                                    <td className='col-2 AdminViewOrganiser-tableBodyData-end'><Link to={`/AdminallViewOrganizerRequest/${x._id}`} alt=""> View More </Link> {/* View more */}</td>
 
-                    </tr>
-  )})):(
-    <h1 className="AdminCoachRequestH5">No Approved Teamcoaches Found</h1>
-  )
-  
-}
+                                </tr>
+                            )
+                        })) : (
+                            <h1 className="AdminCoachRequestH5">No Approved Organizers Found</h1>
+                        )
+
+                    }
                 </tbody>
 
             </table>
 
-            <div className = "btn-group AdminViewOrganiser-Pagination" role = "group" >
-                <button type = "button" className = "btn btn-outline-secondary text-outline-light ">Previous</button>
-                <button type = "button" className = "btn btn-outline-secondary text-outline-light ps-4 pe-4 ">Next</button>
+            <div className="btn-group AdminViewOrganiser-Pagination" role="group" >
+                <button type="button" className="btn btn-outline-secondary text-outline-light ">Previous</button>
+                <button type="button" className="btn btn-outline-secondary text-outline-light ps-4 pe-4 ">Next</button>
             </div>
 
         </div>

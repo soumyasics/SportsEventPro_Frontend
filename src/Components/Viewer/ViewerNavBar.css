@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.ViewerNavbar-Nav {
+
+    height: 80px;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+
+}
+
+.ViewerNavbar-Nav-1 {
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+}
+
+.ViewerNavBar-Nav-a-1 {
+
+    color: white;
+    font-family: Roboto;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: left;
+    
+}
+
+.ViewerNavBar-Nav-a-1:hover {
+
+    color: white;
+
+}
+
+.NavbarNav-ul {
+
+    display: flex;
+    height: 36px;
+    width: max-content;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 65%;
+    transform: translate(-65%);
+
+}
+
+.ViewerNavBar-Navli {
+
+    position: absolute;
+    left: 98%;
+    transform: translate(-100%);
+    list-style: none;
+
+}
+
+.ViewerLink {
+
+    text-decoration: none;
+    color: black;
+
+}
+
+.ViewerNavBar-Nav-li-a {
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+
+}
+
+.modal-body {
+
+    border-radius: 20px !important;
+    border: 1px solid #000 !important;
+    background: var(--icon-color, #FFF);
+    width: 747px !important;
+    height: 298px !important;
+
+}
+
+.ModalDialog-h1 {
+
+    color: #000;
+    text-align: center;
+    text-shadow: 0px 1.146px 1.146px rgba(0, 0, 0, 0.25);
+    font-family: "Noto Sans";
+    font-size: 27.371px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 60px;
+
+}
+
+.ModalDialog-p {
+
+    color: #000;
+    font-family: "Noto Sans";
+    font-size: 15.844px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    margin-top: 21px;
+
+}
+
+.ModalDialog-button-contain {
+
+    width: max-content;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 77px;
+    margin-top: 28px;
+
+}
+
+.ModalDialog-button-1 {
+
+    width: 86px;
+    height: 33px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 17.014px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+
+}
+
+.ModalDialog-button-2 {
+
+    width: 86px;
+    height: 33px;
+    border: none;
+    background-color: #000;
+    color: var(--icon-color, #FFF);
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 17.014px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 16px;
+
+}

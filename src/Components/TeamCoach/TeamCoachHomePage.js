@@ -18,19 +18,22 @@ function TeamCoachHomePage() {
 
                 <div className='TeamCoachHomePage-img-1 '>
 
-                    <div className='TeamCoachHomePage-Text-Contain-Div-1'>
+                    <div className='TeamCoachHomePage-img-content-contain'>
 
-                        <h1 className='TeamCoachHomePage-h1-1'>Welcome to Sports Event Pro!</h1>
-                        <p className='TeamCoachHomePage-p-1'>Manage your team and stay updated with upcoming events.</p>
+                        <div className='TeamCoachHomePage-Text-Contain-Div-1'>
 
-                    </div>
+                            <h1 className='TeamCoachHomePage-h1-1'>Welcome to Sports Event Pro!</h1>
+                            <p className='TeamCoachHomePage-p-1'>Manage your team and stay updated with upcoming events.</p>
 
-                    <div className='TeamCoachHomePage-SpanContainDiv'>
+                        </div>
 
-                        <span className='TeamCoachHomePage-span'>To Participate In Upcoming Events <span className='TeamCoachHomePage-span-2'> Enroll Now </span>
-                        <img src={img} alt='click here' className='justify-content-end TeamCoachHomePage-icon-1 ' />
-                        </span>
+                        <div className='TeamCoachHomePage-SpanContainDiv'>
 
+                            <span className='TeamCoachHomePage-span'>To Participate In Upcoming Events <span className='TeamCoachHomePage-span-2'> Enroll Now </span>
+                                <img src={img} alt='click here' className='justify-content-end TeamCoachHomePage-icon-1 ' />
+                            </span>
+
+                        </div>
                     </div>
 
                 </div>
@@ -52,59 +55,59 @@ function TeamCoachHomePage() {
 
                 <div className=''>
 
-                    <div className = 'TeamCoachHomepage-Card-Contain'>
+                    <div className='TeamCoachHomepage-Card-Contain'>
 
                         {/* CARD NO. 1 */}
-                        <div className = "card rounded-2 TeamCoachHomePage-Card-Start">
+                        <div className="card rounded-2 TeamCoachHomePage-Card-Start">
 
-                            <img src = {img2} className = "card-img-top TeamCoachHomePage-Card-Img " alt = "..."/>
+                            <img src={img2} className="card-img-top TeamCoachHomePage-Card-Img " alt="..." />
 
-                            <div className = "card-body rounded-2 TeamCoachHomePage-Card-Body">
+                            <div className="card-body rounded-2 TeamCoachHomePage-Card-Body">
 
-                                <p className = "card-text TeamCoachHomePage-Card-Body-Text-1 ">Soccer Tournament</p>
-                                <p className = 'TeamCoachHomePage-Card-Body-Text-2'>7:30 pm / 2-11 September</p>
+                                <p className="card-text TeamCoachHomePage-Card-Body-Text-1 ">Soccer Tournament</p>
+                                <p className='TeamCoachHomePage-Card-Body-Text-2'>7:30 pm / 2-11 September</p>
 
                             </div>
 
                         </div>
 
                         {/* CARD NO. 2 */}
-                        <div className = "card rounded-2 TeamCoachHomePage-Card">
+                        <div className="card rounded-2 TeamCoachHomePage-Card">
 
-                            <img src = {img3} className = "card-img-top TeamCoachHomePage-Card-Img " alt = "..."/>
+                            <img src={img3} className="card-img-top TeamCoachHomePage-Card-Img " alt="..." />
 
-                            <div className = "card-body rounded-2 TeamCoachHomePage-Card-Body">
+                            <div className="card-body rounded-2 TeamCoachHomePage-Card-Body">
 
-                                <p className = "card-text TeamCoachHomePage-Card-Body-Text-1 ">Volleyball Tournament</p>
-                                <p className = 'TeamCoachHomePage-Card-Body-Text-2'>5:30 pm / 2-11 september</p>
+                                <p className="card-text TeamCoachHomePage-Card-Body-Text-1 ">Volleyball Tournament</p>
+                                <p className='TeamCoachHomePage-Card-Body-Text-2'>5:30 pm / 2-11 september</p>
 
                             </div>
 
                         </div>
 
                         {/* CARD NO. 3 */}
-                        <div className = "card rounded-2 TeamCoachHomePage-Card">
+                        <div className="card rounded-2 TeamCoachHomePage-Card">
 
-                            <img src = {img4} className = "card-img-top TeamCoachHomePage-Card-Img " alt = "..."/>
+                            <img src={img4} className="card-img-top TeamCoachHomePage-Card-Img " alt="..." />
 
-                            <div className = "card-body rounded-2 TeamCoachHomePage-Card-Body">
+                            <div className="card-body rounded-2 TeamCoachHomePage-Card-Body">
 
-                                <p className = "card-text TeamCoachHomePage-Card-Body-Text-1 ">Tennis Tournament</p>
-                                <p className = 'TeamCoachHomePage-Card-Body-Text-2'>6:30 pm/2-11 December</p>
+                                <p className="card-text TeamCoachHomePage-Card-Body-Text-1 ">Tennis Tournament</p>
+                                <p className='TeamCoachHomePage-Card-Body-Text-2'>6:30 pm/2-11 December</p>
 
                             </div>
 
                         </div>
 
                         {/* CARD NO. 4 */}
-                        <div className = "card rounded-2 TeamCoachHomePage-Card">
+                        <div className="card rounded-2 TeamCoachHomePage-Card">
 
-                            <img src = {img5} className = "card-img-top TeamCoachHomePage-Card-Img " alt = "..."/>
+                            <img src={img5} className="card-img-top TeamCoachHomePage-Card-Img " alt="..." />
 
-                            <div className = "card-body rounded-2 TeamCoachHomePage-Card-Body">
+                            <div className="card-body rounded-2 TeamCoachHomePage-Card-Body">
 
-                                <p className = "card-text TeamCoachHomePage-Card-Body-Text-1 ">Football Tournament</p>
-                                <p className = 'TeamCoachHomePage-Card-Body-Text-2'>6:30 pm/2-11 November</p>
+                                <p className="card-text TeamCoachHomePage-Card-Body-Text-1 ">Football Tournament</p>
+                                <p className='TeamCoachHomePage-Card-Body-Text-2'>6:30 pm/2-11 November</p>
 
                             </div>
 
@@ -120,44 +123,25 @@ function TeamCoachHomePage() {
 
             {/* Enroll for events section start */}
 
-            <div className = 'TeamCoachHomePage-PrioDiv-3'>
+            <div className='TeamCoachHomePage-PrioDiv-3'>
 
-                <div className = 'TeamCoachHomePage-Enroll-Contain'>
+                <div className='TeamCoachHomePage-Enroll-Contain'>
 
-                    <div className = 'TeamCoachHomePage-Text-Contain-Div-2'>
+                    <div className='TeamCoachHomePage-Text-Contain-Div-2'>
 
-                        <div>
-
-                            <p className = 'TeamCoachHomePage-Text-Contain-p-1'>Enroll For Events</p>
-
-                        </div>
-
-                        <div>
-
-                            <p className = ' TeamCoachHomePage-Text-Contain-p-2'>Sports are physical activities that test your skills and fitness. They can be competitive, with teams or individuals vying for victory. From soccer to swimming, sports offer fun, exercise, and a chance to push your limits.</p>
-
-                        </div>
-
-                        <div>
-
-                            <p className = 'TeamCoachHomePage-Text-Contain-p-3'>Choose the favouirite sports you are looking for and enrol your slot now...</p>
-
-                        </div>
-
-                        <div>
-
-                            <button className = 'btn btn-light rounded-4 TeamCoachHomePage-Text-Contain-Button-1'>Enroll Now</button>
-
-                        </div>
+                        <p className='TeamCoachHomePage-Text-Contain-p-1'>Enroll For Events</p>
+                        <p className=' TeamCoachHomePage-Text-Contain-p-2'>Sports are physical activities that test your skills and fitness. They can be competitive, with teams or individuals vying for victory. From soccer to swimming, sports offer fun, exercise, and a chance to push your limits.</p>
+                        <p className='TeamCoachHomePage-Text-Contain-p-3'>Choose the favouirite sports you are looking for and enrol your slot now...</p>
+                        <button className='btn btn-light rounded-4 TeamCoachHomePage-Text-Contain-Button-1'>Enroll Now</button>
 
                     </div>
 
                     <div>
 
-                        <img src = {img6} alt = '...' />
-                        
+                        <img src={img6} alt='...' />
+
                     </div>
-                
+
                 </div>
 
             </div>

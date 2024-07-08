@@ -5,29 +5,31 @@
     margin-left: 90px;
 }
 
- .OrganiserViewProfile-2 {
+.OrganiserViewProfile-2 {
     display: grid;
     align-content: center;
     height: 300px;
-} 
+}
 
 .OrganiserViewProfilediv-10 {
     display: grid;
     align-content: center;
     height: 300px;
 }
- .OrganiserViewProfilediv-10-button{
-    display: grid;
-width: 160px;
-padding: 12px;
-flex-direction: column;
-align-items: end;
-border-radius: 8px;
-background: #1877F2;
-color: white;
 
-} 
-.OrganiserViewProfile-11-button{
+.OrganiserViewProfilediv-10-button {
+    display: grid;
+    width: 160px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: end;
+    border-radius: 8px;
+    background: #1877F2;
+    color: white;
+
+}
+
+.OrganiserViewProfile-11-button {
     display: grid;
     width: 160px;
     padding: 12px;
@@ -42,79 +44,86 @@ color: white;
     margin-left: 47%;
 }
 
-.OrganiserViewProfilelabel{
+.OrganiserViewProfilelabel {
     color: #000;
-font-family: Roboto;
-font-size: 15.423px;
-font-style: normal;
-font-weight: 800;
-line-height: 21.592px; 
+    font-family: Roboto;
+    font-size: 15.423px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 21.592px;
 }
- .OrganiserViewProfileimpdiv-style{
+
+.OrganiserViewProfileimpdiv-style {
     margin-left: 70px;
     align-items: center;
     gap: 12.338px;
     flex: 1 0;
-    align-self: stretch;} 
+    align-self: stretch;
+}
 
-.OrganiserViewProfilecommon-style-1{
+.OrganiserViewProfilecommon-style-1 {
     border-radius: 23.135px;
     background: rgba(0, 0, 0, 0.05);
     display: flex;
-width: 46.269px;
-height: 46.269px;
-padding: var(--items, 11.576px) var(--items, 11.269px) var(--items, 10.693px) var(--items, 11px);
-justify-content: center;
-align-items: center;
+    width: 46.269px;
+    height: 46.269px;
+    padding: var(--items, 11.576px) var(--items, 11.269px) var(--items, 10.693px) var(--items, 11px);
+    justify-content: center;
+    align-items: center;
+    size: 100%;
 }
 
 
 
-.OrganiserViewProfiletext-1{
-color: #000;
-font-family: Roboto;
-font-size: 40px;
-font-style: normal;
-font-weight: 700;
-line-height: 48px;
-width: 520px;
-align-self: stretch;
+.OrganiserViewProfiletext-1 {
+    color: #000;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    width: 520px;
+    align-self: stretch;
 }
 
-.OrganiserViewProfileimg-1-backend{
+.OrganiserViewProfileimg-1-backend {
     width: 102px;
-height: 105px;
-flex-shrink: 0;
+    height: 105px;
+    flex-shrink: 0;
 }
 
- .OrganiserViewProfileimg-2-backend{
+.OrganiserViewProfileimg-2-backend {
 
-color: #000;
-font-family: Roboto;
-font-size: 15.423px;
-font-style: normal;
-font-weight: bold;
-line-height: 21.592px; 
+    color: #000;
+    font-family: Roboto;
+    font-size: 15.423px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 21.592px;
 
-} 
-.OrganiserViewProfilemainrow-1{
-display: flex;
-width: 500px;
-padding: 20.423px var(--items, 0px);
-justify-content: center;
-align-items: center;
-border-bottom: 1px solid rgb(192, 186, 186);
 }
 
-.OrganiserViewProfilemainrow-right-1{
+.OrganiserViewProfilemainrow-1 {
+    display: flex;
+    width: 500px;
+    padding: 20.423px var(--items, 0px);
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(192, 186, 186);
+}
+
+.OrganiserViewProfilemainrow-right-1 {
     margin-left: 100px;
 }
- .OrganiserViewProfilelabel-2{
+
+.OrganiserViewProfilelabel-2 {
     margin-left: 47px;
- } 
- .OrganiserViewProfileimgdiv-1-1{
-text-align: center;
- }
- .OrganiserViewProfileimg-13{
+}
+
+.OrganiserViewProfileimgdiv-1-1 {
+    text-align: center;
+}
+
+.OrganiserViewProfileimg-13 {
     margin-right: 30px;
- }
+}

@@ -85,6 +85,7 @@ function ViewerRegistration() {
     })
 
     let formIsValid;
+    
     const handleChange = (event) => {
         console.log("ty", event.target.type);
         const { name, value, files } = event.target;
@@ -369,7 +370,7 @@ function ViewerRegistration() {
                                     <input type='password' placeholder='Enter Password' id='pword' className='ViewerRegistration-Content-input-password' name="password"
                                         value={data.password}
                                         onChange={handleChange} />
-                                    <button className='Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
+                                    <button className='Password-Change-Button' type="button" onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
                                     {errors.password && <div className="text-danger ">{errors.password}</div>}
 
 
@@ -387,7 +388,7 @@ function ViewerRegistration() {
                                     <input type='password' placeholder='Re-Enter password' name="confirmpassword"
                                         value={data.confirmpassword}
                                         onChange={handleChange} id='rePWord' className='ViewerRegistration-Content-input-password' />
-                                    <button className='Password-Change-Button' onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon} /></button>
+                                    <button  type="button" className='Password-Change-Button' onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon} /></button>
                                     {errors.confirmpassword && <div className="text-danger ">{errors.confirmpassword}</div>}
 
                                 </div>
