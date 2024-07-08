@@ -27,9 +27,9 @@ const url = axiosInstance.defaults.url;
 function ViewerProfile() {
 
     const navigate = useNavigate()
- 
+
     const [userData, setUserData] = useState({});
-const id= localStorage.getItem('viewerId')
+    const id = localStorage.getItem('viewerId')
 
     useEffect(() => {
 
@@ -52,9 +52,9 @@ const id= localStorage.getItem('viewerId')
     }, [id]);
     console.log(userData);
 
-const navigate1=()=>{
-    navigate('/ViewerEditProfile')
-}
+    const navigate1 = () => {
+        navigate('/ViewerEditProfile')
+    }
     return (
 
         <div>
@@ -71,53 +71,53 @@ const navigate1=()=>{
 
                     </div>
 
-                   
+
 
                 </div>
                 <div className='row ViewerViewProfile-3 ViewerViewProfileimpdiv-style'>
-                <div className='col'>
-                    <div className='row ViewerViewProfilemainrow-1'>
-                        <div className='col-2'>
-                            <img className='ViewerViewProfilecommon-style-1' src={nameIcon} alt='' />
-                        </div>
-                        <div className='col-5'>
-                            <label className='ViewerViewProfilelabel'>Name</label>
-                        </div>
-                        <div className='col-5'>
-                            <input type="text" className='viewer-dit-prof-text'  name="name"  value={userData.name || ''} />
+                    <div className='col'>
+                        <div className='row ViewerViewProfilemainrow-1'>
+                            <div className='col-2'>
+                                <img className='ViewerViewProfilecommon-style-1' src={nameIcon} alt='' />
+                            </div>
+                            <div className='col-5'>
+                                <label className='ViewerViewProfilelabel'>Name</label>
+                            </div>
+                            <div className='col-5'>
+                                <input type="text" className='viewer-dit-prof-text' name="name"  style={{marginLeft:"40px"}} value={userData.name || ''} />
+                            </div>
                         </div>
                     </div>
+
+                    <div className='row ViewerViewProfile-7 ViewerViewProfileimpdiv-style'>
+
+                        <div className='col'>
+                            <div className='col ViewerViewProfilemainrow-right-1'>
+                                <div className='row ViewerViewProfilemainrow-1' style={{marginLeft:"-55px"}}>
+
+                                    {/* State */}
+                                    <div className='col-2'>
+                                        <img className='ViewerViewProfilecommon-style-2' src={img7} alt=' '></img>
+                                    </div>
+
+                                    <div className='col-5'>
+                                        <label className='ViewerViewProfilelabel'>State</label>
+
+                                    </div>
+
+                                    <div className='col-5'>
+                                        <label className='ViewerViewProfilelabel-2'>{userData ? userData.state : ''}</label>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
                 </div>
-
-                <div className='row ViewerViewProfile-7 ViewerViewProfileimpdiv-style'>
-
-<div className='col'>
-<div className='col ViewerViewProfilemainrow-right-1'>
-    <div className='row ViewerViewProfilemainrow-1'>
-
-        {/* State */}
-        <div className='col-2'>
-            <img className='ViewerViewProfilecommon-style-2' src={img7} alt=' '></img>
-        </div>
-
-        <div className='col-5'>
-            <label className='ViewerViewProfilelabel'>State</label>
-
-        </div>
-
-        <div className='col-5'>
-            <label className='ViewerViewProfilelabel-2'>{userData ? userData.state : ''}</label>
-
-        </div>
-</div>
-    </div>
-
-</div>
-
-
-</div>
-
-            </div>
                 <div className='row ViewerViewProfile-3 ViewerViewProfileimpdiv-style'>
 
 
@@ -260,11 +260,11 @@ const navigate1=()=>{
 
                 </div>
 
-             
+
 
                 <div className='row ViewerViewProfile-11'>
 
-                    <button className='ViewerViewProfile-11-button' onClick={()=>{navigate1()}}>Edit</button>
+                    <button className='ViewerViewProfile-11-button' onClick={() => { navigate1() }}>Edit</button>
 
                 </div>
 

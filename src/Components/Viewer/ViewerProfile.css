@@ -55,7 +55,7 @@
 }
 
 .ViewerViewProfileimpdiv-style {
-    /* margin-left: 70px; */
+    margin-left: 70px;
     align-items: center;
     gap: 12.338px;
     flex: 1 0;
@@ -121,7 +121,7 @@
 }
 
 .ViewerViewProfilemainrow-right-1 {
-    margin-left: 100px;
+    margin-left: -20px;
 }
 
 .ViewerViewProfilelabel-2 {

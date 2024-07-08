@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-.AdminViewOrganiserMainDivBG {
+.EventRequestsMainDivBG {
 
     font-family: "Roboto";
     font-weight: 500;
@@ -10,7 +10,7 @@
 
 }
 
-.AdminViewOrganiser-h1 {
+.EventRequests-h1 {
 
     color: #000;
     font-family: Roboto;
@@ -22,13 +22,13 @@
 
 }
 
-.AdminViewOrganiser-search-container {
+.EventRequests-search-container {
 
     height: 46px;
 
 }
 
-.AdminViewOrganiser-search {
+.EventRequests-search {
 
     z-index: 0;
     margin-top: 40px;
@@ -45,7 +45,7 @@
 
 }
 
-.AdminViewOrganiser-search-button {
+.EventRequests-search-button {
 
     position: absolute;
     z-index: 1;
@@ -65,7 +65,7 @@
 
 }
 
-.AdminViewOrganiser-Table {
+.EventRequests-Table {
 
     margin-top: 50px;
     border: 1.304px solid #B9B9B9;
@@ -75,7 +75,7 @@
 
 }
 
-.AdminViewOrganiser-tableHeadRow {
+.EventRequests-tableHeadRow {
     display: flex;
     width: 100%;
     height: 65px;
@@ -83,7 +83,7 @@
     background: #A9ADC582;
 }
 
-.AdminViewOrganiser-tableHeadData {
+.EventRequests-tableHeadData {
 
     border-right: 1.304px solid #B9B9B9;
     /* padding-left: 13px; */
@@ -91,14 +91,14 @@
 
 }
 
-.AdminViewOrganiser-tableHeadDataEnd {
+.EventRequests-tableHeadDataEnd {
 
     /* padding-left: 13px; */
     padding-top: 15.6px;
 
 }
 
-.AdminViewOrganiser-tableBodyRow {
+.EventRequests-tableBodyRow {
 
     display: flex;
     width: 100%;
@@ -109,21 +109,21 @@
 
 }
 
-.AdminViewOrganiser-tableBodyData {
+.EventRequests-tableBodyData {
 
     border-right: 1.304px solid #B9B9B9;
     /* padding-left: 13px; */
     padding-top: 15.6px;
 
 }
-.AdminViewOrganiser-tableBodyData-end {
+.EventRequests-tableBodyData-end {
 
     /* padding-left: 13px; */
     padding-top: 15.6px;
 
 }
 
-.AdminViewOrganiser-Pagination {
+.EventRequests-Pagination {
 
     margin-top: 100px;
     margin-left: 8px;
