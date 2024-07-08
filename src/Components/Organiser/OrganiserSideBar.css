@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+.OrganiserSideBar {
+
+    width: 300px;
+    overflow: hidden;
+
+}
+
 .OrganiserSideBarmaindiv1 {
     padding: var(--items, 39px) var(--items, 35px) var(--items, 374px) var(--items, 35px);
     flex-direction: column;
     background: #292929;
-    width: 319px;
+    width: 300px;
     height: 680px;
     font-family: Roboto;
 }
