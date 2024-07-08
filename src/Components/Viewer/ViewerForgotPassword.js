@@ -3,6 +3,7 @@ import './ViewerForgotPassword.css'
 import axiosInstance from '../Constant/BaseURL';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import { useNavigate } from 'react-router-dom';
 
 function ViewerForgotPassword() {
 
@@ -50,6 +51,7 @@ function ViewerForgotPassword() {
 
     }
 
+    const navigate = useNavigate()
 
     const [data, setData] = useState({
 
@@ -129,7 +131,7 @@ function ViewerForgotPassword() {
 
         console.log("fun called", data);
 
-        axiosInstance.post('loginOrganiser', data)
+        axiosInstance.post('forgotPasswordViewer', data)
 
             .then(response => {
 
@@ -137,7 +139,9 @@ function ViewerForgotPassword() {
 
                 if (response.data.status == 200) {
 
-                    alert("Login Successful")
+                    alert("Password Reset Successful")
+                    navigate('/ViewerLogin')
+
                 }
 
                 else {
@@ -220,7 +224,7 @@ function ViewerForgotPassword() {
 
                                     </div>
 
-                                    <input className="ViewerForgetPass-field" type="password" placeholder="Confirm password" name="confirm password" id='rePWord' onChange={handleChange} />
+                                    <input className="ViewerForgetPass-field" type="password" placeholder="Confirm password" name="confirm_password" id='rePWord' onChange={handleChange} />
                                     <button className='Viewer-Password-Change-Button' onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon} /></button>
 
                                     <div class='ViewerForgetPass-valid'>

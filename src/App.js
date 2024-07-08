@@ -56,6 +56,7 @@ import ViewerEditProfile from './Components/Viewer/ViewerEditProfile';
 import TeamCoachTopNav from './Components/TeamCoach/TeamCoachTopNav';
 import ViewAllViewer from './Components/Viewer/ViewAllViewer';
 import ViewerProfilePopup from './Components/Viewer/ViewerProfilePopup';
+import AddEvent from './Components/Events/AddEvent';
 
 function App() {
 
@@ -104,7 +105,7 @@ function App() {
           <Route exact path="/Adminsidebar" element={[<Adminsidebar />, <AdminDashbordTopContent />]} />
           <Route exact path='/adminmain' element={[<AdminNav />, <AdminMain />]} />
           <Route exact path='/ViewAllViewer' element={[<ViewAllViewer/>]} />
-          <Route exact path='/ViewerProfilePopup' element={[<ViewerProfilePopup/>]}/>
+          <Route exact path='/ViewerProfilePopup/:id' element={[<ViewerProfilePopup/>]}/>
 
           {/* Team Coach */}
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />
@@ -134,7 +135,7 @@ function App() {
           {/* Organizer */}
           <Route exact path='/OrganizerRegistration' element={[<MainNavbar />, <OrganiserRegistration />, <UserFooter />]} />
           <Route exact path='/OrganizerLogin' element={[<MainNavbar />, <OrganizerLogin />, <UserFooter />]} />
-          <Route exact path='/OrganizerForgotPassword' element={[<MainNavbar />, <OrganiserForgotPassword />, <UserFooter />]} />
+          <Route exact path='/OrganizerForgetPass' element={[<MainNavbar />, <OrganiserForgotPassword />, <UserFooter />]} />
           <Route exact path='/OrganizerDashboard' element={[<OrganiserDashboardNavBar />, <OrganiserSideBar />, <OrganiserDashboard />, <UserFooter />]} />
           <Route exact path='/OrganizerEditProfile' element={[<OrganiserEditProfile />]} />
 
@@ -148,7 +149,12 @@ function App() {
           <Route exact path='/ViewerProfile' element = {[<ViewerNavBar/>,<ViewerProfile/>,<UserFooter/>]}/>
           <Route exact path='/ViewerEditProfile' element={<ViewerEditProfile/>} />
           
+          <Route path='/admin-viewAllViewer' element={[<MainNavbar />, <AdminMain data='admin-viewAllViewer' />]} />
 
+
+
+{/* Events */}
+<Route exact path='/Add-Events' element={[<OrganiserDashboardNavBar />, <OrganiserSideBar />, <OrganiserDashboard />,<AddEvent/>, <UserFooter />]} />
 
         </Routes>
 
