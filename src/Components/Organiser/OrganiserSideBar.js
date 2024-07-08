@@ -34,7 +34,9 @@ function OrganiserSideBar() {
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>Enroll Requests</button>
+                        <button className='OrganiserSideBarbutton-2'>
+                            <Link to='/OrganizerScheduleEvents'>
+                        Enroll Requests</Link></button>
 
                     </div>
 
