@@ -59,6 +59,7 @@ import ViewerProfilePopup from './Components/Viewer/ViewerProfilePopup';
 import AddEvent from './Components/Events/AddEvent';
 import EventRequests from './Components/Admin/EventRequests';
 import OrganizerScheduleEvents from './Components/Organiser/OrganizerScheduleEvents';
+import OrganiserViewEvents from './Components/Organiser/OrganiserViewEvents';
 
 function App() {
 
@@ -136,6 +137,7 @@ function App() {
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar/>,<AdminMain data='adminallvieworganizerpage'/>]} />
           <Route path='/adminViewOrganizerToApprove/:id' element={[<MainNavbar/>,<AdminMain data='adminViewOrganizerToApprove'/>]} />
           <Route exact path='/OrganizerScheduleEvents' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganizerScheduleEvents/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerViewEvents' element={[<OrganiserDashboardNavBar/>,<OrganiserSideBar/>,<OrganiserViewEvents/>,<UserFooter/>]}/>
 
           {/* Organizer */}
           <Route exact path='/OrganizerRegistration' element={[<MainNavbar />, <OrganiserRegistration />, <UserFooter />]} />

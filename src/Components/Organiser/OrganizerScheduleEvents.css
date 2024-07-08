@@ -202,7 +202,7 @@
     font-weight: 400;
     line-height: 20px;
     border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.10); 
+    border: 1px solid rgba(0, 0, 0, 0.10);
 
 }
 
@@ -215,7 +215,7 @@
     background-color: #00000000;
     color: #00000000;
     border: none;
-  
+
 }
 
 .OrganizerScheduleEvents-Content-Input-Country {
@@ -261,5 +261,19 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
+
+}
+
+.AButton {
+
+    color: white;
+    display: flex;
+    width: 240px;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #000;
 
 }
