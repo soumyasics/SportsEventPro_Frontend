@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-.OrganiserEditProfile-headercontainer {
+.TeamCoachAddSub-headercontainer {
 
     display: flex;
     flex-direction: row;
@@ -10,8 +10,11 @@
     gap: 10px;
 
 }
+.TeamCoachAddSub-validation{
+    padding-left: 52%;
+}
 
-.OrganiserEditProfile-headercontainer-container-1 {
+.TeamCoachAddSub-headercontainer-container-1 {
 
     display: flex;
     flex-direction: row;
@@ -21,17 +24,18 @@
 
 }
 
-.OrganiserEditProfile-headercontainer-BackButton {
+.TeamCoachAddSub-headercontainer-BackButton {
 
     background-color: #00000000;
     border: none;
 
 }
 
-.OrganiserEditProfile-headercontainer-h1 {
+.TeamCoachAddSub-headercontainer-h1 {
 
     margin-left: 30px;
     color: #000;
+    width: 500px;
     font-family: Roboto;
     font-size: 40px;
     font-style: normal;
@@ -40,20 +44,20 @@
 
 }
 
-.OrganiserEditProfile-headercontainer-container-2 {
+.TeamCoachAddSub-headercontainer-container-2 {
 
-    padding-left: 35%;
+    padding-left: 50%;
 
 }
 
-.OrganiserEditProfile-headercontainer-container-2-profilepicture {
+.TeamCoachAddSub-headercontainer-container-2-profilepicture {
 
     border-radius: 50%;
     vertical-align: text-bottom;
 
 }
 
-.OrganiserEditProfile-headercontainer-container-2-editimgbutton {
+.TeamCoachAddSub-headercontainer-container-2-editimgbutton {
 
     background-color: #00000000;
     border: none;
@@ -62,7 +66,8 @@
     margin-left: -64px;
 
 }
-.OrganiserEditProfile-headercontainer-container-2-editimgbutton[type=file]::file-selector-button {
+
+.TeamCoachAddSub-headercontainer-container-2-editimgbutton[type=file]::file-selector-button {
 
     font: inherit;
     -webkit-appearance: none;
@@ -71,15 +76,18 @@
     background-color: #00000000;
     color: #00000000;
     border: none;
-  
+    cursor: pointer;
+
 }
-.OrganiserEditProfile-headercontainer-container-2-editimg-icon {
+
+.TeamCoachAddSub-headercontainer-container-2-editimg-icon {
 
     margin-left: -30px;
-
+    cursor: pointer;
 }
 
-.OrganiserEditProfile-body {
+
+.TeamCoachAddSub-body {
 
     display: flex;
     flex-direction: row;
@@ -90,17 +98,18 @@
 
 }
 
-.OrganiserEditProfile-body-left {
+.TeamCoachAddSub-body-left {
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 38px;
     padding-top: 3%;
+    padding-right: 6%;
 
 }
 
-.OrganiserEditProfile-body-common {
+.TeamCoachAddSub-body-common {
 
     display: flex;
     flex-direction: row;
@@ -112,17 +121,18 @@
 
 }
 
-.OrganiserEditProfile-body-right {
+.TeamCoachAddSub-body-right {
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 38px;
     padding-top: 3%;
+    padding-left: 6%;
 
 }
 
-.OrganiserEditProfile-body-common-img-contain {
+.TeamCoachAddSub-body-common-img-contain {
 
     display: flex;
     flex-direction: row;
@@ -131,11 +141,9 @@
 
 }
 
-.OrganiserEditProfile-body-common-img {
+.TeamCoachAddSub-body-common-img {
 
     display: flex;
-    width: 46.269px;
-    height: 46.269px;
     padding: var(--items, 11px) var(--items, 11.269px) var(--items, 11.269px) var(--items, 11px);
     flex-shrink: 0;
     border-radius: 23.135px;
@@ -143,7 +151,16 @@
 
 }
 
-.OrganiserEditProfile-body-common-label {
+.TeamCoachAddSub-body-common-img-sub {
+
+    display: flex;
+    padding: var(--items, 11px) var(--items, 11.269px) var(--items, 11.269px) var(--items, 11px);
+    flex-shrink: 0;
+    margin-left: -10px;
+
+}
+
+.TeamCoachAddSub-body-common-label {
 
     margin-left: 10px;
     color: #000;
@@ -156,7 +173,7 @@
 
 }
 
-.OrganiserEditProfile-body-input {
+.TeamCoachAddSub-body-input {
 
     display: flex;
     /* width: 213px !important; */
@@ -169,7 +186,7 @@
 
 }
 
-.OrganiserEditProfile-body-input-state {
+.TeamCoachAddSub-body-input-state {
 
     color: #000;
     text-align: left;
@@ -200,7 +217,7 @@
 
 }
 
-.OrganiserEditProfile-body-button {
+.TeamCoachAddSub-body-button {
 
     margin-left: 50%;
     transform: translate(-50%);

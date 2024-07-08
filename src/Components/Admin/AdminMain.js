@@ -14,51 +14,56 @@ import AdminViewOrganiserRequest from './Organiser/AdminViewOrganiserRequest'
 import AdminViewOrganiser from './Organiser/AdminViewOrganiser'
 import AdminViewOrganizerToApprove from './Organiser/AdminViewOrganizerToApprove'
 import ViewAllViewer from '../Viewer/ViewAllViewer'
+import EventRequests from './EventRequests'
+import ViewAllEvents from './ViewAllEvents'
 
-function AdminMain({data}) {
-  const navigate = useNavigate(); 
+function AdminMain({ data }) {
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log(localStorage.getItem("admin"));
     if (localStorage.getItem("admin") == 0) {
       navigate("/AdminLogin");
     }
-  }, [navigate]); 
+  }, [navigate]);
   return (
     <div>
       <div>
         <div className='row'>
-            <div className='col-3'>
-                <Adminsidebar/>
-            </div>
-            <div className='col-9'>
-                {data === 'admindashboard'?(
-                    <AdminDashbordTopContent/>
-                    
-                ):data === 'resetpswd'?(
-                    <AdminResetPass/>
-                ):data === 'ViewCoachRequest'?(
-                  <AdminViewCoachRequest/>
-                ):data === 'AdminViewTeamCoach'?(
-                <AdminViewTeamCoach/>
-                ):data === 'Teamcoachdetailspopup'?(
-                <Teamcoachdetailspopup/>
-                ):data === 'AdminViewAprvdCoachIndividual'?(
-                <AdminViewAprvdCoachIndividual/>
-                ):data === 'adminvieworganiserrequest'?(
-                  <AdminViewOrganiserRequest/>
-                ):data === 'adminvieworganizerreq'?(
-                <AdminViewOrganiser/>
-                ):data === 'adminViewOrganizerToApprove'?(
-                  <AdminViewOrganizerToApprove/>
-                  ):data === 'AdminallViewOrganizerRequest'?(
-                    <AdminallViewOrganizerRequest/>
-                    ):data === 'admin-viewAllViewer'?(
-                      <ViewAllViewer/>
-                      ):(
-                    <AdminDashbordTopContent/>
-                )}
-            </div>
+          <div className='col-3'>
+            <Adminsidebar />
+          </div>
+          <div className='col-9'>
+            {data === 'admindashboard' ? (
+              <AdminDashbordTopContent />
+            ) : data === 'resetpswd' ? (
+              <AdminResetPass />
+            ) : data === 'ViewCoachRequest' ? (
+              <AdminViewCoachRequest />
+            ) : data === 'AdminViewTeamCoach' ? (
+              <AdminViewTeamCoach />
+            ) : data === 'Teamcoachdetailspopup' ? (
+              <Teamcoachdetailspopup />
+            ) : data === 'AdminViewAprvdCoachIndividual' ? (
+              <AdminViewAprvdCoachIndividual />
+            ) : data === 'adminvieworganiserrequest' ? (
+              <AdminViewOrganiserRequest />
+            ) : data === 'adminvieworganizerreq' ? (
+              <AdminViewOrganiser />
+            ) : data === 'adminViewOrganizerToApprove' ? (
+              <AdminViewOrganizerToApprove />
+            ) : data === 'AdminallViewOrganizerRequest' ? (
+              <AdminallViewOrganizerRequest />
+            ) : data === 'admin-viewAllViewer' ? (
+              <ViewAllViewer />
+            ) : data === 'EventRequests' ? (
+              <EventRequests />
+            ) : data === 'ViewAllEvents' ? (
+              <ViewAllEvents />
+            ) : (
+              <AdminDashbordTopContent />
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-.OrganiserEditProfile-headercontainer {
+.TeamCoachEditTeamMembers-headercontainer {
 
     display: flex;
     flex-direction: row;
@@ -11,7 +11,7 @@
 
 }
 
-.OrganiserEditProfile-headercontainer-container-1 {
+.TeamCoachEditTeamMembers-headercontainer-container-1 {
 
     display: flex;
     flex-direction: row;
@@ -21,17 +21,18 @@
 
 }
 
-.OrganiserEditProfile-headercontainer-BackButton {
+.TeamCoachEditTeamMembers-headercontainer-BackButton {
 
     background-color: #00000000;
     border: none;
 
 }
 
-.OrganiserEditProfile-headercontainer-h1 {
+.TeamCoachEditTeamMembers-headercontainer-h1 {
 
     margin-left: 30px;
     color: #000;
+    width: 500px;
     font-family: Roboto;
     font-size: 40px;
     font-style: normal;
@@ -40,20 +41,19 @@
 
 }
 
-.OrganiserEditProfile-headercontainer-container-2 {
+.TeamCoachEditTeamMembers-headercontainer-container-2 {
 
-    padding-left: 35%;
+    padding-left: 50%;
 
 }
 
-.OrganiserEditProfile-headercontainer-container-2-profilepicture {
+.TeamCoachEditTeamMembers-headercontainer-container-2-profilepicture {
 
     border-radius: 50%;
     vertical-align: text-bottom;
 
 }
-
-.OrganiserEditProfile-headercontainer-container-2-editimgbutton {
+.TeamCoachEditTeamMembers-headercontainer-container-2-editimgbutton {
 
     background-color: #00000000;
     border: none;
@@ -62,7 +62,13 @@
     margin-left: -64px;
 
 }
-.OrganiserEditProfile-headercontainer-container-2-editimgbutton[type=file]::file-selector-button {
+.TeamCoachAddTeamMembers-headercontainer-container-2-editimg-icon{
+    margin-left: -30px;
+}
+.TeamCoachEditTeamMembers-headercontainer-container-2-editimg-icon{
+    margin-left: -30px;
+}
+.TeamCoachEditTeamMembers-headercontainer-container-2-editimgbutton[type=file]::file-selector-button {
 
     font: inherit;
     -webkit-appearance: none;
@@ -71,15 +77,10 @@
     background-color: #00000000;
     color: #00000000;
     border: none;
-  
-}
-.OrganiserEditProfile-headercontainer-container-2-editimg-icon {
-
-    margin-left: -30px;
 
 }
 
-.OrganiserEditProfile-body {
+.TeamCoachEditTeamMembers-body {
 
     display: flex;
     flex-direction: row;
@@ -90,17 +91,18 @@
 
 }
 
-.OrganiserEditProfile-body-left {
+.TeamCoachEditTeamMembers-body-left {
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 38px;
     padding-top: 3%;
+    padding-right: 6%;
 
 }
 
-.OrganiserEditProfile-body-common {
+.TeamCoachEditTeamMembers-body-common {
 
     display: flex;
     flex-direction: row;
@@ -112,17 +114,18 @@
 
 }
 
-.OrganiserEditProfile-body-right {
+.TeamCoachEditTeamMembers-body-right {
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 38px;
     padding-top: 3%;
+    padding-left: 6%;
 
 }
 
-.OrganiserEditProfile-body-common-img-contain {
+.TeamCoachEditTeamMembers-body-common-img-contain {
 
     display: flex;
     flex-direction: row;
@@ -131,7 +134,7 @@
 
 }
 
-.OrganiserEditProfile-body-common-img {
+.TeamCoachEditTeamMembers-body-common-img {
 
     display: flex;
     width: 46.269px;
@@ -143,7 +146,7 @@
 
 }
 
-.OrganiserEditProfile-body-common-label {
+.TeamCoachEditTeamMembers-body-common-label {
 
     margin-left: 10px;
     color: #000;
@@ -156,7 +159,7 @@
 
 }
 
-.OrganiserEditProfile-body-input {
+.TeamCoachEditTeamMembers-body-input {
 
     display: flex;
     /* width: 213px !important; */
@@ -169,7 +172,7 @@
 
 }
 
-.OrganiserEditProfile-body-input-state {
+.TeamCoachEditTeamMembers-body-input-state {
 
     color: #000;
     text-align: left;
@@ -200,7 +203,7 @@
 
 }
 
-.OrganiserEditProfile-body-button {
+.TeamCoachEditTeamMembers-body-button {
 
     margin-left: 50%;
     transform: translate(-50%);
