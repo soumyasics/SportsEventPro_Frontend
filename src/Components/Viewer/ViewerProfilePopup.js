@@ -97,7 +97,7 @@ function ViewerProfilePopup() {
                 </div>
                 <div className={`toggle-button ${isActive ? 'active' : 'inactive'}`} onClick={toggleButton}>
                     <span className="status-text">{isActive ? 'Active' : 'Inactive'}</span>
-                    <span className="icon">{isActive ? <img src={img15} alt="test"/> : <img src={img14} alt="test"/>}</span>
+                    <span className="icon" style={{ left: userData.isActive ? '110px' : '6px' }}>{isActive ? <img src={img15} alt="test" /> : <img src={img14} alt="test" />}</span>
                 </div>
             </div>
 

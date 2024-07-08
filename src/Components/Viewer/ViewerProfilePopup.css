@@ -28,8 +28,9 @@
 .toggle-button {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 120px;
+    justify-content: center;
+    text-align: center;
+    width: 140px;
     height: 36px;
     margin-top: 10%;
     margin-right: 15%;
@@ -37,6 +38,8 @@
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+    /* Needed for absolute positioning */
 }
 
 .toggle-button .status-text {
@@ -47,22 +50,23 @@
 .toggle-button .icon {
     background-color: white;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-left: 10px; */
+    position: absolute;
+    transition: left 0.3s;
 }
 
 .toggle-button.active {
     background-color: #28a745;
-    /* Green */
     transform: scale(1.1);
+    animation: moveRight 0.3s forwards;
 }
 
 .toggle-button.inactive {
     background-color: #dc3545;
-    /* Red */
     transform: scale(1);
+    animation: moveLeft 0.3s forwards;
 }
