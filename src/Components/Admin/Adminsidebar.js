@@ -21,8 +21,8 @@ function Adminsidebar() {
             <div className='adminsidebarmaindiv1'>
                 <div className='adminsidebarmaindiv2'>
                     <Link to='/admindashboard' className='admin-dash-link'><h6 className='adminsidebarbutton-1'>Dashboard</h6></Link>
-                    <Link className='admin-dash-link1'><h6 className='adminsidebarbutton-2'>Event Request</h6></Link>
-                    <Link className='admin-dash-link1'><h6 className='adminsidebarbutton-2'>View All Events</h6></Link>
+                    <Link className='admin-dash-link1' to='/EventRequests'><h6 className='adminsidebarbutton-2'>Event Request</h6></Link>
+                    <Link className='admin-dash-link1' to='/ViewAllEvents'><h6 className='adminsidebarbutton-2'>View All Events</h6></Link>
 
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle adminsidebarbutton-2 " type="button" data-bs-toggle="dropdown" aria-expanded="false">

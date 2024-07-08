@@ -3,6 +3,8 @@ import './EventRequests.css'
 import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from "../Constant/BaseURL";
 import img from '../../Assets/Search Button.svg'
+import img2 from '../../Assets/Group 201.svg'
+import img3 from '../../Assets/Group 202.svg'
 
 function EventRequests() {
 
@@ -82,7 +84,7 @@ function EventRequests() {
                                     <td className='col-2 EventRequests-tableBodyData'>{/* Date and time of event */}</td>
                                     <td className='col-2 EventRequests-tableBodyData'> {/* Category */}</td>
                                     <td className='col-2 EventRequests-tableBodyData'> {/* Venue */}</td>
-                                    <td className='col-2 EventRequests-tableBodyData-end'><Link to={`/AdminallViewOrganizerRequest/${x._id}`} alt=""> View More </Link> {/* View more */}</td>
+                                    <td className='col-2 EventRequests-tableBodyData-end'><img src={img2} alt='Approve' style={{marginLeft:"20px"}}/><img src={img3} alt='Reject' style={{marginLeft:"20px"}}/></td>
 
                                 </tr>
                             )

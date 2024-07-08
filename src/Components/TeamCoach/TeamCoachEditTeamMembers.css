@@ -53,13 +53,30 @@
     vertical-align: text-bottom;
 
 }
-
 .TeamCoachEditTeamMembers-headercontainer-container-2-editimgbutton {
 
     background-color: #00000000;
     border: none;
+    width: 30px;
     border-radius: 50%;
-    margin-left: -70px;
+    margin-left: -64px;
+
+}
+.TeamCoachAddTeamMembers-headercontainer-container-2-editimg-icon{
+    margin-left: -30px;
+}
+.TeamCoachEditTeamMembers-headercontainer-container-2-editimg-icon{
+    margin-left: -30px;
+}
+.TeamCoachEditTeamMembers-headercontainer-container-2-editimgbutton[type=file]::file-selector-button {
+
+    font: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    background-color: #00000000;
+    color: #00000000;
+    border: none;
 
 }
 
