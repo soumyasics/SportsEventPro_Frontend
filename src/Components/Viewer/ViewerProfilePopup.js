@@ -119,7 +119,7 @@ const fetchdata=(id)=>{
                 </div>
                 <div className={`toggle-button ${userData.isActive ? 'active' : 'inactive'}`} onClick={()=>{toggleUserActiveState(userData)}}>
                     <span className="status-text">{userData.isActive ? 'Active' : 'Inactive'}</span>
-                    <span className="icon">{userData.isActive ? <img src={img15} alt="test"/> : <img src={img14} alt="test"/>}</span>
+                    <span className="icon" style={{ left: userData.isActive ? '110px' : '6px' }}>{userData.isActive ? <img src={img15} alt="test"/> : <img src={img14} alt="test"/>}</span>
                 </div>
             </div>
 

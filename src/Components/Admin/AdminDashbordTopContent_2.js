@@ -15,7 +15,7 @@ function AdminDashbordTopContent_2() {
         <div className='col container'>
           <Link to='/ViewCoachRequest' className='AdminDashbordTopContent_2-link'>
             <div className='text-center'>
-              <img src={topcontent6} className='Admin-Dashbord-TopContent-img6' />
+              <img src={topcontent6} alt='' className='Admin-Dashbord-TopContent-img6' />
             </div>
             <div className='text-center'>
               <button className='AdminDashbordTopContent_2-button1'>View All Requests</button>
@@ -25,7 +25,7 @@ function AdminDashbordTopContent_2() {
         <div className='col'>
         <Link to='/AdminViewTeamCoach' className='AdminDashbordTopContent_2-link'>
           <div className='text-center'>
-            <img src={topcontent5} className='Admin-Dashbord-TopContent-img6' />
+            <img src={topcontent5} alt='' className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className='text-center'>
             <button className='AdminDashbordTopContent_2-button1'>View All Coaches</button>
@@ -40,7 +40,7 @@ function AdminDashbordTopContent_2() {
         </div>
         <div className='col container'>
           <div className='text-center'>
-            <img src={topcontent6} className='Admin-Dashbord-TopContent-img6' />
+            <img src={topcontent6} alt='' className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className='text-center'>
             <button className='AdminDashbordTopContent_2-button1'>
@@ -49,7 +49,7 @@ function AdminDashbordTopContent_2() {
         </div>
         <div className='col'>
           <div className='text-center'>
-            <img src={topcontent5} className='Admin-Dashbord-TopContent-img6' />
+            <img src={topcontent5} alt='' className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className='text-center'>
             <button className='AdminDashbordTopContent_2-button1'><Link to='/AdminViewOrganiser' className='AdminDashbordTopContent_2-link'>View All Oraganizer</Link></button>
@@ -64,7 +64,7 @@ function AdminDashbordTopContent_2() {
 
         <div className='col-8 text-center'>
           <div className=''>
-            <img src={topcontent5} className='Admin-Dashbord-TopContent-img6' />
+            <img src={topcontent5} alt='' className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className=''>
             <button className='AdminDashbordTopContent_2-button1'><Link to='/admin-viewAllViewer' className='AdminDashbordTopContent_2-link'>View All Viewers</Link></button>

@@ -129,7 +129,7 @@ function TeamCoachEditProfile() {
                         <div className='col-4'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img1}></img>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img1} alt=''></img>
                                 </div>
                                 <div className='col-5'>
                                     <label className='TeamCoachEditProfilelabel'>Contact Number</label>
@@ -149,7 +149,7 @@ function TeamCoachEditProfile() {
                         <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img6}></img>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img6} alt=''></img>
                                 </div>
                                 <div className='col-5'>
                                     <label className='TeamCoachEditProfilelabel'>Select Category</label>
@@ -158,7 +158,7 @@ function TeamCoachEditProfile() {
                                     <div className="col">
                                         <div className="dropdown dropdowninput">
                                             <div className='TeamCoachEditProfilelabel-2'>
-                                                <select className="form-select" aria-label="Default select example" name="category" value={data.category} onChange={handleChange} placeholder={userData ? userData.category : ""}>
+                                                <select className="form-select" aria-label="Default select example" name="category" value={data.category} onChange={handleChange} placeholder={data ? data.category : ""}>
                                                     <option value="Football">Football</option>
                                                     <option value="Cricket">Cricket</option>
                                                     <option value="">Hockey</option>
@@ -175,7 +175,7 @@ function TeamCoachEditProfile() {
                         <div className='col-4'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img4}></img>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img4} alt=''></img>
                                 </div>
                                 <div className='col-5'>
                                     <label className='TeamCoachEditProfilelabel'>Email id</label>
@@ -195,7 +195,7 @@ function TeamCoachEditProfile() {
                         <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img12}></img>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img12} alt=''></img>
                                 </div>
                                 <div className='col-5'>
                                     <label className='TeamCoachEditProfilelabel'>Team Name</label>
@@ -217,7 +217,7 @@ function TeamCoachEditProfile() {
                         <div className='col-4'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img7}></img>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img7} alt=''></img>
                                 </div>
                                 <div className='col-5'>
                                     <label className='TeamCoachEditProfilelabel'>Total team members</label>
@@ -236,7 +236,7 @@ function TeamCoachEditProfile() {
                         <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img11}></img>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img11} alt=''></img>
                                 </div>
                                 <div className='col-5'>
                                     <label className='TeamCoachEditProfilelabel'>Address</label>
@@ -258,7 +258,7 @@ function TeamCoachEditProfile() {
                         <div className='col-4'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img3}></img>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img3} alt=''></img>
                                 </div>
                                 <div className='col-5'>
                                     <label className='TeamCoachEditProfilelabel'>City</label>
@@ -277,7 +277,7 @@ function TeamCoachEditProfile() {
                         <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                <img className='TeamCoachEditProfilecommon-style-1' src={img9}></img>
+                                <img className='TeamCoachEditProfilecommon-style-1' src={img9} alt=''></img>
                                 </div>
                                 <div className='col-5'>
                                     <label className='TeamCoachEditProfilelabel'>Experience</label>
@@ -318,7 +318,7 @@ function TeamCoachEditProfile() {
                         <div className='col-4'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img8}></img>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img8} alt=''></img>
                                 </div>
                                 <div className='col-5'>
                                     <label className='TeamCoachEditProfilelabel'>State</label>
@@ -343,7 +343,7 @@ function TeamCoachEditProfile() {
                         <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img5}></img>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img5} alt=''></img>
                                 </div>
                                 <div className='col-5'>
                                     <label className='TeamCoachEditProfilelabel'>Pincode</label>
