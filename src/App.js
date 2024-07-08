@@ -57,6 +57,7 @@ import TeamCoachTopNav from './Components/TeamCoach/TeamCoachTopNav';
 import ViewAllViewer from './Components/Viewer/ViewAllViewer';
 import ViewerProfilePopup from './Components/Viewer/ViewerProfilePopup';
 import AddEvent from './Components/Events/AddEvent';
+import EventRequests from './Components/Admin/EventRequests';
 
 function App() {
 
@@ -106,6 +107,7 @@ function App() {
           <Route exact path='/adminmain' element={[<AdminNav />, <AdminMain />]} />
           <Route exact path='/ViewAllViewer' element={[<ViewAllViewer/>]} />
           <Route exact path='/ViewerProfilePopup/:id' element={[<ViewerProfilePopup/>]}/>
+          <Route exact path='/EventRequests' element={[<EventRequests/>]} />
 
           {/* Team Coach */}
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />
