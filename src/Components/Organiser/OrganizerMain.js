@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import OrganiserDashboard from './OrganiserDashboard';
 import OrganizerScheduleEvents from './OrganizerScheduleEvents';
 import OrganiserSideBar from './OrganiserSideBar';
+import OrganiserViewEvents from './OrganiserViewEvents';
+import OrganiserEnroll from './OrganiserEnroll';
 
 function OrganizerMain({data}) {
    
@@ -29,6 +31,10 @@ function OrganizerMain({data}) {
                   <OrganiserDashboard/>
                 ) : data === 'OrganizerScheduleEvents' ? (
                   <OrganizerScheduleEvents />
+                ) : data === 'OrganizerViewEvents' ? (
+                  <OrganiserViewEvents/>
+                ) : data === 'OrganizerEnroll' ? (
+                  <OrganiserEnroll/>
                 ) 
              
                 : (

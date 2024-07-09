@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.OrganiserEnrollListBackground {
+
+    margin-top: 50px;
+    margin-left: -4%;
+    background-color: #EEE;
+    padding: 40px;
+    border-radius: 32px;    
+    width:100%;
+    
+}
+
+.OrganiserEnrollH3 {
+
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+.OrganiserEnrollList {
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.OrganiserEnrollListElements {
+
+    margin-top: 40px;
+    padding-bottom: 20px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border-bottom: 1px solid black;
+}
+
+.OrganiserEnroll-aTag {
+
+    text-align: right;
+
+}
+.OrganiserEnroll-img{
+    height: 60px;
+    width:80px;
+    padding-right: 5px;
+}
+.OrganiserEnrollH5{
+    color:red;
+    font-size: large;
+}
+/* .OrganiserEnroll-Stylerow{
+    gap: 40px;
+    top:50px;
+    position: absolute;
+    float: left;
+    margin-left: 244px;
+    margin-bottom: 70px;
+    width: 1126px;
+    
+} */
