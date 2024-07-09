@@ -4,8 +4,18 @@
 .OrganiserTopbarMainDiv {
 
     background-color: black;
-    height: 60px;
+    color: white;
     font-family: Roboto;
+    display: flex;
+    flex-direction: row;
+    height: 76px;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    gap: 523px;
+    flex-shrink: 0;
+    background: #000;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.12);
 
 }
 
@@ -13,24 +23,29 @@
 
     display: flex;
     flex-direction: row;
-    padding-top: 4px;
+    height: 76px;
+    padding: 20px;
+    align-items: center;
+    gap: 523px;
+    flex-shrink: 0;
 
 }
 
-.OrganiserTopbarimg {
+.OrganiserTopbarDiv-1 {
 
-    vertical-align: middle;
-    margin-left: -60px;
-    margin-bottom: -28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 
 }
 
 .OrganiserTopbarHead {
 
-    color: white;
-    margin-top: -16px;
-    margin-left: 20px;
+    margin-top: 4px;
     color: var(--icon-color, #FFF);
+    font-family: Roboto;
     font-size: 28px;
     font-style: normal;
     font-weight: 500;
@@ -38,25 +53,43 @@
 
 }
 
+.Organiser-searchprofilecontain {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    position: absolute;
+    right: 0.8%;
+
+}
+
 .Organiser-search-container {
 
     height: 46px;
     width: 306px;
-    margin-top: 5px;
-    margin-left: 200%;
 
 }
 
 .Organiser-search {
 
-    z-index: 0;
-    padding-left: 18px;
-    height: 43px;
     width: 304px;
+    height: 43px;
+    flex-shrink: 0;
     border-radius: 82px;
     border: 1px solid rgba(0, 0, 0, 0.20);
     background: #fff;
     box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
+    z-index: 0;
+    padding-left: 18px;
+    color: #000000;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.3px;
 
 }
 
@@ -75,6 +108,7 @@
     padding: 8px;
     justify-content: center;
     align-items: center;
+    gap: 12px;
     flex-shrink: 0;
 
 }
@@ -82,8 +116,9 @@
 .OrganiserProfContainDiv {
 
     display: flex;
-    display: row;
-    margin-left: 305%;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
 
 }
 
@@ -91,18 +126,20 @@
 
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    align-items: flex-start;
+    margin-top: 10px;
+    gap: 0px;
 
 }
 
 .Organiser-h1 {
 
     color: white;
-    text-align: left;
+    text-align: right;
     font-family: Roboto;
     font-size: 15.423px;
     font-style: normal;
     font-weight: 500;
-    line-height: 21.592px; /* 140% */
+    line-height: 21.592px;
 
 }

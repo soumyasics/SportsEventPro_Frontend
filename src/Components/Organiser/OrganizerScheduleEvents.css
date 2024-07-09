@@ -12,10 +12,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* gap: 60px; */
+    gap: 60px;
     margin-top: 78px;
     margin-bottom: 78px;
-    /* margin-right: 36px; */
+    margin-right: 80px;
 
 }
 
@@ -25,7 +25,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* gap: 24px; */
+    gap: 24px;
 }
 
 
@@ -89,6 +89,19 @@
     align-items: flex-start;
     gap: 4px;
     align-self: stretch;
+    width: 510px;
+
+}
+
+.OrganizerScheduleEvents-div-1-body-inpcontain-left-inpcontain-select {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+    width: 510px;
 
 }
 
@@ -117,7 +130,7 @@
 .OrganizerScheduleEvents-div-1-body-inpcontain-right {
 
     display: flex;
-    width: 50%;
+    width: 510px;
     flex-direction: column;
     align-items: flex-start;
     gap: 45px;
@@ -130,8 +143,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    /* gap: 4px; */
+    gap: 4px;
     align-self: stretch;
+    width: 510px;
 
 }
 
@@ -140,7 +154,7 @@
     display: flex;
     padding: 8px 12px;
     align-items: center;
-    /* gap: 4px; */
+    gap: 4px;
     align-self: stretch;
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0.10);
@@ -154,7 +168,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-
 
 }
 
@@ -163,7 +176,7 @@
     display: flex;
     padding: 8px 12px;
     align-items: center;
-    /* gap: 4px; */
+    gap: 4px;
     align-self: stretch;
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0.10);
@@ -177,6 +190,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
+    width: 510px;
 
 }
 
@@ -189,7 +203,7 @@
     background-size: 3%;
     cursor: pointer;
     padding: 8px 12px;
-    width: 50%;
+    width: 510px;    
     height: 36px;
     overflow: hidden;
     color: rgba(0, 0, 0, 0.50);
@@ -260,6 +274,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
+    width: 510px;
 
 }
 
