@@ -65,6 +65,7 @@ import TeamCoachAddTeamMembers from './Components/TeamCoach/TeamCoachAddTeamMemb
 import TeamCoachAddSub from './Components/TeamCoach/TeamCoachAddSub';
 import OrganizerMain from './Components/Organiser/OrganizerMain';
 import TeamCoachViewEvents from './Components/TeamCoach/TeamCoachViewEvents';
+import TeamCoachEnrolledEvents from './Components/TeamCoach/TeamCoachEnrolledEvents';
 
 function App() {
 
@@ -138,6 +139,7 @@ function App() {
           <Route exact path="/TeamCoachEditTeamMembers" element={<TeamCoachEditTeamMembers/>} />
           <Route exact path='/TeamCoachAddSub' element={[<TeamCoachTopNav/>,<TeamCoachAddSub/>,<UserFooter/>]}/>
           <Route exact path='/TeamCoachViewEvents' element={[<TeamCoachTopNav/>,<TeamCoachViewEvents/>,<UserFooter/>]} />
+          <Route exact path='/TeamCoachEnrolledEvents' element={[<TeamCoachTopNav/>,<TeamCoachEnrolledEvents/>,<UserFooter/>]} />
 
           {/* Organizer */}
           <Route exact path='/OrganizerRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
