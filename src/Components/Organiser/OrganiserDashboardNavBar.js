@@ -45,8 +45,9 @@ function OrganiserDashboardNavBar() {
 
             <nav className='OrganiserTopbarMainDiv'>
 
-                <div class="container OrganiserTopbar">
+                <div class=" OrganiserTopbar">
 
+                    {/* main img and icon */}
                     <a class="navbar-brand " href=" ">
 
                         <div className='OrganiserTopbarDiv-1'>
@@ -59,7 +60,8 @@ function OrganiserDashboardNavBar() {
 
                     </a>
 
-                    <div>
+                    {/* searchbar and profile*/}
+                    <div className='Organiser-searchprofilecontain'>
 
                         <div className='Organiser-search-container'>
 
@@ -68,20 +70,17 @@ function OrganiserDashboardNavBar() {
 
                         </div>
 
-                    </div>
-
-                    <div>
-                        
                         <div className='OrganiserProfContainDiv'>
 
-                            <img src = {img2} alt=' ' />
+                            <img src = {img2} alt=' ' />{/* put organiser image here pls */}
 
                             <div className='Organiserh1ContainDiv'>
 
-                                <h1 className = ' Organiser-h1 'style={{ marginTop: "-3px",marginLeft:"10px" }}>{userData.name}</h1>
-                                <h1 className = 'Organiser-h1' style={{ marginTop: "-1px",marginLeft:"10px" }}>{userData.email}</h1>
+                                <h1 className = ' Organiser-h1 '>{userData.name}</h1>{/*organiser name */}
+                                <h1 className = 'Organiser-h1' >{userData.email}</h1>{/*organiser email */}
 
                             </div>
+
                         </div>
 
                     </div>
