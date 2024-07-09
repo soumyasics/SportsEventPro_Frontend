@@ -8,6 +8,7 @@
     font-style: normal;
     text-align: center;
     margin-bottom: 45px;
+    margin-left: -3%;
 
 }
 
@@ -153,7 +154,6 @@
     display: flex;
     padding: 12.574px 15.089px;
     align-items: center;
-
     gap: 7.714px;
     align-self: stretch;
 
