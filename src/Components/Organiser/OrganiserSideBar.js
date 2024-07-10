@@ -40,12 +40,22 @@ function OrganiserSideBar() {
 
                     </div>
 
+                  
+                    
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>Schedule Events</button>
+<button className='OrganiserSideBarbutton-2'>
+    <Link to='/OrganizerScheduleEvents' style={{textDecoration:"none",color:"white"}}>
+        Schedule Events</Link></button>
+
+</div>
+<div>
+
+                        <button className='OrganiserSideBarbutton-2'>
+                            <Link to='/OrganizerViewEvents' style={{textDecoration:"none",color:"white"}}>
+                                View Events</Link></button>
 
                     </div>
-
                     <div class="dropdown">
 
                         <a class="btn OrganiserSideBarbutton-2" data-bs-toggle="collapse" href="#li-1" role="button" aria-expanded="false" aria-controls="collapseExample">
