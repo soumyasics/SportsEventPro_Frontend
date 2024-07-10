@@ -28,22 +28,35 @@ function OrganiserSideBar() {
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-1'>Dashboard</button>
+                        <Link to='/OrganizerDashboard' style={{ textDecoration: "none", color: "white" }}>
+
+                            <button className='OrganiserSideBarbutton-1'>Dashboard</button>
+
+                        </Link>
 
                     </div>
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>
-                            <Link to='/OrganizerScheduleEvents' style={{textDecoration:"none",color:"white"}}>
-                                Enroll Requests</Link></button>
+                        <Link to='/OrganizerEnroll' style={{ textDecoration: "none", color: "white" }}>
+
+                            <button className='OrganiserSideBarbutton-2'>
+
+                                Enroll Requests
+
+                            </button>
+
+                        </Link>
 
                     </div>
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>Schedule Events</button>
+                        <Link to='/OrganizerScheduleEvents' style={{ textDecoration: "none", color: "white" }}>
 
+                            <button className='OrganiserSideBarbutton-2'>Schedule Events</button>
+
+                        </Link>
                     </div>
 
                     <div class="dropdown">
@@ -64,7 +77,11 @@ function OrganiserSideBar() {
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>Scoreboard</button>
+                        <Link to='/OrganizerScoreBoard' style={{ textDecoration: "none", color: "white" }}>
+
+                            <button className='OrganiserSideBarbutton-2'>Scoreboard</button>
+
+                        </Link>
 
                     </div>
 
