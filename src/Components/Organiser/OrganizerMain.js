@@ -5,7 +5,7 @@ import OrganizerScheduleEvents from './OrganizerScheduleEvents';
 import OrganiserSideBar from './OrganiserSideBar';
 import OrganiserViewEvents from './OrganiserViewEvents';
 import OrganiserEnroll from './OrganiserEnroll';
-import OrganiserEditProfile from './OrganiserEditProfile';
+import OrganiserScoreboard from './OrganiserScoreboard';
 
 function OrganizerMain({data}) {
    
@@ -36,8 +36,8 @@ function OrganizerMain({data}) {
                   <OrganiserViewEvents/>
                 ) : data === 'OrganizerEnroll' ? (
                   <OrganiserEnroll/>
-                )  : data === 'OrganiserEditProfile' ? (
-                  <OrganiserEditProfile/>
+                ) : data === 'OrganizerScoreBoard' ? (
+                  <OrganiserScoreboard/>
                 ) 
              
                 : (

@@ -28,15 +28,25 @@ function OrganiserSideBar() {
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-1'>Dashboard</button>
+                        <Link to='/OrganizerDashboard' style={{ textDecoration: "none", color: "white" }}>
+
+                            <button className='OrganiserSideBarbutton-1'>Dashboard</button>
+
+                        </Link>
 
                     </div>
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>
-                            <Link to='/OrganizerScheduleEvents' style={{textDecoration:"none",color:"white"}}>
-                                Enroll Requests</Link></button>
+                        <Link to='/OrganizerEnroll' style={{ textDecoration: "none", color: "white" }}>
+
+                            <button className='OrganiserSideBarbutton-2'>
+
+                                Enroll Requests
+
+                            </button>
+
+                        </Link>
 
                     </div>
 
@@ -44,6 +54,7 @@ function OrganiserSideBar() {
                     
                     <div>
 
+<<<<<<< HEAD
 <button className='OrganiserSideBarbutton-2'>
     <Link to='/OrganizerScheduleEvents' style={{textDecoration:"none",color:"white"}}>
         Schedule Events</Link></button>
@@ -54,7 +65,13 @@ function OrganiserSideBar() {
                         <button className='OrganiserSideBarbutton-2'>
                             <Link to='/OrganizerViewEvents' style={{textDecoration:"none",color:"white"}}>
                                 View Events</Link></button>
+=======
+                        <Link to='/OrganizerScheduleEvents' style={{ textDecoration: "none", color: "white" }}>
+>>>>>>> 3d4bac3dfd3892fdee52dfe6931fa17405521883
 
+                            <button className='OrganiserSideBarbutton-2'>Schedule Events</button>
+
+                        </Link>
                     </div>
                     <div class="dropdown">
 
@@ -74,7 +91,11 @@ function OrganiserSideBar() {
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>Scoreboard</button>
+                        <Link to='/OrganizerScoreBoard' style={{ textDecoration: "none", color: "white" }}>
+
+                            <button className='OrganiserSideBarbutton-2'>Scoreboard</button>
+
+                        </Link>
 
                     </div>
 
