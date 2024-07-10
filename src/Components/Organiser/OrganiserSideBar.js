@@ -28,20 +28,35 @@ function OrganiserSideBar() {
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-1'>Dashboard</button>
+                        <Link to='/OrganizerDashboard' style={{ textDecoration: "none", color: "white" }}>
+
+                            <button className='OrganiserSideBarbutton-1'>Dashboard</button>
+
+                        </Link>
 
                     </div>
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>Enroll Requests</button>
+                        <Link to='/OrganizerEnroll' style={{ textDecoration: "none", color: "white" }}>
+
+                            <button className='OrganiserSideBarbutton-2'>
+
+                                Enroll Requests
+
+                            </button>
+
+                        </Link>
 
                     </div>
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>Schedule Events</button>
+                        <Link to='/OrganizerScheduleEvents' style={{ textDecoration: "none", color: "white" }}>
 
+                            <button className='OrganiserSideBarbutton-2'>Schedule Events</button>
+
+                        </Link>
                     </div>
 
                     <div class="dropdown">
@@ -62,7 +77,11 @@ function OrganiserSideBar() {
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>Scoreboard</button>
+                        <Link to='/OrganizerScoreBoard' style={{ textDecoration: "none", color: "white" }}>
+
+                            <button className='OrganiserSideBarbutton-2'>Scoreboard</button>
+
+                        </Link>
 
                     </div>
 
@@ -120,20 +139,20 @@ function OrganiserSideBar() {
 
                         </div> */}
 
-<div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
-                    <div className="modal-content">
-                        <div className="modal-body">
-                            <h1 className='ModalDialog-h1'>Logout</h1>
-                            <p className='ModalDialog-p'>Are you sure you want to log out ?</p>
-                            <div className='ModalDialog-button-contain'>
-                                <button type="button" className="ModalDialog-button-1" onClick={handleLogout} data-bs-dismiss="modal">Yes</button>
-                                <button type="button" className="ModalDialog-button-2" data-bs-dismiss="modal">No</button>
+                        <div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+                            <div className="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
+                                <div className="modal-content">
+                                    <div className="modal-body">
+                                        <h1 className='ModalDialog-h1'>Logout</h1>
+                                        <p className='ModalDialog-p'>Are you sure you want to log out ?</p>
+                                        <div className='ModalDialog-button-contain'>
+                                            <button type="button" className="ModalDialog-button-1" onClick={handleLogout} data-bs-dismiss="modal">Yes</button>
+                                            <button type="button" className="ModalDialog-button-2" data-bs-dismiss="modal">No</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
                     </div>
 
                 </div>

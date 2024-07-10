@@ -43,7 +43,7 @@ function OrganiserViewProfile() {
         let res;
 
 
-        axiosInstance.post(`viewTeamCoachById`).then(res => {
+        axiosInstance.post(`viewOrganizerById`).then(res => {
 
             console.log(res);
 
