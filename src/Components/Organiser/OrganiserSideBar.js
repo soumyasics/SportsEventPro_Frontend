@@ -29,9 +29,7 @@ function OrganiserSideBar() {
                     <div>
 
                         <Link to='/OrganizerDashboard' style={{ textDecoration: "none", color: "white" }}>
-
                             <button className='OrganiserSideBarbutton-1'>Dashboard</button>
-
                         </Link>
 
                     </div>
@@ -39,40 +37,31 @@ function OrganiserSideBar() {
                     <div>
 
                         <Link to='/OrganizerEnroll' style={{ textDecoration: "none", color: "white" }}>
-
-                            <button className='OrganiserSideBarbutton-2'>
-
-                                Enroll Requests
-
-                            </button>
-
+                            <button className='OrganiserSideBarbutton-2'>Enroll Requests</button>
                         </Link>
 
                     </div>
-
-
 
                     <div>
 
                         <Link to='/OrganizerScheduleEvents' style={{ textDecoration: "none", color: "white" }}>
-
                             <button className='OrganiserSideBarbutton-2'>Schedule Events</button>
-
                         </Link>
                     </div>
 
-                    <button className='OrganiserSideBarbutton-2'>
-                        <Link to='/OrganizerViewEvents' style={{ textDecoration: "none", color: "white" }}>
-                            View Events
-                        </Link>
-                    </button>
+                    <div>
 
+                        <Link to='/OrganizerViewEvents' style={{ textDecoration: "none", color: "white" }}>
+                            <button className='OrganiserSideBarbutton-2'>View Events</button>
+                        </Link>
+
+                    </div>
                     <div class="dropdown">
 
                         <a class="btn OrganiserSideBarbutton-2" data-bs-toggle="collapse" href="#li-1" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Ticket Management <FontAwesomeIcon className='mt-1 ms-2 ' icon={faAngleDown} />
+                            Ticket Management
+                            <FontAwesomeIcon className='mt-1 ms-2 ' icon={faAngleDown} />
                         </a>
-
 
                         <ul class="collapse list-group mt-2 rounded-2" id='li-1'>
 
@@ -86,9 +75,7 @@ function OrganiserSideBar() {
                     <div>
 
                         <Link to='/OrganizerScoreBoard' style={{ textDecoration: "none", color: "white" }}>
-
                             <button className='OrganiserSideBarbutton-2'>Scoreboard</button>
-
                         </Link>
 
                     </div>

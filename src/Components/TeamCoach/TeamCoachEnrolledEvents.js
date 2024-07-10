@@ -2,6 +2,9 @@ import React from 'react'
 import './TeamCoachEnrolledEvents.css'
 import img from '../../Assets/FOOTBALL POSTER TEMPLATE 1(3).png'
 import img2 from "../../Assets/Back Button.svg"
+import img3 from '../../Assets/octicon_x-16.svg'
+
+import ReactStars from 'react-stars'
 
 function TeamCoachEnrolledEvents() {
 
@@ -32,16 +35,16 @@ function TeamCoachEnrolledEvents() {
 
                             <div className="card-body">
 
-                                <div className="card-title" style={{display:"flex",flexDirection:"row", gap:"107px"}}>
+                                <div className="card-title" style={{ display: "flex", flexDirection: "row", gap: "107px" }}>
 
-                                    <div style={{display:"flex",flexDirection:"column"}}>
+                                    <div style={{ display: "flex", flexDirection: "column" }}>
                                         <h5 className='CardHeadTxtH5'>TVM Junior Sports</h5>{/* event name */}
                                         <h1 className='CardHeadTxtH1'>Football</h1>{/* event category */}
                                     </div>
 
                                     <div>
 
-                                        <button className='CardHeadTxtButton'>Add Review & Rating</button>
+                                        <button className='CardHeadTxtButton' data-bs-toggle="modal" data-bs-target="#Rating-Modal">Add Review & Rating</button>
 
                                     </div>
 
@@ -58,6 +61,53 @@ function TeamCoachEnrolledEvents() {
 
                         </div>
                         {/* here is a single card  */}
+
+                    </div>
+
+                </div>
+
+                {/* div containing the modal */}
+
+                <div>
+
+                    <div className="modal fade" id="Rating-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+
+                        <div className="modal-dialog modal-dialog-centered">
+
+                            <div className="modal-content">
+
+                                <div className="modal-body EE">
+
+                                    <div>
+                                        <img src={img3} alt=' ' className='imageEE' data-bs-dismiss="modal" aria-label="Close" />
+                                        <h1 className='ModalDialog-h1EE'>Add Rating</h1>
+
+                                        <div className="d-flex mt-2 ModalRatingEE">
+
+                                            <ReactStars
+                                                count={5}
+                                                size={50}
+                                                value={0}
+                                                color1='#D9D9D9'
+                                                color2='#56B60B'
+                                            />
+
+                                        </div>
+
+                                    </div>
+
+                                    <p className='ModalDialog-h1EE '>Add Comments</p>
+                                    <input type='text' className='ModalDialog-textEE' />
+
+                                    <div className='ModalDialog-button-contain'>
+                                        <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal">Submit</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
