@@ -7,19 +7,19 @@ import axiosMultipartInstance from '../Constant/multiPart';
 
 const url = axiosInstance.defaults.url;
 function TeamCoachViewTeamMembers() {
-    const { id } = useParams();
 
     const navigate = useNavigate()
 
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
+    const id=localStorage.getItem('tcId')
     useEffect(() => {
 
         let res;
 
 
-        axiosInstance.post('/ViewAllTeamMembers').then(res => {
+        axiosInstance.post(`/viewTeamMemberByCoachId/${id}`).then(res => {
 
             console.log(res);
 

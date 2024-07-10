@@ -214,3 +214,13 @@
     color: white;
 
 }
+.OrganiserEditProfile-button-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust space between buttons */
+    margin-top: 20px; 
+}
+
+.OrganiserEditProfile-button-spacing {
+    margin-left: 40%;
+}
