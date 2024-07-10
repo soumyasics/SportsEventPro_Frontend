@@ -1,0 +1,64 @@
+.TeamCoachViewDetailsImg-1{
+    margin-left: -209px;
+    margin-top: 96px;
+}
+.TeamCoachViewDetailsh1-1{
+    margin-top: 84px;
+    margin-left: -325px;
+    margin-right: -551px;
+    margin-bottom: 142px;
+}
+.TeamCoachViewDetailsimg-2{
+    margin-top: 76px;
+    width: 102px;
+    height: 105px;
+    flex-shrink: 0;
+    margin-top: 146px;
+    width: 102px;
+    height: 105px;
+    flex-shrink: 0;
+    margin-right: -104px;
+    margin-left: 1056px;
+}
+.TeamCoachViewDetailsButton-1{
+    margin-top: 50px;
+    display: flex;
+    width: 240px;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -476px;
+    margin-bottom: -50px;
+    border-radius: 8px;
+    background: #DADADA;
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    border: 0px;
+}
+.TeamCoachViewDetailsButton-2{
+    display: flex;
+    width: 240px;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10px;
+    border-radius: 8px;
+    background: #C90000;
+    color: var(--icon-color, #FFF);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    border: 0px;
+}
+.TeamCoachViewDetailsText{
+    text-align: left;
+    margin-bottom: 17px;
+}

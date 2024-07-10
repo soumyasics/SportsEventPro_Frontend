@@ -35,7 +35,7 @@ function Adminsidebar() {
                         </ul>
                     </div>
                     <Link className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Reviews & Rating</h6></Link>
-                    <Link className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Enquries</h6></Link>
+                    <Link to='/AdminEnquiriesViewpage' className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Enquries</h6></Link>
                     <Link className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Complaints</h6></Link>
                     <Link to='/AdminResetPass' className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Reset Password</h6></Link>
                     <Link to={'/'} onClick={logout} className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Logout</h6></Link>
