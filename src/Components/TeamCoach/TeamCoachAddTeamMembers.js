@@ -247,13 +247,13 @@ function TeamCoachAddTeamMembers() {
                         <label className='TeamCoachAddTeamMembers-body-common-label'>Country</label>
                     </div>
 
-                    <select className='col TeamCoachAddTeamMembers-body-input-state' aria-label="Default select example">
+                    <select className='col TeamCoachAddTeamMembers-body-input-state' aria-label="Default select example" >
 
-                        <option className='OrganiserRegistration-Content-Input-Select-Option' selected name="country"  value={data.country} onChange={handleChange}>India</option>
-                        <option value="Goa" onChange={handleChange}>Uk</option>
-                        <option value="Tamil Nadu" onChange={handleChange}>USA</option>
-                        <option value="Karnataka" onChange={handleChange}>JAPAN</option>
-                        <option value="Maharashtra" onChange={handleChange}>BRAZIL</option>
+                        <option className='OrganiserRegistration-Content-Input-Select-Option' selected name="country" value={data.country} onChange={handleChange}  >India</option>
+                        <option value="Goa">Uk</option>
+                        <option value="Tamil Nadu">USA</option>
+                        <option value="Karnataka" >JAPAN</option>
+                        <option value="Maharashtra" >BRAZIL</option>
 
                     </select>
 
@@ -326,9 +326,9 @@ function TeamCoachAddTeamMembers() {
                         <label className='TeamCoachAddTeamMembers-body-common-label'> State</label>
                     </div>
 
-                    <select className='col TeamCoachAddTeamMembers-body-input-state' aria-label="Default select example">
+                    <select className='col TeamCoachAddTeamMembers-body-input-state' aria-label="Default select example" selected name="state" value={data.state}  onChange={handleChange}>
 
-                        <option className='OrganiserRegistration-Content-Input-Select-Option' selected name="state" value={data.state}  onChange={handleChange}>Kerala</option>
+                        <option className='OrganiserRegistration-Content-Input-Select-Option' value="Kerala" >Kerala</option>
                         <option value="Goa"  >Goa</option>
                         <option value="Tamil Nadu" >Tamil Nadu</option>
                         <option value="Karnataka"  >Hariyana</option>
