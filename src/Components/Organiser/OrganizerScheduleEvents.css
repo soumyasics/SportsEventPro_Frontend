@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* .OrganizerScheduleEvents {
+
+    
+
+} */
+
+.OrganizerScheduleEvents-div-1 {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 78px;
+    margin-bottom: 78px;
+    margin-left: 36px;
+    margin-right: 36px;
+
+}
+
+.OrganizerScheduleEvents-div-1-header {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+
+
+.OrganizerScheduleEvents-div-1-h1 {
+
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+
+}
+
+.OrganizerScheduleEvents-div-1-body {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+}
+
+.OrganizerScheduleEvents-div-1-body-inpcontain {
+
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+
+}
+
+.OrganiserScheduleEvents-div-1-body-inpcontain-label {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    align-self: stretch;
+
+}
+
+.OrganizerScheduleEvents-div-1-body-inpcontain-left {
+
+    display: flex;
+    width: 510px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 45px;
+
+}
+
+.OrganizerScheduleEvents-div-1-body-inpcontain-left-inpcontain {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+
+}
+
+.OrganizerScheduleEvents-div-1-body-inpcontain-left-inp {
+
+    display: flex;
+    padding: 8px 12px;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--icon-color, #FFF);
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+}
+
+.OrganizerScheduleEvents-div-1-body-inpcontain-right {
+
+    display: flex;
+    width: 510px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 45px;
+
+}
+
+.OrganizerScheduleEvents-div-1-body-inpcontain-right-inpcontain {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+
+}
+
+.OrganizerScheduleEvents-div-1-body-inpcontain-right-inp {
+
+    display: flex;
+    padding: 8px 12px;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--icon-color, #FFF);
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+
+}
+
+.OrganizerScheduleEvents-div-1-body-inpcontain-right-inp-file {
+
+    display: flex;
+    padding: 8px 12px;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--icon-color, #FFF);
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+}
+
+.OrganiserScheduleEvents-Content-input-banner {
+
+    background-image: url('../../Assets/OrganiserRegistration_2.png');
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: center;
+    background-size: 3%;
+    cursor: pointer;
+    padding: 8px 12px;
+    width: 510px;
+    height: 36px;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+
+}
+
+.OrganiserScheduleEvents-Content-input-banner[type=file]::file-selector-button {
+
+    font: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    background-color: #00000000;
+    color: #00000000;
+    border: none;
+
+}
+
+.OrganizerScheduleEvents-Content-Input-Country {
+
+    appearance: none;
+    /* Remove default arrow */
+    -webkit-appearance: none;
+    /* Remove default arrow in Safari */
+    -moz-appearance: none;
+    /* Remove default arrow in Firefox */
+    background-image: url("../../Assets/OrganiserRegistration.svg");
+    background-repeat: no-repeat;
+    background-size: 3%;
+    background-color: white;
+    background-position-x: 97%;
+    background-position-y: center;
+    padding: 8px 12px;
+    width: 510px;
+    height: 36px;
+    cursor: pointer;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+
+}
+
+.OrganizerScheduleEvents-Content-Input-Select-Option {
+
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+}
+
+.AButton {
+
+    color: white;
+    display: flex;
+    width: 240px;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #000;
+
+}

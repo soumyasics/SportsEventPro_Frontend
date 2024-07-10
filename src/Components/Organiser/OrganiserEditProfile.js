@@ -39,9 +39,9 @@ function OrganiserEditProfile() {
                         {/* ^ put organiser profile pic in src */}
 
 
-                        <button className='OrganiserEditProfile-headercontainer-container-2-editimgbutton'>
+                        <input type='file' className='OrganiserEditProfile-headercontainer-container-2-editimgbutton'/>
                             <img src={img2} alt='' className='OrganiserEditProfile-headercontainer-container-2-editimg-icon' />
-                        </button>{/* this is edit profile pic button. */}
+                        {/* this is edit profile pic button. */}
 
 
 

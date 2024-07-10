@@ -20,7 +20,7 @@ function OrganiserSideBar() {
     }, [navigate]);
     return (
 
-        <div>
+        <div className='OrganiserSideBar'>
 
             <div className='OrganiserSideBarmaindiv1'>
 
