@@ -13,31 +13,37 @@ function TeamCoachReviewRatings() {
     // match the (a) inside to the variable of the value of ReactStars you change to
     useEffect(() => {
 
-        let TxTP = txtpref.current
+        // let TxTP = txtpref.current
+        let TXTP2 = document.getElementById("txtp")
 
         if (a === 5) {
 
-            TxTP.innerHTML = "Great"
+            // TxTP.innerHTML = "Great"
+            TXTP2.innerHTML = "Great"
 
         }
         else if (a === 4) {
 
-            TxTP.innerHTML = "Good"
+            // TxTP.innerHTML = "Good"
+            TXTP2.innerHTML = "Good"
 
         }
         else if (a === 3) {
 
-            TxTP.innerHTML = "Average"
+            // TxTP.innerHTML = "Average"
+            TXTP2.innerHTML = "Average"
 
         }
         else if (a === 2) {
 
-            TxTP.innerHTML = "Bad"
+            // TxTP.innerHTML = "Bad"
+            TXTP2.innerHTML = "Bad"
 
         }
         else {
 
-            TxTP.innerHTML = "Very Bad"
+            // TxTP.innerHTML = "Very Bad"
+            TXTP2.innerHTML = "Very Bad"
 
         }
 
@@ -79,7 +85,7 @@ function TeamCoachReviewRatings() {
              {/* please make sure to match the value of  ReacStars (a) to the above given useEffect so that the dynamic ratings text will work */}
                             </div>
 
-                            <p className='TeamCoachRR-star-p' ref={txtpref}></p>
+                            <p className='TeamCoachRR-star-p' id='txtp' ref={txtpref}></p>
 
                         </div>
                         <h1 className='TeamCoachRR-content-h1'>Good experience{/* put the coach review in here */}</h1>
