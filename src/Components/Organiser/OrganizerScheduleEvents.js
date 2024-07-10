@@ -1,7 +1,110 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import axiosInstance from '../Constant/BaseURL'
+import axiosMultipartInstance from '../Constant/multiPart'
+import { useNavigate } from 'react-router-dom'
 import './OrganizerScheduleEvents.css'
 
 function OrganizerScheduleEvents() {
+    const navigate = useNavigate();
+    const [data, setData] = useState({
+        organizerId: localStorage.getItem('organizerId'),
+        name: '',
+        venue: '',
+        date: '',
+        time: '',
+        category: '',
+        banner: null,
+    });
+
+    const [errors, setErrors] = useState({
+        name: '',
+        venue: '',
+        date: '',
+        time: '',
+        category: '',
+        file: '',
+    });
+
+    const handleChange = (event) => {
+        const { name, value, files } = event.target;
+        if (files) {
+            setData(prevData => ({
+                ...prevData,
+                [name]: files[0]
+            }));
+        } else {
+            setData(prevData => ({
+                ...prevData,
+                [name]: value
+            }));
+        }
+        setErrors(prevErrors => ({
+            ...prevErrors,
+            [name]: ''
+        }));
+    };
+
+    const validateField = (fieldName, value) => {
+        if (!value || !value.trim()) {
+            return `${fieldName} is required`;
+        }
+        return '';
+    };
+
+    const validateImageField = (fieldName, file) => {
+        if (!file) {
+            return `${fieldName} is required`;
+        }
+    }
+
+    const handleSubmit = (event) => {
+        console.log("in fun");
+        event.preventDefault();
+        let errors = {};
+        let formIsValid = true;
+
+        errors.name = validateField('name', data.name);
+        errors.venue = validateField('Venue', data.venue);
+        errors.date = validateField('Date', data.date);
+        errors.time = validateField('Time', data.time);
+        errors.category = validateField('Category', data.category);
+        errors.file = validateImageField('Banner', data.banner);
+
+        setErrors(errors);
+        // formIsValid = !Object.values(errors).some(error => error !== '');
+        console.log("form",formIsValid,"err",errors);
+
+        if (formIsValid) {
+            submitData();
+        }
+    };
+
+    const submitData = () => {
+        console.log("in",data);
+        let formData = new FormData();
+        formData.append('organizerId', data.organizerId);
+        formData.append('name', data.name);
+        formData.append('venue', data.venue);
+        formData.append('date', data.date);
+        formData.append('time', data.time);
+        formData.append('category', data.category);
+        formData.append('banner', data.banner);
+
+        axiosMultipartInstance.post('addEvent', data)
+            .then(response => {
+                if (response.data.status === 200) {
+                    alert(response.data.msg);
+                    navigate('/OrganizerViewEvents');
+                } else {
+                    alert(response.data.msg);
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    };
 
     return (
 
@@ -27,15 +130,16 @@ function OrganizerScheduleEvents() {
                             <div className='OrganizerScheduleEvents-div-1-body-inpcontain-left-inpcontain'>
                                 
                                 <label className='OrganiserScheduleEvents-div-1-body-inpcontain-label'>Event Name</label>
-                                <input type='text' className='OrganizerScheduleEvents-div-1-body-inpcontain-left-inp' placeholder='Enter The Event Name'></input>
-                           
+                                <input type='text' className='OrganizerScheduleEvents-div-1-body-inpcontain-left-inp' name="name" placeholder='Enter The Event Name' onChange={handleChange}></input>
+                                {errors.name && <div className="text-danger ">{errors.name}</div>}
+
                             </div>
 
                             {/* event category */}
                             <div className='OrganizerScheduleEvents-div-1-body-inpcontain-left-inpcontain-select'>
                                 
                                 <label className='OrganiserScheduleEvents-div-1-body-inpcontain-label'>Category</label>
-                                <select className="OrganizerScheduleEvents-Content-Input-Country" aria-label="Default select example">
+                                <select className="OrganizerScheduleEvents-Content-Input-Country" aria-label="Default select example" onChange={handleChange} name="category">
 
                                     <option className='OrganizerScheduleEvents-Content-Input-Select-Option' selected name="state">Select Category</option>
                                     <option value="Cricket">Cricket</option>
@@ -44,15 +148,17 @@ function OrganizerScheduleEvents() {
                                     <option value="Table Tennis">Table Tennis</option>
 
                                 </select>
-                            
+                                {errors.category && <div className="text-danger ">{errors.category}</div>}
+
                             </div>
 
                             {/* event venue */}
                             <div className='OrganizerScheduleEvents-div-1-body-inpcontain-left-inpcontain'>
                                 
                                 <label className='OrganiserScheduleEvents-div-1-body-inpcontain-label'>Venue</label>
-                                <input type='text' className='OrganizerScheduleEvents-div-1-body-inpcontain-left-inp' placeholder='Venue'></input>
-                            
+                                <input type='text' className='OrganizerScheduleEvents-div-1-body-inpcontain-left-inp' name="venue" onChange={handleChange} placeholder='Venue'></input>
+                                {errors.venue && <div className="text-danger ">{errors.venue}</div>}
+
                             </div>
 
                         </div>
@@ -63,25 +169,28 @@ function OrganizerScheduleEvents() {
                             {/* event date */}
                             <div className='OrganizerScheduleEvents-div-1-body-inpcontain-right-inpcontain'>
                                 
-                                <label className='OrganiserScheduleEvents-div-1-body-inpcontain-label'>Date</label>
-                                <input type='Date' className='OrganizerScheduleEvents-div-1-body-inpcontain-right-inp' ></input>
-                            
+                                <label className='OrganiserScheduleEvents-div-1-body-inpcontain-label' >Date</label>
+                                <input type='Date' className='OrganizerScheduleEvents-div-1-body-inpcontain-right-inp' name="date"  onChange={handleChange}></input>
+                                {errors.date && <div className="text-danger ">{errors.date}</div>}
+
                             </div>
 
                             {/* event time */}
                             <div className='OrganizerScheduleEvents-div-1-body-inpcontain-right-inpcontain'>
                                 
                                 <label className='OrganiserScheduleEvents-div-1-body-inpcontain-label'>Time</label>
-                                <input type='time' className='OrganizerScheduleEvents-div-1-body-inpcontain-right-inp' placeholder='Match Time'></input>
-                           
+                                <input type='time' className='OrganizerScheduleEvents-div-1-body-inpcontain-right-inp' placeholder='Match Time' onChange={handleChange} name="time"></input>
+                                {errors.time && <div className="text-danger ">{errors.time}</div>}
+
                             </div>
 
                             {/* event banner */}
                             <div className='OrganizerScheduleEvents-div-1-body-inpcontain-right-inpcontain'>
                                 
                                 <label className='OrganiserScheduleEvents-div-1-body-inpcontain-label'>Upload Banner</label>
-                                <input type='file' placeholder='Upload Document' className='OrganiserScheduleEvents-Content-input-banner'/>                            
-                            
+                                <input type='file' required placeholder='Upload Document' className='OrganiserScheduleEvents-Content-input-banner' onChange={handleChange} name="banner"/>                            
+                                {errors.file && <div className="text-danger ">{errors.file}</div>}
+
                             </div>
 
                         </div>
@@ -89,7 +198,7 @@ function OrganizerScheduleEvents() {
 
                     </div>
 
-                    <button className='AButton'>Send Request</button>
+                    <button className='AButton' type="button" onClick={handleSubmit}>Send Request</button>
 
                 </div>
 

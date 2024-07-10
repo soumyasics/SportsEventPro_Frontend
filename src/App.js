@@ -56,7 +56,6 @@ import ViewerEditProfile from './Components/Viewer/ViewerEditProfile';
 import TeamCoachTopNav from './Components/TeamCoach/TeamCoachTopNav';
 import ViewAllViewer from './Components/Viewer/ViewAllViewer';
 import ViewerProfilePopup from './Components/Viewer/ViewerProfilePopup';
-import AddEvent from './Components/Events/AddEvent';
 import EventRequests from './Components/Admin/EventRequests';
 import OrganizerScheduleEvents from './Components/Organiser/OrganizerScheduleEvents';
 import OrganiserViewEvents from './Components/Organiser/OrganiserViewEvents';
@@ -150,7 +149,7 @@ function App() {
           <Route exact path='/OrganizerLogin' element={[<MainNavbar/>,<OrganizerLogin/>,<UserFooter/>]} />
           <Route exact path='/OrganizerForgotPassword' element={[<MainNavbar/>,<OrganiserForgotPassword/>,<UserFooter/>]}/>
           <Route exact path='/OrganizerDashboard' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data="OrganizerDashboard"/>,<UserFooter/>]}/>
-          <Route exact path='/OrganizerEditProfile' element={[<OrganiserEditProfile />]} />
+          <Route exact path='/OrganiserEditProfile' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data="OrganiserEditProfile"/>,<UserFooter />]} />
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar/>,<AdminMain data='adminallvieworganizerpage'/>]} />
           <Route path='/adminViewOrganizerToApprove/:id' element={[<MainNavbar/>,<AdminMain data='adminViewOrganizerToApprove'/>]} />
           <Route exact path='/OrganizerScheduleEvents' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data="OrganizerScheduleEvents"/>,<UserFooter/>]} />
@@ -173,7 +172,6 @@ function App() {
 
 
 {/* Events */}
-<Route exact path='/Add-Events' element={[<OrganiserDashboardNavBar />, <OrganiserSideBar />, <OrganiserDashboard />,<AddEvent/>, <UserFooter />]} />
 
         </Routes>
 

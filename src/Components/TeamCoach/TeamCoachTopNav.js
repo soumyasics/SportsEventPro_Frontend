@@ -48,15 +48,27 @@ function TeamCoachTopNav() {
                                 </Link>
                             </li>
                             {/* My Team dropdown */}
-                            <li className="nav-item" style={{ marginRight: "20px" }}>
-                                <button className="nav-link text-light TeamCoachNavBar-Nav-li-a" data-bs-toggle="dropdown" aria-expanded="false">
-                                    My Team
+
+                            <li className="nav-item" style={{ listStyle: "none", marginLeft: "10px", marginRight: '10px' }}>
+                                <div className="dropdown-center">
+                                    <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                        style={{ background: "none", border: "none" }}>
+                                        My Team
+                                    </button>
+
+
+                                   
                                     <img src={img5} alt="" />
-                                </button>
-                                <div className="dropdown-menu">
+
                                     <ul className="dropdown-menu" style={{ marginTop: "10px" }}>
                                         <li>
+                                        <Link to="/TeamCoachAddTeamMembers" className='TeamCoachLink'>
+
                                             <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Add Team Members</a>
+                                       </Link>
                                         </li>
                                         <li>
                                             <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">View Team Members</a>
@@ -65,18 +77,51 @@ function TeamCoachTopNav() {
                                             <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Add Substitute</a>
                                         </li>
                                     </ul>
+                                    <ul className="dropdown-menu" style={{ marginLeft: "-110px", marginTop: "10px" }}>
+                                        <li>
+                                            <Link to="/Teamcoachviewprofilepopup" className='TeamCoachLink'>
+                                                <a className="dropdown-item" href="/">
+                                                    <img src={img3} alt="Profile" style={{ marginRight: "10px" }} />
+                                                    Profile
+                                                </a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#Logout-Modal">
+                                                <img src={img4} alt="Logout" style={{ marginRight: "10px" }} />
+                                                Logout
+                                            </button>
+                                        </li>
+                                    </ul>
                                 </div>
                             </li>
+
+
+
+                          
                             {/* My events dropdown */}
-                            <li className="nav-item" style={{ marginRight: "20px" }}>
-                                <button className="nav-link text-light TeamCoachNavBar-Nav-li-a" data-bs-toggle="dropdown" aria-expanded="false">
-                                    My Events
+
+
+                            <li className="nav-item" style={{ listStyle: "none", marginLeft: "10px", marginRight: '10px' }}>
+                                <div className="dropdown-center">
+                                    <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                        style={{ background: "none", border: "none" }}>
+                                        My Events
+                                    </button>
+
+
+                                   
                                     <img src={img5} alt="" />
-                                </button>
-                                <div className="dropdown-menu">
+
                                     <ul className="dropdown-menu" style={{ marginTop: "10px" }}>
                                         <li>
+                                        <Link to="/" className='TeamCoachLink'>
+
                                             <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Enrolled Events</a>
+                                      </Link>
                                         </li>
                                         <li>
                                             <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Results</a>
@@ -88,8 +133,30 @@ function TeamCoachTopNav() {
                                             <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Register Complaint</a>
                                         </li>
                                     </ul>
+                                    <ul className="dropdown-menu" style={{ marginLeft: "-110px", marginTop: "10px" }}>
+                                        <li>
+                                            <Link to="/Teamcoachviewprofilepopup" className='TeamCoachLink'>
+                                                <a className="dropdown-item" href="/">
+                                                    <img src={img3} alt="Profile" style={{ marginRight: "10px" }} />
+                                                    Profile
+                                                </a>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#Logout-Modal">
+                                                <img src={img4} alt="Logout" style={{ marginRight: "10px" }} />
+                                                Logout
+                                            </button>
+                                        </li>
+                                    </ul>
                                 </div>
                             </li>
+
+
+
+                           
+
+                            
                             {/* Search */}
                             <li className='nav-item '>
                                 <div className='TeamCoach-search-container'>
@@ -144,6 +211,7 @@ function TeamCoachTopNav() {
                                     </ul>
                                 </div>
                             </li>
+                            
                         </div>
                     </div>
                 </div>

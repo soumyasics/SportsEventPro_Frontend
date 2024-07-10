@@ -8,8 +8,11 @@ import img3 from '../../Assets/Group 202.svg'
 
 function EventRequests() {
 
-    const navigate = useNavigate()
+   
+    const [isApproved, setIsApproved] = useState(false)
 
+    const navigate = useNavigate()
+const id=localStorage.getItem('organizerId')
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
@@ -18,7 +21,7 @@ function EventRequests() {
         let res;
 
 
-        axiosInstance.post(`viewOrganizers  `).then(res => {
+        axiosInstance.post(`viewEvents`).then(res => {
 
             console.log(res);
 
@@ -36,10 +39,33 @@ function EventRequests() {
         console.log("users", userData);
     })
 
-    const viewDetails = (id) => {
-        // navigate(`/Teamcoachdetailspopup/${id}`) replace this with correct db
-    }
-
+    const approve = (id) => {
+        axiosInstance
+          .post(`/approveEventById/${id}`)
+          .then((res) => {
+            if (res.data.status === 200) {
+              alert("Event Approved");
+              navigate("/admindashboard");
+            }
+          })
+          .catch((error) => {
+            console.error("Error!", error);
+          });
+      };
+    
+      const reject = (id) => {
+        axiosInstance
+          .post(`/rejectEventById/${id}`)
+          .then((res) => {
+            if (res.data.status === 200) {
+              alert(" Request Rejected");
+              navigate("/admindashboard");
+            }
+          })
+          .catch((error) => {
+            console.error("Error!", error);
+          });
+      };
     return (
 
         <div className='container EventRequestsMainDivBG'>
@@ -79,12 +105,16 @@ function EventRequests() {
                             return (
                                 <tr className='EventRequests-tableBodyRow container' >
 
-                                    <td className='col-2 EventRequests-tableBodyData'>{index}</td>
-                                    <td className='col-2 EventRequests-tableBodyData'>{/* Event Name */}</td>
-                                    <td className='col-2 EventRequests-tableBodyData'>{/* Date and time of event */}</td>
-                                    <td className='col-2 EventRequests-tableBodyData'> {/* Category */}</td>
-                                    <td className='col-2 EventRequests-tableBodyData'> {/* Venue */}</td>
-                                    <td className='col-2 EventRequests-tableBodyData-end'><img src={img2} alt='Approve' style={{marginLeft:"20px"}}/><img src={img3} alt='Reject' style={{marginLeft:"20px"}}/></td>
+<td className='col-2 ViewAllEvents-tableBodyData'>{index}</td>
+                                    <td className='col-2 ViewAllEvents-tableBodyData'>{x.name}</td>
+                                    <td className='col-2 ViewAllEvents-tableBodyData'>{x.date.split('T')[0]} {x.time}</td>
+                                    <td className='col-2 ViewAllEvents-tableBodyData'> {x.category}</td>
+                                    <td className='col-2 ViewAllEvents-tableBodyData-end'> {x.venue}</td>
+                                    <td className='col-2 EventRequests-tableBodyData-end'>
+                                        <button type="button" onClick={()=>{approve(x._id)}}><img src={img2} alt='Approve' style={{marginLeft:"20px"}}/>
+                                    </button>
+                                    <button type="button" onClick={()=>{approve(x._id)}}>   <img src={img3} alt='Reject' style={{marginLeft:"20px"}}/>
+                                      </button></td>
 
                                 </tr>
                             )
