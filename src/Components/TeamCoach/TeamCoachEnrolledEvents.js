@@ -14,7 +14,7 @@ function TeamCoachEnrolledEvents() {
                 {/* seperated div for backbutton and text */}
                 <div className='col  TeamCoachEnrolledEvents-headercontainer-container-1'>
 
-                    <button className='OrganiserEditProfile-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
+                    <button className='TeamCoachEnrolledEvents-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
                     <h1 className='TeamCoachEnrolledEvents-headercontainer-h1'>Upcoming Events</h1>
 
                 </div>
