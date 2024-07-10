@@ -59,6 +59,8 @@ import ViewerProfilePopup from './Components/Viewer/ViewerProfilePopup';
 import AddEvent from './Components/Events/AddEvent';
 import EventRequests from './Components/Admin/EventRequests';
 import TeamCoachViewDetails from './Components/TeamCoach/TeamCoachViewDetails';
+import AdminEnquiriesViewpage from './Components/Admin/AdminEnquiriesViewpage';
+import TeamCoachViewTeamMembers from './Components/TeamCoach/TeamCoachViewTeamMembers';
 
 function App() {
 
@@ -80,6 +82,7 @@ function App() {
           {/* Admin */}
           <Route exact path="/AdminLogin" element={[<MainNavbar />, <AdminLogin />, <UserFooter />]} />
           <Route exact path='/AdminDashbordTopContent' element={<AdminDashbordTopContent />} />
+          <Route exact path='/AdminEnquiriesViewpage' element={<AdminEnquiriesViewpage/>}/>
 
           {/* <Route exact path='/AdminDashbord' element={[<AdminTopbar />, <Adminsidebar />, <AdminDashbordTopContent />, <AdminDashbordTopContent_2 />]} /> */}
 
@@ -125,8 +128,8 @@ function App() {
           <Route exact path="/TeamCoachLandingPage2" element={<TeamCoachLandingPage2 />} />
           <Route exact path="/TeamCoachLandingPage3" element={<TeamCoachLandingPage3 />} />
           <Route exact path="/TeamCoachViewDetails/:id" element={<TeamCoachViewDetails/>} />
-
-          
+          <Route exact path='/TeamCoachViewTeamMembers' element={<TeamCoachViewTeamMembers/>}/>
+                
           {/* Oraganizer */}
           <Route exact path='/OrganizerRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
           <Route exact path='/OrganizerLogin' element={[<MainNavbar/>,<OrganizerLogin/>,<UserFooter/>]} />

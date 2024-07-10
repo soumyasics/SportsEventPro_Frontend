@@ -1,0 +1,33 @@
+
+
+.TeamCoachViewTeamMembersMainDivBG {
+
+    margin: 50px;
+    }
+    .TeamCoachViewTeamMembers-h1 {
+        padding: 50px;
+        text-align: center;
+        margin-left: -836px;
+        margin-top: -59px;
+    }
+    .TeamCoachViewTeamMembers-tableHeadData {
+        border: 1px solid black;
+        padding: 8px;
+        font-weight: 900;
+        text-align: left;
+        font-style: normal;
+        background: #B9B9B9;
+       
+    
+    }
+    .TeamCoachViewTeamMembers-tableBodyData {
+        border: 1px solid black; /* Add a solid black border to all table headers and cells */
+        padding: 8px; /* Optional: Add padding to cells for better readability */
+        text-align: left; /* Optional: Align text to the left within cells */
+    }
+    .TeamCoachViewTeamMembersbackbutton{
+        margin-left: 56px;
+        margin-bottom: -214px;
+        margin-top: -157px;
+    }
+    
