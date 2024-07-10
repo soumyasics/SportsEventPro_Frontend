@@ -50,29 +50,23 @@ function OrganiserSideBar() {
 
                     </div>
 
-                  
-                    
+
+
                     <div>
 
-<<<<<<< HEAD
-<button className='OrganiserSideBarbutton-2'>
-    <Link to='/OrganizerScheduleEvents' style={{textDecoration:"none",color:"white"}}>
-        Schedule Events</Link></button>
-
-</div>
-<div>
-
-                        <button className='OrganiserSideBarbutton-2'>
-                            <Link to='/OrganizerViewEvents' style={{textDecoration:"none",color:"white"}}>
-                                View Events</Link></button>
-=======
                         <Link to='/OrganizerScheduleEvents' style={{ textDecoration: "none", color: "white" }}>
->>>>>>> 3d4bac3dfd3892fdee52dfe6931fa17405521883
 
                             <button className='OrganiserSideBarbutton-2'>Schedule Events</button>
 
                         </Link>
                     </div>
+
+                    <button className='OrganiserSideBarbutton-2'>
+                        <Link to='/OrganizerViewEvents' style={{ textDecoration: "none", color: "white" }}>
+                            View Events
+                        </Link>
+                    </button>
+
                     <div class="dropdown">
 
                         <a class="btn OrganiserSideBarbutton-2" data-bs-toggle="collapse" href="#li-1" role="button" aria-expanded="false" aria-controls="collapseExample">

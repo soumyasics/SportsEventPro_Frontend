@@ -66,6 +66,7 @@ import OrganizerMain from './Components/Organiser/OrganizerMain';
 import TeamCoachViewEvents from './Components/TeamCoach/TeamCoachViewEvents';
 import TeamCoachEnrolledEvents from './Components/TeamCoach/TeamCoachEnrolledEvents';
 import TeamCoachResults from './Components/TeamCoach/TeamCoachResults';
+import TeamCoachReviewRatings from './Components/TeamCoach/TeamCoachReviewRatings';
 
 function App() {
 
@@ -141,6 +142,7 @@ function App() {
           <Route exact path='/TeamCoachViewEvents' element={[<TeamCoachTopNav/>,<TeamCoachViewEvents/>,<UserFooter/>]} />
           <Route exact path='/TeamCoachEnrolledEvents' element={[<TeamCoachTopNav/>,<TeamCoachEnrolledEvents/>,<UserFooter/>]} />
           <Route exact path='/TeamCoachResults' element={[<TeamCoachTopNav/>,<TeamCoachResults/>,<UserFooter/>]} />
+          <Route exact path='/TeamCoachRR' element={[<TeamCoachTopNav/>,<TeamCoachReviewRatings/>,<UserFooter/>]} />
 
           {/* Organizer */}
           <Route exact path='/OrganizerRegistration' element={[<MainNavbar/>,<OrganiserRegistration/>,<UserFooter/>]} />
