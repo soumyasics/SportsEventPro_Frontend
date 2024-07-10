@@ -5,7 +5,7 @@ const axiosInstance = axios.create({
     //server api
     // baseURL: 'http://hybrid.srishticampus.in:4038/sports_event_pro_api', 
      baseURL: 'http://localhost:4038/sports_event_pro_api', 
-
+// 
     headers: {
       'Content-Type': 'application/json',
     },
