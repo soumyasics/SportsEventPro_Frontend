@@ -16,6 +16,7 @@ import AdminViewOrganizerToApprove from './Organiser/AdminViewOrganizerToApprove
 import ViewAllViewer from '../Viewer/ViewAllViewer'
 import EventRequests from './EventRequests'
 import ViewAllEvents from './ViewAllEvents'
+import AdminEnquiriesViewpage from './AdminEnquiriesViewpage'
 
 function AdminMain({ data }) {
   const navigate = useNavigate();
@@ -40,6 +41,8 @@ function AdminMain({ data }) {
               <AdminResetPass />
             ) : data === 'ViewCoachRequest' ? (
               <AdminViewCoachRequest />
+            ) : data === 'AdminEnquiriesViewpage' ? (
+              <AdminEnquiriesViewpage />
             ) : data === 'AdminViewTeamCoach' ? (
               <AdminViewTeamCoach />
             ) : data === 'Teamcoachdetailspopup' ? (
