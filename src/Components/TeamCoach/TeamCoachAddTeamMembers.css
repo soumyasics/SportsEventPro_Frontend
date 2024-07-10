@@ -216,3 +216,15 @@
     color: white;
 
 }
+/* TeamCoachAddTeamMembers.css */
+
+
+.TeamCoachAddTeamMembers-submit-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust margin to ensure button visibility */
+}
+
+.TeamCoachAddTeamMembers-submit-button {
+    /* Your existing styles */
+    padding: 10px 20px; /* Adjust padding for better visibility */
+}

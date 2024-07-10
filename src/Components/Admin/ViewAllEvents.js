@@ -8,8 +8,10 @@ function ViewAllEvents() {
 
 
 
-    const navigate = useNavigate()
+    const [isApproved, setIsApproved] = useState(false)
 
+    const navigate = useNavigate()
+const id=localStorage.getItem('organizerId')
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
@@ -18,7 +20,7 @@ function ViewAllEvents() {
         let res;
 
 
-        axiosInstance.post(`viewOrganizers  `).then(res => {
+        axiosInstance.post(`viewEvents`).then(res => {
 
             console.log(res);
 
@@ -35,10 +37,6 @@ function ViewAllEvents() {
     useEffect(() => {
         console.log("users", userData);
     })
-
-    const viewDetails = (id) => {
-        // navigate(`/Teamcoachdetailspopup/${id}`) replace this with correct db
-    }
 
     return (
 
@@ -80,11 +78,11 @@ function ViewAllEvents() {
                                 <tr className='ViewAllEvents-tableBodyRow container' >
 
                                     <td className='col-2 ViewAllEvents-tableBodyData'>{index}</td>
-                                    <td className='col-2 ViewAllEvents-tableBodyData'>{/* Event Name */}</td>
-                                    <td className='col-2 ViewAllEvents-tableBodyData'>{/* Date of event */}</td>
-                                    <td className='col-2 ViewAllEvents-tableBodyData'>{/* Time of event */}</td>
-                                    <td className='col-2 ViewAllEvents-tableBodyData'> {/* Category */}</td>
-                                    <td className='col-2 ViewAllEvents-tableBodyData-end'> {/* Venue */}</td>
+                                    <td className='col-2 ViewAllEvents-tableBodyData'>{x.name}</td>
+                                    <td className='col-2 ViewAllEvents-tableBodyData'>{x.date.split('T')[0]}</td>
+                                    <td className='col-2 ViewAllEvents-tableBodyData'>{x.time}</td>
+                                    <td className='col-2 ViewAllEvents-tableBodyData'> {x.category}</td>
+                                    <td className='col-2 ViewAllEvents-tableBodyData-end'> {x.venue}</td>
                                     
                                 </tr>
                             )

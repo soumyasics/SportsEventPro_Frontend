@@ -50,6 +50,8 @@ function OrganiserSideBar() {
 
                     </div>
 
+                  
+                    
                     <div>
 
                         <Link to='/OrganizerScheduleEvents' style={{ textDecoration: "none", color: "white" }}>
@@ -58,7 +60,6 @@ function OrganiserSideBar() {
 
                         </Link>
                     </div>
-
                     <div class="dropdown">
 
                         <a class="btn OrganiserSideBarbutton-2" data-bs-toggle="collapse" href="#li-1" role="button" aria-expanded="false" aria-controls="collapseExample">

@@ -4,7 +4,7 @@ import img from "../../Assets/Frame 18.jpg"
 import img1 from '../../Assets/Search Button.svg'
 import img2 from '../../Assets/frame2.png'
 import axiosInstance from '../Constant/BaseURL'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 function OrganiserDashboardNavBar() {
     const navigate = useNavigate()
@@ -75,10 +75,10 @@ function OrganiserDashboardNavBar() {
                             <img src = {img2} alt=' ' />{/* put organiser image here pls */}
 
                             <div className='Organiserh1ContainDiv'>
-
+<Link to='/OrganiserEditProfile'>
                                 <h1 className = ' Organiser-h1 '>{userData.name}</h1>{/*organiser name */}
                                 <h1 className = 'Organiser-h1' >{userData.email}</h1>{/*organiser email */}
-
+                                </Link>
                             </div>
 
                         </div>
