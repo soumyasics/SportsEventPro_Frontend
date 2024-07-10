@@ -86,7 +86,11 @@ function TeamCoachTopNav() {
                                         </li>
 
                                         <li>
+                                        <Link to="/TeamCoachViewTeamMembers" className='TeamCoachLink'>
+
                                             <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">View Team Members</a>
+                                            </Link>
+
                                         </li>
 
                                         <li>

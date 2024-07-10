@@ -260,7 +260,7 @@ console.log("err",formIsValid);
 
                     <div className='row'>
                         <div className='col TeamCoachAddTeamMembers-submit-container'>
-                            <button type='submit' className='TeamCoachAddTeamMembers-submit-button' onClick={handleSubmit}>Submit</button>
+                            <button type='submit' className='TeamCoachAddTeamMembers-submit-button btn btn-secondary' onClick={handleSubmit}>Submit</button>
                         </div>
                     </div>
                 </div>
