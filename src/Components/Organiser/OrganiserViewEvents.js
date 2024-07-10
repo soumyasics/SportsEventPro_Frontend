@@ -5,13 +5,14 @@ import axiosInstance from "../Constant/BaseURL";
 import img from '../../Assets/Search Button.svg'
 import img2 from '../../Assets/Group 228.svg'
 import img3 from '../../Assets/Group 229.svg'
+import img4 from '../../Assets/Group 227.svg'
 
 function OrganiserViewEvents() {
 
     const [isApproved, setIsApproved] = useState(false)
 
     const navigate = useNavigate()
-
+const id=localStorage.getItem('organizerId')
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
@@ -20,7 +21,7 @@ function OrganiserViewEvents() {
         let res;
 
 
-        axiosInstance.post(`viewOrganizers  `).then(res => {
+        axiosInstance.post(`viewEventByOrganizerId/${id}`).then(res => {
 
             console.log(res);
 
@@ -82,11 +83,28 @@ function OrganiserViewEvents() {
                                 <tr className='OrganizerViewEvents-tableBodyRow container' >
 
                                     <td className='col-2 OrganizerViewEvents-tableBodyData'>{index}</td>
-                                    <td className='col-2 OrganizerViewEvents-tableBodyData'>{/* Event Name */}</td>
-                                    <td className='col-2 OrganizerViewEvents-tableBodyData'>{/* Date of event */}</td>
-                                    <td className='col-2 OrganizerViewEvents-tableBodyData'> {/* Category */}</td>
-                                    <td className='col-2 OrganizerViewEvents-tableBodyData'> {/* Venue */}</td>
-                                    <td className='col-2 OrganizerViewEvents-tableBodyData-end'>{/*Request Status */}</td>
+                                    <td className='col-2 OrganizerViewEvents-tableBodyData'>{x.name}</td>
+                                    <td className='col-2 OrganizerViewEvents-tableBodyData'>{x.date.split('T')[0]}</td>
+                                    <td className='col-2 OrganizerViewEvents-tableBodyData'> {x.category}</td>
+                                    <td className='col-2 OrganizerViewEvents-tableBodyData'> {x.venue}</td>
+                                    <td className='col-2 OrganizerViewEvents-tableBodyData-end'>
+                                        {x.adminApprved === "Approved" ? (
+                                            <div className='tdDiv'>
+                                                <img src={img3} alt='' />
+                                                <h1 className='tdDiv-h1'>Approved</h1>
+                                            </div>
+                                        ):x.adminApprved === "Pending" ? (
+                                            <div className='tdDiv'>
+                                                <img src={img2} alt='' />
+                                                <h1 className='tdDiv-h1'>Pending</h1>
+                                            </div>
+                                        ):
+                                            <div className='tdDiv'>
+                                                <img src={img4} alt=''/>
+                                                <h1 className='tdDiv-h1'>Rejected</h1>
+                                            </div>
+                                        }
+                                    </td>
 
                                 </tr>
                             )

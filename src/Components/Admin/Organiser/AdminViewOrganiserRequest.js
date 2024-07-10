@@ -49,63 +49,63 @@ function AdminViewOrganiserRequest() {
 
         //             {
 
-                        // userData.map(x => {
+        // userData.map(x => {
 
-                        //     return (
+        //     return (
 
-                        //         <div className="AdminOrganiserRequestListElements">
+        //         <div className="AdminOrganiserRequestListElements">
 
-                        //             <li className="col-1 text-end pe-3">
+        //             <li className="col-1 text-end pe-3">
 
-                        //                 {/* <img src={img} alt="frame" /> */}
+        //                 {/* <img src={img} alt="frame" /> */}
 
-                        //                 <img
-                        //                     src=" "/*put organiser image here */
-                        //                     alt=" "
-                        //                     className="AdminOrganiserRequest-img"
-                        //                 />
+        //                 <img
+        //                     src=" "/*put organiser image here */
+        //                     alt=" "
+        //                     className="AdminOrganiserRequest-img"
+        //                 />
 
-                        //             </li>
+        //             </li>
 
-                        //             <li className="col-3 text-start ">
+        //             <li className="col-3 text-start ">
 
-                        //                 <h5 className="fs-5">{/*Organiser Name*/}</h5>
+        //                 <h5 className="fs-5">{/*Organiser Name*/}</h5>
 
-                        //             </li>
+        //             </li>
 
-                        //             <li className="col-5 text-start">
+        //             <li className="col-5 text-start">
 
-                        //                 <h5 className="fs-5">  {/* organiser email */}</h5>
-                        //                 <h6 className="fw-light fs-6 ">{/*organiser contact no */}</h6>
+        //                 <h5 className="fs-5">  {/* organiser email */}</h5>
+        //                 <h6 className="fw-light fs-6 ">{/*organiser contact no */}</h6>
 
-                        //             </li>
+        //             </li>
 
-                        //             <li className="col-3 text-end">
-                                        
-                        //                 {/* Organiser View Details */}
-                        //                 <button className="btn btn-primary px-4" onClick={() => { viewDetails(x._id)}}> View Details</button>
+        //             <li className="col-3 text-end">
 
-                        //             </li>
+        //                 {/* Organiser View Details */}
+        //                 <button className="btn btn-primary px-4" onClick={() => { viewDetails(x._id)}}> View Details</button>
 
-                        //         </div>
+        //             </li>
 
-                        //     )
+        //         </div>
 
-                        // })
+        //     )
 
-                    // }
+        // })
 
-    //             </ul>
+        // }
 
-    //             <div className="text-end">
+        //             </ul>
 
-    //                 <a href=" " alt=" " >View More</a>
+        //             <div className="text-end">
 
-    //             </div>
+        //                 <a href=" " alt=" " >View More</a>
 
-    //         </div>
+        //             </div>
 
-    //     </div>
+        //         </div>
+
+        //     </div>
         <div>
             <div className="adminview-organizerrequest-parentdiv container">
                 <div className="container adminview-organizerrequest-listbackground">
@@ -148,66 +148,66 @@ function AdminViewOrganiserRequest() {
 
 
 
-<ul className="AdminCoachRequestList">
-{console.log(userData&&userData.length>0)}
-                    {
+                    <ul className="AdminCoachRequestList">
+                        {console.log(userData && userData.length > 0)}
+                        {
 
-                       (userData&&userData.length>0)?(userData.map(x => {
+                            (userData && userData.length > 0) ? (userData.map(x => {
 
-                            return(
-                                 <div className="AdminCoachRequestListElements">
+                                return (
+                                    <div className="AdminCoachRequestListElements">
 
-                                    <li className="col-1 text-end pe-3 ml-5">
+                                        <li className="col-1 text-end pe-3 ml-5">
 
-                                        {/* <img src={img} alt="frame" /> */}
+                                            {/* <img src={img} alt="frame" /> */}
 
-                                        <img
-                                            src={`${url}/${x?.photo?.filename}`}
-                                            alt={img}
-                                            className="AdminCoachRequest-img"
-                                        />
+                                            <img
+                                                src={`${url}/${x?.photo?.filename}`}
+                                                alt={img}
+                                                className="AdminCoachRequest-img"
+                                            />
 
-                                    </li>
+                                        </li>
 
-                                    <li className="col-3 text-start  ml-1 ">
+                                        <li className="col-3 text-start  ml-1 ">
 
-                                        <h5 className="fs-5"> {x.name}{/*Player Name*/}</h5>
-                                       
+                                            <h5 className="fs-5"> {x.name}{/*Player Name*/}</h5>
 
-                                    </li>
 
-                                    <li className="col-5 text-start">
+                                        </li>
 
-                                        <h5 className="fs-5">  {x.email}</h5>
-                                        <h6 className="fw-light fs-6 ">{x.contact} {/*Number Of teammates*/}</h6>
+                                        <li className="col-5 text-start">
 
-                                    </li>
+                                            <h5 className="fs-5">  {x.email}</h5>
+                                            <h6 className="fw-light fs-6 ">{x.contact} {/*Number Of teammates*/}</h6>
 
-                                    <li className="col-3 text-end">
+                                        </li>
 
-                                        <button className="btn btn-primary px-4" onClick={()=>{viewDetails(x._id)}}> View Details</button>
+                                        <li className="col-3 text-end">
 
-                                    </li>
+                                            <button className="btn btn-primary px-4" onClick={() => { viewDetails(x._id) }}> View Details</button>
 
-                                </div>
+                                        </li>
+
+                                    </div>
+                                )
+
+
+                                { console.log(x.teamName) }
+
+
+                            })) : (
+                                <h1 className="AdminCoachRequestH5">No New Requests  Found</h1>
                             )
 
-                               
-{console.log(x.teamName)}
-                            
+                        }
 
-                        })):(
-                          <h1 className="AdminCoachRequestH5">No New Requests  Found</h1>
-                        )
-                        
-                    }
-
-                </ul>
+                    </ul>
                 </div>
             </div>
         </div>
     )
-    
+
 
 
 }

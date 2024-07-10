@@ -1,11 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './OrganiserDashboardNavBar.css'
 import img from "../../Assets/Frame 18.jpg"
 import img1 from '../../Assets/Search Button.svg'
 import img2 from '../../Assets/frame2.png'
+import axiosInstance from '../Constant/BaseURL'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 function OrganiserDashboardNavBar() {
+    const navigate = useNavigate()
 
+
+    const id=localStorage.getItem('organizerId')
+    const [userData, setUserData] = useState({
+        name:'',email:''
+    });
+
+
+    useEffect(() => {
+
+        let res;
+
+
+        axiosInstance.post(`viewOrganizerById/${id}`).then(res => {
+
+            console.log(res);
+
+
+            setUserData(res.data.data);
+            console.log(userData);
+
+        }).catch(err => {
+            console.log(err);
+        })
+
+
+
+    }, [id]);
+    console.log(userData);
 
     
     return (
@@ -14,8 +45,9 @@ function OrganiserDashboardNavBar() {
 
             <nav className='OrganiserTopbarMainDiv'>
 
-                <div class="container OrganiserTopbar">
+                <div class=" OrganiserTopbar">
 
+                    {/* main img and icon */}
                     <a class="navbar-brand " href=" ">
 
                         <div className='OrganiserTopbarDiv-1'>
@@ -28,7 +60,8 @@ function OrganiserDashboardNavBar() {
 
                     </a>
 
-                    <div>
+                    {/* searchbar and profile*/}
+                    <div className='Organiser-searchprofilecontain'>
 
                         <div className='Organiser-search-container'>
 
@@ -37,20 +70,17 @@ function OrganiserDashboardNavBar() {
 
                         </div>
 
-                    </div>
-
-                    <div>
-                        
                         <div className='OrganiserProfContainDiv'>
 
-                            <img src = {img2} alt=' ' />
+                            <img src = {img2} alt=' ' />{/* put organiser image here pls */}
 
                             <div className='Organiserh1ContainDiv'>
-
-                                <h1 className = 'mt-2 Organiser-h1 '>Lenin{/* Organiser Name */}</h1>
-                                <h1 className = 'Organiser-h1' style={{ marginTop: "-10px" }}>Lenin123@gmail.com</h1>
-
+<Link to='/OrganiserEditProfile'>
+                                <h1 className = ' Organiser-h1 '>{userData.name}</h1>{/*organiser name */}
+                                <h1 className = 'Organiser-h1' >{userData.email}</h1>{/*organiser email */}
+                                </Link>
                             </div>
+
                         </div>
 
                     </div>
