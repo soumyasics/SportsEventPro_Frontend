@@ -66,7 +66,7 @@ function TeamCoachEnrolledEvents() {
 
                 </div>
 
-                {/* div containing the ratings modal */}
+                {/* div containing the modal */}
 
                 <div>
 

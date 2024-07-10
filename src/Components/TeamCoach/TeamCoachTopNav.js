@@ -10,7 +10,9 @@ import img3 from '../../Assets/iconamoon_profile-bold(1).svg';
 import img4 from '../../Assets/Log_Out.svg';
 import img5 from '../../Assets/fe_arrow-up.svg';
 import img6 from '../../Assets/mingcute_notification-line.svg';
+import img7 from '../../Assets/octicon_x-16.svg'
 import "../../Components/TeamCoach/TeamCoachTopNav.css"; // Adjust path as per your project structure
+import ReactStars from 'react-stars';
 
 function TeamCoachTopNav() {
 
@@ -58,7 +60,7 @@ function TeamCoachTopNav() {
                             {/* My Team dropdown */}
 
                             <li className="nav-item" style={{ listStyle: "none", marginLeft: "10px", marginRight: '10px' }}>
-                                
+
                                 <div className="dropdown-center">
 
                                     <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
@@ -71,7 +73,7 @@ function TeamCoachTopNav() {
 
                                     <img src={img5} alt=""
                                         data-bs-toggle="dropdown"
-                                        aria-expanded="false" 
+                                        aria-expanded="false"
                                     />
 
                                     <ul className="dropdown-menu" style={{ marginTop: "10px" }}>
@@ -113,10 +115,10 @@ function TeamCoachTopNav() {
                                         My Events
                                     </button>
 
-                                    <img src={img5} alt="" data-bs-toggle="dropdown" aria-expanded="false"/>
+                                    <img src={img5} alt="" data-bs-toggle="dropdown" aria-expanded="false" />
 
                                     <ul className="dropdown-menu" style={{ marginTop: "10px" }}>
-                                        
+
                                         <li>
                                             <Link to="/" className='TeamCoachLink'>
 
@@ -133,7 +135,7 @@ function TeamCoachTopNav() {
                                         </li>
 
                                         <li>
-                                            <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Register Complaint</a>
+                                            <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href=" " data-bs-toggle="modal" data-bs-target="#Complaint-Modal">Register Complaint</a>
                                         </li>
 
                                     </ul>
@@ -141,11 +143,6 @@ function TeamCoachTopNav() {
                                 </div>
 
                             </li>
-
-
-
-
-
 
                             {/* Search */}
                             <li className='nav-item '>
@@ -234,6 +231,38 @@ function TeamCoachTopNav() {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            {/* div containing the modal */}
+
+            <div>
+
+                <div className="modal fade" id="Complaint-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+
+                    <div className="modal-dialog modal-dialog-centered">
+
+                        <div className="modal-content">
+
+                            <div className="modal-body EEP">
+
+                                <div className='modal-body-in'>
+                                    <img src={img7} alt=' ' className='imageEE' data-bs-dismiss="modal" aria-label="Close" />
+
+                                    <h1 className='h1ishere'>Register a Complaint</h1>
+                                    <input type='textarea' className='txtArea'></input>
+                                </div>
+                                <div className='ModalDialog-button-contain'>
+                                    <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal">Submit</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
     );
