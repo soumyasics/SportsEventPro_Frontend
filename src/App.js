@@ -84,7 +84,8 @@ function App() {
           {/* Admin */}
           <Route exact path="/AdminLogin" element={[<MainNavbar />, <AdminLogin />, <UserFooter />]} />
           <Route exact path='/AdminDashbordTopContent' element={<AdminDashbordTopContent />} />
-          
+          <Route exact path="/AdminEnquiriesViewpage" element={[, <AdminEnquiriesViewpage />, ]} />
+
 
           {/* <Route exact path='/AdminDashbord' element={[<AdminTopbar />, <Adminsidebar />, <AdminDashbordTopContent />, <AdminDashbordTopContent_2 />]} /> */}
 
