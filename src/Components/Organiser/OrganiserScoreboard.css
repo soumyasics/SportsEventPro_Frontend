@@ -5,7 +5,6 @@
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 50px;
     width: 100%;
     margin-left: 30px;
@@ -20,8 +19,8 @@
     display: flex;
     width: 1329px;
     flex-direction: column;
-    align-items: center;
     gap: 39px;
+    margin-top: 30px;
 
 }
 
@@ -85,6 +84,10 @@
 
     width: 340px;
     height: 298.653px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid #BCBCBC;
+    background: #FFF;
 
 }
 

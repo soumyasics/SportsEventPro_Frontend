@@ -241,7 +241,7 @@ function TeamCoachTopNav() {
 
             <div>
 
-                <div className="modal fade" id="Complaint-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+                <div className="modal fade" id="Complaint-Modal" tabIndex="-1" aria-labelledby="Complaint-ModalLabel" aria-hidden="true">
 
                     <div className="modal-dialog modal-dialog-centered">
 
