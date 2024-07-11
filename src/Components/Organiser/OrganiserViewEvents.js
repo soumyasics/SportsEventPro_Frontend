@@ -40,7 +40,7 @@ const id=localStorage.getItem('organizerId')
     })
 
     const viewDetails = (id) => {
-        // navigate(`/Teamcoachdetailspopup/${id}`) replace this with correct db
+        // navigate(`/Teamcoachdetailspopup/${id}`) replace this with correct navpath
     }
 
     return (

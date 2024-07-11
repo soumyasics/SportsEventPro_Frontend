@@ -3,6 +3,8 @@ import './OrganiserSideBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { Link, useNavigate } from 'react-router-dom'
+import img7 from '../../Assets/octicon_x-16.svg'
+
 
 function OrganiserSideBar() {
     const navigate = useNavigate()
@@ -97,7 +99,7 @@ function OrganiserSideBar() {
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>Complaints</button>
+                        <button className='OrganiserSideBarbutton-2' data-bs-toggle="modal" data-bs-target="#Complaint-Modal">Complaints</button>
 
                     </div>
 
@@ -134,6 +136,7 @@ function OrganiserSideBar() {
 
                         </div> */}
 
+                        {/* Logout modal */}
                         <div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
                                 <div className="modal-content">
@@ -147,6 +150,37 @@ function OrganiserSideBar() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        {/* complaints */}
+                        <div>
+
+                            <div className="modal fade" id="Complaint-Modal" tabIndex="-1" aria-labelledby="Complaint-ModalLabel" aria-hidden="true">
+
+                                <div className="modal-dialog modal-dialog-centered">
+
+                                    <div className="modal-content">
+
+                                        <div className="modal-body EEP">
+
+                                            <div className='modal-body-in'>
+                                                <img src={img7} alt=' ' className='imageEE' data-bs-dismiss="modal" aria-label="Close" />
+
+                                                <h1 className='h1ishere'>Register a Complaint</h1>
+                                                <input type='textarea' className='txtArea'></input>
+                                            </div>
+                                            <div className='ModalDialog-button-contain'>
+                                                <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal">Submit</button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
 
