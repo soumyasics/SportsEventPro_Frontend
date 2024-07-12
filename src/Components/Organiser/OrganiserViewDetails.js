@@ -37,7 +37,7 @@ function OrganiserViewDetails() {
 
                     <tbody className='tbodyclass'>
 
-
+                        {/* map coach details to the v-below <tr> */}
                         <tr className='OrganiserViewDetails-tableBodyRow-2 container' >
 
                             <td className='col-2 OrganiserViewDetails-tableBodyData'>Team Coach</td>
@@ -47,7 +47,7 @@ function OrganiserViewDetails() {
                             <td className='col-2 OrganiserViewDetails-tableBodyData-end'> Near new bus stand, Main road, Trivandrum</td>{/* team coach address */}
 
                         </tr>
-                        {/* map coach details to the ^-above <tr> */}
+                        
                         {/* array map teammember details to v-below <tr>  */}
                         <tr className='OrganiserViewDetails-tableBodyRow container' >
 

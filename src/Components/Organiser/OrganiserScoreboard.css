@@ -157,7 +157,7 @@
 
 .OrganiserScoreBoard-button {
 
-    margin-left: 64%;
+    margin-left: 63%;
     display: flex;
     padding: 10px 15px;
     justify-content: center;
@@ -167,6 +167,12 @@
     border: none;
     background: linear-gradient(182deg, #F4F4F4 1.49%, #909090 98.53%);
     margin-bottom: 15px;
+    color: #101863;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
 
 }
 

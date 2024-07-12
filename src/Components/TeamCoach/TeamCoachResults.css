@@ -8,6 +8,7 @@
     align-items: center;
     gap: 50px;
     width: 100%;
+    margin-bottom: 80px;
 
 }
 
@@ -18,8 +19,7 @@
     flex-direction: column;
     align-items: center;
     gap: 39px;
-    margin-bottom: 50px;
-
+    
 }
 
 .TeamCoachResults-headercontainer-container-1 {
@@ -29,7 +29,7 @@
     align-self: flex-start;
     width: 473px;
     height: 48px;
-    margin-top: 50px;
+    margin-top: 80px;
 
 }
 
@@ -49,6 +49,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 48px;
+    margin-top: 10px;
 
 }
 
@@ -81,6 +82,10 @@
 
     width: 421px;
     height: 350.653px;
+    margin-left: 1px;
+    border: 1px solid #BCBCBC; 
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 
 }
 
@@ -117,6 +122,7 @@
     line-height: 130%;
 
 }
+
 .CardHeadTxtButton1 {
 
     color: #0012AF;
@@ -178,15 +184,22 @@
 
 .TeamCoachResults-button {
 
-    margin-left: 72%;
+    margin-left: 76%;
     display: flex;
     padding: 10px 15px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    border-radius: 10px;
     border: none;
+    border-radius: 10px;
     background: linear-gradient(182deg, #F4F4F4 1.49%, #909090 98.53%);
+    color: #101863;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    /* 20.8px */
 
 }
 
