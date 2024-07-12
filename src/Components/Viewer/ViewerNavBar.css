@@ -34,6 +34,11 @@
     color: white;
 
 }
+.ViewerNavBar-Nav-a-1:active {
+
+    color: white;
+
+}
 
 .NavbarNav-ul {
 
@@ -43,6 +48,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
+    gap: 30px;
     left: 65%;
     transform: translate(-65%);
 

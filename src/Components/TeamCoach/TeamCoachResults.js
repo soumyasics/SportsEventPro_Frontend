@@ -17,7 +17,7 @@ function TeamCoachResults() {
                 {/* seperated div for backbutton and text */}
                 <div className='col  TeamCoachResults-headercontainer-container-1'>
 
-                    <button className='OrganiserEditProfile-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
+                    <button className='TeamCoachResults-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
                     <h1 className='TeamCoachResults-headercontainer-h1'>Results</h1>
 
                 </div>

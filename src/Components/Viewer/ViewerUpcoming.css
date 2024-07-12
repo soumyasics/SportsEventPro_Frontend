@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Vast+Shadow&display=swap');
+
+.ViewerUpcoming {
+
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    margin-bottom: 80px;
+
+}
+
+.ViewerUpcoming-MainDiv {
+
+    display: flex;
+    width: 1329px;
+    flex-direction: column;
+    align-items: center;
+    gap: 39px;
+
+}
+
+.ViewerUpcoming-headercontainer-container-1 {
+
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    width: 473px;
+    height: 48px;
+    margin-top: 80px;
+    gap: 683px;
+
+}
+
+
+.ViewerUpcoming-headercontainer-BackButton {
+
+    background-color: #00000000;
+    border: none;
+
+}
+
+.ViewerUpcoming-headercontainer-h1 {
+
+    margin-left: 30px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    margin-top: 25px;
+
+}
+
+.ViewerUpcoming-content {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 30px;
+    align-self: stretch;
+
+}
+
+.ViewerUpcoming-content-contain {
+
+    width: 421px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid #BCBCBC;
+    background: var(--icon-color, #FFF);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.ViewerUpcoming-content-contain-overlay {
+
+    position: absolute;
+    z-index: 1;
+    margin-top: 38px;
+
+}
+
+.ViewerUpcoming-content-contain-h1-1 {
+
+    color: #FF7120;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Vast Shadow";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
+.ViewerUpcoming-content-contain-h1-2 {
+
+    color: #FFF;
+    font-family: "Roboto Serif";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+
+}
+
+.ViewerUpcoming-img {
+
+    z-index: 0;
+    width: 421px;
+    height: 348px;
+    flex-shrink: 0;
+    margin-left: 1px;
+    border: 1px solid #BCBCBC;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+.CardHeadTxtH5 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+}
+
+.CardHeadTxtH1-1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+
+}
+
+.CardHeadTxtH1 {
+
+    display: flex;
+    height: 24px;
+    width: 75px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #B9B9B9;
+    color: #000;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
+.CardHeadTxtButton1 {
+
+    color: #0012AF;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    display: flex;
+    padding: 10px 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+
+}
+
+.CardTextP {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
+.CardTextH2 {
+
+    display: flex;
+    width: 168px;
+    height: 29px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    color: #000;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
+.CardHeadTxtH3 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+
+}
+
+.CardHeadTxtH4 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+}
+
+/* .ViewerUpcoming-button-contain {
+
+    display: flex;
+    width: 400px;
+    height: 41px;
+    padding: 0px 4px 0px 294px;
+    justify-content: flex-end;
+    align-items: center;
+
+} */
+
+.ViewerUpcoming-button {
+
+    margin-left: 73%;
+    display: flex;
+    padding: 10px 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(182deg, #F4F4F4 1.49%, #909090 98.53%);
+    color: #101863;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    /* 20.8px */
+
+}
+
+.ViewerUpcoming-a {
+
+    color: #0084E4;
+    text-align: center;
+    text-shadow: 0px 0.866px 0.866px rgba(0, 0, 0, 0.25);
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+
+}
