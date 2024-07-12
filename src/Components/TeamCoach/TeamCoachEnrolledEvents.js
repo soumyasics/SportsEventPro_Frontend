@@ -18,7 +18,7 @@ function TeamCoachEnrolledEvents() {
                 <div className='col  TeamCoachEnrolledEvents-headercontainer-container-1'>
 
                     <button className='TeamCoachEnrolledEvents-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
-                    <h1 className='TeamCoachEnrolledEvents-headercontainer-h1'>Upcoming Events</h1>
+                    <h1 className='TeamCoachEnrolledEvents-headercontainer-h1'>Enrolled Events</h1>
 
                 </div>
 
@@ -35,7 +35,7 @@ function TeamCoachEnrolledEvents() {
 
                             <div className="card-body">
 
-                                <div className="card-title" style={{ display: "flex", flexDirection: "row", gap: "107px" }}>
+                                <div className="card-title" style={{ display: "flex", flexDirection: "row", gap: "100px" }}>
 
                                     <div style={{ display: "flex", flexDirection: "column" }}>
                                         <h5 className='CardHeadTxtH5'>TVM Junior Sports</h5>{/* event name */}
@@ -110,13 +110,6 @@ function TeamCoachEnrolledEvents() {
                         </div>
 
                     </div>
-
-                </div>
-
-                {/* div containing "load more" */}
-                <div>
-
-                    <a href=" " className='TeamCoachEnrolledEvents-a'>Load More</a>
 
                 </div>
 

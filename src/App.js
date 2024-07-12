@@ -139,8 +139,8 @@ function App() {
           <Route exact path="/TeamCoachLandingPage1" element={<TeamCoachLandingPage1 />} />
           <Route exact path="/TeamCoachLandingPage2" element={<TeamCoachLandingPage2 />} />
           <Route exact path="/TeamCoachLandingPage3" element={<TeamCoachLandingPage3 />} />
-          <Route exact path="/TeamCoachAddTeamMembers" element={<TeamCoachAddTeamMembers/>} />
-          <Route exact path="/TeamCoachEditTeamMembers" element={<TeamCoachEditTeamMembers/>} />
+          <Route exact path="/TeamCoachAddTeamMembers" element={[<TeamCoachTopNav/>,<TeamCoachAddTeamMembers/>,<UserFooter/>]} />
+          <Route exact path="/TeamCoachEditTeamMembers" element={[<TeamCoachTopNav/>,<TeamCoachEditTeamMembers/>,<UserFooter/>]} />
           <Route exact path='/TeamCoachAddSub' element={[<TeamCoachTopNav/>,<TeamCoachAddSub/>,<UserFooter/>]}/>
           <Route exact path='/TeamCoachViewEvents' element={[<TeamCoachTopNav/>,<TeamCoachViewEvents/>,<UserFooter/>]} />
           <Route exact path='/TeamCoachEnrolledEvents' element={[<TeamCoachTopNav/>,<TeamCoachEnrolledEvents/>,<UserFooter/>]} />
@@ -163,6 +163,7 @@ function App() {
           <Route exact path='/OrganizerEnroll' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data="OrganizerEnroll"/>,<UserFooter/>]}/>
           <Route exact path='/OrganizerScoreBoard' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data="OrganizerScoreBoard"/>,<UserFooter/>]} />
           <Route exact path='/OrganizerViewScore' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewScore'/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerEditScore' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerEditScore'/>,<UserFooter/>]} />
           <Route exact path='/OrganizerViewDetails' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewDetails'/>,<UserFooter/>]} />
 
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />,<UserFooter/>]} />

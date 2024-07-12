@@ -155,7 +155,7 @@ function TeamCoachAddSub() {
                         <div className='col TeamCoachAddSub-headercontainer-container-2'>
 
                             <img src={tempimg} alt='' className='TeamCoachAddSub-headercontainer-container-2-profilepicture' />
-                            {/* ^ put organiser profile pic in src */}
+                                    {/* ^ put organiser profile pic in src */}
 
 
                             <input type='file' className='TeamCoachAddSub-headercontainer-container-2-editimgbutton' />
@@ -202,7 +202,7 @@ function TeamCoachAddSub() {
                                     <option value="Tamil Nadu" onChange={handleChange}>USA</option>
                                     <option value="Karnataka" onChange={handleChange}>JAPAN</option>
                                     <option value="Maharashtra" onChange={handleChange}>BRAZIL</option>
-
+                                    {/* add the team members name here instead of countries */}
                                 </select>
 
                             </div>
@@ -277,7 +277,7 @@ function TeamCoachAddSub() {
 
                         <div className=' col-lg-6 row TeamCoachAddSub-body-right'>
 
-                            {/* Catogory */}
+                            {/* Category */}
                             <div className='col row TeamCoachAddSub-body-common'>
 
                                 <div className='col TeamCoachAddSub-body-common-img-contain'>
@@ -358,10 +358,10 @@ function TeamCoachAddSub() {
                                 <select className='col TeamCoachAddSub-body-input-state' aria-label="Default select example">
 
                                     <option className='OrganiserRegistration-Content-Input-Select-Option' selected name="state" value={data.state} onChange={handleChange}>Kerala</option>
-                                    <option value="Goa"  >Goa</option>
-                                    <option value="Tamil Nadu" >Tamil Nadu</option>
-                                    <option value="Karnataka"  >Hariyana</option>
-                                    <option value="Maharashtra"  >J&K</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Karnataka">Hariyana</option>
+                                    <option value="Maharashtra">Maharashtra</option>
 
                                 </select>
 

@@ -53,6 +53,9 @@ function OrganiserViewScore() {
 
                 </table>
 
+                <Link to='/OrganizerEditScore' style={{textDecoration:'none'}}>
+                    <button className='OrganiserViewScore-addbutton'>Add Score</button>
+                </Link>
             </div>
 
         </div>
