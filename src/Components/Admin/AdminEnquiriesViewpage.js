@@ -61,7 +61,7 @@ function AdminEnquiriesViewpage() {
   return (
     <div className = 'AdminEnquiriesViewpageMainDivBG'>
 
-    <h1 className = 'AdminEnquiriesViewpage-h1'>Enquiries List</h1>
+    <h1 className = 'AdminEnquiriesViewpage-h1'>Enquiries List new</h1>
     
 
     <table className = 'AdminEnquiriesViewpage-Table container ' >
