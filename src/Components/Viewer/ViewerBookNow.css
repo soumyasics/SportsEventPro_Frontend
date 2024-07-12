@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Vast+Shadow&display=swap');
+
+.ViewerBookNow {
+
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.ViewerBookNow-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+
+    margin-left: 50%;
+    transform: translate(-50%);
+
+}
+
+.ViewerBookNow-header {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.ViewerBookNow-headercontainer-BackButton {
+
+    background-color: #00000000;
+    border: none;
+
+}
+
+.ViewerBookNow-headercontainer-h1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    margin-top: 7px;
+
+}
+
+.ViewerBookNow-img {
+
+    width: 650.308px;
+    height: 475px;
+    flex-shrink: 0;
+    border-radius: 16.696px;
+
+}
+
+.ViewerUpcoming-content-contain-overlay {
+
+    position: absolute;
+    z-index: 1;
+    margin-top: 38px;
+
+}
+
+.ViewerUpcoming-content-contain-h1-1 {
+
+    color: #FF7120;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Vast Shadow";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
+.ViewerUpcoming-content-contain-h1-2 {
+
+    color: #FFF;
+    font-family: "Roboto Serif";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+
+}
+
+.ViewerUpcoming-content-contain-overlay {
+
+    position: absolute;
+    z-index: 1;
+    margin-top: 38px;
+
+}
+
+.ViewerUpcoming-content-contain-h1-1 {
+
+    color: #FF7120;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Vast Shadow";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
+.ViewerUpcoming-content-contain-h1-2 {
+
+    color: #FFF;
+    font-family: "Roboto Serif";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+
+}
+
+.ViewerBookNow-body {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+.ViewerBookNow-body-1 {
+
+    display: flex;
+    padding: 20px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+
+}
