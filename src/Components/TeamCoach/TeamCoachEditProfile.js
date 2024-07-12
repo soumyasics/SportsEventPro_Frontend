@@ -9,10 +9,11 @@ import img6 from '../../Assets/gg_list.jpg';
 import img7 from '../../Assets/frame.jpg';
 import img8 from '../../Assets/ep_place.jpg';
 import img9 from '../../Assets/arcticons_asr-licence.jpg';
-import img10 from '../../Assets/emojione_flag-for-india.jpg';
+import img10 from '../../Assets/subway_world-1.jpg';
 import img11 from '../../Assets/carbon_location-filled.jpg';
 import img12 from '../../Assets/arcticons_team-fight-tactics.jpg';
 import img13 from "../../Assets/circum_edit.jpg";
+import img14 from "../../Assets/ri_open-arm-fill.jpg"
 import axiosInstance from '../Constant/BaseURL';
 import { useNavigate } from 'react-router-dom';
 import axiosMultipartInstance from '../Constant/multiPart';
@@ -157,8 +158,7 @@ function TeamCoachEditProfile() {
                                     <div className="col">
                                         <div className="dropdown dropdowninput">
                                             <div className='TeamCoachEditProfilelabel-2'>
-                                                <select className="form-select" aria-label="Default select example" name="category" value={data.category} onChange={handleChange}>
-                                                    <option selected value="1"></option>
+                                                <select className="form-select" aria-label="Default select example" name="category" value={data.category} onChange={handleChange} placeholder={data ? data.category : ""}>
                                                     <option value="Football">Football</option>
                                                     <option value="Cricket">Cricket</option>
                                                     <option value="">Hockey</option>

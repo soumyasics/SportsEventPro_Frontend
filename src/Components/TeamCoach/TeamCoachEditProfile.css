@@ -113,7 +113,7 @@ text-align: center;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid rgb(192, 186, 186);
-    width: 509px;
+    width: 539px;
 }
 
 .TeamCoachEditProfilemainrow-right-1{
@@ -127,10 +127,11 @@ width: 401px;
 height: var(--items, 0px);
 } */
  .TeamCoachEditProfilelabel-2{
-    width: 187px;
-    border-radius: 0px;
-    border-color: black;
-    height: 34px;
+    width: 210px;
+    border-radius: 13px;
+    border-color: #00000030;
+    height: 30px;
+    border-width: 1px;
  }
  .TeamCoachEditProfile-1-5{
     height: 124px;
@@ -144,9 +145,15 @@ height: var(--items, 0px);
     width: 20px;
 }
 .TeamCoachEditProfilelabel-3{
-    width: 187px;
-    border-radius: 0px;
-    border-color: black;
+    width: 210px;
+    border-radius: 13px;
+    border-color: #00000054;
     height: 30px;
     border: 1px solid;
+    background-color: white;
+}
+.TeamCoachEditProfilecommon-style-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

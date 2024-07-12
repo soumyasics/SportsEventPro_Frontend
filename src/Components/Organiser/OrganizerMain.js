@@ -6,6 +6,9 @@ import OrganiserSideBar from './OrganiserSideBar';
 import OrganiserViewEvents from './OrganiserViewEvents';
 import OrganiserEnroll from './OrganiserEnroll';
 import OrganiserScoreboard from './OrganiserScoreboard';
+import OrganiserEditProfile from './OrganiserEditProfile';
+import OrganiserViewScore from './OrganiserViewScore';
+import OrganiserViewDetails from './OrganiserViewDetails';
 
 function OrganizerMain({data}) {
    
@@ -38,6 +41,12 @@ function OrganizerMain({data}) {
                   <OrganiserEnroll/>
                 ) : data === 'OrganizerScoreBoard' ? (
                   <OrganiserScoreboard/>
+                )  : data === 'OrganiserEditProfile' ? (
+                  <OrganiserEditProfile/>
+                ) : data === 'OrganizerViewScore' ? (
+                  <OrganiserViewScore/>
+                ) : data === 'OrganizerViewDetails' ? (
+                  <OrganiserViewDetails/>
                 ) 
              
                 : (

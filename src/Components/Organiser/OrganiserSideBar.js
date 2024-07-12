@@ -3,6 +3,8 @@ import './OrganiserSideBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { Link, useNavigate } from 'react-router-dom'
+import img7 from '../../Assets/octicon_x-16.svg'
+
 
 function OrganiserSideBar() {
     const navigate = useNavigate()
@@ -29,9 +31,7 @@ function OrganiserSideBar() {
                     <div>
 
                         <Link to='/OrganizerDashboard' style={{ textDecoration: "none", color: "white" }}>
-
                             <button className='OrganiserSideBarbutton-1'>Dashboard</button>
-
                         </Link>
 
                     </div>
@@ -39,40 +39,31 @@ function OrganiserSideBar() {
                     <div>
 
                         <Link to='/OrganizerEnroll' style={{ textDecoration: "none", color: "white" }}>
-
-                            <button className='OrganiserSideBarbutton-2'>
-
-                                Enroll Requests
-
-                            </button>
-
+                            <button className='OrganiserSideBarbutton-2'>Enroll Requests</button>
                         </Link>
 
                     </div>
-
-
 
                     <div>
 
                         <Link to='/OrganizerScheduleEvents' style={{ textDecoration: "none", color: "white" }}>
-
                             <button className='OrganiserSideBarbutton-2'>Schedule Events</button>
-
                         </Link>
                     </div>
 
-                    <button className='OrganiserSideBarbutton-2'>
-                        <Link to='/OrganizerViewEvents' style={{ textDecoration: "none", color: "white" }}>
-                            View Events
-                        </Link>
-                    </button>
+                    <div>
 
+                        <Link to='/OrganizerViewEvents' style={{ textDecoration: "none", color: "white" }}>
+                            <button className='OrganiserSideBarbutton-2'>View Events</button>
+                        </Link>
+
+                    </div>
                     <div class="dropdown">
 
                         <a class="btn OrganiserSideBarbutton-2" data-bs-toggle="collapse" href="#li-1" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Ticket Management <FontAwesomeIcon className='mt-1 ms-2 ' icon={faAngleDown} />
+                            Ticket Management
+                            <FontAwesomeIcon className='mt-1 ms-2 ' icon={faAngleDown} />
                         </a>
-
 
                         <ul class="collapse list-group mt-2 rounded-2" id='li-1'>
 
@@ -86,9 +77,7 @@ function OrganiserSideBar() {
                     <div>
 
                         <Link to='/OrganizerScoreBoard' style={{ textDecoration: "none", color: "white" }}>
-
                             <button className='OrganiserSideBarbutton-2'>Scoreboard</button>
-
                         </Link>
 
                     </div>
@@ -110,7 +99,7 @@ function OrganiserSideBar() {
 
                     <div>
 
-                        <button className='OrganiserSideBarbutton-2'>Complaints</button>
+                        <button className='OrganiserSideBarbutton-2' data-bs-toggle="modal" data-bs-target="#Complaint-Modal">Complaints</button>
 
                     </div>
 
@@ -147,6 +136,7 @@ function OrganiserSideBar() {
 
                         </div> */}
 
+                        {/* Logout modal */}
                         <div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
                                 <div className="modal-content">
@@ -160,6 +150,37 @@ function OrganiserSideBar() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        {/* complaints */}
+                        <div>
+
+                            <div className="modal fade" id="Complaint-Modal" tabIndex="-1" aria-labelledby="Complaint-ModalLabel" aria-hidden="true">
+
+                                <div className="modal-dialog modal-dialog-centered">
+
+                                    <div className="modal-content">
+
+                                        <div className="modal-body EEP">
+
+                                            <div className='modal-body-in'>
+                                                <img src={img7} alt=' ' className='imageEE' data-bs-dismiss="modal" aria-label="Close" />
+
+                                                <h1 className='h1ishere'>Register a Complaint</h1>
+                                                <input type='textarea' className='txtArea'></input>
+                                            </div>
+                                            <div className='ModalDialog-button-contain'>
+                                                <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal">Submit</button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
 
