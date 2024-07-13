@@ -143,3 +143,46 @@
     border: 1px solid rgba(0, 0, 0, 0.20);
 
 }
+
+.ViewerBookNow-body-h1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+}
+
+.ViewerBookNow-body-h1-1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+
+}
+
+.ViewerBookNow-body-h1-2 {
+
+    display: flex;
+    height: 24px;
+    width: 75px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #B9B9B9;
+    color: #000;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
