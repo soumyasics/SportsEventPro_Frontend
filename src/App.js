@@ -73,6 +73,7 @@ import TeamCoachReviewRatings from './Components/TeamCoach/TeamCoachReviewRating
 import TeamCoachViewResults from './Components/TeamCoach/TeamCoachViewResults';
 import ViewerUpcoming from './Components/Viewer/ViewerUpcoming';
 import ViewerBookNow from './Components/Viewer/ViewerBookNow';
+import ViewerPayment from './Components/Viewer/ViewerPayment';
 
 function App() {
 
@@ -179,6 +180,7 @@ function App() {
           <Route exact path='/ViewerEditProfile' element={<ViewerEditProfile />} />
           <Route exact path='/ViewerUpcoming' element={[<ViewerNavBar />, <ViewerUpcoming />, <UserFooter />]} />
           <Route exact path='/ViewerBookNow' element={[<ViewerNavBar />, <ViewerBookNow />, <UserFooter />]} />
+          <Route exact path='/ViewerPayment' element={[<ViewerNavBar />, <ViewerPayment />, <UserFooter />]} />
 
           <Route path='/admin-viewAllViewer' element={[<MainNavbar />, <AdminMain data='admin-viewAllViewer' />]} />
 

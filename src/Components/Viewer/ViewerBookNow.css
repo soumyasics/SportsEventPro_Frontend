@@ -13,11 +13,7 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 50px;
-
-    margin-left: 50%;
-    transform: translate(-50%);
 
 }
 
@@ -25,8 +21,8 @@
 
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 30px;
+    margin-left: 220px;
 
 }
 
@@ -34,6 +30,7 @@
 
     background-color: #00000000;
     border: none;
+    margin-top: 15px;
 
 }
 
@@ -49,6 +46,31 @@
 
 }
 
+
+
+.ViewerBookNow-content-contain-overlay {
+
+    position: absolute;
+    z-index: 1;
+    margin-top: 38px;
+    margin-left: 173px;
+
+
+}
+
+.ViewerBookNow-content-contain-h1-1 {
+
+    color: #FF7120;
+    text-align: center;
+    text-shadow: 0px 7.102px 7.102px rgba(0, 0, 0, 0.25);
+    font-family: "Vast Shadow";
+    font-size: 42.613px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
 .ViewerBookNow-img {
 
     width: 650.308px;
@@ -58,64 +80,11 @@
 
 }
 
-.ViewerUpcoming-content-contain-overlay {
-
-    position: absolute;
-    z-index: 1;
-    margin-top: 38px;
-
-}
-
-.ViewerUpcoming-content-contain-h1-1 {
-
-    color: #FF7120;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: "Vast Shadow";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-
-}
-
-.ViewerUpcoming-content-contain-h1-2 {
+.ViewerBookNow-content-contain-h1-2 {
 
     color: #FFF;
     font-family: "Roboto Serif";
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 130%;
-
-}
-
-.ViewerUpcoming-content-contain-overlay {
-
-    position: absolute;
-    z-index: 1;
-    margin-top: 38px;
-
-}
-
-.ViewerUpcoming-content-contain-h1-1 {
-
-    color: #FF7120;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: "Vast Shadow";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-
-}
-
-.ViewerUpcoming-content-contain-h1-2 {
-
-    color: #FFF;
-    font-family: "Roboto Serif";
-    font-size: 32px;
+    font-size: 56.817px;
     font-style: normal;
     font-weight: 600;
     line-height: 130%;
@@ -132,14 +101,238 @@
 
 }
 
-.ViewerBookNow-body-1 {
+.ViewerBookNow-body-left {
+
+    width: 650.308px;
+    height: 475px;
+    border-radius: 16.696px;
+    border: none;
+
+}
+
+.ViewerBookNow-body-right {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.ViewerBookNow-body-right-top {
+
+    display: flex;
+    padding: 20px 40px;
+    width: max-content;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+
+}
+
+.ViewerBookNow-body-h1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+}
+
+.ViewerBookNow-body-2 {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+
+}
+
+.ViewerBookNow-body-h1-1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+
+}
+
+.ViewerBookNow-body-h1-2 {
+
+    display: flex;
+    height: 24px;
+    width: 75px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #B9B9B9;
+    color: #000;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
+.ViewerBookNow-body-h3 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin-top: 10px;
+
+}
+
+.ViewerBookNow-body-h4 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+}
+
+.ViewerBookNow-body-h5 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
+.ViewerBookNow-body-h2 {
+
+    display: flex;
+    width: 168px;
+    height: 29px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    color: #000;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
+.ViewerBookNow-body-right-bottom {
 
     display: flex;
     padding: 20px 40px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 25px;
+    gap: 15px;
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.20);
+
+}
+
+.ViewerBookNow-body-right-bottom-header {
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 100px;
+
+}
+
+.ticketnoDiv {
+
+    display: flex;
+    width: 104px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.ticketnum {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    margin-top: 10px;
+
+}
+
+.ticketbutt {
+
+    background: none;
+    border: none;
+
+}
+
+.ViewerBookNow-body-right-bottom-body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+
+}
+
+.ViewerBookNow-body-right-bottom-body-content {
+
+    display: flex;
+    width: 95px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+
+}
+
+.ticketprice {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin-bottom: 0px;
+}
+
+.BookNowButt {
+
+    display: flex;
+    width: 190px;
+    padding: 15px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(182deg, #F4F4F4 1.49%, #909090 98.53%);
+    color: #101863;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
 
 }
