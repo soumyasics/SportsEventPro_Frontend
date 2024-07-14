@@ -15,12 +15,8 @@ function EventRequests() {
 const id=localStorage.getItem('organizerId')
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
-    console.log("url,", url);
-    useEffect(() => {
 
-        let res;
-
-
+    const getData=()=>{
         axiosInstance.post(`viewEvents`).then(res => {
 
             console.log(res);
@@ -28,11 +24,18 @@ const id=localStorage.getItem('organizerId')
             if ((res.data.data).length > 0)
                 setUserData(res.data.data);
             else
-                setUserData(null)
+                setUserData([])
             console.log(res.data.data);
         }).catch(err => {
             console.log(err);
         })
+    }
+    useEffect(() => {
+
+        let res;
+
+console.log("hered");
+      getData()
 
     }, []);
     useEffect(() => {
@@ -45,7 +48,8 @@ const id=localStorage.getItem('organizerId')
           .then((res) => {
             if (res.data.status === 200) {
               alert("Event Approved");
-              navigate("/admindashboard");
+              getData()
+
             }
           })
           .catch((error) => {
@@ -59,7 +63,8 @@ const id=localStorage.getItem('organizerId')
           .then((res) => {
             if (res.data.status === 200) {
               alert(" Request Rejected");
-              navigate("/admindashboard");
+              getData()
+
             }
           })
           .catch((error) => {
@@ -111,9 +116,9 @@ const id=localStorage.getItem('organizerId')
                                     <td className='col-2 ViewAllEvents-tableBodyData'> {x.category}</td>
                                     <td className='col-2 ViewAllEvents-tableBodyData-end'> {x.venue}</td>
                                     <td className='col-2 EventRequests-tableBodyData-end'>
-                                        <button type="button" onClick={()=>{approve(x._id)}}><img src={img2} alt='Approve' style={{marginLeft:"20px"}}/>
+                                        <button type="button" className="btn" onClick={()=>{approve(x._id)} }><img src={img2} alt='Approve' style={{marginLeft:"20px"}}/>
                                     </button>
-                                    <button type="button" onClick={()=>{approve(x._id)}}>   <img src={img3} alt='Reject' style={{marginLeft:"20px"}}/>
+                                    <button type="button" className="btn" onClick={()=>{reject(x._id)}}>   <img src={img3} alt='Reject' style={{marginLeft:"20px"}}/>
                                       </button></td>
 
                                 </tr>
