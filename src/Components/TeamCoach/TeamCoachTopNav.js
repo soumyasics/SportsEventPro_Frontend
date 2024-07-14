@@ -1,6 +1,4 @@
 
-
-
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import img from '../../Assets/Frame 19.png';
@@ -16,9 +14,6 @@ import ReactStars from 'react-stars';
 
 function TeamCoachTopNav() {
 
-
-
-
     const navigate = useNavigate()
     const handleLogout = () => {
 
@@ -31,6 +26,7 @@ function TeamCoachTopNav() {
             navigate("/TeamCoachLogin");
         }
     }, [navigate]);
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-black TeamCoachNavbar-Nav">
@@ -78,24 +74,35 @@ function TeamCoachTopNav() {
 
                                     <ul className="dropdown-menu" style={{ marginTop: "10px" }}>
 
-                                        <li>
-                                            <Link to="/TeamCoachAddTeamMembers" className='TeamCoachLink'>
+                                        <Link to="/TeamCoachAddTeamMembers" className='TeamCoachLink'>
 
+                                            <li>
                                                 <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Add Team Members</a>
-                                            </Link>
-                                        </li>
+                                            </li>
 
-                                        <li>
+                                        </Link>
+
                                         <Link to="/TeamCoachViewTeamMembers" className='TeamCoachLink'>
 
-                                            <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">View Team Members</a>
-                                            </Link>
+                                            <li>
+                                                <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">View Team Members</a>
+                                            </li>
 
-                                        </li>
+                                        </Link>
 
+<<<<<<< HEAD
                                         {/* <li>
                                             <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Add Substitute</a>
                                         </li> */}
+=======
+                                        <Link to='/TeamCoachAddSub' className='TeamCoachLink'>
+
+                                            <li>
+                                                <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Add Substitute</a>
+                                            </li>
+
+                                        </Link>
+>>>>>>> 0893ea7b8dc693f76588b650199379764b71116c
 
                                     </ul>
 
@@ -123,6 +130,7 @@ function TeamCoachTopNav() {
 
                                     <ul className="dropdown-menu" style={{ marginTop: "10px" }}>
 
+<<<<<<< HEAD
                                     <li>
                                             <Link to="/TeamCoachEnrollNow" className='TeamCoachLink'>
 
@@ -131,18 +139,31 @@ function TeamCoachTopNav() {
                                         </li>
                                         <li>
                                             <Link to="/" className='TeamCoachLink'>
+=======
+                                        <Link to="/TeamCoachEnrolledEvents" className='TeamCoachLink'>
+>>>>>>> 0893ea7b8dc693f76588b650199379764b71116c
 
+                                            <li>
                                                 <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Enrolled Events</a>
-                                            </Link>
-                                        </li>
+                                            </li>
 
-                                        <li>
-                                            <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Results</a>
-                                        </li>
+                                        </Link>
 
-                                        <li>
-                                            <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">View Reviews</a>
-                                        </li>
+                                        <Link to='/TeamCoachResults' className='TeamCoachLink'>
+
+                                            <li>
+                                                <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Results</a>
+                                            </li>
+
+                                        </Link>
+
+                                        <Link to='/TeamCoachRR' className='TeamCoachLink'>
+
+                                            <li>
+                                                <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">View Reviews</a>
+                                            </li>
+
+                                        </Link>
 
                                         <li>
                                             <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href=" " data-bs-toggle="modal" data-bs-target="#Complaint-Modal">Register Complaint</a>
@@ -247,7 +268,7 @@ function TeamCoachTopNav() {
 
             <div>
 
-                <div className="modal fade" id="Complaint-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+                <div className="modal fade" id="Complaint-Modal" tabIndex="-1" aria-labelledby="Complaint-ModalLabel" aria-hidden="true">
 
                     <div className="modal-dialog modal-dialog-centered">
 

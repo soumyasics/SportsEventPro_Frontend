@@ -56,13 +56,13 @@ function ViewerNavBar() {
 
                             <li className="nav-item">
 
-                                <a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Upcoming Events</a>
+                                <Link to='/ViewerUpcoming' style={{textDecoration:'none'}}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Upcoming Events</a></Link>
 
                             </li>
 
                             <li className="nav-item">
 
-                                <a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Book Tickets</a>
+                                <a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Booked Tickets</a>
 
                             </li>
 

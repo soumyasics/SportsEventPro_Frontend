@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './OrgnaiserRegistration.css'
+import './OrganiserRegistration.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 import axiosInstance from '../Constant/BaseURL'

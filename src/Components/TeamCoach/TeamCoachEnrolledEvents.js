@@ -64,7 +64,7 @@ const id=localStorage.getItem('tcId')
 
                             <div className="card-body">
 
-                                <div className="card-title" style={{ display: "flex", flexDirection: "row", gap: "107px" }}>
+                                <div className="card-title" style={{ display: "flex", flexDirection: "row", gap: "100px" }}>
 
                                     <div style={{ display: "flex", flexDirection: "column" }}>
                                         <h5 className='CardHeadTxtH5'>{x.name}</h5>{/* event name */}
@@ -146,13 +146,6 @@ const id=localStorage.getItem('tcId')
                         </div>
 
                     </div>
-
-                </div>
-
-                {/* div containing "load more" */}
-                <div>
-
-                    <a href=" " className='TeamCoachEnrolledEvents-a'>Load More</a>
 
                 </div>
 
