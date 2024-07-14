@@ -9,16 +9,12 @@ import { Link, useNavigate } from "react-router-dom";
 function OrganiserEnroll() {
 
     const navigate = useNavigate()
-
+const id=localStorage.getItem('organizerId')
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
-    useEffect(() => {
-
-        let res;
-
-
-        axiosInstance.post(`viewTeamCoachReqsByAdmin`).then(res => {
+    const getData=()=>{
+        axiosInstance.post(`viewEnrollmentsByOrganizerId/${id}`).then(res => {
 
             console.log(res);
 
@@ -31,6 +27,13 @@ function OrganiserEnroll() {
             console.log(err);
         })
 
+    }
+    useEffect(() => {
+
+        let res;
+
+
+     getData()
 
 
     }, []);
@@ -38,9 +41,41 @@ function OrganiserEnroll() {
         console.log("users", userData);
     })
 
-    const viewDetails = (id) => {
-        navigate(`/Teamcoachdetailspopup/${id}`)
-    }
+
+
+
+    const approve = (id) => {
+
+        axiosInstance
+          .post(`/approveEnrollmentById/${id}`)
+          .then((res) => {
+            if (res.data.status === 200) {
+              alert("Event Approved");
+              getData()
+
+            }
+          })
+          .catch((error) => {
+            console.error("Error!", error);
+          });
+      };
+    
+      const reject = (id) => {
+        axiosInstance
+          .post(`/rejectEnrollmentById/${id}`)
+          .then((res) => {
+            if (res.data.status === 200) {
+              alert(" Request Rejected");
+              getData()
+
+            }
+          })
+          .catch((error) => {
+            console.error("Error!", error);
+          });
+      };
+
+
     return (
 
         <div className="OrganiserEnrollParentDiv container">
@@ -64,7 +99,7 @@ function OrganiserEnroll() {
                                         {/* <img src={img} alt="frame" /> */}
 
                                         <img
-                                            src={`${url}/${x?.profilePic?.filename}`}
+                                            src={`${url}/${x?.eventId.banner?.filename}`}
                                             alt={img}
                                             className="OrganiserEnroll-img"
                                         />
@@ -73,33 +108,33 @@ function OrganiserEnroll() {
 
                                     <li className="col-3 text-start  ml-1 ">
 
-                                        <h5 className="fs-5"> {x.name}{/*Player Name*/}</h5>
-                                        <h6 className="fw-light fs-6 ">Sport : {x.category}</h6>
+                                        <h5 className="fs-5"> {x.coachId.name}{/*Player Name*/}</h5>
+                                        <h6 className="fw-light fs-6 ">Sport : {x.coachId.category}</h6>
 
                                     </li>
 
                                     <li className="col-3 text-start">
 
-                                        <h5 className="fs-5"> Team Name: {x.teamName}</h5>
-                                        <h6 className="fw-light fs-6 ">Total Team Members{x.totalteammembers} {/*Number Of teammates*/}</h6>
+                                        <h5 className="fs-5"> Team Name: {x.coachId.teamName}</h5>
+                                        {/* <h6 className="fw-light fs-6 ">Total Team Members{x.totalteammembers} Number Of teammates</h6> */}
 
                                     </li>
 
                                     <li className="col-3 text-start">
 
-                                        <h5 className="fs-5"> Event: {/* event name */}</h5>
-                                        <h6 className="fw-light fs-6 "> {/*Event date,time (in this order)*/}</h6>
+                                        <h5 className="fs-5"> Event: {x.eventId.teamName} {/* event name */}</h5>
+                                        <h6 className="fw-light fs-6 ">  {x.eventId.date.slice(0,10)}{x.eventId.time}{/*Event date,time (in this order)*/}</h6>
 
                                     </li>
 
                                     <li className="col-1 text-end">
 
-                                        <button className="btn btn-success px-4" ><img src={img2} alt=""/> Accept</button>
+                                        <button className="btn btn-success px-4" ><img src={img2} alt="" onClick={()=>{approve(x._id)}}/> Accept</button>
 
                                     </li>
                                     <li className="col-1 text-end">
 
-                                        <button className="btn btn-outline-danger px-4" ><img src={img3} alt=""/> Reject</button>
+                                        <button className="btn btn-outline-danger px-4" ><img src={img3} alt="" onClick={()=>{reject(x._id)}}/> Reject</button>
 
                                     </li>
 
