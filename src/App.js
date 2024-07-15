@@ -70,6 +70,8 @@ import TeamCoachViewEvents from './Components/TeamCoach/TeamCoachViewEvents';
 import TeamCoachEnrolledEvents from './Components/TeamCoach/TeamCoachEnrolledEvents';
 import TeamCoachResults from './Components/TeamCoach/TeamCoachResults';
 import TeamCoachReviewRatings from './Components/TeamCoach/TeamCoachReviewRatings';
+import TeamCoachEnrollNow from './Components/TeamCoach/TeamCoachEnrollNow';
+import OrganiserEnroll from './Components/Organiser/OrganiserEnroll';
 import TeamCoachViewResults from './Components/TeamCoach/TeamCoachViewResults';
 import ViewerUpcoming from './Components/Viewer/ViewerUpcoming';
 import ViewerBookNow from './Components/Viewer/ViewerBookNow';
@@ -87,6 +89,8 @@ function App() {
       <div className="App">
 
         <Routes>
+        <Route exact path="/OrganiserEnroll" element={[<MainNavbar />, <OrganiserEnroll />, <Landingpage2 />, <Landingpage3 />, <Aboutpage />, <Landingpage4 />, <UserFooter />]} />
+
           <Route exact path="/" element={[<MainNavbar />, <Userhome />, <Landingpage2 />, <Landingpage3 />, <Aboutpage />, <Landingpage4 />, <UserFooter />]} />
           <Route exact path="/landingpage3" element={<Landingpage3 />} />
           <Route exact path='/landingpage4' element={<Landingpage4 />} />
@@ -125,6 +129,10 @@ function App() {
           <Route exact path="/Adminsidebar1" element={[<Adminsidebar />]} />
           <Route exact path="/Adminsidebar" element={[<Adminsidebar />, <AdminDashbordTopContent />]} />
           <Route exact path='/adminmain' element={[<AdminNav />, <AdminMain />]} />
+          <Route exact path='/ViewAllViewer' element={[<ViewAllViewer/>]} />
+          <Route exact path='/ViewerProfilePopup/:id' element={[<ViewerProfilePopup/>]}/>
+          <Route exact path='/EventRequests' element={[<AdminNav />, <AdminMain data="EventRequests" />]} />
+          <Route path='/ViewAllEvents' element={[<AdminNav />, <AdminMain data='ViewAllEvents' />,<UserFooter/>]} />
           <Route exact path='/ViewAllViewer' element={[<ViewAllViewer />]} />
           <Route exact path='/ViewerProfilePopup/:id' element={[<ViewerProfilePopup />]} />
           <Route exact path='/EventRequests' element={[<EventRequests />]} />
@@ -145,6 +153,16 @@ function App() {
           <Route exact path="/TeamCoachLandingPage1" element={<TeamCoachLandingPage1 />} />
           <Route exact path="/TeamCoachLandingPage2" element={<TeamCoachLandingPage2 />} />
           <Route exact path="/TeamCoachLandingPage3" element={<TeamCoachLandingPage3 />} />
+          <Route exact path="/TeamCoachAddTeamMembers" element={<TeamCoachAddTeamMembers/>} />
+          <Route exact path="/TeamCoachEditTeamMembers/:id" element={[<TeamCoachTopNav/>,<TeamCoachEditTeamMembers/>]} />
+          <Route exact path='/TeamCoachAddSub' element={[<TeamCoachTopNav/>,<TeamCoachAddSub/>,<UserFooter/>]}/>
+          <Route exact path='/TeamCoachViewEvents' element={[<TeamCoachTopNav/>,<TeamCoachViewEvents/>,<UserFooter/>]} />
+          <Route exact path='/TeamCoachEnrolledEvents' element={[<TeamCoachTopNav/>,<TeamCoachEnrolledEvents/>,<UserFooter/>]} />
+          <Route exact path='/TeamCoachEnrollNow' element={[<TeamCoachTopNav/>,<TeamCoachEnrollNow/>,<UserFooter/>]} />
+
+          <Route exact path='/TeamCoachResults' element={[<TeamCoachTopNav/>,<TeamCoachResults/>,<UserFooter/>]} />
+          <Route exact path='/TeamCoachRR' element={[<TeamCoachTopNav/>,<TeamCoachReviewRatings/>,<UserFooter/>]} />
+          <Route exact path='/TeamCoachViewTeamMembers' element={[<TeamCoachTopNav/>,<TeamCoachViewTeamMembers/>,<UserFooter/>]} />
           <Route exact path="/TeamCoachAddTeamMembers" element={[<TeamCoachTopNav />, <TeamCoachAddTeamMembers />, <UserFooter />]} />
           <Route exact path="/TeamCoachEditTeamMembers" element={[<TeamCoachTopNav />, <TeamCoachEditTeamMembers />, <UserFooter />]} />
           <Route exact path='/TeamCoachAddSub' element={[<TeamCoachTopNav />, <TeamCoachAddSub />, <UserFooter />]} />

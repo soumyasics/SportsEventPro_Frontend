@@ -90,13 +90,9 @@ function TeamCoachTopNav() {
 
                                         </Link>
 
-                                        <Link to='/TeamCoachAddSub' className='TeamCoachLink'>
-
-                                            <li>
-                                                <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Add Substitute</a>
-                                            </li>
-
-                                        </Link>
+                                        {/* <li>
+                                            <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Add Substitute</a>
+                                        </li> */}
 
                                     </ul>
 
@@ -124,9 +120,15 @@ function TeamCoachTopNav() {
 
                                     <ul className="dropdown-menu" style={{ marginTop: "10px" }}>
 
-                                        <Link to="/TeamCoachEnrolledEvents" className='TeamCoachLink'>
+                                    <li>
+                                            <Link to="/TeamCoachEnrollNow" className='TeamCoachLink'>
 
-                                            <li>
+                                                <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Enroll Now</a>
+                                            </Link>
+                                        </li>
+                                        
+                                        <Link to="/TeamCoachEnrolledEvents" className='TeamCoachLink'>
+                                        <li>
                                                 <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Enrolled Events</a>
                                             </li>
 
