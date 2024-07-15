@@ -16,7 +16,7 @@ function ViewerScoreboard() {
                 {/* seperated div for backbutton and text */}
                 <div className='col  ViewerScoreboard-headercontainer-container-1'>
 
-                    <button className='ViewerScoreboard-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
+                    <Link to='/ViewerHomePage' style={{textDecoration:'none'}}><button className='ViewerScoreboard-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
                     <h1 className='ViewerScoreboard-headercontainer-h1'>Scoreboard</h1>
 
                     <div className='Viewer-search-container'>

@@ -189,6 +189,8 @@ function App() {
           <Route exact path='/OrganizerViewScore' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerViewScore' />, <UserFooter />]} />
           <Route exact path='/OrganizerEditScore' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerEditScore' />, <UserFooter />]} />
           <Route exact path='/OrganizerViewDetails' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerViewDetails' />, <UserFooter />]} />
+          <Route exact path='/OrganizerTicketGen' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerTicketGen'/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerTicketGen2' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerTicketGen2'/>,<UserFooter/>]} />
 
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />, <UserFooter />]} />
 

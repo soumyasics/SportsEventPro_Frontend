@@ -202,7 +202,8 @@ function ViewerEditProfile() {
                                 <option value="Karnataka">Karnataka</option>
                                 <option value="Maharashtra">Maharashtra</option>
 
-                            </select>                        </div>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
