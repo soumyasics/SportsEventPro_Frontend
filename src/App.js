@@ -75,6 +75,8 @@ import ViewerUpcoming from './Components/Viewer/ViewerUpcoming';
 import ViewerBookNow from './Components/Viewer/ViewerBookNow';
 import ViewerPayment from './Components/Viewer/ViewerPayment';
 import ViewerBookedTickets from './Components/Viewer/ViewerBookedTickets';
+import ViewerScoreboard from './Components/Viewer/ViewerScoreboard';
+import ViewerViewScoreboard from './Components/Viewer/ViewerViewScoreboard';
 
 function App() {
 
@@ -183,6 +185,8 @@ function App() {
           <Route exact path='/ViewerBookNow' element={[<ViewerNavBar />, <ViewerBookNow />, <UserFooter />]} />
           <Route exact path='/ViewerPayment' element={[<ViewerNavBar />, <ViewerPayment />, <UserFooter />]} />
           <Route exact path='/ViewerBookedTickets' element={[<ViewerNavBar />, <ViewerBookedTickets />, <UserFooter />]} />
+          <Route exact path='/ViewerScoreboard' element={[<ViewerNavBar/>,<ViewerScoreboard/>,<UserFooter/>]} />
+          <Route exact path='/ViewerViewScoreboard' element={[<ViewerNavBar/>,<ViewerViewScoreboard/>,<UserFooter/>]} />
 
           <Route path='/admin-viewAllViewer' element={[<MainNavbar />, <AdminMain data='admin-viewAllViewer' />]} />
 

@@ -68,7 +68,7 @@ function ViewerNavBar() {
 
                             <li className="nav-item">
 
-                                <a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Scoreboard</a>
+                            <Link to='/ViewerScoreboard' style={{textDecoration:'none'}}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Scoreboard</a></Link>
 
                             </li>
 
