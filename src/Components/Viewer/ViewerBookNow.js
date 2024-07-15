@@ -150,7 +150,7 @@ function ViewerBookNow() {
 
                                 </div>
 
-                                <Link to={{ pathname: "/ViewerPayment", state: { num, ticketPrice ,sing } }}>
+                                <Link style={{textDecoration:'none'}} to="/ViewerPayment" state={{ num, ticketPrice ,sing }}>
                                     <button className='BookNowButt'>Book Now</button>
                                 </Link>
 

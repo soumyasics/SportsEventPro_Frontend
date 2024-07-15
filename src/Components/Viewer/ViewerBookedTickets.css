@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Vast+Shadow&display=swap');
 
-.ViewerUpcoming {
+.ViewerBookedTickets {
 
     display: inline-flex;
     flex-direction: column;
@@ -14,7 +12,7 @@
 
 }
 
-.ViewerUpcoming-MainDiv {
+.ViewerBookedTickets-MainDiv {
 
     display: flex;
     width: 1329px;
@@ -24,27 +22,25 @@
 
 }
 
-.ViewerUpcoming-headercontainer-container-1 {
+.ViewerBookedTickets-headercontainer-container-1 {
 
     display: flex;
     flex-direction: row;
     align-self: flex-start;
+    width: 473px;
     height: 48px;
     margin-top: 80px;
-    gap: 683px;
 
 }
 
-
-.ViewerUpcoming-headercontainer-BackButton {
+.ViewerBookedTickets-headercontainer-BackButton {
 
     background-color: #00000000;
     border: none;
-    margin-top: 45px;
 
 }
 
-.ViewerUpcoming-headercontainer-h1 {
+.ViewerBookedTickets-headercontainer-h1 {
 
     margin-left: 30px;
     color: #000;
@@ -53,11 +49,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: 48px;
-    margin-top: 35px;
+    margin-top: 10px;
 
 }
 
-.ViewerUpcoming-content {
+.ViewerBookedTickets-content {
 
     display: flex;
     flex-direction: row;
@@ -68,7 +64,7 @@
 
 }
 
-.ViewerUpcoming-content-contain {
+.ViewerBookedTickets-content-contain {
 
     width: 421px;
     display: flex;
@@ -81,7 +77,7 @@
 
 }
 
-.ViewerUpcoming-content-contain-overlay {
+.ViewerBookedTickets-content-contain-overlay {
 
     position: absolute;
     z-index: 1;
@@ -89,7 +85,7 @@
 
 }
 
-.ViewerUpcoming-content-contain-h1-1 {
+.ViewerBookedTickets-content-contain-h1-1 {
 
     color: #FF7120;
     text-align: center;
@@ -102,7 +98,7 @@
 
 }
 
-.ViewerUpcoming-content-contain-h1-2 {
+.ViewerBookedTickets-content-contain-h1-2 {
 
     color: #FFF;
     font-family: "Roboto Serif";
@@ -113,7 +109,7 @@
 
 }
 
-.ViewerUpcoming-img {
+.ViewerBookedTickets-img {
 
     z-index: 0;
     width: 421px;
@@ -195,6 +191,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
+    margin-bottom: 3px;
 
 }
 
@@ -221,10 +218,12 @@
 
     color: #000;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: 15px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 130%;
+    margin-bottom: 0px;
+    margin-top: -9px;
 
 }
 
@@ -239,7 +238,7 @@
 
 }
 
-/* .ViewerUpcoming-button-contain {
+/* .ViewerBookedTickets-button-contain {
 
     display: flex;
     width: 400px;
@@ -250,7 +249,7 @@
 
 } */
 
-.ViewerUpcoming-button {
+.ViewerBookedTickets-button {
 
     margin-left: 73%;
     display: flex;
@@ -271,7 +270,7 @@
 
 }
 
-.ViewerUpcoming-a {
+.ViewerBookedTickets-a {
 
     color: #0084E4;
     text-align: center;
@@ -282,5 +281,40 @@
     font-weight: 600;
     line-height: normal;
     text-decoration: none;
+
+}
+
+.ViewerBookedTxtButton1 {
+
+    position: absolute;
+    color: #0012AF;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    display: flex;
+    padding: 10px 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    margin-top: 9px;
+    margin-left: 15px;
+
+}
+
+.ViewerBookedPrice {
+
+    position: absolute;
+    color: #000;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    margin-left: 61.5%;
+    margin-top: 20px;
 
 }
