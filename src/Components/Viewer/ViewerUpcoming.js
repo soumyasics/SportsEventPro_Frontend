@@ -17,10 +17,10 @@ function ViewerUpcoming() {
                 {/* seperated div for backbutton and text */}
                 <div className='col  ViewerUpcoming-headercontainer-container-1'>
 
-                    <div style={{display:'flex' , flexDirection:'row'}}>
+                    <div style={{display:'flex' , flexDirection:'row',width:'max-content'}}>
 
-                        <button className='ViewerUpcoming-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
-                        <h1 className='ViewerUpcoming-headercontainer-h1'>Results</h1>
+                        <Link to='/ViewerHomePage'><button className='ViewerUpcoming-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
+                        <h1 className='ViewerUpcoming-headercontainer-h1'>Upcoming Events</h1>
 
                     </div>
 

@@ -11,6 +11,7 @@ import img9 from '../../Assets/Rectangle 1.png'
 import img10 from '../../Assets/image 4.png'
 import img11 from '../../Assets/image 3.png'
 import img12 from '../../Assets/image 15.png'
+import { Link } from 'react-router-dom'
 
 function ViewerHomePage() {
 
@@ -72,7 +73,7 @@ function ViewerHomePage() {
 
                     <div>
 
-                        <button type="button" class="btn btn-outline-light ViewerHomePage-Div-Header-Text-Button">Book Now</button>
+                        <Link to='/ViewerUpcoming' style={{textDecoration:'none'}}><button type="button" class="btn btn-outline-light ViewerHomePage-Div-Header-Text-Button">Book Now</button></Link>
 
                     </div>
 
@@ -191,7 +192,7 @@ function ViewerHomePage() {
 
                         <div>
 
-                            <button className='btn btn-light rounded-4 ViewerHomePage-Text-Contain-Button-1'>Book Now</button>
+                            <Link to='/ViewerUpcoming' style={{textDecoration:'none'}}><button className='btn btn-light rounded-4 ViewerHomePage-Text-Contain-Button-1'>Book Now</button></Link>
 
                         </div>
 

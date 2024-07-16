@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Vast+Shadow&display=swap');
 
-.ViewerUpcoming {
+.ViewerScoreboard {
 
     display: inline-flex;
     flex-direction: column;
@@ -14,37 +12,43 @@
 
 }
 
-.ViewerUpcoming-MainDiv {
+.ViewerScoreboard-MainDiv {
 
     display: flex;
     width: 1329px;
     flex-direction: column;
     align-items: center;
     gap: 39px;
-
+    
 }
 
-.ViewerUpcoming-headercontainer-container-1 {
+.ViewerScoreboard-headercontainer-container-1 {
 
     display: flex;
     flex-direction: row;
     align-self: flex-start;
+    width: 473px;
     height: 48px;
     margin-top: 80px;
-    gap: 683px;
 
 }
 
+.Viewer-search-container {
 
-.ViewerUpcoming-headercontainer-BackButton {
+    margin-left: 700px;
+    margin-top: -20px;
+
+}
+
+.ViewerScoreboard-headercontainer-BackButton {
 
     background-color: #00000000;
     border: none;
-    margin-top: 45px;
+    margin-top: 25px;
 
 }
 
-.ViewerUpcoming-headercontainer-h1 {
+.ViewerScoreboard-headercontainer-h1 {
 
     margin-left: 30px;
     color: #000;
@@ -53,11 +57,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: 48px;
-    margin-top: 35px;
+    margin-top: 15px;
 
 }
 
-.ViewerUpcoming-content {
+.ViewerScoreboard-content {
 
     display: flex;
     flex-direction: row;
@@ -68,11 +72,12 @@
 
 }
 
-.ViewerUpcoming-content-contain {
+.ViewerScoreboard-content-contain {
 
     width: 421px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     border-radius: 20px;
     border: 1px solid #BCBCBC;
@@ -81,46 +86,12 @@
 
 }
 
-.ViewerUpcoming-content-contain-overlay {
+.ViewerScoreboard-img {
 
-    position: absolute;
-    z-index: 1;
-    margin-top: 38px;
-
-}
-
-.ViewerUpcoming-content-contain-h1-1 {
-
-    color: #FF7120;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: "Vast Shadow";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-
-}
-
-.ViewerUpcoming-content-contain-h1-2 {
-
-    color: #FFF;
-    font-family: "Roboto Serif";
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 130%;
-
-}
-
-.ViewerUpcoming-img {
-
-    z-index: 0;
     width: 421px;
-    height: 348px;
-    flex-shrink: 0;
+    height: 350.653px;
     margin-left: 1px;
-    border: 1px solid #BCBCBC;
+    border: 1px solid #BCBCBC; 
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 
@@ -128,17 +99,8 @@
 
 .CardHeadTxtH5 {
 
-    color: #000;
-    font-family: Roboto;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 130%;
-
-}
-
-.CardHeadTxtH1-1 {
-
+    flex: 1 0 0;
+    align-self: stretch;
     color: #000;
     font-family: Roboto;
     font-size: 16px;
@@ -217,42 +179,10 @@
 
 }
 
-.CardHeadTxtH3 {
 
-    color: #000;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 130%;
+.ViewerScoreboard-button {
 
-}
-
-.CardHeadTxtH4 {
-
-    color: #000;
-    font-family: Roboto;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 130%;
-
-}
-
-/* .ViewerUpcoming-button-contain {
-
-    display: flex;
-    width: 400px;
-    height: 41px;
-    padding: 0px 4px 0px 294px;
-    justify-content: flex-end;
-    align-items: center;
-
-} */
-
-.ViewerUpcoming-button {
-
-    margin-left: 73%;
+    margin-left: 76%;
     display: flex;
     padding: 10px 15px;
     justify-content: center;
@@ -267,11 +197,10 @@
     font-style: normal;
     font-weight: 600;
     line-height: 130%;
-    /* 20.8px */
 
 }
 
-.ViewerUpcoming-a {
+.ViewerScoreboard-a {
 
     color: #0084E4;
     text-align: center;

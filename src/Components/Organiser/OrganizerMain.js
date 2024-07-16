@@ -10,6 +10,8 @@ import OrganiserEditProfile from './OrganiserEditProfile';
 import OrganiserViewScore from './OrganiserViewScore';
 import OrganiserViewDetails from './OrganiserViewDetails';
 import OrganiserEditScore from './OrganiserEditScore';
+import OrganiserTicketGen from './OrganiserTicketGen';
+import OrganiserTicketGen2 from './OrganiserTicketGen2';
 
 function OrganizerMain({ data }) {
 
@@ -50,6 +52,10 @@ function OrganizerMain({ data }) {
               <OrganiserEditScore />
             ) : data === 'OrganizerViewDetails' ? (
               <OrganiserViewDetails />
+            ) : data === 'OrganizerTicketGen' ? (
+              <OrganiserTicketGen />
+            ) : data === 'OrganizerTicketGen2' ? (
+              <OrganiserTicketGen2 />
             )
 
               : (

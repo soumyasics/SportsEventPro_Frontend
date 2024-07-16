@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Vast+Shadow&display=swap');
+
+.OrganiserTicketGen2 {
+
+    display: flex;
+    width: 100%;
+    margin-left: -13%;
+
+}
+
+.OrganiserTicketGen2MainDiv {
+
+    display: flex;
+    width: 510px;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    flex-shrink: 0;
+    margin-left: 50%;
+    transform: translate(-50%);
+
+}
+
+.OrganiserTicketGen2-headercontainer-container-1 {
+
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    height: 48px;
+    margin-top: 80px;
+    gap: 683px;
+
+}
+
+.OrganiserTicketGen2-headercontainer-BackButton {
+
+    background-color: #00000000;
+    border: none;
+    margin-top: 45px;
+
+}
+
+.OrganiserTicketGen2-headercontainer-h1 {
+
+    margin-left: 30px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    margin-top: 35px;
+
+}
+
+.OrganiserTicketGen2-Content-Input-Select-Option {
+
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+}
+
+.OrganiserTicketGen2-Content-Input-Country {
+
+    appearance: none;
+    /* Remove default arrow */
+    -webkit-appearance: none;
+    /* Remove default arrow in Safari */
+    -moz-appearance: none;
+    /* Remove default arrow in Firefox */
+    background-image: url("../../Assets/OrganiserRegistration.svg");
+    background-repeat: no-repeat;
+    background-size: 4%;
+    background-color: white;
+    background-position-x: 97%;
+    background-position-y: center;
+    padding: 8px 12px;
+    width: 510px;
+    height: 36px;
+    cursor: pointer;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+
+}
+
+.OrganiserTicketGen2-label-h1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    align-self: stretch;
+
+}
+
+.OrganiserTicketGen2-button {
+
+    display: flex;
+    width: 240px;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    background: #000;
+    color: white;
+    color: var(--icon-color, #FFF);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 25px;
+
+}
+
+.OrganiserTicketGen2-body-right-top {
+
+    width: 517px;
+    display: flex;
+    padding: 20px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    align-self: stretch;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+}
+
+.OrganiserTicketGen2-body-h1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+}
+
+
+.OrganiserTicketGen2-body-2 {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+
+}
+
+
+.OrganiserTicketGen2-body-h1-1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+
+}
+
+.OrganiserTicketGen2-body-h1-2 {
+
+    display: flex;
+    height: 24px;
+    width: 75px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #B9B9B9;
+    color: #000;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
+.OrganiserTicketGen2-body-h3 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin-top: 10px;
+
+}
+
+.OrganiserTicketGen2-body-h4 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    margin-top: 4px;
+    margin-left: 43%;
+
+}
+
+.OrganiserTicketGen2-body-2-2 {
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15px;
+
+}
+
+.OrganiserTicketGen2-body-h5 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin-top: 3px;
+
+}
+
+.OrganiserTicketGen2-body-h2 {
+
+    display: flex;
+    width: 168px;
+    height: 29px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    color: #000;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+
+}
+
+.OrganiserTicketGen2-label-h1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    align-self: stretch;
+
+}
+
+.OrganiserTicketGen2-input {
+
+    display: flex;
+    width: 236px;
+    padding: 8px 12px;
+    align-items: center;
+    gap: 4px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--icon-color, #FFF);
+
+}
+
+.OrganiserTicketGen2-input-date {
+
+    display: flex;
+    width: 236px;
+    padding: 8px 12px;
+    align-items: center;
+    gap: 4px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--icon-color, #FFF);
+
+}
+
+.input[type="date"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

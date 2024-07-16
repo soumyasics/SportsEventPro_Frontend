@@ -104,7 +104,7 @@ function TeamCoachEnrollNow() {
         return (
                         <div className="card TeamCoachEnrolledEvents-content-contain">
 
-                            <img src={img} className="card-img-top TeamCoachEnrolledEvents-img" alt="..." />{/*event image */}
+                            <img src={`${url}/${x?.banner?.filename}`} className="card-img-top TeamCoachEnrolledEvents-img" alt="..." />{/*event image */}
 
                             <div className="card-body">
 
