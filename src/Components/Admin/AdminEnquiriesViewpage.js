@@ -14,12 +14,8 @@ function AdminEnquiriesViewpage() {
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
-    useEffect(() => {
-
-        let res;
-
-
-        axiosInstance.post(`/viewallEnquiries`).then(res => {
+    const getData=()=>{
+        axiosInstance.post(`/viewEnquiries`).then(res => {
 
             console.log(res);
 
@@ -31,6 +27,13 @@ function AdminEnquiriesViewpage() {
         }).catch(err => {
             console.log(err);
         })
+    }
+    useEffect(() => {
+
+        let res;
+
+getData()
+      
 
 
 
@@ -38,18 +41,23 @@ function AdminEnquiriesViewpage() {
     useEffect(() => {
         console.log("users", userData);
     })
-// just for to use  deleting the object but not working
-//     function Abc() {
-//         useEffect(() => {
-//             axiosInstance.post(`/deleteEnquiryById/:id`).then(res => {
-//                 console.log(res);
-//             })
-//                 .catch(err => {
-//                     console.log(err);
-//                 })
+    const deleteEnquiry=(id)=> {
+      
+            axiosInstance.post(`/deleteEnquiryById/${id}`).then(res => {
+                console.log(res);
+                if(res.data.status==200){
+                    alert('Removed Succesfully')
+                getData()
+                }
+                else
+                alert(res.data.msg)
+            })
+                .catch(err => {
+                    console.log(err);
+                })
         
-//         })     
-// }
+            
+}
 
 
 
@@ -76,7 +84,7 @@ function AdminEnquiriesViewpage() {
                 <td className = 'col-2 AdminEnquiriesViewpage-tableHeadData'>Enquiries Type</td>
                 <td className = 'col-2 AdminEnquiriesViewpage-tableHeadData'>Contact Number</td>
                 <td className = 'col-2 AdminEnquiriesViewpage-tableHeadData'>Message</td>
-                <td className = 'col-2 AdminEnquiriesViewpage-tableHeadData'>Edit</td>
+                <td className = 'col-2 AdminEnquiriesViewpage-tableHeadData'>Deletion</td>
 
 
             </tr>
@@ -85,7 +93,7 @@ function AdminEnquiriesViewpage() {
         <tbody>
         {
 
-(userData&&userData.length>1)?(userData.map((x,index) => {
+(userData&&userData.length>=1)?(userData.map((x,index) => {
 
 
 return(
@@ -97,7 +105,7 @@ return(
                 <td className = 'col-2 AdminEnquiriesViewpage-tableBodyData'>{x.enquiriestype} {/* Email id */}</td>
                 <td className = 'col-2 AdminEnquiriesViewpage-tableBodyData'>{x.contactnumber} {/* State */}</td>
                 <td className = 'col-2 AdminEnquiriesViewpage-tableBodyData'>{x.message} {/* State */}</td>
-                <td className = 'col-2 AdminEnquiriesViewpage-tableBodyData'><button>Delete</button></td>
+                <td className = 'col-2 AdminEnquiriesViewpage-tableBodyData'><button className='btn btn-secondary' onClick={()=>{deleteEnquiry(x._id)}}>Delete</button></td>
 
 
             </tr>

@@ -122,7 +122,7 @@ const id=localStorage.getItem('organizerId')
 
                                     <li className="col-3 text-start">
 
-                                        <h5 className="fs-5"> Event: {x.eventId.teamName} {/* event name */}</h5>
+                                        <h5 className="fs-5"> Event: {x.eventId.name} {/* event name */}</h5>
                                         <h6 className="fw-light fs-6 ">  {x.eventId.date.slice(0,10)}{x.eventId.time}{/*Event date,time (in this order)*/}</h6>
 
                                     </li>
