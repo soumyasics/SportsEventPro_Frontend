@@ -12,6 +12,7 @@ import OrganiserViewDetails from './OrganiserViewDetails';
 import OrganiserEditScore from './OrganiserEditScore';
 import OrganiserTicketGen from './OrganiserTicketGen';
 import OrganiserTicketGen2 from './OrganiserTicketGen2';
+import OrganiserViewReport from './OrganiserViewReport';
 
 function OrganizerMain({ data }) {
 
@@ -56,7 +57,11 @@ function OrganizerMain({ data }) {
               <OrganiserTicketGen />
             ) : data === 'OrganizerTicketGen2' ? (
               <OrganiserTicketGen2 />
+            ) : data === 'OrganizerViewReport' ? (
+              <OrganiserViewReport />
             )
+
+            
 
               : (
                 <OrganiserDashboard />

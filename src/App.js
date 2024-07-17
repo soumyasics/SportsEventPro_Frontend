@@ -74,11 +74,12 @@ import TeamCoachEnrollNow from './Components/TeamCoach/TeamCoachEnrollNow';
 import OrganiserEnroll from './Components/Organiser/OrganiserEnroll';
 import TeamCoachViewResults from './Components/TeamCoach/TeamCoachViewResults';
 import ViewerUpcoming from './Components/Viewer/ViewerUpcoming';
-import ViewerBookNow from './Components/Viewer/ViewerBookNow';
+import ViewerUpcomingDetails from './Components/Viewer/ViewerUpcomingDetails';
 import ViewerPayment from './Components/Viewer/ViewerPayment';
 import ViewerBookedTickets from './Components/Viewer/ViewerBookedTickets';
 import ViewerScoreboard from './Components/Viewer/ViewerScoreboard';
 import ViewerViewScoreboard from './Components/Viewer/ViewerViewScoreboard';
+import ViewerReviewRating from './Components/Viewer/ViewerReviewRating';
 
 function App() {
 
@@ -191,6 +192,7 @@ function App() {
           <Route exact path='/OrganizerViewDetails' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerViewDetails' />, <UserFooter />]} />
           <Route exact path='/OrganizerTicketGen' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerTicketGen'/>,<UserFooter/>]} />
           <Route exact path='/OrganizerTicketGen2' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerTicketGen2'/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerViewReport' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewReport'/>,<UserFooter/>]} />
 
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />, <UserFooter />]} />
 
@@ -202,11 +204,12 @@ function App() {
           <Route exact path='/ViewerProfile' element={[<ViewerNavBar />, <ViewerProfile />, <UserFooter />]} />
           <Route exact path='/ViewerEditProfile' element={<ViewerEditProfile />} />
           <Route exact path='/ViewerUpcoming' element={[<ViewerNavBar />, <ViewerUpcoming />, <UserFooter />]} />
-          <Route exact path='/ViewerBookNow' element={[<ViewerNavBar />, <ViewerBookNow />, <UserFooter />]} />
+          <Route exact path='/ViewerUpcomingDetails' element={[<ViewerNavBar />, <ViewerUpcomingDetails />, <UserFooter />]} />
           <Route exact path='/ViewerPayment' element={[<ViewerNavBar />, <ViewerPayment />, <UserFooter />]} />
           <Route exact path='/ViewerBookedTickets' element={[<ViewerNavBar />, <ViewerBookedTickets />, <UserFooter />]} />
           <Route exact path='/ViewerScoreboard' element={[<ViewerNavBar/>,<ViewerScoreboard/>,<UserFooter/>]} />
           <Route exact path='/ViewerViewScoreboard' element={[<ViewerNavBar/>,<ViewerViewScoreboard/>,<UserFooter/>]} />
+          <Route exact path='/ViewerReviewRating' element={[<ViewerNavBar/>,<ViewerReviewRating/>,<UserFooter/>]} />
 
           <Route path='/admin-viewAllViewer' element={[<MainNavbar />, <AdminMain data='admin-viewAllViewer' />]} />
 
