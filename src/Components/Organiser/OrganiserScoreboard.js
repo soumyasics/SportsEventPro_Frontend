@@ -1,13 +1,64 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './OrganiserScoreboard.css'
 import img from '../../Assets/FOOTBALL POSTER TEMPLATE 1(3).png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import axiosInstance from '../Constant/BaseURL'
+
+
+const url = axiosInstance.defaults.url;
+
+console.log("url,", url);
+
+
 
 function OrganiserScoreboard() {
 
+    const navigate = useNavigate()
+
+
+    const [userData, setUserData] = useState();
+
+
+
+        const getData=()=>{
+
+        axiosInstance.post(`/viewEvents`).then(res => {
+
+            console.log(res);
+
+
+            setUserData(res.data.data);
+
+        }).catch(err => {
+            console.log(err);
+        })
+
+    }
+    useEffect(() => {
+
+        let res;
+
+getData()
+      
+
+
+
+    }, []);
     return (
 
-        <div className='OrganiserScoreBoard'>
+
+            
+
+        <div className='OrganiserScoreBoard '>
+        <tbody>
+        {
+
+(userData&&userData.length>=1)?(userData.map((x,index) => {
+
+
+return(
+                       
+  
 
             <div className='OrganiserScoreBoard-MainDiv'>
 
@@ -21,21 +72,21 @@ function OrganiserScoreboard() {
                         {/*a single card is from here to */}
                         <div className="card OrganiserScoreBoard-content-contain">
 
-                            <img src={img} className="card-img-top OrganiserScoreBoard-img" alt="..." />{/*event image */}
+                        <img className='OrganiserScoreBoard-img' src={`${url}/${x?.banner?.filename}`} />{/*event image */}
 
                             <div className="card-body" style={{width:"100%"}}>
 
                                 <div className="card-title">
 
-                                    <h5 className='CardHeadTxtH5'>TVM Junior Sports</h5>{/* event name */}
-                                    <h1 className='CardHeadTxtH1'>Football</h1>{/* event category */}
+                                    <h5 className='CardHeadTxtH5'><li>{x.name}</li></h5>{/* event name */}
+                                    <h1 className='CardHeadTxtH1'>{x.category}</h1>{/* event category */}
 
                                 </div>
 
                                 <div className="card-text">
 
-                                    <p className='CardTextP'>Place:{/* event location */}</p>
-                                    <h2 className='CardTextH2'>12/12/2024, 2:00 PM</h2> {/* event date and time */}
+                                    <p className='CardTextP'>Place:{x.venue}{/* event location */}</p>
+                                    <h2 className='CardTextH2'>{x.time}</h2> {/* event date and time */}
                                     <div className='OrganiserScoreBoard-button-contain'>
 
                                         <Link to='/OrganizerViewScore' style={{textDecoration:"none"}}><button className='OrganiserScoreBoard-button'>View Score</button></Link>
@@ -55,7 +106,11 @@ function OrganiserScoreboard() {
 
 
             </div>
+)})):<h1></h1>
 
+
+}
+        </tbody>
         </div>
 
     )
