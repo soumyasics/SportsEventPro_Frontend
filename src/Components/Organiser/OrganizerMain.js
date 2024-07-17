@@ -9,56 +9,65 @@ import OrganiserScoreboard from './OrganiserScoreboard';
 import OrganiserEditProfile from './OrganiserEditProfile';
 import OrganiserViewScore from './OrganiserViewScore';
 import OrganiserViewDetails from './OrganiserViewDetails';
+import OrganiserEditScore from './OrganiserEditScore';
+import OrganiserTicketGen from './OrganiserTicketGen';
+import OrganiserTicketGen2 from './OrganiserTicketGen2';
 
-function OrganizerMain({data}) {
-   
-  
-   
+function OrganizerMain({ data }) {
 
-      const navigate = useNavigate();
-    
-      useEffect(() => {
-        console.log(localStorage.getItem("organizerId"));
-        if (localStorage.getItem("organizerId") == '') {
-          navigate("/OrganizerLogin");
-        }
-      }, [navigate]);
-      return (
-        <div>
-          <div>
-            <div className='row'>
-              <div className='col-3'>
-                <OrganiserSideBar />
-              </div>
-              <div className='col-9'>
-                {data === 'OrganizerDashboard' ? (
-                  <OrganiserDashboard/>
-                ) : data === 'OrganizerScheduleEvents' ? (
-                  <OrganizerScheduleEvents />
-                ) : data === 'OrganizerViewEvents' ? (
-                  <OrganiserViewEvents/>
-                ) : data === 'OrganizerEnroll' ? (
-                  <OrganiserEnroll/>
-                ) : data === 'OrganizerScoreBoard' ? (
-                  <OrganiserScoreboard/>
-                )  : data === 'OrganiserEditProfile' ? (
-                  <OrganiserEditProfile/>
-                ) : data === 'OrganizerViewScore' ? (
-                  <OrganiserViewScore/>
-                ) : data === 'OrganizerViewDetails' ? (
-                  <OrganiserViewDetails/>
-                ) 
-             
-                : (
-                  <OrganiserDashboard />
-                )}
-              </div>
-            </div>
+
+
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(localStorage.getItem("organizerId"));
+    if (localStorage.getItem("organizerId") == '') {
+      navigate("/OrganizerLogin");
+    }
+  }, [navigate]);
+  return (
+    <div>
+      <div>
+        <div className='row'>
+          <div className='col-3'>
+            <OrganiserSideBar />
+          </div>
+          <div className='col-9'>
+            {data === 'OrganizerDashboard' ? (
+              <OrganiserDashboard />
+            ) : data === 'OrganizerScheduleEvents' ? (
+              <OrganizerScheduleEvents />
+            ) : data === 'OrganizerViewEvents' ? (
+              <OrganiserViewEvents />
+            ) : data === 'OrganizerEnroll' ? (
+              <OrganiserEnroll />
+            ) : data === 'OrganizerScoreBoard' ? (
+              <OrganiserScoreboard />
+            ) : data === 'OrganiserEditProfile' ? (
+              <OrganiserEditProfile />
+            ) : data === 'OrganizerViewScore' ? (
+              <OrganiserViewScore />
+            ) : data === 'OrganizerEditScore' ? (
+              <OrganiserEditScore />
+            ) : data === 'OrganizerViewDetails' ? (
+              <OrganiserViewDetails />
+            ) : data === 'OrganizerTicketGen' ? (
+              <OrganiserTicketGen />
+            ) : data === 'OrganizerTicketGen2' ? (
+              <OrganiserTicketGen2 />
+            )
+
+              : (
+                <OrganiserDashboard />
+              )}
           </div>
         </div>
-      )
-    }
-    
-    
+      </div>
+    </div>
+  )
+}
+
+
 
 export default OrganizerMain

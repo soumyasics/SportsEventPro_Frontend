@@ -63,18 +63,18 @@ function TeamCoachViewTeamMembers() {
                     <tbody>
                         {
 
-                            (userData&&userData.length > 1)?(userData.map((x, index) => {
+                            (userData&&userData.length >= 1)?(userData.map((x, index) => {
 
 
                                 return (
                                     <tr className='TeamCoachViewTeamMembers-tableBodyRow' >
-
+{console.log(x.name)}
                                         <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'>{index}</td>
                                         <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'>{x.name}</td>
                                         <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'>{x.contact}</td>
                                         <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'>{x.email}</td>
                                         <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'>{x.state} { }</td>
-                                        <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'></td>
+                                        <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'><Link to={`/TeamCoachEditTeamMembers/${x._id}`}>View Profile</Link></td>
 
 
                                     </tr>

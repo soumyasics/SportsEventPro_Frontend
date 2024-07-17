@@ -20,7 +20,7 @@ const id=localStorage.getItem('organizerId')
         let res;
 
 
-        axiosInstance.post(`viewEvents`).then(res => {
+        axiosInstance.post(`viewApprovedEvents`).then(res => {
 
             console.log(res);
 

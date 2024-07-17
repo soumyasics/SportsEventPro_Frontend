@@ -1,5 +1,7 @@
 import React from 'react'
 import './TeamCoachResults.css'
+import { Link } from 'react-router-dom'
+
 import img from '../../Assets/FOOTBALL POSTER TEMPLATE 1(3).png'
 import img2 from "../../Assets/Back Button.svg"
 
@@ -15,7 +17,7 @@ function TeamCoachResults() {
                 {/* seperated div for backbutton and text */}
                 <div className='col  TeamCoachResults-headercontainer-container-1'>
 
-                    <button className='OrganiserEditProfile-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
+                    <button className='TeamCoachResults-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
                     <h1 className='TeamCoachResults-headercontainer-h1'>Results</h1>
 
                 </div>
@@ -32,7 +34,7 @@ function TeamCoachResults() {
 
                             <div className="card-body">
 
-                                <div className="card-title" style={{ display: "flex", flexDirection: "row", gap: "107px" }}>
+                                <div className="card-title" style={{ display: "flex", flexDirection: "row", gap: "100px" }}>
 
                                     <div style={{ display: "flex", flexDirection: "column" }}>
                                         <h5 className='CardHeadTxtH5'>TVM Junior Sports</h5>{/* event name */}
@@ -53,7 +55,7 @@ function TeamCoachResults() {
                                     <h2 className='CardTextH2'>12/12/2024, 2:00 PM</h2> {/* event date and time */}
                                     <div className='TeamCoachResults-button-contain'>
 
-                                        <button className='TeamCoachResults-button'> Results</button>
+                                        <Link to='/TeamCoachViewResults' style={{textDecoration:'none'}}><button className='TeamCoachResults-button'> Results</button></Link>
 
                                     </div>
 
@@ -65,13 +67,6 @@ function TeamCoachResults() {
                         {/* here is a single card  */}
 
                     </div>
-
-                </div>
-
-                {/* div containing "load more" */}
-                <div>
-
-                    <a href=" " className='TeamCoachResults-a'>Load More</a>
 
                 </div>
 

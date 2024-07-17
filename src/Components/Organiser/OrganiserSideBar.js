@@ -67,8 +67,8 @@ function OrganiserSideBar() {
 
                         <ul class="collapse list-group mt-2 rounded-2" id='li-1'>
 
-                            <li><a class="list-group-item ms-4 w-75 rounded-top-2" href=" ">Ticket Generation</a></li>
-                            <li><a class="list-group-item ms-4 w-75 rounded-bottom-2" href=" ">View Report</a></li>
+                            <Link to='/OrganizerTicketGen' style={{textDecoration:'none'}}><li style={{listStyle:'none'}}><a class="list-group-item ms-4 w-75 rounded-top-2" href=" ">Ticket Generation</a></li></Link>
+                            <li style={{listStyle:'none'}}><a class="list-group-item ms-4 w-75 rounded-bottom-2" href=" ">View Report</a></li>
 
                         </ul>
 
@@ -90,8 +90,8 @@ function OrganiserSideBar() {
 
                         <ul class="collapse list-group mt-2 rounded-2" id='li-2'>
 
-                            <li><a class="list-group-item ms-4 rounded-top-2 w-75" href=" ">Add Blogs</a></li>
-                            <li><a class="list-group-item ms-4 rounded-bottom-2 w-75" href=" ">View Blogs</a></li>
+                            <li style={{listStyle:'none'}}><a class="list-group-item ms-4 rounded-top-2 w-75" href=" ">Add Blogs</a></li>
+                            <li style={{listStyle:'none'}}><a class="list-group-item ms-4 rounded-bottom-2 w-75" href=" ">View Blogs</a></li>
 
                         </ul>
 
