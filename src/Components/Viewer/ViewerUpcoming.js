@@ -74,7 +74,7 @@ function ViewerUpcoming() {
                                     <h2 className='CardTextH2'>12/12/2024, 2:00 PM</h2> {/* event date and time */}
                                     <div className='ViewerUpcoming-button-contain'>
 
-                                        <Link to='/ViewerBookNow' style={{ textDecoration: 'none' }}><button className='ViewerUpcoming-button'> Book Now</button></Link>
+                                        <Link to='/ViewerUpcomingDetails' style={{ textDecoration: 'none' }}><button className='ViewerUpcoming-button'> Book Now</button></Link>
 
                                     </div>
 
