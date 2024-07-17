@@ -1,9 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './OrganiserEditScore.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import img from "../../Assets/Back Button.svg"
+import axiosInstance from '../Constant/BaseURL';
 
 function OrganiserEditScore() {
+    const { id } = useParams();
+
+    const navigate=useNavigate()
+
+    const [userData, setUserData] = useState([]);
+    const url = axiosInstance.defaults.url;
+    console.log("url,", url);
+    const getData=()=>{
+        axiosInstance.post(`/editEventById`).then(res => {
+
+            console.log(res);
+
+            if ((res.data.data).length > 0)
+                setUserData(res.data.data);
+            else
+            setUserData(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+    useEffect(() => {
+
+        let res;
+
+getData()
+      
+
+
+
+    }, []);
 
     return (
 
@@ -36,29 +68,40 @@ function OrganiserEditScore() {
 
 
                     <tbody className='tbodyclass'>{/* <------ Array map inside this */}
+                     
 
+                    {
+
+(userData&&userData.length>=1)?(userData.map((x,index) => {
+
+
+return(
 
                         <tr className='OrganiserEditScore-tableBodyRow container' >
 
-                            <td className='col-2 OrganiserEditScore-tableBodyData'>1</td>{/* Sl no */}
-                            <td className='col-3 OrganiserEditScore-tableBodyData'>The Kings</td>{/* Team Name */}
-                            <td className='col-2 OrganiserEditScore-tableBodyData'>18</td>{/* Score */}
-                            <td className='col-3 OrganiserEditScore-tableBodyData'>First Place</td>{/* Result */}
-                            <td className='col-2 OrganiserEditScore-tableBodyData-end'> <Link to='/OrganizerViewDetails'><a href=' '>View Details</a></Link></td>
+                            <td className='col-2 OrganiserEditScore-tableBodyData'>{index}</td>{/* Sl no */}
+                            <td className='col-3 OrganiserEditScore-tableBodyData'>{x.name}</td>{/* Team Name */}
+                            <td className='col-2 OrganiserEditScore-tableBodyData'><input className="OrganiserEditScoretext" type="number" placeholder="" name="Score"></input></td>{/* Score */}
+                            <td className='col-3 OrganiserEditScore-tableBodyData'><input className="OrganiserEditScoretext" type="Text" placeholder="" name="Score"></input></td>{/* Result */}
+                            <td className='col-2 OrganiserEditScore-tableBodyData-end'> <Link to='/OrganizerViewDetails'><a href=' '></a></Link></td>
 
                         </tr>
+)})):<h1></h1>
+
+
+}
 
 
                     </tbody>
-
+                    
                 </table>
 
                 {/* button container */}
                 <div className='OrganiserEditScore-buttoncontain'>
 
                     <button className='OrganiserEditScore-Updatebutton'>Update</button>
-                    
-                    <Link to='/OrganizerViewScore' style={{textDecoration:"none"}}>
+
+                    <Link to='/OrganizerViewScore' style={{ textDecoration: "none" }}>
                         <button className='OrganiserEditScore-Cancelbutton'>Cancel</button>
                     </Link>
 
