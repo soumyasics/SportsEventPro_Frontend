@@ -19,7 +19,7 @@ function TeamCoachViewTeamMembers() {
         let res;
 
 
-        axiosInstance.post(`/viewTeamMemberByCoachId/${id}`).then(res => {
+        axiosInstance.post(`/ViewAllTeamMembers`).then(res => {
 
             console.log(res);
 
