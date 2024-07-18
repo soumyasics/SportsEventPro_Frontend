@@ -11,6 +11,7 @@ function TeamcoachReg() {
     const navigate = useNavigate()
     const [icon, setIcon] = useState(faEyeSlash)
     const [reIcon, setReIcon] = useState(faEyeSlash)
+    const [teamMembers, setteamMembers] = useState(0)
 
     function PasswordButtonOnClick() {
 
@@ -69,7 +70,7 @@ function TeamcoachReg() {
     const [data, setData] = useState({
         name: '',
         category: '',
-        totalmembers: count,
+        totalmembers: teamMembers,
         pincode: '',
         state: 'Kerala',
         contactnumber: '',
@@ -118,9 +119,22 @@ function TeamcoachReg() {
 
             if (name === 'category') {
                 setSelectedCategory(value);
+                console.log("value= ",value);
+              
             }
         }
         else if (event.target.type == "radio") {
+            console.log("value=2 ",value);
+            if(value=='cricket')
+                setteamMembers(15)
+           else if(value=='football')
+                setteamMembers(18)
+           else if(value=='tennis')
+                setteamMembers(4)
+          else  if(value=='badmonton')
+                setteamMembers(4)
+            if(value=='hockey')
+                setteamMembers(18)
             setData(prevData => ({
                 ...prevData,
                 [name]: value
@@ -222,7 +236,7 @@ function TeamcoachReg() {
         console.log(plus);
         formData.append('name', data.name);
         formData.append('category', data.category);
-        formData.append('totalteammembers', plus);
+        formData.append('totalteammembers', teamMembers);
         formData.append('pincode', data.pincode);
         formData.append('state', data.state);
         formData.append('contact', data.contactnumber);
@@ -406,15 +420,18 @@ function TeamcoachReg() {
 
                                             <div class="container text-center">
                                                 <div class="row">
-                                                    <div class="col">
+                                                    {/* <div class="col">
                                                         <button className='teamCoachregbutton-1' onClick={sub}>-</button>
-                                                    </div>
-                                                    <div class="col" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', marginLeft: "-22px", marginRight: "-22px" }} >
-                                                        {plus}
-                                                    </div>
-                                                    <div class="col">
+                                                    </div> */}
+                                                    {/* <div class="col" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', marginLeft: "-22px", marginRight: "-22px" }} >
+                                                        {teamMembers}
+                                                    </div> */}
+                                                     <input className='TeamCoachField-7' type='text' placeholder='Total Team Name' name="teamMembers"
+                                            value={teamMembers}
+                                            onChange={handleChange} disabled/>
+                                                    {/* <div class="col">
                                                         <button className=' teamCoachregbutton-2' onClick={add} >+</button>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                             </div>
                                         </div>

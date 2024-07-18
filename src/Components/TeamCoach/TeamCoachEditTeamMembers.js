@@ -136,7 +136,7 @@ console.log("err",formIsValid);
         if (formIsValid) {
             try {
                 console.log(data);
-                const res = await axiosMultipartInstance.post(`editTeamMemberById/${id}`, data);
+                const res = await axiosInstance.post(`editTeamMemberById/${id}`, data);
                 console.log(res);
                 if (res.data.status === 200) {
                     alert("Profile Updated Successfully");
@@ -187,22 +187,20 @@ console.log("err",formIsValid);
             </div>
 
             {/* seperated div for the profile picture image */}
-            <div className='col TeamCoachEditTeamMembers-headercontainer-container-2'>
+            {/* <div className='col TeamCoachEditTeamMembers-headercontainer-container-2'>
 
                 <img src={data.photo? `${url}/${data.photo.filename}` : tempimg}
                  alt='' className='TeamCoachEditTeamMembers-headercontainer-container-2-profilepicture'
                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                  />
-                {/* ^ put organiser profile pic in src */}
 
 
                 <input type='file' onChange={handleImageChange} className='TeamCoachEditTeamMembers-headercontainer-container-2-editimgbutton'/>
                     <img src={img2} alt='' className='TeamCoachEditTeamMembers-headercontainer-container-2-editimg-icon' />
-                {/* this is edit profile pic button. */}
 
 
 
-            </div>
+            </div> */}
 
         </div>
 

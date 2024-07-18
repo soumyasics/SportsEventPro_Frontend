@@ -82,7 +82,7 @@ const id=localStorage.getItem('organizerId')
                             return (
                                 <tr className='OrganizerViewEvents-tableBodyRow container' >
 
-                                    <td className='col-2 OrganizerViewEvents-tableBodyData'>{index}</td>
+                                    <td className='col-2 OrganizerViewEvents-tableBodyData'>{++index}</td>
                                     <td className='col-2 OrganizerViewEvents-tableBodyData'>{x.name}</td>
                                     <td className='col-2 OrganizerViewEvents-tableBodyData'>{x.date.split('T')[0]}</td>
                                     <td className='col-2 OrganizerViewEvents-tableBodyData'> {x.category}</td>

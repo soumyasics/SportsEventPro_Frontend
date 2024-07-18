@@ -17,6 +17,7 @@ import ViewAllViewer from '../Viewer/ViewAllViewer'
 import EventRequests from './EventRequests'
 import ViewAllEvents from './ViewAllEvents'
 import AdminEnquiriesViewpage from './AdminEnquiriesViewpage'
+import AdminViewReviewAndRatings from './AdminViewReviewAndRatings'
 
 function AdminMain({ data }) {
   const navigate = useNavigate();
@@ -63,7 +64,9 @@ function AdminMain({ data }) {
               <EventRequests />
             ) : data === 'ViewAllEvents' ? (
               <ViewAllEvents />
-            ) : (
+            ) : data === 'AdminViewReviewAndRatings' ? (
+              <AdminViewReviewAndRatings />
+            ): (
               <AdminDashbordTopContent />
             )}
           </div>
