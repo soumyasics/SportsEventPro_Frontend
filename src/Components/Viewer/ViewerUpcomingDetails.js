@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './ViewerBookNow.css'
+import './ViewerUpcomingDetails.css'
 import { Link } from 'react-router-dom'
 import img2 from "../../Assets/Back Button.svg"
 import img3 from '../../Assets/Rectangle 4618(1).png'
