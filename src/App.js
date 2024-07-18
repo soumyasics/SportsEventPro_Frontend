@@ -80,7 +80,7 @@ import ViewerBookedTickets from './Components/Viewer/ViewerBookedTickets';
 import ViewerScoreboard from './Components/Viewer/ViewerScoreboard';
 import ViewerViewScoreboard from './Components/Viewer/ViewerViewScoreboard';
 import ViewerReviewRating from './Components/Viewer/ViewerReviewRating';
-
+import AdminViewReviewAndRatings from './Components/Admin/AdminViewReviewAndRatings'
 function App() {
 
   return (
@@ -117,6 +117,7 @@ function App() {
           {/* <Route exact path='/AdminViewOrganiser1' element={[<AdminNav/>,<AdminViewOrganiserRequest/>]} /> */}
           <Route exact path='/AdminViewOrganiserRequest' element={[<AdminNav />, <AdminMain data='adminvieworganiserrequest' />]} />
           <Route exact path='/AdminallViewOrganizerRequest/:id' element={[<AdminNav />, <AdminMain data='AdminallViewOrganizerRequest' />]} />
+          <Route exact path='/AdminViewReviewAndRatings' element={[<AdminNav />, <AdminMain data='AdminViewReviewAndRatings' />]} />
 
           <Route exact path='/ViewCoachRequest' element={[<AdminNav />, <AdminMain data="ViewCoachRequest" />]} />
           <Route exact path='/AdminViewOrganiser' element={[<AdminNav />, <AdminMain data='adminvieworganizerreq' />]} />

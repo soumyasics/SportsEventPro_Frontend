@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import img from '../../Assets/Frame 19.png';
 import img1 from '../../Assets/Search Button.svg';
@@ -11,6 +11,7 @@ import img6 from '../../Assets/mingcute_notification-line.svg';
 import img7 from '../../Assets/octicon_x-16.svg'
 import "../../Components/TeamCoach/TeamCoachTopNav.css"; // Adjust path as per your project structure
 import ReactStars from 'react-stars';
+import axiosInstance from '../Constant/BaseURL';
 
 function TeamCoachTopNav() {
 
@@ -26,7 +27,49 @@ function TeamCoachTopNav() {
             navigate("/TeamCoachLogin");
         }
     }, [navigate]);
+    const [data1, setData1] = useState({
+        name: '',
+    })
+    useEffect(() => {
+        axiosInstance
+            .post(`viewTeamCoachById/${localStorage.getItem('tcId')}`)
+            .then((res) => {
+                console.log(res);
+                setData(res.data.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, [localStorage.getItem('tcId')]);
+    const [data, setData] = useState({
 
+        complaint: '',
+        name: data1.name,
+        userRole:'Team Coach'
+      })
+    const handleChange=(event)=>{
+        data.userRole='Team Coach'
+        const { name, value } = event.target;
+        console.log("work");
+        setData(prevData => ({
+          ...prevData,
+          [name]: value
+        }));
+    }
+
+    const handleComplaintSubmit = () => {
+        // Your function logic here
+        console.log("Complaint submitted");
+        axiosInstance
+        .post(`addComplaint`,data)
+        .then((res) => {
+            console.log(res);
+            // setData(res.data.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }    
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-black TeamCoachNavbar-Nav">
@@ -265,10 +308,10 @@ function TeamCoachTopNav() {
                                     <img src={img7} alt=' ' className='imageEE' data-bs-dismiss="modal" aria-label="Close" />
 
                                     <h1 className='h1ishere'>Register a Complaint</h1>
-                                    <input type='textarea' className='txtArea'></input>
+                                    <input type='textarea' className='txtArea' name="complaint" onChange={handleChange}></input>
                                 </div>
                                 <div className='ModalDialog-button-contain'>
-                                    <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal">Submit</button>
+                                    <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal"  onClick={handleComplaintSubmit}>Submit</button>
                                 </div>
 
                             </div>

@@ -32,6 +32,20 @@ function TeamCoachEnrolledEvents() {
         } catch (err) {
             console.log(err);
         }
+        try {
+            const res = await axiosInstance.post(`addReview/`, {
+            
+                eventId:eventId,
+      tcId:localStorage.getItem('tcId'),
+     
+      review:comment,
+            });
+            console.log(res.data);
+            // Optionally refresh the data
+            getData();
+        } catch (err) {
+            console.log(err);
+        }
     };
     const getData = async () => {
         try {
@@ -105,7 +119,7 @@ function TeamCoachEnrolledEvents() {
 
                                             <div className="card-text">
                                                 <div className='row'>
-                                                    <p className='CardTextP'>{x.name} is Organized by {x.organizerId.name}. Don't Miss the Opurtunity of Participation !!</p>{/* event description */}
+                                                    <p className='CardTextP'>{x.eventId.name} is Organized by {x.organizerId.name}. Don't Miss the Opurtunity of Participation !!</p>{/* event description */}
                                                     <div className='col'> <h2 className='CardTextH2'>{x.date.slice(0, 10)} &nbsp; {x.time}</h2> {/* event date and time */}
                                                     </div>
                                                 </div>
