@@ -47,10 +47,19 @@ getData()
     return (
 
 
-            
 
+        
+
+
+
+
+
+
+
+
+        
+            
         <div className='OrganiserScoreBoard '>
-        <tbody>
         {
 
 (userData&&userData.length>=1)?(userData.map((x,index) => {
@@ -78,7 +87,7 @@ return(
 
                                 <div className="card-title">
 
-                                    <h5 className='CardHeadTxtH5'><li>{x.name}</li></h5>{/* event name */}
+                                    <h5 className='CardHeadTxtH5'>{x.name}</h5>{/* event name */}
                                     <h1 className='CardHeadTxtH1'>{x.category}</h1>{/* event category */}
 
                                 </div>
@@ -110,7 +119,6 @@ return(
 
 
 }
-        </tbody>
         </div>
 
     )
