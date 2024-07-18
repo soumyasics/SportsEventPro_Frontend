@@ -80,6 +80,7 @@ import ViewerBookedTickets from './Components/Viewer/ViewerBookedTickets';
 import ViewerScoreboard from './Components/Viewer/ViewerScoreboard';
 import ViewerViewScoreboard from './Components/Viewer/ViewerViewScoreboard';
 import ViewerReviewRating from './Components/Viewer/ViewerReviewRating';
+import OrganiserAddBlogs from './Components/Organiser/OrganiserAddBlogs';
 import AdminViewReviewAndRatings from './Components/Admin/AdminViewReviewAndRatings'
 function App() {
 
@@ -196,6 +197,9 @@ function App() {
           <Route exact path='/OrganizerViewReport' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewReport'/>,<UserFooter/>]} />
 
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />, <UserFooter />]} />
+
+          <Route exact path='/OrganiserAddBlogs' element={[<OrganiserAddBlogs/>]}/>
+
 
           {/* Viewer */}
           <Route exact path='/ViewerRegistration' element={[<MainNavbar />, <ViewerRegistration />, <UserFooter />]} />
