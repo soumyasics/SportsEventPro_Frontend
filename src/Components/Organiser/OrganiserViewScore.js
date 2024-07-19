@@ -1,10 +1,11 @@
 import React from 'react'
 import './OrganiserViewScore.css'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import img from "../../Assets/Back Button.svg"
 
 
 function OrganiserViewScore() {
+const {id}=useParams()
 
     return (
 
@@ -53,7 +54,7 @@ function OrganiserViewScore() {
 
                 </table>
 
-                <Link to='/OrganizerEditScore' style={{textDecoration:'none'}}>
+                <Link to={`/OrganizerEditScore/${id}`} style={{textDecoration:'none'}}>
                     <button className='OrganiserViewScore-addbutton'>Add Score</button>
                 </Link>
             </div>

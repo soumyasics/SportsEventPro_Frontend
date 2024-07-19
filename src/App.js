@@ -190,8 +190,8 @@ function App() {
           <Route exact path='/OrganizerViewEvents' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganizerViewEvents" />, <UserFooter />]} />
           <Route exact path='/OrganizerEnroll' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganizerEnroll" />, <UserFooter />]} />
           <Route exact path='/OrganizerScoreBoard' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganizerScoreBoard" />, <UserFooter />]} />
-          <Route exact path='/OrganizerViewScore' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerViewScore' />, <UserFooter />]} />
-          <Route exact path='/OrganizerEditScore' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerEditScore' />, <UserFooter />]} />
+          <Route exact path='/OrganizerViewScore/:id' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerViewScore' />, <UserFooter />]} />
+          <Route exact path='/OrganizerEditScore/:id' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerEditScore' />, <UserFooter />]} />
           <Route exact path='/OrganizerViewDetails' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerViewDetails' />, <UserFooter />]} />
           <Route exact path='/OrganizerTicketGen' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerTicketGen'/>,<UserFooter/>]} />
           <Route exact path='/OrganizerTicketGen2' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerTicketGen2'/>,<UserFooter/>]} />
