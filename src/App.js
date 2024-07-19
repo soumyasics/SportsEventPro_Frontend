@@ -82,7 +82,7 @@ import ViewerViewScoreboard from './Components/Viewer/ViewerViewScoreboard';
 import ViewerReviewRating from './Components/Viewer/ViewerReviewRating';
 import OrganiserAddBlogs from './Components/Organiser/OrganiserAddBlogs';
 import AdminViewReviewAndRatings from './Components/Admin/AdminViewReviewAndRatings'
-import OrganiserViewAllBlogs from './Components/Organiser/OrganiserViewAllBlogs';
+import ViewerBlogs from './Components/Viewer/ViewerBlogs';
 function App() {
 
   return (
@@ -217,6 +217,7 @@ function App() {
           <Route exact path='/ViewerScoreboard' element={[<ViewerNavBar/>,<ViewerScoreboard/>,<UserFooter/>]} />
           <Route exact path='/ViewerViewScoreboard' element={[<ViewerNavBar/>,<ViewerViewScoreboard/>,<UserFooter/>]} />
           <Route exact path='/ViewerReviewRating' element={[<ViewerNavBar/>,<ViewerReviewRating/>,<UserFooter/>]} />
+          <Route exact path='/ViewerBlogs' element={[<ViewerNavBar/>,<ViewerBlogs/>,<UserFooter/>]} />
 
           <Route path='/admin-viewAllViewer' element={[<MainNavbar />, <AdminMain data='admin-viewAllViewer' />]} />
 

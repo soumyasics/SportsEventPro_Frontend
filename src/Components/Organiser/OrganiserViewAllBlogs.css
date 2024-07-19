@@ -75,8 +75,6 @@ gap: 30px;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 30px;
-    align-self: stretch;
 
 }
 
@@ -108,38 +106,15 @@ gap: 30px;
 
 .OrganiserViewAllBlogsHeadTxtH5 {
 
-    flex: 1 0 0;
-    align-self: stretch;
     color: #000;
     font-family: Roboto;
     font-size: 16px;
     height: 42px;
     font-style: normal;
     font-weight: 600;
-    line-height: 130%;
 
 }
 
-.OrganiserViewAllBlogsHeadTxtH1 {
-
-    display: flex;
-    height: 24px;
-    width: 75px;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    border-radius: 5px;
-    background: #B9B9B9;
-    color: #000;
-    font-family: Roboto;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-
-}
 
 .OrganiserViewAllBlogsTextP {
 
@@ -154,14 +129,9 @@ gap: 30px;
 
 .OrganiserViewAllBlogsTextH2 {
 
-    display: flex;
-    width: 168px;
     height: 29px;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
     border-radius: 8px;
-    height: 40px;
     color: #000;
     font-family: Roboto;
     font-size: 15px;

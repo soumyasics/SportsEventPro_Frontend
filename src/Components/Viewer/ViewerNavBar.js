@@ -74,13 +74,13 @@ function ViewerNavBar() {
 
                             <li className="nav-item">
 
-                                <a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Reviews & Ratings</a>
+                                <Link to='/ViewerReviewRating' style={{textDecoration:'none'}}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Reviews & Ratings</a></Link>
 
                             </li>
 
                             <li className="nav-item">
 
-                                <a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Blogs</a>
+                                <Link to='/ViewerBlogs' style={{textDecoration:'none'}}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Blogs</a></Link>
 
                             </li>
 

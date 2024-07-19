@@ -6,7 +6,7 @@ import img3 from '../../Assets/Rectangle 4618(1).png'
 import img4 from '../../Assets/button-minus.svg'
 import img5 from '../../Assets/button-plus.svg'
 
-function ViewerBookNow() {
+function ViewerUpcomingDetails() {
 
     const baseTicketPrice = 499.00; /* replace 499 with array var for ticket price */
 
@@ -171,4 +171,4 @@ function ViewerBookNow() {
 
 }
 
-export default ViewerBookNow
+export default ViewerUpcomingDetails
