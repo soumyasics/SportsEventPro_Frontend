@@ -82,6 +82,7 @@ import ViewerViewScoreboard from './Components/Viewer/ViewerViewScoreboard';
 import ViewerReviewRating from './Components/Viewer/ViewerReviewRating';
 import OrganiserAddBlogs from './Components/Organiser/OrganiserAddBlogs';
 import AdminViewReviewAndRatings from './Components/Admin/AdminViewReviewAndRatings'
+import OrganiserViewAllBlogs from './Components/Organiser/OrganiserViewAllBlogs';
 function App() {
 
   return (
@@ -199,6 +200,7 @@ function App() {
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />, <UserFooter />]} />
 
           <Route exact path='/OrganiserAddBlogs' element={[<OrganiserAddBlogs/>]}/>
+          <Route exact path='/OrganiserViewAllBlogs' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganiserViewAllBlogs' />, <UserFooter />]}/>
 
 
           {/* Viewer */}

@@ -36,7 +36,6 @@ function OrganiserScoreboard() {
     }
     useEffect(() => {
 
-        let res;
 
 getData()
       
