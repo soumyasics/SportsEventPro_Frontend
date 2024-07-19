@@ -141,6 +141,9 @@ function App() {
           <Route exact path='/ViewerProfilePopup/:id' element={[<ViewerProfilePopup />]} />
           <Route exact path='/EventRequests' element={[<EventRequests />]} />
           <Route path='/ViewAllEvents' element={[<AdminNav />, <AdminMain data='ViewAllEvents' />, <UserFooter />]} />
+          <Route path='/AdminTicketRevenue' element={[<AdminNav />, <AdminMain data='AdminTicketRevenue' />, <UserFooter />]} />
+          <Route path='/AdminTicketRevenue2' element={[<AdminNav />, <AdminMain data='AdminTicketRevenue2' />, <UserFooter />]} />
+          <Route path='/AdminTeamWiseReport' element={[<AdminNav />, <AdminMain data='AdminTeamWiseReport' />, <UserFooter />]} />
 
           {/* Team Coach */}
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />

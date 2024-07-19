@@ -18,6 +18,10 @@ import EventRequests from './EventRequests'
 import ViewAllEvents from './ViewAllEvents'
 import AdminEnquiriesViewpage from './AdminEnquiriesViewpage'
 import AdminViewReviewAndRatings from './AdminViewReviewAndRatings'
+import AdminTicketRevenue from './AdminTicketRevenue'
+import AdminTicketRevenue2 from './AdminTicketRevenue2'
+import AdminTeamWiseReport from './AdminTeamWiseReport'
+import AdminEventWiseReport from './AdminEventWiseReport'
 
 function AdminMain({ data }) {
   const navigate = useNavigate();
@@ -66,9 +70,20 @@ function AdminMain({ data }) {
               <ViewAllEvents />
             ) : data === 'AdminViewReviewAndRatings' ? (
               <AdminViewReviewAndRatings />
-            ): (
-              <AdminDashbordTopContent />
-            )}
+            ) : data === 'AdminTicketRevenue' ? (
+              <AdminTicketRevenue />
+            ) : data === 'AdminTicketRevenue2' ? (
+              <AdminTicketRevenue2 />
+            ) : data === 'AdminTeamWiseReport' ? (
+              <AdminTeamWiseReport />
+            ) : data === 'AdminEventWiseReport' ? (
+              <AdminEventWiseReport />
+            ) :
+
+
+              (
+                <AdminDashbordTopContent />
+              )}
           </div>
         </div>
       </div>

@@ -48,7 +48,7 @@ function ViewerViewScoreboard() {
 
                 </table>
 
-            </div>
+        </div>
 
     )
 

@@ -16,7 +16,7 @@ function OrganiserViewReport() {
                     <div style={{ display: 'flex', flexDirection: 'row', width: 'max-content' }}>
 
                         <Link to='/OrganizerDashboard'><button className='OrganiserViewReport-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
-                        <h1 className='OrganiserViewReport-headercontainer-h1'>Ticket Generation</h1>
+                        <h1 className='OrganiserViewReport-headercontainer-h1'>View Report</h1>
 
                     </div>
 
