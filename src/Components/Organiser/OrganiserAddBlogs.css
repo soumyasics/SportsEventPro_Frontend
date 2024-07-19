@@ -30,8 +30,8 @@
         margin-left: -218px;
     }
     .OrganiserAddBlogs-Heading{
-        margin-left: 36px;
-        margin-top: -40px;
+        margin-top: 78px;
+        text-align: center;
     }
     .OrganiserAddBlogs-input1{
         background-repeat: no-repeat;
@@ -83,7 +83,7 @@
         margin-top: 22px;
         margin-bottom: 0rem;
         text-align: left;
-        margin-left: 507px;
+        margin-left: 228px;
         color: #000;
         font-family: Roboto;
         font-size: 14px;
@@ -106,7 +106,7 @@
         font-style: normal;
         font-weight: 500;
         line-height: 24px;
-        margin-left: 645px;
+        margin-left: 372px;
         margin-top: 48px;
     }
     .OrganiserAddBlogsvalidation{
