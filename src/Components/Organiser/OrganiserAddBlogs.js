@@ -10,13 +10,13 @@ function OrganiserAddBlogs() {
     const [data, setData] = useState({
         organizerId: localStorage.getItem('organizerId'),
         title: '',
-        content: null,
+        image: null,
         description: '',
     });
 
     const [errors, setErrors] = useState({
         title: '',
-        content: '',
+        image: '',
         description: '',
     });
 
@@ -60,17 +60,44 @@ function OrganiserAddBlogs() {
 
         errors.title = validateField('Title', data.title);
         errors.description = validateField('Description', data.description);
-        errors.content = validateImageField('Content', data.content);
+        errors.image = validateImageField('Image', data.image);
 
         setErrors(errors);
         // formIsValid = !Object.values(errors).some(error => error !== '');
+        console.log("form",formIsValid,"err",errors);
+
+        if (formIsValid) {
+            submitData();
+        }
     };
+
+    const submitData = () => {
+        console.log("in",data);
+        let formData = new FormData();
+        formData.append('title', data.title);
+        formData.append('image', data.image);
+        formData.append('description', data.description);
+
+        axiosMultipartInstance.post('registerOrganizerBlog', data)
+            .then(response => {
+                if (response.data.status === 200) {
+                    alert(response.data.msg);
+                    navigate('/OrganiserViewAllBlogs');
+                } else {
+                    alert(response.data.msg);
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    };
+
   return (
     <div>
         <form onSubmit={handleSubmit}>
-        <div className='OrganiserAddBlogs-MainDiv'>
         <div>
-            <button className='OrganiserAddBlogs-BackButton' ><Link to='/OrganizerScoreboard'><img src={img} alt=' ' /></Link></button>
+        <div className='OrganiserAddBlogs-MainDiv'>
+            {/* <button className='OrganiserAddBlogs-BackButton' ><Link to='/OrganizerScoreboard'><img src={img} alt=' ' /></Link></button> */}
             <h1 className='OrganiserAddBlogs-Heading'>Add Blogs</h1>
         </div>
         <div>
@@ -81,7 +108,7 @@ function OrganiserAddBlogs() {
         </div>
         <div>
             <div><p className='OrganiserAddBlogs-text'>Content</p></div>
-            <input type='file' required placeholder='Upload Document' className='Organiseraddblogs-Content-input-banner' onChange={handleChange} name="banner"/>                            
+            <input type='file' required placeholder='Upload Document' className='Organiseraddblogs-Content-input-banner' onChange={handleChange} name="image"/>                            
                      
             <div>
             <div><p className='OrganiserAddBlogs-text'>Description</p></div>
@@ -90,7 +117,7 @@ function OrganiserAddBlogs() {
 
         </div>
         </div> 
-        <button className="OrganiserAddBlogs-button" >Post</button>
+        <button className="OrganiserAddBlogs-button" onClick={handleSubmit}>Post</button>
         </div>
         </form>
     </div>

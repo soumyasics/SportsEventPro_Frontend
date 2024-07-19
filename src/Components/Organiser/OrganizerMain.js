@@ -13,6 +13,7 @@ import OrganiserEditScore from './OrganiserEditScore';
 import OrganiserTicketGen from './OrganiserTicketGen';
 import OrganiserTicketGen2 from './OrganiserTicketGen2';
 import OrganiserViewReport from './OrganiserViewReport';
+import OrganiserAddBlogs from './OrganiserAddBlogs';
 import OrganiserViewAllBlogs from './OrganiserViewAllBlogs';
 
 function OrganizerMain({ data }) {
@@ -60,6 +61,8 @@ function OrganizerMain({ data }) {
               <OrganiserTicketGen2 />
             ) : data === 'OrganizerViewReport' ? (
               <OrganiserViewReport />
+            ): data === 'OrganiserAddBlogs' ? (
+              <OrganiserAddBlogs />
             ): data === 'OrganiserViewAllBlogs' ? (
               <OrganiserViewAllBlogs />
             )

@@ -5,7 +5,7 @@ function UserFooter() {
   return (
     <div>
       <div className="userfootermaindiv ">
-      <div className='footerdiv-1 container'>
+      <div className='footerdiv-1'>
       </div>
       <div className="footerdiv-2">
         <div className="footerdot">
