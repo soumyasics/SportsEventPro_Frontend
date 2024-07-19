@@ -202,7 +202,7 @@ function App() {
 
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />, <UserFooter />]} />
 
-          <Route exact path='/OrganiserAddBlogs' element={[<OrganiserAddBlogs/>]}/>
+          <Route exact path='/OrganiserAddBlogs' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganiserAddBlogs'/>,<UserFooter/>]}/>
 
 
           {/* Viewer */}
