@@ -1,11 +1,59 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './OrganiserViewScore.css'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import img from "../../Assets/Back Button.svg"
+import axiosInstance from '../Constant/BaseURL';
 
 
 function OrganiserViewScore() {
-const {id}=useParams()
+const { id } = useParams();
+
+    const navigate = useNavigate()
+    const [inputValue, setInputValue] = useState({eventId:{name:''}});
+
+    const [userData, setUserData] = useState([]);
+    const url = axiosInstance.defaults.url;
+    console.log("url,", url);
+    const getData = () => {
+        axiosInstance.post(`/viewEnrollments`).then(res => {
+
+            console.log(res);
+
+            if ((res.data.data).length > 0)
+                setUserData(res.data.data);
+            else
+                setUserData(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+    const getData2 = () => {
+        axiosInstance.post(`/viewEnrollmentById/${id}`).then(res => {
+
+            console.log(res);
+
+            if ((res.data.data))
+                setInputValue(res.data.data);
+            else
+            setInputValue(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+    useEffect(() => {
+
+        let res;
+
+        getData()
+getData2()
+
+
+
+    }, []);
+
+
 
     return (
 
@@ -16,7 +64,7 @@ const {id}=useParams()
                 <div className='OrganiserViewScore-header'>
 
                     <button className='OrganiserViewScore-headercontainer-BackButton' ><Link to='/OrganizerScoreboard'><img src={img} alt=' ' /></Link></button>
-                    <h1 className='OrganiserViewScore-headercontainer-h1'>TVM Junior Sport’s Scoreboard </h1>{/* event name here */}
+                    <h1 className='OrganiserEditScore-headercontainer-h1'>{inputValue.eventId.name} Scoreboard </h1>{/* event name here */}
 
                 </div>
 
@@ -36,21 +84,33 @@ const {id}=useParams()
 
                     </thead>
 
-                    <tbody className='tbodyclass'>
+                    <tbody className='tbodyclass'>{/* <------ Array map inside this */}
 
 
-                        <tr className='OrganiserViewScore-tableBodyRow container' >
+{
 
-                            <td className='col-2 OrganiserViewScore-tableBodyData'>1</td>{/* Sl no */}
-                            <td className='col-3 OrganiserViewScore-tableBodyData'>The Kings</td>{/* Team Name */}
-                            <td className='col-2 OrganiserViewScore-tableBodyData'>18</td>{/* Score */}
-                            <td className='col-3 OrganiserViewScore-tableBodyData'>First Place</td>{/* Result */}
-                            <td className='col-2 OrganiserViewScore-tableBodyData-end'> <Link to='/OrganizerViewDetails'><a href=' '>View Details</a></Link></td>
-
-                        </tr>
+    (userData && userData.length >= 1) ? (userData.map((x, index) => {
 
 
-                    </tbody>
+        return (
+
+            <tr className='OrganiserEditScore-tableBodyRow container' >
+
+                <td className='col-2 OrganiserEditScore-tableBodyData'>{++index}</td>{/* Sl no */}
+                <td className='col-3 OrganiserEditScore-tableBodyData'>{x.coachId.teamName}</td>{/* Team Name */}
+                <td className='col-2 OrganiserEditScore-tableBodyData no-arrows'>{x.score} </td>
+                <td className='col-3 OrganiserEditScore-tableBodyData'>{x.position}</td>
+                <td className='col-2 OrganiserEditScore-tableBodyData-end'> <Link to='/OrganizerViewDetails'>View data</Link></td>
+
+            </tr>
+        )
+    })) : <h1></h1>
+
+
+}
+
+
+</tbody>
 
                 </table>
 
