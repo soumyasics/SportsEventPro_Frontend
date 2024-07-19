@@ -34,7 +34,7 @@ function Adminsidebar() {
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </div>
-                    <Link className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Reviews & Rating</h6></Link>
+                    <Link className='admin-dash-link' to='/AdminViewReviewAndRatings'><h6 className='adminsidebarbutton-2'>Reviews & Rating</h6></Link>
                     <Link to='/AdminEnquiriesViewpage' className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Enquries</h6></Link>
                     <Link className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Complaints</h6></Link>
                     <Link to='/AdminResetPass' className='admin-dash-link'><h6 className='adminsidebarbutton-2'>Reset Password</h6></Link>

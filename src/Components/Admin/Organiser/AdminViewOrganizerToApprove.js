@@ -51,7 +51,7 @@ function AdminViewOrganizerToApprove() {
       .post(`/approveOrganizerById/${id}`)
       .then((res) => {
         if (res.data.status === 200) {
-          alert("Team Coach Approved");
+          alert("Organizer Approved");
           navigate("/AdminViewOrganiser");
         }
       })
@@ -66,7 +66,7 @@ function AdminViewOrganizerToApprove() {
       .post(`/deleteOrganizerById/${id}`)
       .then((res) => {
         if (res.data.status === 200) {
-          alert("Team Coach Request Rejected");
+          alert("Organizer Request Rejected");
           navigate("/AdminViewTeamCoach");
         }
       })

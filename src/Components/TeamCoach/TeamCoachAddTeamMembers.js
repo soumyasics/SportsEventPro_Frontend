@@ -125,6 +125,7 @@ const TeamCoachAddTeamMembers = () => {
 console.log("err",formIsValid);
         if (formIsValid) {
             try {
+                
                 const res = await axiosMultipartInstance.post(`registerTeamMember/${id}`, data);
                 console.log(res);
                 if (res.data.status === 200) {
