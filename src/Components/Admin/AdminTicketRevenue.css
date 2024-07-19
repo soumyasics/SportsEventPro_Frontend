@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.AdminTicketRevenueMainDivBG {
+
+    font-family: "Roboto";
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    background-color: #fff;
+    min-height: 800px;
+
+}
+
+.AdminTicketRevenue-headercontainer-container-1 {
+
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    width: 473px;
+    height: 48px;
+    gap: 30px;
+
+}
+
+.AdminTicketRevenue-h1 {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    margin-top: 50px;
+
+}
+
+.AdminTicketRevenue-headercontainer-BackButton {
+
+    background-color: #00000000;
+    border: none;
+    margin-top: 58px;
+
+}
+
+.AdminViewTeamCoach-search-container {
+
+    height: 46px;
+    margin-left: 50%;
+}
+
+.AdminTicketRevenue-search {
+
+    margin-top: 40px;
+    margin-bottom: 16.5px;
+    padding-left: 18px;
+    height: 43px;
+    width: 304px;
+    border-radius: 82px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #fff;
+    box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
+
+}
+
+.AdminTicketRevenue-search-button {
+
+    position: absolute;
+    margin-top: 45.5px;
+    margin-left: -40px;
+    border: 1px solid #CFCFCF;
+    background-color: #CFCFCF;
+    border-radius: 50px;
+    box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
+    display: inline-flex;
+    height: 32px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+
+}
+
+.AdminTicketRevenue-Table {
+
+    margin-top: 50px;
+    border: 1.304px solid #B9B9B9;
+    border-radius: 6px;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+
+}
+
+.AdminTicketRevenue-tableHeadRow {
+
+    display: flex;
+    /* width:950px; */
+    height: 65px;
+    text-align: left;
+    background: #A9ADC582;
+
+
+}
+
+.AdminTicketRevenue-tableHeadData {
+
+    width: 215px;
+    border-right: 1.304px solid #B9B9B9;
+    padding-left: 13px;
+    padding-top: 15.6px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 16.954px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    flex: 1 0 0;
+
+}
+
+.AdminTicketRevenue-tableHeadDataEnd {
+
+    padding-left: 13px;
+    padding-top: 15.6px;
+    width: 215px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 16.954px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    flex: 1 0 0;
+
+}
+
+.AdminTicketRevenue-tableBodyRow {
+
+    display: flex;
+    /* width: 950px; */
+    height: 65px;
+    text-align: left;
+    background: #00000000;
+    border-top: 1.304px solid #B9B9B9;
+
+}
+
+.AdminTicketRevenue-tableBodyData {
+
+    width: 215px;
+    border-right: 1.304px solid #B9B9B9;
+    padding-left: 13px;
+    padding-top: 15.6px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    flex: 1 0 0;
+
+}
+
+.AdminTicketRevenue-tableBodyData-end {
+
+    width: 215px;
+    padding-left: 13px;
+    padding-top: 15.6px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    flex: 1 0 0;
+
+}
+
+.AdminTicketRevenue-Pagination {
+
+    margin-top: 100px;
+    margin-left: 8px;
+
+}
+
+.AdminTicketRevenue-Stylerow {
+    gap: 40px;
+    /* width: 1375px; */
+    top: 50px;
+
+    margin-bottom: 70px;
+    width: 100%;
+
+}
+
+.AdminTicketRevenue-tableBodyData-h1 {
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    flex: 1 0 0;
+}
+
+.classDiv {
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
