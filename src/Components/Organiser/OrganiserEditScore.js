@@ -5,22 +5,23 @@ import img from "../../Assets/Back Button.svg"
 import axiosInstance from '../Constant/BaseURL';
 
 function OrganiserEditScore() {
-    const { id } = useParams();
+    const { eventId } = useParams();
+    const [inputValue, setInputValue] = useState('');
 
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
-    const getData=()=>{
-        axiosInstance.post(`/editEventById`).then(res => {
+    const getData = () => {
+        axiosInstance.post(`/viewEnrollments`).then(res => {
 
             console.log(res);
 
             if ((res.data.data).length > 0)
                 setUserData(res.data.data);
             else
-            setUserData(null)
+                setUserData(null)
             console.log(res.data.data);
         }).catch(err => {
             console.log(err);
@@ -30,13 +31,34 @@ function OrganiserEditScore() {
 
         let res;
 
-getData()
-      
+        getData()
+
 
 
 
     }, []);
 
+    const handlechange = (id, value) => {
+        console.log("inp", value);
+        axiosInstance.post(`/addScoreByEnrollmentById/${id}`, { score: value }).then(res => {
+
+            console.log(res);
+
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+    
+    const handleUpdate = (id, value) => {
+        console.log("inp", value);
+        axiosInstance.post(`/updatePositions/${id}`, { score: value }).then(res => {
+
+            console.log(res);
+
+        }).catch(err => {
+            console.log(err);
+        })
+    }
     return (
 
         <div>
@@ -59,7 +81,7 @@ getData()
                             <td className='col-2 OrganiserEditScore-tableHeadData-start'>Sl</td>
                             <td className='col-3 OrganiserEditScore-tableHeadData'>Team Name</td>
                             <td className='col-2 OrganiserEditScore-tableHeadData'>Score</td>
-                            <td className='col-3 OrganiserEditScore-tableHeadData'>Result</td>
+                            {/* <td className='col-3 OrganiserEditScore-tableHeadData'>Result</td> */}
                             <td className='col-2 OrganiserEditScore-tableHeadDataEnd'>View Team Details</td>
 
                         </tr>
@@ -68,38 +90,42 @@ getData()
 
 
                     <tbody className='tbodyclass'>{/* <------ Array map inside this */}
-                     
-
-                    {
-
-(userData&&userData.length>=1)?(userData.map((x,index) => {
 
 
-return(
+                        {
 
-                        <tr className='OrganiserEditScore-tableBodyRow container' >
-
-                            <td className='col-2 OrganiserEditScore-tableBodyData'>{index}</td>{/* Sl no */}
-                            <td className='col-3 OrganiserEditScore-tableBodyData'>{x.name}</td>{/* Team Name */}
-                            <td className='col-2 OrganiserEditScore-tableBodyData'><input className="OrganiserEditScoretext" type="number" placeholder="" name="Score"></input></td>{/* Score */}
-                            <td className='col-3 OrganiserEditScore-tableBodyData'><input className="OrganiserEditScoretext" type="Text" placeholder="" name="Score"></input></td>{/* Result */}
-                            <td className='col-2 OrganiserEditScore-tableBodyData-end'> <Link to='/OrganizerViewDetails'><a href=' '></a></Link></td>
-
-                        </tr>
-)})):<h1></h1>
+                            (userData && userData.length >= 1) ? (userData.map((x, index) => {
 
 
-}
+                                return (
+
+                                    <tr className='OrganiserEditScore-tableBodyRow container' >
+
+                                        <td className='col-2 OrganiserEditScore-tableBodyData'>{++index}</td>{/* Sl no */}
+                                        <td className='col-3 OrganiserEditScore-tableBodyData'>{x.coachId.teamName}</td>{/* Team Name */}
+                                        <td className='col-2 OrganiserEditScore-tableBodyData no-arrows'><input className="OrganiserEditScoretext" type="number"
+                                            onChange={(event) => {
+                                                handlechange(x._id, event.target.value);
+                                            }} name="score" placeholder={x.score} /></td>{/* Score */}
+                                        {/* <td className='col-3 OrganiserEditScore-tableBodyData'><input className="OrganiserEditScoretext" type="Text" placeholder="" name="Score"></input></td>Result */}
+                                        <td className='col-2 OrganiserEditScore-tableBodyData-end'> <Link to='/OrganizerViewDetails'><a href=' '></a></Link></td>
+
+                                    </tr>
+                                )
+                            })) : <h1></h1>
+
+
+                        }
 
 
                     </tbody>
-                    
+
                 </table>
 
                 {/* button container */}
                 <div className='OrganiserEditScore-buttoncontain'>
 
-                    <button className='OrganiserEditScore-Updatebutton'>Update</button>
+                    <button className='OrganiserEditScore-Updatebutton' onClick={()=>{handleUpdate(eventId)}}>Update</button>
 
                     <Link to='/OrganizerViewScore' style={{ textDecoration: "none" }}>
                         <button className='OrganiserEditScore-Cancelbutton'>Cancel</button>
