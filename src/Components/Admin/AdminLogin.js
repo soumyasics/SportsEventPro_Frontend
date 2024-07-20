@@ -49,7 +49,7 @@ function AdminLogin() {
 
 
 if(data.email=="admin@gmail.com" && data.password=="admin@123"){
-  alert("successfully logined")
+  alert("Login Successfully")
   localStorage.setItem('admin',1)
   navigate('/adminmain')
 }

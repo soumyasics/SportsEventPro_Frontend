@@ -19,7 +19,7 @@ function TeamCoachViewTeamMembers() {
         let res;
 
 
-        axiosInstance.post(`/ViewAllTeamMembers`).then(res => {
+        axiosInstance.post(`/viewTeamMemberByCoachId/${localStorage.getItem('tcId')}`).then(res => {
 
             console.log(res);
 

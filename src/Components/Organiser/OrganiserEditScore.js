@@ -5,8 +5,8 @@ import img from "../../Assets/Back Button.svg"
 import axiosInstance from '../Constant/BaseURL';
 
 function OrganiserEditScore() {
-    const { eventId } = useParams();
-    const [inputValue, setInputValue] = useState('');
+    const { id } = useParams();
+    const [inputValue, setInputValue] = useState({});
 
     const navigate = useNavigate()
 
@@ -14,7 +14,7 @@ function OrganiserEditScore() {
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
     const getData = () => {
-        axiosInstance.post(`/viewEnrollments`).then(res => {
+        axiosInstance.post(`/viewEnrollments/${id}`).then(res => {
 
             console.log(res);
 
@@ -27,12 +27,26 @@ function OrganiserEditScore() {
             console.log(err);
         })
     }
+    const getData2 = () => {
+        axiosInstance.post(`/viewEventById/${id}`).then(res => {
+
+            console.log(res);
+
+            if ((res.data.data))
+                setInputValue(res.data.data);
+            else
+            setInputValue(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
     useEffect(() => {
 
         let res;
 
         getData()
-
+        getData2()
 
 
 
@@ -43,17 +57,22 @@ function OrganiserEditScore() {
         axiosInstance.post(`/addScoreByEnrollmentById/${id}`, { score: value }).then(res => {
 
             console.log(res);
-
+           
         }).catch(err => {
             console.log(err);
         })
     }
     
-    const handleUpdate = (id, value) => {
-        console.log("inp", value);
-        axiosInstance.post(`/updatePositions/${id}`, { score: value }).then(res => {
+    const handleUpdate = () => {
+        // let eventId=localStorage.getItem('eventId')
+       
+        console.log(id);
+        axiosInstance.post(`/updatePositions/${inputValue._id}`).then(res => {
 
             console.log(res);
+            if(res.data.status==200)
+                alert("Score Updated Successfully")
+            getData()
 
         }).catch(err => {
             console.log(err);
@@ -67,8 +86,8 @@ function OrganiserEditScore() {
 
                 <div className='OrganiserEditScore-header'>
 
-                    <button className='OrganiserEditScore-headercontainer-BackButton' ><Link to='/OrganizerViewScore'><img src={img} alt=' ' /></Link></button>
-                    <h1 className='OrganiserEditScore-headercontainer-h1'>TVM Junior Sport’s Scoreboard </h1>{/* event name here */}
+                    {/* <button className='OrganiserEditScore-headercontainer-BackButton' ><Link to='/OrganizerViewScore'><img src={img} alt=' ' /></Link></button> */}
+                    <h1 className='OrganiserEditScore-headercontainer-h1'>{inputValue.name} Scoreboard </h1>{/* event name here */}
 
                 </div>
 
@@ -81,7 +100,7 @@ function OrganiserEditScore() {
                             <td className='col-2 OrganiserEditScore-tableHeadData-start'>Sl</td>
                             <td className='col-3 OrganiserEditScore-tableHeadData'>Team Name</td>
                             <td className='col-2 OrganiserEditScore-tableHeadData'>Score</td>
-                            {/* <td className='col-3 OrganiserEditScore-tableHeadData'>Result</td> */}
+                            <td className='col-3 OrganiserEditScore-tableHeadData'>Result</td>
                             <td className='col-2 OrganiserEditScore-tableHeadDataEnd'>View Team Details</td>
 
                         </tr>
@@ -107,8 +126,8 @@ function OrganiserEditScore() {
                                             onChange={(event) => {
                                                 handlechange(x._id, event.target.value);
                                             }} name="score" placeholder={x.score} /></td>{/* Score */}
-                                        {/* <td className='col-3 OrganiserEditScore-tableBodyData'><input className="OrganiserEditScoretext" type="Text" placeholder="" name="Score"></input></td>Result */}
-                                        <td className='col-2 OrganiserEditScore-tableBodyData-end'> <Link to='/OrganizerViewDetails'><a href=' '></a></Link></td>
+                                        <td className='col-3 OrganiserEditScore-tableBodyData'>{x.position}</td>
+                                        <td className='col-2 OrganiserEditScore-tableBodyData-end'> <Link to= {`/OrganizerViewDetails/${x.coachId._id}`}>View data</Link></td>
 
                                     </tr>
                                 )
@@ -125,9 +144,9 @@ function OrganiserEditScore() {
                 {/* button container */}
                 <div className='OrganiserEditScore-buttoncontain'>
 
-                    <button className='OrganiserEditScore-Updatebutton' onClick={()=>{handleUpdate(eventId)}}>Update</button>
+                    <button className='OrganiserEditScore-Updatebutton' onClick={handleUpdate}>Update</button>
 
-                    <Link to='/OrganizerViewScore' style={{ textDecoration: "none" }}>
+                    <Link to='/OrganizerDashboard' style={{ textDecoration: "none" }}>
                         <button className='OrganiserEditScore-Cancelbutton'>Cancel</button>
                     </Link>
 

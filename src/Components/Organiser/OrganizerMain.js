@@ -14,6 +14,7 @@ import OrganiserTicketGen from './OrganiserTicketGen';
 import OrganiserTicketGen2 from './OrganiserTicketGen2';
 import OrganiserViewReport from './OrganiserViewReport';
 import OrganiserAddBlogs from './OrganiserAddBlogs';
+import OrganizerViewBlogs from './OrganizerViewBlogs';
 
 function OrganizerMain({ data }) {
 
@@ -64,7 +65,9 @@ function OrganizerMain({ data }) {
             ): data === 'OrganiserAddBlogs' ? (
               <OrganiserAddBlogs />
             )
-
+            : data === 'OrganizerViewBlogs' ? (
+              <OrganizerViewBlogs />
+            )
             
 
               : (
