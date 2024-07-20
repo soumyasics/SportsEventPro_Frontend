@@ -82,7 +82,7 @@ function OrganiserAddBlogs() {
             .then(response => {
                 if (response.data.status === 200) {
                     alert(response.data.msg);
-                    navigate('/OrganiserViewAllBlogs');
+                    navigate('/OrganizerDashboard');
                 } else {
                     alert(response.data.msg);
                 }

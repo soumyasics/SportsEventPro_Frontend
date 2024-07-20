@@ -43,11 +43,11 @@ function ViewerUpcomingDetails() {
         if (num > 0) {
 
             setNum(prevNum => {
+
                 const newNum = prevNum - 1;
                 setTicketPrice(newNum * baseTicketPrice);
-
-
                 return newNum;
+                
             });
 
             if (num == 2) {

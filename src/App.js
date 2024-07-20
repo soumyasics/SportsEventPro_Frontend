@@ -141,6 +141,14 @@ function App() {
           <Route exact path='/ViewerProfilePopup/:id' element={[<ViewerProfilePopup />]} />
           <Route exact path='/EventRequests' element={[<EventRequests />]} />
           <Route path='/ViewAllEvents' element={[<AdminNav />, <AdminMain data='ViewAllEvents' />, <UserFooter />]} />
+          <Route path='/AdminTicketRevenue' element={[<AdminNav />, <AdminMain data='AdminTicketRevenue' />, <UserFooter />]} />
+          <Route path='/AdminTicketRevenue2' element={[<AdminNav />, <AdminMain data='AdminTicketRevenue2' />, <UserFooter />]} />
+          <Route path='/AdminTeamWiseReport' element={[<AdminNav />, <AdminMain data='AdminTeamWiseReport' />, <UserFooter />]} />
+          <Route path='/AdminEventWiseReport' element={[<AdminNav />, <AdminMain data='AdminEventWiseReport' />, <UserFooter />]} />
+          <Route path='/AdminEventWiseViewReport' element={[<AdminNav />, <AdminMain data='AdminEventWiseViewReport' />, <UserFooter />]} />
+          <Route path='/AdminReviewandRatings' element={[<AdminNav />, <AdminMain data='AdminReviewandRatings' />, <UserFooter />]} />
+          <Route path='/AdminEnquiries' element={[<AdminNav />, <AdminMain data='AdminEnquiries' />, <UserFooter />]} />
+          <Route path='/AdminComplaints' element={[<AdminNav />, <AdminMain data='AdminComplaints' />, <UserFooter />]} />
 
           {/* Team Coach */}
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />
@@ -180,7 +188,7 @@ function App() {
           {/* Organizer */}
           <Route exact path='/OrganizerRegistration' element={[<MainNavbar />, <OrganiserRegistration />, <UserFooter />]} />
           <Route exact path='/OrganizerLogin' element={[<MainNavbar />, <OrganizerLogin />, <UserFooter />]} />
-          <Route exact path='/OrganizerForgotPassword' element={[<MainNavbar />, <OrganiserForgotPassword />, <UserFooter />]} />
+          <Route exact path='/OrganizerForgetPass' element={[<MainNavbar />, <OrganiserForgotPassword />, <UserFooter />]} />
           <Route exact path='/OrganizerDashboard' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganizerDashboard" />, <UserFooter />]} />
           <Route exact path='/OrganiserEditProfile' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganiserEditProfile" />, <UserFooter />]} />
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />]} />
@@ -190,12 +198,13 @@ function App() {
           <Route exact path='/OrganizerViewEvents' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganizerViewEvents" />, <UserFooter />]} />
           <Route exact path='/OrganizerEnroll' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganizerEnroll" />, <UserFooter />]} />
           <Route exact path='/OrganizerScoreBoard' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganizerScoreBoard" />, <UserFooter />]} />
-          <Route exact path='/OrganizerViewScore' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerViewScore' />, <UserFooter />]} />
-          <Route exact path='/OrganizerEditScore' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerEditScore' />, <UserFooter />]} />
-          <Route exact path='/OrganizerViewDetails' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerViewDetails' />, <UserFooter />]} />
+          <Route exact path='/OrganizerViewScore/:id' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerViewScore' />, <UserFooter />]} />
+          <Route exact path='/OrganizerEditScore/:id' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerEditScore' />, <UserFooter />]} />
+          <Route exact path='/OrganizerViewDetails/:id' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganizerViewDetails' />, <UserFooter />]} />
           <Route exact path='/OrganizerTicketGen' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerTicketGen'/>,<UserFooter/>]} />
           <Route exact path='/OrganizerTicketGen2' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerTicketGen2'/>,<UserFooter/>]} />
           <Route exact path='/OrganizerViewReport' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewReport'/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerViewBlogs' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewBlogs'/>,<UserFooter/>]} />
 
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />, <UserFooter />]} />
 

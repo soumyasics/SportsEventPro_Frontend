@@ -46,7 +46,7 @@ function ViewAllViewer() {
 
             <h1 className='Viewer-h1'>Viewer List</h1>
 
-            <div className='AdmiViewTeamCoach-search-container'>
+            <div className='AdminViewTeamCoach-search-container'>
 
                 <input type='search' placeholder='Search Here' className='Viewer-search'></input>
                 <button className='Viewer-search-button'> <img src={img} alt=' ' /> </button>
