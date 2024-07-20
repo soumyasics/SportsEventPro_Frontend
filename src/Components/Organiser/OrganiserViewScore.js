@@ -9,13 +9,13 @@ function OrganiserViewScore() {
 const { id } = useParams();
 
     const navigate = useNavigate()
-    const [inputValue, setInputValue] = useState({eventId:{name:''}});
+    const [inputValue, setInputValue] = useState({});
 
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
     const getData = () => {
-        axiosInstance.post(`/viewEnrollments`).then(res => {
+        axiosInstance.post(`/viewEnrollments/${id}`).then(res => {
 
             console.log(res);
 
@@ -29,7 +29,7 @@ const { id } = useParams();
         })
     }
     const getData2 = () => {
-        axiosInstance.post(`/viewEnrollmentById/${id}`).then(res => {
+        axiosInstance.post(`/viewEventById/${id}`).then(res => {
 
             console.log(res);
 
@@ -63,8 +63,8 @@ getData2()
 
                 <div className='OrganiserViewScore-header'>
 
-                    <button className='OrganiserViewScore-headercontainer-BackButton' ><Link to='/OrganizerScoreboard'><img src={img} alt=' ' /></Link></button>
-                    <h1 className='OrganiserEditScore-headercontainer-h1'>{inputValue.eventId.name} Scoreboard </h1>{/* event name here */}
+                    {/* <button className='OrganiserViewScore-headercontainer-BackButton' ><Link to='/OrganizerScoreboard'><img src={img} alt=' ' /></Link></button> */}
+                    <h1 className='OrganiserEditScore-headercontainer-h1'>{inputValue.name} Scoreboard </h1>{/* event name here */}
 
                 </div>
 
@@ -100,7 +100,7 @@ getData2()
                 <td className='col-3 OrganiserEditScore-tableBodyData'>{x.coachId.teamName}</td>{/* Team Name */}
                 <td className='col-2 OrganiserEditScore-tableBodyData no-arrows'>{x.score} </td>
                 <td className='col-3 OrganiserEditScore-tableBodyData'>{x.position}</td>
-                <td className='col-2 OrganiserEditScore-tableBodyData-end'> <Link to='/OrganizerViewDetails'>View data</Link></td>
+                <td className='col-2 OrganiserEditScore-tableBodyData-end'> <Link to= {`/OrganizerViewDetails/${x.coachId._id}`}>View data</Link></td>
 
             </tr>
         )

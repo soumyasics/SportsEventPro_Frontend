@@ -6,7 +6,7 @@ import axiosInstance from '../Constant/BaseURL';
 
 function OrganiserEditScore() {
     const { id } = useParams();
-    const [inputValue, setInputValue] = useState({eventId:{name:''}});
+    const [inputValue, setInputValue] = useState({});
 
     const navigate = useNavigate()
 
@@ -14,7 +14,7 @@ function OrganiserEditScore() {
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
     const getData = () => {
-        axiosInstance.post(`/viewEnrollments`).then(res => {
+        axiosInstance.post(`/viewEnrollments/${id}`).then(res => {
 
             console.log(res);
 
@@ -28,7 +28,7 @@ function OrganiserEditScore() {
         })
     }
     const getData2 = () => {
-        axiosInstance.post(`/viewEnrollmentById/${id}`).then(res => {
+        axiosInstance.post(`/viewEventById/${id}`).then(res => {
 
             console.log(res);
 
@@ -67,7 +67,7 @@ function OrganiserEditScore() {
         // let eventId=localStorage.getItem('eventId')
        
         console.log(id);
-        axiosInstance.post(`/updatePositions/${id}`).then(res => {
+        axiosInstance.post(`/updatePositions/${inputValue._id}`).then(res => {
 
             console.log(res);
             if(res.data.status==200)
@@ -86,8 +86,8 @@ function OrganiserEditScore() {
 
                 <div className='OrganiserEditScore-header'>
 
-                    <button className='OrganiserEditScore-headercontainer-BackButton' ><Link to='/OrganizerViewScore'><img src={img} alt=' ' /></Link></button>
-                    <h1 className='OrganiserEditScore-headercontainer-h1'>{inputValue.eventId.name} Scoreboard </h1>{/* event name here */}
+                    {/* <button className='OrganiserEditScore-headercontainer-BackButton' ><Link to='/OrganizerViewScore'><img src={img} alt=' ' /></Link></button> */}
+                    <h1 className='OrganiserEditScore-headercontainer-h1'>{inputValue.name} Scoreboard </h1>{/* event name here */}
 
                 </div>
 
@@ -127,7 +127,7 @@ function OrganiserEditScore() {
                                                 handlechange(x._id, event.target.value);
                                             }} name="score" placeholder={x.score} /></td>{/* Score */}
                                         <td className='col-3 OrganiserEditScore-tableBodyData'>{x.position}</td>
-                                        <td className='col-2 OrganiserEditScore-tableBodyData-end'> <Link to='/OrganizerViewDetails'>View data</Link></td>
+                                        <td className='col-2 OrganiserEditScore-tableBodyData-end'> <Link to= {`/OrganizerViewDetails/${x.coachId._id}`}>View data</Link></td>
 
                                     </tr>
                                 )

@@ -15,7 +15,7 @@ function OrganiserScoreboard() {
 
     const getData = async () => {
         try {
-            const res = await axiosInstance.post(`/viewPAprvdEnrollmentsByOrganizerId/${localStorage.getItem('organizerId')}`);
+            const res = await axiosInstance.post(`/viewApprovedEventsByOrgId/${localStorage.getItem('organizerId')}`);
             // const fetchedCategory = res.data.data.category;
             // setCategory(fetchedCategory);
             setEvent(res.data.data);
@@ -59,21 +59,21 @@ function OrganiserScoreboard() {
     return (
                         <div className="card OrganiserScoreBoard-content-contain">
 
-<img   src={`${url}/${x?.eventId?.banner?.filename}`} className="card-img-top OrganiserScoreBoard-img" alt="..." />{/*event image */}
+<img   src={`${url}/${x?.banner?.filename}`} className="card-img-top OrganiserScoreBoard-img" alt="..." />{/*event image */}
 
                             <div className="card-body" style={{width:"100%"}}>
 
                                 <div className="card-title">
 
-                                    <h5 className='CardHeadTxtH5'>{x.eventId.name}</h5>{/* event name */}
-                                    <h1 className='CardHeadTxtH1'>{x.eventId.category}</h1>{/* event category */}
+                                    <h5 className='CardHeadTxtH5'>{x.name}</h5>{/* event name */}
+                                    <h1 className='CardHeadTxtH1'>{x.category}</h1>{/* event category */}
 
                                 </div>
 
                                 <div className="card-text">
 
-                                    <p className='CardTextP'>Place:{x.eventId.venue}</p>
-                                    <h2 className='CardTextH2'>{x.eventId.date.slice(0,10)}, {x.eventId.time}</h2> {/* event date and time */}
+                                    <p className='CardTextP'>Place:{x.venue}</p>
+                                    <h2 className='CardTextH2'>{x.date.slice(0,10)}, {x.time}</h2> {/* event date and time */}
                                     <div className='OrganiserScoreBoard-button-contain'>
 
                                         <Link to={`/OrganizerViewScore/${x._id}`} style={{textDecoration:"none"}}><button className='OrganiserScoreBoard-button'>View Score</button></Link>
