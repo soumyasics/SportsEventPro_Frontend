@@ -60,7 +60,7 @@ function AdminTicketRevenue() {
                             </div>
 
                         </td>
-                        <td className='col-2 AdminTicketRevenue-tableBodyData-end'><Link to={''} alt=""> View Details </Link></td>
+                        <td className='col-2 AdminTicketRevenue-tableBodyData-end'><Link to='/AdminTicketRevenue2' alt=""> View Details </Link></td>
 
                     </tr>
 

@@ -15,7 +15,7 @@ function AdminTicketRevenue2() {
 
                     <div style={{ display: 'flex', flexDirection: 'row', width: 'max-content' }}>
 
-                        <Link to='/admindashboard'><button className='AdminTicketRevenue2-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
+                        <Link to='/AdminTicketRevenue'><button className='AdminTicketRevenue2-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
                         <h1 className='AdminTicketRevenue2-headercontainer-h1'>TVM Junior Sport’s Event Revenue</h1>
 
                     </div>

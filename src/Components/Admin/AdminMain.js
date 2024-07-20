@@ -23,6 +23,9 @@ import AdminTicketRevenue2 from './AdminTicketRevenue2'
 import AdminTeamWiseReport from './AdminTeamWiseReport'
 import AdminEventWiseReport from './AdminEventWiseReport'
 import AdminEventWiseViewReport from './AdminEventWiseViewReport'
+import AdminReviewandRatings from './AdminReviewandRatings'
+import AdminEnquiries from './AdminEnquiries'
+import AdminComplaints from './AdminComplaints'
 
 function AdminMain({ data }) {
   const navigate = useNavigate();
@@ -81,6 +84,12 @@ function AdminMain({ data }) {
               <AdminEventWiseReport />
             ) : data === 'AdminEventWiseViewReport' ? (
               <AdminEventWiseViewReport />
+            ) : data === 'AdminReviewandRatings' ? (
+              <AdminReviewandRatings />
+            ) : data === 'AdminEnquiries' ? (
+              <AdminEnquiries />
+            ) : data === 'AdminComplaints' ? (
+              <AdminComplaints />
             ) :
 
 
