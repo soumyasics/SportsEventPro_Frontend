@@ -62,9 +62,10 @@
 
 .ViewerBlogsImg {
 
-    position: absolute;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.00) 30%, rgba(0, 0, 0, 0.00) 70%, #000 100%) lightgray 50% / cover no-repeat;
-    z-index: -1;
+    height: 256px;
+    width: 421px;
+
 }
 
 .ViewerBlogsButton {
