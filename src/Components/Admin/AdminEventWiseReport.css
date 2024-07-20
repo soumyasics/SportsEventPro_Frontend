@@ -37,6 +37,7 @@
 
     background-color: #00000000;
     border: none;
+    margin-top: 18px;
 
 }
 
@@ -70,7 +71,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     border-radius: 20px;
     border: 1px solid #BCBCBC;
     background: var(--icon-color, #FFF);
@@ -82,7 +82,7 @@
 
     width: 421px;
     height: 350.653px;
-    margin-left: 1px;
+    margin-left: -1px;
     border: 1px solid #BCBCBC; 
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -184,7 +184,7 @@
 
 .AdminEventWiseReport-button {
 
-    margin-left: 76%;
+    margin-left: 71%;
     display: flex;
     padding: 10px 15px;
     justify-content: center;

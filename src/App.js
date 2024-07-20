@@ -144,6 +144,8 @@ function App() {
           <Route path='/AdminTicketRevenue' element={[<AdminNav />, <AdminMain data='AdminTicketRevenue' />, <UserFooter />]} />
           <Route path='/AdminTicketRevenue2' element={[<AdminNav />, <AdminMain data='AdminTicketRevenue2' />, <UserFooter />]} />
           <Route path='/AdminTeamWiseReport' element={[<AdminNav />, <AdminMain data='AdminTeamWiseReport' />, <UserFooter />]} />
+          <Route path='/AdminEventWiseReport' element={[<AdminNav />, <AdminMain data='AdminEventWiseReport' />, <UserFooter />]} />
+          <Route path='/AdminEventWiseViewReport' element={[<AdminNav />, <AdminMain data='AdminEventWiseViewReport' />, <UserFooter />]} />
 
           {/* Team Coach */}
           <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />

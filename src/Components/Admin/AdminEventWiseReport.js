@@ -17,8 +17,8 @@ function AdminEventWiseReport() {
                     {/* separated div for backbutton and text */}
                     <div className='col  AdminEventWiseReport-headercontainer-container-1'>
 
-                        <button className='AdminEventWiseReport-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
-                        <h1 className='AdminEventWiseReport-headercontainer-h1'>Results</h1>
+                        <Link to='/admindashboard'><button className='AdminEventWiseReport-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
+                        <h1 className='AdminEventWiseReport-headercontainer-h1'>Event Wise Report</h1>
 
                     </div>
 
@@ -41,21 +41,15 @@ function AdminEventWiseReport() {
                                             <h1 className='CardHeadTxtH1'>Football</h1>{/* event category */}
                                         </div>
 
-                                        <div>
-
-                                            <button className='CardHeadTxtButton1'>Add Review & Rating</button>
-
-                                        </div>
-
                                     </div>
 
                                     <div className="card-text">
 
-                                        <p className='CardTextP'>Biggest Sports tournament held in Trivandrum. Don’t miss it!</p>{/* event description */}
+                                        <p className='CardTextP'>Place: Trivandrum</p>{/* event venue */}
                                         <h2 className='CardTextH2'>12/12/2024, 2:00 PM</h2> {/* event date and time */}
                                         <div className='AdminEventWiseReport-button-contain'>
 
-                                            <Link to='/TeamCoachViewResults' style={{ textDecoration: 'none' }}><button className='AdminEventWiseReport-button'> Results</button></Link>
+                                            <Link to='/AdminEventWiseViewReport' style={{ textDecoration: 'none' }}><button className='AdminEventWiseReport-button'> View Score</button></Link>
 
                                         </div>
 
