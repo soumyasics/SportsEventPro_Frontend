@@ -1,5 +1,4 @@
-
-.Organiseraddblogs-Content-input-banner{
+.Organiseraddblogs-Content-input-banner {
     background-image: url('../../Assets/OrganiserRegistration_2.png');
     background-repeat: no-repeat;
     background-position-x: 98%;
@@ -7,8 +6,7 @@
     background-size: 3%;
     cursor: pointer;
     padding: 8px 12px;
-    width: 510px;   
-     
+    width: 510px;
     height: 36px;
     overflow: hidden;
     color: rgba(0, 0, 0, 0.50);
@@ -21,95 +19,115 @@
     line-height: 20px;
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0.10);
-    
+
 }
-    .OrganiserAddBlogs-BackButton{
-        background-color: #00000000;
-        border: none;
-        margin-top: 101.5px;
-        margin-left: -218px;
-    }
-    .OrganiserAddBlogs-Heading{
-        margin-top: 78px;
-        text-align: center;
-    }
-    .OrganiserAddBlogs-input1{
-        background-repeat: no-repeat;
-        background-position-x: 98%;
-        background-position-y: center;
-        background-size: 3%;
-        cursor: pointer;
-        padding: 8px 12px;
-        width: 510px;    
-        height: 36px;
-        overflow: hidden;
-        color: rgba(0, 0, 0, 0.50);
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-family: Roboto;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-        border-radius: 6px;
-        border: 1px solid rgba(0, 0, 0, 0.10);
-    }
-    .OrganiserAddBlogs-input3{
-        background-repeat: no-repeat;
-        background-position-x: 98%;
-        background-position-y: center;
-        background-size: 3%;
-        cursor: pointer;
-        padding: 8px 12px;
-        width: 510px;
-        height: 78px;
-        overflow: hidden;
-        color: rgba(0, 0, 0, 0.50);
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-family: Roboto;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-        border-radius: 6px;
-        border: 1px solid rgba(0, 0, 0, 0.10);
-        padding-bottom: 48px;
-    }
-    .OrganiserAddBlogs-MainDiv{
-        text-align: center;
-    }
-    .OrganiserAddBlogs-text{
-        margin-top: 22px;
-        margin-bottom: 0rem;
-        text-align: left;
-        margin-left: 228px;
-        color: #000;
-        font-family: Roboto;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 20px;
-    }
-    .OrganiserAddBlogs-button{
-        display: flex;
-        width: 240px;
-        padding: 12px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 8px;
-        background: #000;
-        color: var(--icon-color, #FFF);
-        font-family: Roboto;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 24px;
-        margin-left: 372px;
-        margin-top: 48px;
-    }
-    .OrganiserAddBlogsvalidation{
-        text-align: left;
-        margin-left: 507px;
-        }
+
+.Organiseraddblogs-Content-input-banner[type=file]::file-selector-button {
+
+    font: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    background-color: #00000000;
+    color: #00000000;
+    border: none;
+  
+}
+
+.OrganiserAddBlogs-BackButton {
+    background-color: #00000000;
+    border: none;
+    margin-top: 101.5px;
+    margin-left: -218px;
+}
+
+.OrganiserAddBlogs-Heading {
+    margin-top: 78px;
+    text-align: center;
+}
+
+.OrganiserAddBlogs-input1 {
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: center;
+    background-size: 3%;
+    cursor: pointer;
+    padding: 8px 12px;
+    width: 510px;
+    height: 36px;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.OrganiserAddBlogs-input3 {
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: center;
+    background-size: 3%;
+    cursor: pointer;
+    padding: 8px 12px;
+    width: 510px;
+    height: 78px;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.50);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    padding-bottom: 48px;
+}
+
+.OrganiserAddBlogs-MainDiv {
+    text-align: center;
+}
+
+.OrganiserAddBlogs-text {
+    margin-top: 22px;
+    margin-bottom: 0rem;
+    text-align: left;
+    margin-left: 228px;
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.OrganiserAddBlogs-button {
+    display: flex;
+    width: 240px;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #000;
+    color: var(--icon-color, #FFF);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-left: 372px;
+    margin-top: 48px;
+}
+
+.OrganiserAddBlogsvalidation {
+    text-align: left;
+    margin-left: 507px;
+}

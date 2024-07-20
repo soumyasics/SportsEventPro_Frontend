@@ -12,7 +12,7 @@ function OrganizerViewBlogs() {
     const [isApproved, setIsApproved] = useState(false)
 
     const navigate = useNavigate()
-const id=localStorage.getItem('organizerId')
+    const id = localStorage.getItem('organizerId')
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
@@ -52,6 +52,7 @@ const id=localStorage.getItem('organizerId')
 
                     <div style={{ display: 'flex', flexDirection: 'row', width: 'max-content' }}>
 
+                        <Link to='/OrganizerDashboard'><button className='OViewerBlogs-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
                         <h1 className='OViewerBlogs-headercontainer-h1'>Blogs</h1>
 
                     </div>
@@ -64,43 +65,43 @@ const id=localStorage.getItem('organizerId')
                     {/* a single card start */}
                     {
 
-(userData && userData.length > 0) ? (userData.map((x, index) => {
+                        (userData && userData.length > 0) ? (userData.map((x, index) => {
 
-    return (
-                    <div className='OViewerBlogsimgDiv-contain'>
+                            return (
+                                <div className='OViewerBlogsimgDiv-contain'>
 
-                        <div className='OViewerBlogsimgDiv-img'>
+                                    <div className='OViewerBlogsimgDiv-img'>
 
-                            <img src={`${url}/${x?.image?.filename}`} alt=' ' className='OViewerBlogsImg' />
-                            <button className='OViewerBlogsButton'><img src={img4} alt='' /></button>
+                                        <img src={`${url}/${x?.image?.filename}`} alt=' ' className='OViewerBlogsImg' />
 
-                        </div>
+                                    </div>
 
-                        <div className='OViewerBlogsimgDiv-content'>
+                                    <div className='OViewerBlogsimgDiv-content'>
 
-                            <div className='OViewerBlogsimgDiv-content-1'>
+                                        <div className='OViewerBlogsimgDiv-content-1'>
 
-                                <h1 className='OViewerBlogsimgDiv-content-1-h1'>{x.title}</h1>
-                                {/* <h1 className='OViewerBlogsimgDiv-content-1-h1-2'>{x.date.slice(0,10)}</h1> */}
-                                <h1 className='OViewerBlogsimgDiv-content-1-h1-3'>{x.description}</h1>
-                            </div>
+                                            <h1 className='OViewerBlogsimgDiv-content-1-h1'>{x.title}</h1>
+                                            {/* <h1 className='OViewerBlogsimgDiv-content-1-h1-2'>{x.date.slice(0,10)}</h1> */}
+                                            <h1 className='OViewerBlogsimgDiv-content-1-h1-3'>{x.description}</h1>
 
-                            <div className='OViewerBlogsimgDiv-content-2'>
+                                        </div>
 
-                                <img src={img3} alt='' className='OViewerBlogsimgDiv-content-2-img' />{/* blog author img */}
-                                <h1 className='OViewerBlogsimgDiv-content-2-h1'>{x.organizerId.name}</h1>{/* Blog author */}
+                                        <div className='OViewerBlogsimgDiv-content-2'>
 
-                            </div>
+                                            <button className='OrgEditButton'>Edit</button>
+                                            <button className='OrgRemoveButton'>Remove</button>
 
-                        </div>
+                                        </div>
 
-                    </div>
-                    )
-                })) : (
-                    <h1 className="AdminCoachRequestH5">No Events Found</h1>
-                )
+                                    </div>
 
-            }
+                                </div>
+                            )
+                        })) : (
+                            <h1 className="AdminCoachRequestH5">No Events Found</h1>
+                        )
+
+                    }
                     {/* a single card end */}
                 </div>
 

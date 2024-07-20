@@ -35,7 +35,6 @@ function ViewerBlogs() {
                         <div className='ViewerBlogsimgDiv-img'>
 
                             <img src={img} alt=' ' className='ViewerBlogsImg' />
-                            <button className='ViewerBlogsButton'><img src={img4} alt='' /></button>
 
                         </div>
 
