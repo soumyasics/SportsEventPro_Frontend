@@ -10,9 +10,9 @@ function OrganiserDashboardNavBar() {
     const navigate = useNavigate()
 
 
-    const id=localStorage.getItem('organizerId')
+    const id = localStorage.getItem('organizerId')
     const [userData, setUserData] = useState({
-        name:'',email:''
+        name: '', email: ''
     });
 
 
@@ -38,7 +38,7 @@ function OrganiserDashboardNavBar() {
     }, [id]);
     console.log(userData);
 
-    
+
     return (
 
         <div>
@@ -72,12 +72,12 @@ function OrganiserDashboardNavBar() {
 
                         <div className='OrganiserProfContainDiv'>
 
-                            <img src = {img2} alt=' ' />{/* put organiser image here pls */}
+                            <img src={img2} alt=' ' />{/* put organiser image here pls */}
 
                             <div className='Organiserh1ContainDiv'>
-<Link to='/OrganiserEditProfile'>
-                                <h1 className = ' Organiser-h1 '>{userData.name}</h1>{/*organiser name */}
-                                <h1 className = 'Organiser-h1' >{userData.email}</h1>{/*organiser email */}
+                                <Link to='/OrganiserEditProfile' style={{textDecoration:'none'}}>
+                                    <h1 className=' Organiser-h1 '>{userData.name}</h1>{/*organiser name */}
+                                    <h1 className='Organiser-h1' >{userData.email}</h1>{/*organiser email */}
                                 </Link>
                             </div>
 
