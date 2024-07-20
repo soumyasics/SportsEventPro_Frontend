@@ -20,27 +20,35 @@ function AdminEnquiries() {
 
                 </div>
 
-                <div className='AdminEnquiries-Body'>
+                <div style={{display:'flex',flexDirection:'row',gap:'30px',alignItems:'center',flexWrap:'wrap'}}>
 
-                    <div style={{display:'flex',flexDirection:'column',gap:'15px'}}>
+                    {/* array map from here */}
 
-                        <h1 className='AdminEnquiries-Body-h1'>Enquiry Type : Registration</h1>
-                        <h2 className='AdminEnquiries-Body-h2'>Registration Failed. Unable to register !</h2>
+                    {/* single card start */}
+                    <div className='AdminEnquiries-Body'>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+
+                            <h1 className='AdminEnquiries-Body-h1'>Enquiry Type : Registration</h1>
+                            <h2 className='AdminEnquiries-Body-h2'>Registration Failed. Unable to register !</h2>
+
+                        </div>
+
+                        <div>
+
+                            <ul style={{ display: 'flex', flexDirection: 'row', gap: '30px' }}>
+
+                                <li className='AdminEnquiries-Body-h1'>Priya</li>
+                                <li className='AdminEnquiries-Body-h1'>1234512345</li>
+                                <li className='AdminEnquiries-Body-h1'>priya12@gmail.com</li>
+                                <li className='AdminEnquiries-Body-h1'>Feb, 2024</li>
+
+                            </ul>
+
+                        </div>
 
                     </div>
-
-                    <div>
-
-                        <ul style={{display:'flex',flexDirection:'row',gap:'30px'}}>
-
-                            <li className='AdminEnquiries-Body-h1'>Priya</li>
-                            <li className='AdminEnquiries-Body-h1'>1234512345</li>
-                            <li className='AdminEnquiries-Body-h1'>priya12@gmail.com</li>
-                            <li className='AdminEnquiries-Body-h1'>Feb, 2024</li>
-
-                        </ul>
-
-                    </div>
+                    {/* single card end */}
 
                 </div>
 
