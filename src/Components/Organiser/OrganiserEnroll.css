@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+.OrganiserEnrollParentDiv {
+
+    width: 100%;
+
+}
+
 .OrganiserEnrollListBackground {
 
     margin-top: 50px;
-    margin-left: -4%;
     background-color: #EEE;
     padding: 40px;
-    border-radius: 32px;    
-    width:100%;
-    
+    border-radius: 32px;
+    width: 100%;
+
 }
 
 .OrganiserEnrollH3 {
@@ -24,7 +29,7 @@
 
     display: flex;
     flex-direction: column;
-    
+
 }
 
 .OrganiserEnrollListElements {
@@ -43,15 +48,19 @@
     text-align: right;
 
 }
-.OrganiserEnroll-img{
+
+.OrganiserEnroll-img {
     height: 60px;
-    width:80px;
-    padding-right: 5px;
+    width: 60px;
+    border-radius: 50px;
+    border: none;
 }
-.OrganiserEnrollH5{
-    color:red;
+
+.OrganiserEnrollH5 {
+    color: red;
     font-size: large;
 }
+
 /* .OrganiserEnroll-Stylerow{
     gap: 40px;
     top:50px;
@@ -62,3 +71,45 @@
     width: 1126px;
     
 } */
+
+.OrgEnrollAccButt {
+
+    display: flex;
+    width: 89px !important;
+    height: 36px !important;
+    justify-content: center;
+    align-items: center;
+    gap: 2.71px;
+    border-radius: 5px;
+    border: none;
+    background: #00850D;
+    color: var(--icon-color, #FFF);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.OrgEnrollRejButt {
+
+    display: flex;
+    width: 89px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #E10000;
+    background: var(--icon-color, #ffffff00);
+    gap: 2.71px;
+    color: #E10000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}

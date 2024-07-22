@@ -4,6 +4,7 @@ import img from '../../Assets/Group 90.svg'
 import img2 from "../../Assets/Back Button.svg"
 import ReactStars from 'react-stars'
 import axiosInstance from '../Constant/BaseURL'
+import { Link } from 'react-router-dom'
 
 function AdminViewReviewAndRatings() {
     let a = 4
@@ -81,59 +82,72 @@ function AdminViewReviewAndRatings() {
 
                     {/* arraymap from here */}
                     {/* start */}
-                    
+
                     {
 
-(userData && userData.length > 0) ? (userData.map((x, index) => {
+                        (userData && userData.length > 0) ? (userData.map((x, index) => {
 
-    return (
-                    <div className='adminRR-content'>
+                            return (
+                                <div className='adminRR-content'>
 
-                        {/* for the rating stars */}
-                        <div style={{display:"flex",flexDirection:"row"}}>
+                                    {/* for the rating stars */}
+                                    <div style={{ display: "flex", flexDirection: "row" }}>
 
-                            <div className="d-flex mt-2">
-                                <ReactStars
-                                    count={5}
-                                    size={30}
-                                    value={a}
-                                    color1='#D9D9D9'
-                                    color2='#56B60B'
-                                    edit={false}
-                                />
-             {/* please make sure to match the value of  ReacStars (a) to the above given useEffect so that the dynamic ratings text will work */}
-                            </div>
+                                        <div className="d-flex mt-2">
+                                            <ReactStars
+                                                count={5}
+                                                size={30}
+                                                value={a}
+                                                color1='#D9D9D9'
+                                                color2='#56B60B'
+                                                edit={false}
+                                            />
+                                            {/* please make sure to match the value of  ReacStars (a) to the above given useEffect so that the dynamic ratings text will work */}
+                                        </div>
 
-                            <p className='adminRR-star-p' ref={txtpref}></p>
+                                    </div>
 
-                        </div>
-                        
-                        <h1 className='adminRR-content-h1'>{x.review}</h1>
+                                    <div>
+                                        <div>
 
-                        <div className='adminRR-content-contentcontainer'>
+                                            <h1 className='adminRR-content-h1'>Event Name here</h1>
+                                            <h1 className='adminRR-content-h1-2'>Organiser Name here</h1>
 
-                            <div className='adminRR-content-content'>
+                                        </div>
 
-                                <img src={img} alt='' />
-                                <p className='adminRR-content-p1'>{x.tcId?x.tcId.name:''}{/* TeamCaoch name maybe? or team name? */}</p>
+                                    </div>
 
-                                <p className='adminRR-content-p'>{x.tcId?'Enrolled Team Coach':''}{/* TeamCaoch name maybe? or team name? */}</p>
+                                    <div className='adminRR-content-contentcontainer'>
 
-                            </div>
-                            <li>
-                                <p className='adminRR-content-p'>{x.date.slice(0,10)}{/* review date here */}</p>
-                            </li>
+                                        <div className='adminRR-content-content'>
+
+                                            <p className='adminRR-content-p1'>{x.tcId ? x.tcId.name : ''}{/* TeamCaoch name maybe? or team name? */}</p>
+
+                                            <li>
+                                                <p className='adminRR-content-p'>{x.tcId ? 'Enrolled Team Coach' : ''}{/* TeamCaoch name maybe? or team name? */}</p>
+                                            </li>
+
+                                            <li>
+                                                <p className='adminRR-content-p'>{x.date.slice(0, 10)}{/* review date here */}</p>
+                                            </li>
+
+                                        </div>
+                                        <div>
+
+                                            <Link to='/AdminReviewAndRatings' style={{textDecoration:'none'}}><button className='AButt'>View Details</button></Link>
+
+                                        </div>
 
 
-                        </div>
+                                    </div>
 
-                    </div>
+                                </div>
 
-                    )
-                })
-            ):(<h1>No reviews</h1>)
+                            )
+                        })
+                        ) : (<h1>No reviews</h1>)
 
-            }
+                    }
                     {/* end */}
                 </div>
 
