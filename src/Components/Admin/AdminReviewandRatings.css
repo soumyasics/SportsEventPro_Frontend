@@ -71,7 +71,7 @@
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.20);
     background: var(--icon-color, #FFF);
-    height: 163px;
+    height: max-content;
     width: 636px;
 
 }

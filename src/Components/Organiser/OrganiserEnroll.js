@@ -78,9 +78,9 @@ const id=localStorage.getItem('organizerId')
 
     return (
 
-        <div className="OrganiserEnrollParentDiv container">
+        <div className="OrganiserEnrollParentDiv ">
 
-            <div className="container OrganiserEnrollListBackground">
+            <div className=" OrganiserEnrollListBackground">
 
                 <h3 className="OrganiserEnrollH3">Enroll Requests</h3>
 
@@ -106,7 +106,7 @@ const id=localStorage.getItem('organizerId')
 
                                     </li>
 
-                                    <li className="col-3 text-start  ml-1 ">
+                                    <li className="col-2 text-start  ml-1 ">
 
                                         <h5 className="fs-5"> {x.coachId.name}{/*Player Name*/}</h5>
                                         <h6 className="fw-light fs-6 ">Sport : {x.coachId.category}</h6>
@@ -127,16 +127,14 @@ const id=localStorage.getItem('organizerId')
 
                                     </li>
 
-                                    <li className="col-1 text-end">
+                                    <li className="col-3 text-start" style={{display:'flex',alignItems:'flex-start', gap:'15px'}}>
 
-                                        <button className="btn btn-success px-4" ><img src={img2} alt="" onClick={()=>{approve(x._id)}}/> Accept</button>
+                                        <button className="OrgEnrollAccButt" onClick={()=>{approve(x._id)}}><img src={img2} style={{height:'23px',width:'23px'}} alt="" /> Accept</button>
 
-                                    </li>
-                                    <li className="col-1 text-end">
-
-                                        <button className="btn btn-outline-danger px-4" ><img src={img3} alt="" onClick={()=>{reject(x._id)}}/> Reject</button>
+                                        <button className="OrgEnrollRejButt" onClick={()=>{reject(x._id)}}><img src={img3} style={{height:'24px',width:'24px'}} alt="" /> Reject</button>
 
                                     </li>
+                                    
 
                                 </div>
 

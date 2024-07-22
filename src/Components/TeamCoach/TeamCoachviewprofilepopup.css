@@ -95,7 +95,9 @@ align-self: stretch;
 
 .Teamcoachviewprofilepopupimg-1-backend{
     width: 102px;
-    height: 105px;
+    height: 102px;
+    border-radius: 50px;
+    border:none;
     margin-left: 197px;
     flex-shrink: 0;
     background-color: aqua;
