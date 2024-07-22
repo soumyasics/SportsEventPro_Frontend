@@ -1,13 +1,29 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './OrganiserSideBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { Link, useNavigate } from 'react-router-dom'
 import img7 from '../../Assets/octicon_x-16.svg'
+import axiosInstance from '../Constant/BaseURL'
 
 
 function OrganiserSideBar() {
     const navigate = useNavigate()
+    const [comp, setComp] = useState({
+        organizerId:localStorage.getItem('organizerId'),
+        complaint:'',
+        userRole:'organizer'
+    });
+    const handleChange = (event) => {
+    
+        const { name, value } = event.target;
+       
+            setComp(prevData => ({
+                ...prevData,
+                [name]: value
+            }));
+        
+    };
     const handleLogout = (e) => {
         console.log(e);
 
@@ -20,6 +36,34 @@ function OrganiserSideBar() {
             navigate("/");
         }
     }, [navigate]);
+
+    const addcomplaint=()=>{
+        console.log("fun called", comp);
+
+        axiosInstance.post('addComplaint', comp)
+
+            .then(response => {
+
+                console.log(response);
+
+                if (response.data.status == 200) {
+
+                    alert("Complaint Added Succesfully")
+                    navigate('/OrganizerDashboard')
+                }
+
+                else {
+
+                    alert(response.data.msg)
+                }
+
+            })
+            .catch(error => {
+
+                console.error(error);
+
+            })
+    }
     return (
 
         <div className='OrganiserSideBar'>
@@ -167,10 +211,10 @@ function OrganiserSideBar() {
                                                 <img src={img7} alt=' ' className='imageEE' data-bs-dismiss="modal" aria-label="Close" />
 
                                                 <h1 className='h1ishere'>Register a Complaint</h1>
-                                                <input type='textarea' className='txtArea'></input>
+                                                <input type='textarea' className='txtArea' name='complaint' onChange={handleChange}></input>
                                             </div>
                                             <div className='ModalDialog-button-contain'>
-                                                <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal">Submit</button>
+                                                <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal" onClick={addcomplaint}>Submit</button>
                                             </div>
 
                                         </div>

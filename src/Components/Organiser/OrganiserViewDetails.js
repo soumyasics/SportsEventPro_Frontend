@@ -40,7 +40,6 @@ setCoach(res.data.coach)
 
                 <div className='OrganiserViewDetails-header'>
 
-                    <button className='OrganiserViewDetails-headercontainer-BackButton' ><Link to='/OrganizerViewScore'><img src={img} alt=' ' /></Link></button>
                     <h1 className='OrganiserViewDetails-headercontainer-h1'>View Team Details </h1>
 
                 </div>

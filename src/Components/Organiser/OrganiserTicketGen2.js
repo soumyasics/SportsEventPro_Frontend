@@ -1,11 +1,38 @@
-import React from 'react'
 import './OrganiserTicketGen2.css'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axiosInstance from "../Constant/BaseURL";
 import img2 from "../../Assets/Back Button.svg"
 
 
 function OrganiserTicketGen2() {
-
+    const navigate = useNavigate()
+    const id=localStorage.getItem('organizerId')
+        const [userData, setUserData] = useState([]);
+        const url = axiosInstance.defaults.url;
+        console.log("url,", url);
+        useEffect(() => {
+    
+            let res;
+    
+    
+            axiosInstance.post(`viewEventByOrganizerId/${id}`).then(res => {
+    
+                console.log(res);
+    
+                if ((res.data.data).length > 0)
+                    setUserData(res.data.data);
+                else
+                    setUserData(null)
+                console.log(res.data.data);
+            }).catch(err => {
+                console.log(err);
+            })
+    
+        }, []);
+        useEffect(() => {
+            console.log("users", userData);
+        })
     return (
 
         <div className='OrganiserTicketGen2'>
@@ -26,29 +53,7 @@ function OrganiserTicketGen2() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '25px', alignItems: 'center' }}>
 
-                    <div className="OrganiserTicketGen2-body-right-top">
-
-                        <div className='OrganiserTicketGen2-body-2'>
-
-                            <h1 className='OrganiserTicketGen2-body-h1'>The Eagles Vs The kings</h1>{/* team names */}
-
-                            <div style={{ display: "flex", flexDirection: 'row', gap: '8px' }}>
-
-                                <h1 className='OrganiserTicketGen2-body-h1-1'>TVM Junior Sports</h1>{/* event name */}
-                                <h1 className='ViewerBookNow-body-h1-2'>Football</h1>{/* event category */}
-
-                            </div>
-
-                        </div>
-
-                        <div className='OrganiserTicketGen2-body-2-2'>
-
-                            <h5 className='OrganiserTicketGen2-body-h5'>Trivandrum</h5>{/* event venue */}
-                            <h2 className='OrganiserTicketGen2-body-h2'>12/12/2024, 2:00 PM</h2> {/* event date and time */}
-
-                        </div>
-
-                    </div>
+               
 
                     <div style={{ display: 'flex', flexDirection: 'row', gap: '45px', alignItems: 'center', width: '100%' }}>
 
@@ -57,8 +62,28 @@ function OrganiserTicketGen2() {
                             <div>
 
                                 <label className='OrganiserTicketGen2-label-h1'>Event Name</label>
-                                <input className='OrganiserTicketGen2-input' type='text' placeholder='Enter The Ticket Price' />
+                                {/* <input className='OrganiserTicketGen2-input' type='text' placeholder='Enter The Ticket Price' /> */}
+                                <select className="OrganiserTicketGen-Content-Input-Country" aria-label="Default select example">
 
+<option className='OrganiserTicketGen-Content-Input-Select-Option'>Select Event</option>
+
+{/* <option value="Kerala">Goa</option>
+<option value="Tamil Nadu">Tamil Nadu</option>
+<option value="Karnataka">Karnataka</option>
+<option value="Maharashtra">Maharashtra</option> */}
+{userData.length ? (
+    userData.map((a) => {
+      return (
+        <option key={a._id} value={a?._id}>
+          {a?.name}
+        </option>
+      );
+    })
+  ) : (
+    <option>No Events available</option>
+  )}
+
+</select>
                             </div>
 
                             <div>
