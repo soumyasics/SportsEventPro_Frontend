@@ -13,21 +13,21 @@ import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 
 function TeamCoachLogin() {
 
-    const [icon,setIcon] = useState(faEyeSlash)
+    const [icon, setIcon] = useState(faEye)
 
-    function setPwordState () {
+    function setPwordState() {
 
         var pword = document.getElementById("pword")
 
-        if ( pword.type === "password" ) {
+        if (pword.type === "password") {
 
             pword.type = "text"
-            setIcon(faEye) 
+            setIcon(faEyeSlash)
 
         }
         else {
             pword.type = "password"
-            setIcon(faEyeSlash)
+            setIcon(faEye)
         }
 
     }
@@ -148,18 +148,20 @@ function TeamCoachLogin() {
                                 <div>
                                     <label className='teamcoachloginuser'>Password</label>
 
-                                    <input
-                                        className="teamcoachloginput2"
-                                        id='pword'
-                                        type="password"
-                                        placeholder="Enter Your Password"
-                                        name="password"
-                                        value={data.password}
-                                        onChange={handleChange}
+                                    <div style={{display:'flex',flexDirection:'row',width:'525px'}}>
+                                        <input
+                                            className="teamcoachloginput2"
+                                            id='pword'
+                                            type="password"
+                                            placeholder="Enter Your Password"
+                                            name="password"
+                                            value={data.password}
+                                            onChange={handleChange}
                                         />
                                         <button className='passwordIcon' type="button" onClick={setPwordState}>
-                                            <FontAwesomeIcon icon={icon}/>
+                                            <FontAwesomeIcon icon={icon} />
                                         </button>
+                                    </div>
                                 </div>
                                 <div>
                                     <Link to="/TeamCoachForgetPass" class="teamcoachloginReset">Forgot Password?</Link>

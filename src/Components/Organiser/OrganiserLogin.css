@@ -27,6 +27,7 @@
 
     display: flex;
     width: 525px;
+    height: 42px;
     padding: 8px 12px;
     align-items: center;
     gap: 4px;
@@ -39,7 +40,9 @@
 .OrganizerPassword {
 
     width: 515px;
-    height: 40px;
+    height: 42px;
+    display: flex;
+    flex-direction: row;
 
 }
 
@@ -47,10 +50,7 @@
 
     background-color: #0000;
     border: none;
-    position: absolute;
-    z-index: 1;
-    margin-top: -3.3%;
-    margin-left: 14.5%;
+    margin-left: -40px;
 
 }
 

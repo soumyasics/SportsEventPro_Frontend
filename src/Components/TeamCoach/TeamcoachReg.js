@@ -9,8 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function TeamcoachReg() {
 
     const navigate = useNavigate()
-    const [icon, setIcon] = useState(faEyeSlash)
-    const [reIcon, setReIcon] = useState(faEyeSlash)
+    const [icon, setIcon] = useState(faEye)
+    const [reIcon, setReIcon] = useState(faEye)
     const [teamMembers, setteamMembers] = useState(0)
 
     function PasswordButtonOnClick() {
@@ -20,14 +20,14 @@ function TeamcoachReg() {
         if (pWordState.type === "password") {
 
             pWordState.type = "text"
-            setIcon(faEye)
+            setIcon(faEyeSlash)
 
         }
 
         else {
 
             pWordState.type = "password"
-            setIcon(faEyeSlash)
+            setIcon(faEye)
 
         }
 
@@ -40,14 +40,14 @@ function TeamcoachReg() {
         if (rePWordState.type === "password") {
 
             rePWordState.type = "text"
-            setReIcon(faEye)
+            setReIcon(faEyeSlash)
 
         }
 
         else {
 
             rePWordState.type = "password"
-            setReIcon(faEyeSlash)
+            setReIcon(faEye)
 
         }
 
@@ -491,7 +491,7 @@ function TeamcoachReg() {
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>State</label></div>
 
-                                        <select class="form-select" aria-label="Default select example" name="state" onChange={handleChange}>
+                                        <select class="form-select" aria-label="Default select example" style={{width:'475px'}} name="state" onChange={handleChange}>
                                             <option selected value="Kerala">Kerala</option>
                                             <option value="Tamil Nadu">Tamil Nadu</option>
                                             <option value="Karnataka">Karnataka</option>
