@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ViewerUpcoming.css'
 import { Link } from 'react-router-dom'
 import img from '../../Assets/Rectangle 4618.png'
 import img2 from "../../Assets/Back Button.svg"
 import img3 from '../../Assets/Search Button.svg'
+import axiosInstance from '../Constant/BaseURL'
 
 
 function ViewerUpcoming() {
+    const url = axiosInstance.defaults.url;
+    const [userData, setUserData] = useState([]);
+
+    useEffect(() => {
+        axiosInstance.post('/viewEvents')
+            .then(res => {
+                console.log(res);
+                setUserData(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
 
     return (
 
@@ -88,6 +102,7 @@ function ViewerUpcoming() {
                     </div>
 
                 </div>
+
 
             </div>
 
