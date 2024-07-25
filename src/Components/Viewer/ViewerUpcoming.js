@@ -10,7 +10,7 @@ function ViewerUpcoming() {
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        axiosInstance.post('/viewApprovedEvents')
+        axiosInstance.post('/addScoreByEnrollmentById')
             .then(res => {
                 setUserData(res.data.data);
             })

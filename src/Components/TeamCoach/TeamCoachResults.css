@@ -49,8 +49,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 48px;
-    margin-top: 10px;
-
+    margin-top: -9px;
 }
 
 .TeamCoachResults-content {
@@ -89,20 +88,21 @@
 
 }
 
-.CardHeadTxtH5 {
+.TeamCoachResultsCardHeadTxtH5 {
 
-    flex: 1 0 0;
+    flex: 1 0;
     align-self: stretch;
     color: #000;
     font-family: Roboto;
-    font-size: 16px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 600;
     line-height: 130%;
+    margin-top: 29px;
 
 }
 
-.CardHeadTxtH1 {
+.TeamCoachResultsCardHeadTxtH1 {
 
     display: flex;
     height: 24px;
@@ -123,7 +123,7 @@
 
 }
 
-.CardHeadTxtButton1 {
+.TeamCoachResultsCardHeadTxtButton1 {
 
     color: #0012AF;
     font-family: Roboto;
@@ -138,10 +138,13 @@
     gap: 10px;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.20);
+    margin-top: 30px;
+    margin-left: 53px;
+    background-color: white;
 
 }
 
-.CardTextP {
+.TeamCoachResultsCardTextP {
 
     color: #000;
     font-family: Roboto;
@@ -152,8 +155,7 @@
 
 }
 
-.CardTextH2 {
-
+.TeamCoachResultsCardTextH2 {
     display: flex;
     width: 168px;
     height: 29px;
@@ -168,6 +170,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
+    width: 217px;
 
 }
 
@@ -184,7 +187,7 @@
 
 .TeamCoachResults-button {
 
-    margin-left: 76%;
+    margin-left: 77%;
     display: flex;
     padding: 10px 15px;
     justify-content: center;
@@ -199,7 +202,8 @@
     font-style: normal;
     font-weight: 600;
     line-height: 130%;
-    /* 20.8px */
+    margin-top: -24px;
+    margin-bottom: 26px;
 
 }
 
@@ -216,3 +220,100 @@
     text-decoration: none;
 
 }
+
+.TeamCoachResultsH1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 229px;
+    color: #000;
+    text-shadow: 0px 0.653px 0.653px rgba(0, 0, 0, 0.25);
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.TeamCoachResultsH2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 255px;
+    color: #000;
+    text-shadow: 0px 0.653px 0.653px rgba(0, 0, 0, 0.25);
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: -52px;
+    }
+    .TeamCoachResultsimageEE{
+        margin-left: 589px;
+    }
+    .TeamCoachResultstxtArea{
+        height: 95px;
+        align-self: stretch;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.20);
+    }
+    .TeamCoachResultDivMain{
+        width: 677px !important;
+        height: 470px !important;
+        border-radius: 32px !important;
+        border: 2px solid rgba(0, 0, 0, 0.20) !important;
+        background: var(--icon-color, #FFF) !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .rate {
+        float: left;
+        height: 46px;
+        padding: 0 185px;
+        margin-top: -24px;
+        margin-bottom: 33px;
+    }
+    .rate:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+    }
+    .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 54px;
+        color: #ccc;
+    }
+    .rate:not(:checked) > label:before {
+        content: '★ ';
+    }
+    .rate > input:checked ~ label {
+        color: #ffc700;    
+    }
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;  
+    }
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
