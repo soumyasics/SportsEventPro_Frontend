@@ -21,7 +21,7 @@ function ViewerPayment() {
 
                 <div className="ViewerPayment-header">
 
-                    <Link to='/ViewerBookNow'><button className='ViewerPayment-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
+                    <Link to='/ViewerUpcomingDetails'><button className='ViewerPayment-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
                     <h1 className='ViewerPayment-headercontainer-h1'>Payment</h1>
 
                 </div>
