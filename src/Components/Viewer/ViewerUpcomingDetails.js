@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './ViewerUpcomingDetails.css'
 import { Link } from 'react-router-dom'
 import img2 from "../../Assets/Back Button.svg"
 import img3 from '../../Assets/Rectangle 4618(1).png'
 import img4 from '../../Assets/button-minus.svg'
 import img5 from '../../Assets/button-plus.svg'
+import axiosInstance from '../Constant/BaseURL'
+
 
 function ViewerUpcomingDetails() {
 
@@ -64,7 +66,25 @@ function ViewerUpcomingDetails() {
         }
 
     }
+    const url = axiosInstance.defaults.url;
+    const [userData, setUserData] = useState([]);
 
+    useEffect(() => {
+        axiosInstance.post('/viewEvents')
+            .then(res => {
+                console.log(res);
+                setUserData(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
+
+
+
+
+
+    
     return (
 
         <div className='ViewerBookNow'>
@@ -77,6 +97,7 @@ function ViewerUpcomingDetails() {
                     <h1 className='ViewerBookNow-headercontainer-h1'>Event Details</h1>
 
                 </div>
+                {userData.map((e, index) => ( 
 
                 <div className='ViewerBookNow-body'>
 
@@ -84,8 +105,8 @@ function ViewerUpcomingDetails() {
 
                         <div className='ViewerBookNow-content-contain-overlay'>
 
-                            <h1 className='ViewerBookNow-content-contain-h1-1'>Match On</h1>
-                            <h1 className='ViewerBookNow-content-contain-h1-2'>12/12/2024</h1>
+                            <h1 className='ViewerBookNow-content-contain-h1-1'></h1>
+                            <h1 className='ViewerBookNow-content-contain-h1-2'></h1>
 
                         </div>
                         <img src={img3} alt='' className='ViewerBookNow-img' />
@@ -103,7 +124,7 @@ function ViewerUpcomingDetails() {
                                 <div style={{ display: "flex", flexDirection: 'row', gap: '8px' }}>
 
                                     <h1 className='ViewerBookNow-body-h1-1'>TVM Junior Sports</h1>{/* event name */}
-                                    <h1 className='ViewerBookNow-body-h1-2'>Football</h1>{/* event category */}
+                                    <h1 className='ViewerBookNow-body-h1-2'>{e.category}</h1>{/* event category */}
 
                                 </div>
 
@@ -118,8 +139,8 @@ function ViewerUpcomingDetails() {
 
                             <div className='ViewerBookNow-body-2'>
 
-                                <h5 className='ViewerBookNow-body-h5'>Venue : Trivandrum</h5>{/* event venue */}
-                                <h2 className='ViewerBookNow-body-h2'>12/12/2024, 2:00 PM</h2> {/* event date and time */}
+                                <h5 className='ViewerBookNow-body-h5'>{e.venue}</h5>{/* event venue */}
+                                <h2 className='ViewerBookNow-body-h2'>{e.date}</h2> {/* event date and time */}
 
                             </div>
 
@@ -161,7 +182,11 @@ function ViewerUpcomingDetails() {
 
                     </div>
 
+
+
                 </div>
+                ))}
+
 
             </div>
 
