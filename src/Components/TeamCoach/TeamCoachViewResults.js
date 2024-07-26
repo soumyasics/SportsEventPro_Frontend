@@ -1,11 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './TeamCoachViewResults.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import img from "../../Assets/Back Button.svg"
+import axiosInstance from '../Constant/BaseURL';
 
 
 function TeamCoachViewResults() {
 
+    const [isApproved, setIsApproved] = useState(false)
+
+    const navigate = useNavigate()
+const id=localStorage.getItem('eventId')
+    const [userData, setUserData] = useState([]);
+    const url = axiosInstance.defaults.url;
+    console.log("url,", url);
+    useEffect(() => {
+
+        let res;
+
+
+        axiosInstance.post(`getAllScoreboards/${id}`).then(res => {
+
+            console.log(res);
+
+            if ((res.data.data).length > 0)
+                setUserData(res.data.data);
+            else
+                setUserData(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+
+    }, []);
+    useEffect(() => {
+        console.log("users", userData);
+    })
+
+    const viewDetails = (id) => {
+        // navigate(`/Teamcoachdetailspopup/${id}`) replace this with correct navpath
+    }
     return (
 
         <div>
@@ -15,7 +49,7 @@ function TeamCoachViewResults() {
                 <div className='TeamCoachViewResults-header'>
 
                     <button className='TeamCoachViewResults-headercontainer-BackButton' ><Link to='/TeamCoachResults'><img src={img} alt=' ' /></Link></button>
-                    <h1 className='TeamCoachViewResults-headercontainer-h1'>TVM Junior Sport’s Scoreboard </h1>{/* event name here */}
+                    <h1 className='TeamCoachViewResults-headercontainer-h1'>  </h1>{/* event name here */}
 
                 </div>
 
@@ -36,16 +70,28 @@ function TeamCoachViewResults() {
 
                     <tbody className='tbodyclass'>
 
+{
+
+    (userData && userData.length > 0) ? (userData.map((x, index) => {
+
+        return (
+
+
 
                         <tr className='TeamCoachViewResults-tableBodyRow container' >
 
-                            <td className='col-2 TeamCoachViewResults-tableBodyData'>1</td>{/* Sl no */}
-                            <td className='col-4 TeamCoachViewResults-tableBodyData'>The Kings</td>{/* Team Name */}
-                            <td className='col-3 TeamCoachViewResults-tableBodyData'>18</td>{/* Score */}
-                            <td className='col-3 TeamCoachViewResults-tableBodyData-end'>First Place</td>{/* Result */}
+                            <td className='col-2 TeamCoachViewResults-tableBodyData'>{++index}</td>{/* Sl no */}
+                            <td className='col-4 TeamCoachViewResults-tableBodyData'>{x.tcId}</td>{/* Team Name */}
+                            <td className='col-3 TeamCoachViewResults-tableBodyData'>{x.score}</td>{/* Score */}
+                            <td className='col-3 TeamCoachViewResults-tableBodyData-end'>{x.position}</td>{/* Result */}
 
                         </tr>
+                                                    )
 
+
+})): (
+    <h1 className="AdminCoachRequestH5">No Events Found</h1>
+) }
 
                     </tbody>
 
