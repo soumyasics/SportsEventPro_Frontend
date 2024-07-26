@@ -59,7 +59,7 @@ function TeamCoachTopNav() {
 
     const handleComplaintSubmit = () => {
         // Your function logic here
-        console.log("Complaint submitted");
+        alert("Complaint submitted");
         axiosInstance
         .post(`addComplaint`,data)
         .then((res) => {
