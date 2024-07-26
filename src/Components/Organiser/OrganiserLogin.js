@@ -144,9 +144,9 @@ function OrganizerLogin() {
 
                         <div>
 
-                            <div class="Organizerloginh1">
+                            <div>
 
-                                <h1>Organizer Login</h1>
+                                <h1 className='NameHeader'>Organizer Login</h1>
 
                             </div>
 

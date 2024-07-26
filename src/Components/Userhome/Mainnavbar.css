@@ -1,4 +1,4 @@
-.navbarmaindiv{
+.navbarmaindiv {
     background: #000;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.12);
     display: flex;
@@ -6,39 +6,65 @@
     align-items: center;
     width: 100%;
     height: 57px;
-     }
-    .navbarmainimg-1{
-        margin-left: 43px;
-        margin-top: 10px;
-    }
-    .navbarmaintext-1{
-        color: #FFF;
+}
+
+.navbarmainimg-1 {
+    height: 15px;
+    margin-top: 13px;
+}
+
+.navbarmaintext-1 {
+    color: #FFF;
     font-family: Roboto;
     font-size: 28px;
     font-style: normal;
     font-weight: 500;
-    line-height: 36px; 
+    line-height: 36px;
 
-    }
-    .navbarmaindiv-3{
-        background: #FFF;
-        height: fit-content;
-        margin-left: -37px;
-        margin-top: -5px;
-    } 
-    .mainnavbartext{
-        color: #000;
-    }
-   .navbarmaindiv-4{
+}
+
+.navbarmaindiv-3 {
+    background: #FFF;
+    height: fit-content;
+    margin-top: -5px;
+    margin-left: 7%;
+}
+
+.mainnavbartext {
+    color: #000;
+}
+
+.navbarmaindiv-4 {
     background: #000;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.12);
     display: flex;
     width: 100%;
     height: 30px;
-   }
-   .navbarmainimg{
-    width: 20px; /* Adjust the size as needed */
-    height: 20px; /* Adjust the size as needed */
-    margin-right: 8px; /* Space between the image and text */
-    vertical-align: middle; /* Aligns the image vertically with the text */
-   }
+}
+
+.navbarmainimg {
+    width: 30px;
+    /* Adjust the size as needed */
+    height: 30px;
+    /* Adjust the size as needed */
+    margin-right: 8px;
+    /* Space between the image and text */
+    vertical-align: middle;
+    /* Aligns the image vertically with the text */
+    border-radius: 50px;
+    border: 0.5px solid black;
+    padding: 5px;
+}
+
+.navbarmainimg-2 {
+    width: 30px;
+    /* Adjust the size as needed */
+    height: 30px;
+    /* Adjust the size as needed */
+    margin-right: 8px;
+    /* Space between the image and text */
+    vertical-align: middle;
+    /* Aligns the image vertically with the text */
+    border-radius: 50px;
+    border: 0.5px solid black;
+}

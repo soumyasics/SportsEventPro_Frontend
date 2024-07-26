@@ -159,8 +159,8 @@ function OrganiserSideBar() {
 
                         <ul class="collapse list-group mt-2 rounded-2" id='li-1'>
 
-                            <Link to='/OrganizerTicketGen' style={{textDecoration:'none'}}><li style={{listStyle:'none'}}><a class="list-group-item ms-4 w-75 rounded-top-2" href=" ">Ticket Generation</a></li></Link>
-                            <Link to='/OrganizerViewReport' style={{textDecoration:'none'}}><li style={{listStyle:'none'}}><a class="list-group-item ms-4 w-75 rounded-bottom-2" href=" ">View Report</a></li></Link>
+                            <Link to='/OrganizerTicketGen' style={{ textDecoration: 'none' }}><li style={{ listStyle: 'none' }}><a class="list-group-item ms-4 w-75 rounded-top-2" href=" ">Ticket Generation</a></li></Link>
+                            <Link to='/OrganizerViewReport' style={{ textDecoration: 'none' }}><li style={{ listStyle: 'none' }}><a class="list-group-item ms-4 w-75 rounded-bottom-2" href=" ">View Report</a></li></Link>
 
                         </ul>
 
@@ -182,8 +182,8 @@ function OrganiserSideBar() {
 
                         <ul class="collapse list-group mt-2 rounded-2" id='li-2'>
 
-                            <li style={{listStyle:'none'}}><Link to="/OrganiserAddBlogs "class="list-group-item ms-4 rounded-top-2 w-75" href=" ">Add Blogs</Link></li>
-                            <li style={{listStyle:'none'}}><Link to="/OrganizerViewBlogs "class="list-group-item ms-4 rounded-top-2 w-75" href=" ">View Blogs</Link></li>
+                            <li style={{ listStyle: 'none' }}><Link to="/OrganiserAddBlogs " class="list-group-item ms-4 rounded-top-2 w-75" href=" ">Add Blogs</Link></li>
+                            <li style={{ listStyle: 'none' }}><Link to="/OrganizerViewBlogs " class="list-group-item ms-4 rounded-bottom-2 w-75" href=" ">View Blogs</Link></li>
 
                         </ul>
 

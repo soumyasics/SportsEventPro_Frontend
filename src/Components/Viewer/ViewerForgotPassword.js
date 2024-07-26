@@ -161,7 +161,7 @@ function ViewerForgotPassword() {
 
         <div>
 
-            <div class="container text-center ViewerForgetPass">
+            <div class="container ViewerForgetPass">
 
                 <div class="row">
 
@@ -183,13 +183,12 @@ function ViewerForgotPassword() {
 
                             <div className='ViewerForgetPassDiv-1'>
 
-                                <div>
+                                <div style={{display:'flex',flexDirection:'column'}}>
 
                                     <label className='ViewerForgetPass-label'>E-mail</label>
+                                    <input className="ViewerForgetPass-field" type="email" placeholder="Enter your E-mail" name="email" value={data.email} onChange={handleChange} />
 
                                 </div>
-
-                                <input className="ViewerForgetPass-field" type="email" placeholder="Enter your E-mail" name="email" value={data.email} onChange={handleChange} />
 
                                 <div class='ViewerForgetPass-valid'>
 
@@ -202,12 +201,12 @@ function ViewerForgotPassword() {
                                     <div>
 
                                         <label className='ViewerForgetPass-label'>Enter a new password</label>
+                                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                            <input className="ViewerForgetPass-field" type="password" placeholder="Enter a new password" name="password" value={data.password} id='pword' onChange={handleChange} />
+                                            <button className='Viewer-Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
+                                        </div>
 
                                     </div>
-
-                                    <input className="ViewerForgetPass-field" type="password" placeholder="Enter a new password" name="password" value={data.password} id='pword' onChange={handleChange} />
-                                    <button className='Viewer-Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
-
                                     <div class='ViewerForgetPass-valid'>
 
                                         {errors.password && <div className="text-danger ">{errors.password}</div>}
@@ -221,12 +220,12 @@ function ViewerForgotPassword() {
                                     <div>
 
                                         <label className='ViewerForgetPass-label'>Confirm password</label>
+                                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                            <input className="ViewerForgetPass-field" type="password" placeholder="Confirm password" name="confirm_password" id='rePWord' onChange={handleChange} />
+                                            <button className='Viewer-Password-Change-Button' onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon} /></button>
+                                        </div>
 
                                     </div>
-
-                                    <input className="ViewerForgetPass-field" type="password" placeholder="Confirm password" name="confirm_password" id='rePWord' onChange={handleChange} />
-                                    <button className='Viewer-Password-Change-Button' onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon} /></button>
-
                                     <div class='ViewerForgetPass-valid'>
 
                                         {errors.confirm_password && <div className="text-danger ">{errors.confirm_password}</div>}

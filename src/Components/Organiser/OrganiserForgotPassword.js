@@ -9,7 +9,7 @@ function OrganiserForgotPassword() {
 
     const [icon, setIcon] = useState(faEye)
     const [reIcon, setReIcon] = useState(faEye)
-const navigate=useNavigate()
+    const navigate = useNavigate()
     function PasswordButtonOnClick() {
 
         var pWordState = document.getElementById("pword")
@@ -202,7 +202,7 @@ const navigate=useNavigate()
         //                                 <label className='OrganiserForgetPass-label'>New password</label>
         //                                 <input className="OrganiserForgetPass-field" type="password" placeholder="Enter new password" name="password" value={data.password} id='pword' onChange={handleChange} />
         //                                 <button className='Organiser-Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
-                                    
+
         //                             </div>
 
         //                             <div class='OrganiserForgetPass-valid'>
@@ -252,83 +252,86 @@ const navigate=useNavigate()
         // </div>
         <div>
 
-        <div class="container text-center ViewerForgetPass">
+            <div class="container OrganiserForgetPass">
 
-            <div class="row">
+                <div class="row">
 
-                <div class="col">
+                    <div class="col">
 
-                    <div className='ViewerForgetPass-img'></div>
+                        <div className='OrganiserForgetPass-img'></div>
 
-                </div>
+                    </div>
 
-                <div class="col">
+                    <div class="col">
 
-                    <div className='ViewerForgetPass-maindiv'>
+                        <div className='OrganiserForgetPass-maindiv'>
 
-                        <div className='ViewerForgetPass-Head'>
+                            <div className='OrganiserForgetPass-Head'>
 
-                            <h1 className='ViewerForgetPass-Head1'>Forget Password</h1>
-
-                        </div>
-
-                        <div className='ViewerForgetPassDiv-1'>
-
-                            <div>
-
-                                <label className='ViewerForgetPass-label'>E-mail</label>
+                                <h1 className='OrganiserForgetPass-Head1'>Forget Password</h1>
 
                             </div>
 
-                            <input className="ViewerForgetPass-field" type="email" placeholder="Enter your E-mail" name="email" value={data.email} onChange={handleChange} />
+                            <div className='OrganiserForgetPassDiv-1'>
 
-                            <div class='ViewerForgetPass-valid'>
+                                <div style={{ display:'flex',flexDirection:'column' }}>
 
-                                {errors.email && <div className="text-danger ">{errors.email}</div>}
+                                    <label className='OrganiserForgetPass-label'>E-mail</label>
+                                    <input className="OrganiserForgetPass-field" type="email" placeholder="Enter your E-mail" name="email" value={data.email} onChange={handleChange} />
 
-                            </div>
+                                </div>
 
-                            <div className='ViewerForgetPassDiv-1'>
+
+                                <div class='OrganiserForgetPass-valid'>
+
+                                    {errors.email && <div className="text-danger ">{errors.email}</div>}
+
+                                </div>
+
+                                <div className='OrganiserForgetPassDiv-1'>
+
+                                    <div>
+
+                                        <label className='OrganiserForgetPass-label'>Enter a new password</label>
+                                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                            <input className="OrganiserForgetPass-field" type="password" placeholder="Enter a new password" name="password" value={data.password} id='pword' onChange={handleChange} />
+                                            <button className='Viewer-Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
+                                        </div>
+
+                                    </div>
+                                    <div class='OrganiserForgetPass-valid'>
+
+                                        {errors.password && <div className="text-danger ">{errors.password}</div>}
+
+                                    </div>
+
+                                </div>
+
+                                <div className='OrganiserForgetPassDiv-1'>
+
+                                    <div>
+
+                                        <label className='OrganiserForgetPass-label'>Confirm password</label>
+                                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                            <input className="OrganiserForgetPass-field" type="password" placeholder="Confirm password" name="confirm_password" id='rePWord' onChange={handleChange} />
+                                            <button className='Viewer-Password-Change-Button' onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon} /></button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class='OrganiserForgetPass-valid'>
+
+                                        {errors.confirm_password && <div className="text-danger ">{errors.confirm_password}</div>}
+
+                                    </div>
+
+                                </div>
 
                                 <div>
 
-                                    <label className='ViewerForgetPass-label'>Enter a new password</label>
+                                    <button className="OrganiserForgetPass-button" onClick={handleSubmit}>Submit</button>
 
                                 </div>
-
-                                <input className="ViewerForgetPass-field" type="password" placeholder="Enter a new password" name="password" value={data.password} id='pword' onChange={handleChange} />
-                                <button className='Viewer-Password-Change-Button' onClick={PasswordButtonOnClick}><FontAwesomeIcon icon={icon} /></button>
-
-                                <div class='ViewerForgetPass-valid'>
-
-                                    {errors.password && <div className="text-danger ">{errors.password}</div>}
-
-                                </div>
-
-                            </div>
-
-                            <div className='ViewerForgetPassDiv-1'>
-
-                                <div>
-
-                                    <label className='ViewerForgetPass-label'>Confirm password</label>
-
-                                </div>
-
-                                <input className="ViewerForgetPass-field" type="password" placeholder="Confirm password" name="confirm_password" id='rePWord' onChange={handleChange} />
-                                <button className='Viewer-Password-Change-Button' onClick={RePasswordButtonOnClick}><FontAwesomeIcon icon={reIcon} /></button>
-
-                                <div class='ViewerForgetPass-valid'>
-
-                                    {errors.confirm_password && <div className="text-danger ">{errors.confirm_password}</div>}
-
-                                </div>
-
-                            </div>
-
-                            <div>
-
-                                <button className=' ViewerForgetPass-button' onClick={handleSubmit}>Submit</button>
 
                             </div>
 
@@ -341,8 +344,6 @@ const navigate=useNavigate()
             </div>
 
         </div>
-
-    </div>
     )
 
 }

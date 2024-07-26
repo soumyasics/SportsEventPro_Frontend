@@ -32,7 +32,7 @@ function OrganizerMain({ data }) {
   return (
     <div>
       <div>
-      <div class="container text-center">
+      <div>
         <div className='row'>
           <div className='col-3'>
             <OrganiserSideBar />

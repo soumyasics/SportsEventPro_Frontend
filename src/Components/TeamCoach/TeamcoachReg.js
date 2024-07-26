@@ -9,8 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function TeamcoachReg() {
 
     const navigate = useNavigate()
-    const [icon, setIcon] = useState(faEyeSlash)
-    const [reIcon, setReIcon] = useState(faEyeSlash)
+    const [icon, setIcon] = useState(faEye)
+    const [reIcon, setReIcon] = useState(faEye)
     const [teamMembers, setteamMembers] = useState(0)
 
     function PasswordButtonOnClick() {
@@ -20,14 +20,14 @@ function TeamcoachReg() {
         if (pWordState.type === "password") {
 
             pWordState.type = "text"
-            setIcon(faEye)
+            setIcon(faEyeSlash)
 
         }
 
         else {
 
             pWordState.type = "password"
-            setIcon(faEyeSlash)
+            setIcon(faEye)
 
         }
 
@@ -40,14 +40,14 @@ function TeamcoachReg() {
         if (rePWordState.type === "password") {
 
             rePWordState.type = "text"
-            setReIcon(faEye)
+            setReIcon(faEyeSlash)
 
         }
 
         else {
 
             rePWordState.type = "password"
-            setReIcon(faEyeSlash)
+            setReIcon(faEye)
 
         }
 
@@ -119,21 +119,21 @@ function TeamcoachReg() {
 
             if (name === 'category') {
                 setSelectedCategory(value);
-                console.log("value= ",value);
-              
+                console.log("value= ", value);
+
             }
         }
         else if (event.target.type == "radio") {
-            console.log("value=2 ",value);
-            if(value=='cricket')
+            console.log("value=2 ", value);
+            if (value == 'cricket')
                 setteamMembers(15)
-           else if(value=='football')
+            else if (value == 'football')
                 setteamMembers(18)
-           else if(value=='tennis')
+            else if (value == 'tennis')
                 setteamMembers(4)
-          else  if(value=='badmonton')
+            else if (value == 'badmonton')
                 setteamMembers(4)
-            if(value=='hockey')
+            if (value == 'hockey')
                 setteamMembers(18)
             setData(prevData => ({
                 ...prevData,
@@ -426,9 +426,9 @@ function TeamcoachReg() {
                                                     {/* <div class="col" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', marginLeft: "-22px", marginRight: "-22px" }} >
                                                         {teamMembers}
                                                     </div> */}
-                                                     <input className='TeamCoachField-7' type='text' placeholder='Total Team Name' name="teamMembers"
-                                            value={teamMembers}
-                                            onChange={handleChange} disabled/>
+                                                    <input className='TeamCoachField-7' type='text' placeholder='Total Team Name' name="teamMembers"
+                                                        value={teamMembers}
+                                                        onChange={handleChange} disabled />
                                                     {/* <div class="col">
                                                         <button className=' teamCoachregbutton-2' onClick={add} >+</button>
                                                     </div> */}
@@ -491,7 +491,7 @@ function TeamcoachReg() {
                                         <div className='teamCoachRegDiv-Text'>
                                             <label>State</label></div>
 
-                                        <select class="form-select" aria-label="Default select example" name="state" onChange={handleChange}>
+                                        <select class="form-select" aria-label="Default select example" style={{ width: '475px' }} name="state" onChange={handleChange}>
                                             <option selected value="Kerala">Kerala</option>
                                             <option value="Tamil Nadu">Tamil Nadu</option>
                                             <option value="Karnataka">Karnataka</option>

@@ -9,8 +9,8 @@ import { useNavigate } from 'react-router-dom'
 function OrganiserRegistration() {
 
     const navigate = useNavigate()
-    const [icon, setIcon] = useState(faEyeSlash)
-    const [reIcon, setReIcon] = useState(faEyeSlash)
+    const [icon, setIcon] = useState(faEye)
+    const [reIcon, setReIcon] = useState(faEye)
 
 
     function PasswordButtonOnClick() {
@@ -20,14 +20,14 @@ function OrganiserRegistration() {
         if (pWordState.type === "password") {
 
             pWordState.type = "text"
-            setIcon(faEye)
+            setIcon(faEyeSlash)
 
         }
 
         else {
 
             pWordState.type = "password"
-            setIcon(faEyeSlash)
+            setIcon(faEye)
 
         }
 
@@ -40,14 +40,14 @@ function OrganiserRegistration() {
         if (rePWordState.type === "password") {
 
             rePWordState.type = "text"
-            setReIcon(faEye)
+            setReIcon(faEyeSlash)
 
         }
 
         else {
 
             rePWordState.type = "password"
-            setReIcon(faEyeSlash)
+            setReIcon(faEye)
 
         }
 
@@ -428,7 +428,7 @@ function OrganiserRegistration() {
 
                     <div>
 
-                        <button className='btn btn-dark OrganiserRegistration-button' type='submit'>Register</button>
+                        <button className='OrganiserRegistration-button' type='submit'>Register</button>
 
                     </div>
                 </form>
