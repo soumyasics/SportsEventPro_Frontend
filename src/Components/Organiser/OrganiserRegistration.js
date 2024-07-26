@@ -428,7 +428,7 @@ function OrganiserRegistration() {
 
                     <div>
 
-                        <button className='btn btn-dark OrganiserRegistration-button' type='submit'>Register</button>
+                        <button className='OrganiserRegistration-button' type='submit'>Register</button>
 
                     </div>
                 </form>

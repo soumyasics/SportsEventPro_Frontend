@@ -151,7 +151,7 @@ function App() {
           <Route path='/AdminComplaints' element={[<AdminNav />, <AdminMain data='AdminComplaints' />, <UserFooter />]} />
 
           {/* Team Coach */}
-          <Route exact path="/TeamCoachForgetPass" element={<TeamCoachForgetPass />} />
+          <Route exact path="/TeamCoachForgetPass" element={[<MainNavbar/>,<TeamCoachForgetPass />,<UserFooter/>]} />
           <Route exact path="/TeamCoachLogin" element={[<MainNavbar />, <TeamCoachLogin />, <UserFooter />]} />
           <Route exact path="/TeamCoachHomePage" element={[<TeamCoachTopNav />, <TeamCoachHomePage />, <Aboutpage />, <UserFooter />]} />
           <Route exact path="/TeamCoachreg" element={[<MainNavbar />, <TeamcoachReg />, <UserFooter />]} />

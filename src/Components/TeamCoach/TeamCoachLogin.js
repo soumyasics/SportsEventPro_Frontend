@@ -119,7 +119,7 @@ function TeamCoachLogin() {
 
     return (
         <div>
-            <div class="container text-center">
+            <div class="container">
                 <div className='row'>
                     <div class="teamcoachloginmaindiv col-5 ">
 
