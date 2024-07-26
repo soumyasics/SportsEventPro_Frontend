@@ -48,7 +48,7 @@ function AdminLogin() {
     errors.password = validateField('Password', data.password);
 
 
-if(data.email=="admin@gmail.com" && data.password=="admin@123"){
+if(data.email=="admin@gmail.com" && data.password=="admin@1234"){
   alert("Login Successfully")
   localStorage.setItem('admin',1)
   navigate('/adminmain')
