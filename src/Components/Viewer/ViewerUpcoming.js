@@ -10,8 +10,10 @@ function ViewerUpcoming() {
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        axiosInstance.post('/addScoreByEnrollmentById')
+        console.log("VGDFGFD");
+        axiosInstance.post('/getValidTickets')
             .then(res => {
+                console.log("DATA",res.data.data);
                 setUserData(res.data.data);
             })
             .catch(err => {
@@ -53,24 +55,24 @@ function ViewerUpcoming() {
                 <div className='ViewerUpcoming-content'>
                     {userData.map((e, index) => (
                         <div key={index} className="card ViewerUpcoming-content-contain">
-                            <img src={`${axiosInstance.defaults.url}/${e?.banner?.filename}`} className="card-img-top ViewerUpcoming-img" alt={e.name} />
+                            <img src={`${axiosInstance.defaults.url}/${e?.eventId?.banner?.filename}`} className="card-img-top ViewerUpcoming-img" alt={e.name} />
                             <div className="card-body" style={{ width: '100%' }}>
                                 <div className="card-title" style={{ display: "flex", flexDirection: "column" }}>
-                                    <h5 className='ViewerUpcomingCardHeadTxtH5'>{e.name}</h5>
+                                    <h5 className='ViewerUpcomingCardHeadTxtH5'>{e.eventId.name}</h5>
                                     <div style={{ display: "flex", flexDirection: 'row', gap: '8px' }}>
-                                        <h1 className='ViewerUpcomingCardHeadTxtH1-1'>{e.venue}</h1>
-                                        <h1 className='ViewerUpcomingCardHeadTxtH1'>{e.category}</h1>
+                                        <h1 className='ViewerUpcomingCardHeadTxtH1-1'>{e.eventId.venue}</h1>
+                                        <h1 className='ViewerUpcomingCardHeadTxtH1'>{e.eventId.category}</h1>
                                     </div>
                                     <div style={{ display: "flex", flexDirection: 'row' }}>
                                         <h3 className='ViewerUpcomingCardHeadTxtH3' style={{ marginTop: '3px' }}>Ticket -</h3>
-                                        <h4 className='ViewerUpcomingCardHeadTxtH4' style={{ marginLeft: '4px' }}>₹{e.ticketPrice}</h4>
+                                        <h4 className='ViewerUpcomingCardHeadTxtH4' style={{ marginLeft: '4px' }}>₹{e.amount}</h4>
                                     </div>
                                 </div>
                                 <div className="ViewerUpcomingcard-text">
                                     {/* <p className='ViewerUpcomingCardTextP'>Venue: {e.venue}</p> */}
-                                    <h2 className='ViewerUpcomingCardTextH2'>{e.date}</h2>
+                                    <h2 className='ViewerUpcomingCardTextH2'>{e.eventId.date.split('T')[0]}</h2>
                                     <div className='ViewerUpcoming-button-contain'>
-                                        <Link to='/ViewerUpcomingDetails' style={{ textDecoration: 'none' }}>
+                                        <Link to={`/ViewerUpcomingDetails/${e._id}`} style={{ textDecoration: 'none' }}>
                                             <button className='ViewerUpcoming-button'>Book Now</button>
                                         </Link>
                                     </div>

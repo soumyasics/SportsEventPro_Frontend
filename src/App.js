@@ -219,8 +219,8 @@ function App() {
           <Route exact path='/ViewerProfile' element={[<ViewerNavBar />, <ViewerProfile />, <UserFooter />]} />
           <Route exact path='/ViewerEditProfile' element={<ViewerEditProfile />} />
           <Route exact path='/ViewerUpcoming' element={[<ViewerNavBar />, <ViewerUpcoming />, <UserFooter />]} />
-          <Route exact path='/ViewerUpcomingDetails' element={[<ViewerNavBar />, <ViewerUpcomingDetails />, <UserFooter />]} />
-          <Route exact path='/ViewerPayment' element={[<ViewerNavBar />, <ViewerPayment />, <UserFooter />]} />
+          <Route exact path='/ViewerUpcomingDetails/:id' element={[<ViewerNavBar />, <ViewerUpcomingDetails />, <UserFooter />]} />
+          <Route exact path='/ViewerPayment/:id' element={[<ViewerNavBar />, <ViewerPayment />, <UserFooter />]} />
           <Route exact path='/ViewerBookedTickets' element={[<ViewerNavBar />, <ViewerBookedTickets />, <UserFooter />]} />
           <Route exact path='/ViewerScoreboard' element={[<ViewerNavBar/>,<ViewerScoreboard/>,<UserFooter/>]} />
           <Route exact path='/ViewerViewScoreboard' element={[<ViewerNavBar/>,<ViewerViewScoreboard/>,<UserFooter/>]} />
