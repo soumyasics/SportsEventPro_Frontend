@@ -1,12 +1,104 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './OrganiserSideBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { Link, useNavigate } from 'react-router-dom'
 import img7 from '../../Assets/octicon_x-16.svg'
+import axiosInstance from '../Constant/BaseURL'
 
 
 function OrganiserSideBar() {
+
+    const [data1, setData1] = useState({
+        name: '',
+    })
+    useEffect(() => {
+        axiosInstance
+            .post(`/viewOrganizerById/${localStorage.getItem("organizerId")}`)
+            .then((res) => {
+                console.log(res);
+                setData(res.data.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, [localStorage.getItem("organizerId")]);
+    const [data, setData] = useState({
+
+        complaint: '',
+        name: data1.name,
+        userRole:'Organizer'
+      })
+    const handleChange=(event)=>{
+        data.userRole='Organizer'
+        const { name, value } = event.target;
+        console.log("work");
+        setData(prevData => ({
+          ...prevData,
+          [name]: value
+        }));
+    }
+
+    const handleComplaintSubmit = () => {
+        // Your function logic here
+        alert("Complaint submitted");
+        axiosInstance
+        .post(`/addComplaint`,data)
+        .then((res) => {
+            console.log(res);
+            // setData(res.data.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const url = axiosInstance.defaults.url;
+    const [userData, setUserData] = useState([]);
+
+    useEffect(() => {
+        axiosInstance.post('/addComplaint')
+            .then(res => {
+                console.log(res);
+                setUserData(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
+
+
+
+
+
+
     const navigate = useNavigate()
     const handleLogout = (e) => {
         console.log(e);
@@ -167,10 +259,10 @@ function OrganiserSideBar() {
                                                 <img src={img7} alt=' ' className='imageEE' data-bs-dismiss="modal" aria-label="Close" />
 
                                                 <h1 className='h1ishere'>Register a Complaint</h1>
-                                                <input type='textarea' className='txtArea'></input>
+                                                <input type='textarea' className='txtArea' name='complaint' onChange={handleChange}></input>
                                             </div>
                                             <div className='ModalDialog-button-contain'>
-                                                <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal">Submit</button>
+                                                <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal" onClick={handleComplaintSubmit}>Submit</button>
                                             </div>
 
                                         </div>
