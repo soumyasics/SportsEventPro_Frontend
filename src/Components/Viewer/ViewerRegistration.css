@@ -282,5 +282,10 @@
     height: 48px;
     margin-left: 50%;
     transform: translate(-50%);
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+
 
 }

@@ -400,7 +400,7 @@ function ViewerRegistration() {
 
                     <div>
 
-                        <button className='btn btn-dark ViewerRegistration-button' type='submit'>Register</button>
+                        <button className=' ViewerRegistration-button' type='submit'>Register</button>
 
                     </div>
                 </form>
