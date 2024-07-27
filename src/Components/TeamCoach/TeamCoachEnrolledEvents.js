@@ -24,7 +24,8 @@ function TeamCoachEnrolledEvents() {
             const res = await axiosInstance.post(`addRating/${eventId}`, {
             
                 rating,
-                comment
+                comment,
+              
             });
             console.log(res.data);
             // Optionally refresh the data
@@ -37,7 +38,7 @@ function TeamCoachEnrolledEvents() {
             
                 eventId:eventId,
       tcId:localStorage.getItem('tcId'),
-     
+       userRole:'tc',
       review:comment,
             });
             console.log(res.data);

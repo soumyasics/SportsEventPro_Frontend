@@ -6,12 +6,14 @@ import './ViewerUpcoming.css';
 import { Link } from 'react-router-dom';
 import img3 from '../../Assets/Search Button.svg';
 import axiosInstance from '../Constant/BaseURL';
+import ReactStars from 'react-stars'
 function ViewerBookedTickets() {
     const [userData, setUserData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-
+    const [selectedEventId, setSelectedEventId] = useState(null);
+    const [rating, setRating] = useState(0);
+    const [comment, setComment] = useState('');
     useEffect(() => {
-        console.log("VGDFGFD");
         axiosInstance.post(`/viewTicketBookingByViwerId/${localStorage.getItem('viewerId')}`)
             .then(res => {
                 console.log("DATA",res.data.data);
@@ -21,6 +23,37 @@ function ViewerBookedTickets() {
                 console.log(err);
             });
     }, []);
+    const addRatingReview = async (eventId) => {
+        console.log("it worked", eventId);
+        try {
+            const res = await axiosInstance.post(`addRating/${eventId}`, {
+            
+                rating,
+                comment,
+               
+            });
+            console.log(res.data);
+            // Optionally refresh the data
+            // getData();
+        } catch (err) {
+            console.log(err);
+        }
+        try {
+            const res = await axiosInstance.post(`addReview/`, {
+            
+                eventId:eventId,
+                viewerId:localStorage.getItem('viewerId'),
+                 userRole:'Viewer',
+     
+      review:comment,
+            });
+            console.log(res.data);
+            // Optionally refresh the data
+            // getData();
+        } catch (err) {
+            console.log(err);
+        }
+    };
     return (
 
         <div className='ViewerBookedTickets'>
@@ -63,7 +96,10 @@ function ViewerBookedTickets() {
                                         {/* <h1 className='CardHeadTxtH1-1'>TVM Junior Sports</h1> */}
                                         <h1 className='CardHeadTxtH1'>{e.eventId.category}</h1>{/* event category */}
                                         <div>
-                                            <button className='ViewerBookedTxtButton1'>Add Review & Rating</button>
+                                          
+                                            <button className='ViewerBookedTxtButton1' data-bs-toggle="modal" data-bs-target="#Rating-Modal"
+                                                        onClick={() => setSelectedEventId(e.eventId._id)}>
+                                                            Add Review & Rating</button>
                                         </div>
                                     </div>
 
@@ -93,7 +129,46 @@ function ViewerBookedTickets() {
                         ))
                     }
                         {/* here is a single card  */}
-
+      {/* Modal for adding rating and review */}
+      <div className="modal fade" id="Rating-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content">
+                            <div className="modal-body EE">
+                                <div>
+                                    <img src={img3} alt='Close' className='imageEE' data-bs-dismiss="modal" aria-label="Close" />
+                                    <h1 className='ModalDialog-h1EE'>Add Rating</h1>
+                                    <div className="d-flex mt-2 ModalRatingEE">
+                                        <ReactStars
+                                            count={5}
+                                            size={50}
+                                            value={rating}
+                                            onChange={(newRating) => setRating(newRating)}
+                                            color1='#D9D9D9'
+                                            color2='#56B60B'
+                                        />
+                                    </div>
+                                </div>
+                                <p className='ModalDialog-h1EE '>Add Comments</p>
+                                <input
+                                    type='text'
+                                    className='ModalDialog-textEE'
+                                    value={comment}
+                                    onChange={(e) => setComment(e.target.value)}
+                                />
+                                <div className='ModalDialog-button-contain'>
+                                    <button
+                                        type="button"
+                                        className="ModalDialog-button-2EE"
+                                        data-bs-dismiss="modal"
+                                        onClick={() => addRatingReview(selectedEventId)}
+                                    >
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     </div>
 
                 </div>
