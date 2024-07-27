@@ -78,9 +78,7 @@ if(data.email=="admin@gmail.com" && data.password=="admin@1234"){
   localStorage.setItem('admin',1)
   navigate('/adminmain')
 }
-else{
-  alert("username or password is wrong")
-}
+
 
         setErrors(errors);
         BackendData()

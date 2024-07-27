@@ -1,108 +1,185 @@
-import React from 'react'
 import './OrganiserTicketGen2.css'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axiosInstance from "../Constant/BaseURL";
 import img2 from "../../Assets/Back Button.svg"
 
 
 function OrganiserTicketGen2() {
+    const navigate = useNavigate()
+    const id=localStorage.getItem('organizerId')
+        const [userData, setUserData] = useState([]);
+        const [formData, setFormData] = useState({
+            startDate: '',
+            endDate: '',
+            seatingCapacity: '',
+            eventId: '',
+            organizerId: id,
+            amount: ''
+        });
+        const url = axiosInstance.defaults.url;
+        console.log("url,", url);
+        useEffect(() => {
+    
+            let res;
+    
+    
+            axiosInstance.post(`viewApprovedEventsByOrgIdWithoutTickets/${id}`).then(res => {
+    
+                console.log(res);
+    
+                if ((res.data.data).length > 0)
+                    setUserData(res.data.data);
+                else
+                    setUserData(null)
+                console.log(res.data.data);
+            }).catch(err => {
+                console.log(err);
+            })
+    
+        }, []);
+        useEffect(() => {
+            console.log("users", userData);
+        })
+
+        
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData);
+        axiosInstance.post('registerTicket ', formData)
+
+        .then(response => {
+
+            console.log(response);
+
+            if (response.data.status == 200) {
+
+                alert("Ticket Generated Successfully")
+                navigate('/OrganizerDashboard')
+
+            } 
+            
+            else {
+
+                alert(response.data.msg)
+
+            }
+
+
+        })
+
+        .catch(error => {
+
+            console.error(error);
+
+        })
+    };
 
     return (
-
         <div className='OrganiserTicketGen2'>
-
             <div className='OrganiserTicketGen2MainDiv'>
-
-                {/* seperated div for backbutton and text */}
-                <div className='col  OrganiserTicketGen2-headercontainer-container-1'>
-
+                {/* Separated div for back button and text */}
+                <div className='col OrganiserTicketGen2-headercontainer-container-1'>
                     <div style={{ display: 'flex', flexDirection: 'row', width: 'max-content' }}>
-
-                        <Link to='/OrganizerDashboard'><button className='OrganiserTicketGen2-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
+                        <Link to='/OrganizerDashboard'>
+                            <button className='OrganiserTicketGen2-headercontainer-BackButton'>
+                                <img src={img2} alt=' ' />
+                            </button>
+                        </Link>
                         <h1 className='OrganiserTicketGen2-headercontainer-h1'>Ticket Generation</h1>
-
                     </div>
-
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '25px', alignItems: 'center' }}>
-
-                    <div className="OrganiserTicketGen2-body-right-top">
-
-                        <div className='OrganiserTicketGen2-body-2'>
-
-                            <h1 className='OrganiserTicketGen2-body-h1'>The Eagles Vs The kings</h1>{/* team names */}
-
-                            <div style={{ display: "flex", flexDirection: 'row', gap: '8px' }}>
-
-                                <h1 className='OrganiserTicketGen2-body-h1-1'>TVM Junior Sports</h1>{/* event name */}
-                                <h1 className='ViewerBookNow-body-h1-2'>Football</h1>{/* event category */}
-
-                            </div>
-
-                        </div>
-
-                        <div className='OrganiserTicketGen2-body-2-2'>
-
-                            <h5 className='OrganiserTicketGen2-body-h5'>Trivandrum</h5>{/* event venue */}
-                            <h2 className='OrganiserTicketGen2-body-h2'>12/12/2024, 2:00 PM</h2> {/* event date and time */}
-
-                        </div>
-
-                    </div>
-
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '25px', alignItems: 'center' }}>
                     <div style={{ display: 'flex', flexDirection: 'row', gap: '45px', alignItems: 'center', width: '100%' }}>
-
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
-
                             <div>
-
                                 <label className='OrganiserTicketGen2-label-h1'>Event Name</label>
-                                <input className='OrganiserTicketGen2-input' type='text' placeholder='Enter The Ticket Price' />
-
+                                <select
+                                    className="OrganiserTicketGen-Content-Input-Country"
+                                    aria-label="Default select example"
+                                    name="eventId"
+                                    value={formData.eventId}
+                                    onChange={handleChange}
+                                >
+                                    <option className='OrganiserTicketGen-Content-Input-Select-Option'>Select Event</option>
+                                    {userData.length ? (
+                                        userData.map((a) => (
+                                            <option key={a._id} value={a._id}>
+                                                {a.name}
+                                            </option>
+                                        ))
+                                    ) : (
+                                        <option>No Events available</option>
+                                    )}
+                                </select>
                             </div>
 
                             <div>
-
                                 <label className='OrganiserTicketGen2-label-h1'>Ticket Opening Date</label>
-                                <input className='OrganiserTicketGen2-input-date' type='date' />
-
+                                <input
+                                    className='OrganiserTicketGen2-input-date'
+                                    type='date'
+                                    name='startDate'
+                                    value={formData.startDate}
+                                    onChange={handleChange}
+                                />
                             </div>
-
                         </div>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
-
                             <div>
-
                                 <label className='OrganiserTicketGen2-label-h1'>Seating Capacity</label>
-                                <input className='OrganiserTicketGen2-input' type='text' placeholder='Enter Total Seating Capacity' />
-
+                                <input
+                                    className='OrganiserTicketGen2-input'
+                                    type='text'
+                                    placeholder='Enter Total Seating Capacity'
+                                    name='seatingCapacity'
+                                    value={formData.seatingCapacity}
+                                    onChange={handleChange}
+                                />
                             </div>
 
                             <div>
-
                                 <label className='OrganiserTicketGen2-label-h1'>Ticket Closing Date</label>
-                                <input className='OrganiserTicketGen2-input-date' type='date' />
-
+                                <input
+                                    className='OrganiserTicketGen2-input-date'
+                                    type='date'
+                                    name='endDate'
+                                    value={formData.endDate}
+                                    onChange={handleChange}
+                                />
                             </div>
-
                         </div>
-
                     </div>
 
                     <div>
-
-                        <Link to='OrganiserTicketGen2' style={{ textDecoration: 'none' }}><button className='OrganiserTicketGen2-button'>Generate</button></Link>
-
+                        <label className='OrganiserTicketGen2-label-h1'>Ticket Price</label>
+                        <input
+                            className='OrganiserTicketGen2-input'
+                            type='text'
+                            placeholder='Enter Ticket Price'
+                            name='amount'
+                            value={formData.amount}
+                            onChange={handleChange}
+                        />
                     </div>
 
-                </div>
-
+                    <div>
+                        <button type='submit' className='OrganiserTicketGen2-button'>Generate</button>
+                    </div>
+                </form>
             </div>
-
         </div>
-
-    )
+    );
 
 }
 

@@ -8,98 +8,22 @@ import axiosInstance from '../Constant/BaseURL'
 
 
 function OrganiserSideBar() {
-
-    const [data1, setData1] = useState({
-        name: '',
-    })
-    useEffect(() => {
-        axiosInstance
-            .post(`/viewOrganizerById/${localStorage.getItem("organizerId")}`)
-            .then((res) => {
-                console.log(res);
-                setData(res.data.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, [localStorage.getItem("organizerId")]);
-    const [data, setData] = useState({
-
-        complaint: '',
-        name: data1.name,
-        userRole:'Organizer'
-      })
-    const handleChange=(event)=>{
-        data.userRole='Organizer'
-        const { name, value } = event.target;
-        console.log("work");
-        setData(prevData => ({
-          ...prevData,
-          [name]: value
-        }));
-    }
-
-    const handleComplaintSubmit = () => {
-        // Your function logic here
-        alert("Complaint submitted");
-        axiosInstance
-        .post(`/addComplaint`,data)
-        .then((res) => {
-            console.log(res);
-            // setData(res.data.data);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    const url = axiosInstance.defaults.url;
-    const [userData, setUserData] = useState([]);
-
-    useEffect(() => {
-        axiosInstance.post('/addComplaint')
-            .then(res => {
-                console.log(res);
-                setUserData(res.data.data);
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }, []);
-
-
-
-
-
-
     const navigate = useNavigate()
+    const [comp, setComp] = useState({
+        organizerId:localStorage.getItem('organizerId'),
+        complaint:'',
+        userRole:'organizer'
+    });
+    const handleChange = (event) => {
+    
+        const { name, value } = event.target;
+       
+            setComp(prevData => ({
+                ...prevData,
+                [name]: value
+            }));
+        
+    };
     const handleLogout = (e) => {
         console.log(e);
 
@@ -112,6 +36,34 @@ function OrganiserSideBar() {
             navigate("/");
         }
     }, [navigate]);
+
+    const addcomplaint=()=>{
+        console.log("fun called", comp);
+
+        axiosInstance.post('addComplaint', comp)
+
+            .then(response => {
+
+                console.log(response);
+
+                if (response.data.status == 200) {
+
+                    alert("Complaint Added Succesfully")
+                    navigate('/OrganizerDashboard')
+                }
+
+                else {
+
+                    alert(response.data.msg)
+                }
+
+            })
+            .catch(error => {
+
+                console.error(error);
+
+            })
+    }
     return (
 
         <div className='OrganiserSideBar'>
@@ -159,8 +111,8 @@ function OrganiserSideBar() {
 
                         <ul class="collapse list-group mt-2 rounded-2" id='li-1'>
 
-                            <Link to='/OrganizerTicketGen' style={{ textDecoration: 'none' }}><li style={{ listStyle: 'none' }}><a class="list-group-item ms-4 w-75 rounded-top-2" href=" ">Ticket Generation</a></li></Link>
-                            <Link to='/OrganizerViewReport' style={{ textDecoration: 'none' }}><li style={{ listStyle: 'none' }}><a class="list-group-item ms-4 w-75 rounded-bottom-2" href=" ">View Report</a></li></Link>
+                            <Link to='/OrganizerTicketGen2' style={{textDecoration:'none'}}><li style={{listStyle:'none'}}><a class="list-group-item ms-4 w-75 rounded-top-2" href=" ">Ticket Generation</a></li></Link>
+                            <Link to='/OrganizerViewReport' style={{textDecoration:'none'}}><li style={{listStyle:'none'}}><a class="list-group-item ms-4 w-75 rounded-bottom-2" href=" ">View Report</a></li></Link>
 
                         </ul>
 
@@ -182,8 +134,8 @@ function OrganiserSideBar() {
 
                         <ul class="collapse list-group mt-2 rounded-2" id='li-2'>
 
-                            <li style={{ listStyle: 'none' }}><Link to="/OrganiserAddBlogs " class="list-group-item ms-4 rounded-top-2 w-75" href=" ">Add Blogs</Link></li>
-                            <li style={{ listStyle: 'none' }}><Link to="/OrganizerViewBlogs " class="list-group-item ms-4 rounded-bottom-2 w-75" href=" ">View Blogs</Link></li>
+                            <li style={{listStyle:'none'}}><Link to="/OrganiserAddBlogs "class="list-group-item ms-4 rounded-top-2 w-75" href=" ">Add Blogs</Link></li>
+                            <li style={{listStyle:'none'}}><Link to="/OrganizerViewBlogs "class="list-group-item ms-4 rounded-top-2 w-75" href=" ">View Blogs</Link></li>
 
                         </ul>
 
@@ -262,7 +214,7 @@ function OrganiserSideBar() {
                                                 <input type='textarea' className='txtArea' name='complaint' onChange={handleChange}></input>
                                             </div>
                                             <div className='ModalDialog-button-contain'>
-                                                <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal" onClick={handleComplaintSubmit}>Submit</button>
+                                                <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal" onClick={addcomplaint}>Submit</button>
                                             </div>
 
                                         </div>
