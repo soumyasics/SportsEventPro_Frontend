@@ -85,6 +85,10 @@ function ViewerUpcomingDetails() {
             alert('Booking Confirmed')
             navigate(`/ViewerPayment/${res.data.data._id}`)
            }
+           else{
+            alert(res.data.msg)
+
+           }
         })
         .catch(err => {
             console.error(err);
@@ -119,10 +123,14 @@ function ViewerUpcomingDetails() {
                             </div>
                             <div style={{ display: "flex", flexDirection: 'row' }}>
                                 <h3 className='ViewerBookNow-body-h3' style={{ marginTop: '3px' }}>Ticket -</h3>
-                                <h4 className='ViewerBookNow-body-h4' style={{ marginLeft: '4px' }}>{userData.amount}</h4>
+                                <h4 className='ViewerBookNow-body-h4' style={{ marginLeft: '4px' }}>₹ {userData.amount}/-</h4>
+
+
                             </div>
                             <div className='ViewerBookNow-body-2 row'>
                                 <div className='col-5'>
+                                <h6  className='ViewerBookNow-body-h5 '>Available Seats : {userData.availableSeats}</h6>
+
                                     <h5 className='ViewerBookNow-body-h5 '>Venue: {userData.eventId.venue}</h5>
                                 </div>
                                 <div className='col-5'>
@@ -156,7 +164,11 @@ function ViewerUpcomingDetails() {
                                     <p className='ticketprice'>{num} {sing}</p>
                                 </div>
                                 <Link style={{ textDecoration: 'none' }}  state={{ num, ticketPrice, sing }}>
-                                    <button className='BookNowButt' onClick={booknow}>Book Now</button>
+                                  {
+                                    userData.availableSeats>0?(
+                                    <button className='BookNowButt' onClick={booknow}>Book Now</button>)
+                                    : <button className='BookNowButt'>Booking Closed</button>
+                                    }
                                 </Link>
                             </div>
                         </div>

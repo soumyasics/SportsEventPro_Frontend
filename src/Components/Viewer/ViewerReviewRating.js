@@ -1,48 +1,37 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './ViewerReviewRating.css'
 import img from '../../Assets/Group 90.svg'
 import img2 from "../../Assets/Back Button.svg"
 import ReactStars from 'react-stars'
 import { Link } from 'react-router-dom'
+import axiosInstance from '../Constant/BaseURL'
 
 function ViewerReviewRating() {
 
-    // match the (a) to the variable of the value of ReactStars you change to
     let a = 4
+    const [userData, setUserData] = useState([]);
+
 
     const txtpref = useRef(null)
-
     useEffect(() => {
 
-        let TxTP = txtpref.current
+        let res;
 
-        if (a === 5) {
 
-            TxTP.innerHTML = "Great"
+        axiosInstance.post(`viewApprovedEvents`).then(res => {
 
-        }
-        else if (a === 4) {
+            console.log(res);
 
-            TxTP.innerHTML = "Good"
+            if ((res.data.data).length > 0)
+                setUserData(res.data.data);
+            else
+                setUserData(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
 
-        }
-        else if (a === 3) {
-
-            TxTP.innerHTML = "Average"
-
-        }
-        else if (a === 2) {
-
-            TxTP.innerHTML = "Bad"
-
-        }
-        else {
-
-            TxTP.innerHTML = "Very Bad"
-
-        }
-
-    });
+    }, []);
 
     return (
 
@@ -63,6 +52,11 @@ function ViewerReviewRating() {
 
                     {/* arraymap from here */}
                     {/* start */}
+                    {
+
+(userData && userData.length > 0) ? (userData.map((x, index) => {
+
+    return (
                     <div className='ViewerReviewRating-content'>
 
                         {/* for the rating stars */}
@@ -72,7 +66,7 @@ function ViewerReviewRating() {
                                 <ReactStars
                                     count={5}
                                     size={30}
-                                    value={a}
+                                    value={x.rating}
                                     color1='#D9D9D9'
                                     color2='#56B60B'
                                     edit={false}
@@ -84,24 +78,33 @@ function ViewerReviewRating() {
 
                         </div>
                         
-                        <h1 className='ViewerReviewRating-content-h1'>Good experience{/* put the coach review in here */}</h1>
+                        <h1 className='ViewerReviewRating-content-h1'>{x.name}{/* put the coach review in here */}</h1>
 
                         <div className='ViewerReviewRating-content-contentcontainer'>
 
                             <div className='ViewerReviewRating-content-content'>
 
                                 <img src={img} alt='' />
-                                <p className='ViewerReviewRating-content-p'>Enrolled team coach{/* TeamCaoch name maybe? or team name? */}</p>
+                                <p className='ViewerReviewRating-content-p'>{x.organizerId.name}{/* TeamCaoch name maybe? or team name? */}</p>
 
                             </div>
-                            <li>
-                                <p className='ViewerReviewRating-content-p'>Feb, 2024{/* review date here */}</p>
-                            </li>
+                        
+                                <p className='ViewerReviewRating-content-p'>{x.date.slice(0, 10)}{/* review date here */}</p>
+                       
+                                <div>
 
+<Link to={`/ViewerViewReviews/${x._id}`} style={{textDecoration:'none'}}><button className='AButt'>View Details</button></Link>
+
+</div>
 
                         </div>
 
                     </div>
+                     )
+                    })
+                    ) : (<h1>No reviews</h1>)
+
+                }
                     {/* end */}
                 </div>
 

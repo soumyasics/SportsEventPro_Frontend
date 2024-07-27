@@ -1,10 +1,34 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './AdminTicketRevenue.css'
 import img from '../../Assets/Search Button.svg'
 import img2 from "../../Assets/Back Button.svg"
 import { Link } from 'react-router-dom';
+import axiosInstance from '../Constant/BaseURL'
 
 function AdminTicketRevenue() {
+
+    const [userData, setUserData] = useState([]);
+
+
+    useEffect(() => {
+
+        let res;
+
+
+        axiosInstance.post(`viewTickets`).then(res => {
+
+            console.log(res);
+
+            if ((res.data.data).length > 0)
+                setUserData(res.data.data);
+            else
+                setUserData(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+
+    }, []);
 
     return (
 
@@ -19,12 +43,12 @@ function AdminTicketRevenue() {
 
             </div>
 
-            <div className='AdminViewTeamCoach-search-container'>
+            {/* <div className='AdminViewTeamCoach-search-container'>
 
                 <input type='search' placeholder='Search Here' className='AdminTicketRevenue-search'></input>
                 <button className='AdminTicketRevenue-search-button'> <img src={img} alt=' ' /> </button>
 
-            </div>
+            </div> */}
 
             <table className='AdminTicketRevenue-Table ' >
 
@@ -43,26 +67,34 @@ function AdminTicketRevenue() {
                 </thead>
 
                 <tbody>
+                {
 
+(userData && userData.length > 0) ? (userData.map((x, index) => {
+
+    return (
                     <tr className='AdminTicketRevenue-tableBodyRow' >
 
-                        <td className='col-2 AdminTicketRevenue-tableBodyData'>1 {/* Index */}</td>
-                        <td className='col-2 AdminTicketRevenue-tableBodyData'>TVM Junior Sports{/* Event Name */}</td>
-                        <td className='col-2 AdminTicketRevenue-tableBodyData'>Football{/* Category */}</td>
-                        <td className='col-2 AdminTicketRevenue-tableBodyData'>Trivandrum {/* Venue */}</td>
+                        <td className='col-2 AdminTicketRevenue-tableBodyData'>{++index}{/* Index */}</td>
+                        <td className='col-2 AdminTicketRevenue-tableBodyData'>{x.eventId.name}</td>
+                        <td className='col-2 AdminTicketRevenue-tableBodyData'>{x.eventId.category}</td>
+                        <td className='col-2 AdminTicketRevenue-tableBodyData'> {x.eventId.venue}</td>
                         <td className='col-2 AdminTicketRevenue-tableBodyData'>
 
                             <div className='classDiv'>
 
-                                <h1 className='AdminTicketRevenue-tableBodyData-h1'>12/12/2024</h1>{/* date */}
-                                <h1 className='AdminTicketRevenue-tableBodyData-h1'>2:00 PM</h1>{/* time */}
+                                <h1 className='AdminTicketRevenue-tableBodyData-h1'>{x.eventId.date.slice(0,10)}</h1>{/* date */}
 
                             </div>
 
                         </td>
-                        <td className='col-2 AdminTicketRevenue-tableBodyData-end'><Link to='/AdminTicketRevenue2' alt=""> View Details </Link></td>
+                        <td className='col-2 AdminTicketRevenue-tableBodyData-end'><Link to={`/AdminTicketRevenue2/${x._id}`} alt=""> View Details </Link></td>
 
                     </tr>
+                )
+                        })
+                        ) : (<h1>No Tickets Generated</h1>)
+
+                    }
 
                 </tbody>
 

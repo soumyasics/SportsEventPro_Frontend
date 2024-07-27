@@ -1,15 +1,38 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react';
 import './ViewerNavBar.css'
 import img from '../../Assets/Frame 19.png'
 import img2 from '../../Assets/iconamoon_profile-bold.svg'
 import img3 from '../../Assets/iconamoon_profile-bold(1).svg'
 import img4 from '../../Assets/Log_Out.svg'
 import { Link, useNavigate } from 'react-router-dom'
+import axiosInstance from '../Constant/BaseURL';
 
 
 function ViewerNavBar() {
     const navigate = useNavigate()
 
+    const [userData, setUserData] = useState({});
+    const id = localStorage.getItem('viewerId')
+
+    useEffect(() => {
+
+        let res;
+
+
+        axiosInstance.post(`viewviewersById/${id}`).then(res => {
+
+            console.log(res);
+
+
+            setUserData(res.data.data);
+
+        }).catch(err => {
+            console.log(err);
+        })
+
+
+
+    }, [id]);
     const handleLogout = () => {
 
         console.log("Logging out...");
@@ -97,7 +120,8 @@ function ViewerNavBar() {
                                     style={{ background: "none", border: "none" }}
                                 >
 
-                                    <img src={img2} alt=' ' />
+                                    {/* <img src={img2} alt=' ' /> */}
+                                    {userData.name}<span style={{ marginLeft: '5px' }}>▼</span>
 
                                 </button>
 

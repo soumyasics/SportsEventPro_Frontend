@@ -30,9 +30,9 @@ function Adminsidebar() {
                             Reports
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><Link class="dropdown-item" to="AdminTicketRevenue">Ticket Revenue</Link></li>
+                            <li><Link class="dropdown-item" to="#">TeamWise Report</Link></li>
+                            <li><Link class="dropdown-item" to="#">EventWise Report</Link></li>
                         </ul>
                     </div>
                     <Link className='admin-dash-link' to='/AdminViewReviewAndRatings'><h6 className='adminsidebarbutton-2'>Reviews & Rating</h6></Link>
