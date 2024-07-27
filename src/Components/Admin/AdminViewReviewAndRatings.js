@@ -17,7 +17,7 @@ function AdminViewReviewAndRatings() {
         let res;
 
 
-        axiosInstance.post(`viewAllreviews`).then(res => {
+        axiosInstance.post(`viewApprovedEvents`).then(res => {
 
             console.log(res);
 
@@ -97,7 +97,7 @@ function AdminViewReviewAndRatings() {
                                             <ReactStars
                                                 count={5}
                                                 size={30}
-                                                value={a}
+                                                value={x.rating}
                                                 color1='#D9D9D9'
                                                 color2='#56B60B'
                                                 edit={false}
@@ -110,8 +110,8 @@ function AdminViewReviewAndRatings() {
                                     <div>
                                         <div>
 
-                                            <h1 className='adminRR-content-h1'>Event Name here</h1>
-                                            <h1 className='adminRR-content-h1-2'>Organiser Name here</h1>
+                                            <h1 className='adminRR-content-h1'>{x.name}</h1>
+                                            <h1 className='adminRR-content-h1-2'>{x.organizerId.name}</h1>
 
                                         </div>
 
@@ -121,20 +121,15 @@ function AdminViewReviewAndRatings() {
 
                                         <div className='adminRR-content-content'>
 
-                                            <p className='adminRR-content-p1'>{x.tcId ? x.tcId.name : ''}{/* TeamCaoch name maybe? or team name? */}</p>
-
-                                            <li>
-                                                <p className='adminRR-content-p'>{x.tcId ? 'Enrolled Team Coach' : ''}{/* TeamCaoch name maybe? or team name? */}</p>
-                                            </li>
-
-                                            <li>
+                                           
+                                            
                                                 <p className='adminRR-content-p'>{x.date.slice(0, 10)}{/* review date here */}</p>
-                                            </li>
+                                         
 
                                         </div>
                                         <div>
 
-                                            <Link to='/AdminReviewAndRatings' style={{textDecoration:'none'}}><button className='AButt'>View Details</button></Link>
+                                            <Link to={`/AdminReviewAndRatings/${x._id}`} style={{textDecoration:'none'}}><button className='AButt'>View Details</button></Link>
 
                                         </div>
 

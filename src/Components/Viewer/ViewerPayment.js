@@ -54,7 +54,7 @@ const {id}=useParams()
       const regex = /^[0-9]{3,4}$/; // Validates CVV with 3 or 4 digits
       return regex.test(cvv);
     };
-  
+  const navigate=useNavigate()
     const validateExpiryDate = (date) => {
       const [month, year] = date.split('/');
       const expiryMonth = parseInt(month, 10);
@@ -96,9 +96,12 @@ const {id}=useParams()
             console.log(res.data.data);
             if(res.data.status==200)
                 alert('Payment Successful')
+              navigate(`/ViewerHomePage`)
+              
         })
         .catch(err => {
             console.error(err);
+            alert("something went wrong !!!")
         });
       } else {
         setErrors(newErrors);

@@ -1,10 +1,35 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import img from '../../Assets/Search Button.svg'
+import axiosInstance from '../Constant/BaseURL'
 import './AdminTicketRevenue2.css'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import img2 from "../../Assets/Back Button.svg"
 
 function AdminTicketRevenue2() {
+    const [userData, setUserData] = useState({
+        name:''
+    });
+const {id}=useParams()
 
+    useEffect(() => {
+
+        let res;
+
+
+        axiosInstance.post(`viewTicketById/${id}`).then(res => {
+
+            console.log(res);
+
+            if ((res.data.data).length > 0)
+                setUserData(res.data.data);
+            else
+                setUserData(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+
+    }, []);
     return (
 
         <div>
@@ -35,8 +60,8 @@ function AdminTicketRevenue2() {
 
                                 <div style={{ display: "flex", flexDirection: 'row', gap: '8px' }}>
 
-                                    <h1 className='AdminTicketRevenue2-body-h1-1'>TVM Junior Sports</h1>{/* event name */}
-                                    <h1 className='AdminTicketRevenue2-body-h1-2'>Football</h1>{/* event category */}
+                                    <h1 className='AdminTicketRevenue2-body-h1-1'>{userData.name}</h1>{/* event name */}
+                                    <h1 className='AdminTicketRevenue2-body-h1-2'>{userData.category}</h1>{/* event category */}
 
                                 </div>
 

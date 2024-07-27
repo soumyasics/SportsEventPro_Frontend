@@ -1,13 +1,13 @@
-import './AdminReviewandRatings.css'
-import img from '../../Assets/Group 90(1).svg'
+import React, { useEffect, useRef, useState } from 'react'
+import '../Admin/AdminViewReviewAndRatings.css'
+import img from '../../Assets/Group 90.svg'
 import img2 from "../../Assets/Back Button.svg"
 import ReactStars from 'react-stars'
-import React, { useEffect, useRef, useState } from 'react'
-
 import axiosInstance from '../Constant/BaseURL'
 import { Link, useParams } from 'react-router-dom'
-function AdminReviewandRatings() {
 
+function ViewerViewReviews() {
+ 
     const [userData, setUserData] = useState([]);
  const {id}=useParams()
 
@@ -57,7 +57,7 @@ function AdminReviewandRatings() {
     return (
                     <div className='AdminReviewandRatings-content'>
 
-                        <h1 className='AdminReviewandRatings-content-h1' style={{marginTop:'20px'}}>Good experience{/* put the coach review in here */}</h1>
+                        <h1 className='AdminReviewandRatings-content-h1' style={{marginTop:'20px'}}>{x.review}{/* put the coach review in here */}</h1>
 
                         <div className='AdminReviewandRatings-content-contentcontainer'>
 
@@ -95,5 +95,4 @@ function AdminReviewandRatings() {
     )
 
 }
-
-export default AdminReviewandRatings
+export default ViewerViewReviews

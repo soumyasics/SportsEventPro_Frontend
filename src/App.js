@@ -83,6 +83,7 @@ import ViewerReviewRating from './Components/Viewer/ViewerReviewRating';
 import OrganiserAddBlogs from './Components/Organiser/OrganiserAddBlogs';
 import AdminViewReviewAndRatings from './Components/Admin/AdminViewReviewAndRatings'
 import ViewerBlogs from './Components/Viewer/ViewerBlogs';
+import ViewerViewReviews from './Components/Viewer/ViewerViewReviews';
 function App() {
 
   return (
@@ -142,11 +143,11 @@ function App() {
           <Route exact path='/EventRequests' element={[<EventRequests />]} />
           <Route path='/ViewAllEvents' element={[<AdminNav />, <AdminMain data='ViewAllEvents' />, <UserFooter />]} />
           <Route path='/AdminTicketRevenue' element={[<AdminNav />, <AdminMain data='AdminTicketRevenue' />, <UserFooter />]} />
-          <Route path='/AdminTicketRevenue2' element={[<AdminNav />, <AdminMain data='AdminTicketRevenue2' />, <UserFooter />]} />
+          <Route path='/AdminTicketRevenue2/:id' element={[<AdminNav />, <AdminMain data='AdminTicketRevenue2' />, <UserFooter />]} />
           <Route path='/AdminTeamWiseReport' element={[<AdminNav />, <AdminMain data='AdminTeamWiseReport' />, <UserFooter />]} />
           <Route path='/AdminEventWiseReport' element={[<AdminNav />, <AdminMain data='AdminEventWiseReport' />, <UserFooter />]} />
           <Route path='/AdminEventWiseViewReport' element={[<AdminNav />, <AdminMain data='AdminEventWiseViewReport' />, <UserFooter />]} />
-          <Route path='/AdminReviewandRatings' element={[<AdminNav />, <AdminMain data='AdminReviewandRatings' />, <UserFooter />]} />
+          <Route path='/AdminReviewandRatings/:id' element={[<AdminNav />, <AdminMain data='AdminReviewandRatings' />, <UserFooter />]} />
           <Route path='/AdminEnquiries' element={[<AdminNav />, <AdminMain data='AdminEnquiries' />, <UserFooter />]} />
           <Route path='/AdminComplaints' element={[<AdminNav />, <AdminMain data='AdminComplaints' />, <UserFooter />]} />
 
@@ -226,6 +227,7 @@ function App() {
           <Route exact path='/ViewerViewScoreboard/:id' element={[<ViewerNavBar/>,<ViewerViewScoreboard/>,<UserFooter/>]} />
           <Route exact path='/ViewerReviewRating' element={[<ViewerNavBar/>,<ViewerReviewRating/>,<UserFooter/>]} />
           <Route exact path='/ViewerBlogs' element={[<ViewerNavBar/>,<ViewerBlogs/>,<UserFooter/>]} />
+          <Route exact path='/ViewerViewReviews/:id' element={[<ViewerNavBar/>,<ViewerViewReviews/>,<UserFooter/>]} />
 
           <Route path='/admin-viewAllViewer' element={[<MainNavbar />, <AdminMain data='admin-viewAllViewer' />]} />
 

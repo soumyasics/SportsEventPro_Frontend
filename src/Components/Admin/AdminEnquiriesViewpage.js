@@ -15,7 +15,7 @@ function AdminEnquiriesViewpage() {
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
     const getData=()=>{
-        axiosInstance.post(`/viewEnquiries`).then(res => {
+        axiosInstance.post(`/viewallEnquiries`).then(res => {
 
             console.log(res);
 
@@ -68,14 +68,15 @@ getData()
     
   return (
     <div className = 'AdminEnquiriesViewpageMainDivBG'>
+    
 
-    <h1 className = 'AdminEnquiriesViewpage-h1'>Enquiries List new</h1>
+    <h1 className = 'AdminEnquiriesViewpage-h1'>Enquiries List</h1>
     
 
     <table className = 'AdminEnquiriesViewpage-Table container ' >
 
         <thead >
-
+        { (userData&&userData.length>=1)?(
             <tr className = ' AdminEnquiriesViewpage-tableHeadRow'>
 
                 <td className = 'col-2 AdminEnquiriesViewpage-tableHeadData'>Sl </td>
@@ -88,6 +89,7 @@ getData()
 
 
             </tr>
+        ):(<h2>No Enquiries Found</h2>)}
         </thead>
 
         <tbody>
