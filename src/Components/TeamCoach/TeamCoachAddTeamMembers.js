@@ -15,6 +15,7 @@ import img15 from '../../Assets/subway_world-1.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 import axiosMultipartInstance from '../Constant/multiPart';
 import axiosInstance from '../Constant/BaseURL';
+import toast from 'react-hot-toast';
 
 const TeamCoachAddTeamMembers = () => {
     const id = localStorage.getItem('tcId');
@@ -129,11 +130,11 @@ console.log("err",formIsValid);
                 const res = await axiosMultipartInstance.post(`registerTeamMember/${id}`, data);
                 console.log(res);
                 if (res.data.status === 200) {
-                    alert("Member added Successfully");
+                    toast.success("Member added Successfully");
                     navigate('/TeamCoachHomePage');
                 }
                     else{
-                        alert(res.data.msg)
+                        toast.error(res.data.msg)
                     }
                 
             } catch (err) {

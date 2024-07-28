@@ -4,6 +4,7 @@ import axiosInstance from '../Constant/BaseURL';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 function OrganiserForgotPassword() {
 
@@ -138,13 +139,13 @@ function OrganiserForgotPassword() {
 
                 if (response.data.status == 200) {
 
-                    alert("password Reset Successful")
+                    toast.success("password Reset Successful")
                     navigate('/OrganizerLogin')
                 }
 
                 else {
 
-                    alert(response.data.msg)
+                    toast.error(response.data.msg)
                 }
 
             })

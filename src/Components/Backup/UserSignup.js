@@ -3,6 +3,7 @@ import './UserSignup.css'
 import img1 from '../../Assets/Frame 18.png'
 import img2 from '../../Assets/Ellipse 1.png'
 import img3 from '../../Assets/image 6.png'
+import toast from 'react-hot-toast'
 
 function UserSignup() {
   const [data, setData] = useState({
@@ -62,7 +63,7 @@ function UserSignup() {
 
     if (formIsValid) {
       console.log("data", data);
-      alert('email or Password is inncorrect')
+      toast.error('email or Password is inncorrect')
     }
 
   }

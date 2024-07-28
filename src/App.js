@@ -1,4 +1,6 @@
 import './App.css';
+// import 'react-hot-toast/dist/react-hot-toast.css';
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
@@ -84,6 +86,7 @@ import OrganiserAddBlogs from './Components/Organiser/OrganiserAddBlogs';
 import AdminViewReviewAndRatings from './Components/Admin/AdminViewReviewAndRatings'
 import ViewerBlogs from './Components/Viewer/ViewerBlogs';
 import ViewerViewReviews from './Components/Viewer/ViewerViewReviews';
+import TeamCoachViewReviews from './Components/TeamCoach/TeamCoachViewReviews';
 function App() {
 
   return (
@@ -184,7 +187,8 @@ function App() {
           <Route exact path='/TeamCoachResults' element={[<TeamCoachTopNav />, <TeamCoachResults />, <UserFooter />]} />
           <Route exact path='/TeamCoachRR' element={[<TeamCoachTopNav />, <TeamCoachReviewRatings />, <UserFooter />]} />
           <Route exact path='/TeamCoachViewTeamMembers' element={[<TeamCoachTopNav />, <TeamCoachViewTeamMembers />, <UserFooter />]} />
-          <Route exact path='/TeamCoachViewResults' element={[<TeamCoachTopNav />, <TeamCoachViewResults />, <UserFooter />]} />
+          <Route exact path='/TeamCoachViewResults/:id' element={[<TeamCoachTopNav />, <TeamCoachViewResults />, <UserFooter />]} />
+          <Route exact path='/TeamCoachViewReviews/:id' element={[<TeamCoachTopNav />, <TeamCoachViewReviews />, <UserFooter />]} />
 
           {/* Organizer */}
           <Route exact path='/OrganizerRegistration' element={[<MainNavbar />, <OrganiserRegistration />, <UserFooter />]} />
@@ -206,6 +210,8 @@ function App() {
           <Route exact path='/OrganizerTicketGen2' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerTicketGen2'/>,<UserFooter/>]} />
           <Route exact path='/OrganizerViewReport' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewReport'/>,<UserFooter/>]} />
           <Route exact path='/OrganizerViewBlogs' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewBlogs'/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerEventEnrollmentsChart' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerEventEnrollmentsChart'/>,<UserFooter/>]} />
+          <Route exact path='/OrganizerViewDetiledReport/:id' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewDetiledReport'/>,<UserFooter/>]} />
 
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />, <UserFooter />]} />
 

@@ -233,3 +233,140 @@
     font-size: 12px;
     margin-top: 5px;
 }
+/* Card details section styling */
+.ViewerPayment-body-right-bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+/* Form labels and inputs */
+.ViewerPayment-body-right-bottom label {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.ViewerPayment-body-right-bottom input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Input focus and hover effects */
+.ViewerPayment-body-right-bottom input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.ViewerPayment-body-right-bottom input::placeholder {
+    color: #999;
+}
+
+/* Error message styling */
+.ViewerPayment-body-right-bottom .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Button styling */
+.ViewerPayment-body-right-bottom button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(182deg, #007bff 1.49%, #0056b3 98.53%);
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.ViewerPayment-body-right-bottom button:hover {
+    background: linear-gradient(182deg, #0056b3 1.49%, #003d80 98.53%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ViewerPayment-body-right-bottom button:active {
+    background: linear-gradient(182deg, #003d80 1.49%, #002b5e 98.53%);
+}
+
+/* Form labels and inputs */
+.ViewerPayment-body-right-bottom label {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.ViewerPayment-body-right-bottom input {
+    width: 100%;
+    padding: 12px 15px; /* Increase padding for a medium-sized feel */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Input focus and hover effects */
+.ViewerPayment-body-right-bottom input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.ViewerPayment-body-right-bottom input::placeholder {
+    color: #999;
+}
+
+/* Error message styling */
+.ViewerPayment-body-right-bottom .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Button styling */
+.ViewerPayment-body-right-bottom button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(182deg, #007bff 1.49%, #0056b3 98.53%);
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.ViewerPayment-body-right-bottom button:hover {
+    background: linear-gradient(182deg, #0056b3 1.49%, #003d80 98.53%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ViewerPayment-body-right-bottom button:active {
+    background: linear-gradient(182deg, #003d80 1.49%, #002b5e 98.53%);
+}
+
+

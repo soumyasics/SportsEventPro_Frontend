@@ -1,47 +1,38 @@
-import React, { useEffect, useRef } from 'react'
 import './TeamCoachReviewRatings.css'
 import img from '../../Assets/Group 90.svg'
 import img2 from "../../Assets/Back Button.svg"
 import ReactStars from 'react-stars'
+import React, { useEffect, useRef, useState } from 'react'
 
+import { Link } from 'react-router-dom'
+import axiosInstance from '../Constant/BaseURL'
 function TeamCoachReviewRatings() {
 
+    
     let a = 4
+    const [userData, setUserData] = useState([]);
+
 
     const txtpref = useRef(null)
-
-    // match the (a) inside to the variable of the value of ReactStars you change to
     useEffect(() => {
 
-        let TxTP = txtpref.current
+        let res;
 
-        if (a === 5) {
 
-            TxTP.innerHTML = "Great"
+        axiosInstance.post(`viewApprovedEvents`).then(res => {
 
-        }
-        else if (a === 4) {
+            console.log(res);
 
-            TxTP.innerHTML = "Good"
+            if ((res.data.data).length > 0)
+                setUserData(res.data.data);
+            else
+                setUserData(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
 
-        }
-        else if (a === 3) {
-
-            TxTP.innerHTML = "Average"
-
-        }
-        else if (a === 2) {
-
-            TxTP.innerHTML = "Bad"
-
-        }
-        else {
-
-            TxTP.innerHTML = "Very Bad"
-
-        }
-
-    });
+    }, []);
 
     return (
 
@@ -62,6 +53,11 @@ function TeamCoachReviewRatings() {
 
                     {/* arraymap from here */}
                     {/* start */}
+                    {
+
+(userData && userData.length > 0) ? (userData.map((x, index) => {
+
+    return (
                     <div className='TeamCoachRR-content'>
 
                         {/* for the rating stars */}
@@ -71,7 +67,7 @@ function TeamCoachReviewRatings() {
                                 <ReactStars
                                     count={5}
                                     size={30}
-                                    value={a}
+                                    value={x.rating}
                                     color1='#D9D9D9'
                                     color2='#56B60B'
                                     edit={false}
@@ -83,24 +79,28 @@ function TeamCoachReviewRatings() {
 
                         </div>
                         
-                        <h1 className='TeamCoachRR-content-h1'>Good experience{/* put the coach review in here */}</h1>
+                        <h1 className='TeamCoachRR-content-h1'>{x.name}{/* put the coach review in here */}</h1>
 
                         <div className='TeamCoachRR-content-contentcontainer'>
 
                             <div className='TeamCoachRR-content-content'>
 
                                 <img src={img} alt='' />
-                                <p className='TeamCoachRR-content-p'>Enrolled team coach{/* TeamCaoch name maybe? or team name? */}</p>
+                                <p className='TeamCoachRR-content-p'>{x.organizerId.name}{/* TeamCaoch name maybe? or team name? */}</p>
 
                             </div>
-                            <li>
-                                <p className='TeamCoachRR-content-p'>Feb, 2024{/* review date here */}</p>
-                            </li>
+                                <p className='TeamCoachRR-content-p'>{x.date.slice(0, 10)}{/* review date here */}</p>
+                            <Link to={`/TeamCoachViewReviews/${x._id}`} style={{textDecoration:'none'}}><button className='AButt'>View Details</button></Link>
 
 
                         </div>
 
                     </div>
+                     )
+                    })
+                    ) : (<h1>No reviews</h1>)
+
+                }
                     {/* end */}
                 </div>
 

@@ -112,7 +112,7 @@ function TeamCoachResults() {
                                     </p>
                                     <h2 className='TeamCoachResultsCardTextH2'>{e.date}</h2>
                                     <div className='TeamCoachResults-button-contain'>
-                                        <Link to='/TeamCoachViewResults' style={{ textDecoration: 'none' }}>
+                                        <Link to={`/TeamCoachViewResults/${e._id}`} style={{ textDecoration: 'none' }}>
                                             <button className='TeamCoachResults-button'> Results</button>
                                         </Link>
                                     </div>

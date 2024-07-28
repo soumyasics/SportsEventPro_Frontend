@@ -6,6 +6,7 @@ import img3 from "../../Assets/Teamcoachhomepage_6.jpeg"
 import img4 from "../../Assets/Teamcoachhomepage_7.jpeg"
 import img5 from "../../Assets/Teamcoachhomepage_3.png"
 import img6 from '../../Assets/Teamcoachhomepage_4.png'
+import { Link } from 'react-router-dom'
 
 function TeamCoachHomePage() {
 
@@ -29,7 +30,7 @@ function TeamCoachHomePage() {
 
                         <div className='TeamCoachHomePage-SpanContainDiv'>
 
-                            <span className='TeamCoachHomePage-span'>To Participate In Upcoming Events <span className='TeamCoachHomePage-span-2'> Enroll Now </span>
+                            <span className='TeamCoachHomePage-span'>To Participate In Upcoming Events <span className='TeamCoachHomePage-span-2'><Link to='/TeamCoachEnrollNow' className='TeamCoachHomePage-link1'> Enroll Now </Link></span>
                                 <img src={img} alt='click here' className='justify-content-end TeamCoachHomePage-icon-1 ' />
                             </span>
 

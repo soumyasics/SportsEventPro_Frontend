@@ -12,6 +12,7 @@ import img7 from '../../Assets/octicon_x-16.svg'
 import "../../Components/TeamCoach/TeamCoachTopNav.css"; // Adjust path as per your project structure
 import ReactStars from 'react-stars';
 import axiosInstance from '../Constant/BaseURL';
+import toast from 'react-hot-toast';
 
 function TeamCoachTopNav() {
 
@@ -59,11 +60,12 @@ function TeamCoachTopNav() {
 
     const handleComplaintSubmit = () => {
         // Your function logic here
-        alert("Complaint submitted");
         axiosInstance
         .post(`addComplaint`,data)
         .then((res) => {
             console.log(res);
+            toast.success("Complaint submitted");
+
             // setData(res.data.data);
         })
         .catch((err) => {
@@ -132,6 +134,13 @@ function TeamCoachTopNav() {
                                             </li>
 
                                         </Link>
+                                        <div className='OrganiserProfContainDiv'>
+
+<img src={img2} alt=' ' />{/* put organiser image here pls */}
+
+
+
+</div>
 
                                         {/* <li>
                                             <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Add Substitute</a>
@@ -204,17 +213,17 @@ function TeamCoachTopNav() {
                             </li>
 
                             {/* Search */}
-                            <li className='nav-item '>
+                            {/* <li className='nav-item '>
                                 <div className='TeamCoach-search-container'>
                                     <input type='search' placeholder='Search Here' className='TeamCoach-search'></input>
                                     <button className='TeamCoach-search-button'>
                                         <img src={img1} alt="Search" />
                                     </button>
                                 </div>
-                            </li>
+                            </li> */}
                         </ul>
                         <div className='TeamCoachNavBar-Navli'>
-                            {/* Notification */}
+                            {/* Notification
                             <li className="nav-item" style={{ listStyle: "none" }}>
                                 <div className="dropdown-center">
                                     <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
@@ -225,10 +234,10 @@ function TeamCoachTopNav() {
                                         <img src={img6} alt="Notifications" />
                                     </button>
                                     <ul className="dropdown-menu TeamCoachNavBar-noti-contain">
-                                        {/* Notification items can go here */}
-                                    </ul>
+<li>test</li>                                    </ul>
                                 </div>
-                            </li>
+                            </li> */}
+                           
                             {/* Profile */}
                             <li className="nav-item" style={{ listStyle: "none", marginLeft: "10px", marginRight: '10px' }}>
                                 <div className="dropdown-center">
@@ -236,8 +245,9 @@ function TeamCoachTopNav() {
                                         type="button"
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false"
-                                        style={{ background: "none", border: "none" }}>
-                                        <img src={img2} alt="Profile" />
+                                        style={{ background: "none", border: "none" }}>     
+                                           <h1 className=' teamCoach-nav-h1'>{data.name}</h1>{/*organiser name */}
+
                                     </button>
                                     <ul className="dropdown-menu" style={{ marginLeft: "-110px", marginTop: "10px" }}>
                                         <li>

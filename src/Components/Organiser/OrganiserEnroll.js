@@ -5,6 +5,7 @@ import img2 from '../../Assets/charm_square-tick.svg'
 import img3 from '../../Assets/mynaui_x-square.svg'
 import axiosInstance from "../Constant/BaseURL";
 import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function OrganiserEnroll() {
 
@@ -50,7 +51,7 @@ const id=localStorage.getItem('organizerId')
           .post(`/approveEnrollmentById/${id}`)
           .then((res) => {
             if (res.data.status === 200) {
-              alert("Event Approved");
+                toast.success("Event Approved");
               getData()
 
             }
@@ -65,7 +66,7 @@ const id=localStorage.getItem('organizerId')
           .post(`/rejectEnrollmentById/${id}`)
           .then((res) => {
             if (res.data.status === 200) {
-              alert(" Request Rejected");
+                toast.success(" Request Rejected");
               getData()
 
             }

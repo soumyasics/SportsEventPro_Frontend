@@ -15,6 +15,7 @@ import img12 from '../../Assets/gg_list.jpg'
 import axiosInstance from '../Constant/BaseURL'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import axiosMultipartInstance from '../Constant/multiPart'
+import toast from 'react-hot-toast'
 
 function OrganiserEditProfile() {
     const url = axiosInstance.defaults.url;
@@ -174,10 +175,10 @@ function OrganiserEditProfile() {
             .then(response => {
                 console.log(response);
                 if (response.data.status === 200) {
-                    alert(response.data.msg)
+                    toast.success(response.data.msg)
                     navigate('/OrganiserEditProfile')
                 } else
-                    alert(response.data.msg)
+                toast.error(response.data.msg)
 
             })
             .catch(error => {

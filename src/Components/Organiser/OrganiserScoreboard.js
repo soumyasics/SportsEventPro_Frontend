@@ -15,7 +15,7 @@ function OrganiserScoreboard() {
 
     const getData = async () => {
         try {
-            const res = await axiosInstance.post(`/viewApprovedEventsByOrgId/${localStorage.getItem('organizerId')}`);
+            const res = await axiosInstance.post(`/viewApprovedEventsByOrgIdforScoreBoard/${localStorage.getItem('organizerId')}`);
             // const fetchedCategory = res.data.data.category;
             // setCategory(fetchedCategory);
             setEvent(res.data.data);
@@ -59,7 +59,7 @@ function OrganiserScoreboard() {
     return (
                         <div className="card OrganiserScoreBoard-content-contain">
 
-<img   src={`${url}/${x?.banner?.filename}`} className="card-img-top OrganiserScoreBoard-img" alt="..." />{/*event image */}
+<img   src={`${url}/${x?.banner?.filename}`} className="OrganiserScoreBoard-img" alt="..." />{/*event image */}
 
                             <div className="card-body" style={{width:"100%"}}>
 
@@ -87,7 +87,7 @@ function OrganiserScoreboard() {
                         </div>
                        
                     )
-                })):<div>No Events Found</div>
+                })):<div><h2>No Events Found</h2></div>
             
             
             }

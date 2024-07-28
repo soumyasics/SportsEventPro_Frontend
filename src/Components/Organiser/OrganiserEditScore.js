@@ -3,6 +3,7 @@ import './OrganiserEditScore.css'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import img from "../../Assets/Back Button.svg"
 import axiosInstance from '../Constant/BaseURL';
+import toast from 'react-hot-toast';
 
 function OrganiserEditScore() {
     const { id } = useParams();
@@ -71,7 +72,7 @@ function OrganiserEditScore() {
 
             console.log(res);
             if(res.data.status==200)
-                alert("Score Updated Successfully")
+                toast.success("Score Updated Successfully")
             getData()
 
         }).catch(err => {

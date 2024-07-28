@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from "../Constant/BaseURL";
 import img2 from "../../Assets/Back Button.svg"
+import toast from 'react-hot-toast';
 
 
 function OrganiserTicketGen2() {
@@ -62,14 +63,14 @@ function OrganiserTicketGen2() {
 
             if (response.data.status == 200) {
 
-                alert("Ticket Generated Successfully")
+                toast.success("Ticket Generated Successfully")
                 navigate('/OrganizerDashboard')
 
             } 
             
             else {
 
-                alert(response.data.msg)
+                toast.error(response.data.msg)
 
             }
 

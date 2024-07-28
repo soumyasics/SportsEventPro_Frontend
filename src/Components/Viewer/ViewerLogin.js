@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './ViewerLogin.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import toast from 'react-hot-toast'
 
 function ViewerLogin() {
 
@@ -108,7 +109,7 @@ function ViewerLogin() {
 
                 if (response.data.status == 200) {
 
-                    alert("Login Successful")
+                    toast.success("Login Successful")
                     localStorage.setItem('viewerId', response.data.data._id)
                     navigate('/ViewerHomePage')
 
@@ -116,7 +117,7 @@ function ViewerLogin() {
 
                 else {
 
-                    alert(response.data.msg)
+                    toast.error(response.data.msg)
 
                 }
 

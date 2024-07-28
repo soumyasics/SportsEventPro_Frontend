@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './TeamCoachViewResults.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import img from "../../Assets/Back Button.svg"
 import axiosInstance from '../Constant/BaseURL';
 
@@ -8,9 +8,12 @@ import axiosInstance from '../Constant/BaseURL';
 function TeamCoachViewResults() {
 
     const [isApproved, setIsApproved] = useState(false)
+    const [eve, setEve] = useState({
+        name:''}
+    )
 
     const navigate = useNavigate()
-const id=localStorage.getItem('eventId')
+const {id}=useParams()
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
@@ -19,12 +22,13 @@ const id=localStorage.getItem('eventId')
         let res;
 
 
-        axiosInstance.post(`getAllScoreboards/${id}`).then(res => {
+        axiosInstance.post(`viewApprovedEnrollmentsByEventId/${id}`).then(res => {
 
             console.log(res);
 
-            if ((res.data.data).length > 0)
+            if ((res.data.data).length > 0){
                 setUserData(res.data.data);
+            setEve(res.data.data[0].eventId.name)}
             else
                 setUserData(null)
             console.log(res.data.data);
@@ -34,7 +38,27 @@ const id=localStorage.getItem('eventId')
 
     }, []);
     useEffect(() => {
+
+        let res;
+
+
+        axiosInstance.post(`viewEventById/${id}`).then(res => {
+
+            console.log(res);
+
+            
+                setEve(res.data.data);
+           
+          
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+
+    }, []);
+    useEffect(() => {
         console.log("users", userData);
+        console.log(eve);
     })
 
     const viewDetails = (id) => {
@@ -49,7 +73,7 @@ const id=localStorage.getItem('eventId')
                 <div className='TeamCoachViewResults-header'>
 
                     <button className='TeamCoachViewResults-headercontainer-BackButton' ><Link to='/TeamCoachResults'><img src={img} alt=' ' /></Link></button>
-                    <h1 className='TeamCoachViewResults-headercontainer-h1'>  </h1>{/* event name here */}
+                    <h1 className='TeamCoachViewResults-headercontainer-h1'>  </h1>
 
                 </div>
 
@@ -81,7 +105,7 @@ const id=localStorage.getItem('eventId')
                         <tr className='TeamCoachViewResults-tableBodyRow container' >
 
                             <td className='col-2 TeamCoachViewResults-tableBodyData'>{++index}</td>{/* Sl no */}
-                            <td className='col-4 TeamCoachViewResults-tableBodyData'>{x.tcId}</td>{/* Team Name */}
+                            <td className='col-4 TeamCoachViewResults-tableBodyData'>{x.coachId.name}</td>{/* Team Name */}
                             <td className='col-3 TeamCoachViewResults-tableBodyData'>{x.score}</td>{/* Score */}
                             <td className='col-3 TeamCoachViewResults-tableBodyData-end'>{x.position}</td>{/* Result */}
 

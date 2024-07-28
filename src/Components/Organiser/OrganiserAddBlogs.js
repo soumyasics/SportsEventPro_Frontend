@@ -3,6 +3,7 @@ import "../../Components/Organiser/OrganiserAddBlogs.css"
 import { Link, useNavigate } from 'react-router-dom'
 import img from "../../Assets/Back Button.svg"
 import axiosMultipartInstance from '../Constant/multiPart';
+import toast from 'react-hot-toast';
 
 
 function OrganiserAddBlogs() {
@@ -81,10 +82,10 @@ function OrganiserAddBlogs() {
         axiosMultipartInstance.post('registerOrganizerBlog', data)
             .then(response => {
                 if (response.data.status === 200) {
-                    alert(response.data.msg);
+                    toast.success(response.data.msg);
                     navigate('/OrganizerDashboard');
                 } else {
-                    alert(response.data.msg);
+                    toast.error(response.data.msg);
                 }
             })
             .catch(error => {

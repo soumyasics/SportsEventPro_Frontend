@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import img from '../../Assets/Search Button.svg';
 import axiosInstance from '../Constant/BaseURL';
-import './AdminTicketRevenue2.css';
+import '../Admin/AdminTicketRevenue2.css';
 import { Link, useParams } from 'react-router-dom';
 import img2 from "../../Assets/Back Button.svg";
 
-function AdminTicketRevenue2() {
+function OrganizerViewDetiledReport() {
     const [userData, setUserData] = useState({
         eventId: { name: '', category: '',date:'',venue:'' },
         amount:0,
@@ -40,12 +40,8 @@ function AdminTicketRevenue2() {
         <div className='AdminTicketRevenue2-MainDiv'>
             <div className='col AdminTicketRevenue2-headercontainer-container-1'>
                 <div style={{ display: 'flex', flexDirection: 'row', width: 'max-content' }}>
-                    <Link to='/AdminTicketRevenue'>
-                        <button className='AdminTicketRevenue2-headercontainer-BackButton'>
-                            <img src={img2} alt=' ' />
-                        </button>
-                    </Link>
-                    <h1 className='AdminTicketRevenue2-headercontainer-h1'>Ticket Details</h1>
+                 
+                    <h1 className='AdminTicketRevenue2-headercontainer-h1'>Detailed Report</h1>
                 </div>
             </div>
 
@@ -147,4 +143,4 @@ return (
     );
 }
 
-export default AdminTicketRevenue2;
+export default OrganizerViewDetiledReport

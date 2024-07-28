@@ -24,6 +24,7 @@ import './ViewerEditProfile.css'
 
 import axiosInstance from '../Constant/BaseURL'
 import { Link, useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 function ViewerEditProfile() {
     const url = axiosInstance.defaults.url;
@@ -68,7 +69,7 @@ function ViewerEditProfile() {
             .then((res) => {
                 console.log(res);
                 if (res.data.status == 200) {
-                    alert("Profile Updated Successfully");
+                    toast.success("Profile Updated Successfully");
                     navigate('/ViewerHomePage')
                 }
             })

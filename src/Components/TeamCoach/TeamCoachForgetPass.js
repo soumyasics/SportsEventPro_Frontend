@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import imgg from '../../Assets/Forgotpass.gif'
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 function TeamCoachForgetPass() {
 
@@ -113,10 +114,10 @@ function TeamCoachForgetPass() {
             .then(response => {
                 console.log(response);
                 if (response.data.status == 200) {
-                    alert("Password Reset Successful")
+                    toast.success("Password Reset Successful")
                     navigate('/TeamCoachLogin')
                 } else
-                    alert(response.data.msg)
+                    toast.error(response.data.msg)
 
 
             })

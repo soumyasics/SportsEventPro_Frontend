@@ -5,6 +5,7 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { Link, useNavigate } from 'react-router-dom'
 import img7 from '../../Assets/octicon_x-16.svg'
 import axiosInstance from '../Constant/BaseURL'
+import toast from 'react-hot-toast'
 
 
 function OrganiserSideBar() {
@@ -48,13 +49,13 @@ function OrganiserSideBar() {
 
                 if (response.data.status == 200) {
 
-                    alert("Complaint Added Succesfully")
+                    toast.success("Complaint Added Succesfully")
                     navigate('/OrganizerDashboard')
                 }
 
                 else {
 
-                    alert(response.data.msg)
+                    toast.error(response.data.msg)
                 }
 
             })

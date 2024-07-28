@@ -1,10 +1,59 @@
-import React from 'react'
 import './OrganiserViewReport.css'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import './OrganiserViewScore.css'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import img from "../../Assets/Back Button.svg"
+import axiosInstance from '../Constant/BaseURL';
 import img2 from "../../Assets/Back Button.svg"
 
 function OrganiserViewReport() {
+    const navigate = useNavigate()
+    const id=localStorage.getItem('organizerId')
+    const [inputValue, setInputValue] = useState({});
 
+    const [userData, setUserData] = useState([]);
+    const url = axiosInstance.defaults.url;
+    console.log("url,", id);
+    const getData = () => {
+        axiosInstance.post(`/viewTicketsByOrganizerId/${id}`).then(res => {
+
+            console.log(res);
+
+            if ((res.data.data).length > 0)
+                setUserData(res.data.data);
+            else
+                setUserData(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+    // const getData2 = () => {
+    //     axiosInstance.post(`/viewEventById/${id}`).then(res => {
+
+    //         console.log(res);
+
+    //         if ((res.data.data))
+    //             setInputValue(res.data.data);
+    //         else
+    //         setInputValue(null)
+    //         console.log(res.data.data);
+    //     }).catch(err => {
+    //         console.log(err);
+    //     })
+    // }
+    useEffect(() => {
+
+        let res;
+
+        getData()
+
+
+
+    }, []);
+    const gotoDetails=(id)=>{
+navigate(`/OrganizerViewDetiledReport/${id}`)
+    }
     return (
 
         <div>
@@ -25,18 +74,23 @@ function OrganiserViewReport() {
                 <div style={{display:'flex',flexDirection:'row', flexWrap:'wrap', gap:'30px'}}>
 
                     {/* card start */}
+                    
+                    {
+
+(userData && userData.length > 0) ? (userData.map((x, index) => {
+
+    return (
                     <div className='OrganiserViewReport-content'>
 
                         <div className="OrganiserViewReport-body-top">
 
                             <div className='OrganiserViewReport-body-2'>
 
-                                <h1 className='OrganiserViewReport-body-h1'>The Eagles Vs The kings</h1>{/* team names */}
+                                <h1 className='OrganiserViewReport-body-h1'>{x.eventId.name}</h1>{/* team names */}
 
                                 <div style={{ display: "flex", flexDirection: 'row', gap: '8px' }}>
 
-                                    <h1 className='OrganiserViewReport-body-h1-1'>TVM Junior Sports</h1>{/* event name */}
-                                    <h1 className='OrganiserViewReport-body-h1-2'>Football</h1>{/* event category */}
+                                    <h1 className='OrganiserViewReport-body-h1-2'>{x.eventId.category}</h1>{/* event category */}
 
                                 </div>
 
@@ -44,82 +98,28 @@ function OrganiserViewReport() {
 
                             <div style={{ display: "flex", flexDirection: 'row' }}>
 
-                                <h4 className='OrganiserViewReport-body-h4' style={{ marginLeft: '4px' }}>₹499</h4> {/* replace 499 with the array var (ticket price) */}
+                                <h4 className='OrganiserViewReport-body-h4' style={{ marginLeft: '4px' }}>{x.amount}</h4> {/* replace 499 with the array var (ticket price) */}
 
                             </div>
 
                             <div className='OrganiserViewReport-body-3'>
 
-                                <h5 className='OrganiserViewReport-body-h5'>Trivandrum</h5>{/* event venue */}
-                                <h2 className='OrganiserViewReport-body-h2'>12/12/2024, 2:00 PM</h2> {/* event date and time */}
-
+                                <h5 className='OrganiserViewReport-body-h5'>{x.eventId.venue}</h5>{/* event venue */}
+                                <h2 className='OrganiserViewReport-body-h2'>{x.eventId.date.slice(0,10)}</h2> {/* event date and time */}
+                          <button className='btn btn-secondary' onClick={()=>{gotoDetails(x._id)}}>View Details</button>
                             </div>
 
                         </div>
 
-                        <div className='OrganiserViewReport-body-bottom'>
-
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
-
-                                <div>
-
-                                    <h1 className='OrganiserViewReport-body-h1-1'>Total Tickets Generated</h1>
-
-                                </div>
-
-                                <div>
-
-                                    <h1 className='OrganiserViewReport-body-h1-1'>Sold Out Tickets</h1>
-
-                                </div>
-
-                                <div>
-
-                                    <h1 className='OrganiserViewReport-body-h1-1'>Pending Tickets</h1>
-
-                                </div>
-
-                                <div>
-
-                                    <h1 className='OrganiserViewReport-body-h1-1'>Total Amount Collected</h1>
-
-                                </div>
-
-                            </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
-
-                                <div>
-
-                                    <h1 className='OrganiserViewReport-body-h1-1'>: 1000</h1> {/* no of tickets generated */}
-
-                                </div>
-
-                                <div>
-
-                                    <h1 className='OrganiserViewReport-body-h1-1'>: 750</h1> {/* Sold out tickets */}
-
-                                </div>
-
-                                <div>
-
-                                    <h1 className='OrganiserViewReport-body-h1-1'>: 250</h1> {/* no of tickets generated */}
-
-                                </div>
-
-                                <div>
-
-                                    <h1 className='OrganiserViewReport-body-h1-1'>: ₹12,23,345</h1> {/* no of tickets generated */}
-
-                                </div>
-
-                            </div>
-
-
-
-                        </div>
+                       
 
                     </div>
-                    {/* card end */}
+                )
+            })) : (
+                <h1 className="AdminCoachRequestH5">No Events Found</h1>
+            )
+
+        }
 
                 </div>
 

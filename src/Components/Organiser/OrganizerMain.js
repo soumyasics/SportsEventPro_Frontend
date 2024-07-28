@@ -15,6 +15,8 @@ import OrganiserTicketGen2 from './OrganiserTicketGen2';
 import OrganiserViewReport from './OrganiserViewReport';
 import OrganiserAddBlogs from './OrganiserAddBlogs';
 import OrganizerViewBlogs from './OrganizerViewBlogs';
+import OrganizerEventEnrollmentsChart from './OrganizerEventEnrollmentsChart';
+import OrganizerViewDetiledReport from './OrganizerViewDetiledReport';
 
 function OrganizerMain({ data }) {
 
@@ -39,7 +41,7 @@ function OrganizerMain({ data }) {
           </div>
           <div className='col-9'>
             {data === 'OrganizerDashboard' ? (
-              <OrganiserDashboard />
+              <OrganizerEventEnrollmentsChart />
             ) : data === 'OrganizerScheduleEvents' ? (
               <OrganizerScheduleEvents />
             ) : data === 'OrganizerViewEvents' ? (
@@ -67,6 +69,8 @@ function OrganizerMain({ data }) {
             )
             : data === 'OrganizerViewBlogs' ? (
               <OrganizerViewBlogs />
+            ) : data === 'OrganizerViewDetiledReport' ? (
+              <OrganizerViewDetiledReport />
             )
             
 

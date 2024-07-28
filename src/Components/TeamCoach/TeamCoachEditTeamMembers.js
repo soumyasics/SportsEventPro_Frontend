@@ -17,6 +17,7 @@ import { useParams } from 'react-router-dom'
 import { Link, useNavigate } from 'react-router-dom';
 import axiosMultipartInstance from '../Constant/multiPart';
 import axiosInstance from '../Constant/BaseURL';
+import toast from 'react-hot-toast'
 
 function TeamCoachEditTeamMembers() {
     const {id}=useParams()
@@ -139,11 +140,11 @@ console.log("err",formIsValid);
                 const res = await axiosInstance.post(`editTeamMemberById/${id}`, data);
                 console.log(res);
                 if (res.data.status === 200) {
-                    alert("Profile Updated Successfully");
+                    toast.success("Profile Updated Successfully");
                     navigate('/TeamCoachHomePage');
                 }
                     else{
-                        alert(res.data.msg)
+                        toast.error(res.data.msg)
                     }
                 
             } catch (err) {
@@ -158,11 +159,11 @@ console.log("err",formIsValid);
                 const res = await axiosInstance.post(`deleteTeamMemberById/${id}`, data);
                 console.log(res);
                 if (res.data.status === 200) {
-                    alert("Profile removed Successfully");
+                    toast.success("Profile removed Successfully");
                     navigate('/TeamCoachHomePage');
                 }
                     else{
-                        alert(res.data.msg)
+                        toast.error(res.data.msg)
                     }
                 
             } catch (err) {

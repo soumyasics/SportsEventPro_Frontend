@@ -18,6 +18,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import '../TeamCoach/AdminViewAprvdCoachIndividual.css'
 import './AdminViewOrganizerToApprove.css'
 import axiosInstance from "../../Constant/BaseURL";
+import toast from "react-hot-toast";
 const url = axiosInstance.defaults.url;
 
 console.log("url,", url);
@@ -51,7 +52,7 @@ function AdminViewOrganizerToApprove() {
       .post(`/approveOrganizerById/${id}`)
       .then((res) => {
         if (res.data.status === 200) {
-          alert("Organizer Approved");
+          toast.success("Organizer Approved");
           navigate("/AdminViewOrganiser");
         }
       })
@@ -66,7 +67,7 @@ function AdminViewOrganizerToApprove() {
       .post(`/deleteOrganizerById/${id}`)
       .then((res) => {
         if (res.data.status === 200) {
-          alert("Organizer Request Rejected");
+          toast.success("Organizer Request Rejected");
           navigate("/AdminViewTeamCoach");
         }
       })

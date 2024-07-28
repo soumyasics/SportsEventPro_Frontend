@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 import axiosInstance from '../Constant/BaseURL'
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 function ViewerRegistration() {
 
@@ -197,10 +198,10 @@ function ViewerRegistration() {
             .then(response => {
                 console.log(response);
                 if (response.data.status == 200) {
-                    alert(response.data.msg)
+                    toast.success(response.data.msg)
                     navigate('/ViewerLogin')
                 } else
-                    alert(response.data.msg)
+                    toast.error(response.data.msg)
 
 
             })

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Enquiries.css'
 import axiosInstance from '../Constant/BaseURL';
+import toast from 'react-hot-toast';
 
 
 function Enquiries() {
@@ -83,9 +84,9 @@ BackendData();
               .then(response => {
                 console.log(response);
                 if(response.data.status==200){
-                    alert(response.data.msg)
+                    toast.success(response.data.msg)
                 }else
-        alert(response.data.msg)       
+        toast.error(response.data.msg)       
                 
             
               })

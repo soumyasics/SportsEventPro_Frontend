@@ -38,7 +38,7 @@ function TeamCoachEnrolledEvents() {
             
                 eventId:eventId,
       tcId:localStorage.getItem('tcId'),
-       userRole:'tc',
+      userRole:'Team Coach',
       review:comment,
             });
             console.log(res.data);
@@ -130,7 +130,7 @@ function TeamCoachEnrolledEvents() {
 
                                     </div>
                                 )
-                            })) : <div>No Data</div>
+                            })) : <div>No Events Found</div>
 
 
                         }

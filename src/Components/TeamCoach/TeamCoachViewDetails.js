@@ -13,6 +13,7 @@ import img13 from "../../Assets/solar_phone-bold-duotone.svg";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import axiosInstance from "../Constant/BaseURL";
+import toast from 'react-hot-toast';
 const url = axiosInstance.defaults.url;
 
 
@@ -41,7 +42,7 @@ function TeamCoachViewDetails() {
         .post(`/rejectTeamCoachById/${id}`)
         .then((res) => {
           if (res.data.status === 200) {
-            alert("Team Coach Request Rejected");
+            toast.success("Team Coach Request Rejected");
             navigate("/AdminViewTeamCoach");
           }
         })
