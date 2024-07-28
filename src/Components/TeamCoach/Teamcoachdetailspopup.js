@@ -15,6 +15,7 @@ import img12 from "../../Assets/arcticons_team-fight-tactics.jpg";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import axiosInstance from "../Constant/BaseURL";
+import toast from "react-hot-toast";
 const url = axiosInstance.defaults.url;
 
 console.log("url,", url);
@@ -42,7 +43,7 @@ function Teamcoachdetailspopup() {
       .post(`/approveTeamCoachById/${id}`)
       .then((res) => {
         if (res.data.status === 200) {
-          alert("Team Coach Approved");
+          toast.success("Team Coach Approved");
           navigate("/AdminViewTeamCoach");
         }
       })
@@ -56,7 +57,7 @@ function Teamcoachdetailspopup() {
       .post(`/rejectTeamCoachById/${id}`)
       .then((res) => {
         if (res.data.status === 200) {
-          alert("Team Coach Request Rejected");
+          toast.success("Team Coach Request Rejected");
           navigate("/AdminViewTeamCoach");
         }
       })

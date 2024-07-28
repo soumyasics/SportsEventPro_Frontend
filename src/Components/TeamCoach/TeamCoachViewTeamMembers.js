@@ -69,7 +69,7 @@ function TeamCoachViewTeamMembers() {
                                 return (
                                     <tr className='TeamCoachViewTeamMembers-tableBodyRow' >
 {console.log(x.name)}
-                                        <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'>{index}</td>
+                                        <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'>{++index}</td>
                                         <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'>{x.name}</td>
                                         <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'>{x.contact}</td>
                                         <td className='col-2 TeamCoachViewTeamMembers-tableBodyData'>{x.email}</td>

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import axiosInstance from '../Constant/BaseURL'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import toast from 'react-hot-toast'
 
 function AdminLogin() {
 
@@ -74,7 +75,7 @@ function AdminLogin() {
 
 
 if(data.email=="admin@gmail.com" && data.password=="admin@1234"){
-  alert("Login Successfully")
+    toast.success("Login Successfully")
   localStorage.setItem('admin',1)
   navigate('/adminmain')
 }
@@ -98,7 +99,7 @@ if(data.email=="admin@gmail.com" && data.password=="admin@1234"){
 
                 if (response.data.status == 200) {
 
-                    alert("Login Successful")
+                    toast.success("Login Successful")
                     localStorage.setItem('admin', 1)
                     navigate('/admindashboard')
 
@@ -106,7 +107,7 @@ if(data.email=="admin@gmail.com" && data.password=="admin@1234"){
 
                 else {
 
-                    alert(response.data.msg)
+                    toast.error(response.data.msg)
 
                 }
 

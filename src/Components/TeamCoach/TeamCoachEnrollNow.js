@@ -7,6 +7,7 @@ import axiosInstance from '../Constant/BaseURL'
 import { Navigate, useNavigate ,Link} from 'react-router-dom'
 import ReactStars from 'react-stars'
 import { useParams } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 function TeamCoachEnrollNow() {
 
@@ -52,11 +53,11 @@ function TeamCoachEnrollNow() {
                 console.log(response);
                 if (response.data.status == 200) {
 
-                    alert("Enrollment request Send to Organizer")
+                    toast.success("Enrollment request Send to Organizer")
                     navigate('/TeamCoachEnrolledEvents')
 
                 } else
-                    alert(response.data.msg)
+                    toast.error(response.data.msg)
 
 
             })

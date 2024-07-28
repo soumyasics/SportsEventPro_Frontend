@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: row;
     align-self: flex-start;
-    width: 473px;
+    /* width: 473px; */
     height: 48px;
     gap: 30px;
 
@@ -55,7 +55,7 @@
     margin-bottom: 16.5px;
     padding-left: 18px;
     height: 43px;
-    width: 304px;
+    /* width: 304px; */
     border-radius: 82px;
     border: 1px solid rgba(0, 0, 0, 0.20);
     background: #fff;
@@ -65,7 +65,7 @@
 
 .AdminTicketRevenue-search-button {
 
-    position: absolute;
+    /* position: absolute; */
     margin-top: 45.5px;
     margin-left: -40px;
     border: 1px solid #CFCFCF;
@@ -84,7 +84,7 @@
 
 .AdminTicketRevenue-Table {
 
-    margin-top: 50px;
+    margin-top: 90px;
     border: 1.304px solid #B9B9B9;
     border-radius: 6px;
     border-collapse: separate;
@@ -96,7 +96,7 @@
 .AdminTicketRevenue-tableHeadRow {
 
     display: flex;
-    /* width:950px; */
+    width:1050px;
     height: 65px;
     text-align: left;
     background: #A9ADC582;
@@ -106,8 +106,8 @@
 
 .AdminTicketRevenue-tableHeadData {
 
-    width: 215px;
-    border-right: 1.304px solid #B9B9B9;
+    width: 100%;
+        border-right: 1.304px solid #B9B9B9;
     padding-left: 13px;
     padding-top: 15.6px;
     color: #000;
@@ -124,7 +124,7 @@
 
     padding-left: 13px;
     padding-top: 15.6px;
-    width: 215px;
+    width: 100%;
     color: #000;
     font-family: Roboto;
     font-size: 16.954px;
@@ -138,7 +138,7 @@
 .AdminTicketRevenue-tableBodyRow {
 
     display: flex;
-    /* width: 950px; */
+    width: 100%;
     height: 65px;
     text-align: left;
     background: #00000000;
@@ -148,7 +148,7 @@
 
 .AdminTicketRevenue-tableBodyData {
 
-    width: 215px;
+    width: 100%;
     border-right: 1.304px solid #B9B9B9;
     padding-left: 13px;
     padding-top: 15.6px;
@@ -164,7 +164,7 @@
 
 .AdminTicketRevenue-tableBodyData-end {
 
-    width: 215px;
+    /* width: 215px; */
     padding-left: 13px;
     padding-top: 15.6px;
     color: #000;

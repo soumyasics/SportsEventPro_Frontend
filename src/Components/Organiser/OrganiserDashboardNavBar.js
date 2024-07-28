@@ -63,12 +63,12 @@ function OrganiserDashboardNavBar() {
                     {/* searchbar and profile*/}
                     <div className='Organiser-searchprofilecontain'>
 
-                        <div className='Organiser-search-container'>
+                        {/* <div className='Organiser-search-container'>
 
                             <input type='search' placeholder='Search Here' className='Organiser-search'></input>
                             <button className='Organiser-search-button'> <img src={img1} alt=' ' /> </button>
 
-                        </div>
+                        </div> */}
 
                         <div className='OrganiserProfContainDiv'>
 

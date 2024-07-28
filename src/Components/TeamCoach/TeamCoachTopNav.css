@@ -67,7 +67,24 @@
     color: black;
 
 }
+.TeamcoachProfContainDiv {
 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+
+}
+.teamCoach-nav-h1{
+
+    color: white;
+    font-family: Roboto;
+    font-size: 15.423px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21.592px;
+
+}
 .TeamCoachNavBar-Nav-li-a {
 
     font-family: Roboto;

@@ -17,6 +17,7 @@ import img14 from "../../Assets/ri_open-arm-fill.jpg"
 import axiosInstance from '../Constant/BaseURL';
 import { useNavigate } from 'react-router-dom';
 import axiosMultipartInstance from '../Constant/multiPart';
+import toast from 'react-hot-toast';
 
 const url = axiosInstance.defaults.url;
 
@@ -86,7 +87,7 @@ function TeamCoachEditProfile() {
             .then((res) => {
                 console.log(res);
                 if (res.data.status == 200) {
-                    alert("Profile Updated Successfully");
+                    toast.success("Profile Updated Successfully");
                     navigate('/TeamCoachHomePage');
                 }
             })

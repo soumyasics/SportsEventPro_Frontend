@@ -3,6 +3,7 @@ import './AdminResetPass.css'
 import resetimg from "../../Assets/giflap.gif"
 import axios from 'axios'
 import axiosInstance from '../Constant/BaseURL'
+import toast from 'react-hot-toast'
 
 
 
@@ -61,13 +62,13 @@ function AdminResetPass() {
                 BackendData()
             }
             else {
-                alert("user not found")
+                toast.error("user not found")
             }
         }
         if (data.password == data.confirmpassword) {
             abc()
         } else {
-            alert("password does not match")
+            toast.error("password does not match")
         }
 
     }
@@ -77,9 +78,9 @@ function AdminResetPass() {
             .then(response => {
                 console.log(response);
                 if (response.data.status == 200) {
-                    alert(response.data.msg)
+                    toast.success(response.data.msg)
                 } else
-                    alert(response.data.msg)
+                toast.info(response.data.msg)
 
 
             })

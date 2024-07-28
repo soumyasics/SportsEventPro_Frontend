@@ -4,6 +4,7 @@ import axiosInstance from '../Constant/BaseURL';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 function ViewerForgotPassword() {
 
@@ -139,14 +140,14 @@ function ViewerForgotPassword() {
 
                 if (response.data.status == 200) {
 
-                    alert("Password Reset Successful")
+                    toast.success("Password Reset Successful")
                     navigate('/ViewerLogin')
 
                 }
 
                 else {
 
-                    alert(response.data.msg)
+                    toast.error(response.data.msg)
                 }
 
             })

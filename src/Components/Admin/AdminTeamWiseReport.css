@@ -112,7 +112,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 48px;
-    margin-top: 50px;
+    margin-top: 100px;
 
 }
 
@@ -159,7 +159,7 @@
 
 .AdminTeamWiseReport-Table {
 
-    /* margin-top: 50px; */
+    margin-top: 100px;
     border: none;
     /* border-collapse:separate; */
     border-spacing: 0;

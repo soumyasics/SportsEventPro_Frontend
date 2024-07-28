@@ -1,182 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 .AdminTicketRevenue2-MainDiv {
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 25px;
     margin-bottom: 40px;
-
 }
 
 .AdminTicketRevenue2-headercontainer-container-1 {
-
     display: flex;
     flex-direction: row;
     align-self: flex-start;
     height: 48px;
     margin-top: 30px;
-    gap: 683px;
-
+    gap: 20px;
 }
 
 .AdminTicketRevenue2-headercontainer-BackButton {
-
     background-color: #00000000;
     border: none;
     margin-top: 45px;
-
 }
 
 .AdminTicketRevenue2-headercontainer-h1 {
-
-    margin-left: 30px;
     color: #000;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size: 40px;
-    font-style: normal;
     font-weight: 700;
     line-height: 48px;
     margin-top: 35px;
-
+    margin-left: 20px;
 }
 
-
 .AdminTicketRevenue2-content {
-
     display: flex;
     padding: 20px;
-    flex-direction: column;
+    flex-direction: row; /* Changed from column to row */
     gap: 25px;
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.20);
-    width: max-content;
+    width: 100%;
     margin-top: 25px;
-
 }
 
 .AdminTicketRevenue2-body-top {
-
     display: flex;
-    padding: 20px 40px;
-    width: max-content;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.20);
-
+    width: 60%; /* Adjusted width */
 }
 
 .AdminTicketRevenue2-body-2 {
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
-
 }
 
 .AdminTicketRevenue2-body-h1 {
-
     color: #000;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size: 24px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 130%;
-
 }
 
 .AdminTicketRevenue2-body-h1-1 {
-
     color: #000;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size: 15px;
-    font-style: normal;
     font-weight: 600;
-    line-height: 130%;
-
 }
 
 .AdminTicketRevenue2-body-h1-2 {
-
     display: flex;
     height: 24px;
-    width: 75px;
+    width: auto;
     padding: 10px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0;
     border-radius: 5px;
     background: #B9B9B9;
     color: #000;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size: 15px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 130%;
-
 }
 
 .AdminTicketRevenue2-body-h4 {
-
     color: #000;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size: 24px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 130%;
-
 }
 
 .AdminTicketRevenue2-body-h5 {
-
     color: #000;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size: 18px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 130%;
-
 }
 
 .AdminTicketRevenue2-body-h2 {
-
     display: flex;
-    width: 168px;
-    height: 29px;
+    width: auto;
+    padding: 10px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     border-radius: 8px;
     border: 1px solid #000;
     color: #000;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-size: 15px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 130%;
-
 }
 
 .AdminTicketRevenue2-body-3 {
-
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-
 }
 
 .AdminTicketRevenue2-body-bottom {
-
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Changed to column */
+    justify-content: space-between;
+    width: 40%; /* Adjusted width */
     gap: 25px;
+}
 
+.AdminTicketRevenue2-body-bottom .column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adjusted gap */
 }

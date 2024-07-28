@@ -1,0 +1,22 @@
+/* toastStyles.css */
+.toast {
+    font-size: 30px; /* Adjust the font size */
+    padding: 16px; /* Adjust the padding */
+    border-radius: 8px; /* Adjust the border radius */
+  }
+  
+  .toast.error {
+    background-color: #f44336; /* Customize the background color for error toasts */
+    color: #fff; /* Customize the text color */
+  }
+  
+  .toast.success {
+    background-color: #4caf50; /* Customize the background color for success toasts */
+    color: #fff; /* Customize the text color */
+  }
+  
+  .toast.info {
+    background-color: #2196f3; /* Customize the background color for info toasts */
+    color: #fff; /* Customize the text color */
+  }
+  

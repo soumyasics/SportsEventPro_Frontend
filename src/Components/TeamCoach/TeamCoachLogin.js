@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import toast from 'react-hot-toast'
 
 
 
@@ -97,15 +98,15 @@ function TeamCoachLogin() {
                         navigate('/teamcoachhomepage')
                     }
                     else if (!response.data.data.isActive) {
-                        alert(" Your Account Has Been Deactivated By Admmin ")
+                        toast.success(" Your Account Has Been Deactivated By Admmin ")
                         window.location.reload(false)
                     }
                     else {
-                        alert("Please get Approval from Admin!")
+                        toast.info("Please get Approval from Admin!")
                         window.location.reload(false)
                     }
                 } else
-                    alert(response.data.msg)
+                    toast.error(response.data.msg)
 
 
             })

@@ -3,6 +3,7 @@ import img from '../../Assets/Search Button.svg';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import axiosInstance from '../Constant/BaseURL';
+import toast from 'react-hot-toast';
 
 
 function AdminEnquiriesViewpage() {
@@ -46,11 +47,11 @@ getData()
             axiosInstance.post(`/deleteEnquiryById/${id}`).then(res => {
                 console.log(res);
                 if(res.data.status==200){
-                    alert('Removed Succesfully')
+                    toast.success('Removed Succesfully')
                 getData()
                 }
                 else
-                alert(res.data.msg)
+                toast.error(res.data.msg)
             })
                 .catch(err => {
                     console.log(err);

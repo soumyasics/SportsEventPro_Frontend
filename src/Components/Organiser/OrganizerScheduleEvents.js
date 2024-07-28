@@ -5,6 +5,7 @@ import axiosInstance from '../Constant/BaseURL'
 import axiosMultipartInstance from '../Constant/multiPart'
 import { useNavigate } from 'react-router-dom'
 import './OrganizerScheduleEvents.css'
+import toast from 'react-hot-toast'
 
 function OrganizerScheduleEvents() {
     const navigate = useNavigate();
@@ -95,10 +96,10 @@ function OrganizerScheduleEvents() {
         axiosMultipartInstance.post('addEvent', data)
             .then(response => {
                 if (response.data.status === 200) {
-                    alert(response.data.msg);
+                    toast.success(response.data.msg);
                     navigate('/OrganizerViewEvents');
                 } else {
-                    alert(response.data.msg);
+                    toast.error(response.data.msg);
                 }
             })
             .catch(error => {
@@ -170,7 +171,11 @@ function OrganizerScheduleEvents() {
                             <div className='OrganizerScheduleEvents-div-1-body-inpcontain-right-inpcontain'>
                                 
                                 <label className='OrganiserScheduleEvents-div-1-body-inpcontain-label' >Date</label>
-                                <input type='Date' className='OrganizerScheduleEvents-div-1-body-inpcontain-right-inp' name="date"  onChange={handleChange}></input>
+                                <input type='Date'
+                                 className='OrganizerScheduleEvents-div-1-body-inpcontain-right-inp' 
+                                 name="date"  onChange={handleChange}
+                                 min={new Date().toISOString().split("T")[0]}
+                                 ></input>
                                 {errors.date && <div className="text-danger ">{errors.date}</div>}
 
                             </div>

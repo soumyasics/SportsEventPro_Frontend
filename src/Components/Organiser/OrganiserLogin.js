@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './OrganiserLogin.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import toast from 'react-hot-toast'
 
 function OrganizerLogin() {
 
@@ -106,7 +107,7 @@ function OrganizerLogin() {
 
             if (response.data.status == 200) {
 
-                alert("Login Successful")
+                toast.success("Login Successful")
                 localStorage.setItem('organizerId',response.data.data._id )
                 navigate('/OrganizerDashboard')
 
@@ -114,7 +115,7 @@ function OrganizerLogin() {
             
             else {
 
-                alert(response.data.msg)
+                toast.error(response.data.msg)
 
             }
 

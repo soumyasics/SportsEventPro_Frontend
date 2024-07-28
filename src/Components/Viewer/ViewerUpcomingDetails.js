@@ -6,6 +6,7 @@ import img3 from '../../Assets/Rectangle 4618(1).png';
 import img4 from '../../Assets/button-minus.svg';
 import img5 from '../../Assets/button-plus.svg';
 import axiosInstance from '../Constant/BaseURL';
+import toast from 'react-hot-toast';
 
 function ViewerUpcomingDetails() {
     const { id } = useParams();
@@ -82,11 +83,11 @@ function ViewerUpcomingDetails() {
         .then(res => {
            console.log("res",res);
            if(res.data.status==200){
-            alert('Booking Confirmed')
+            toast.success('Booking Confirmed')
             navigate(`/ViewerPayment/${res.data.data._id}`)
            }
            else{
-            alert(res.data.msg)
+            toast.error(res.data.msg)
 
            }
         })
