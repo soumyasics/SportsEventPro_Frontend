@@ -53,7 +53,7 @@ function Landingpage3() {
 
             {
 
-(userData && userData.length > 0) ? (userData.map((x, index) => {
+(userData && userData.length >=3) ? (userData.map((x, index) => {
 
     return (
       <>
@@ -70,19 +70,19 @@ function Landingpage3() {
 ) : (
   <>
   <div class="col-4">
-    <button className='landingpagebutton-1'>REGISTER NOW</button>
+  <Link to={`/ViewerLogin`}><button className='landingpagebutton-1'>REGISTER NOW</button></Link> 
   <img className='landingpageimg2' src={img1}alt="" />
   <h4 className='landingpageh1'>Football Tournament</h4>
   <h2 className='landingpageh2'>July 10-12</h2>
   </div>
   <div class="col-4">
-<button className='landingpagebutton-2'>VIEW DETAILS</button>
+  <Link to={`/ViewerLogin`}><button className='landingpagebutton-1'>REGISTER NOW</button></Link> 
   <img class='landingpageimg3' src={img2}alt="" />
   <h4 className='landingpageh1'>Basketball Championship</h4>
   <h2 className='landingpageh2'>August 15-18</h2>
   </div>
   <div class="col-4">
-    <button className='landingpagebutton-3'>EXPLORE MORE</button>
+  <Link to={`/ViewerLogin`}><button className='landingpagebutton-1'>REGISTER NOW</button></Link> 
   <img className='landingpageimg4' src={img3}alt="" />
   <h4 className='landingpageh1'>Tennis Open</h4>
   <h2 className='landingpageh2'>September 5-7</h2>

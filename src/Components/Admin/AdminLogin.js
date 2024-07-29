@@ -138,7 +138,6 @@ if(data.email=="admin@gmail.com" && data.password=="admin@1234"){
                                         <p className="AdminLoginp1">Username</p>
                                         <input
                                             className="AdminLogininput1"
-                                            id='pword'
                                             type="email"
                                             placeholder="Enter your username"
                                             name="email"
@@ -160,6 +159,8 @@ if(data.email=="admin@gmail.com" && data.password=="admin@1234"){
                                         <input
                                             className="AdminLogininput2"
                                             type="password"
+                                            id='pword'
+
                                             placeholder="Enter your Password"
                                             name="password"
                                             value={data.password}
