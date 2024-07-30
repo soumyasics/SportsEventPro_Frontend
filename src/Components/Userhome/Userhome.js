@@ -7,7 +7,7 @@ function Userhome() {
       <div class='userHomeDiv-1'>
       </div>
       <div class='userHomeDiv-2'>
-        <h1 class='userHomeHead'>Welcome to the
+        <h1 class='userHomeHead'>Welcome To The
           <br></br>Sports Event Pro</h1>
         <h2 className='userHomeDiv-3'>Join us for a thrilling experience filled with competitive matches</h2>
         <div className='userHomebuttons'>

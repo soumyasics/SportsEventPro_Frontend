@@ -1,31 +1,33 @@
 .userHomeDiv-2 {
-    width: 843px;
-    height: 431px;
+    width: 606px;
+    height: 408px;
     flex-shrink: 0;
     border-radius: 10px;
-    background: linear-gradient(108deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.00) 100.03%);
+    background: linear-gradient(213deg, rgb(255 255 255 / 19%) 0%, rgb(255 255 255 / 0%) 100.03%);
     border-radius: 32px;
-    border: 2px solid #FFF;
+    border: 2px solid #ffffff63;
+    -webkit-backdrop-filter: blur(35px);
     backdrop-filter: blur(35px);
     margin-top: -600px;
-    margin-left: 115px;
+    margin-left: 459px;
 }
 
 .userHomeHead {
     color: #000;
     font-family: Roboto;
-    font-size: 56.667px;
+    font-size: 44.667px;
     font-style: normal;
     font-weight: 700;
     line-height: 68px;
-    margin-left: 54px;
-    margin-top: 63px;
+    /* margin-left: 55px; */
+    margin-top: 49px;
+    text-align: center;
 }
 
 .userHomeDiv-3 {
     color: #000;
     font-family: Roboto;
-    font-size: 22.667px;
+    font-size: 17.667px;
     font-style: normal;
     font-weight: 400;
     line-height: 34px;
@@ -37,41 +39,43 @@
 
 .userHomeButton-1 {
     display: flex;
-    width: 340px;
-    padding: 17px;
+    padding: 7px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #000;
     font-family: Roboto;
-    font-size: 22.667px;
+    font-size: 17.667px;
     font-style: normal;
     font-weight: 500;
     line-height: 34px;
     border-radius: 11.333px;
     border: 1.417px solid #000;
     margin-left: 54px;
-    width: 316px;
+    width: 208px;
     background-color: #ffffff1a;
+    height: 54px;
 }
 
 .userHomeButton-2 {
-    padding: 17px;
+    padding: 7px;
     background-color: #000;
     color: #FFF;
     font-family: Roboto;
-    font-size: 22.667px;
+    font-size: 17.667px;
     font-style: normal;
     font-weight: 500;
     line-height: 34px;
     border-radius: 11.333px;
     border: none;
     background: #000;
-    width: 316px;
+    width: 208px;
+    height: 54px;
+    margin-left: 65px;
 }
 
 .userHomeDiv-1 {
-    background: url("../../Assets/Rectangle1.png") lightgray 0px 0px / 107.76% 122.862% no-repeat;
+    background: url("../../Assets/front.jpg") lightgray 0px 0px / 107.76% 122.862% no-repeat;
     width: 100%;
     height: 92vh;
     margin-bottom: 80px;
@@ -85,3 +89,14 @@
     margin-top: 34px;
 
 }
+.userHomeButton-2:hover{
+    background-color: #FFF;
+    color: #000;
+}
+.userHomeButton-1:hover{
+    color: #FFF;
+    border-color: #FFF;
+}
+
+  
+  
