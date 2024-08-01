@@ -195,12 +195,9 @@
 .TeamCoachHomepageSlide{
     vertical-align: middle;
     transform: rotate(180deg);
-    background-color: #7fffd400;
+    background-color: #ffffff00;
 }
-.TeamCoachHomepageSlide2{
-    margin-left: -916px;
-    background-color: #ffffff36;
-}
+
 
 /* css for the 1st card */
 .TeamCoachHomePage-Card-Start {
@@ -377,8 +374,8 @@
 }
 
 .card {
-    min-width: 300px; /* Adjust card width */
-    margin: 0 10px;
+    min-width: 300px;
+    margin: 0px 78px;
 }
 
 .slider-btn {
@@ -398,12 +395,22 @@
 .slider-btn:first-of-type {
     left: 10px;
     left: 10px;
-    background-color: #ffffff00;}
+    width: 41px;
+    height: 43px;
+    background-color: #00000033;
+}
 
 .slider-btn:last-of-type {
     right: 10px;
+    background-color: #00000033;
 }
 .TeamCoachHomepageSlideDiv{
     right: 10px;
     background-color: #ffffff00;
+    margin-top: -40px;
+}
+.TeamCoachHomepageSlideleft{
+    background-color: #00000000;
+    margin-top: -4px;
+    margin-left: -2px;
 }

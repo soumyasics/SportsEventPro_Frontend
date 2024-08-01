@@ -69,7 +69,7 @@ function TeamCoachHomePage() {
                         <p>No events available.</p>
                     ) : (
                         <div className='slider-container'>
-                            {/* <button className='slider-btn TeamCoachHomepageSlideDiv' onClick={prevSlide}><img className='TeamCoachHomepageSlide2' src={img3}></img></button> */}
+                            <button className='slider-btn TeamCoachHomepageSlideDiv' onClick={prevSlide}><img className='TeamCoachHomepageSlideleft' src={img3}></img></button>
                             <div className='slider'>
                                 {visibleItems.map((e, index) => (
                                     <div key={index} className="card rounded-2 TeamCoachHomePage-Card-Start">
@@ -85,7 +85,7 @@ function TeamCoachHomePage() {
                                     </div>
                                 ))}
                             </div>
-                            {/* <button className='slider-btn TeamCoachHomepageSlideDiv' onClick={nextSlide}><img className='TeamCoachHomepageSlide' src={img3}></img></button> */}
+                            <button className='slider-btn TeamCoachHomepageSlideDiv' onClick={nextSlide}><img className='TeamCoachHomepageSlide' src={img3}></img></button>
                         </div>
                     )}
                 </div>
