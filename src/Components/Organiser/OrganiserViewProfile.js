@@ -34,13 +34,10 @@ function OrganiserViewProfile() {
     const navigate = useNavigate()
 
 
-    const { id } = useParams()
     const [userData, setUserData] = useState();
 
 
-    useEffect(() => {
 
-        let res;
 
 
         axiosInstance.post(`viewOrganizerById`).then(res => {
@@ -56,8 +53,6 @@ function OrganiserViewProfile() {
 
 
 
-    }, [id]);
-    console.log(userData);
 
 
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './OrganiserScoreboard.css'
 import img from '../../Assets/FOOTBALL POSTER TEMPLATE 1(3).png'
+<<<<<<< HEAD
 import { Link } from 'react-router-dom'
 import axiosInstance from '../Constant/BaseURL';
 
@@ -34,9 +35,74 @@ function OrganiserScoreboard() {
    
 
 
+=======
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import axiosInstance from '../Constant/BaseURL'
+
+
+const url = axiosInstance.defaults.url;
+
+console.log("url,", url);
+
+
+
+function OrganiserScoreboard() {
+
+    const navigate = useNavigate()
+
+
+    const [userData, setUserData] = useState();
+
+
+
+        const getData=()=>{
+
+        axiosInstance.post(`/viewEvents`).then(res => {
+
+            console.log(res);
+
+
+            setUserData(res.data.data);
+
+        }).catch(err => {
+            console.log(err);
+        })
+
+    }
+    useEffect(() => {
+
+
+getData()
+      
+
+
+
+    }, []);
+>>>>>>> 500f1383b5a232014a766bf3ff3b1c503bb5587d
     return (
 
-        <div className='OrganiserScoreBoard'>
+
+
+        
+
+
+
+
+
+
+
+
+        
+            
+        <div className='OrganiserScoreBoard '>
+        {
+
+(userData&&userData.length>=1)?(userData.map((x,index) => {
+
+
+return(
+                       
+  
 
             <div className='OrganiserScoreBoard-MainDiv'>
 
@@ -59,7 +125,11 @@ function OrganiserScoreboard() {
     return (
                         <div className="card OrganiserScoreBoard-content-contain">
 
+<<<<<<< HEAD
 <img   src={`${url}/${x?.banner?.filename}`} className="OrganiserScoreBoard-img" alt="..." />{/*event image */}
+=======
+                        <img className='OrganiserScoreBoard-img' src={`${url}/${x?.banner?.filename}`} />{/*event image */}
+>>>>>>> 500f1383b5a232014a766bf3ff3b1c503bb5587d
 
                             <div className="card-body" style={{width:"100%"}}>
 
@@ -72,8 +142,13 @@ function OrganiserScoreboard() {
 
                                 <div className="card-text">
 
+<<<<<<< HEAD
                                     <p className='CardTextP'>Place:{x.venue}</p>
                                     <h2 className='CardTextH2'>{x.date.slice(0,10)}, {x.time}</h2> {/* event date and time */}
+=======
+                                    <p className='CardTextP'>Place:{x.venue}{/* event location */}</p>
+                                    <h2 className='CardTextH2'>{x.time}</h2> {/* event date and time */}
+>>>>>>> 500f1383b5a232014a766bf3ff3b1c503bb5587d
                                     <div className='OrganiserScoreBoard-button-contain'>
 
                                         <Link to={`/OrganizerViewScore/${x._id}`} style={{textDecoration:"none"}}><button className='OrganiserScoreBoard-button'>View Score</button></Link>
@@ -97,7 +172,10 @@ function OrganiserScoreboard() {
 
 
             </div>
+)})):<h1></h1>
 
+
+}
         </div>
 
     )
