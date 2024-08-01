@@ -14,9 +14,13 @@ import OrganiserTicketGen from './OrganiserTicketGen';
 import OrganiserTicketGen2 from './OrganiserTicketGen2';
 import OrganiserViewReport from './OrganiserViewReport';
 import OrganiserAddBlogs from './OrganiserAddBlogs';
+<<<<<<< HEAD
 import OrganizerViewBlogs from './OrganizerViewBlogs';
 import OrganizerEventEnrollmentsChart from './OrganizerEventEnrollmentsChart';
 import OrganizerViewDetiledReport from './OrganizerViewDetiledReport';
+=======
+import OrganiserViewAllBlogs from './OrganiserViewAllBlogs';
+>>>>>>> 500f1383b5a232014a766bf3ff3b1c503bb5587d
 
 function OrganizerMain({ data }) {
 
@@ -34,7 +38,10 @@ function OrganizerMain({ data }) {
   return (
     <div>
       <div>
+<<<<<<< HEAD
       <div>
+=======
+>>>>>>> 500f1383b5a232014a766bf3ff3b1c503bb5587d
         <div className='row'>
           <div className='col-3'>
             <OrganiserSideBar />
@@ -66,6 +73,8 @@ function OrganizerMain({ data }) {
               <OrganiserViewReport />
             ): data === 'OrganiserAddBlogs' ? (
               <OrganiserAddBlogs />
+            ): data === 'OrganiserViewAllBlogs' ? (
+              <OrganiserViewAllBlogs />
             )
             : data === 'OrganizerViewBlogs' ? (
               <OrganizerViewBlogs />
@@ -77,7 +86,6 @@ function OrganizerMain({ data }) {
               : (
                 <OrganiserDashboard />
               )}
-          </div>
           </div>
         </div>
       </div>

@@ -136,7 +136,11 @@ function OrganiserSideBar() {
                         <ul class="collapse list-group mt-2 rounded-2" id='li-2'>
 
                             <li style={{listStyle:'none'}}><Link to="/OrganiserAddBlogs "class="list-group-item ms-4 rounded-top-2 w-75" href=" ">Add Blogs</Link></li>
+<<<<<<< HEAD
                             <li style={{listStyle:'none'}}><Link to="/OrganizerViewBlogs "class="list-group-item ms-4 rounded-top-2 w-75" href=" ">View Blogs</Link></li>
+=======
+                            <li style={{listStyle:'none'}}><Link to="/OrganiserViewAllBlogs "class="list-group-item ms-4 rounded-top-2 w-75">View Blogs</Link></li>
+>>>>>>> 500f1383b5a232014a766bf3ff3b1c503bb5587d
 
                         </ul>
 

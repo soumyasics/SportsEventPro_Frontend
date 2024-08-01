@@ -215,7 +215,12 @@ function App() {
 
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />, <UserFooter />]} />
 
+<<<<<<< HEAD
+          <Route exact path='/OrganiserAddBlogs' element={[<OrganiserAddBlogs/>]}/>
+          <Route exact path='/OrganiserViewAllBlogs' element={[<OrganiserDashboardNavBar />, <OrganizerMain data='OrganiserViewAllBlogs' />, <UserFooter />]}/>
+=======
           <Route exact path='/OrganiserAddBlogs' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganiserAddBlogs'/>,<UserFooter/>]}/>
+>>>>>>> efe2745c702596293fc23e7d77881cfe2d1facce
 
 
           {/* Viewer */}
