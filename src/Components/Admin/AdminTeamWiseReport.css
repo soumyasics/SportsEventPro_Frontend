@@ -88,10 +88,11 @@
 .AdminTeamWiseReport-body-h2 {
 
     display: flex;
-    width: 148px;
+    width: max-content;
     height: 23px;
     justify-content: center;
     align-items: center;
+    padding: 5px;
     gap: 10px;
     border-radius: 8px;
     border: 1px solid #000;

@@ -18,13 +18,21 @@
 }
 
 .AdminLoginp1 {
-    color: black;
-    font-weight: bold;
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
 }
 
 .AdminLoginp2 {
-    color: black;
-    font-weight: bold;
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
 }
 
 .AdminLogininput1 {
@@ -84,6 +92,12 @@
     border: none;
     margin-top: 45px;
     margin-left: 132px;
+    color: var(--icon-color, #FFF);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
 }
 
 .adminLogindiv2 {

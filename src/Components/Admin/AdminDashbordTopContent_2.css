@@ -9,20 +9,31 @@
     height: 100px;
 } */
 
-.Admin-Dashbord-TopContent-img6{
+.Admin-Dashbord-TopContent-img6 {
     height: 10vh;
     width: 100px;
 }
-.Admin-Dashbord-TopContent-img5{
+
+.Admin-Dashbord-TopContent-img5 {
     height: 10vh;
     width: 100px;
 }
-.AdminDashbordTopContent_2-button1{
+
+.AdminDashbordTopContent_2-button1 {
     background-color: white;
     border: 0px;
     width: 174px;
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 13.25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18.55px;
+    /* 140% */
 }
-.AdminDashbordTopContent_2-Div2{
+
+.AdminDashbordTopContent_2-Div2 {
     display: flex;
     padding: 21.95px var(--items, 0px);
     flex-direction: column;
@@ -32,7 +43,8 @@
     flex: 1 0;
     text-align: -webkit-center;
 }
-.AdminDashbordTopContent_2-Div3{
+
+.AdminDashbordTopContent_2-Div3 {
     display: flex;
     padding: 7.95px var(--items, 0px);
     flex-direction: column;
@@ -43,7 +55,8 @@
     margin-top: 8px;
     text-align: -webkit-center;
 }
-.AdminDashbordTopContent_Div1{
+
+.AdminDashbordTopContent_Div1 {
     display: flex;
     padding: 50px var(--items, 0px);
     flex-direction: column;
@@ -51,26 +64,35 @@
     align-items: baseline;
     text-align: left;
     color: #000;
+    font-family: Roboto;
     font-size: 26.5px;
     font-style: normal;
+    font-weight: 700;
+    line-height: 31.8px;
+    /* 120% */
 }
-.AdminDashbordTopContent_2-Div4{
+
+.AdminDashbordTopContent_2-Div4 {
     flex: 1 0;
     text-align: -webkit-center;
     /* margin-left: -348px; */
 }
-.AdminDashbordTopContent_2-line{
+
+.AdminDashbordTopContent_2-line {
     width: 1110px;
     margin: auto;
     /* margin-left: 354px; */
 }
-.style{
+
+.style {
     margin-left: 200px;
 }
-.AdminDashbordTopContent_2-button1{
+
+.AdminDashbordTopContent_2-button1 {
     width: 191px;
 }
-.AdminDashbordTopContent_Div2{
+
+.AdminDashbordTopContent_Div2 {
     display: flex;
     padding: 50px var(--items, 0px);
     flex-direction: column;
@@ -81,7 +103,8 @@
     font-size: 26.5px;
     font-style: normal;
 }
-.AdminDashbordTopContent_Div3{
+
+.AdminDashbordTopContent_Div3 {
     display: flex;
     padding: 50px var(--items, 0px);
     flex-direction: column;
@@ -92,7 +115,8 @@
     font-size: 26.5px;
     font-style: normal;
 }
-.AdminDashbordTopContent_2-link{
+
+.AdminDashbordTopContent_2-link {
     text-decoration: none;
-    color:black
+    color: black
 }
