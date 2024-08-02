@@ -18,14 +18,14 @@ function ViewerLogin() {
         if (pWordState.type === "password") {
 
             pWordState.type = "text"
-            setIcon(faEyeSlash)
+            setIcon(faEye)
 
         }
 
         else {
 
             pWordState.type = "password"
-            setIcon(faEye)
+            setIcon(faEyeSlash)
 
         }
 
