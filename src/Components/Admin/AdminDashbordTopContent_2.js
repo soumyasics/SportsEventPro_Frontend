@@ -52,7 +52,7 @@ function AdminDashbordTopContent_2() {
             <img src={topcontent5} alt='' className='Admin-Dashbord-TopContent-img6' />
           </div>
           <div className='text-center'>
-            <button className='AdminDashbordTopContent_2-button1'><Link to='/AdminViewOrganiser' className='AdminDashbordTopContent_2-link'>View All Oraganizer</Link></button>
+            <button className='AdminDashbordTopContent_2-button1'><Link to='/AdminViewOrganiser' className='AdminDashbordTopContent_2-link'>View All Organizer</Link></button>
           </div>
         </div>
       </div>
