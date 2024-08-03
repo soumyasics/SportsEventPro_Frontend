@@ -52,8 +52,10 @@ function ViewerScoreboard() {
 
                     <div className='ViewerScoreboard-content'> {/* <--- array map in this div. Do not remove class or the page will break*/}
 
-                        {/*a single card is from here to */}
-                        {userData.map((e, index) => (
+                      
+                {
+                (userData && userData.length > 0) ?
+                        userData.map((e, index) => (
                         <div className="card ViewerScoreboard-content-contain">
 
                             <img src={`${axiosInstance.defaults.url}/${e?.banner?.filename}`} className="card-img-top ViewerScoreboard-img" alt="..." />{/*event image */}
@@ -85,9 +87,7 @@ function ViewerScoreboard() {
 
                         </div>
                         ))
-                    }
-                        {/* here is a single card  */}
-
+                        :(<h1>No Score board Found</h1>)}
                     </div>
 
                 </div>

@@ -212,6 +212,7 @@ function App() {
           <Route exact path='/OrganizerViewBlogs' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewBlogs'/>,<UserFooter/>]} />
           <Route exact path='/OrganizerEventEnrollmentsChart' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerEventEnrollmentsChart'/>,<UserFooter/>]} />
           <Route exact path='/OrganizerViewDetiledReport/:id' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewDetiledReport'/>,<UserFooter/>]} />
+          <Route exact path='/OrganiserEditBlog/:id' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganiserEditBlog'/>,<UserFooter/>]} />
 
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />, <UserFooter />]} />
 

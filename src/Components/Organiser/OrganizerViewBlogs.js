@@ -7,6 +7,7 @@ import img from '../../Assets/Rectangle 4622.png'
 import img2 from "../../Assets/Back Button.svg"
 import img3 from '../../Assets/image 67.png'
 import img4 from '../../Assets/mdi_play.svg'
+import toast from 'react-hot-toast';
 function OrganizerViewBlogs() {
 
     const [isApproved, setIsApproved] = useState(false)
@@ -16,11 +17,7 @@ function OrganizerViewBlogs() {
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
-    useEffect(() => {
-
-        let res;
-
-
+    const getData=()=>{
         axiosInstance.post(`viewOrganizerBlogs/${localStorage.getItem('organizerId')}`).then(res => {
 
             console.log(res);
@@ -33,13 +30,32 @@ function OrganizerViewBlogs() {
         }).catch(err => {
             console.log(err);
         })
+    }
+    useEffect(() => {
+
+        let res;
+
+
+        
 
     }, []);
     useEffect(() => {
         console.log("users", userData);
     })
 
+const removeBlog=(id)=>{
 
+
+    axiosInstance.post(`deleteOrganizerBlogById/${id}`).then(res => {
+
+        console.log(res);
+toast.success("Blog Remeved")
+getData()
+      
+    }).catch(err => {
+        console.log(err);
+    })
+}
 
     return (
 
@@ -88,8 +104,8 @@ function OrganizerViewBlogs() {
 
                                         <div className='OViewerBlogsimgDiv-content-2'>
 
-                                            <button className='OrgEditButton'>Edit</button>
-                                            <button className='OrgRemoveButton'>Remove</button>
+                                           <Link to={`/OrganiserEditBlog/${x._id}`} style={{textDecoration:'none'}}><button className='OrgEditButton'>Edit</button></Link> 
+                                            <button className='OrgRemoveButton' onClick={()=>{removeBlog(x._id)}}>Remove</button>
 
                                         </div>
 
@@ -98,7 +114,7 @@ function OrganizerViewBlogs() {
                                 </div>
                             )
                         })) : (
-                            <h1 className="AdminCoachRequestH5">No Events Found</h1>
+                            <h1 className="AdminCoachRequestH5">No Blogs Found</h1>
                         )
 
                     }

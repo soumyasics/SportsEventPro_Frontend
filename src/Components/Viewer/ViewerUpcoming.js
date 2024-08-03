@@ -41,21 +41,12 @@ function ViewerUpcoming() {
                         </Link>
                         <h1 className='ViewerUpcoming-headercontainer-h1'>Upcoming Events</h1>
                     </div>
-                    <div className='ViewerUpcoming-search-container'>
-                        <input 
-                            type='search' 
-                            placeholder='Search Here' 
-                            className='Viewer-search'
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                        />
-                        <button className='Viewer-search-button' onClick={handleSearch}>
-                            <img src={img3} alt='Search' />
-                        </button>
-                    </div>
+                 
                 </div>
                 <div className='ViewerUpcoming-content'>
-                    {userData.map((e, index) => (
+                
+                {
+                (userData && userData.length > 0) ? userData.map((e, index) => (
                         <div key={index} className="card ViewerUpcoming-content-contain">
                             <img src={`${axiosInstance.defaults.url}/${e?.eventId?.banner?.filename}`} className="card-img-top ViewerUpcoming-img" alt={e.name} />
                             <div className="card-body" style={{ width: '100%' }}>
@@ -81,7 +72,8 @@ function ViewerUpcoming() {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ))
+                :(<h1>No Upcoming Events Found</h1>)}
                 </div>
             </div></div>
         </div>

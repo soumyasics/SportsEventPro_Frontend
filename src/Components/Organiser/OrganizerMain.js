@@ -17,6 +17,7 @@ import OrganiserAddBlogs from './OrganiserAddBlogs';
 import OrganizerViewBlogs from './OrganizerViewBlogs';
 import OrganizerEventEnrollmentsChart from './OrganizerEventEnrollmentsChart';
 import OrganizerViewDetiledReport from './OrganizerViewDetiledReport';
+import OrganiserEditBlog from './OrganiserEditBlog';
 
 function OrganizerMain({ data }) {
 
@@ -71,6 +72,8 @@ function OrganizerMain({ data }) {
               <OrganizerViewBlogs />
             ) : data === 'OrganizerViewDetiledReport' ? (
               <OrganizerViewDetiledReport />
+            ): data === 'OrganiserEditBlog' ? (
+              <OrganiserEditBlog />
             )
             
 
