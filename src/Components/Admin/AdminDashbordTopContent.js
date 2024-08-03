@@ -61,7 +61,7 @@ function AdminDashbordTopContent() {
     return (
         <div>
             <div className='container mt-5'> 
-                <h1 className='Admin-Dashbord-TopContent-Head text-center pt-2'>Total Statistics</h1>
+                <h1 className='Admin-Dashbord-TopContent-Head '>Total Statistics</h1>
                 <div class="container text-center mt-5">
                     <div class="row  container">
                         <div class="col Admin-Dashboard-Content-Style container">
@@ -71,7 +71,7 @@ function AdminDashbordTopContent() {
                                 </div>
                                 <div className='col'>
                                     <div className='AdminDashbordTopContentDiv-1 mt-2'>
-                                        <h4>Total Viewers</h4>
+                                        <h4 className='h4nametext'>Total Viewers</h4>
                                         <span className='Admin-Dashboard-Content-span mt-1 text-center'>{viewers.length}</span>
                                     </div>
                                    
@@ -87,7 +87,7 @@ function AdminDashbordTopContent() {
                                 </div>
                                 <div className='col-8'>
                                     <div className='AdminDashbordTopContentDiv-1 mt-2'>
-                                        <h4>Total Organizers</h4>
+                                        <h4 className='h4nametext'>Total Organizers</h4>
                                         <span className='Admin-Dashboard-Content-span mt-4 text-center'>{organizers.length}</span>
 
                                     </div>
@@ -103,7 +103,7 @@ function AdminDashbordTopContent() {
                                 </div>
                                 <div className='col-7'>
                                     <div className='AdminDashbordTopContentDiv-1 mt-2'>
-                                        <h4>Total TeamCoaches</h4>
+                                        <h4 className='h4nametext'>Total TeamCoaches</h4>
                                         <span className='Admin-Dashboard-Content-span mt-4 text-center'> {coaches.length}</span>
                                     </div>
                                    

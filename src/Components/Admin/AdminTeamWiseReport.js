@@ -37,7 +37,7 @@ function AdminTeamWiseReport() {
         <div className='container AdminTeamWiseReportMainDivBG'>
             <div className='AdminTeamWiseReport-header'>
                 <button className='AdminTeamWiseReport-headercontainer-BackButton'>
-                    <Link to='/ViewerScoreboard'><img src={img} alt=' ' /></Link>
+                    <Link to='/admindashboard'><img src={img} alt=' ' /></Link>
                 </button>
                 <h1 className='AdminTeamWiseReport-headercontainer-h1'>Team Wise Report</h1>
             </div>

@@ -58,23 +58,48 @@ height: 125px;
     
 } */
 
+.Admin-Dashbord-TopContent-Head {
 
-.Admin-Dashboard-Content-Style{
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 30.167px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36.2px;
+
+}
+
+.h4nametext {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 26.5px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 31.8px;
+
+}
+
+.Admin-Dashboard-Content-Style {
     height: 20vh;
     width: 100%;
     border: 1px solid rgb(0, 0, 0, 0.10);
     border-radius: 5px;
 }
-.Admin-Dashboard-Content-topcontent1img{
+
+.Admin-Dashboard-Content-topcontent1img {
     height: 13vh;
     width: 80%;
 }
-.Admin-Dashboard-Content-span{
+
+.Admin-Dashboard-Content-span {
     text-align: left;
     font-size: 20px;
     font-weight: bold;
 }
-.AdminDashbordTopContentDiv-1{
+
+.AdminDashbordTopContentDiv-1 {
     font-family: Roboto;
     font-size: 5px;
     font-style: normal;

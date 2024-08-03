@@ -33,7 +33,7 @@ function TeamCoachEditTeamMembers() {
         city: '',
         email: '',
         category: '',
-        photo:{filename:''}
+        photo:{file:''}
     });
     const [errors, setErrors] = useState({
         name: '',
@@ -43,6 +43,7 @@ function TeamCoachEditTeamMembers() {
         address: '',
         city: '',
         email: '',
+
       
     });
     const navigate = useNavigate();
@@ -65,7 +66,7 @@ function TeamCoachEditTeamMembers() {
             // const fetchedCategory = res.data.data.category;
             // setCategory(fetchedCategory);
             setData(res.data.data);
-            setImagePreview(res.data.data.photo ? `${url}/${res.data.data.photo.filename}` : tempimg);
+            setImagePreview(res.data.data.photo ? `${url}/${res.data.data.photo.file}` : tempimg);
 
             console.log(res.data.data);
 
@@ -130,6 +131,8 @@ function TeamCoachEditTeamMembers() {
         errors.address = validateField('Address', data.address);
         errors.city = validateField('City', data.city);
 
+
+
         setErrors(errors);
 
         formIsValid = Object.keys(errors).every(key => !errors[key]);
@@ -188,11 +191,11 @@ console.log("err",formIsValid);
             </div>
 
             {/* seperated div for the profile picture image */}
-            {/* <div className='col TeamCoachEditTeamMembers-headercontainer-container-2'>
+            <div className='col TeamCoachEditTeamMembers-headercontainer-container-2'>
 
-                <img src={data.photo? `${url}/${data.photo.filename}` : tempimg}
+                <img src={data.photo? `${url}/${data.photo.filename}` : tempimg} 
                  alt='' className='TeamCoachEditTeamMembers-headercontainer-container-2-profilepicture'
-                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                 style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                  />
 
 
@@ -201,7 +204,7 @@ console.log("err",formIsValid);
 
 
 
-            </div> */}
+            </div>
 
         </div>
 

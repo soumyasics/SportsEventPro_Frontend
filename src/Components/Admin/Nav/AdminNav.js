@@ -10,11 +10,11 @@ import admImg from "../../../Assets/AdminrealNavImg.png"
 import { Link } from 'react-router-dom'
 
 function AdminNav() {
- 
 
-const adminLogout=()=>{
-localStorage.setItem('admin',0)
-}
+
+  const adminLogout = () => {
+    localStorage.setItem('admin', 0)
+  }
   return (
     <div>
       <div className='navbarmaindiv '>
@@ -22,27 +22,14 @@ localStorage.setItem('admin',0)
 
         <div className='row navbarmaindiv-4'>
 
-<div className='col-1'>
-  <img className='navbarmainimg-1' src={img}/>
-</div>
+          <Link to='/admindashboard' style={{textDecoration:'none'}}>
+            <div style={{ display: "flex", flexDirection: 'row', gap: '20px', marginLeft: '20px' }}>
+              <img className='navbarmainimg-1' src={img} />
+              <h1 className='navbarmaintext-1 '>Sports Event Pro</h1>
+            </div>
+          </Link>
 
-<div className='col-9'>
-<h1 className='navbarmaintext-1 '>Sports Event Pro</h1>
-</div>
-
-<div className='col-1 navbarmaindiv-3 '>
-<ul class="nav justify-content-end">
-  <li class="nav-item">
-  <Link to="/AdminLogin"  class="nav-link mainnavbartext" onClick={()=>adminLogout()}>Logout</Link>
-  </li>
- 
-  
-</ul>
-</div>
-
-
-
-      </div>
+        </div>
 
 
 
