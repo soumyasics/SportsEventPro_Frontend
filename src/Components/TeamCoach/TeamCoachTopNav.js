@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import img from '../../Assets/Frame 19.png';
@@ -8,76 +7,91 @@ import img3 from '../../Assets/iconamoon_profile-bold(1).svg';
 import img4 from '../../Assets/Log_Out.svg';
 import img5 from '../../Assets/fe_arrow-up.svg';
 import img6 from '../../Assets/mingcute_notification-line.svg';
-import img7 from '../../Assets/octicon_x-16.svg'
+import img7 from '../../Assets/octicon_x-16.svg';
 import "../../Components/TeamCoach/TeamCoachTopNav.css"; // Adjust path as per your project structure
-import ReactStars from 'react-stars';
 import axiosInstance from '../Constant/BaseURL';
 import toast from 'react-hot-toast';
+import { RiLockPasswordFill } from "react-icons/ri";
+
 
 function TeamCoachTopNav() {
+    const navigate = useNavigate();
+    const [events, setEvents] = useState([]);
+    const [showNotificationModal, setShowNotificationModal] = useState(false);
+    const [data1, setData1] = useState({ name: '' });
+    const [data, setData] = useState({
+        complaint: '',
+        name: data1.name,
+        userRole: 'Team Coach'
+    });
 
-    const navigate = useNavigate()
+
+    // Logout function
     const handleLogout = () => {
+
 
         console.log("Logging out...");
         localStorage.setItem('tcId', "")
-        navigate('/')
+        navigate('/Aboutpage')
     };
-    useEffect(() => {
-        if (localStorage.getItem("tcId") == "") {
-            navigate("/TeamCoachLogin");
-        }
-    }, [navigate]);
-    const [data1, setData1] = useState({
-        name: '',
-    })
+
+
+
     useEffect(() => {
         axiosInstance
             .post(`viewTeamCoachById/${localStorage.getItem('tcId')}`)
             .then((res) => {
                 console.log(res);
-                setData(res.data.data);
+                setData1(res.data.data);
             })
             .catch((err) => {
                 console.log(err);
             });
     }, [localStorage.getItem('tcId')]);
-    const [data, setData] = useState({
 
-        complaint: '',
-        name: data1.name,
-        userRole:'Team Coach'
-      })
-    const handleChange=(event)=>{
-        data.userRole='Team Coach'
+    useEffect(() => {
+        axiosInstance
+            .post(`viewUpcomingEvents`)
+            .then((res) => {
+                console.log("dat", res);
+                setEvents(res.data.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, [localStorage.getItem('tcId')]);
+
+    const handleChange = (event) => {
+        data.userRole = 'Team Coach';
         const { name, value } = event.target;
         console.log("work");
         setData(prevData => ({
-          ...prevData,
-          [name]: value
+            ...prevData,
+            [name]: value
         }));
-    }
+    };
 
     const handleComplaintSubmit = () => {
-        // Your function logic here
         axiosInstance
-        .post(`addComplaint`,data)
-        .then((res) => {
-            console.log(res);
-            toast.success("Complaint submitted");
+            .post(`addComplaint`, data)
+            .then((res) => {
+                console.log(res);
+                toast.success("Complaint submitted");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
-            // setData(res.data.data);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }    
+    const toggleNotificationModal = () => {
+        setShowNotificationModal(!showNotificationModal);
+    };
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-black TeamCoachNavbar-Nav">
                 <div className="TeamCoachNavbar-Nav-1">
                     <a className="navbar-brand TeamCoachNavBar-Nav-a-1" href="/">
-
                         <img src={img} alt="Logo" style={{ marginLeft: "20px", marginRight: "20px" }} />
                         Sports Event Pro
                     </a>
@@ -87,23 +101,14 @@ function TeamCoachTopNav() {
                     </button>
 
                     <div className="collapse navbar-collapse" id="navbarNav">
-
                         <ul className="navbar-nav TeamCoachNavbarNav-ul" style={{ marginRight: "180px" }}>
-
                             <li className="nav-item" style={{ marginRight: "20px" }}>
-
                                 <Link to="/TeamCoachHomePage" style={{ textDecoration: "none" }}>
                                     <a className="nav-link text-light TeamCoachNavBar-Nav-li-a" href="/">Home</a>
                                 </Link>
-
                             </li>
-
-                            {/* My Team dropdown */}
-
                             <li className="nav-item" style={{ listStyle: "none", marginLeft: "10px", marginRight: '10px' }}>
-
                                 <div className="dropdown-center">
-
                                     <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
                                         type="button"
                                         data-bs-toggle="dropdown"
@@ -111,53 +116,27 @@ function TeamCoachTopNav() {
                                         style={{ background: "none", border: "none" }}>
                                         My Team
                                     </button>
-
                                     <img src={img5} alt=""
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false"
                                     />
-
                                     <ul className="dropdown-menu" style={{ marginTop: "10px" }}>
-
                                         <Link to="/TeamCoachAddTeamMembers" className='TeamCoachLink'>
-
                                             <li>
                                                 <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Add Team Members</a>
                                             </li>
-
                                         </Link>
-
                                         <Link to="/TeamCoachViewTeamMembers" className='TeamCoachLink'>
-
                                             <li>
                                                 <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">View Team Members</a>
                                             </li>
-
                                         </Link>
                                         <div className='OrganiserProfContainDiv'>
-
-<img src={img2} alt=' ' />{/* put organiser image here pls */}
-
-
-
-</div>
-
-                                        {/* <li>
-                                            <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Add Substitute</a>
-                                        </li> */}
-
+                                            <img src={img2} alt=' ' />{/* put organiser image here pls */}
+                                        </div>
                                     </ul>
-
                                 </div>
-
                             </li>
-
-
-
-
-                            {/* My events dropdown */}
-
-
                             <li className="nav-item" style={{ listStyle: "none", marginLeft: "10px", marginRight: '10px' }}>
                                 <div className="dropdown-center">
                                     <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
@@ -167,87 +146,52 @@ function TeamCoachTopNav() {
                                         style={{ background: "none", border: "none" }}>
                                         My Events
                                     </button>
-
                                     <img src={img5} alt="" data-bs-toggle="dropdown" aria-expanded="false" />
-
                                     <ul className="dropdown-menu" style={{ marginTop: "10px" }}>
-
-                                    <li>
+                                        <li>
                                             <Link to="/TeamCoachEnrollNow" className='TeamCoachLink'>
-
                                                 <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Enroll Now</a>
                                             </Link>
                                         </li>
-                                        
                                         <Link to="/TeamCoachEnrolledEvents" className='TeamCoachLink'>
-                                        <li>
+                                            <li>
                                                 <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Enrolled Events</a>
                                             </li>
-
                                         </Link>
-
                                         <Link to='/TeamCoachResults' className='TeamCoachLink'>
-
                                             <li>
                                                 <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">Results</a>
                                             </li>
-
                                         </Link>
-
                                         <Link to='/TeamCoachRR' className='TeamCoachLink'>
-
                                             <li>
                                                 <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href="/">View Reviews</a>
                                             </li>
-
                                         </Link>
-
                                         <li>
                                             <a className="dropdown-item TeamCoachNavBar-Nav-li-a-2" href=" " data-bs-toggle="modal" data-bs-target="#Complaint-Modal">Register Complaint</a>
                                         </li>
-
                                     </ul>
-
                                 </div>
-
                             </li>
-
-                            {/* Search */}
-                            {/* <li className='nav-item '>
-                                <div className='TeamCoach-search-container'>
-                                    <input type='search' placeholder='Search Here' className='TeamCoach-search'></input>
-                                    <button className='TeamCoach-search-button'>
-                                        <img src={img1} alt="Search" />
-                                    </button>
-                                </div>
-                            </li> */}
-                        </ul>
-                        <div className='TeamCoachNavBar-Navli'>
-                            {/* Notification
                             <li className="nav-item" style={{ listStyle: "none" }}>
                                 <div className="dropdown-center">
                                     <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
                                         type="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
+                                        onClick={toggleNotificationModal}
                                         style={{ background: "none", border: "none" }}>
                                         <img src={img6} alt="Notifications" />
                                     </button>
-                                    <ul className="dropdown-menu TeamCoachNavBar-noti-contain">
-<li>test</li>                                    </ul>
                                 </div>
-                            </li> */}
-                           
-                            {/* Profile */}
+                            </li>
                             <li className="nav-item" style={{ listStyle: "none", marginLeft: "10px", marginRight: '10px' }}>
                                 <div className="dropdown-center">
                                     <button className="btn btn-secondary TeamCoachNavBar-Nav-button"
                                         type="button"
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false"
-                                        style={{ background: "none", border: "none" }}>     
-                                           <h1 className=' teamCoach-nav-h1'>{data.name}</h1>{/*organiser name */}
-
+                                        style={{ background: "none", border: "none" }}>
+                                        <h1 className='teamCoach-nav-h1'>{data1.name}</h1>{/*organiser name */}
                                     </button>
                                     <ul className="dropdown-menu" style={{ marginLeft: "-110px", marginTop: "10px" }}>
                                         <li>
@@ -259,83 +203,87 @@ function TeamCoachTopNav() {
                                             </Link>
                                         </li>
                                         <li>
-                                            <button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#Logout-Modal">
+                                            <Link className="dropdown-item" to="/TCResetPwd" >
+                                            <RiLockPasswordFill  style={{marginRight:0, width:"35px" }} />
+
+                                                Reset Password
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <a className="dropdown-item" href="/" onClick={handleLogout}>
                                                 <img src={img4} alt="Logout" style={{ marginRight: "10px" }} />
                                                 Logout
-                                            </button>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </nav>
-            {/* <div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
+
+            {showNotificationModal && (
+
+<div className="tc_modal-overlay">
+<div className="tc_modal-content">
+  <button className="tc_modal-close" onClick={toggleNotificationModal}>X</button>
+  {events&&events.length > 0 ? (
+                                    events.map(event => (
+                                        <div className="notification-item tc_border" key={event._id}>
+                                            <h5 className=''>{event.name}</h5>
+                                            <h1 className='CardHeadTxtH1'>{event.category}</h1>
+                                            <p className=''>Biggest Sports tournament held in {event.venue}. Don’t miss it!</p>{/* event description */}
+                                            <h6 className=''>{event.date.slice(0,10)} {event.time}</h6> {/* event date and time */}
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p>No notifications</p>
+                                )}
+  </div>
+</div>
+
+
+
+
+                // <div className="modal TeamCoach-Notification-Modal show" role="dialog" style={{ display: 'block' }}>
+                //     <div className="modal-dialog modal-dialog-centered">
+                //         {/* <div className="TeamCoach-modal-content"> */}
+                //            <div>
+                //             <div className="modal-body">
+                //                 
+                //             </div>
+                //             <div className="TeamCoach-modal-footer">
+                //                 <button type="button" className="btn btn-secondary" onClick={toggleNotificationModal}>Close</button>
+                //             </div>
+                //         </div>
+                // </div>
+                // </div>
+            )}
+
+            <div className="modal fade" id="Complaint-Modal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Register Complaint</h5>
+                            <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
+                                <img src={img7} alt="Close" />
+                            </button>
+                        </div>
                         <div className="modal-body">
-                            <h1 className='ModalDialog-h1'>Logout</h1>
-                            <p className='ModalDialog-p'>Are you sure you want to log out ?</p>
-                            <div className='ModalDialog-button-contain'>
-                                <button type="button" className="ModalDialog-button-1">Yes</button>
-                                <button type="button" className="ModalDialog-button-2" data-bs-dismiss="modal">No</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-
-            <div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
-                    <div className="modal-content">
-                        <div className="modal-body">
-                            <h1 className='ModalDialog-h1'>Logout</h1>
-                            <p className='ModalDialog-p'>Are you sure you want to log out ?</p>
-                            <div className='ModalDialog-button-contain'>
-                                <button type="button" className="ModalDialog-button-1" onClick={handleLogout} data-bs-dismiss="modal">Yes</button>
-                                <button type="button" className="ModalDialog-button-2" data-bs-dismiss="modal">No</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* div containing the modal */}
-
-            <div>
-
-                <div className="modal fade" id="Complaint-Modal" tabIndex="-1" aria-labelledby="Complaint-ModalLabel" aria-hidden="true">
-
-                    <div className="modal-dialog modal-dialog-centered">
-
-                        <div className="modal-content">
-
-                            <div className="modal-body EEP">
-
-                                <div className='modal-body-in'>
-                                    <img src={img7} alt=' ' className='imageEE' data-bs-dismiss="modal" aria-label="Close" />
-
-                                    <h1 className='h1ishere'>Register a Complaint</h1>
-                                    <input type='textarea' className='txtArea' name="complaint" onChange={handleChange}></input>
+                            <form>
+                                <div className="mb-3">
+                                    <label htmlFor="complaint" className="form-label">Complaint</label>
+                                    <textarea className="form-control" id="complaint" name="complaint" rows="3" onChange={handleChange}></textarea>
                                 </div>
-                                <div className='ModalDialog-button-contain'>
-                                    <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal"  onClick={handleComplaintSubmit}>Submit</button>
-                                </div>
-
-                            </div>
-
+                                <button type="button" className="btn btn-primary" onClick={handleComplaintSubmit}>Submit</button>
+                            </form>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
         </div>
     );
 }
 
 export default TeamCoachTopNav;
-

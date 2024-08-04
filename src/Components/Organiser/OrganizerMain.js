@@ -18,6 +18,7 @@ import OrganizerViewBlogs from './OrganizerViewBlogs';
 import OrganizerEventEnrollmentsChart from './OrganizerEventEnrollmentsChart';
 import OrganizerViewDetiledReport from './OrganizerViewDetiledReport';
 import OrganiserEditBlog from './OrganiserEditBlog';
+import OrganizerRestPwd from './OrganizerRestPwd';
 
 function OrganizerMain({ data }) {
 
@@ -57,7 +58,9 @@ function OrganizerMain({ data }) {
               <OrganiserViewScore />
             ) : data === 'OrganizerEditScore' ? (
               <OrganiserEditScore />
-            ) : data === 'OrganizerViewDetails' ? (
+            ) : data === 'OrganizerRestPwd' ? (
+              <OrganizerRestPwd />
+            ): data === 'OrganizerViewDetails' ? (
               <OrganiserViewDetails />
             ) : data === 'OrganizerTicketGen' ? (
               <OrganiserTicketGen />

@@ -42,13 +42,20 @@ function Enquiries() {
     };
     const validateField = (fieldName, value) => {
         if (!value.trim()) {
-            formIsValid = true;
+            formIsValid = false;
             return `${fieldName} is required`;
         }
         return '';
     };
 
-
+    function validateContact(fieldName, value) {
+        if (!value.trim()) {
+            return `${fieldName} is required`;
+        } else if (value.length !== 10) {
+            return 'Please enter a valid Contact Number';
+        }
+        return '';
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -58,7 +65,7 @@ function Enquiries() {
         formIsValid = true;
 
         errors.email = validateField('Email', data.email);
-        errors.contactnumber = validateField('Contact number', data.contactnumber);
+        errors.contactnumber = validateContact('Contact number', data.contactnumber);
         errors.message = validateField('Message', data.message);
         errors.name = validateField('Name', data.name);
         errors.enquiriestype = validateField('Enquiry type',data.enquiriestype)

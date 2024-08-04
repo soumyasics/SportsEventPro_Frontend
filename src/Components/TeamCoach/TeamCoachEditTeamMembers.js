@@ -33,7 +33,7 @@ function TeamCoachEditTeamMembers() {
         city: '',
         email: '',
         category: '',
-        photo:{file:''}
+        photo:{filename:''}
     });
     const [errors, setErrors] = useState({
         name: '',
@@ -140,8 +140,20 @@ console.log("err",formIsValid);
         if (formIsValid) {
             try {
                 console.log(data);
-                const res = await axiosInstance.post(`editTeamMemberById/${id}`, data);
-                console.log(res);
+                const formData = new FormData();
+                formData.append('name', data.name);
+                formData.append('contact', data.contact);
+                formData.append('email', data.email);
+                formData.append('pincode', data.pincode);
+                formData.append('state', data.state);
+                formData.append('address', data.address);
+                formData.append('city', data.city);
+                if (data.photo) {
+                    formData.append('photo', data.photo);
+                }
+    
+                const res = await axiosMultipartInstance.post(`checkData/${id}`, formData)
+                    console.log(res);
                 if (res.data.status === 200) {
                     toast.success("Profile Updated Successfully");
                     navigate('/TeamCoachHomePage');
@@ -193,7 +205,7 @@ console.log("err",formIsValid);
             {/* seperated div for the profile picture image */}
             <div className='col TeamCoachEditTeamMembers-headercontainer-container-2'>
 
-                <img src={data.photo? `${url}/${data.photo.filename}` : tempimg} 
+                <img src={data.photo? `${url}/${data.photo.filename}` : imagePreview} 
                  alt='' className='TeamCoachEditTeamMembers-headercontainer-container-2-profilepicture'
                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                  />

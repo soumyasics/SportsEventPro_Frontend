@@ -147,7 +147,13 @@ function OrganiserSideBar() {
                         <button className='OrganiserSideBarbutton-2' data-bs-toggle="modal" data-bs-target="#Complaint-Modal">Complaints</button>
 
                     </div>
+                    <div>
 
+<Link to='/OrganizerRestPwd' style={{ textDecoration: "none", color: "white" }}>
+    <button className='OrganiserSideBarbutton-2'>Reset Password</button>
+</Link>
+
+</div>
                     <div>
 
                         <button type="button" class="OrganiserSideBarbutton-2" data-bs-toggle="modal" data-bs-target="#Logout-Modal">Logout</button>

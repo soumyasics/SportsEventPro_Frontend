@@ -119,8 +119,12 @@ function ViewerRegistration() {
 
     function validateContact(fieldName, value) {
         if (!value.trim()) {
+            formIsValid = false;
+
             return `${fieldName} is required`;
         } else if (value.length !== 10) {
+            formIsValid = false;
+
             return 'Please enter a valid Contact Number';
         }
         return '';
@@ -128,9 +132,13 @@ function ViewerRegistration() {
 
     function validatePincode(fieldName, value) {
         if (!value.trim()) {
+            formIsValid = false;
+
             return `${fieldName} is required`;
         } else if (value.length !== 6) {
-            return 'Please enter a valid Contact Number';
+            formIsValid = false;
+
+            return 'Please enter a valid Pincode';
         }
         return '';
     }
@@ -138,10 +146,12 @@ function ViewerRegistration() {
 
     const validateField = (fieldName, value) => {
         if (!value || !value.trim()) {
-            formIsValid = true;
+            formIsValid = false;
             return `${fieldName} is required`;
         }
         if (fieldName === "Email" && !value.endsWith("@gmail.com")) {
+            formIsValid = false;
+
             return "Email must be a valid Email address"
         }
         return '';

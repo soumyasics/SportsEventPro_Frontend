@@ -70,7 +70,7 @@ function OrganiserEditProfile() {
     const [errors, setErrors] = useState({
         name: '',
         pincode: '',
-        contactnumber: '',
+        contact: '',
         license: '',
         password: '',
         image: '',
@@ -111,29 +111,43 @@ function OrganiserEditProfile() {
     };
 
     function validateContact(fieldName, value) {
-        if (!value.trim()) {
-            return `${fieldName} is required`;
-        } else if (value.length !== 10) {
+        console.log(value,"vl");
+        
+        // if (!value.trim()) {
+        //     return `${fieldName} is required`;
+        //     formIsValid=false
+        // } else
+        console.log("p",userData.contact.toString().length);
+
+         if (userData.contact.toString().length!= 10) {
+            formIsValid=false
             return 'Please enter a valid Contact Number';
+           
+
         }
         return '';
     }
 
     function validatePincode(fieldName, value) {
-        if (!value.trim()) {
-            return `${fieldName} is required`;
-        } else if (value.length !== 6) {
+        console.log("p",userData.pincode.toString().length!= 6 );
+        
+     if (userData.pincode.toString().length!= 6 ) {
+        formIsValid=false
+
             return 'Please enter a valid Pincode';
+
         }
         return '';
     }
 
     const validateField = (fieldName, value) => {
         if (!value || !value.trim()) {
-            formIsValid = true;
+            formIsValid = false;
             return `${fieldName} is required`;
         }
         if (fieldName === "Email" && !value.endsWith("@gmail.com")) {
+            formIsValid=false
+
             return "Email must be a valid Email address"
         }
         return '';
@@ -157,8 +171,13 @@ function OrganiserEditProfile() {
 
         let errors = {};
         formIsValid = true;
-
-        // Validate fields if necessary
+        errors.email = validateField('Email', userData.email);
+        errors.name = validateField('Name', userData.name);
+        errors.contact = validateContact('Contact number', userData.contact)
+        errors.pincode = validatePincode('Pincode', userData.pincode);
+        errors.state = validateField('States', userData.state)
+        errors.address = validateField('Address', userData.address);
+        errors.city = validateField('City', userData.city);
 
         setErrors(errors);
 
@@ -231,7 +250,9 @@ function OrganiserEditProfile() {
                                 <label className='OrganiserEditProfile-body-common-label'>Contact Number</label>
                             </div>
                             {isEditable ? (
-                                <input type='text' onChange={handleChange} className='col OrganiserEditProfile-body-input' name="contact" value={userData.contact} />
+                              <>  <input type='text' onChange={handleChange} className='col OrganiserEditProfile-body-input' name="contact" value={userData.contact} />
+                                {errors.contact && <div className="text-danger ">{errors.contact}</div>}
+                                </>
                             ) : (
                                 <span className='col OrganiserEditProfile-body-input'>{userData.contact}</span>
                             )}
@@ -253,7 +274,10 @@ function OrganiserEditProfile() {
                                 <label className='OrganiserEditProfile-body-common-label'>Pincode</label>
                             </div>
                             {isEditable ? (
-                                <input type='text' className='col OrganiserEditProfile-body-input' name="pincode" onChange={handleChange} value={userData.pincode} />
+                               <><input type='text' className='col OrganiserEditProfile-body-input' name="pincode" onChange={handleChange} value={userData.pincode} />
+                                {errors.pincode && <div className="text-danger ">{errors.pincode}</div>}
+
+</> 
                             ) : (
                                 <span className='col OrganiserEditProfile-body-input'>{userData.pincode}</span>
                             )}

@@ -18,9 +18,11 @@ function OrganizerViewBlogs() {
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
     const getData=()=>{
+        console.log("in get");
+        
         axiosInstance.post(`viewOrganizerBlogs/${localStorage.getItem('organizerId')}`).then(res => {
 
-            console.log(res);
+            console.log("datas",res);
 
             if ((res.data.data).length > 0)
                 setUserData(res.data.data);
@@ -35,7 +37,7 @@ function OrganizerViewBlogs() {
 
         let res;
 
-
+getData()
         
 
     }, []);

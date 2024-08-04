@@ -42,7 +42,7 @@ function ViewerNavBar() {
 
     useEffect(() => {
         if (localStorage.getItem("viewerId") == "") {
-            navigate("/");
+            navigate(`/ViewerLogin`);
         }
     }, [navigate]);
     return (
@@ -71,11 +71,7 @@ function ViewerNavBar() {
 
                             </li>
 
-                            <li className="nav-item">
-
-                                <a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">About</a>
-
-                            </li>
+                          
 
                             <li className="nav-item">
 
@@ -130,6 +126,12 @@ function ViewerNavBar() {
                                     <li>
 
                                         <Link to="/ViewerProfile" className='ViewerLink'><a className="dropdown-item" href=" x"><img src={img3} alt=' ' style={{ marginRight: "10px" }} />Profile</a></Link>
+
+                                    </li>
+
+                                    <li>
+
+                                        <Link to="/ViewerResetPassword" className='ViewerLink'><a className="dropdown-item" href=" x"><img src={img3} alt=' ' style={{ marginRight: "10px" }} />Reset Password</a></Link>
 
                                     </li>
 

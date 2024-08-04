@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import toast from 'react-hot-toast'
+import { LogarithmicScale } from 'chart.js'
 
 function TeamcoachReg() {
 
@@ -81,7 +82,7 @@ function TeamcoachReg() {
         teamname: '',
         address: '',
         city: '',
-        country: '',
+        country: 'India',
         email: '',
         experience: '',
         confirmpassword: '',
@@ -132,7 +133,7 @@ function TeamcoachReg() {
                 setteamMembers(18)
             else if (value == 'tennis')
                 setteamMembers(4)
-            else if (value == 'badmonton')
+            else if (value == 'badminton')
                 setteamMembers(4)
             if (value == 'hockey')
                 setteamMembers(18)
@@ -156,8 +157,10 @@ function TeamcoachReg() {
 
     function validateContact(fieldName, value) {
         if (!value.trim()) {
+            formIsValid = false;
             return `${fieldName} is required`;
         } else if (value.length !== 10) {
+            formIsValid = false;
             return 'Please enter a valid Contact Number';
         }
         return '';
@@ -165,9 +168,11 @@ function TeamcoachReg() {
 
     function validatePincode(fieldName, value) {
         if (!value.trim()) {
+            formIsValid = false;
             return `${fieldName} is required`;
         } else if (value.length !== 6) {
-            return 'Please enter a valid Contact Number';
+            formIsValid = false;
+            return 'Please enter a valid pincode';
         }
         return '';
     }
@@ -175,10 +180,11 @@ function TeamcoachReg() {
 
     const validateField = (fieldName, value) => {
         if (!value.trim()) {
-            formIsValid = true;
+            formIsValid = false;
             return `${fieldName} is required`;
         }
         if (fieldName === "Email" && !value.endsWith("@gmail.com")) {
+            formIsValid = false;
             return "Email must be a valid Email address"
         }
         return '';
@@ -210,6 +216,7 @@ function TeamcoachReg() {
             formIsValid = false;
             errors.password = "Password is required";
         } else if (!passwordRegex.test(data.password)) { // Pass the password to the test method
+            formIsValid = false;
             errors.password =
                 "Password must contain at least one number, one special character, and one capital letter";
         }
@@ -221,11 +228,12 @@ function TeamcoachReg() {
             formIsValid = false;
             errors.confirmpassword = "Passwords do not match";
         }
-        BackendData();
         setErrors(errors);
+console.log("DATA IN CONT",errors);
 
         if (formIsValid) {
             console.log("data", data);
+            BackendData();
 
 
         }

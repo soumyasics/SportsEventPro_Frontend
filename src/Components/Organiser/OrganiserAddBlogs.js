@@ -83,7 +83,7 @@ function OrganiserAddBlogs() {
             .then(response => {
                 if (response.data.status === 200) {
                     toast.success(response.data.msg);
-                    navigate('/OrganizerDashboard');
+                    // navigate('/OrganizerDashboard');
                 } else {
                     toast.error(response.data.msg);
                 }

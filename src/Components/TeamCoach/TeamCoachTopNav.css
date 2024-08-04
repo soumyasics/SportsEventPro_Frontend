@@ -2,40 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .TeamCoachNavbar-Nav {
-
     height: 80px;
     display: flex;
     padding: 22px 19.15px 15px 20px;
     flex-shrink: 0;
-
 }
 
 .TeamCoachNavbar-Nav-1 {
-
     display: flex;
     flex-direction: row;
-
 }
 
 .TeamCoachNavBar-Nav-a-1 {
-
     color: white;
     font-family: Roboto;
     font-size: 28px;
     font-style: normal;
     font-weight: 500;
     line-height: 36px;
-
 }
 
 .TeamCoachNavBar-Nav-a-1:hover {
-
     color: white;
-
 }
 
 .TeamCoachNavbarNav-ul {
-
     display: flex;
     height: 36px;
     width: max-content;
@@ -45,11 +36,9 @@
     z-index: 1;
     left: 65%;
     transform: translate(-65%);
-
 }
 
 .TeamCoachNavBar-Navli {
-
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -58,35 +47,30 @@
     transform: translate(-100%);
     list-style: none;
     width: max-content;
-
 }
 
 .TeamCoachLink {
-
     text-decoration: none;
     color: black;
-
 }
-.TeamcoachProfContainDiv {
 
+.TeamcoachProfContainDiv {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 15px;
-
 }
-.teamCoach-nav-h1{
 
+.teamCoach-nav-h1 {
     color: white;
     font-family: Roboto;
     font-size: 15.423px;
     font-style: normal;
     font-weight: 500;
     line-height: 21.592px;
-
 }
-.TeamCoachNavBar-Nav-li-a {
 
+.TeamCoachNavBar-Nav-li-a {
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
@@ -94,77 +78,63 @@
     line-height: 24px;
     letter-spacing: 0.8px;
     text-decoration: none;
-
 }
 
 .TeamCoachNavBar-Nav-li-a-2 {
-
     color: #000;
     font-family: Roboto;
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-
 }
 
 .TeamCoachNavBar-noti-contain {
-
     width: 599px;
     height: auto;
     border-radius: 32px;
     background: #000;
     margin-left: -510px;
     margin-top: 30px !important;
-    background-color: black;
     color: white;
 }
 
 .TeamCoachNavBar-noti-li {
-
     display: flex;
     width: 560px;
     flex-direction: column;
     gap: 25px;
-
 }
 
 .TeamCoachNavBar-noti-div {
-
     display: flex;
     flex-direction: column;
-    padding: var(--items, 15.5px) var(--items, 52.731px) var(--items, 15.5px) var(--items, 30px);
+    padding: 15.5px 52.731px 15.5px 30px;
     border-radius: 20px;
-    border: 1px solid var(--icon-color, #FFF);
+    border: 1px solid #FFF;
     margin-left: 40px;
     margin-top: 38px;
-
 }
 
 .TeamCoachNavbar-noti-div-div {
-
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 17px;
-
 }
 
 .TeamCoachNavBar-noti-div-div-h1 {
-
     flex: 1 0 0;
     align-self: stretch;
-    color: var(--icon-color, #FFF);
+    color: #FFF;
     font-family: Roboto;
     font-size: 15px;
     font-style: normal;
     font-weight: 600;
     line-height: 130%;
-
 }
 
 .TeamCoachNavBar-noti-div-div-div {
-
     display: flex;
     height: 24px;
     width: 75px;
@@ -172,11 +142,9 @@
     align-items: center;
     border-radius: 5px;
     background: #232323;
-
 }
 
 .TeamCoachNavBar-noti-div-div-div-2 {
-
     display: flex;
     width: 168px;
     height: 29px;
@@ -184,116 +152,29 @@
     align-items: center;
     gap: 10px;
     border-radius: 8px;
-    border: 1px solid var(--icon-color, #FFF);
-
+    border: 1px solid #FFF;
 }
 
-
 .TeamCoachNavBar-noti-div-div-h2 {
-
     display: flex;
     height: 24px;
     padding-top: 5px;
     gap: 10px;
-    color: var(--icon-color, #FFF);
+    color: #FFF;
     font-family: Roboto;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
-
-}
-
-.modal-body {
-
-    border-radius: 20px !important;
-    border: 1px solid #000 !important;
-    background: var(--icon-color, #FFF);
-    width: 747px !important;
-    height: 298px !important;
-
-}
-
-.ModalDialog-h1 {
-
-    color: #000;
-    text-align: center;
-    text-shadow: 0px 1.146px 1.146px rgba(0, 0, 0, 0.25);
-    font-family: "Noto Sans";
-    font-size: 27.371px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-top: 60px;
-
-}
-
-.ModalDialog-p {
-
-    color: #000;
-    font-family: "Noto Sans";
-    font-size: 15.844px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    text-align: center;
-    margin-top: 21px;
-
-}
-
-.ModalDialog-button-contain {
-
-    width: max-content;
-    margin-left: 50%;
-    transform: translate(-50%);
-    margin-bottom: 77px;
-    margin-top: 28px;
-
-}
-
-.ModalDialog-button-1 {
-
-    width: 86px;
-    height: 33px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-family: "Noto Sans";
-    font-size: 17.014px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    border: none;
-
-}
-
-.ModalDialog-button-2 {
-
-    width: 86px;
-    height: 33px;
-    border: none;
-    background-color: #000;
-    color: var(--icon-color, #FFF);
-    text-align: center;
-    font-family: "Noto Sans";
-    font-size: 17.014px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-left: 16px;
-
 }
 
 .TeamCoach-search-container {
-
     height: 46px;
     width: 306px;
     margin-top: 5px;
-
 }
 
 .TeamCoach-search {
-
     z-index: 0;
     padding-left: 18px;
     height: 43px;
@@ -302,11 +183,9 @@
     border: 1px solid rgba(0, 0, 0, 0.20);
     background: #fff;
     box-shadow: 0px 0px 14.7px 0px rgba(49, 119, 225, 0.05);
-
 }
 
 .TeamCoach-search-button {
-
     position: absolute;
     z-index: 1;
     margin-top: 5.5px;
@@ -321,32 +200,9 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-
 }
 
-.h1ishere {
-
-    color: #0084E4;
-    text-shadow: 0px 0.653px 0.653px rgba(0, 0, 0, 0.25);
-    font-family: Montserrat;
-    font-size: 22.326px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-align: left;
-}
-
-.txtArea {
-
-    height: 163px;
-    align-self: stretch;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.20);
-
-}
-
-.modal-body-in {
-
+.TeamCoach-modal-body-in {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -354,12 +210,60 @@
     align-self: stretch;
 }
 
-.EEP { 
-
-    width: 741px !important;
-    height: 440px !important;
-    border-radius: 32px !important;
-    border: 2px solid rgba(0, 0, 0, 0.20) !important;
-    background: var(--icon-color, #FFF) !important;
-
+.TeamCoach-modal-content {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
 }
+
+/* .TeamCoach-modal-header, .TeamCoach-modal-footer {
+    border-bottom: 1px solid white; 
+    border-top: 1px solid white; 
+} */
+
+.TeamCoach-btn-close {
+    filter: invert(1); /* Makes the close button white */
+}
+/* Modal.css */
+.tc_modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .tc_modal-content {
+    background: rgb(31, 30, 30);
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    color:white;
+    max-width: 100%;
+    position: relative;
+  }
+  
+  .tc_modal-close {
+    /* position: absolute; */
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .tc_border {
+    padding: 20px;
+
+  border:1px solid white;
+  border-radius: 20px;
+  }

@@ -6,7 +6,8 @@ import axiosInstance from "../../Constant/BaseURL";
 
 function AdminViewTeamCoach () {
     const navigate=useNavigate()
-
+    const [searchInput, setSearchInput] = useState("");
+    const [filteredData, setFilteredData] = useState([]);
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
@@ -19,8 +20,10 @@ function AdminViewTeamCoach () {
 
             console.log(res);
 
-            if ((res.data.data).length > 0)
+            if ((res.data.data).length > 0){
                 setUserData(res.data.data);
+            setFilteredData(res.data.data)
+            }
             else
             setUserData(null)
             console.log(res.data.data);
@@ -38,6 +41,19 @@ function AdminViewTeamCoach () {
    const viewDetails=(id)=>{
 navigate(`/Teamcoachdetailspopup/${id}`)
     }
+
+    const handleSearch = (event) => {
+        const { value } = event.target;
+        setSearchInput(value);
+        if (value === "") {
+            setFilteredData(userData);
+        } else {
+            const filtered = userData.filter((team) => 
+                team.name.toLowerCase().includes(value.toLowerCase())
+            );
+            setFilteredData(filtered);
+        }
+    };
     return (
 
         <div className = 'container AdminViewTeamCoachMainDivBG AdminViewTeamCoach-Stylerow'>
@@ -47,11 +63,17 @@ navigate(`/Teamcoachdetailspopup/${id}`)
             
             <div className = 'AdmiViewTeamCoach-search-container'>
 
-                <input type = 'search' placeholder = 'Search Here' className = 'AdminViewTeamCoach-search'></input>
+                <input type = 'search' placeholder = 'Search Here' value={searchInput}
+                    onChange={handleSearch} className = 'AdminViewTeamCoach-search'></input>
                 <button className = 'AdminViewTeamCoach-search-button'> <img src = {img} alt = ' '/> </button>
 
             </div>
-
+            {searchInput && (
+                    <h2 className='AdminViewTeamCoach-sarchdatas'>Results for: {searchInput}</h2>
+                )}
+                {filteredData.length === 0 ? (
+                    <p className=''>No data found</p>
+                ) : (
             <table className = 'AdminViewTeamCoach-Table ' >
 
                 <thead >
@@ -71,7 +93,7 @@ navigate(`/Teamcoachdetailspopup/${id}`)
                 <tbody>
                 {
 
-(userData&&userData.length>0)?(userData.map((x,index,) => {
+(filteredData&&filteredData.length>0)?(filteredData.map((x,index,) => {
 
      return(
                     <tr className='AdminViewTeamCoach-tableBodyRow' >
@@ -93,6 +115,8 @@ navigate(`/Teamcoachdetailspopup/${id}`)
                 </tbody>
 
             </table>
+                )
+            }
 
             <div className="btn-group mt-3 mb-3" role="group" >
                 <button type="button" className="btn btn-outline-secondary text-outline-light ">Previous</button>

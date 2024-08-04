@@ -43,7 +43,8 @@ function TeamCoachReviewRatings() {
                 {/* seperated div for backbutton and text */}
                 <div className='col  TeamCoachRR-headercontainer-container-1'>
 
-                    <button className='TeamCoachRRMainDiv-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
+                <Link to='/TeamCoachHomePage'>
+                <button className='TeamCoachRRMainDiv-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
                     <h1 className='TeamCoachRRMainDiv-headercontainer-h1'>Review & Ratings</h1>
 
                 </div>
