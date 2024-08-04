@@ -29,7 +29,7 @@ function TeamCoachEnrollNow() {
 
     const getData = async () => {
         try {
-            const res = await axiosInstance.post(`viewApprovedEvents`);
+            const res = await axiosInstance.post(`viewUpcomingEvents`);
             // const fetchedCategory = res.data.data.category;
             // setCategory(fetchedCategory);
             setEvent(res.data.data);

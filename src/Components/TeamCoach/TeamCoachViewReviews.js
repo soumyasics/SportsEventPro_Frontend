@@ -39,7 +39,7 @@ function TeamCoachViewReviews() {
                 {/* seperated div for backbutton and text */}
                 <div className='col  AdminReviewandRatings-headercontainer-container-1'>
 
-                    <Link to='/AdminViewReviewAndRatings'><button className='AdminReviewandRatingsMainDiv-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
+                    <Link to='/TeamCoachHomePage'><button className='AdminReviewandRatingsMainDiv-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
                     <h1 className='AdminReviewandRatingsMainDiv-headercontainer-h1'>Reviews</h1>
 
                 </div>

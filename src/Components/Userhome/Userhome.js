@@ -4,6 +4,7 @@ import img from '../../Assets/people-soccer-stadium 1.jpg'
 import img1 from '../../Assets/image 76.png'
 import img2 from '../../Assets/image 127.png'
 import img3 from '../../Assets/Rectangle 128.png'
+import { Link } from 'react-router-dom'
 
 function Userhome() {
   return (
@@ -56,8 +57,8 @@ function Userhome() {
 
           <div className='userHomebuttons'>
 
-            <button class='userHomeButton-1'>Learn More</button>
-            <button class='userHomeButton-2'>Register Now</button>
+            <Link to={`/Aboutpage`} style={{textDecoration:'none'}}><button class='userHomeButton-1'>Learn More</button></Link>
+            <Link to={`/TeamCoachLogin`} style={{textDecoration:'none'}}> <button class='userHomeButton-2'>Register Now</button></Link>
 
           </div>
 

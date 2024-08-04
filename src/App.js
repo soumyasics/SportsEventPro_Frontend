@@ -87,13 +87,15 @@ import AdminViewReviewAndRatings from './Components/Admin/AdminViewReviewAndRati
 import ViewerBlogs from './Components/Viewer/ViewerBlogs';
 import ViewerViewReviews from './Components/Viewer/ViewerViewReviews';
 import TeamCoachViewReviews from './Components/TeamCoach/TeamCoachViewReviews';
+import ViewerResetPassword from './Components/Viewer/ViewerResetPassword';
+import TCResetPwd from './Components/TeamCoach/TCResetPwd';
 function App() {
 
   return (
 
     <BrowserRouter basename="sports_event_pro">
 
-      <div className="App">
+      
 
         <Routes>
         <Route exact path="/OrganiserEnroll" element={[<MainNavbar />, <OrganiserEnroll />, <Landingpage2 />, <Landingpage3 />, <Aboutpage />, <Landingpage4 />, <UserFooter />]} />
@@ -189,6 +191,7 @@ function App() {
           <Route exact path='/TeamCoachViewTeamMembers' element={[<TeamCoachTopNav />, <TeamCoachViewTeamMembers />, <UserFooter />]} />
           <Route exact path='/TeamCoachViewResults/:id' element={[<TeamCoachTopNav />, <TeamCoachViewResults />, <UserFooter />]} />
           <Route exact path='/TeamCoachViewReviews/:id' element={[<TeamCoachTopNav />, <TeamCoachViewReviews />, <UserFooter />]} />
+          <Route exact path='/TCResetPwd' element={[<TeamCoachTopNav />, <TCResetPwd />, <UserFooter />]} />
 
           {/* Organizer */}
           <Route exact path='/OrganizerRegistration' element={[<MainNavbar />, <OrganiserRegistration />, <UserFooter />]} />
@@ -198,6 +201,9 @@ function App() {
           <Route exact path='/OrganiserEditProfile' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganiserEditProfile" />, <UserFooter />]} />
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />]} />
           <Route path='/adminViewOrganizerToApprove/:id' element={[<MainNavbar />, <AdminMain data='adminViewOrganizerToApprove' />]} />
+      
+      
+          <Route exact path='/OrganizerRestPwd' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganizerRestPwd" />, <UserFooter />]} />
 
           <Route exact path='/OrganizerScheduleEvents' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganizerScheduleEvents" />, <UserFooter />]} />
           <Route exact path='/OrganizerViewEvents' element={[<OrganiserDashboardNavBar />, <OrganizerMain data="OrganizerViewEvents" />, <UserFooter />]} />
@@ -212,6 +218,7 @@ function App() {
           <Route exact path='/OrganizerViewBlogs' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewBlogs'/>,<UserFooter/>]} />
           <Route exact path='/OrganizerEventEnrollmentsChart' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerEventEnrollmentsChart'/>,<UserFooter/>]} />
           <Route exact path='/OrganizerViewDetiledReport/:id' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganizerViewDetiledReport'/>,<UserFooter/>]} />
+          <Route exact path='/OrganiserEditBlog/:id' element={[<OrganiserDashboardNavBar/>,<OrganizerMain data='OrganiserEditBlog'/>,<UserFooter/>]} />
 
           <Route path='/adminoraganizerviewrequest' element={[<MainNavbar />, <AdminMain data='adminallvieworganizerpage' />, <UserFooter />]} />
 
@@ -234,6 +241,7 @@ function App() {
           <Route exact path='/ViewerReviewRating' element={[<ViewerNavBar/>,<ViewerReviewRating/>,<UserFooter/>]} />
           <Route exact path='/ViewerBlogs' element={[<ViewerNavBar/>,<ViewerBlogs/>,<UserFooter/>]} />
           <Route exact path='/ViewerViewReviews/:id' element={[<ViewerNavBar/>,<ViewerViewReviews/>,<UserFooter/>]} />
+          <Route exact path='/ViewerResetPassword' element={[<ViewerNavBar/>,<ViewerResetPassword/>,<UserFooter/>]} />
 
           <Route path='/admin-viewAllViewer' element={[<MainNavbar />, <AdminMain data='admin-viewAllViewer' />]} />
 
@@ -241,7 +249,7 @@ function App() {
 
         </Routes>
 
-      </div>
+
 
     </BrowserRouter>
 

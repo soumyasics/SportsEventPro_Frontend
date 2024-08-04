@@ -49,12 +49,12 @@ const id=localStorage.getItem('organizerId')
 
             <h1 className='OrganizerViewEvents-h1'>View All Events</h1>
 
-            <div className='OrganizerViewEvents-search-container'>
+            {/* <div className='OrganizerViewEvents-search-container'>
 
                 <input type='search' placeholder='Search Here' className='OrganizerViewEvents-search'></input>
                 <button className='OrganizerViewEvents-search-button'> <img src={img} alt=' ' /> </button>
 
-            </div>
+            </div> */}
 
             <table className='OrganizerViewEvents-Table container ' >
 

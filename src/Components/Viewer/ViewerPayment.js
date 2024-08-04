@@ -79,7 +79,7 @@ function ViewerPayment() {
     return (
         <div className='ViewerPayment-MainDiv'>
             <div className="ViewerPayment-header">
-                <Link to='/ViewerUpcomingDetails'>
+                <Link to='/ViewerUpcoming'>
                     <button className='ViewerPayment-headercontainer-BackButton'>
                         <img src={img2} alt=' ' />
                     </button>

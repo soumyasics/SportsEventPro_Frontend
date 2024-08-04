@@ -10,6 +10,11 @@ function OrganiserTicketGen2() {
     const navigate = useNavigate()
     const id=localStorage.getItem('organizerId')
         const [userData, setUserData] = useState([]);
+        const [eveData, setEveData] = useState({
+            date:'',
+            _id:''
+        });
+
         const [formData, setFormData] = useState({
             startDate: '',
             endDate: '',
@@ -20,6 +25,32 @@ function OrganiserTicketGen2() {
         });
         const url = axiosInstance.defaults.url;
         console.log("url,", url);
+
+        const [formattedDate, setFormattedDate] = useState('');
+
+
+        const getEventdata=(id1)=>{
+            let res;
+    
+    
+            axiosInstance.post(`viewEventById/${id1}`).then(res => {
+    
+                console.log(res);
+    
+                if ((res.data.data)){
+                    setEveData(res.data.data);
+                    console.log("eve data",res.data.data);
+                    const date = res.data.data.date ? new Date(res.data.data.date).toISOString().split('T')[0] : '';
+                    setFormattedDate(date);
+                }
+                else
+                    setEveData(null)
+                console.log(res.data.data);
+            }).catch(err => {
+                console.log(err);
+            })
+    
+        }
         useEffect(() => {
     
             let res;
@@ -50,6 +81,9 @@ function OrganiserTicketGen2() {
             ...prevState,
             [name]: value
         }));
+        if(name=="eventId"){
+            getEventdata(value)
+        }
     };
 
     const handleSubmit = (e) => {
@@ -130,6 +164,8 @@ function OrganiserTicketGen2() {
                                     className='OrganiserTicketGen2-input-date'
                                     type='date'
                                     name='startDate'
+                                    min={new Date().toISOString().split('T')[0] } // Ensure end date is after start date
+                                    max={formattedDate} 
                                     value={formData.startDate}
                                     onChange={handleChange}
                                 />
@@ -156,6 +192,8 @@ function OrganiserTicketGen2() {
                                     type='date'
                                     name='endDate'
                                     value={formData.endDate}
+                                    min={new Date().toISOString().split('T')[0] } 
+                                    max={formattedDate} 
                                     onChange={handleChange}
                                 />
                             </div>
