@@ -15,6 +15,10 @@ import { RiLockPasswordFill } from "react-icons/ri";
 
 
 function TeamCoachTopNav() {
+    useEffect(() => {
+        if (localStorage.getItem('tcId') == null)
+            navigate('/')
+    })
     const navigate = useNavigate();
     const [events, setEvents] = useState([]);
     const [showNotificationModal, setShowNotificationModal] = useState(false);
@@ -23,6 +27,7 @@ function TeamCoachTopNav() {
         complaint: '',
         name: data1.name,
         userRole: 'Team Coach'
+        
     });
 
 
@@ -31,9 +36,10 @@ function TeamCoachTopNav() {
 
 
         console.log("Logging out...");
-        localStorage.setItem('tcId', "")
-        navigate('/Aboutpage')
+        localStorage.clear()
+        navigate('/TeamCoachLogin')
     };
+
 
 
 
@@ -204,16 +210,16 @@ function TeamCoachTopNav() {
                                         </li>
                                         <li>
                                             <Link className="dropdown-item" to="/TCResetPwd" >
-                                            <RiLockPasswordFill  style={{marginRight:0, width:"35px" }} />
+                                                <RiLockPasswordFill style={{ marginRight: 0, width: "35px" }} />
 
                                                 Reset Password
                                             </Link>
                                         </li>
                                         <li>
-                                            <a className="dropdown-item" href="/" onClick={handleLogout}>
+                                            <Link className="dropdown-item" to="/" onClick={handleLogout}>
                                                 <img src={img4} alt="Logout" style={{ marginRight: "10px" }} />
                                                 Logout
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -222,58 +228,67 @@ function TeamCoachTopNav() {
                     </div>
                 </div>
             </nav>
-
             {showNotificationModal && (
-
-<div className="tc_modal-overlay">
-<div className="tc_modal-content">
-  <button className="tc_modal-close" onClick={toggleNotificationModal}>X</button>
-  {events&&events.length > 0 ? (
-                                    events.map(event => (
-                                        <div className="notification-item tc_border" key={event._id}>
-                                            <h5 className=''>{event.name}</h5>
-                                            <h1 className='CardHeadTxtH1'>{event.category}</h1>
-                                            <p className=''>Biggest Sports tournament held in {event.venue}. Don’t miss it!</p>{/* event description */}
-                                            <h6 className=''>{event.date.slice(0,10)} {event.time}</h6> {/* event date and time */}
-                                        </div>
-                                    ))
-                                ) : (
-                                    <p>No notifications</p>
-                                )}
-  </div>
-</div>
-
-
-
-
-                // <div className="modal TeamCoach-Notification-Modal show" role="dialog" style={{ display: 'block' }}>
-                //     <div className="modal-dialog modal-dialog-centered">
-                //         {/* <div className="TeamCoach-modal-content"> */}
-                //            <div>
-                //             <div className="modal-body">
-                //                 
-                //             </div>
-                //             <div className="TeamCoach-modal-footer">
-                //                 <button type="button" className="btn btn-secondary" onClick={toggleNotificationModal}>Close</button>
-                //             </div>
-                //         </div>
-                // </div>
-                // </div>
+    <div className="tc_modal-overlay">
+        <div className="tc_modal-content">
+            <button className="tc_modal-close" onClick={toggleNotificationModal}>X</button>
+            {events && events.length > 0 ? (
+                events.map(event => (
+                    <div className="notification-item" key={event._id}>
+                        <h5>{event.name}</h5>
+                        <h1 className='CardHeadTxtH1'>{event.category}</h1>
+                        <p>Biggest Sports tournament held in {event.venue}. Don’t miss it!</p>
+                        <h6>{event.date.slice(0, 10)} {event.time}</h6>
+                    </div>
+                ))
+            ) : (
+                <p>No notifications</p>
             )}
+        </div>
+    </div>
+)}
+
+            {/* {showNotificationModal && (
+
+                <div className="tc_modal-overlay">
+                    <div className="tc_modal-content">
+                        <div className='mb-5' >
+                        <button className="tc_modal-close" style={{ float: 'right' }} onClick={toggleNotificationModal}>X</button>
+
+                        </div>
+                        {events && events.length > 0 ? (
+                            events.map(event => (
+                                <div className="notification-item tc_border mb-2" key={event._id}>
+                                    <h5 className=''>{event.name}</h5>
+                                    <h1 className='CardHeadTxtH1'>{event.category}</h1>
+                                    <p className=''>Biggest Sports tournament held in {event.venue}. Don’t miss it!</p>
+                                    <h6 className=''>{event.date.slice(0, 10)} {event.time}</h6> 
+                                </div>
+                            ))
+                        ) : (
+                            <p>No notifications</p>
+                        )}
+                    </div>
+                </div>
+
+            )} */}
 
             <div className="modal fade" id="Complaint-Modal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Register Complaint</h5>
+                        {/* <div className="modal-header" style={{width:'747px'}}>
+                            <h5 className="modal-title"  id="exampleModalLabel">Register Complaint</h5>
                             <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
                                 <img src={img7} alt="Close" />
                             </button>
-                        </div>
+                        </div> */}
                         <div className="modal-body">
+                        <button type="button" className="close border-0 mt-2 mb-3" style={{ float: 'right' }} data-bs-dismiss="modal" aria-label="Close">
+                                <img src={img7} alt="Close" />
+                            </button>
                             <form>
                                 <div className="mb-3">
-                                    <label htmlFor="complaint" className="form-label">Complaint</label>
+                                    <label htmlFor="complaint" className="form-label fs-4">Complaint</label>
                                     <textarea className="form-control" id="complaint" name="complaint" rows="3" onChange={handleChange}></textarea>
                                 </div>
                                 <button type="button" className="btn btn-primary" onClick={handleComplaintSubmit}>Submit</button>

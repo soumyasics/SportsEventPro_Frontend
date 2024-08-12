@@ -58,7 +58,7 @@ function Userhome() {
           <div className='userHomebuttons'>
 
             <Link to={`/Aboutpage`} style={{textDecoration:'none'}}><button class='userHomeButton-1'>Learn More</button></Link>
-            <Link to={`/TeamCoachLogin`} style={{textDecoration:'none'}}> <button class='userHomeButton-2'>Register Now</button></Link>
+            <Link to={`/ViewerLogin`} style={{textDecoration:'none'}}> <button class='userHomeButton-2'>Register Now</button></Link>
 
           </div>
 

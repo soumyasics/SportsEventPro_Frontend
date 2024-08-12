@@ -118,11 +118,20 @@ function ViewerRegistration() {
     };
 
     function validateContact(fieldName, value) {
+        const numberRegex = /^(?=.*\d)\d+$/;
+
         if (!value.trim()) {
             formIsValid = false;
 
             return `${fieldName} is required`;
-        } else if (value.length !== 10) {
+        }
+        else 
+        if (!numberRegex.test(value)) {
+            
+                 formIsValid = false;
+        return "Contact Number must contain numbers Only"
+            } 
+        else if (value.length !== 10) {
             formIsValid = false;
 
             return 'Please enter a valid Contact Number';
@@ -131,11 +140,19 @@ function ViewerRegistration() {
     }
 
     function validatePincode(fieldName, value) {
+        const numberRegex = /^(?=.*\d)\d+$/;
+
         if (!value.trim()) {
             formIsValid = false;
 
             return `${fieldName} is required`;
-        } else if (value.length !== 6) {
+        } 
+        else 
+        if (!numberRegex.test(value)) {
+            
+                 formIsValid = false;
+        return "Pincode must contain numbers Only"
+            }else if (value.length !== 6) {
             formIsValid = false;
 
             return 'Please enter a valid Pincode';
@@ -145,10 +162,29 @@ function ViewerRegistration() {
 
 
     const validateField = (fieldName, value) => {
+        const nRegex =  /^(?=.*[A-Za-z])[A-Za-z0-9\s]+$/;
+        const nameRegex = /^[A-Za-z\s]+$/;
+        const twoDigitRegex = /^\d{0,2}$/;
         if (!value || !value.trim()) {
             formIsValid = false;
             return `${fieldName} is required`;
         }
+
+        if (fieldName === "Name"){
+            if (!nameRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "Name must contain alphabets Only"
+                }
+         }
+         if (fieldName === "City"){
+            
+            if (!nameRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "City must contain alphabets Only"
+                }
+         }
         if (fieldName === "Email" && !value.endsWith("@gmail.com")) {
             formIsValid = false;
 
@@ -271,7 +307,7 @@ function ViewerRegistration() {
                                     </div>
 
                                     <div className='ms-3'>
-                                        <input type='radio' name='gender' id='other' value='other' onChange={handleChange} checked={data.gender === 'Other'}/>
+                                        <input type='radio' name='gender' id='other' value='Other' onChange={handleChange} checked={data.gender === 'Other'}/>
                                         <label className='ms-1' />Other
                                     </div>
 

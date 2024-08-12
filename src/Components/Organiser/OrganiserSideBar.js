@@ -10,20 +10,45 @@ import toast from 'react-hot-toast'
 
 function OrganiserSideBar() {
     const navigate = useNavigate()
+    const [org, setOrg] = useState({ name: '' })
+
     const [comp, setComp] = useState({
-        organizerId:localStorage.getItem('organizerId'),
-        complaint:'',
-        userRole:'organizer'
+        organizerId: localStorage.getItem('organizerId'),
+        complaint: '',
+        name: '',
+        userRole: 'organizer'
     });
-    const handleChange = (event) => {
-    
-        const { name, value } = event.target;
-       
+    useEffect(() => {
+
+        let res;
+
+
+        axiosInstance.post(`viewOrganizerById/${localStorage.getItem('organizerId')}`).then(res => {
+
+            console.log(res.data.data.name);
+
             setComp(prevData => ({
                 ...prevData,
-                [name]: value
+                name: res.data.data.name
             }));
-        
+                setOrg(res.data.data);
+         
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+
+    }, [localStorage.getItem('organizerId')]);
+   
+    const handleChange = (event) => {
+
+        const { name, value } = event.target;
+
+        setComp(prevData => ({
+            ...prevData,
+            [name]:value
+        }));
+
     };
     const handleLogout = (e) => {
         console.log(e);
@@ -32,13 +57,14 @@ function OrganiserSideBar() {
         localStorage.setItem('organizerId', "")
         navigate('/')
     };
+   
     useEffect(() => {
         if (localStorage.getItem("organizerId") == "") {
             navigate("/");
         }
     }, [navigate]);
 
-    const addcomplaint=()=>{
+    const addcomplaint = () => {
         console.log("fun called", comp);
 
         axiosInstance.post('addComplaint', comp)
@@ -112,8 +138,8 @@ function OrganiserSideBar() {
 
                         <ul class="collapse list-group mt-2 rounded-2" id='li-1'>
 
-                            <Link to='/OrganizerTicketGen2' style={{textDecoration:'none'}}><li style={{listStyle:'none'}}><a class="list-group-item ms-4 w-75 rounded-top-2" href=" ">Ticket Generation</a></li></Link>
-                            <Link to='/OrganizerViewReport' style={{textDecoration:'none'}}><li style={{listStyle:'none'}}><a class="list-group-item ms-4 w-75 rounded-bottom-2" href=" ">View Report</a></li></Link>
+                            <Link to='/OrganizerTicketGen2' style={{ textDecoration: 'none' }}><li style={{ listStyle: 'none' }}><a class="list-group-item ms-4 w-75 rounded-top-2" href=" ">Ticket Generation</a></li></Link>
+                            <Link to='/OrganizerViewReport' style={{ textDecoration: 'none' }}><li style={{ listStyle: 'none' }}><a class="list-group-item ms-4 w-75 rounded-bottom-2" href=" ">View Report</a></li></Link>
 
                         </ul>
 
@@ -135,8 +161,8 @@ function OrganiserSideBar() {
 
                         <ul class="collapse list-group mt-2 rounded-2" id='li-2'>
 
-                            <li style={{listStyle:'none'}}><Link to="/OrganiserAddBlogs "class="list-group-item ms-4 rounded-top-2 w-75" href=" ">Add Blogs</Link></li>
-                            <li style={{listStyle:'none'}}><Link to="/OrganizerViewBlogs "class="list-group-item ms-4 rounded-top-2 w-75" href=" ">View Blogs</Link></li>
+                            <li style={{ listStyle: 'none' }}><Link to="/OrganiserAddBlogs " class="list-group-item ms-4 rounded-top-2 w-75" href=" ">Add Blogs</Link></li>
+                            <li style={{ listStyle: 'none' }}><Link to="/OrganizerViewBlogs " class="list-group-item ms-4 rounded-top-2 w-75" href=" ">View Blogs</Link></li>
 
                         </ul>
 
@@ -149,11 +175,11 @@ function OrganiserSideBar() {
                     </div>
                     <div>
 
-<Link to='/OrganizerRestPwd' style={{ textDecoration: "none", color: "white" }}>
-    <button className='OrganiserSideBarbutton-2'>Reset Password</button>
-</Link>
+                        <Link to='/OrganizerRestPwd' style={{ textDecoration: "none", color: "white" }}>
+                            <button className='OrganiserSideBarbutton-2'>Reset Password</button>
+                        </Link>
 
-</div>
+                    </div>
                     <div>
 
                         <button type="button" class="OrganiserSideBarbutton-2" data-bs-toggle="modal" data-bs-target="#Logout-Modal">Logout</button>
@@ -218,7 +244,7 @@ function OrganiserSideBar() {
                                                 <img src={img7} alt=' ' className='imageEE' data-bs-dismiss="modal" aria-label="Close" />
 
                                                 <h1 className='h1ishere'>Register a Complaint</h1>
-                                                <input type='textarea' className='txtArea' name='complaint' onChange={handleChange}></input>
+                                                <textarea className="form-control" id="complaint" name="complaint" rows="3" onChange={handleChange}></textarea>
                                             </div>
                                             <div className='ModalDialog-button-contain'>
                                                 <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal" onClick={addcomplaint}>Submit</button>

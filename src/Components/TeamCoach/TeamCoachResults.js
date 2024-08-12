@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 import img2 from "../../Assets/Back Button.svg";
 import axiosInstance from '../Constant/BaseURL';
 import img7 from '../../Assets/octicon_x-16.svg'
-
+import img3 from '../../Assets/Search Button.svg';
+import ReactStars from 'react-stars'
 
 function TeamCoachResults() {
     const [userData, setUserData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        axiosInstance.post('/viewApprovedEvents')
+        axiosInstance.post('/viewPastEvents')
             .then(res => {
                 setUserData(res.data.data);
             })
@@ -19,11 +20,43 @@ function TeamCoachResults() {
                 console.error("Error fetching data: ", err);
             });
     }, []);
-
     const handleSearch = () => {
         // Implement search functionality here, filtering userData by searchTerm
     };
-
+    const [selectedEventId, setSelectedEventId] = useState(null);
+    const [rating, setRating] = useState(0);
+    const [comment, setComment] = useState('');
+    const addRatingReview = async (eventId) => {
+        console.log("it worked", eventId);
+        try {
+            const res = await axiosInstance.post(`addRating/${eventId}`, {
+            
+                rating,
+                comment,
+               
+            });
+            console.log(res.data);
+            // Optionally refresh the data
+            // getData();
+        } catch (err) {
+            console.log(err);
+        }
+        try {
+            const res = await axiosInstance.post(`addReview/`, {
+            
+                eventId:eventId,
+                tcId:localStorage.getItem('tcId'),
+                 userRole:'Team Coach',
+     
+      review:comment,
+            });
+            console.log(res.data);
+            // Optionally refresh the data
+            // getData();
+        } catch (err) {
+            console.log(err);
+        }
+    };
     return (
         <div className='TeamCoachResults'>
             <div className='TeamCoachResults-MainDiv'>
@@ -45,14 +78,14 @@ function TeamCoachResults() {
                                         <h1 className='TeamCoachResultsCardHeadTxtH1'>{e.category}</h1>
                                     </div>
                                     <div>
-                                        <button className='TeamCoachResultsCardHeadTxtButton1'data-bs-toggle="modal" data-bs-target="#Rating-Modal">Add Review & Rating</button>
+                                        <button className='TeamCoachResultsCardHeadTxtButton1'data-bs-toggle="modal"  onClick={() => setSelectedEventId(e._id)} data-bs-target="#Rating-Modal">Add Review & Rating</button>
 
 
 
 
                                         <div>
 
-<div className="modal fade" id="Rating-Modal" tabIndex="-1" aria-labelledby="Complaint-ModalLabel" aria-hidden="true">
+{/* <div className="modal fade" id="Rating-Modal" tabIndex="-1" aria-labelledby="Complaint-ModalLabel" aria-hidden="true">
 
     <div className="modal-dialog modal-dialog-centered">
 
@@ -77,7 +110,12 @@ function TeamCoachResults() {
                     <label for="star1" title="text">1 star</label>
                     </div>
                     <h1 className='TeamCoachResultsH1'>Add Comments</h1>
-                    <input type='textarea' className='TeamCoachResultstxtArea'></input>
+                    <input
+                                    type='text'
+                                    className='ModalDialog-textEE'
+                                    value={comment}
+                                    onChange={(e) => setComment(e.target.value)}
+                                />
                 </div>
                 <div className='ModalDialog-button-contain'>
                     <button type="button" className="ModalDialog-button-2EE" data-bs-dismiss="modal">Submit</button>
@@ -89,7 +127,47 @@ function TeamCoachResults() {
 
     </div>
 
-</div>
+</div> */}
+ {/* Modal for adding rating and review */}
+ <div className="modal fade" id="Rating-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content">
+                            <div className="modal-body EE">
+                                <div>
+                                    <img src={img3} alt='Close' className='imageEE' data-bs-dismiss="modal" aria-label="Close" />
+                                    <h1 className='ModalDialog-h1EE'>Add Rating</h1>
+                                    <div className="d-flex mt-2 ModalRatingEE">
+                                        <ReactStars
+                                            count={5}
+                                            size={50}
+                                            value={rating}
+                                            onChange={(newRating) => setRating(newRating)}
+                                            color1='#D9D9D9'
+                                            color2='#56B60B'
+                                        />
+                                    </div>
+                                </div>
+                                <p className='ModalDialog-h1EE '>Add Comments</p>
+                                <input
+                                    type='text'
+                                    className='ModalDialog-textEE'
+                                    value={comment}
+                                    onChange={(e) => setComment(e.target.value)}
+                                />
+                                <div className='ModalDialog-button-contain'>
+                                    <button
+                                        type="button"
+                                        className="ModalDialog-button-2EE"
+                                        data-bs-dismiss="modal"
+                                        onClick={() => addRatingReview(selectedEventId)}
+                                    >
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 </div>
 
@@ -110,7 +188,7 @@ function TeamCoachResults() {
                                     <p className='TeamCoachResultsCardTextP'>
                                         Biggest Sports tournament held in {e.venue}. Don’t miss it!
                                     </p>
-                                    <h2 className='TeamCoachResultsCardTextH2'>{e.date}</h2>
+                                    <h2 className='TeamCoachResultsCardTextH2'>{e.date.slice(0,10)}</h2>
                                     <div className='TeamCoachResults-button-contain'>
                                         <Link to={`/TeamCoachViewResults/${e._id}`} style={{ textDecoration: 'none' }}>
                                             <button className='TeamCoachResults-button'> Results</button>

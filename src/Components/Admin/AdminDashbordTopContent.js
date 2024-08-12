@@ -45,13 +45,13 @@ function AdminDashbordTopContent() {
       }, []);
       useEffect(() => {
         axiosInstance
-          .post("/viewOrganizers")
+          .post("/viewviewerss")
           .then((res) => {
             if (res.data.status === 200) {
               console.log(res);
-              setOrganizers(res.data.data || []);
+              setViewers(res.data.data || []);
             } else {
-                setOrganizers([]);
+                setViewers([]);
             }
           })
           .catch((error) => {

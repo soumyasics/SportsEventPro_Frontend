@@ -10,7 +10,11 @@ import axiosInstance from '../Constant/BaseURL';
 
 function ViewerNavBar() {
     const navigate = useNavigate()
-
+    useEffect(() => {
+        if (localStorage.getItem("viewerId") == "") {
+            navigate(`/`);
+        }
+    }, [navigate]);
     const [userData, setUserData] = useState({});
     const id = localStorage.getItem('viewerId')
 
@@ -37,14 +41,11 @@ function ViewerNavBar() {
 
         console.log("Logging out...");
         localStorage.setItem('viewerId', "")
+        window.location.reload(false)
         navigate('/')
     };
 
-    useEffect(() => {
-        if (localStorage.getItem("viewerId") == "") {
-            navigate(`/ViewerLogin`);
-        }
-    }, [navigate]);
+ 
     return (
 
         <div>
@@ -67,39 +68,39 @@ function ViewerNavBar() {
 
                             <li className="nav-item">
 
-                                <Link to="/ViewerHomePage" style={{textDecoration:"none"}}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Home</a></Link>
+                                <Link to="/ViewerHomePage" style={{ textDecoration: "none" }}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Home</a></Link>
 
                             </li>
 
-                          
+
 
                             <li className="nav-item">
 
-                                <Link to='/ViewerUpcoming' style={{textDecoration:'none'}}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Upcoming Events</a></Link>
-
-                            </li>
-
-                            <li className="nav-item">
-
-                                <Link to='/ViewerBookedTickets' style={{textDecoration:'none'}}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Booked Tickets</a></Link>
+                                <Link to='/ViewerUpcoming' style={{ textDecoration: 'none' }}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Upcoming Events</a></Link>
 
                             </li>
 
                             <li className="nav-item">
 
-                            <Link to='/ViewerScoreboard' style={{textDecoration:'none'}}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Scoreboard</a></Link>
+                                <Link to='/ViewerBookedTickets' style={{ textDecoration: 'none' }}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Booked Tickets</a></Link>
 
                             </li>
 
                             <li className="nav-item">
 
-                                <Link to='/ViewerReviewRating' style={{textDecoration:'none'}}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Reviews & Ratings</a></Link>
+                                <Link to='/ViewerScoreboard' style={{ textDecoration: 'none' }}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Scoreboard</a></Link>
 
                             </li>
 
                             <li className="nav-item">
 
-                                <Link to='/ViewerBlogs' style={{textDecoration:'none'}}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Blogs</a></Link>
+                                <Link to='/ViewerReviewRating' style={{ textDecoration: 'none' }}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Reviews & Ratings</a></Link>
+
+                            </li>
+
+                            <li className="nav-item">
+
+                                <Link to='/ViewerBlogs' style={{ textDecoration: 'none' }}><a className="nav-link text-light ViewerNavBar-Nav-li-a" href=" ">Blogs</a></Link>
 
                             </li>
 
@@ -137,7 +138,7 @@ function ViewerNavBar() {
 
                                     <li>
 
-                                        <button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#Logout-Modal" ><img src={img4} alt=' ' style={{ marginRight: "10px" }} onClick={handleLogout}/>Logout</button>
+                                        <button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#Logout-Modal" ><img src={img4} alt=' ' style={{ marginRight: "10px" }} onClick={handleLogout} />Logout</button>
 
                                     </li>
 
@@ -174,7 +175,7 @@ function ViewerNavBar() {
                         </div>
 
                     </div>
- {/* <div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
+                    {/* <div className="modal fade" id="Logout-Modal" tabIndex="-1" aria-labelledby="Logout-ModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" style={{ width: "747px", height: "298px" }}>
                     <div className="modal-content">
                         <div className="modal-body">

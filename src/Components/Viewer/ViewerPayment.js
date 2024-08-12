@@ -30,14 +30,17 @@ function ViewerPayment() {
                 console.error(err);
             });
     }, [id]);
+    const [cname, setCName] = useState('');
 
     const [cardNumber, setCardNumber] = useState('');
     const [cvv, setCvv] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
     const [errors, setErrors] = useState({});
 
-    const validateCardNumber = (number) => /^[0-9]{13,19}$/.test(number);
-    const validateCvv = (cvv) => /^[0-9]{3,4}$/.test(cvv);
+    const validateCardName = (val) => /^[A-Za-z\s]+$/.test(val);
+
+    const validateCardNumber = (number) => /^[0-9]{16}$/.test(number);
+    const validateCvv = (cvv) => /^[0-9]{3}$/.test(cvv);
     const validateExpiryDate = (date) => {
         const [month, year] = date.split('/');
         const expiryMonth = parseInt(month, 10);
@@ -54,8 +57,10 @@ function ViewerPayment() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const newErrors = {};
-        if (!validateCardNumber(cardNumber)) newErrors.cardNumber = 'Invalid card number. It should be 13-19 digits.';
-        if (!validateCvv(cvv)) newErrors.cvv = 'Invalid CVV. It should be 3 or 4 digits.';
+        if (!validateCardName(cname)) newErrors.cname = 'Invalid Name. It should be of Alphabets.';
+
+        if (!validateCardNumber(cardNumber)) newErrors.cardNumber = 'Invalid card number. It should be 16 digits.';
+        if (!validateCvv(cvv)) newErrors.cvv = 'Invalid CVV. It should be 3  digits.';
         if (!validateExpiryDate(expiryDate)) newErrors.expiryDate = 'Invalid expiry date. It should be in the future and valid month.';
         if (Object.keys(newErrors).length === 0) {
             axiosInstance.post(`/updatePayment/${id}`)
@@ -103,12 +108,16 @@ function ViewerPayment() {
                         <h2 className='ViewerPayment-body-h2'>{ticket.eventId.date.slice(0, 10)}</h2>
                     </div>
                 </div>
-                <div className='ViewerPayment-body-right-bottom'>
+                <div className='ViewerPayment-body-right-bottom mb-3'>
                     <div>
                         <label>Cardholder Name</label>
-                        <input type="text" required />
+                        <input type="text" value={cname}  required onChange={(e) => setCName(e.target.value)}
+
+ />
+                         {errors.cname && <p className="error">{errors.cname}</p>}
+
                     </div>
-                    <div>
+                    <div className='mb-3'>
                         <label>Cardholder Number</label>
                         <input
                             type="text"
@@ -121,18 +130,19 @@ function ViewerPayment() {
                         <label>CVV</label>
                         <input
                             type="text"
+                            className='form-control-lg'
                             value={cvv}
                             onChange={(e) => setCvv(e.target.value)}
                         />
                         {errors.cvv && <p className="error">{errors.cvv}</p>}
                     </div>
                     <div>
-                        <label>Expiry Date (MM/YY)</label>
+                        <label>Expiry Date (MM/YYYY)</label>
                         <input
                             type="text"
                             value={expiryDate}
                             onChange={(e) => setExpiryDate(e.target.value)}
-                            placeholder="MM/YY"
+                            placeholder="MM/YYYY"
                         />
                         {errors.expiryDate && <p className="error">{errors.expiryDate}</p>}
                     </div>

@@ -59,7 +59,7 @@ getData2()
                 <div className='ViewerViewScoreboard-header'>
 
                     <button className='ViewerViewScoreboard-headercontainer-BackButton' ><Link to='/ViewerScoreboard'><img src={img} alt=' ' /></Link></button>
-                    <h1 className='ViewerViewScoreboard-headercontainer-h1'>TVM Junior Sport’s Scoreboard </h1>{/* event name here */}
+                    <h1 className='ViewerViewScoreboard-headercontainer-h1'>{inputValue.name} ScoreBoard</h1>{/* event name here */}
 
                 </div>
 

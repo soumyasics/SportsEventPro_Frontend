@@ -57,7 +57,7 @@ function AdminReviewandRatings() {
     return (
                     <div className='AdminReviewandRatings-content'>
 
-                        <h1 className='AdminReviewandRatings-content-h1' style={{marginTop:'20px'}}>Good experience{/* put the coach review in here */}</h1>
+                        <h1 className='AdminReviewandRatings-content-h1' style={{marginTop:'20px'}}>{x.review}{/* put the coach review in here */}</h1>
 
                         <div className='AdminReviewandRatings-content-contentcontainer'>
 

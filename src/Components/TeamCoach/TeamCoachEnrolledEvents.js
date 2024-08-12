@@ -82,63 +82,58 @@ function TeamCoachEnrolledEvents() {
                 {/* div containing the card */}
                 <div >
 
-                    <div className='TeamCoachEnrolledEvents-content'> {/* <--- array map this div or outside this div. Do not remove 
-                        class or create a div inside otherwise the page will break*/}
+                <div className='TeamCoachEnrolledEvents-content'>
+                        {/* a single card is from here to */}
+                        {event && event.length >= 1 ? (
+                            event.map((x, index) => {
+                                // Get today's date and the event date
+                                const today = new Date();
+                                const eventDate = new Date(x.eventId.date);
 
-                        {/*a single card is from here to */}
-                        {
-
-
-
-                            (event && event.length >= 1) ? (event.map((x, index) => {
-
+                                // Normalize the dates to remove the time component for comparison
+                                const isToday = today.toDateString() === eventDate.toDateString();
+                                const isPastOrToday = eventDate <= today;
 
                                 return (
-                                    <div className="card TeamCoachEnrolledEvents-content-contain">
-
-                                        <img   src={`${url}/${x?.eventId?.banner?.filename}`}
-                                         className="card-img-top TeamCoachEnrolledEvents-img" alt="..." />{/*event image */}
+                                    <div className="card TeamCoachEnrolledEvents-content-contain" key={index}>
+                                        <img src={`${url}/${x?.eventId?.banner?.filename}`}
+                                            className="card-img-top TeamCoachEnrolledEvents-img" alt="..." />{/* event image */}
 
                                         <div className="card-body">
-
                                             <div className="card-title" style={{ display: "flex", flexDirection: "row", gap: "100px" }}>
-
                                                 <div style={{ display: "flex", flexDirection: "column" }}>
                                                     <h5 className='CardHeadTxtH5'>{x.eventId.name}</h5>{/* event name */}
                                                     <h1 className='CardHeadTxtH1'>{x.eventId.category}</h1>{/* event category */}
                                                 </div>
 
                                                 <div>
-
-                                                    <button className='CardHeadTxtButton' data-bs-toggle="modal" data-bs-target="#Rating-Modal"
-                                                        onClick={() => setSelectedEventId(x.eventId._id)}>
-                                                            Add Review & Rating</button>
-
+                                                    {/* Conditionally render the button */}
+                                                    {isPastOrToday && (
+                                                        <button className='CardHeadTxtButton' data-bs-toggle="modal" data-bs-target="#Rating-Modal"
+                                                            onClick={() => setSelectedEventId(x.eventId._id)}>
+                                                            Add Review & Rating
+                                                        </button>
+                                                    )}
                                                 </div>
-
                                             </div>
 
                                             <div className="card-text">
                                                 <div className='row'>
-                                                    <p className='CardTextP'>{x.eventId.name} is Organized by {x.organizerId.name}. Don't Miss the Opurtunity of Participation !!</p>{/* event description */}
-                                                    <div className='col'> <h2 className='CardTextH2'>{x.date.slice(0, 10)} &nbsp; {x.time}</h2> {/* event date and time */}
+                                                    <p className='CardTextP'>{x.eventId.name} is Organized by {x.organizerId.name}. Don't Miss the Opportunity of Participation !!</p>{/* event description */}
+                                                    <div className='col'>
+                                                        <h2 className='CardTextH2'>{x.eventId.date.slice(0, 10)} &nbsp; {x.time}</h2> {/* event date and time */}
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
-
                                     </div>
-                                )
-                            })) : <div>No Events Found</div>
-
-
-                        }
-                        {/* here is a single card  */}
-
+                                );
+                            })
+                        ) : <div>No Events Found</div>}
                     </div>
-
                 </div>
+
+               
 
 
                 {/* div containing the modal */}

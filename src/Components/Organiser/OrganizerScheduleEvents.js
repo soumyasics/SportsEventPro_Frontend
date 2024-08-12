@@ -143,10 +143,11 @@ function OrganizerScheduleEvents() {
                                 <select className="OrganizerScheduleEvents-Content-Input-Country" aria-label="Default select example" onChange={handleChange} name="category">
 
                                     <option className='OrganizerScheduleEvents-Content-Input-Select-Option' selected name="state">Select Category</option>
-                                    <option value="Cricket">Cricket</option>
-                                    <option value="Football">Football</option>
-                                    <option value="Tennis">Tennis</option>
-                                    <option value="Table Tennis">Table Tennis</option>
+                                    <option value="cricket">Cricket</option>
+                                    <option value="football">Football</option>
+                                    <option value="tennis">Tennis</option>
+                                    <option value="badminton">Badminton</option>
+                                    <option value="hockey">Hockey</option>
 
                                 </select>
                                 {errors.category && <div className="text-danger ">{errors.category}</div>}

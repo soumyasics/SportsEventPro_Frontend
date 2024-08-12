@@ -14,7 +14,7 @@ function UserFooter() {
       
       </div>
       <div className="footerdiv-3">
-      <div class="row">
+      {/* <div class="row">
   <div class="col-md-1">
   <button className='userfooterbutton-1 container'>Home</button>
 </div>
@@ -36,7 +36,7 @@ function UserFooter() {
 <div class="col-md-1">
 <button className='userfooterbutton-7'>FAQs</button>
 </div>
-</div>
+</div> */}
 </div>
 </div>
 

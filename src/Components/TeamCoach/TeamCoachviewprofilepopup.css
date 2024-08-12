@@ -173,6 +173,7 @@ height: var(--items, 0px);
     width: 200px;
     border-radius: 10px;
     background: #035c03;
+    color:white
 }
 .teamcoach-details-rejectbtn{
     height:45px;

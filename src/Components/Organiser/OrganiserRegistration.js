@@ -122,29 +122,80 @@ function OrganiserRegistration() {
     };
 
     function validateContact(fieldName, value) {
+        const numberRegex = /^(?=.*\d)\d+$/;
+
         if (!value.trim()) {
+            formIsValid = false;
+
             return `${fieldName} is required`;
-        } else if (value.length !== 10) {
+        }
+        else 
+        if (!numberRegex.test(value)) {
+            
+                 formIsValid = false;
+        return "Contact Number must contain numbers Only"
+            }
+        else if (value.length !== 10) {
+            formIsValid = false;
+
             return 'Please enter a valid Contact Number';
         }
         return '';
     }
 
     function validatePincode(fieldName, value) {
+        const numberRegex = /^(?=.*\d)\d+$/;
+
         if (!value.trim()) {
+            formIsValid = false;
+
             return `${fieldName} is required`;
-        } else if (value.length !== 6) {
-            return 'Please enter a valid Contact Number';
+        }else 
+        if (!numberRegex.test(value)) {
+            
+                 formIsValid = false;
+        return "Pincode must contain numbers Only"
+            } else if (value.length !== 6) {
+                formIsValid = false;
+
+            return 'Please enter a valid Pincode';
         }
         return '';
     }
 
 
     const validateField = (fieldName, value) => {
+        const nRegex =  /^(?=.*[A-Za-z])[A-Za-z0-9\s]+$/;
+        const nameRegex = /^[A-Za-z\s]+$/;
+        const twoDigitRegex = /^\d{0,2}$/;
+
         if (!value || !value.trim()) {
             formIsValid = true;
             return `${fieldName} is required`;
         }
+        if (fieldName === "Name"){
+            if (!nameRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "Name must contain alphabets Only"
+                }
+         }
+         if (fieldName === "City"){
+            
+            if (!nameRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "City must contain alphabets Only"
+                }
+         }
+         if (fieldName === "experience"){
+            
+            if (!twoDigitRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "experience must contain numbers with Maximum 2 digits"
+                }
+         }
         if (fieldName === "Email" && !value.endsWith("@gmail.com")) {
             return "Email must be a valid Email address"
         }
@@ -166,7 +217,7 @@ function OrganiserRegistration() {
         errors.address = validateField('Address', data.address);
         errors.city = validateField('City', data.city);
         errors.country = validateField('Country', data.country);
-        errors.country = validateField('experience', data.experience);
+        errors.experience = validateField('experience', data.experience);
 
         errors.description = validateField('description', data.description);
 

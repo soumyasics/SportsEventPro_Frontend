@@ -130,18 +130,18 @@ function Teamcoachdetailspopup() {
             </div>
             <hr className="mt-2"></hr>
           </div>
-          <div className="row Teamcoachdetailspopupmainrow-1 ms-5 ps-5">
+           {/* <div className="row Teamcoachdetailspopupmainrow-1 ms-5 ps-5">
             <div className="col-2">
               <img className="Teamcoachdetailspopupcommon-style-1" src={img8}></img>
             </div>
-            <div className="col-5">
+           <div className="col-5">
               <label className="Teamcoachdetailspopuplabel">Address</label>
             </div>
             <div className="col-5">
               <label className="Teamcoachdetailspopuplabel-2">{userData.address}</label>
-            </div>
+            </div> 
             <hr className="mt-2"></hr>
-          </div>
+          </div>*/}
           <div className="row Teamcoachdetailspopupmainrow-1 ms-5 ps-5 ">
             <div className="col-2">
               <img className="Teamcoachdetailspopupcommon-style-1" src={img10}></img>

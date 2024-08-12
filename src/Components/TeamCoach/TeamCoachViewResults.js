@@ -105,7 +105,7 @@ const {id}=useParams()
                         <tr className='TeamCoachViewResults-tableBodyRow container' >
 
                             <td className='col-2 TeamCoachViewResults-tableBodyData'>{++index}</td>{/* Sl no */}
-                            <td className='col-4 TeamCoachViewResults-tableBodyData'>{x.coachId.name}</td>{/* Team Name */}
+                            <td className='col-4 TeamCoachViewResults-tableBodyData'>{x.coachId.teamName}</td>{/* Team Name */}
                             <td className='col-3 TeamCoachViewResults-tableBodyData'>{x.score}</td>{/* Score */}
                             <td className='col-3 TeamCoachViewResults-tableBodyData-end'>{x.position}</td>{/* Result */}
 

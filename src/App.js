@@ -89,6 +89,8 @@ import ViewerViewReviews from './Components/Viewer/ViewerViewReviews';
 import TeamCoachViewReviews from './Components/TeamCoach/TeamCoachViewReviews';
 import ViewerResetPassword from './Components/Viewer/ViewerResetPassword';
 import TCResetPwd from './Components/TeamCoach/TCResetPwd';
+import TeamCoachAddMembersEnrolledEvents from './Components/TeamCoach/TeamCoachAddMembersEnrolledEvents';
+import ViewerTeamDetails from './Components/Viewer/ViewerTeamDetails';
 function App() {
 
   return (
@@ -177,6 +179,7 @@ function App() {
           <Route exact path='/TeamCoachViewEvents' element={[<TeamCoachTopNav/>,<TeamCoachViewEvents/>,<UserFooter/>]} />
           <Route exact path='/TeamCoachEnrolledEvents' element={[<TeamCoachTopNav/>,<TeamCoachEnrolledEvents/>,<UserFooter/>]} />
           <Route exact path='/TeamCoachEnrollNow' element={[<TeamCoachTopNav/>,<TeamCoachEnrollNow/>,<UserFooter/>]} />
+          <Route exact path='/TeamCoachAddMembersEnrolledEvents/:id' element={[<TeamCoachTopNav/>,<TeamCoachAddMembersEnrolledEvents/>,<UserFooter/>]} />
 
           <Route exact path='/TeamCoachResults' element={[<TeamCoachTopNav/>,<TeamCoachResults/>,<UserFooter/>]} />
           <Route exact path='/TeamCoachRR' element={[<TeamCoachTopNav/>,<TeamCoachReviewRatings/>,<UserFooter/>]} />
@@ -242,6 +245,7 @@ function App() {
           <Route exact path='/ViewerBlogs' element={[<ViewerNavBar/>,<ViewerBlogs/>,<UserFooter/>]} />
           <Route exact path='/ViewerViewReviews/:id' element={[<ViewerNavBar/>,<ViewerViewReviews/>,<UserFooter/>]} />
           <Route exact path='/ViewerResetPassword' element={[<ViewerNavBar/>,<ViewerResetPassword/>,<UserFooter/>]} />
+          <Route exact path='/Viewer-TeamDetails/:cId/:eventId' element={[<ViewerNavBar/>,<ViewerTeamDetails/>,<UserFooter/>]} />
 
           <Route path='/admin-viewAllViewer' element={[<MainNavbar />, <AdminMain data='admin-viewAllViewer' />]} />
 

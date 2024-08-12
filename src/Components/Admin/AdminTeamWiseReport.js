@@ -12,7 +12,7 @@ function AdminTeamWiseReport() {
     const [eve1, setEve1] = useState([]);
 
     useEffect(() => {
-        axiosInstance.post('viewPAprvdEnrollments').then(res => {
+        axiosInstance.post('viewPAprvdEnrollmentsforTicket').then(res => {
             setEve1(res.data.data);
             setFilteredData(res.data.data);
         }).catch(err => {
@@ -64,20 +64,24 @@ function AdminTeamWiseReport() {
                     <table className='AdminTeamWiseReport-Table container'>
                         <thead>
                             <tr className='AdminTeamWiseReport-tableHeadRow container'>
-                                <td className='col-2 AdminTeamWiseReport-tableHeadData-start'>Sl</td>
-                                <td className='col-4 AdminTeamWiseReport-tableHeadData'>Team Name</td>
-                                <td className='col-3 AdminTeamWiseReport-tableHeadData'>Score</td>
+                                <td className='col-1 AdminTeamWiseReport-tableHeadData-start'>Sl</td>
+                                <td className='col-2 AdminTeamWiseReport-tableHeadData'>Team Name</td>
+                                <td className='col-4 AdminTeamWiseReport-tableHeadData'>Event Name</td>
+
+                                <td className='col-2 AdminTeamWiseReport-tableHeadData'>Score</td>
                                 <td className='col-3 AdminTeamWiseReport-tableHeadDataEnd'>Result</td>
                             </tr>
                         </thead>
                         <tbody className='tbodyclass'>
                             {Array.isArray(filteredData) && filteredData.map((data, index) => (
                                 <tr key={index} className='AdminTeamWiseReport-tableBodyRow container'>
-                                    <td className='col-2 AdminTeamWiseReport-tableBodyData'>{index + 1}</td>
+                                    <td className='col-1 AdminTeamWiseReport-tableBodyData'>{index + 1}</td>
+                                    <td className='col-2 AdminTeamWiseReport-tableBodyData'>{data.coachId.teamName}</td>
                                     <td className='col-4 AdminTeamWiseReport-tableBodyData'>
                                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
                                             <div style={{ display: "flex", flexDirection: 'row', gap: '8px' }}>
-                                                <h1 className='AdminTeamWiseReport-body-h1-1'>{data.coachId.name}</h1>
+                                                <h1 className='AdminTeamWiseReport-body-h1-2'>{data.eventId.name}</h1>
+
                                                 <h1 className='AdminTeamWiseReport-body-h1-2'>{data.eventId.category}</h1>
                                             </div>
                                             <div className='AdminTeamWiseReport-body-2'>
@@ -86,7 +90,7 @@ function AdminTeamWiseReport() {
                                             </div>
                                         </div>
                                     </td>
-                                    <td className='col-3 AdminTeamWiseReport-tableBodyData'>{data.score}</td>
+                                    <td className='col-2 AdminTeamWiseReport-tableBodyData'>{data.score}</td>
                                     <td className='col-3 AdminTeamWiseReport-tableBodyData-end'>{data.position}</td>
                                 </tr>
                             ))}

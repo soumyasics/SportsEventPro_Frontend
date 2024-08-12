@@ -16,6 +16,8 @@ const id=localStorage.getItem('organizerId')
     const [userData, setUserData] = useState([]);
     const url = axiosInstance.defaults.url;
     console.log("url,", url);
+    const [searchInput, setSearchInput] = useState("");
+    const [filteredData, setFilteredData] = useState([]);
     useEffect(() => {
 
         let res;
@@ -25,8 +27,11 @@ const id=localStorage.getItem('organizerId')
 
             console.log(res);
 
-            if ((res.data.data).length > 0)
+            if ((res.data.data).length > 0){
                 setUserData(res.data.data);
+            setFilteredData(res.data.data);
+            }
+
             else
                 setUserData(null)
             console.log(res.data.data);
@@ -38,7 +43,18 @@ const id=localStorage.getItem('organizerId')
     useEffect(() => {
         console.log("users", userData);
     })
-
+    const handleSearch = (event) => {
+        const { value } = event.target;
+        setSearchInput(value);
+        if (value === "") {
+            setFilteredData(userData);
+        } else {
+            const filtered = userData.filter((team) => 
+                team.name.toLowerCase().includes(value.toLowerCase())
+            );
+            setFilteredData(filtered);
+        }
+    };
     const viewDetails = (id) => {
         // navigate(`/Teamcoachdetailspopup/${id}`) replace this with correct navpath
     }
@@ -46,16 +62,22 @@ const id=localStorage.getItem('organizerId')
     return (
 
         <div className='container OrganizerViewEventsMainDivBG'>
-
-            <h1 className='OrganizerViewEvents-h1'>View All Events</h1>
-
+<div>
+            <h1 className='OrganizerViewEvents-h1 mt-5'>View All Events</h1>
+            </div>
             {/* <div className='OrganizerViewEvents-search-container'>
 
                 <input type='search' placeholder='Search Here' className='OrganizerViewEvents-search'></input>
                 <button className='OrganizerViewEvents-search-button'> <img src={img} alt=' ' /> </button>
 
             </div> */}
+            <div className = 'OrganizerViewEvents-search-container'>
 
+<input type = 'search' placeholder = 'Search Here' value={searchInput}
+    onChange={handleSearch} className = 'AdminViewTeamCoach-search'></input>
+<button className = 'OrganizerViewEvents-search-button'> <img src = {img} alt = ' '/> </button>
+
+</div>
             <table className='OrganizerViewEvents-Table container ' >
 
                 <thead>
@@ -77,7 +99,7 @@ const id=localStorage.getItem('organizerId')
 
                     {
 
-                        (userData && userData.length > 0) ? (userData.map((x, index) => {
+                        (filteredData && filteredData.length > 0) ? (filteredData.map((x, index) => {
 
                             return (
                                 <tr className='OrganizerViewEvents-tableBodyRow container' >

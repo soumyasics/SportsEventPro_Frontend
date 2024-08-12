@@ -144,7 +144,7 @@ function ViewerUpcomingDetails() {
                             <div>
                                 {teams.map(x => (
                                     <div key={x._id}>
-                                        {x.coachId.teamName}
+                                        <Link to={`/Viewer-TeamDetails/${x.coachId._id}/${userData.eventId._id}`}>{x.coachId.teamName}</Link>
                                         <br />
                                     </div>
                                 ))}

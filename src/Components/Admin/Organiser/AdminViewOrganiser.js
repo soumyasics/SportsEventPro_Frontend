@@ -45,12 +45,12 @@ function AdminViewOrganiser() {
 
             <h1 className='AdminViewOrganiser-h1'>Organiser List</h1>
 
-            <div className='AdmiViewOrganiser-search-container'>
+            {/* <div className='AdmiViewOrganiser-search-container'>
 
                 <input type='search' placeholder='Search Here' className='AdminViewOrganiser-search'></input>
                 <button className='AdminViewOrganiser-search-button'> <img src={img} alt=' ' /> </button>
 
-            </div>
+            </div> */}
 
             <table className='AdminViewOrganiser-Table container ' >
 
@@ -76,7 +76,7 @@ function AdminViewOrganiser() {
                             return (
                                 <tr className='AdminViewOrganiser-tableBodyRow container' >
 
-                                    <td className='col-2 AdminViewOrganiser-tableBodyData'>{index}</td>
+                                    <td className='col-2 AdminViewOrganiser-tableBodyData'>{++index}</td>
                                     <td className='col-2 AdminViewOrganiser-tableBodyData'>{x.name}</td>
                                     <td className='col-2 AdminViewOrganiser-tableBodyData'>{x.contact}</td>
                                     <td className='col-2 AdminViewOrganiser-tableBodyData'>{x.email} {/* Email id */}</td>

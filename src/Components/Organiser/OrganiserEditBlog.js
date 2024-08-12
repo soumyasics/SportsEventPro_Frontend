@@ -45,7 +45,21 @@ function OrganiserEditBlog() {
                 ...prevData,
                 [name]: files[0]
             }));
-        } else {
+        }
+        else if(name=='description') {
+            if(value.length<=200)
+            setData(prevData => ({
+                ...prevData,
+                [name]: value
+            }));
+            else{
+                setErrors(prevErrors => ({
+                    ...prevErrors,
+                    [name]: 'You have exceeded your text to 100 characters'
+                }));            }
+
+            }
+        else {
             setData(prevData => ({
                 ...prevData,
                 [name]: value
@@ -118,6 +132,8 @@ console.log("data",data);
                 <div>
                     <div><p className='OrganiserAddBlogs-text'>Description</p></div>
                     <input className="OrganiserAddBlogs-input3" type="text" placeholder="Description" onChange={handleChange} value={data.description} name="description" />
+                    <div><label htmlFor="myTextarea">Enter text (max 200 characters):</label><br />
+           </div> 
                     {errors.description && <div className="text-danger OrganiserAddBlogsvalidation">{errors.description}</div>}
                 </div>
                 <button className="OrganiserAddBlogs-button" type="submit">Update</button>

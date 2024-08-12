@@ -55,7 +55,7 @@ navigate(`/Teamcoachdetailspopup/${id}`)
                             return(
                                  <div className="AdminCoachRequestListElements">
 
-                                    <li className="col-1 text-end pe-3 ml-5">
+                                    <li className="col-2 text-end pe-3 ml-5">
 
                                         {/* <img src={img} alt="frame" /> */}
 
@@ -81,7 +81,7 @@ navigate(`/Teamcoachdetailspopup/${id}`)
 
                                     </li>
 
-                                    <li className="col-3 text-end">
+                                    <li className="col-2 text-end">
 
                                         <button className="btn btn-primary px-4" onClick={()=>{viewDetails(x._id)}}> View Details</button>
 
