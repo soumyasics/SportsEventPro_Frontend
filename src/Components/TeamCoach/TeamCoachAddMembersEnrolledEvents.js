@@ -8,47 +8,34 @@ import { Navigate, useNavigate ,Link} from 'react-router-dom'
 import ReactStars from 'react-stars'
 import { useParams } from 'react-router-dom'
 import toast from 'react-hot-toast'
-import img1 from '../../Assets/Search Button.svg'
 
-
-function TeamCoachEnrollNow() {
-
+function TeamCoachAddMembersEnrolledEvents() {
     const { id } = useParams()
     const navigate = useNavigate()
-    const cId=localStorage.getItem('tcId')
     const [data, setData] = useState({
 
-
         coachId: localStorage.getItem('tcId'),
-category:''
+        eventId:id,
+        memberId:''
+
+
     })
 
-    useEffect(() => {
-        axiosInstance
-            .post(`viewTeamCoachById/${cId}`)
-            .then((res) => {
-                console.log(res);
-                setData(res.data.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, [id]);
+
     const url = axiosInstance.defaults.url;
 
     const [event, setEvent] = useState([]);
 
     const [imagePreview, setImagePreview] = useState(img);
-    const [searchInput, setSearchInput] = useState("");
-    const [filteredData, setFilteredData] = useState([]);
+
     const getData = async () => {
         try {
-            const res = await axiosInstance.post(`viewUpcomingEvents`);
+            const res = await axiosInstance.post(`viewTeamMemberByCoachId/${data.coachId}`);
             // const fetchedCategory = res.data.data.category;
             // setCategory(fetchedCategory);
             setEvent(res.data.data);
             // setImagePreview(res.data.data.banner ? `${url}/${res.data.data.banner.filename}` : img);
-            setFilteredData(res.data.data);
+
             console.log(res.data.data);
 
         } catch (err) {
@@ -60,16 +47,14 @@ category:''
         getData();
         console.log(data);
     }, [id]);
-    const handleSubmit =async (id) => {
+    const handleSubmit = (id) => {
         console.log("fun called", data);
-        
-        await axiosInstance.post(`registerEnrollment/${id}`, {coachId:cId})
+        axiosInstance.post(`addTeamMembertoEvent/${id}`, data)
             .then(response => {
                 console.log(response);
                 if (response.data.status == 200) {
 
-                    toast.success("Enrollment request Send to Organizer")
-                    navigate(`/TeamCoachAddMembersEnrolledEvents/${id}`)
+                    toast.success("Member Added Successfully")
 
                 } else
                     toast.error(response.data.msg)
@@ -79,22 +64,10 @@ category:''
             .catch(error => {
                 console.error(error);
             })
-      
     }
 
 
-    const handleSearch = (e) => {
-        const { value } = e.target;
-        setSearchInput(value);
-        if (value === "") {
-            setFilteredData(event);
-        } else {
-            const filtered = event.filter((team) => 
-                team.name.toLowerCase().includes(value.toLowerCase())
-            );
-            setFilteredData(filtered);
-        }
-    };
+
 
 
 
@@ -111,22 +84,14 @@ category:''
                 <div className='col  TeamCoachEnrolledEvents-headercontainer-container-1'>
 
                 <Link to='/TeamCoachHomePage'>    <button className='TeamCoachEnrolledEvents-headercontainer-BackButton'><img src={img2} alt=' ' /></button></Link>
-                    <h1 className='TeamCoachEnrolledEvents-headercontainer-h1'>Upcoming Events</h1>
+                    <h1 className='TeamCoachEnrolledEvents-headercontainer-h1'>Team Members</h1>
 
                 </div>
 
-
-                <div className = 'AdmiViewTeamCoach-search-container'>
-
-<input type = 'search' placeholder = 'Search Here' value={searchInput}
-    onChange={handleSearch} className = 'AdminViewTeamCoach-search'></input>
-<button className = 'AdminViewTeamCoach-search-button'> <img src = {img1} alt = ' '/> </button>
-
-</div>
                 {/* div containing the card */}
                 <div >
 
-                    <div className='TeamCoachEnrolledEvents-content mt-5'> {/* <--- array map this div or outside this div. Do not remove 
+                    <div className='TeamCoachEnrolledEvents-content'> {/* <--- array map this div or outside this div. Do not remove 
                         class or create a div inside otherwise the page will break*/}
 
                         {/*a single card is from here to */}
@@ -134,13 +99,13 @@ category:''
 
 
 
-    (filteredData&&filteredData.length >= 1)?(filteredData.map((x, index) => {
+    (event&&event.length >= 1)?(event.map((x, index) => {
 
 
         return (
                         <div className="card TeamCoachEnrolledEvents-content-contain">
 
-                            <img src={`${url}/${x?.banner?.filename}`} className="card-img-top TeamCoachEnrolledEvents-img" alt="..." />{/*event image */}
+                            <img src={`${url}/${x?.photo?.filename}`} className="card-img-top TeamCoachEnrolledEvents-img" alt="..." />{/*event image */}
 
                             <div className="card-body">
 
@@ -161,9 +126,10 @@ category:''
 
                                 <div className="card-text">
                                     <div className='row'>
-                                         <p className='CardTextP'>{x.name} is Organized by {x.organizerId.name}. Don't Miss the Opurtunity of Participation !!</p>{/* event description */}
-                                         <div className='col'> <h2 className='CardTextH2'>{x.date.slice(0,10)} &nbsp; {x.time}</h2> {/* event date and time */}
-                                    </div>  <div className='col'></div>   <button className='btn btn-secondary' onClick={()=>{handleSubmit(x._id)}}>Enroll Now</button>
+                                         <p className='CardTextP'>{x.email}</p>
+                                          <div className='col'> 
+                                            <h2 className='CardTextH2'>Contact : {x.contact} &nbsp; {x.time}</h2> 
+                                    </div>  <div className='col'></div>   <button className='btn btn-secondary' onClick={()=>{handleSubmit(x._id)}}>Add</button>
                                 </div>
                             </div>
 
@@ -242,4 +208,5 @@ category:''
         )
 
 }
-export default TeamCoachEnrollNow
+
+export default TeamCoachAddMembersEnrolledEvents

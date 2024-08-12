@@ -102,7 +102,7 @@ getData()
 return(
             <tr className = 'AdminEnquiriesViewpage-tableBodyRow' >
 
-                <td className = 'col-2 AdminEnquiriesViewpage-tableBodyData'>{index}</td>
+                <td className = 'col-2 AdminEnquiriesViewpage-tableBodyData'>{++index}</td>
                 <td className = 'col-2 AdminEnquiriesViewpage-tableBodyData'>{x.name}</td>
                 <td className = 'col-2 AdminEnquiriesViewpage-tableBodyData'>{x.email}</td>
                 <td className = 'col-2 AdminEnquiriesViewpage-tableBodyData'>{x.enquiriestype} {/* Email id */}</td>

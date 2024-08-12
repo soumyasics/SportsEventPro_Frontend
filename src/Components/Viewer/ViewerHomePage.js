@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ViewerHomePage.css'
 import img2 from "../../Assets/Teamcoachhomepage_5.jpeg"
 import img3 from "../../Assets/Teamcoachhomepage_6.jpeg"
@@ -12,9 +12,48 @@ import img10 from '../../Assets/image 4.png'
 import img11 from '../../Assets/image 3.png'
 import img12 from '../../Assets/image 15.png'
 import { Link } from 'react-router-dom'
-
+import axiosInstance from '../Constant/BaseURL'
 function ViewerHomePage() {
 
+    const [userData, setUserData] = useState([]);
+    const [sportData, setsportData] = useState([]);
+
+    const id = localStorage.getItem('viewerId')
+
+
+    useEffect(() => {
+        console.log("VGDFGFD");
+        axiosInstance.post('/getValidTickets')
+            .then(res => {
+                console.log("DATA", res.data.data);
+                setUserData(res.data.data);
+
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
+    useEffect(() => {
+
+        let res;
+
+
+        axiosInstance.post(`getEventSuggestionsForViewer/${id}`).then(res => {
+
+            console.log(res);
+
+            if ((res.data.data) && (res.data.data).length > 0) {
+                setsportData(res.data.data);
+                console.log("datas", res.data.data);
+            }
+            else
+                setsportData(null)
+            console.log(res.data.data);
+        }).catch(err => {
+            console.log(err);
+        })
+
+    }, []);
 
     return (
 
@@ -27,23 +66,23 @@ function ViewerHomePage() {
 
                     <div class="carousel slide carousel-fade ViewerHomePage-Carousel" data-bs-ride="carousel" data-bs-interval="2000" >
 
-                        <div class="carousel-inner" style={{height:"100%"}}>
+                        <div class="carousel-inner" style={{ height: "100%" }}>
 
                             <div class="carousel-item active">
 
-                                <img src={img10} class="w-100" style= {{ height: "80%" }} alt="..." />
+                                <img src={img10} class="w-100" style={{ height: "80%" }} alt="..." />
 
                             </div>
 
                             <div class="carousel-item">
 
-                                <img src={img11} class="w-100" style= {{ height: "80%" }} alt="..." />
+                                <img src={img11} class="w-100" style={{ height: "80%" }} alt="..." />
 
                             </div>
 
                             <div class="carousel-item">
 
-                                <img src={img12} class="w-100" style= {{ height: "80%" }} alt="..." />
+                                <img src={img12} class="w-100" style={{ height: "80%" }} alt="..." />
 
                             </div>
 
@@ -73,7 +112,7 @@ function ViewerHomePage() {
 
                     <div>
 
-                        <Link to='/ViewerUpcoming' style={{textDecoration:'none'}}><button type="button" class="btn btn-outline-light ViewerHomePage-Div-Header-Text-Button">Book Now</button></Link>
+                        <Link to='/ViewerUpcoming' style={{ textDecoration: 'none' }}><button type="button" class="btn btn-outline-light ViewerHomePage-Div-Header-Text-Button">Book Now</button></Link>
 
                     </div>
 
@@ -98,60 +137,89 @@ function ViewerHomePage() {
                     <div className='ViewerHomepage-Card-Contain'>
 
                         {/* CARD NO. 1 */}
-                        <div className="card rounded-2 ViewerHomePage-Card-Start">
 
-                            <img src={img2} className="card-img-top ViewerHomePage-Card-Img " alt="..." />
+                        {
 
-                            <div className="card-body rounded-2 ViewerHomePage-Card-Body">
+                            (userData && userData.length >= 1) ? (userData.map((x, index) => {
 
-                                <p className="card-text ViewerHomePage-Card-Body-Text-1 ">Soccer Tournament</p>
-                                <p className='ViewerHomePage-Card-Body-Text-2'>7:30 pm / 2-11 September</p>
+                                return (
+                                    <>
+                                        <Link to={`/ViewerUpcoming`} style={{ textDecoration: 'none' }}> <div className="card rounded-2 ViewerHomePage-Card-Start">
 
-                            </div>
+                                            <img src={`${axiosInstance.defaults.url}/${x?.eventId?.banner?.filename}`} className="card-img-top ViewerHomePage-Card-Img " alt="..." />
 
-                        </div>
+                                            <div className="card-body rounded-2 ViewerHomePage-Card-Body">
 
-                        {/* CARD NO. 2 */}
-                        <div className="card rounded-2 ViewerHomePage-Card">
+                                                <p className="card-text ViewerHomePage-Card-Body-Text-1 ">{x?.eventId?.name}</p>
+                                                <p className="card-text ViewerHomePage-Card-Body-Text-1 ">Category : {x?.eventId?.category}</p>
 
-                            <img src={img3} className="card-img-top ViewerHomePage-Card-Img " alt="..." />
+                                                <p className='ViewerHomePage-Card-Body-Text-2'>{x?.eventId?.time}/ {x?.eventId?.date.slice(0, 10)}</p>
 
-                            <div className="card-body rounded-2 ViewerHomePage-Card-Body">
+                                            </div>
 
-                                <p className="card-text ViewerHomePage-Card-Body-Text-1 ">Volleyball Tournament</p>
-                                <p className='ViewerHomePage-Card-Body-Text-2'>5:30 pm / 2-11 september</p>
+                                        </div></Link>
+                                    </>
+                                )
+                            })
+                            ) : (
+                                <>
+                                    <div className="card rounded-2 ViewerHomePage-Card-Start">
 
-                            </div>
+                                        <img src={img2} className="card-img-top ViewerHomePage-Card-Img " alt="..." />
 
-                        </div>
+                                        <div className="card-body rounded-2 ViewerHomePage-Card-Body">
 
-                        {/* CARD NO. 3 */}
-                        <div className="card rounded-2 ViewerHomePage-Card">
+                                            <p className="card-text ViewerHomePage-Card-Body-Text-1 ">Soccer Tournament</p>
+                                            <p className='ViewerHomePage-Card-Body-Text-2'>7:30 pm / 2-11 September</p>
 
-                            <img src={img4} className="card-img-top ViewerHomePage-Card-Img " alt="..." />
+                                        </div>
 
-                            <div className="card-body rounded-2 ViewerHomePage-Card-Body">
+                                    </div>
+                                    {/* CARD NO. 2 */}
+                                    <div className="card rounded-2 ViewerHomePage-Card">
 
-                                <p className="card-text ViewerHomePage-Card-Body-Text-1 ">Tennis Tournament</p>
-                                <p className='ViewerHomePage-Card-Body-Text-2'>6:30 pm/2-11 December</p>
+                                        <img src={img3} className="card-img-top ViewerHomePage-Card-Img " alt="..." />
 
-                            </div>
+                                        <div className="card-body rounded-2 ViewerHomePage-Card-Body">
 
-                        </div>
+                                            <p className="card-text ViewerHomePage-Card-Body-Text-1 ">Volleyball Tournament</p>
+                                            <p className='ViewerHomePage-Card-Body-Text-2'>5:30 pm / 2-11 september</p>
 
-                        {/* CARD NO. 4 */}
-                        <div className="card rounded-2 ViewerHomePage-Card">
+                                        </div>
 
-                            <img src={img5} className="card-img-top ViewerHomePage-Card-Img " alt="..." />
+                                    </div>
 
-                            <div className="card-body rounded-2 ViewerHomePage-Card-Body">
+                                    {/* CARD NO. 3 */}
+                                    <div className="card rounded-2 ViewerHomePage-Card">
 
-                                <p className="card-text ViewerHomePage-Card-Body-Text-1 ">Football Tournament</p>
-                                <p className='ViewerHomePage-Card-Body-Text-2'>6:30 pm/2-11 November</p>
+                                        <img src={img4} className="card-img-top ViewerHomePage-Card-Img " alt="..." />
 
-                            </div>
+                                        <div className="card-body rounded-2 ViewerHomePage-Card-Body">
 
-                        </div>
+                                            <p className="card-text ViewerHomePage-Card-Body-Text-1 ">Tennis Tournament</p>
+                                            <p className='ViewerHomePage-Card-Body-Text-2'>6:30 pm/2-11 December</p>
+
+                                        </div>
+
+                                    </div>
+
+                                    {/* CARD NO. 4 */}
+                                    <div className="card rounded-2 ViewerHomePage-Card">
+
+                                        <img src={img5} className="card-img-top ViewerHomePage-Card-Img " alt="..." />
+
+                                        <div className="card-body rounded-2 ViewerHomePage-Card-Body">
+
+                                            <p className="card-text ViewerHomePage-Card-Body-Text-1 ">Football Tournament</p>
+                                            <p className='ViewerHomePage-Card-Body-Text-2'>6:30 pm/2-11 November</p>
+
+                                        </div>
+
+                                    </div>
+
+                                </>
+                            )
+                        }
 
                     </div>
 
@@ -192,7 +260,7 @@ function ViewerHomePage() {
 
                         <div>
 
-                            <Link to='/ViewerUpcoming' style={{textDecoration:'none'}}><button className='btn btn-light rounded-4 ViewerHomePage-Text-Contain-Button-1'>Book Now</button></Link>
+                            <Link to='/ViewerUpcoming' style={{ textDecoration: 'none' }}><button className='btn btn-light rounded-4 ViewerHomePage-Text-Contain-Button-1'>Book Now</button></Link>
 
                         </div>
 
@@ -211,6 +279,9 @@ function ViewerHomePage() {
             {/* Enroll for events section end */}
 
             {/* suggestions for you section start */}
+
+
+
             <div className='ViewerHomePage-PrioDiv-4'>
 
                 <div className='ViewerHomePage-PrioDiv-4-imgcontain'>
@@ -227,32 +298,62 @@ function ViewerHomePage() {
 
                         <div className='ViewerHomePage-img-contain'>
 
-                            <div className='card'>
+                            {console.log(sportData)
+                            }
+                            {
 
-                                <img src={img8} alt=' ' className='rounded-top' />
+                                (sportData && sportData.length >= 1) ? (sportData.map((x, index) => {
 
-                                <div className='card-body ViewerHomePage-img-cardtext-contain'>
+                                    return (
+                                        <>
+                                            <div className='card'>
 
-                                    <h1 className='card-title ViewerHomePage-img-cardtext-1'>local cricket match</h1>
-                                    <p className='card-text ViewerHomePage-img-cardtext-2'>next week</p>
+                                                <img src={`${axiosInstance.defaults.url}/${x?.eventId?.banner?.filename}`} className="card-img-top ViewerHomePage-Card-Img " alt="..." />
 
-                                </div>
+                                                <div className='card-body ViewerHomePage-img-cardtext-contain'>
 
-                            </div>
+                                                    <h1 className='card-title ViewerHomePage-img-cardtext-1'>{x?.eventId?.name}</h1>
+                                                    <p className="card-text ViewerHomePage-Card-Body-Text-1 ">Category : {x?.eventId?.category}</p>
 
-                            <div className='card'>
+                                                    <p className='ViewerHomePage-Card-Body-Text-2'>{x?.eventId?.time}/ {x?.eventId?.date.slice(0, 10)}</p>
 
-                                <img src={img9} alt=' ' className='rounded-top' />
+                                                </div>
 
-                                <div className='card-body ViewerHomePage-img-cardtext-contain'>
+                                            </div>
+                                        </>
 
-                                    <h1 className='card-title ViewerHomePage-img-cardtext-1'>Foot Ball Event</h1>
-                                    <p className='card-text ViewerHomePage-img-cardtext-2'>Coming soon</p>
+                                    )
+                                })) : (
+                                    <>
 
-                                </div>
+                                        <div className='card'>
 
-                            </div>
+                                            <img src={img8} alt=' ' className='rounded-top' />
 
+                                            <div className='card-body ViewerHomePage-img-cardtext-contain'>
+
+                                                <h1 className='card-title ViewerHomePage-img-cardtext-1'>local cricket match</h1>
+                                                <p className='card-text ViewerHomePage-img-cardtext-2'>next week</p>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div className='card'>
+
+                                            <img src={img9} alt=' ' className='rounded-top' />
+
+                                            <div className='card-body ViewerHomePage-img-cardtext-contain'>
+
+                                                <h1 className='card-title ViewerHomePage-img-cardtext-1'>Foot Ball Event</h1>
+                                                <p className='card-text ViewerHomePage-img-cardtext-2'>Coming soon</p>
+
+                                            </div>
+
+                                        </div>
+                                    </>
+                                )
+                            }
                         </div>
 
                     </div>

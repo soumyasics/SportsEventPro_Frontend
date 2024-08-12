@@ -127,28 +127,10 @@ function TeamCoachEditProfile() {
                     </div>
 
                     <div className='row TeamCoachEditProfilediv-3 TeamCoachEditProfileimpdiv-style'>
-                        <div className='col-4'>
-                            <div className='row TeamCoachEditProfilemainrow-1'>
-                                <div className='col-2'>
-                                    <img className='TeamCoachEditProfilecommon-style-1' src={img1} alt=''></img>
-                                </div>
-                                <div className='col-5'>
-                                    <label className='TeamCoachEditProfilelabel'>Contact Number</label>
-                                </div>
-                                <div className='col-5'>
-                                    <input
-                                        className='TeamCoachEditProfilelabel-2 TeamCoachEditProfileimg-2-backend'
-                                        type='text'
-                                        name='contact'
-                                        value={data.contact}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                            </div>
-                        </div>
+                    
 
                         <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
-                            <div className='row TeamCoachEditProfilemainrow-1'>
+                            {/* <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
                                     <img className='TeamCoachEditProfilecommon-style-1' src={img6} alt=''></img>
                                 </div>
@@ -168,7 +150,7 @@ function TeamCoachEditProfile() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
@@ -216,7 +198,7 @@ function TeamCoachEditProfile() {
 
                     <div className='row TeamCoachEditProfilediv-5 TeamCoachEditProfileimpdiv-style'>
                         <div className='col-4'>
-                            <div className='row TeamCoachEditProfilemainrow-1'>
+                            {/* <div className='row TeamCoachEditProfilemainrow-1'>
                                 <div className='col-2'>
                                     <img className='TeamCoachEditProfilecommon-style-1' src={img7} alt=''></img>
                                 </div>
@@ -232,7 +214,26 @@ function TeamCoachEditProfile() {
                                         onChange={handleChange}
                                     />
                                 </div>
+                            </div> */}
+                                <div className='col-4'>
+                            <div className='row TeamCoachEditProfilemainrow-1'>
+                                <div className='col-2'>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img1} alt=''></img>
+                                </div>
+                                <div className='col-5'>
+                                    <label className='TeamCoachEditProfilelabel'>Contact Number</label>
+                                </div>
+                                <div className='col-5'>
+                                    <input
+                                        className='TeamCoachEditProfilelabel-2 TeamCoachEditProfileimg-2-backend'
+                                        type='text'
+                                        name='contact'
+                                        value={data.contact}
+                                        onChange={handleChange}
+                                    />
+                                </div>
                             </div>
+                        </div>
                         </div>
                         <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
                             <div className='row TeamCoachEditProfilemainrow-1'>
@@ -367,7 +368,7 @@ function TeamCoachEditProfile() {
 
                     <div className='row TeamCoachEditProfilediv-10'>
                         <div className='col'>
-                            <button className='TeamCoachEditProfilebutton-1' onClick={handleUpdate}>Update</button>
+                            <button className='TeamCoachEditProfilebutton-1 btn btn-primary' onClick={handleUpdate}>Update</button>
                         </div>
                     </div>
                 </div>

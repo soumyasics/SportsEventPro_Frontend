@@ -54,7 +54,6 @@
 .OViewerBlogsimgDiv-contain {
 
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     margin-left: 50px;
 
@@ -93,7 +92,8 @@
     align-items: flex-start;
     gap: 12px;
     align-self: stretch;
-
+    padding: 10px;
+margin-left: 5px;
 }
 
 .OViewerBlogsimgDiv-content-1 {
@@ -151,7 +151,7 @@
 
 .OViewerBlogsimgDiv-content-1-h1-3 {
 
-    height: 56.152px;
+    height: 150px;
     align-self: stretch;
     overflow: hidden;
     color: #000000;
@@ -173,7 +173,7 @@
 .OrgEditButton {
 
     display: flex;
-    width: 150px;
+    width: 70px;
     padding: 12px;
     flex-direction: column;
     justify-content: center;
@@ -185,15 +185,15 @@
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
+    font-weight: 450;
+    line-height: 14px;
 
 }
 
 .OrgRemoveButton {
 
     display: flex;
-    width: 150px;
+    width: 80px;
     padding: 12px;
     flex-direction: column;
     justify-content: center;
@@ -205,7 +205,7 @@
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
+    font-weight: 450;
+    line-height: 14px;
 
 }

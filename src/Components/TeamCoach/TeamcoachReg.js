@@ -156,10 +156,17 @@ function TeamcoachReg() {
     };
 
     function validateContact(fieldName, value) {
+        const numberRegex = /^(?=.*\d)\d+$/;
+
         if (!value.trim()) {
             formIsValid = false;
             return `${fieldName} is required`;
-        } else if (value.length !== 10) {
+        } else 
+        if (!numberRegex.test(value)) {
+            
+                 formIsValid = false;
+        return "Contact Number must contain numbers Only"
+            }else if (value.length !== 10) {
             formIsValid = false;
             return 'Please enter a valid Contact Number';
         }
@@ -167,22 +174,60 @@ function TeamcoachReg() {
     }
 
     function validatePincode(fieldName, value) {
+        const numberRegex = /^(?=.*\d)\d+$/;
+
         if (!value.trim()) {
             formIsValid = false;
             return `${fieldName} is required`;
-        } else if (value.length !== 6) {
+        }else 
+            if (!numberRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "Pincode must contain numbers Only"
+                }
+          else if (value.length !== 6) {
             formIsValid = false;
             return 'Please enter a valid pincode';
         }
+        
         return '';
     }
 
 
     const validateField = (fieldName, value) => {
+
+        const nameRegex = /^[A-Za-z\s]+$/;
+        const nRegex =  /^(?=.*[A-Za-z])[A-Za-z0-9\s]+$/;
+
+
         if (!value.trim()) {
             formIsValid = false;
             return `${fieldName} is required`;
         }
+         if (fieldName === "Name"){
+            if (!nameRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "Name must contain alphabets Only"
+                }
+         }
+         if (fieldName === "City"){
+            
+            if (!nRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "City must contain alphanumerics Only"
+                }
+         }
+         if (fieldName === "Teamname"){
+            if (!nRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "Teamname must contain alphanumerics Only"
+                }
+         }
+      
+        
         if (fieldName === "Email" && !value.endsWith("@gmail.com")) {
             formIsValid = false;
             return "Email must be a valid Email address"

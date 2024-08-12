@@ -70,18 +70,26 @@ function ViewerBookedTickets() {
 
                 {/* div containing the card */}
                 <div >
-
+{console.log("userData",userData)
+}
                     <div className='ViewerBookedTickets-content'> {/* <--- array map in this div. Do not remove class or the page will break*/}
 
                         {/*a single card is from here to */}
-                        {userData.map((e, index) => (
+                        {userData.map((e, index) => {
+console.log("kkk",e.ticketCount);
 
+const today = new Date();
+    const eventDate = new Date(e.eventId.date);
+       const isToday = today.toDateString() === eventDate.toDateString();
+    const isPastOrToday = eventDate <= today;
+    return(
                         <div className="card ViewerBookedTickets-content-contain">
 
                             <div className='ViewerBookedTickets-content-contain-overlay'>
                                 <h1 className='ViewerBookedTickets-content-contain-h1-1'>Match On</h1>
                                 <h1 className='ViewerBookedTickets-content-contain-h1-2'>{e.eventId.date.slice(0,10)}</h1>
-
+{                                console.log("kkk 4",e.ticketCount)
+}
                             </div>
                             <img src={`${axiosInstance.defaults.url}/${e?.eventId?.banner?.filename}`}className="card-img-top ViewerBookedTickets-img" alt="..." />{/*event image */}
 
@@ -95,12 +103,14 @@ function ViewerBookedTickets() {
 
                                         {/* <h1 className='CardHeadTxtH1-1'>TVM Junior Sports</h1> */}
                                         <h1 className='CardHeadTxtH1'>{e.eventId.category}</h1>{/* event category */}
-                                        <div>
+                                        {isPastOrToday && (
+  <div>
                                           
                                             <button className='ViewerBookedTxtButton1' data-bs-toggle="modal" data-bs-target="#Rating-Modal"
                                                         onClick={() => setSelectedEventId(e.eventId._id)}>
                                                             Add Review & Rating</button>
                                         </div>
+                                        )}
                                     </div>
 
                                     <div style={{ display: "flex", flexDirection: 'row' }}>
@@ -126,7 +136,8 @@ function ViewerBookedTickets() {
                             </div>
 
                         </div>
-                        ))
+    )
+})
                     }
                         {/* here is a single card  */}
       {/* Modal for adding rating and review */}

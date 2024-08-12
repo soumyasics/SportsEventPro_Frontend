@@ -216,54 +216,54 @@
     border: 1px solid white;
     border-radius: 20px;
 }
-
-/* .TeamCoach-modal-header, .TeamCoach-modal-footer {
-    border-bottom: 1px solid white; 
-    border-top: 1px solid white; 
-} */
-
-.TeamCoach-btn-close {
-    filter: invert(1); /* Makes the close button white */
-}
-/* Modal.css */
 .tc_modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 20px;
-
     background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-  }
-  
-  .tc_modal-content {
+}
+
+/* Style for the modal content */
+.tc_modal-content {
     background: rgb(31, 30, 30);
+    color: white;
     padding: 20px;
-    border-radius: 5px;
-    width: 400px;
-    color:white;
-    max-width: 100%;
+    border-radius: 20px;
+    max-width: 90vw; /* Responsive width */
+    max-height: 80vh; /* Responsive height */
+    overflow-y: auto; /* Enable vertical scrolling */
     position: relative;
-  }
-  
-  .tc_modal-close {
-    /* position: absolute; */
+}
+
+/* Close button styling */
+.tc_modal-close {
+    position: absolute;
     top: 10px;
     right: 10px;
     background: none;
     border: none;
-    color:white;
+    color: white;
     font-size: 20px;
     cursor: pointer;
-  }
-  .tc_border {
-    padding: 20px;
+}
 
-  border:1px solid white;
-  border-radius: 20px;
-  }
+/* Modal border styling */
+.tc_border {
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+/* Flex container for alignment */
+.TeamCoach-modal-body-in {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    align-self: stretch;
+}

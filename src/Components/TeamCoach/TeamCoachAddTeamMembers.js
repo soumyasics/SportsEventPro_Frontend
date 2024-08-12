@@ -105,7 +105,11 @@ const TeamCoachAddTeamMembers = () => {
         }
         return '';
     };
-
+    const validateImageField = (fieldName, file) => {
+        if (!file) {
+            return `${fieldName} is required`;
+        }
+    }
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -119,6 +123,7 @@ const TeamCoachAddTeamMembers = () => {
         errors.state = validateField('State', data.state);
         errors.address = validateField('Address', data.address);
         errors.city = validateField('City', data.city);
+        errors.photo = validateImageField('Image', data.photo);
 
         setErrors(errors);
 
@@ -127,7 +132,7 @@ console.log("err",formIsValid);
         if (formIsValid) {
             try {
                 
-                const res = await axiosMultipartInstance.post(`registerTeamMember/${id}`, data);
+                const res = await axiosMultipartInstance.post(`addTeamMembers/${id}`, data);
                 console.log(res);
                 if (res.data.status === 200) {
                     toast.success("Member added Successfully");
@@ -164,7 +169,9 @@ console.log("err",formIsValid);
                            
                         }} />                            <input type='file' className='TeamCoachAddTeamMembers-headercontainer-container-2-editimgbutton'  onChange={handleImageChange}/>
                             <img src={img2} alt='' className='TeamCoachAddTeamMembers-headercontainer-container-2-editimg-icon' />
-                        </div>
+                      
+                            {errors.photo && <div className="text-danger TeamCoachAddTeamMembers-validation">{errors.photo}</div>}
+                            </div>
                     </div>
 
                     <div className='row TeamCoachAddTeamMembers-body'>

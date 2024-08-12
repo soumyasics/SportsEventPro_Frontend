@@ -99,7 +99,7 @@ getData()
                                         <div className='OViewerBlogsimgDiv-content-1'>
 
                                             <h1 className='OViewerBlogsimgDiv-content-1-h1'>{x.title}</h1>
-                                            {/* <h1 className='OViewerBlogsimgDiv-content-1-h1-2'>{x.date.slice(0,10)}</h1> */}
+                                            <h1 className='OViewerBlogsimgDiv-content-1-h1-2'>{x.date.slice(0,10)}</h1>
                                             <h1 className='OViewerBlogsimgDiv-content-1-h1-3'>{x.description}</h1>
 
                                         </div>
