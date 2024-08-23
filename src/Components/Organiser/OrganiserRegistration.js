@@ -119,6 +119,10 @@ function OrganiserRegistration() {
             ...prevErrors,
             [name]: ''
         }));
+
+
+
+        
     };
 
     function validateContact(fieldName, value) {

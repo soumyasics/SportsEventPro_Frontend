@@ -23,6 +23,14 @@ function OrganiserTicketGen2() {
             organizerId: id,
             amount: ''
         });
+        const [errors, setErrors] = useState({
+            startDate: '',
+            endDate: '',
+            seatingCapacity: '',
+            eventId: '',
+          amount:''
+        })
+        let formIsValid;
         const url = axiosInstance.defaults.url;
         console.log("url,", url);
 
@@ -39,7 +47,7 @@ function OrganiserTicketGen2() {
     
                 if ((res.data.data)){
                     setEveData(res.data.data);
-                    console.log("eve data",res.data.data);
+                    console.log("eve data",res.data.data.date );
                     const date = res.data.data.date ? new Date(res.data.data.date).toISOString().split('T')[0] : '';
                     setFormattedDate(date);
                 }
@@ -86,9 +94,39 @@ function OrganiserTicketGen2() {
         }
     };
 
+    const validateField = (fieldName, value) => {
+    
+
+        if (!value || !value.trim()) {
+            formIsValid = false;
+            return `${fieldName} is required`;
+        }
+        if (fieldName === "Amount"){
+            if (value<=0) {
+                
+                     formIsValid = false;
+            return "Amount must be a Non-Zero Digit"
+                }
+         }
+       
+        return '';
+    };
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
+        let errors = {};
+        formIsValid = true;
+
+        errors.seatingCapacity = validateField('Seating Capacity', formData.seatingCapacity);
+        errors.amount = validateField('Amount', formData.amount);
+        errors.startDate = validateField('Start Date', formData.startDate)
+        errors.endDate = validateField('End Date', formData.endDate)
+        errors.eventId = validateField('Event', formData.eventId)
+
+        setErrors(errors);
+
+        if (formIsValid) {
+          
         axiosInstance.post('registerTicket ', formData)
 
         .then(response => {
@@ -107,7 +145,7 @@ function OrganiserTicketGen2() {
                 toast.error(response.data.msg)
 
             }
-
+        
 
         })
 
@@ -116,6 +154,7 @@ function OrganiserTicketGen2() {
             console.error(error);
 
         })
+    }
     };
 
     return (
@@ -156,6 +195,8 @@ function OrganiserTicketGen2() {
                                         <option>No Events available</option>
                                     )}
                                 </select>
+                                {errors.eventId && <div className="text-danger ">{errors.eventId}</div>}
+
                             </div>
 
                             <div>
@@ -169,7 +210,10 @@ function OrganiserTicketGen2() {
                                     value={formData.startDate}
                                     onChange={handleChange}
                                 />
+                                
                             </div>
+                            {errors.startDate && <div className="text-danger ">{errors.startDate}</div>}
+
                         </div>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
@@ -184,6 +228,7 @@ function OrganiserTicketGen2() {
                                     onChange={handleChange}
                                 />
                             </div>
+                            {errors.seatingCapacity && <div className="text-danger ">{errors.seatingCapacity}</div>}
 
                             <div>
                                 <label className='OrganiserTicketGen2-label-h1'>Ticket Closing Date</label>
@@ -197,6 +242,8 @@ function OrganiserTicketGen2() {
                                     onChange={handleChange}
                                 />
                             </div>
+                            {errors.endDate && <div className="text-danger ">{errors.endDate}</div>}
+
                         </div>
                     </div>
 
@@ -211,6 +258,8 @@ function OrganiserTicketGen2() {
                             onChange={handleChange}
                         />
                     </div>
+                    {errors.amount && <div className="text-danger ">{errors.amount}</div>}
+
 
                     <div>
                         <button type='submit' className='OrganiserTicketGen2-button'>Generate</button>
