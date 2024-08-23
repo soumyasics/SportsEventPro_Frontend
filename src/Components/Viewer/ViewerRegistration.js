@@ -307,7 +307,7 @@ function ViewerRegistration() {
                                     </div>
 
                                     <div className='ms-3'>
-                                        <input type='radio' name='gender' id='other' value='Other' onChange={handleChange} checked={data.gender === 'Other'}/>
+                                        <input type='radio' name='gender' id='other' value='Other' onChange={handleChange} checked={data.gender ==='Other'}/>
                                         <label className='ms-1' />Other
                                     </div>
 

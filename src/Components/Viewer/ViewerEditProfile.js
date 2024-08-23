@@ -29,9 +29,31 @@ import toast from 'react-hot-toast'
 function ViewerEditProfile() {
     const url = axiosInstance.defaults.url;
     const navigate = useNavigate()
-    const [userData, setUserData] = useState({});
+    const [userData, setUserData] = useState({
+        name:'',
+        gender:'', 
+        address:"", 
+        pincode:'', 
+        city:'', 
+        state:'', 
+        country:'', 
+        contact:'', 
+        email:'', });
     const id = localStorage.getItem('viewerId')
+    const [errors, setErrors] = useState({
 
+        name:'',
+        gender:'', 
+        address:"", 
+        pincode:'', 
+        city:'', 
+        state:'', 
+        country:'', 
+        contact:'', 
+        email:'', 
+        password:'',
+        confirmpassword:''
+    })
     useEffect(() => {
         axiosInstance.post(`viewviewersById/${id}`).then(res => {
             setUserData(res.data.data);
@@ -40,7 +62,7 @@ function ViewerEditProfile() {
         })
     }, [id]);
 
-
+    let formIsValid = true;
 
     const handleChange = (event) => {
         console.log("ty", event.target.type);
@@ -61,9 +83,92 @@ function ViewerEditProfile() {
         }
 
     };
+    function validateContact(fieldName, value) {
+        const numberRegex = /^(?=.*\d)\d+$/;
 
+       
+        if (!numberRegex.test(value)) {
+            
+                 formIsValid = false;
+        return "Contact Number must contain numbers Only"
+            } 
+        else if (value.length !=10) {
+            formIsValid = false;
+
+            return 'Please enter a valid Contact Number';
+        }
+        return '';
+    }
+
+    function validatePincode(fieldName, value) {
+        console.log("in validate");
+        
+        const numberRegex = /^(?=.*\d)\d+$/;
+
+      console.log(value.toString().length);
+       
+        if (!numberRegex.test(value)) {
+            
+                 formIsValid = false;
+        return "Pincode must contain numbers Only"
+            }else if (value.toString().length != 6) {
+            formIsValid = false;
+
+            return 'Please enter a valid Pincode';
+        }
+        return '';
+    }
+
+
+    const validateField = (fieldName, value) => {
+   
+        const nRegex =  /^(?=.*[A-Za-z])[A-Za-z0-9\s]+$/;
+        const nameRegex = /^[A-Za-z\s]+$/;
+        const twoDigitRegex = /^\d{0,2}$/;
+        if (!value || !value.trim()) {
+            formIsValid = false;
+            return `${fieldName} is required`;
+        }
+
+        if (fieldName === "Name"){
+            if (!nameRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "Name must contain alphabets Only"
+                }
+         }
+         if (fieldName === "City"){
+            
+            if (!nameRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "City must contain alphabets Only"
+                }
+         }
+        if (fieldName === "Email" && !value.endsWith("@gmail.com")) {
+            formIsValid = false;
+
+            return "Email must be a valid Email address"
+        }
+        return '';
+    };
 
     const handleUpdate = () => {
+
+        let errors = {};
+         formIsValid = true;
+
+        errors.email = validateField('Email', userData.email);
+        errors.name = validateField('Name', userData.name);
+        errors.contact = validateContact('Contact number', userData.contact)
+        errors.pincode = validatePincode('Pincode', userData.pincode);
+        errors.state = validateField('States', userData.state)
+        errors.address = validateField('Address', userData.address);
+        errors.city = validateField('City', userData.city);
+        errors.country = validateField('Country', userData.country);
+        setErrors(errors);
+
+if(formIsValid){
         axiosInstance
             .post(`editviewersById/${id}`, userData)
             .then((res) => {
@@ -77,7 +182,7 @@ function ViewerEditProfile() {
                 console.log(err);
             });
     }
-
+    }
     return (
         <div className='container'>
             <div className='row viewer-dit-prof-text'>
@@ -104,6 +209,8 @@ function ViewerEditProfile() {
                             <input type="text" className='viewer-dit-prof-text' name="name" value={userData.name || ''} onChange={handleChange} />
                         </div>
                     </div>
+                    {errors.name && <div className="text-danger ">{errors.name}</div>}
+
                 </div>
 
                 <div className='col ViewerViewProfilemainrow-right-1'>
@@ -134,6 +241,8 @@ function ViewerEditProfile() {
                             <input type="text" className='viewer-dit-prof-text' name="contact" value={userData.contact || ''} onChange={handleChange} />
                         </div>
                     </div>
+                    {errors.contact && <div className="text-danger ">{errors.contact}</div>}
+
                 </div>
 
                 <div className='col ViewerViewProfilemainrow-right-1'>
@@ -145,9 +254,12 @@ function ViewerEditProfile() {
                             <label className='ViewerViewProfilelabel'>Pincode</label>
                         </div>
                         <div className='col-5'>
-                            <input type="text" className='viewer-dit-prof-text' name="pincode" value={userData.pincode || ''} onChange={handleChange} />
+                            <input type="text" className='viewer-dit-prof-text' name="pincode" value={userData.pincode} onChange={handleChange} />
                         </div>
+
                     </div>
+                    {errors.pincode && <div className="text-danger ">{errors.pincode}</div>}
+
                 </div>
             </div>
 
@@ -164,6 +276,8 @@ function ViewerEditProfile() {
                             <input type="text" className='viewer-dit-prof-text' name="email" value={userData.email || ''} onChange={handleChange} />
                         </div>
                     </div>
+                    {errors.email && <div className="text-danger ">{errors.email}</div>}
+
                 </div>
 
                 <div className='col ViewerViewProfilemainrow-right-1'>
@@ -176,6 +290,7 @@ function ViewerEditProfile() {
                         </div>
                         <div className='col-5'>
                             <input type="text" className='viewer-dit-prof-text' name="city" value={userData.city || ''} onChange={handleChange} />
+                            {errors.city && <div className="text-danger ">{errors.city}</div>}
                         </div>
                     </div>
                 </div>
@@ -227,9 +342,9 @@ function ViewerEditProfile() {
                                     <label className='ms-1' />Female
                                 </div>
                                 <div className='ms-3'>
-                                    <input type='radio' name='gender' id='other' onChange={handleChange} value='other' checked={userData.gender === 'Other'} />
-                                    <label className='ms-1' />Other
-                                </div>
+                                        <input type='radio' name='gender' id='other' value='Other' onChange={handleChange} checked={userData.gender ==='Other'}/>
+                                        <label className='ms-1' />Other
+                                    </div>
                             </div>
                         </div>
                     </div>

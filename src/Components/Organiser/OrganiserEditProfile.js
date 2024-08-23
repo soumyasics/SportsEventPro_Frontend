@@ -150,7 +150,30 @@ function OrganiserEditProfile() {
 
             return "Email must be a valid Email address"
         }
+
+        const nRegex =  /^(?=.*[A-Za-z])[A-Za-z0-9\s]+$/;
+        const nameRegex = /^[A-Za-z\s]+$/;
+        const twoDigitRegex = /^\d{0,2}$/;
+
+    
+        if (fieldName === "Name"){
+            if (!nameRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "Name must contain alphabets Only"
+                }
+         }
+         if (fieldName === "City"){
+            
+            if (!nameRegex.test(value)) {
+                
+                     formIsValid = false;
+            return "City must contain alphabets Only"
+                }
+         }
+       
         return '';
+
     };
     const [imagePreview, setImagePreview] = useState(tempimg);
     const handleImageChange = (e) => {
@@ -171,6 +194,8 @@ function OrganiserEditProfile() {
 
         let errors = {};
         formIsValid = true;
+        errors.email = validateField('Name', userData.name);
+
         errors.email = validateField('Email', userData.email);
         errors.name = validateField('Name', userData.name);
         errors.contact = validateContact('Contact number', userData.contact)
@@ -238,8 +263,10 @@ function OrganiserEditProfile() {
                                 <img src={img3} alt=' ' className='OrganiserEditProfile-body-common-img' />
                                 <label className='OrganiserEditProfile-body-common-label'>Name</label>
                             </div>
-                            {isEditable ? (
+                            {isEditable ? (<>
                                 <input type='text' onChange={handleChange} className='col OrganiserEditProfile-body-input' name="name" value={userData.name} />
+                                {errors.name && <div className="text-danger ">{errors.name}</div>}
+                                </>
                             ) : (
                                 <span className='col OrganiserEditProfile-body-input'>{userData.name}</span>
                             )}
@@ -319,7 +346,10 @@ function OrganiserEditProfile() {
                                 <label className='OrganiserEditProfile-body-common-label'>City</label>
                             </div>
                             {isEditable ? (
+                                <>
                                 <input type='text' className='col OrganiserEditProfile-body-input' name="city" onChange={handleChange} value={userData.city} />
+                                {errors.city && <div className="text-danger ">{errors.city}</div>}
+                                </>
                             ) : (
                                 <span className='col OrganiserEditProfile-body-input'>{userData.city}</span>
                             )}
@@ -327,7 +357,7 @@ function OrganiserEditProfile() {
                         <div className='col row OrganiserEditProfile-body-common'>
                             <div className='col OrganiserEditProfile-body-common-img-contain'>
                                 <img src={img12} alt=' ' className='OrganiserEditProfile-body-common-img' />
-                                <label className='OrganiserEditProfile-body-common-label'>Describe Experience</label>
+                                <label className='OrganiserEditProfile-body-common-label'>Description</label>
                             </div>
                             {isEditable ? (
                                 <input type='text' className='col OrganiserEditProfile-body-input' name="experience" onChange={handleChange} value={userData.experience} />

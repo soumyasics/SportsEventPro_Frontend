@@ -14,6 +14,8 @@ function AdminTeamWiseReport() {
     useEffect(() => {
         axiosInstance.post('viewPAprvdEnrollmentsforTicket').then(res => {
             setEve1(res.data.data);
+            console.log("dtas ",res.data.data);
+            
             setFilteredData(res.data.data);
         }).catch(err => {
             console.log(err);
@@ -27,7 +29,8 @@ function AdminTeamWiseReport() {
             setFilteredData(eve1);
         } else {
             const filtered = eve1.filter((team) => 
-                team.coachId.name.toLowerCase().includes(value.toLowerCase())
+                
+                team.coachId.teamName.toLowerCase().includes(value.toLowerCase())
             );
             setFilteredData(filtered);
         }

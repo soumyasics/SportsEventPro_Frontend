@@ -18,6 +18,7 @@ import axiosInstance from '../Constant/BaseURL';
 import { useNavigate } from 'react-router-dom';
 import axiosMultipartInstance from '../Constant/multiPart';
 import toast from 'react-hot-toast';
+import { ToastContainer } from 'react-bootstrap';
 
 const url = axiosInstance.defaults.url;
 
@@ -80,9 +81,70 @@ function TeamCoachEditProfile() {
         }
     };
 
-    const handleUpdate = () => {
+    const handleUpdate = async() => {
+      let  formIsValid=true
+        console.log("ty");
+        
+        const nameRegex = /^[A-Za-z\s]+$/;
+        const nRegex =  /^(?=.*[A-Za-z])[A-Za-z0-9\s]+$/;
+        if (data.name){
+            if (!nameRegex.test(data.name)) {
+                
+                     formIsValid = false;
+            toast.error("Name must contain alphabets Only")
+                }
+         }
+         if (data.city){
+            
+            if (!nRegex.test(data.city)) {
+                
+                     formIsValid = false;
+                     toast.error ("City must contain alphanumerics Only")
+                }
+         }
+         if (data.teamName){
+            if (!nRegex.test(data.teamName)) {
+                
+                     formIsValid = false;
+                     toast.error ("Teamname must contain alphanumerics Only")
+                }
+         }
+         const numberRegex = /^(?=.*\d)\d+$/;
+
+         if (!data.contact) {
+             formIsValid = false;
+             toast.error(`Contact Number is required`);
+         } else 
+         if (!numberRegex.test(data.contact)) {
+             
+                  formIsValid = false;
+                  toast.error( "Contact Number must contain numbers Only")
+             }else if (data.contact.length!== 10) {
+             formIsValid = false;
+             toast.error( 'Please enter a valid Contact Number');
+         }
+         if (!data.pincode) {
+            formIsValid = false;
+            toast.error(`pincode is required`);
+        } else 
+        if (!numberRegex.test(data.pincode)) {
+            
+                 formIsValid = false;
+                 toast.error( "pincode must contain numbers Only")
+            }else if (data.pincode.length!== 6) {
+            formIsValid = false;
+            toast.error( 'Please enter a valid pincode');
+        }
+         console.log("fo",formIsValid);
+         
+            
+        if (!data.email.endsWith("@gmail.com")) {
+            formIsValid = false;
+            toast.error( "Email must be a valid Email address")
+        }
+      if(formIsValid){
         console.log("data",data);
-        axiosMultipartInstance
+       await axiosMultipartInstance
             .post(`editTeamCoachById/${id}`, data)
             .then((res) => {
                 console.log(res);
@@ -93,12 +155,14 @@ function TeamCoachEditProfile() {
             })
             .catch((err) => {
                 console.log(err);
-            });
+            });}
+           
     };
 
     return (
         <div>
             <div className='TeamCoachEditProfilemain-1-20'>
+                <ToastContainer></ToastContainer>
                 <div className="container text-center">
                     <div className='row'>
                         <div className='col TeamCoachEditProfilediv-1'>
@@ -127,7 +191,27 @@ function TeamCoachEditProfile() {
                     </div>
 
                     <div className='row TeamCoachEditProfilediv-3 TeamCoachEditProfileimpdiv-style'>
-                    
+                    <div className='col-4'>
+                            <div className='row TeamCoachEditProfilemainrow-1'>
+                                <div className='col-2'>
+                                    <img className='TeamCoachEditProfilecommon-style-1' src={img8} alt=''></img>
+                                </div>
+                                <div className='col-5'>
+                                    <label className='TeamCoachEditProfilelabel'>Name</label>
+                                </div>
+                                <div className='col-5'>
+                                    <div className="col">
+                                    <input
+                                        className='TeamCoachEditProfilelabel-2 TeamCoachEditProfileimg-2-backend'
+                                        type='text'
+                                        name='name'
+                                        value={data.name}
+                                        onChange={handleChange}
+                                    />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div className='col-4 TeamCoachEditProfilemainrow-right-1'>
                             {/* <div className='row TeamCoachEditProfilemainrow-1'>

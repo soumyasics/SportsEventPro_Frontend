@@ -68,7 +68,7 @@ function Teamcoachviewprofilepopup() {
                                                 <div className='row Teamcoachviewprofilepopupdiv-3 Teamcoachviewprofilepopupimpdiv-style'>
 
 
-                                                        <div className='col-4 '>
+                                                        {/* <div className='col-4 '>
 
                                                                 <div className='row Teamcoachviewprofilepopupmainrow-1'>
 
@@ -90,7 +90,30 @@ function Teamcoachviewprofilepopup() {
 
                                                                 </div>
 
-                                                        </div>
+                                                        </div> */}
+                                                        <div className='col-4'>
+
+<div className='row Teamcoachviewprofilepopupmainrow-1'>
+
+        <div className='col-2'>
+                <img className='Teamcoachviewprofilepopupcommon-style-1' src={img8}></img>
+        </div>
+
+        <div className='col-5'>
+                <label className='Teamcoachviewprofilepopuplabel'>Name</label>
+
+        </div>
+
+        <div className='col-5'>
+                <label className='Teamcoachviewprofilepopuplabel-2'>{userData.name}</label>
+
+        </div>
+
+
+
+</div>
+
+</div>
 
                                                         <div className='col-4 Teamcoachviewprofilepopupmainrow-right-1'>
 
@@ -315,7 +338,7 @@ function Teamcoachviewprofilepopup() {
 
                                                 <div className='row Teamcoachviewprofilepopupdiv-7 Teamcoachviewprofilepopupimpdiv-style'>
 
-                                                        <div className='col-4'>
+                                                        {/* <div className='col-4'>
 
                                                                 <div className='row Teamcoachviewprofilepopupmainrow-1'>
 
@@ -324,12 +347,12 @@ function Teamcoachviewprofilepopup() {
                                                                         </div>
 
                                                                         <div className='col-5'>
-                                                                                <label className='Teamcoachviewprofilepopuplabel'>State</label>
+                                                                                <label className='Teamcoachviewprofilepopuplabel'>Name</label>
 
                                                                         </div>
 
                                                                         <div className='col-5'>
-                                                                                <label className='Teamcoachviewprofilepopuplabel-2'>{userData.state}</label>
+                                                                                <label className='Teamcoachviewprofilepopuplabel-2'>{userData.name}</label>
 
                                                                         </div>
 
@@ -337,7 +360,30 @@ function Teamcoachviewprofilepopup() {
 
                                                                 </div>
 
-                                                        </div>
+                                                        </div> */}
+                                                            <div className='col-4 '>
+
+<div className='row Teamcoachviewprofilepopupmainrow-1'>
+
+        <div className='col-2'>
+                <img className='Teamcoachviewprofilepopupcommon-style-1' src={img1}></img>
+        </div>
+
+        <div className='col-5'>
+                <label className='Teamcoachviewprofilepopuplabel' >Contact Number</label>
+
+        </div>
+
+        <div className='col-5'>
+                <label className='Teamcoachviewprofilepopuplabel-2'>{userData.contact}</label>
+
+        </div>
+
+
+
+</div>
+
+</div>
                                                         <div className='col-4 Teamcoachviewprofilepopupmainrow-right-1'>
 
 
@@ -373,12 +419,63 @@ function Teamcoachviewprofilepopup() {
 
 
 
-                                                <div className='row Teamcoachviewprofilepopupdiv-8 Teamcoachviewprofilepopupimpdiv-style'>
+                                                <div className='row Teamcoachviewprofilepopupdiv-7 Teamcoachviewprofilepopupimpdiv-style'>
 
-                                                       
-                                                        
+<div className='col-4'>
 
-                                                </div>
+        <div className='row Teamcoachviewprofilepopupmainrow-1'>
+
+                <div className='col-2'>
+                        <img className='Teamcoachviewprofilepopupcommon-style-1' src={img8}></img>
+                </div>
+
+                <div className='col-5'>
+                        <label className='Teamcoachviewprofilepopuplabel'>State</label>
+
+                </div>
+
+                <div className='col-5'>
+                        <label className='Teamcoachviewprofilepopuplabel-2'>{userData.state}</label>
+
+                </div>
+
+
+
+        </div>
+
+</div>
+{/* <div className='col-4 Teamcoachviewprofilepopupmainrow-right-1'>
+
+
+        <div className='row Teamcoachviewprofilepopupmainrow-1'>
+
+                <div className='col-2'>
+                        <img className='Teamcoachviewprofilepopupcommon-style-1' src={img9}></img>
+                </div>
+
+                <div className='col-5'>
+                        <label className='Teamcoachviewprofilepopuplabel'>Experience</label>
+
+                </div>
+
+                <div className='col-5'>
+                        <label className='Teamcoachviewprofilepopuplabel-2'>{userData.experience}</label>
+
+                </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+</div> */}
+
+</div>
 
 
 
