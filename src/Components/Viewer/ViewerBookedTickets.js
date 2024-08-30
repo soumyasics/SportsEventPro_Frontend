@@ -3,7 +3,7 @@ import img from '../../Assets/Rectangle 4618.png'
 import img2 from "../../Assets/Back Button.svg"
 import React, { useEffect, useState } from 'react';
 import './ViewerUpcoming.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import img3 from '../../Assets/Search Button.svg';
 import axiosInstance from '../Constant/BaseURL';
 import ReactStars from 'react-stars'
@@ -13,6 +13,7 @@ function ViewerBookedTickets() {
     const [selectedEventId, setSelectedEventId] = useState(null);
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState('');
+    const navigate=useNavigate()
     useEffect(() => {
         axiosInstance.post(`/viewTicketBookingByViwerId/${localStorage.getItem('viewerId')}`)
             .then(res => {
@@ -63,7 +64,7 @@ function ViewerBookedTickets() {
                 {/* seperated div for backbutton and text */}
                 <div className='col  ViewerBookedTickets-headercontainer-container-1'>
 
-                    <button className='ViewerBookedTickets-headercontainer-BackButton'><img src={img2} alt=' ' /></button>
+                    <button className='ViewerBookedTickets-headercontainer-BackButton' onClick={()=>{navigate(-1)}}  ><img src={img2} alt=' ' /></button>
                     <h1 className='ViewerBookedTickets-headercontainer-h1'>Booked Tickets</h1>
 
                 </div>
