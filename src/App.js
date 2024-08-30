@@ -102,7 +102,7 @@ function App() {
         <Routes>
         <Route exact path="/OrganiserEnroll" element={[<MainNavbar />, <OrganiserEnroll />, <Landingpage2 />, <Landingpage3 />, <Aboutpage />, <Landingpage4 />, <UserFooter />]} />
 
-          <Route exact path="/" element={[<MainNavbar />, <Userhome />, <Landingpage2 />, <Landingpage3 />, <Aboutpage />, <Landingpage4 />, <UserFooter />]} />
+          <Route exact path="/" element={[<MainNavbar />, <Userhome />, <Landingpage2 />,  <Aboutpage />, <Landingpage4 />, <UserFooter />]} />
           <Route exact path="/landingpage3" element={<Landingpage3 />} />
           <Route exact path='/landingpage4' element={<Landingpage4 />} />
           <Route exact path='/userfooter' element={<UserFooter />} />
